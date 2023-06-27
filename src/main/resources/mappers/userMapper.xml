@@ -30,8 +30,35 @@
 		 
 		 
   		)
-  		
-  		
+
+  </insert>
+  
+  <insert id="insertAdminUser" parameterType="map">
+  		INSERT INTO
+  		`user`
+  		(
+  			`loginId`
+		  	,`password` 
+		  	, `name`
+		    , `email` 
+		    , `phoneNumber`
+		    , `isAdmin`
+		    , `createdAt` 
+		    , `updatedAt`
+  		)
+  	VALUES
+  		(
+  		 #{loginId}
+  		 , #{password}
+		 , #{name}
+		 , #{email}
+		 , #{phoneNumber}
+		 , `1`
+		 , now()
+		 , now()
+		 
+		 
+  		)
   
   </insert>
   

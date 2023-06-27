@@ -44,6 +44,34 @@ public class UserRestController {
 	}
 	
 	
+	@PostMapping("/adminsignup")
+	public Map<String, String> adminsignup(
+			@RequestParam("loginId") String loginId
+			, @RequestParam("password") String password
+			, @RequestParam("name") String name
+			, @RequestParam("email") String email
+			, @RequestParam("phoneNumber") String phoneNumber
+			, @RequestParam("certificationNumber") String certificationNumber			
+			){
+		
+		
+		int count = userBO.addUser(loginId, password, name, email, phoneNumber);
+		
+		Map<String, String> resultMap = new HashMap<>();
+		
+		if(count == 1) {
+			resultMap.put("result", "success");
+		} else {
+			resultMap.put("result", "fail");
+		}
+		
+		return resultMap;
+		
+	}
+	
+	
+	
+	
 	
 	
 	

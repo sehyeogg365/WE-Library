@@ -26,6 +26,21 @@ public class UserBO {
 	}
 	
 	
+	public int addAdminUser(
+
+			String loginId
+			, String password
+			, String name
+			, String email	
+			, String phoneNumber
+			, String certificationNumber
+			
+			) {
+		return userDAO.insertUser(loginId, password, name, email, phoneNumber);
+		
+		
+	}
+	
 	
 	
 	
