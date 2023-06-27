@@ -39,7 +39,7 @@
 		
 		<section class="contents d-flex justify-content-center bg-danger">
 			<div class="join-box bg-secondary mt-3">
-				<h1 class="text-center mt-3">회원 가입</h1>
+				<h2 class="text-center mt-3">회원 가입</h2>
 				<div class="d-flex">
 					<input type="text" id="loginIdInput" placeholder="로그인 ID" class="form-control mt-4">
 					
@@ -55,10 +55,10 @@
 						
 						 <div class="mt-4 col-1">@</div>
 						 <select class="form-control mt-4 col-6" id="emailSelctor">
-						 	<option value="">naver.com</option>
-						 	<option value="">daum.com</option>
-						 	<option value="">kakao.com</option>
-						 	<option value="">gmail.com</option>
+						 	<option value="naver.com">naver.com</option>
+						 	<option value="daum.com">daum.com</option>
+						 	<option value="kakao.com">kakao.com</option>
+						 	<option value="gmail.com">gmail.com</option>
 						 	
 						 </select>
 					 
@@ -67,9 +67,9 @@
 					
 					<div class="d-flex justify-content-between">
 						<select class="form-control mt-4 col-3" id="phoneNumberSelector">
-						 	<option value="">02</option>
-						 	<option value="">010</option>
-						 	<option value="">011</option>	
+						 	<option value="02">02</option>
+						 	<option value="010">010</option>
+						 	<option value="011">011</option>	
 						 </select>
 						<div class="d-flex align-items-center mt-4">-</div>
 						<input type="text" id="phoneNumberInput2" placeholder="전화번호" class="form-control mt-4 ml-1 col-3">
@@ -129,9 +129,13 @@
 			let name = $("#nameInput").val();
 			let emailId = $("#emailIdInput").val();
 			let emailDomain = $("#emailSelctor").val();
+			let email = emailId + emailDomain;
+			
 			let phoneNumber1 = $("#phoneNumberInput1").val();
 			let phoneNumber2 = $("#phoneNumberInput2").val();
 			let phoneNumber3 = $("#phoneNumberInput3").val();
+			let phoneNumber = phoneNumber1 + phoneNumber2 + phoneNumber3;
+			
 			
 			if(id == ""){
 				alert("아이디를 입력하세요.");
@@ -146,11 +150,11 @@
 				return ;	
 			}
 			if(emailId == ""){
-				alert("아이디를 입력하세요.");
+				alert("이메일을 입력하세요.");
 				return ;	
 			}
 			if(emailDomain == ""){
-				alert("아이디를 입력하세요.");
+				alert("이메일도메인을 입력하세요.");
 				return ;	
 			}
 			if(phoneNumber1 == ""){
