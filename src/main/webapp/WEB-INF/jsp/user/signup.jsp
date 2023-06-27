@@ -92,9 +92,33 @@
 		</footer>
 	</div>
 
-
+	<script>
+	
+	$(document).ready(function(){
+		
+		$("#joinBtn").on("click", function(){
+			
+			let id = $("#loginIdInput").val();
+			let password = $("#passwordInput").val();
+			let passwordConfirm = $("passwordConfirmInput").val();
+			let name = $("#nameInput").val();
+			let email = $("#emailInput").val() + $("#emailSelctor").val();
+			let phoneNumber = $("#phoneNumberInput1").val() + $("#phoneNumberInput2").val() + $("#phoneNumberInput3").val();
+			
+			
+			
+			
+		});
+		
+		
+	});
+	
+	</script>
 
 
 
 </body>
+
+
+
 </html>
