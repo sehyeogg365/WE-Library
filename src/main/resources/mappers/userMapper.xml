@@ -33,6 +33,18 @@
 
   </insert>
   
+  <!-- 중복아이디 확인(select) -->
+  <select id ="selectCountloginId" parameterType="String" resultType="int">
+  	SELECT
+  		count(1)
+  	FROM
+  		`user`
+  	WHERE
+  		`loginId`=#{loginId}
+  </select>
+  
+  
+  <!-- 관리자 회원가입 -->
   <insert id="insertAdminUser" parameterType="map">
   		INSERT INTO
   		`user`
@@ -59,9 +71,19 @@
 		 
 		 
   		)
-  
   </insert>
   
+  <!-- 관리자 회원가입 인증번호 일치 확인(select) -->
+  <select id="selectcertificationNumber" parameterType="String" resultType="int">
+  	SELECT
+  		count(1)
+  	FROM
+  		`certificationnumber`
+  	WHERE `certificationNumber`
+  			= #{certificationNumber};
+  
+  
+  </select>
   
   
   </mapper>

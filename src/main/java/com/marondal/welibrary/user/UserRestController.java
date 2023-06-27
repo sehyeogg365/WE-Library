@@ -55,7 +55,7 @@ public class UserRestController {
 			){
 		
 		
-		int count = userBO.addUser(loginId, password, name, email, phoneNumber);
+		int count = userBO.addAdminUser(loginId, password, name, email, phoneNumber, certificationNumber);
 		
 		Map<String, String> resultMap = new HashMap<>();
 		
