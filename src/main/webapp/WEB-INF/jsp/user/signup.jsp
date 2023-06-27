@@ -39,12 +39,14 @@
 		
 		<section class="contents d-flex justify-content-center bg-danger">
 			<div class="join-box bg-secondary mt-3">
-				<h2 class="text-center mt-3">회원 가입</h2>
+				<h2 class="text-center mt-3"><b>회원 가입</b></h2>
 				<div class="d-flex">
 					<input type="text" id="loginIdInput" placeholder="로그인 ID" class="form-control mt-4">
 					
 					<button type="button" class="btn btn-primary btn-block col-2" id="duplicateBtn">중복확인</button>
 				</div>	
+					<div id = "duplicated" class="small text-danger d-none">아이디가 중복됩니다.</div>
+					<div id = "nonDuplicated" class="small text-info d-none">사용할수 있는 아이디 입니다.</div>
 					<input type="password" id="passwordInput" placeholder="비밀번호" class="form-control mt-4">
 					<input type="password" id="passwordConfirmInput" placeholder="비밀번호 확인" class="form-control mt-4">
 					
@@ -105,6 +107,8 @@
 		var isDuplicateId = true;
 		
 		
+		
+		
 		$("#duplicateBtn").on("click", function(){
 			
 			let id = $("#loginIdInput").val();
@@ -115,6 +119,10 @@
 				return ;
 				
 			}
+			
+			$.ajax({
+				
+			});
 			
 			
 		});
@@ -131,7 +139,7 @@
 			let emailDomain = $("#emailSelctor").val();
 			let email = emailId + emailDomain;
 			
-			let phoneNumber1 = $("#phoneNumberInput1").val();
+			let phoneNumber1 = $("#phoneNumberSelector").val();
 			let phoneNumber2 = $("#phoneNumberInput2").val();
 			let phoneNumber3 = $("#phoneNumberInput3").val();
 			let phoneNumber = phoneNumber1 + phoneNumber2 + phoneNumber3;
@@ -149,6 +157,13 @@
 				alert("비밀번호를 확인하세요.");
 				return ;	
 			}
+			
+			if(name == ""){
+				alert("이름을 확인하세요.");
+				return ;
+				
+			}
+			
 			if(emailId == ""){
 				alert("이메일을 입력하세요.");
 				return ;	
@@ -170,7 +185,28 @@
 				return ;	
 			}
 			
+			//중복 체크가 안됐을떄
 			
+			//중복된 아이디 일떄
+			
+			
+			$.ajax({
+				type: "post"
+				, url: "/user/signup"
+				, data:{"loginId":id, "password":password, "name":name, "email":email, "phoneNumber":phoneNumber}
+				, success:function(data){
+					if(data.result == "success"){
+						alert("회원가입 성공");
+						location.href = "/user/signin/view";
+					} else{
+						alert("회원가입 실패");
+					}
+				}
+				,error:function(){
+					alert("회원가입 오류");
+				}
+				
+			});
 			
 			
 			
