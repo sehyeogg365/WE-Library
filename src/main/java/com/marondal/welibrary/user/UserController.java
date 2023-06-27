@@ -14,7 +14,6 @@ public class UserController {
 	@GetMapping("/signup/view")
 	public String signupInput() {
 		
-		
 		return "/user/signup";
 		
 	}
@@ -22,7 +21,6 @@ public class UserController {
 	
 	@GetMapping("/adminsignup/view")
 	public String adminsignupInput() {
-		
 		
 		return "/user/adminsignup";
 		

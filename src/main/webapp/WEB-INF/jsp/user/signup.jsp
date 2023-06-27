@@ -43,7 +43,7 @@
 				<div class="d-flex">
 					<input type="text" id="loginIdInput" placeholder="로그인 ID" class="form-control mt-4">
 					
-					<button type="button" class="btn btn-primary btn-block" id="duplicateBtn">중복확인</button>
+					<button type="button" class="btn btn-primary btn-block col-2" id="duplicateBtn">중복확인</button>
 				</div>	
 					<input type="password" id="passwordInput" placeholder="비밀번호" class="form-control mt-4">
 					<input type="password" id="passwordConfirmInput" placeholder="비밀번호 확인" class="form-control mt-4">
@@ -100,8 +100,21 @@
 	
 	$(document).ready(function(){
 		
+		var isChecked = false;
+		
+		var isDuplicateId = true;
+		
+		
 		$("#duplicateBtn").on("click", function(){
 			
+			let id = $("#loginIdInput").val();
+			
+			if(id ==""){
+				
+				alert("아이디를 입력하세요.");
+				return ;
+				
+			}
 			
 			
 		});
