@@ -6,6 +6,34 @@
   
   <mapper namespace="com.marondal.welibrary.user.dao.UserDAO">
   
+  <insert id ="insertUser" parameterType="map">
+  	INSERT INTO
+  		`user`
+  		(
+  			`loginId`
+		  	,`password` 
+		  	, `name`
+		    , `email` 
+		    , `phoneNumber`
+		    , `createdAt` 
+		    , `updatedAt`
+  		)
+  	VALUES
+  		(
+  		 #{loginId}
+  		 , #{password}
+		 , #{name}
+		 , #{email}
+		 , #{phoneNumber}
+		 , now()
+		 , now()
+		 
+		 
+  		)
+  		
+  		
+  
+  </insert>
   
   
   
