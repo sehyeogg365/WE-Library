@@ -51,7 +51,7 @@
 					<input type="text" id="nameInput" placeholder="이름" class="form-control mt-4">
 					
 					<div class="d-flex align-items-center">
-						<input type="text" id="emailInput" placeholder="이메일" class="form-control mt-4 col-5">
+						<input type="text" id="emailIdInput" placeholder="이메일" class="form-control mt-4 col-5">
 						
 						 <div class="mt-4 col-1">@</div>
 						 <select class="form-control mt-4 col-5" id="emailSelctor">
@@ -66,7 +66,11 @@
 					
 					
 					<div class="d-flex justify-content-between">
-						<input type="text" id="phoneNumberInput1" placeholder="전화번호" class="form-control mt-4 col-3">
+						<select class="form-control mt-4 col-3" id="phoneNumberSelector">
+						 	<option value="">02</option>
+						 	<option value="">010</option>
+						 	<option value="">011</option>	
+						 </select>
 						<div class="d-flex align-items-center">-</div>
 						<input type="text" id="phoneNumberInput2" placeholder="전화번호" class="form-control mt-4 ml-1 col-3">
 						<div class="d-flex align-items-center">-</div>
@@ -102,8 +106,47 @@
 			let password = $("#passwordInput").val();
 			let passwordConfirm = $("passwordConfirmInput").val();
 			let name = $("#nameInput").val();
-			let email = $("#emailInput").val() + $("#emailSelctor").val();
-			let phoneNumber = $("#phoneNumberInput1").val() + $("#phoneNumberInput2").val() + $("#phoneNumberInput3").val();
+			let emailId = $("#emailIdInput").val();
+			let emailDomain = $("#emailSelctor").val();
+			let phoneNumber1 = $("#phoneNumberInput1").val();
+			let phoneNumber2 = $("#phoneNumberInput2").val();
+			let phoneNumber3 = $("#phoneNumberInput3").val();
+			
+			if(id == ""){
+				alert("아이디를 입력하세요.");
+				return ;	
+			}
+			if(password == ""){
+				alert("비밀번호를 입력하세요.");
+				return ;	
+			}
+			if(passwordConfirm == ""){
+				alert("비밀번호를 확인하세요.");
+				return ;	
+			}
+			if(emailId == ""){
+				alert("아이디를 입력하세요.");
+				return ;	
+			}
+			if(emailDomain == ""){
+				alert("아이디를 입력하세요.");
+				return ;	
+			}
+			if(phoneNumber1 == ""){
+				alert("핸드폰 번호를 입력하세요.");
+				return ;	
+			}
+			if(phoneNumber2 == ""){
+				alert("핸드폰 번호를 입력하세요.");
+				return ;	
+			}
+			if(phoneNumber3 == ""){
+				alert("핸드폰 번호를 입력하세요.");
+				return ;	
+			}
+			
+			
+			
 			
 			
 			
