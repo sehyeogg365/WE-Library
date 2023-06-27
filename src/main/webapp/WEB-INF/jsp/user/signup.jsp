@@ -54,7 +54,7 @@
 						<input type="text" id="emailIdInput" placeholder="이메일" class="form-control mt-4 col-5">
 						
 						 <div class="mt-4 col-1">@</div>
-						 <select class="form-control mt-4 col-5" id="emailSelctor">
+						 <select class="form-control mt-4 col-6" id="emailSelctor">
 						 	<option value="">naver.com</option>
 						 	<option value="">daum.com</option>
 						 	<option value="">kakao.com</option>
@@ -71,9 +71,9 @@
 						 	<option value="">010</option>
 						 	<option value="">011</option>	
 						 </select>
-						<div class="d-flex align-items-center">-</div>
+						<div class="d-flex align-items-center mt-4">-</div>
 						<input type="text" id="phoneNumberInput2" placeholder="전화번호" class="form-control mt-4 ml-1 col-3">
-						<div class="d-flex align-items-center">-</div>
+						<div class="d-flex align-items-center mt-4">-</div>
 						<input type="text" id="phoneNumberInput3" placeholder="전화번호" class="form-control mt-4 ml-1 col-3">
 					</div>
 					
@@ -99,6 +99,14 @@
 	<script>
 	
 	$(document).ready(function(){
+		
+		$("#duplicateBtn").on("click", function(){
+			
+			
+			
+		});
+		
+		
 		
 		$("#joinBtn").on("click", function(){
 			
