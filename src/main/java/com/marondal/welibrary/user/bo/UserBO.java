@@ -49,14 +49,9 @@ public class UserBO {
 		} else {
 			return true;
 		}
-		
-		
-		
-		
+			
 		
 	}
-	
-	
 	
 	
 	//관리자 회원가입
@@ -71,9 +66,20 @@ public class UserBO {
 			
 			) {
 		
+		//인증번호 일치 하는지 여부 
+		
+		int count = userDAO.selectcertificationNumber(certificationNumber);
+		
+		if(count == 1) { //일치할때 추가하라
+			
+			return userDAO.insertUser(loginId, password, name, email, phoneNumber);
+			
+		} else {
+			
+			return 0;// 아무것도 하지마라
+		}
 		
 		
-		return userDAO.insertUser(loginId, password, name, email, phoneNumber);
 		
 		
 	}
