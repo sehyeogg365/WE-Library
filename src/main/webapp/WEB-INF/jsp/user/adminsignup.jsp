@@ -60,7 +60,7 @@
 						<div class="d-flex align-items-center">-</div>
 						<input type="text" id="phoneNumberInput3" placeholder="전화번호" class="form-control mt-4 ml-1 col-3">
 					</div>
-					
+					<input type="text" id="isAdminInput" placeholder="관리자여부" class="form-control mt-4">
 					<input type="text" id="certificationInput" placeholder="인증번호" class="form-control mt-4">
 					<!-- 북마크 명 바꾸고 커밋해보기 -->
 					<button type="button" class="btn btn-primary btn-block mt-3 mb-3" id="joinBtn">회원 가입</button>
@@ -154,6 +154,8 @@
 			let phoneNumber3 = $("#phoneNumberInput3").val();
 			let phoneNumber = phoneNumber1 + phoneNumber2 + phoneNumber3;
 			
+			let isAdmin = $("#isAdminInput").val();
+			
 			let certificationNumber = $("#certificationInput").val();
 			
 			if(id == ""){
@@ -167,6 +169,10 @@
 			if(passwordConfirm == ""){
 				alert("비밀번호를 확인하세요.");
 				return ;	
+			}
+			if(password != passwordConfirm){
+				alert("비밀번호가 일치하지 않습니다.");
+				return ;
 			}
 			if(emailId == ""){
 				alert("이메일을 입력하세요.");
@@ -188,6 +194,11 @@
 				alert("핸드폰 번호를 입력하세요.");
 				return ;	
 			}
+
+			if(isAdmin == ""){
+				alert("관리자 여부를 비력하세요");
+				return ;
+			}
 			
 			if(certificationNumber == ""){
 				alert("인증 번호를 입력하세요.");
@@ -205,11 +216,19 @@
 				return ;
 			}
 			
+			alert(id);
+			alert(password);
+			alert(name);
+			alert(email);
+			alert(phoneNumber);
+			alert(isAdmin);
+			alert(certificationNumber);
+			
 			
 			$.ajax({
 				type: "post"
 				, url: "/user/adminsignup"
-				, data:{"loginId":id, "password":password, "name":name, "email":email, "phoneNumber":phoneNumber, "certificationNumber":certificationNumber}
+				, data:{"loginId":id, "password":password, "name":name, "email":email, "phoneNumber":phoneNumber, "isAdmin":isAdmin, "certificationNumber":certificationNumber}
 				, success:function(data){
 					if(data.result == "success"){
 						alert("회원가입 성공");

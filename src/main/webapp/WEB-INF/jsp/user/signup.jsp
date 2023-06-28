@@ -166,7 +166,10 @@
 				alert("비밀번호를 확인하세요.");
 				return ;	
 			}
-			
+			if(password != passwordConfirm){
+				alert("비밀번호가 일치하지 않습니다.");
+				return ;
+			}
 			if(name == ""){
 				alert("이름을 확인하세요.");
 				return ;

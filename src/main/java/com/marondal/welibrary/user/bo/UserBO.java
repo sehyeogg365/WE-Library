@@ -62,6 +62,7 @@ public class UserBO {
 			, String name
 			, String email	
 			, String phoneNumber
+			, int isAdmin
 			, String certificationNumber
 			
 			) {
@@ -72,7 +73,7 @@ public class UserBO {
 		
 		if(count == 1) { //일치할때 
 			
-			return userDAO.insertUser(loginId, password, name, email, phoneNumber);//추가하라
+			return userDAO.insertAdminUser(loginId, password, name, email, phoneNumber, isAdmin);//추가하라
 			
 		} else {
 			

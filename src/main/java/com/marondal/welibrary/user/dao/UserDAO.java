@@ -26,7 +26,7 @@ public interface UserDAO {
 			, @Param("name") String name
 			, @Param("email") String email
 			, @Param("phoneNumber") String phoneNumber
-			, @Param("certificationNumber") String certificationNumber
+			, @Param("isAdmin") int isAdmin	
 			);
 	
 	//인증번호 일치 확인

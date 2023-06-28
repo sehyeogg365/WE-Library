@@ -78,11 +78,12 @@ public class UserRestController {
 			, @RequestParam("name") String name
 			, @RequestParam("email") String email
 			, @RequestParam("phoneNumber") String phoneNumber
+			, @RequestParam("isAdmin") int isAdmin
 			, @RequestParam("certificationNumber") String certificationNumber			
 			){
 		
 		
-		int count = userBO.addAdminUser(loginId, password, name, email, phoneNumber, certificationNumber);
+		int count = userBO.addAdminUser(loginId, password, name, email, phoneNumber, isAdmin,certificationNumber);
 		
 		Map<String, String> resultMap = new HashMap<>();
 		

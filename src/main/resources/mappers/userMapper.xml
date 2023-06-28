@@ -65,7 +65,7 @@
 		 , #{name}
 		 , #{email}
 		 , #{phoneNumber}
-		 , #{1}
+		 , #{isAdmin}
 		 , now()
 		 , now()
 		 
