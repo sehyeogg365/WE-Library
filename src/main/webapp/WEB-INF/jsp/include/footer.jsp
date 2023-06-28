@@ -8,8 +8,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<footer class="mt-3 d-flex justify-content-center align-items-center">
-		Copyright © WE-Library 2023
+	<footer class="mt-3">
+		<div class="">주소:</div>
+		<div class="">Copyright © WE-Library 2023</div>
+		
 		
 	</footer>
 </body>

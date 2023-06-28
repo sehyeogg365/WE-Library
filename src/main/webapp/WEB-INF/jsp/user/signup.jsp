@@ -20,7 +20,7 @@
 		<c:import url="/WEB-INF/jsp/include/header.jsp"/>
 		
 		
-		<section class="contents d-flex justify-content-center bg-danger">
+		<section class="contents d-flex justify-content-center">
 			<div class="join-box bg-secondary mt-3">
 				<h2 class="text-center mt-3"><b>회원 가입</b></h2>
 				<div class="d-flex">
@@ -40,10 +40,10 @@
 						
 						 <div class="mt-4 col-1">@</div>
 						 <select class="form-control mt-4 col-6" id="emailSelctor">
-						 	<option value="naver.com">naver.com</option>
-						 	<option value="daum.com">daum.com</option>
-						 	<option value="kakao.com">kakao.com</option>
-						 	<option value="gmail.com">gmail.com</option>
+						 	<option value="@naver.com">naver.com</option>
+						 	<option value="@daum.com">daum.com</option>
+						 	<option value="@kakao.com">kakao.com</option>
+						 	<option value="@gmail.com">gmail.com</option>
 						 	
 						 </select>
 					 
