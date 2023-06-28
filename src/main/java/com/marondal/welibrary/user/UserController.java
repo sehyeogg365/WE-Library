@@ -26,7 +26,12 @@ public class UserController {
 		
 	}
 
-	
+	@GetMapping("/signin/view")
+	public String signinInput() {
+		
+		return "/user/signin";
+		
+	}
 	
 	
 	

@@ -176,6 +176,7 @@
 			let phoneNumber3 = $("#phoneNumberInput3").val();
 			let phoneNumber = phoneNumber1 + phoneNumber2 + phoneNumber3;
 			
+			let certificationNumber = $("#certificationInput").val();
 			
 			if(id == ""){
 				alert("아이디를 입력하세요.");
@@ -208,6 +209,11 @@
 			if(phoneNumber3 == ""){
 				alert("핸드폰 번호를 입력하세요.");
 				return ;	
+			}
+			
+			if(certificationNumber == ""){
+				alert("인증 번호를 입력하세요.");
+				return ;
 			}
 			
 			//중복 체크가 안됐을떄

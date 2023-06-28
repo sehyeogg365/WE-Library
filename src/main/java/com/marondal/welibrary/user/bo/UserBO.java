@@ -70,9 +70,9 @@ public class UserBO {
 		
 		int count = userDAO.selectcertificationNumber(certificationNumber);
 		
-		if(count == 1) { //일치할때 추가하라
+		if(count == 1) { //일치할때 
 			
-			return userDAO.insertUser(loginId, password, name, email, phoneNumber);
+			return userDAO.insertUser(loginId, password, name, email, phoneNumber);//추가하라
 			
 		} else {
 			
