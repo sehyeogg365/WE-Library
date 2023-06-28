@@ -18,6 +18,20 @@
 	<div id="wrap" class="">
 	<c:import url="/WEB-INF/jsp/include/header.jsp"/>
 	
+	<section class="contents d-flex justify-content-center">
+		<div class="login-box mt-3">
+			<h2 class="text-center mt-3"><b>로그인</b></h2>
+		
+			<input type="text" id="loginIdInput" placeholder="로그인 ID" class="form-control mt-4">
+			<input type="password" id="passwordInput" placeholder="비밀번호" class="form-control mt-4">
+			
+			<button type="button" class="btn btn-primary btn-block mt-3 mb-3" id="loginBtn">로그인</button>
+		</div>
+	
+	
+	</section>
+	
+		
 	<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
 	</div>
 </body>

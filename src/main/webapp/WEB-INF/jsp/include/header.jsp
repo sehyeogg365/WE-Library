@@ -21,8 +21,8 @@
 			</nav>
 			
 			<div class="d-flex align-items-center">
-				<h3><a href="#" class="text-dark font-weight-bold">로그인</a></h3>
-				<h3 class="ml-3"><a href="#" class="text-dark font-weight-bold">회원가입</a></h3>
+				<h3><a href="/user/signin/view" class="text-dark font-weight-bold">로그인</a></h3>
+				<h3 class="ml-3"><a href="/user/signup/view" class="text-dark font-weight-bold">회원가입</a></h3>
 				<h3></h3>
 			</div>
 			

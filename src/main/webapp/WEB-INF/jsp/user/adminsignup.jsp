@@ -15,34 +15,16 @@
 	<link rel="stylesheet" href="/static/css/style.css" type="text/css">
 </head>
 <body>
-	<div id="wrap" class="bg-danger">
-		<header class="bg-success d-flex justify-content-between">
-			<h1 class="d-flex align-items-center">WE-Library</h1>
-			
-			<nav class="d-flex align-items-center">
-				<ul class="nav nav-fill">
-					<li class="nav-item"><a href="#" class="nav-link text-white font-weight-bold">자료 검색</a></li>
-					<li class="nav-item"><a href="#" class="nav-link text-white font-weight-bold">이용 안내</a></li>
-					<li class="nav-item"><a href="#" class="nav-link text-white font-weight-bold">문화행사/참여</a></li>
-					<li class="nav-item"><a href="#" class="nav-link text-white font-weight-bold">내 서재</a></li>
-				</ul>
-			</nav>
-			
-			<div class="d-flex align-items-center">
-				<h3><a href="#" class="text-white font-weight-bold">로그인</a></h3>
-				<h3 class="ml-3"><a href="#" class="text-white font-weight-bold">회원가입</a></h3>
-				<h3></h3>
-			</div>
-			
-		</header>
+	<div id="wrap" class="">
+		<c:import url="/WEB-INF/jsp/include/header.jsp"/>
 		
-		<section class="contents d-flex justify-content-center bg-danger">
-			<div class="join-box bg-secondary mt-3">
+		<section class="contents d-flex justify-content-center ">
+			<div class="join-box  mt-3">
 				<h2 class="text-center mt-3"><b>회원 가입</b></h2>
 				<div class="d-flex">
-					<input type="text" id="loginIdInput" placeholder="로그인 ID" class="form-control mt-4">
+					<input type="text" id="loginIdInput" placeholder="로그인 ID" class="form-control mt-4 col-9">
 					
-					<button type="button" class="btn btn-primary btn-block" id="duplicateBtn">중복확인</button>
+					<button type="button" class="btn btn-primary btn-block col-3" id="duplicateBtn">중복확인</button>
 				</div>	
 					<div id = "duplicated" class="small text-danger d-none">아이디가 중복됩니다.</div>
 					<div id = "nonDuplicated" class="small text-info d-none">사용할수 있는 아이디 입니다.</div>
@@ -94,10 +76,7 @@
 		
 		
 	
-		<footer class="bg-primary mt-3">
-		
-		
-		</footer>
+		<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
 	</div>
 	
 	<script>

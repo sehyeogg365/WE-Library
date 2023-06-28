@@ -24,9 +24,9 @@
 			<div class="join-box mt-3">
 				<h2 class="text-center mt-3"><b>회원 가입</b></h2>
 				<div class="d-flex justify-content-center">
-					<input type="text" id="loginIdInput" placeholder="로그인 ID" class="form-control mt-4 col-10">
+					<input type="text" id="loginIdInput" placeholder="로그인 ID" class="form-control mt-4 col-9">
 					
-					<button type="button" class="btn btn-primary btn-block col-2" id="duplicateBtn">중복확인</button>
+					<button type="button" class="btn btn-primary btn-block col-3" id="duplicateBtn">중복확인</button>
 				</div>	
 					<div id = "duplicated" class="small text-danger d-none ">아이디가 중복됩니다.</div>
 					<div id = "nonDuplicated" class="small text-info d-none ">사용할수 있는 아이디 입니다.</div>
