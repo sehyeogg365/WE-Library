@@ -8,6 +8,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+	<footer class="mt-3 d-flex justify-content-center align-items-center">
+		Copyright © WE-Library 2023
+		
+	</footer>
 </body>
 </html>

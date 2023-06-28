@@ -17,25 +17,8 @@
 <body>
 
 	<div id="wrap" class="bg-danger">
-		<header class="bg-success d-flex justify-content-between">
-			<h1 class="d-flex align-items-center">WE-Library</h1>
-			
-			<nav class="d-flex align-items-center">
-				<ul class="nav nav-fill">
-					<li class="nav-item"><a href="#" class="nav-link text-white font-weight-bold">자료 검색</a></li>
-					<li class="nav-item"><a href="#" class="nav-link text-white font-weight-bold">이용 안내</a></li>
-					<li class="nav-item"><a href="#" class="nav-link text-white font-weight-bold">문화행사/참여</a></li>
-					<li class="nav-item"><a href="#" class="nav-link text-white font-weight-bold">내 서재</a></li>
-				</ul>
-			</nav>
-			
-			<div class="d-flex align-items-center">
-				<h3><a href="#" class="text-white font-weight-bold">로그인</a></h3>
-				<h3 class="ml-3"><a href="#" class="text-white font-weight-bold">회원가입</a></h3>
-				<h3></h3>
-			</div>
-			
-		</header>
+		<c:import url="/WEB-INF/jsp/include/header.jsp"/>
+		
 		
 		<section class="contents d-flex justify-content-center bg-danger">
 			<div class="join-box bg-secondary mt-3">
@@ -91,11 +74,8 @@
 		
 		
 		
-	
-		<footer class="bg-primary mt-3">
+		<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
 		
-		
-		</footer>
 	</div>
 
 	<script>
