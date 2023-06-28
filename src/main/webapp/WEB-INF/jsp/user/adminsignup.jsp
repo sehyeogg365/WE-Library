@@ -60,7 +60,7 @@
 						<div class="d-flex align-items-center">-</div>
 						<input type="text" id="phoneNumberInput3" placeholder="전화번호" class="form-control mt-4 ml-1 col-3">
 					</div>
-					<input type="text" id="isAdminInput" placeholder="관리자여부" class="form-control mt-4">
+					<input type="text" id="isAdminInput" value="1" class="form-control mt-4" readonly>
 					<input type="text" id="certificationInput" placeholder="인증번호" class="form-control mt-4">
 					<!-- 북마크 명 바꾸고 커밋해보기 -->
 					<button type="button" class="btn btn-primary btn-block mt-3 mb-3" id="joinBtn">회원 가입</button>
@@ -170,10 +170,10 @@
 				alert("비밀번호를 확인하세요.");
 				return ;	
 			}
-			if(password != passwordConfirm){
-				alert("비밀번호가 일치하지 않습니다.");
-				return ;
-			}
+			//if(password != passwordConfirm){
+			//	alert("비밀번호가 일치하지 않습니다.");
+			//	return ;
+			//}
 			if(emailId == ""){
 				alert("이메일을 입력하세요.");
 				return ;	
