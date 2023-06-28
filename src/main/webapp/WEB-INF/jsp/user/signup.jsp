@@ -24,14 +24,15 @@
 			<div class="join-box mt-3">
 				<h2 class="text-center mt-3"><b>회원 가입</b></h2>
 				<div class="d-flex justify-content-center">
-					<input type="text" id="loginIdInput" placeholder="로그인 ID" class="form-control mt-4 col-9">
+					<input type="text" id="loginIdInput" placeholder="로그인 ID" class="form-control mt-4 col-10">
 					
 					<button type="button" class="btn btn-primary btn-block col-2" id="duplicateBtn">중복확인</button>
 				</div>	
-					<div id = "duplicated" class="small text-danger d-none">아이디가 중복됩니다.</div>
-					<div id = "nonDuplicated" class="small text-info d-none">사용할수 있는 아이디 입니다.</div>
+					<div id = "duplicated" class="small text-danger d-none ">아이디가 중복됩니다.</div>
+					<div id = "nonDuplicated" class="small text-info d-none ">사용할수 있는 아이디 입니다.</div>
+					
 					<input type="password" id="passwordInput" placeholder="비밀번호" class="form-control mt-4">
-					<input type="password" id="passwordConfirmInput" placeholder="비밀번호 확인" class="form-control mt-4 col-11">
+					<input type="password" id="passwordConfirmInput" placeholder="비밀번호 확인" class="form-control mt-4">
 					
 					<input type="text" id="nameInput" placeholder="이름" class="form-control mt-4">
 					
@@ -110,7 +111,7 @@
 			}
 			
 			$.ajax({
-				type:get
+				type:"get"
 				, url:"/user/is_duplicate"
 				, data: {"loginId":id}
 				, success:function(data){
@@ -118,16 +119,16 @@
 					isDuplicateId = data.is_duplicate//중복된 아이디 여부 여기선 중복된게 디폴트 값 
 					
 					if(data.is_duplicate){//중복될시
-						//리무브 할클래스
-						//나타나야할 클래스
+						$("#duplicated").removeClass("d-none");//리무브 할클래스
+						$("#nonDuplicated").addClass("d-none");//add할 클래스
 					} else {//아닐시
-						//리무브 할클래스
-						//나타나야할 클래스
+						$("#nonDuplicated").removeClass("d-none");//리무브 할클래스
+						$("#duplicated").addClass("d-none");//add할 클래스
 					}
 					
 				}
 				, error:function(){
-					
+					alert("중복확인 에러");
 				}
 				
 			});

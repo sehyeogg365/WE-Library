@@ -57,10 +57,10 @@
 						
 						 <div class="mt-4 col-1">@</div>
 						 <select class="form-control mt-4 col-6" id="emailSelctor">
-						 	<option value="naver.com">naver.com</option>
-						 	<option value="daum.com">daum.com</option>
-						 	<option value="kakao.com">kakao.com</option>
-						 	<option value="gmail.com">gmail.com</option>
+						 	<option value="@naver.com">naver.com</option>
+						 	<option value="@daum.com">daum.com</option>
+						 	<option value="@kakao.com">kakao.com</option>
+						 	<option value="@gmail.com">gmail.com</option>
 						 	
 						 </select>
 					 
@@ -108,7 +108,15 @@
 		
 		var isDuplicateId = true;
 		
-		
+		$("#loginIdInput").on("input", function(){
+			 //중복 관련된 상태 초기화
+			 isChecked = false;
+			 isDuplicateId = true;
+			 
+			 $("#duplicated").addClass("d-none");
+			 $("#nonDuplicated").addClass("d-none");
+			//다시 지우면 중복확인 상태가 초기화
+		});
 		
 		
 		$("#duplicateBtn").on("click", function(){
@@ -123,8 +131,30 @@
 			}
 			
 			$.ajax({
+				type:"get"
+				, url:"/user/is_duplicate"
+				, data: {"loginId":id}
+				, success:function(data){
+					isChecked = true; //체크여부 여기선 지역변수로 무조건 트루
+					isDuplicateId = data.is_duplicate//중복된 아이디 여부 여기선 중복된게 디폴트 값 
+					
+					if(data.is_duplicate){//중복될시
+						$("#duplicated").removeClass("d-none");//리무브 할클래스
+						$("#nonDuplicated").addClass("d-none");//add할 클래스
+					} else {//아닐시
+						$("#nonDuplicated").removeClass("d-none");//리무브 할클래스
+						$("#duplicated").addClass("d-none");//add할 클래스
+					}
+					
+				}
+				, error:function(){
+					alert("중복확인 에러");
+				}
 				
 			});
+			
+			
+		});
 			
 			
 		});
@@ -181,14 +211,32 @@
 			}
 			
 			//중복 체크가 안됐을떄
-			
+			if(!isChecked) {
+				alert("중복체크를 진행해주세요.");
+				return ;
+			}
 			//중복된 아이디 일떄
+			if(isDuplicateId) {
+				alert("아이디가 중복됩니다.");
+				return ;
+			}
 			
 			
 			$.ajax({
-				type: ""
-				, url: ""
-				, data:{}
+				type: "post"
+				, url: "/user/adminsignup"
+				, data:{"loginId":id, "password":password, "name":name, "email":email, "phoneNumber":phoneNumber}
+				, success:function(data){
+					if(data.result == "success"){
+						alert("회원가입 성공");
+						location.href = "/user/signin/view";
+					} else{
+						alert("회원가입 실패");
+					}
+				}
+				,error:function(){
+					alert("회원가입 오류");
+				}
 				
 			});
 			
