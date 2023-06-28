@@ -9,9 +9,9 @@
 </head>
 <body>
 	<footer class="mt-3">
-		<div class="">주소:</div>
-		<div class="">Copyright © WE-Library 2023</div>
-		
+		<div class="ml-2">주소:</div>
+		<div class="ml-2">Copyright © WE-Library 2023</div>
+		<hr>
 		
 	</footer>
 </body>

@@ -116,7 +116,7 @@
 				, data: {"loginId":id}
 				, success:function(data){
 					isChecked = true; //체크여부 여기선 지역변수로 무조건 트루
-					isDuplicateId = data.is_duplicate//중복된 아이디 여부 여기선 중복된게 디폴트 값 
+					isDuplicateId = data.is_duplicate;//중복된 아이디 여부 여기선 중복된게 디폴트 값 
 					
 					if(data.is_duplicate){//중복될시
 						$("#duplicated").removeClass("d-none");//리무브 할클래스

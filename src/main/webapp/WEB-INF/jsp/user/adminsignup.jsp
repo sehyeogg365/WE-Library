@@ -20,7 +20,7 @@
 		
 		<section class="contents d-flex justify-content-center ">
 			<div class="join-box  mt-3">
-				<h2 class="text-center mt-3"><b>회원 가입</b></h2>
+				<h2 class="text-center mt-3"><b>관리자 회원 가입</b></h2>
 				<div class="d-flex">
 					<input type="text" id="loginIdInput" placeholder="로그인 ID" class="form-control mt-4 col-9">
 					
@@ -115,7 +115,7 @@
 				, data: {"loginId":id}
 				, success:function(data){
 					isChecked = true; //체크여부 여기선 지역변수로 무조건 트루
-					isDuplicateId = data.is_duplicate//중복된 아이디 여부 여기선 중복된게 디폴트 값 
+					isDuplicateId = data.is_duplicate;//중복된 아이디 여부 여기선 중복된게 디폴트 값 
 					
 					if(data.is_duplicate){//중복될시
 						$("#duplicated").removeClass("d-none");//리무브 할클래스
@@ -135,8 +135,7 @@
 			
 		});
 			
-			
-		});
+		
 		
 		
 		
@@ -210,7 +209,7 @@
 			$.ajax({
 				type: "post"
 				, url: "/user/adminsignup"
-				, data:{"loginId":id, "password":password, "name":name, "email":email, "phoneNumber":phoneNumber}
+				, data:{"loginId":id, "password":password, "name":name, "email":email, "phoneNumber":phoneNumber, "certificationNumber":certificationNumber}
 				, success:function(data){
 					if(data.result == "success"){
 						alert("회원가입 성공");
@@ -231,8 +230,8 @@
 			
 		});
 		
-		
 	});
+	
 	
 	</script>
 

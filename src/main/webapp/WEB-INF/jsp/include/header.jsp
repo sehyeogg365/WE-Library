@@ -9,7 +9,7 @@
 </head>
 <body>
 <header class="d-flex justify-content-between">
-			<h1 class="d-flex align-items-center">WE-Library</h1>
+			<h1 class="d-flex align-items-center ml-2">WE-Library</h1>
 			
 			<nav class="d-flex align-items-center">
 				<ul class="nav nav-fill">
@@ -20,10 +20,10 @@
 				</ul>
 			</nav>
 			
-			<div class="d-flex align-items-center">
+			<div class="d-flex align-items-center mr-2">
 				<h3><a href="/user/signin/view" class="text-dark font-weight-bold">로그인</a></h3>
 				<h3 class="ml-3"><a href="/user/signup/view" class="text-dark font-weight-bold">회원가입</a></h3>
-				<h3></h3>
+				
 			</div>
 			
 		</header>
