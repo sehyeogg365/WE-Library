@@ -36,3 +36,25 @@ footer{
 	
 }
 
+.contents > .main-page {
+	
+	width:1200px;
+	
+}
+
+.main-page > .main-contents{
+	
+	height:800px;
+	
+}
+.main-page > .sub-contents{
+	
+	
+	height:800px;
+}
+.main-page > .sub-contents2{
+	
+	
+	height:800px;
+}
+
