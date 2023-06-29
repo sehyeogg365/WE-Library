@@ -3,6 +3,8 @@ package com.marondal.welibrary.user;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.marondal.welibrary.user.bo.UserBO;
+import com.marondal.welibrary.user.model.User;
 
 @RestController
 @RequestMapping("/user")
@@ -98,7 +101,37 @@ public class UserRestController {
 	}
 	
 	
-	
+	//로그인
+	@PostMapping("/signin")
+	public Map<String, String> signin(@RequestParam("loginId") String loginId
+									 , @RequestParam("password") String password
+									 , HttpSession session 
+									  ){
+		User user = userBO.getUser(loginId, password);//유저 객체 
+		
+		Map<String, String> resultMap = new HashMap<>();
+		
+		if(user != null) {
+			
+			resultMap.put("result", "success");
+			
+			session.setAttribute("userId", user.getId());
+			session.setAttribute("loginId", user.getLoginId());//사실상 패스워드도 불러올일은 없다고 본다.
+			session.setAttribute("userName", user.getName());
+			
+		} else {
+			
+			resultMap.put("result", "fail");
+		}
+		
+		
+		
+		
+		
+		return null;
+		
+		
+	}
 	
 	
 	

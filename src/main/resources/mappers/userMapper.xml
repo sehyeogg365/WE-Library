@@ -85,5 +85,20 @@
   
   </select>
   
+  <!-- 로그인 -->
+  <select id="selectUser" parameterType="map" resultType="com.marondal.welibrary.user.model.User">
+  	SELECT
+  		`loginId`
+  		, `password`
+  	FROM
+  		`user`
+  	WHERE
+  		`loginId` = #{loginId}
+  		AND `password` = #{password}
+  </select>
+  
+  <!-- id찾기 -->
+  <!-- pw재발급 -->
+  
   
   </mapper>

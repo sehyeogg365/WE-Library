@@ -3,6 +3,8 @@ package com.marondal.welibrary.user.dao;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
+import com.marondal.welibrary.user.model.User;
+
 @Repository
 public interface UserDAO {
 
@@ -31,6 +33,11 @@ public interface UserDAO {
 	
 	//인증번호 일치 확인
 	public int selectcertificationNumber(@Param("certificationNumber") String certificationNumber);
+	
+	
+	//로그인
+	public User selectUser(@Param("loginId") String loginId
+			     		   , @Param("password") String password);	
 	
 	
 	

@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import com.marondal.welibrary.common.EncryptService;
 import com.marondal.welibrary.user.dao.UserDAO;
+import com.marondal.welibrary.user.model.User;
 
 @Service
 public class UserBO {
@@ -21,15 +22,11 @@ public class UserBO {
 			, String email	
 			, String phoneNumber	
 			) {
-		
-		
+	
 		String encryptPassword = EncryptService.md5(password);
 		
 		//인증번호가 일치하는지 여부 확인 bo 서만 수행하면 된다고 하심
 		//일치하면 회원가입 진행 
-		
-		
-		
 		
 		return userDAO.insertUser(loginId, encryptPassword, name, email, phoneNumber);
 		
@@ -71,9 +68,11 @@ public class UserBO {
 		
 		int count = userDAO.selectcertificationNumber(certificationNumber);
 		
+		String encryptPassword = EncryptService.md5(password);
+		
 		if(count == 1) { //일치할때 
 			
-			return userDAO.insertAdminUser(loginId, password, name, email, phoneNumber, isAdmin);//추가하라
+			return userDAO.insertAdminUser(loginId, encryptPassword, name, email, phoneNumber, isAdmin);//추가하라
 			
 		} else {
 			
@@ -81,9 +80,26 @@ public class UserBO {
 		}
 		
 		
+	}
+	
+	
+	//로그인
+	public User getUser(String loginId
+						, String password) {
+		//똑같은 방식의 암호화
+		String ecyptPassword = EncryptService.md5(password);
+		
+		return userDAO.selectUser(loginId, ecyptPassword);
 		
 		
 	}
+	
+	
+	// id찾기
+	
+	// pw 재발급
+	
+	// 회원 탈퇴
 	
 	
 	
