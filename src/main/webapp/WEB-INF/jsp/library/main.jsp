@@ -30,11 +30,12 @@
 					통합검색
 				</div>
 				
-				<form>
-					<div class="search d-flex justif">
-		                <input type="text" value="" placeholder="도서명 또는 저자명을 입력해주세요"class="col-12">
-		                <button type="submit" class="btn">검색</button>
-		                
+				<form action="#" method="get" class="col-9"><!-- bootstrap input group 검색 -->
+					<div class="search d-flex justify-content-center col-12">
+		                <input type="text" value="" placeholder="도서명 또는 저자명을 입력해주세요"class="form-control">
+		                <div class="input-group-append">
+		                	<button type="submit" class="btn">검색</button>
+		                </div>
 		            </div>
 		         </form>
 		         </nav>   
@@ -45,17 +46,34 @@
 					<article class="main-contents bg-warning col-4">
 						<div class="">메인 컨텐츠</div>
 						
-						<div class="">
-							<input type="text" id="loginIdInput" placeholder="로그인 ID" class="form-control mt-4">
-							<input type="password" id="passwordInput" placeholder="비밀번호" class="form-control mt-4">
-						
+						<div class="d-flex loginbox bg-success col-12">
+							<div class="col-6 bg-secondary">
+								<div class=""><h4>로그인</h4></div>
+								<input type="text" id="loginIdInput" placeholder="로그인 ID" class="form-control mt-4">
+								<input type="password" id="passwordInput" placeholder="비밀번호" class="form-control mt-4">
+								
+							</div>
+							<div class="col-6 mt-5">
+								<button type="button" class= "btn btn-primary mt-3" style="width:80px height:60px">로그인</button>
+							</div>		
+							
 						</div>
 						
-						<div class="d-flex justify-content-center">
+						<div class="d-flex justify-content-center mt-3">
 							<div class="">회원가입</div>
 							<div class="ml-2">아이디찾기</div>
 							<div class="ml-2">비밀번호 재발급</div>
 						</div>
+						
+						<div class="bg-success mt-3">
+							<div class="">내 서재</div>
+							<div class="">대출조회/반납연기</div>
+							<div class="">내 서재</div>
+							<div class="">내 서재</div>
+							<div class="">내 서재</div>
+							
+						</div>
+						
 						
 					</article>
 					<article class="sub-contents bg-danger col-4">
