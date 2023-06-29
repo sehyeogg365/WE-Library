@@ -126,11 +126,7 @@ public class UserRestController {
 			resultMap.put("result", "fail");
 		}
 		
-		
-		
-		
-		
-		return null;
+		return resultMap;
 		
 		
 	}
