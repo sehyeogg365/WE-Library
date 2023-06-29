@@ -117,7 +117,6 @@ public class UserRestController {
 			
 			session.setAttribute("userId", user.getId());
 			session.setAttribute("loginId", user.getLoginId());//사실상 패스워드도 불러올일은 없다고 본다.
-			//session.setAttribute("password", user.getPassword());
 			session.setAttribute("userName", user.getName());
 			session.setAttribute("isAdmin", user.getIsAdmin());//사실상 이것도 있어야 할것같다. 관리자 여부에 따라 보여지는것 안보여지는것 나눠야 함 
 			
