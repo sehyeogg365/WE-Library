@@ -87,9 +87,9 @@ public class UserBO {
 	public User getUser(String loginId
 						, String password) {
 		//똑같은 방식의 암호화
-		String ecyptPassword = EncryptService.md5(password);
+		String ecryptPassword = EncryptService.md5(password);
 		
-		return userDAO.selectUser(loginId, ecyptPassword);
+		return userDAO.selectUser(loginId, ecryptPassword);
 		
 		
 	}

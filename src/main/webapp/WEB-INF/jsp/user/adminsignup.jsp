@@ -216,13 +216,13 @@
 				return ;
 			}
 			
-			alert(id);
-			alert(password);
-			alert(name);
-			alert(email);
-			alert(phoneNumber);
-			alert(isAdmin);
-			alert(certificationNumber);
+			//alert(id);
+			//alert(password);
+			//alert(name);
+			//alert(email);
+			//alert(phoneNumber);
+			//alert(isAdmin);
+			//alert(certificationNumber);
 			
 			
 			$.ajax({

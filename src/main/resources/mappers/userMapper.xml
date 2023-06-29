@@ -88,13 +88,20 @@
   <!-- 로그인 -->
   <select id="selectUser" parameterType="map" resultType="com.marondal.welibrary.user.model.User">
   	SELECT
-  		`loginId`
+  		`id`
+  		,`loginId`
   		, `password`
+  		, `name`
+  		, `email`
+  		, `phoneNumber`
+  		, `isAdmin`
+  		, `createdAt` 
+		, `updatedAt` 
   	FROM
   		`user`
   	WHERE
   		`loginId` = #{loginId}
-  		AND `password` = #{password}
+  		AND `password` = #{password};
   </select>
   
   <!-- id찾기 -->
