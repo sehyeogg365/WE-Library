@@ -53,7 +53,7 @@
 							<c:choose>
 								<c:when test = "${not empty userId }">
 									<div class="">${userName} 님 환영합니다! </div>
-									<a href="/user/signout" class="btn btn-sm btn-primary">로그아웃</a>
+									<a href="/user/signout" class="btn btn-sm btn-primary col-12">로그아웃</a>
 								</c:when>
 								<c:otherwise>
 								
