@@ -48,14 +48,25 @@
 						
 						<div class="d-flex loginbox bg-success col-12">
 							<div class="col-6 bg-secondary">
-								<div class=""><h4>로그인</h4></div>
-								<input type="text" id="loginIdInput" placeholder="로그인 ID" class="form-control mt-4">
-								<input type="password" id="passwordInput" placeholder="비밀번호" class="form-control mt-4">
+							
+							<!-- 로그인 되었을때 ~님 환영합니다 + 로그아웃 버튼  --><!-- 로그인 안되었을때 아이디 비번 인풋창 + 회원가입 + 아이디찾기 + 비밀번호 재발급 + 로그인 버튼 -->	
+							<c:choose>
+								<c:when test = "${not empty userId }">
+									<div class="">${userName} 님 환영합니다! </div>
+									<a href="/user/signout" class="btn btn-sm btn-primary">로그아웃</a>
+								</c:when>
+								<c:otherwise>
 								
+									<div class=""><h4>로그인</h4></div>
+									<input type="text" id="loginIdInput" placeholder="로그인 ID" class="form-control mt-4">
+									<input type="password" id="passwordInput" placeholder="비밀번호" class="form-control mt-4">
+									<div class="col-6 mt-5">
+										<button type="button" id="loginBtn" class= "btn btn-primary mt-3" style="width:80px height:60px">로그인</button>
+									</div>		
+								</c:otherwise>
+							</c:choose>
 							</div>
-							<div class="col-6 mt-5">
-								<button type="button" class= "btn btn-primary mt-3" style="width:80px height:60px">로그인</button>
-							</div>		
+							
 							
 						</div>
 						
@@ -98,6 +109,55 @@
 	</div>
 
 	<script>
+	$(document).ready(function(){
+		
+		$("#loginBtn").on("click", function(){
+			let id = $("#loginIdInput").val();
+			let password = $("#passwordInput").val();
+	
+			if(id == ""){
+				alert("아이디를 입력하세요.");
+				return;
+				
+			}
+			
+			if(password == ""){
+				alert("비밀번호를 입력하세요.");
+				return;	
+			}
+			
+			alert(id);
+			alert(password);
+			
+			$.ajax({
+				type:"post"
+				, url: "/user/signin"
+				, data: {"loginId": id, "password":password}
+				, success:function(data){
+					if(data.result == "success"){
+						location.href="/library/main/view";
+						alert("로그인 성공");
+					} else {
+						alert("아이디/비밀번호가 일치하지 않습니다.");
+					}
+				}
+			,error:function(){
+				alert("로그인 에러");
+			}
+				
+				
+			
+			
+		});
+		
+		
+		
+		
+		});
+		
+		
+		
+	});
 	
 	
 	</script>

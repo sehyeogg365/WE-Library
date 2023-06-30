@@ -46,7 +46,7 @@ public class UserController {
 		session.removeAttribute("userName");
 		session.removeAttribute("isAdmin");
 		
-		return "redirect:/user/signin/view";
+		return "redirect:/library/main/view";
 		
 		
 	}
