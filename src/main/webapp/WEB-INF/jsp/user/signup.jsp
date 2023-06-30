@@ -169,12 +169,10 @@
 				return ;
 			}
 			
-			
-			
+		
 			if(name == ""){
 				alert("이름을 확인하세요.");
-				return ;
-				
+				return ;	
 			}
 			
 			if(emailId == ""){
