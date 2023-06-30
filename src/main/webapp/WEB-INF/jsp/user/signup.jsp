@@ -33,7 +33,7 @@
 					
 					<input type="password" id="passwordInput" placeholder="비밀번호" class="form-control mt-4">
 					<input type="password" id="passwordConfirmInput" placeholder="비밀번호 확인" class="form-control mt-4">
-					<!-- 패스워드 컨펌 다시지우고 해보기 -->
+					
 					<input type="text" id="nameInput" placeholder="이름" class="form-control mt-4">
 					
 					<div class="d-flex align-items-center">
@@ -142,7 +142,7 @@
 			
 			let id = $("#loginIdInput").val();
 			let password = $("#passwordInput").val();
-			//패스워드 컨펌다시지우고 해보기
+			let passwordConfirm = $("#passwordConfirmInput").val();
 			let name = $("#nameInput").val();
 			let emailId = $("#emailIdInput").val();
 			let emailDomain = $("#emailSelctor").val();
@@ -158,12 +158,18 @@
 				alert("아이디를 입력하세요.");
 				return ;	
 			}
+			
 			if(password == ""){
 				alert("비밀번호를 입력하세요.");
 				return ;	
 			}
 			
-			//패스워드 컨펌다시지우고 해보기
+			if(password != passwordConfirm){
+				alert("비밀번호가 일치하지 않습니다.");
+				return ;
+			}
+			
+			
 			
 			if(name == ""){
 				alert("이름을 확인하세요.");
