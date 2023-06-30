@@ -9,7 +9,7 @@
 </head>
 <body>
 <header class="d-flex justify-content-between">
-			<h1 class="d-flex align-items-center ml-2">WE-Library</h1>
+			<h1 class="d-flex align-items-center ml-2"><a href="/library/main/view" class="text-dark">WE-Library</a></h1>
 			
 			<nav class="d-flex align-items-center">
 				<ul class="nav nav-fill">
@@ -21,8 +21,19 @@
 			</nav>
 			
 			<div class="d-flex align-items-center mr-2">
-				<h3><a href="/user/signin/view" class="text-dark font-weight-bold">로그인</a></h3>
-				<h3 class="ml-3"><a href="/user/signup/view" class="text-dark font-weight-bold">회원가입</a></h3>
+				<!-- 조건문만들기 로그인 되었을때 안되었을때 -->
+				
+				<c:choose>
+					<c:when test = "${not empty userId}">
+						<h3><a href="/user/signout" class="text-dark font-weight-bold">로그아웃</a></h3>
+						<h3 class="ml-3"><a href="/user/mypage/view" class="text-dark font-weight-bold">정보수정</a></h3>
+					</c:when>
+					<c:otherwise>
+						<h3><a href="/user/signin/view" class="text-dark font-weight-bold">로그인</a></h3>
+						<h3 class="ml-3"><a href="/user/signup/view" class="text-dark font-weight-bold">회원가입</a></h3>
+					</c:otherwise>
+				</c:choose>
+				
 				
 			</div>
 			

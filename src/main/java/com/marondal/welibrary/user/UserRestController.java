@@ -106,7 +106,7 @@ public class UserRestController {
 	public Map<String, String> signin(@RequestParam("loginId") String loginId
 									 , @RequestParam("password") String password
 									 , HttpSession session 
-									  ){
+									 ){
 		User user = userBO.getUser(loginId, password);//유저 객체 
 		
 		Map<String, String> resultMap = new HashMap<>();
@@ -128,15 +128,9 @@ public class UserRestController {
 		
 		return resultMap;
 		
-		
 	}
 	
-	
-	
-	
-	
-	
-	
+
 	
 	
 
