@@ -46,34 +46,34 @@
 					<article class="main-contents bg-warning col-4">
 						<div class="">메인 컨텐츠</div>
 						
-						<div class="loginbox bg-info col-12">
+						<div class="main-login-box bg-info col-12">
 
-							<div class="bg-secondary main-login-box">
+							<div class="bg-secondary ">
 							<c:choose>
 							
 							
 								<c:when test = "${not empty userId }">
-									<div class="mt-3"><h3>${userName} 님 환영합니다!</h3>  </div>
+									<div class="mt-3 ml-3"><h3>${userName} 님 환영합니다!</h3>  </div>
 									<div class="text-center">
-									<a href="/user/signout" class="btn btn-primary col-10">로그아웃</a>
+									<a href="/user/signout" class="btn btn-primary col-11">로그아웃</a>
 									</div>
 									<hr>
 									<div class="d-flex justify-content-between mt-3">
-										<a href="#" class="btn btn-primary">내서재</a>
-										<a href="/user/mypage" class="btn btn-primary">정보수정</a>
+										<a href="#" class="btn btn-primary ml-2 col-5">내서재</a>
+										<a href="/user/mypage/view" class="btn btn-primary mr-2 col-5">정보수정</a>
 									</div>
 								
 								</c:when>
 								<c:otherwise>
 								
 									<div class=""><h4>로그인</h4></div>
-									<div class="d-flex">
+									<div class="d-flex justify-content-center">
 										<div class="">
 											<input type="text" id="loginIdInput" placeholder="로그인 ID" class="form-control mt-4">
 											<input type="password" id="passwordInput" placeholder="비밀번호" class="form-control mt-4">
 										</div>
-										<div class="mt-2">
-											<button type="button" id="loginBtn" class= "btn btn-primary mt-3" style="">로그인</button>
+										<div class="mt-1 ml-1">
+											<button type="button" id="loginBtn" class= "loginbtn btn btn-primary mt-3" style="">로그인</button>
 										</div>	
 									
 									</div>
@@ -92,11 +92,11 @@
 						
 						
 						<div class="bg-success mt-3">
-							<div class="">내 서재</div>
+							<div class=""><h4>내 서재</h4></div>
 							<div class="d-flex justify-content-between flex-wrap">
 								
 								<div class="">대출조회/반납연기</div>
-								<div class="ml-5">예약취소/ 조회</div><br>
+								<div class="ml-5">예약취소/조회</div>
 								
 								<div class="">상호대차신청조회</div>
 						
@@ -109,6 +109,22 @@
 					</article>
 					<article class="sub-contents bg-danger col-4">
 						<div class="">서브 컨텐츠</div>
+						<div class="d-flex">
+							<div class=""><a class="btn btn-primary">공지사항</a></div>
+							<div class="ml-2"><a class="btn btn-primary">행사안내</a></div>
+						</div>
+						<hr>	
+			
+						<div class="bg-primary">
+							<div class=""><a href="#" class="text-dark">[역삼푸른솔 도서관]분신물폐기 안내</a>  2023.07.03</div>
+							<div class=""><a href="#" class="text-dark">[역삼푸른솔 도서관] 7월 휴관일 안내</a>  2023.07.03</div>
+							<div class=""><a href="#" class="text-dark">[역삼푸른솔 도서관][신착도서]</a> 6월 2023.06.29</div>
+							<div class=""><a href="#" class="text-dark"></a></div>
+							<div class=""><a href="#" class="text-dark"></a></div>
+						
+						</div>
+						
+						
 					</article>
 					<article class="sub-contents2 bg-info col-4">
 						<div class="">서브 컨텐츠2</div>
@@ -127,7 +143,12 @@
 		
 		<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
 	</div>
-
+	<style>
+		.loginbtn{
+			width:110px;
+			height:110px;
+		}
+	</style>
 	<script>
 	$(document).ready(function(){
 		
