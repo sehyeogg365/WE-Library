@@ -51,6 +51,22 @@ public class UserController {
 		
 	}
 	
+	@GetMapping("/find_id")
+	public String findId() {
+		
+		return "/user/find_id";
+			
+	}
+	
+	@GetMapping("/get_pw")
+	public String getPw() {
+		
+		return "/user/get_pw";
+		
+	}
+	
+	
+	
 	
 	
 

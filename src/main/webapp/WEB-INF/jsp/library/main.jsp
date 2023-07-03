@@ -46,23 +46,42 @@
 					<article class="main-contents bg-warning col-4">
 						<div class="">메인 컨텐츠</div>
 						
-						<div class="d-flex loginbox bg-success col-12">
-							<div class="col-6 bg-secondary">
-							
-							<!-- 로그인 되었을때 ~님 환영합니다 + 로그아웃 버튼  --><!-- 로그인 안되었을때 아이디 비번 인풋창 + 회원가입 + 아이디찾기 + 비밀번호 재발급 + 로그인 버튼 -->	
+						<div class="loginbox bg-info col-12">
+
+							<div class="bg-secondary main-login-box">
 							<c:choose>
+							
+							
 								<c:when test = "${not empty userId }">
-									<div class="">${userName} 님 환영합니다! </div>
-									<a href="/user/signout" class="btn btn-sm btn-primary col-12">로그아웃</a>
+									<div class="mt-3"><h3>${userName} 님 환영합니다!</h3>  </div>
+									<div class="text-center">
+									<a href="/user/signout" class="btn btn-primary col-10">로그아웃</a>
+									</div>
+									<hr>
+									<div class="d-flex justify-content-between mt-3">
+										<a href="#" class="btn btn-primary">내서재</a>
+										<a href="/user/mypage" class="btn btn-primary">정보수정</a>
+									</div>
+								
 								</c:when>
 								<c:otherwise>
 								
 									<div class=""><h4>로그인</h4></div>
-									<input type="text" id="loginIdInput" placeholder="로그인 ID" class="form-control mt-4">
-									<input type="password" id="passwordInput" placeholder="비밀번호" class="form-control mt-4">
-									<div class="col-6 mt-5">
-										<button type="button" id="loginBtn" class= "btn btn-primary mt-3" style="width:80px height:60px">로그인</button>
-									</div>		
+									<div class="d-flex">
+										<div class="">
+											<input type="text" id="loginIdInput" placeholder="로그인 ID" class="form-control mt-4">
+											<input type="password" id="passwordInput" placeholder="비밀번호" class="form-control mt-4">
+										</div>
+										<div class="mt-2">
+											<button type="button" id="loginBtn" class= "btn btn-primary mt-3" style="">로그인</button>
+										</div>	
+									
+									</div>
+									<div class="d-flex justify-content-center mt-3">
+										<div class=""><a href="/user/signup/view" class="text-dark">회원가입</a> |</div>
+										<div class="ml-2"><a href="/user/find_id/view" class="text-dark">아이디 찾기</a> |</div>
+										<div class="ml-2"><a href="/user/get_pw/view" class="text-dark">비밀번호 재발급</a></div>
+									</div>	
 								</c:otherwise>
 							</c:choose>
 							</div>
@@ -70,19 +89,20 @@
 							
 						</div>
 						
-						<div class="d-flex justify-content-center mt-3">
-							<div class="">회원가입</div>
-							<div class="ml-2">아이디찾기</div>
-							<div class="ml-2">비밀번호 재발급</div>
-						</div>
+						
 						
 						<div class="bg-success mt-3">
 							<div class="">내 서재</div>
-							<div class="">대출조회/반납연기</div>
-							<div class="">내 서재</div>
-							<div class="">내 서재</div>
-							<div class="">내 서재</div>
-							
+							<div class="d-flex justify-content-between flex-wrap">
+								
+								<div class="">대출조회/반납연기</div>
+								<div class="ml-5">예약취소/ 조회</div><br>
+								
+								<div class="">상호대차신청조회</div>
+						
+								<div class="ml-5">희망도서신청조회</div>
+								<div class="">관심도서목록</div>
+							</div>
 						</div>
 						
 						
@@ -126,8 +146,8 @@
 				return;	
 			}
 			
-			alert(id);
-			alert(password);
+			//alert(id);
+			//alert(password);
 			
 			$.ajax({
 				type:"post"

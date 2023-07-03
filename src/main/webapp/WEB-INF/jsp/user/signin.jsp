@@ -55,8 +55,8 @@
 				return ;	
 			}
 			
-			alert(id);
-			alert(password);
+			//alert(id);
+			//alert(password);
 			
 			$.ajax({
 				type: "post"
