@@ -26,6 +26,13 @@
 			<input type="password" id="passwordInput" placeholder="비밀번호" class="form-control mt-4">
 			
 			<button type="button" class="btn btn-primary btn-block mt-3 mb-3" id="loginBtn">로그인</button>
+			
+			<div class="d-flex justify-content-between">
+				<a href="/user/find_id/view" class="text-dark">아이디 찾기</a> |
+				<a href="/user/get_pw/view" class="text-dark">비밀번호 재발급</a> |
+				<a href="/user/signup/view" class="text-dark">회원가입</a>
+			</div>
+		
 		</div>
 	
 	

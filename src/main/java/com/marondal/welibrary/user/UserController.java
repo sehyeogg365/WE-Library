@@ -66,6 +66,7 @@ public class UserController {
 		return "/user/get_pw";
 		
 	}
+	
 	@GetMapping("/mypage/view")
 	public String mypage(Model model, @RequestParam("id") int id) {
 		
@@ -73,9 +74,21 @@ public class UserController {
 		
 	}
 	
-
 	
 	
+	@GetMapping("/update_pw/view")
+	public String update_pw() {
+		
+		return "/user/update_pw";
+		
+	}
+	
+	@GetMapping("/withdrawl/view")
+	public String withdrawl() {
+		
+		return "/user/withdrawl";
+		
+	}
 	
 	
 
