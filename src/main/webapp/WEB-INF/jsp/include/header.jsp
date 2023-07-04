@@ -9,9 +9,11 @@
 </head>
 <body>
 <header class="d-flex justify-content-between">
-			<h1 class="d-flex align-items-center ml-2"><a href="/library/main/view" class="text-dark">WE-Library</a></h1>
+			<a href="/library/main/view" class="d-flex align-items-center">
+				<img class="logo" width="70" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FyTyqh%2Fbtsmr38jxKt%2F7KUKXtcBSx5PHpT1BNPI20%2Fimg.png" alt="로고">
+			</a>
 			
-			<nav class="d-flex align-items-center">
+			<nav class="d-flex justify-content-center align-items-center">
 				<ul class="nav nav-fill">
 					<li class="nav-item"><a href="#" class="nav-link text-dark font-weight-bold">자료 검색</a></li>
 					<li class="nav-item"><a href="#" class="nav-link text-dark font-weight-bold">이용 안내</a></li>

@@ -23,16 +23,17 @@
 		<section class="contents bg-success">
 			
 			<div class="main-page">
-				<h2 class="text-center mt-3"><b>메인페이지</b></h2>
+				<h2 class="text-center mt-1"><b>책과 함께꿈꾸는 도서관</b></h2><br>
+				<h2 class="text-center"><b>WE-Library</b></h2>
 				
-				<nav class="main-nav bg-primary d-flex justify-content-center align-items-center">
+				<nav class="main-nav bg-primary d-flex justify-content-center align-items-center col-12">
 				<div class="">
 					통합검색
 				</div>
 				
-				<form action="#" method="get" class="col-9"><!-- bootstrap input group 검색 -->
-					<div class="search d-flex justify-content-center col-12">
-		                <input type="text" value="" placeholder="도서명 또는 저자명을 입력해주세요"class="form-control">
+				<form action="/library/list/view" method="get" class="col-9"><!-- bootstrap input group 검색 -->
+					<div class="search d-flex justify-content-center">
+		                <input type="text" name="title" value="" placeholder="도서명 또는 저자명을 입력해주세요"class="form-control">
 		                <div class="input-group-append">
 		                	<button type="submit" class="btn">검색</button>
 		                </div>
