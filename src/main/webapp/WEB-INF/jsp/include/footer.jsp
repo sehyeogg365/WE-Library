@@ -9,7 +9,7 @@
 </head>
 <body>
 	<footer class="mt-3">
-		<div class="ml-2">주소: | |</div>
+		<div class="ml-2">주소: &nbsp&nbsp|&nbsp&nbspTEL.02-XXXX-XXXX &nbsp&nbsp|&nbsp&nbsp FAX. 02-XXXX-XXXX</div>
 		<div class="ml-2">Copyright © WE-Library 2023. All Rights Reserved.</div>
 		
 		

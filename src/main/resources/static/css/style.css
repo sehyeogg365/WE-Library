@@ -50,9 +50,14 @@ footer{
 
 .main-contents > .main-login-box {
 	
-	height:265px;
+	height:220px;
 }
 
+.main-login-box > .main-login-box-contents {
+	
+	height:220px;
+	
+}
 
 
 

@@ -23,8 +23,8 @@
 		<section class="contents bg-success">
 			
 			<div class="main-page">
-				<h2 class="text-center mt-1"><b>책과 함께꿈꾸는 도서관</b></h2><br>
-				<h2 class="text-center"><b>WE-Library</b></h2>
+				<h2 class="text-center"><b>책과 함께 꿈꾸는 도서관</b></h2><br>
+				<h1 class="text-center"><b>WE-Library</b></h1>
 				
 				<nav class="main-nav bg-primary d-flex justify-content-center align-items-center col-12">
 				<div class="">
@@ -33,7 +33,7 @@
 				
 				<form action="/library/list/view" method="get" class="col-9"><!-- bootstrap input group 검색 -->
 					<div class="search d-flex justify-content-center">
-		                <input type="text" name="title" value="" placeholder="도서명 또는 저자명을 입력해주세요"class="form-control">
+		                <input type="text" value="" placeholder="도서명 또는 저자명을 입력해주세요" class="form-control" name="title">
 		                <div class="input-group-append">
 		                	<button type="submit" class="btn">검색</button>
 		                </div>
@@ -49,14 +49,13 @@
 						
 						<div class="main-login-box bg-info col-12">
 
-							<div class="bg-secondary ">
+							<div class="bg-secondary main-login-box-contents">
 							<c:choose>
-							
-							
+
 								<c:when test = "${not empty userId }">
 									<div class="mt-3 ml-3"><h3>${userName} 님 환영합니다!</h3>  </div>
 									<div class="text-center">
-									<a href="/user/signout" class="btn btn-primary col-11">로그아웃</a>
+									<a href="/user/signout" class="btn btn-primary my-3 col-11">로그아웃</a>
 									</div>
 									<hr>
 									<div class="d-flex justify-content-between mt-3">
@@ -67,14 +66,14 @@
 								</c:when>
 								<c:otherwise>
 								
-									<div class=""><h4>로그인</h4></div>
+									<div class="mt-3 ml-3"><h4 class="">로그인</h4></div>
 									<div class="d-flex justify-content-center">
 										<div class="">
-											<input type="text" id="loginIdInput" placeholder="로그인 ID" class="form-control mt-4">
-											<input type="password" id="passwordInput" placeholder="비밀번호" class="form-control mt-4">
+											<input type="text" id="loginIdInput" placeholder="로그인 ID" class="form-control mt-3">
+											<input type="password" id="passwordInput" placeholder="비밀번호" class="form-control mt-3">
 										</div>
-										<div class="mt-1 ml-1">
-											<button type="button" id="loginBtn" class= "loginbtn btn btn-primary mt-3" style="">로그인</button>
+										<div class="ml-1">
+											<button type="button" id="loginBtn" class= "loginbtn btn btn-primary mt-2" style="">로그인</button>
 										</div>	
 									
 									</div>
@@ -96,13 +95,13 @@
 							<div class=""><h4>내 서재</h4></div>
 							<div class="d-flex justify-content-between flex-wrap">
 								
-								<div class="">대출조회/반납연기</div>
-								<div class="ml-5">예약취소/조회</div>
+								<div class="mt-3">대출조회/반납연기</div>
+								<div class="ml-5 mt-3">예약취소/조회</div>
 								
-								<div class="">상호대차신청조회</div>
+								<div class="mt-3">상호대차신청조회</div>
 						
-								<div class="ml-5">희망도서신청조회</div>
-								<div class="">관심도서목록</div>
+								<div class="ml-5 mt-3">희망도서신청조회</div>
+								<div class="mt-3">관심도서목록</div>
 							</div>
 						</div>
 						
