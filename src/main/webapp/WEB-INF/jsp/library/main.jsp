@@ -18,16 +18,16 @@
 	<link rel="stylesheet" href="/static/css/style.css" type="text/css">
 </head>
 <body>
-	<div id="wrap" class="bg-secondary">
+	<div id="wrap" class="">
 		<c:import url="/WEB-INF/jsp/include/header.jsp"/>
-		<section class="contents bg-success">
+		<section class="contents">
 			
 			<div class="main-page">
 				<h2 class="text-center"><b>책과 함께 꿈꾸는 도서관</b></h2><br>
 				<h1 class="text-center"><b>WE-Library</b></h1>
 				
-				<nav class="main-nav bg-primary d-flex justify-content-center align-items-center col-12">
-				<div class="">
+				<nav class="main-nav d-flex justify-content-center align-items-center col-12">
+				<div class="text-white">
 					통합검색
 				</div>
 				
@@ -41,15 +41,15 @@
 		         </form>
 		         </nav>   
 				
-				<section class="d-flex justify-content-center bg-primary">
+				<section class="main-section d-flex justify-content-center">
 					
 					
-					<article class="main-contents bg-warning col-4">
+					<article class="main-contents  col-4">
 						<div class="">메인 컨텐츠</div>
 						
-						<div class="main-login-box bg-info col-12">
+						<div class="main-login-box col-12">
 
-							<div class="bg-secondary main-login-box-contents">
+							<div class=" main-login-box-contents">
 							<c:choose>
 
 								<c:when test = "${not empty userId }">
@@ -59,8 +59,8 @@
 									</div>
 									<hr>
 									<div class="d-flex justify-content-between mt-3">
-										<a href="#" class="btn btn-primary ml-2 col-5">내서재</a>
-										<a href="/user/mypage/view" class="btn btn-primary mr-2 col-5">정보수정</a>
+										<a href="#" class="btn btn-light ml-2 col-5">내서재</a>
+										<a href="/user/mypage/view" class="btn btn-light mr-2 col-5">정보수정</a>
 									</div>
 								
 								</c:when>
@@ -91,31 +91,31 @@
 						
 						
 						
-						<div class="bg-success mt-3">
+						<div class="mybook mt-3">
 							<div class=""><h4>내 서재</h4></div>
 							<div class="d-flex justify-content-between flex-wrap">
 								
-								<div class="mt-3">대출조회/반납연기</div>
-								<div class="ml-5 mt-3">예약취소/조회</div>
+								<div class="mt-3"><a href="#" class="text-dark">대출조회/반납연기</a></div>
+								<div class="ml-5 mt-3"><a href="#" class="text-dark">예약취소/조회</a></div>
 								
-								<div class="mt-3">상호대차신청조회</div>
+								<div class="mt-3"><a href="#" class="text-dark">상호대차신청조회</a></div>
 						
-								<div class="ml-5 mt-3">희망도서신청조회</div>
-								<div class="mt-3">관심도서목록</div>
+								<div class="ml-5 mt-3"><a href="#" class="text-dark">희망도서신청조회</a></div>
+								<div class="mt-3"><a href="#" class="text-dark">관심도서목록</a></div>
 							</div>
 						</div>
 						
 						
 					</article>
-					<article class="sub-contents bg-danger col-4">
+					<article class="sub-contents col-4">
 						<div class="">서브 컨텐츠</div>
 						<div class="d-flex">
-							<div class=""><a class="btn btn-primary">공지사항</a></div>
-							<div class="ml-2"><a class="btn btn-primary">행사안내</a></div>
+							<div class=""><a href="#"class="btn btn-light">공지사항</a></div>
+							<div class="ml-2"><a href="#" class="btn btn-light">행사안내</a></div>
 						</div>
 						<hr>	
 			
-						<div class="bg-primary">
+						<div class="announce-box">
 							<div class=""><a href="#" class="text-dark">[역삼푸른솔 도서관]분신물폐기 안내</a>  2023.07.03</div>
 							<div class=""><a href="#" class="text-dark">[역삼푸른솔 도서관] 7월 휴관일 안내</a>  2023.07.03</div>
 							<div class=""><a href="#" class="text-dark">[역삼푸른솔 도서관][신착도서]</a> 6월 2023.06.29</div>
@@ -126,13 +126,20 @@
 						
 						
 					</article>
-					<article class="sub-contents2 bg-info col-4">
+					<article class="sub-contents2 col-4">
 						<div class="">서브 컨텐츠2</div>
 					</article>
 					
 				
 				</section>
-				
+				<section class="subsection bg-transparent">
+					<div class="">1</div>
+					<div class="">1</div>
+					<div class="">1</div>
+					<div class="">1</div>
+					<div class="">1</div>
+					<div class=""></div>
+				</section>
 				
 			</div>
 		

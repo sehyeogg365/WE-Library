@@ -9,13 +9,13 @@
 </head>
 <body>
 <header class="d-flex justify-content-between">
-			<div class="logo col-3 bg-warning">
+			<div class="logo col-3">
 			<a href="/library/main/view" class="d-flex align-items-center">
 				<img class="logo" width="70" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FyTyqh%2Fbtsmr38jxKt%2F7KUKXtcBSx5PHpT1BNPI20%2Fimg.png" alt="로고">
 			</a>
 			</div>
 			
-			<nav class="d-flex justify-content-center align-items-center col-6 bg-secondary">
+			<nav class="d-flex justify-content-center align-items-center col-6">
 				<ul class="nav nav-fill">
 					<li class="nav-item"><h5><a href="#" class="nav-link text-dark font-weight-bold">자료 검색</a></h5></li>
 					<li class="nav-item"><h5><a href="#" class="nav-link text-dark font-weight-bold">이용 안내</a></h5></li>
@@ -24,7 +24,7 @@
 				</ul>
 			</nav>
 			
-			<div class="d-flex align-items-center col-3 bg-danger">
+			<div class="d-flex align-items-center col-3">
 				<!-- 조건문만들기 로그인 되었을때 안되었을때 -->
 				
 				<c:choose>

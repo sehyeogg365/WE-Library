@@ -42,6 +42,16 @@ footer{
 	
 }
 
+.main-nav{
+	
+	background-color: #4169E1;
+}
+
+.main-section{
+	
+	background-color:#ADD8E6;
+}
+
 .main-page > .main-contents{
 	
 	height:800px;
@@ -51,21 +61,35 @@ footer{
 .main-contents > .main-login-box {
 	
 	height:220px;
+	background-color: white;
+	border-radius: 8px;
 }
 
 .main-login-box > .main-login-box-contents {
 	
 	height:220px;
-	
+	background-color:white;
+	border-radius: 8px;
 }
 
-
+.mybook{
+	
+	background-color: #87CEEB;
+	border-radius: 8px;
+}
 
 .main-page > .sub-contents{
 	
 	
 	height:800px;
 }
+
+.sub-contents >.announce-box{
+	
+	background-color:white;
+	border-radius: 8px;
+}
+
 .main-page > .sub-contents2{
 	
 	
