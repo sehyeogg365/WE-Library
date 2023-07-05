@@ -37,9 +37,59 @@
 					<div class="d-flex align-items-center">
 						<input type="text" id="yearInput" placeholder="년" class="form-control mt-4 col-3"> 	
 						<div class="mt-4 col-1">년</div>
-						<input type="text" id="monthInput" placeholder="월" class="form-control mt-4 col-3">
+						
+						<select class="form-control mt-4 col-3" id="monthSelector">
+						 	<option value="01">1</option>
+						 	<option value="02">2</option>
+						 	<option value="03">3</option>
+						 	<option value="04">4</option>
+						 	<option value="05">5</option>
+						 	<option value="06">6</option>
+						 	<option value="07">7</option>
+						 	<option value="08">8</option>
+						 	<option value="09">9</option>
+						 	<option value="09">9</option>
+						 	<option value="10">10</option>
+						 	<option value="11">11</option>
+						 	<option value="12">12</option>
+						 	
+						 </select>
 						 <div class="mt-4 col-1">월</div>
-						<input type="text" id="dayInput" placeholder="일" class="form-control mt-4 col-3">
+						<select class="form-control mt-4 col-3" id="daySelector">
+						 	<option value="01">1</option>
+						 	<option value="02">2</option>
+						 	<option value="03">3</option>
+						 	<option value="04">4</option>
+						 	<option value="05">5</option>
+						 	<option value="06">6</option>
+						 	<option value="07">7</option>
+						 	<option value="08">8</option>
+						 	<option value="09">9</option>
+						 	<option value="09">9</option>
+						 	<option value="10">10</option>
+						 	<option value="11">11</option>
+						 	<option value="12">12</option>
+						 	<option value="13">13</option>
+						 	<option value="14">14</option>
+						 	<option value="15">15</option>
+						 	<option value="16">16</option>
+						 	<option value="17">17</option>
+						 	<option value="18">18</option>
+						 	<option value="19">19</option>
+						 	<option value="20">20</option>
+						 	<option value="21">21</option>
+						 	<option value="22">22</option>
+						 	<option value="23">23</option>
+						 	<option value="24">24</option>
+						 	<option value="25">25</option>
+						 	<option value="26">26</option>
+						 	<option value="27">27</option>
+						 	<option value="28">28</option>
+						 	<option value="29">29</option>
+						 	<option value="30">30</option>
+						 	<option value="31">31</option>
+						 	
+						 </select>
 						<div class="mt-4 col-1">일</div>
 					</div>
 					
@@ -156,8 +206,8 @@
 			let name = $("#nameInput").val();
 			
 			let year = $("#yearInput").val(); 
-			let month = $("#monthInput").val(); 
-			let day = $("#dayInput").val(); 
+			let month = $("#monthSelector").val(); 
+			let day = $("#daySelector").val(); 
 			let birth = year + month + day;
 			
 			let emailId = $("#emailIdInput").val();
@@ -196,6 +246,13 @@
 				alert("년을 확인하세요.");
 				return ;	
 			}
+			
+			//생일이 8자리미만일시
+			if(birth.length < 8){
+				alert("년을 확인하세요.");
+				return ;	
+			}
+			
 			if(month == ""){
 				alert("월을 확인하세요.");
 				return ;	

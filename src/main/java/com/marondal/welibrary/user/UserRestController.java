@@ -133,7 +133,29 @@ public class UserRestController {
 	}
 	
 	//id찾기
+	@GetMapping("/find_id")
+	public Map<String, Object> findId(@RequestParam("loginId") String loginId//아이디 찾아야 하므로 아이디도 추가해야함
+									  ,	@RequestParam("name") String name
+									  , @RequestParam("birth") String birth
+									  , @RequestParam("phoneNumber") String phoneNumber
+									){
+		
+		Map<String, Object> resultMap = new HashMap<>();
+		// user 객체 전달해야하므로 map 밸류타입이 Object가 들어가야함
+		User user = userBO.getUserByNameBirthPhone(loginId, name, birth, phoneNumber);
+		
+		if(user != null) {
+			
+			resultMap.put("result", "success");//
+			resultMap.put("info", user);//아이디 값 ajax로전달
+		} else {
+			resultMap.put("result", "fail");
+		}
 	
+		return resultMap;
+		
+		
+	}
 	
 	
 	

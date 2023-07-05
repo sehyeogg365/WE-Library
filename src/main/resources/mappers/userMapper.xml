@@ -110,7 +110,18 @@
   </select>
   
   <!-- id찾기 -->
-  
+  <select id="selectUserByNameBirthPhone" parameterType="map" resultType="com.marondal.welibrary.user.model.User">
+  	SELECT
+  		`loginId`
+  	FROM
+  		`user`
+  	WHERE
+  		`name` = #{name}
+  		AND
+  		`birth` = #{birth}
+  		AND
+  		`phoneNumber` = #{phoneNumber}
+  </select>
   
   <!-- pw재발급 -->
   

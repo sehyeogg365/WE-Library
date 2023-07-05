@@ -42,5 +42,15 @@ public interface UserDAO {
 			     		   , @Param("password") String password);	
 	
 	
+	//id 찾기
+	public User selectUserByNameBirthPhone( @Param("loginId") String loginId
+											, @Param("name") String name
+											, @Param("birth") String birth
+											, @Param("phoneNumber") String phoneNumber);
+	
+	
+	//pw 재발급
+	
+	
 	
 }

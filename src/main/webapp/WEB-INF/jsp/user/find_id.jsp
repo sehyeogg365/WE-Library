@@ -21,13 +21,71 @@
 	<div class="findid-box mt-3">
 		<h2 class="text-center mt-3"><b>아이디 찾기</b></h2>
 		<input type="text" id="nameInput" placeholder="이름" class="form-control mt-4">
-		<input type="text" id="nameInput" placeholder="생년월일 8자리" class="form-control mt-4">	
-		<input type="text" id="phoneNumberInput" placeholder="휴대폰 번호 -없이 입력" class="form-control mt-4">
-		<button type="button" class="btn btn-primary btn-block mt-3 mb-3" id="findBtn">아이디 찾기</button>
+		<input type="text" id="birthInput" placeholder="생년월일 8자리" class="form-control mt-4">	
+		<input type="text" id="phoneNumberInput" placeholder="휴대폰 번호 -없이 입력" class="form-control mt-4"><!-- model에서 불러온값 -->
+		<button type="button" id="findIdBtn" class="btn btn-primary btn-block mt-3 mb-3" data-user-id = "${user.loginId }">아이디 찾기</button><!--  -->
 	</div>
 	
 	</section>
 	<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
 	</div>
+	
+	<script>
+	
+	$(document).ready(function(){
+		
+		$("#findIdBtn").on("click", function(){
+			let id = $(this).data("user-id");
+			let name = $("#nameInput").val();
+			let birth = $("#birthInput").val();
+			let phoneNumber = $("#phoneNumberInput").val();
+			
+			
+			if(name == ""){
+				alert("이름을 입력하세요.");
+				return ;	
+			}
+			
+			if(birth == ""){
+				alert("생일을 입력하세요.");
+				return ;	
+			}
+			
+			if(phoneNumber == ""){
+				alert("전화번호를 입력하세요.");
+				return ;	
+			}
+			
+			
+			$.ajax({
+				type:"get"
+				, url:"/user/find_id"
+				, data:{"loginId":id, "name":name, "birth":birth, "phoneNumber":phoneNumber}
+				, success:function(data){//여기도
+					if(data.result == "success"){
+						alert("아이디는" +  data.info.loginId);//alert창 완성해보기
+						location.reload();
+					} else {
+						alert("아이디 찾기 실패");
+					}
+				}
+				, error:function(){
+					alert("아이디 찾기 에러");
+				}//뭐가 들어가야할까?
+			});
+			
+			
+		});
+		
+		
+	});
+	
+	
+	</script>
+	
+	
 </body>
+
+
+
 </html>

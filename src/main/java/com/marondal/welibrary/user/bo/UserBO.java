@@ -97,9 +97,21 @@ public class UserBO {
 	}
 	
 	
-	// id찾기
+	// id찾기 타입: 모델
+	public User getUserByNameBirthPhone(String loginId
+										, String name
+										, String birth
+										, String phoneNumber) {
+		
+		return userDAO.selectUserByNameBirthPhone(loginId, name, birth, phoneNumber);
+		
+		
+	}
 	
-	// pw 재발급
+	
+	// pw 재발급 타입: 모델
+	
+	
 	
 	// 회원 탈퇴
 	
