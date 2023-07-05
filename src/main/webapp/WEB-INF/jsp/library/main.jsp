@@ -28,7 +28,7 @@
 				
 				<nav class="main-nav d-flex justify-content-center align-items-center col-12">
 				<div class="text-white">
-					통합검색
+					<h5>통합검색</h5>
 				</div>
 				
 				<form action="/library/list/view" method="get" class="col-9"><!-- bootstrap input group 검색 -->
@@ -132,13 +132,35 @@
 					
 				
 				</section>
-				<section class="subsection bg-transparent">
-					<div class="">1</div>
-					<div class="">1</div>
-					<div class="">1</div>
-					<div class="">1</div>
-					<div class="">1</div>
-					<div class=""></div>
+				<section class="subsection bg-transparent d-flex">
+				
+					<article class="col-4">
+						<div class="">1</div>
+						<div class="">1</div>
+						<div class="">1</div>
+						<div class="">1</div>
+						<div class="">1</div>
+						<div class=""></div>
+					</article>
+					<article class="col-4">
+						<div class="">2</div>
+						<div class="">2</div>
+						<div class="">2</div>
+						<div class="">2</div>
+						<div class="">2</div>
+						<div class="">2</div>
+						
+					</article>
+					<article class="col-4">
+						<div class="">3</div>
+						<div class="">3</div>
+						<div class="">3</div>
+						<div class="">3</div>
+						<div class="">3</div>
+						<div class="">3</div>
+					
+					</article>
+					
 				</section>
 				
 			</div>
