@@ -130,8 +130,14 @@ public class UserRestController {
 		
 	}
 	
-
+	//id찾기
 	
+	
+	
+	
+	
+	//pw 재발급
+
 	
 
 }
