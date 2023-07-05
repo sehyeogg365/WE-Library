@@ -36,7 +36,15 @@
 					
 					<input type="text" id="nameInput" placeholder="이름" class="form-control mt-4">
 					
-					<input type="text" id="birthInput" placeholder="생일" class="form-control mt-4">
+					<div class="d-flex align-items-center">
+						<input type="text" id="yearInput" placeholder="년" class="form-control mt-4 col-3"> 	
+						<div class="mt-4 col-1">년</div>
+						<input type="text" id="monthInput" placeholder="월" class="form-control mt-4 col-3">
+						 <div class="mt-4 col-1">월</div>
+						<input type="text" id="dayInput" placeholder="일" class="form-control mt-4 col-3">
+						<div class="mt-4 col-1">일</div>
+					</div>
+					
 					
 					<div class="d-flex align-items-center">
 						<input type="text" id="emailIdInput" placeholder="이메일" class="form-control mt-4 col-5">
@@ -146,6 +154,12 @@
 			let password = $("#passwordInput").val();
 			let passwordConfirm = $("#passwordConfirmInput").val();
 			let name = $("#nameInput").val();
+			
+			let year = $("#yearInput").val(); 
+			let month = $("#monthInput").val(); 
+			let day = $("#dayInput").val(); 
+			let birth = year + month + day;
+			
 			let emailId = $("#emailIdInput").val();
 			let emailDomain = $("#emailSelctor").val();
 			let email = emailId + emailDomain;
@@ -174,6 +188,19 @@
 		
 			if(name == ""){
 				alert("이름을 확인하세요.");
+				return ;	
+			}
+			
+			if(year == ""){
+				alert("년을 확인하세요.");
+				return ;	
+			}
+			if(month == ""){
+				alert("월을 확인하세요.");
+				return ;	
+			}
+			if(day == ""){
+				alert("일을 확인하세요.");
 				return ;	
 			}
 			
@@ -212,7 +239,7 @@
 			$.ajax({
 				type: "post"
 				, url: "/user/signup"
-				, data:{"loginId":id, "password":password, "name":name, "email":email, "phoneNumber":phoneNumber}
+				, data:{"loginId":id, "password":password, "name":name, "birth":birth, "email":email, "phoneNumber":phoneNumber}
 				, success:function(data){
 					if(data.result == "success"){
 						alert("회원가입 성공");
