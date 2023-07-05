@@ -34,6 +34,8 @@
 				
 					<input type="text" id="nameInput" placeholder="이름" class="form-control mt-4">
 					
+					<input type="text" id="birthInput" placeholder="생일" class="form-control mt-4">
+					
 					<div class="d-flex align-items-center">
 						<input type="text" id="emailIdInput" placeholder="이메일" class="form-control mt-4 col-5">
 						

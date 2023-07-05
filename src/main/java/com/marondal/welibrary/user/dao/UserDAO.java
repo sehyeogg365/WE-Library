@@ -12,6 +12,7 @@ public interface UserDAO {
 			@Param("loginId") String loginId
 			, @Param("password") String password
 			, @Param("name") String name
+			, @Param("birth") String birth
 			, @Param("email") String email
 			, @Param("phoneNumber") String phoneNumber
 			);
@@ -26,6 +27,7 @@ public interface UserDAO {
 			@Param("loginId") String loginId
 			, @Param("password") String password
 			, @Param("name") String name
+			, @Param("birth") String birth
 			, @Param("email") String email
 			, @Param("phoneNumber") String phoneNumber
 			, @Param("isAdmin") int isAdmin	

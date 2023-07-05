@@ -8,6 +8,7 @@ public class User {
 	private String loginId;
 	private String password;
 	private String name;
+	private String birth;
 	private String email;
 	private String phoneNumber;
 	private int isAdmin;
@@ -36,6 +37,12 @@ public class User {
 	}
 	public void setName(String name) {
 		this.name = name;
+	}
+	public String getBirth() {
+		return birth;
+	}
+	public void setBirth(String birth) {
+		this.birth = birth;
 	}
 	public String getEmail() {
 		return email;
@@ -67,6 +74,7 @@ public class User {
 	public void setUpdatedAt(Date updatedAt) {
 		this.updatedAt = updatedAt;
 	}
-
+	
+	
 	
 }

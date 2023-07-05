@@ -19,6 +19,7 @@ public class UserBO {
 			String loginId
 			, String password
 			, String name
+			, String birth
 			, String email	
 			, String phoneNumber	
 			) {
@@ -28,7 +29,7 @@ public class UserBO {
 		//인증번호가 일치하는지 여부 확인 bo 서만 수행하면 된다고 하심
 		//일치하면 회원가입 진행 
 		
-		return userDAO.insertUser(loginId, encryptPassword, name, email, phoneNumber);
+		return userDAO.insertUser(loginId, encryptPassword, name, birth, email, phoneNumber);
 		
 		
 	}
@@ -57,6 +58,7 @@ public class UserBO {
 			String loginId
 			, String password
 			, String name
+			, String birth
 			, String email	
 			, String phoneNumber
 			, int isAdmin
@@ -72,7 +74,7 @@ public class UserBO {
 		
 		if(count == 1) { //일치할때 
 			
-			return userDAO.insertAdminUser(loginId, encryptPassword, name, email, phoneNumber, isAdmin);//추가하라
+			return userDAO.insertAdminUser(loginId, encryptPassword, name, birth, email, phoneNumber, isAdmin);//추가하라
 			
 		} else {
 			

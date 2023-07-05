@@ -27,13 +27,14 @@ public class UserRestController {
 			@RequestParam("loginId") String loginId
 			, @RequestParam("password") String password
 			, @RequestParam("name") String name
+			, @RequestParam("birth") String birth			
 			, @RequestParam("email") String email
 			, @RequestParam("phoneNumber") String phoneNumber
 			
 			){
 		
 		
-		int count = userBO.addUser(loginId, password, name, email, phoneNumber);
+		int count = userBO.addUser(loginId, password, name, birth, email, phoneNumber);
 		
 		Map<String, String> resultMap = new HashMap<>();
 		
@@ -79,6 +80,7 @@ public class UserRestController {
 			@RequestParam("loginId") String loginId
 			, @RequestParam("password") String password
 			, @RequestParam("name") String name
+			, @RequestParam("birth") String birth
 			, @RequestParam("email") String email
 			, @RequestParam("phoneNumber") String phoneNumber
 			, @RequestParam("isAdmin") int isAdmin
@@ -86,7 +88,7 @@ public class UserRestController {
 			){
 		
 		
-		int count = userBO.addAdminUser(loginId, password, name, email, phoneNumber, isAdmin,certificationNumber);
+		int count = userBO.addAdminUser(loginId, password, name, birth, email, phoneNumber, isAdmin,certificationNumber);
 		
 		Map<String, String> resultMap = new HashMap<>();
 		

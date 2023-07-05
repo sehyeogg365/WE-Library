@@ -13,6 +13,7 @@
   			`loginId`
 		  	,`password` 
 		  	, `name`
+		  	, `birth`
 		    , `email` 
 		    , `phoneNumber`
 		    , `createdAt` 
@@ -23,6 +24,7 @@
   		 #{loginId}
   		 , #{password}
 		 , #{name}
+		 , #{birth}
 		 , #{email}
 		 , #{phoneNumber}
 		 , now()
@@ -52,6 +54,7 @@
   			`loginId`
 		  	,`password` 
 		  	, `name`
+		  	, `birth`
 		    , `email` 
 		    , `phoneNumber`
 		    , `isAdmin`
@@ -63,6 +66,7 @@
   		 #{loginId}
   		 , #{password}
 		 , #{name}
+		 , #{birth}
 		 , #{email}
 		 , #{phoneNumber}
 		 , #{isAdmin}
@@ -92,6 +96,7 @@
   		,`loginId`
   		, `password`
   		, `name`
+  		, `birth`
   		, `email`
   		, `phoneNumber`
   		, `isAdmin`
