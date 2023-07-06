@@ -22,14 +22,68 @@
 		<h2 class="text-center mt-3"><b>비밀번호 재발급</b></h2>
 		<input type="text" id="loginIdInput" placeholder="아이디" class="form-control mt-4">
 		<input type="text" id="nameInput" placeholder="이름" class="form-control mt-4">
-		<input type="text" id="nameInput" placeholder="생년월일 8자리" class="form-control mt-4">	
+		<input type="text" id="birthInput" placeholder="생년월일 8자리" class="form-control mt-4">	
 		<input type="text" id="phoneNumberInput" placeholder="휴대폰 번호 -없이 입력" class="form-control mt-4">
-		<button type="button" class="btn btn-primary btn-block mt-3 mb-3" id="findBtn">비밀번호 재발급</button>
-	</div>
+		<button type="button" id="getPwBtn" class="btn btn-primary btn-block mt-3 mb-3" >비밀번호 재발급</button>
+	</div>											<!-- 굳이 pw 재발급 버튼에 모델값 넣어야하나?아이디 찾기는 모델의 id값을 불러와야 해서 그랬다지만 -->
 	
 	</section>
 	<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
 	</div>
-
+	<script>
+		$(document).ready(function(){
+			
+			$("#getPwBtn").on("click", function(){
+				
+				let id = $("#loginIdInput").val();
+				let name = $("#nameInput").val();
+				let birth = $("#birthInput").val();
+				let phoneNumber = $("#phoneNumberInput").val();
+				
+				if(id == ""){
+					alert("아이디를 입력하세요.");
+					return ;
+				}
+				if(name == ""){
+					alert("아이디를 입력하세요.");
+					return ;
+				}
+				if(birth == ""){
+					alert("아이디를 입력하세요.");
+					return ;
+				}
+				if(phoneNumber == ""){
+					alert("아이디를 입력하세요.");
+					return ;
+				}
+				
+				$.ajax({
+					
+					type:""
+					, url:""
+					, data:{}
+					, success:function(){
+						
+					}
+					, error:function(){
+						
+					}
+					
+					
+				});
+				
+				
+				
+				
+				
+				
+			});
+			
+			
+		});
+			
+		
+	
+	</script>
 </body>
 </html>

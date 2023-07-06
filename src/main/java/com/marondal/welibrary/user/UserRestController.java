@@ -157,10 +157,26 @@ public class UserRestController {
 		
 	}
 	
-	
-	
-	
-	//pw 재발급
+	//pw 재발급	
+	@PostMapping("/get_pw")
+	public Map<String, String> getPW(
+									@RequestParam("loginId") String loginId	
+									, @RequestParam("name") String name	
+									, @RequestParam("birth") String birth	
+									, @RequestParam("phoneNumber") String phoneNumber	
+										){
+											
+		
+		
+		
+		
+		
+		
+		
+		return null;
+		
+		
+	}
 
 	
 

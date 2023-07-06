@@ -43,14 +43,17 @@ public interface UserDAO {
 	
 	
 	//id 찾기
-	public User selectUserByNameBirthPhone( @Param("loginId") String loginId
+	public User selectUserByNameBirthPhone(@Param("loginId") String loginId
 											, @Param("name") String name
 											, @Param("birth") String birth
 											, @Param("phoneNumber") String phoneNumber);
 	
 	
-	//pw 재발급
-	
-	
+	//pw 재발급 여기선 String 이 아닌 int 여야함 update 횟수를 전달해야 해서
+	public int updatePasswordByIdNameBirthPhone(@Param("loginId") String loginId
+												, @Param("name") String name
+												, @Param("birth") String birth
+												, @Param("phoneNumber") String phoneNumber);
+
 	
 }

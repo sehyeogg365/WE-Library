@@ -124,6 +124,19 @@
   </select>
   
   <!-- pw재발급 -->
-  
+  <update id="updatePasswordByIdNameBirthPhone" parameterType="map">
+  	UPDATE
+  		`user`
+  	SET
+  		`password` = #{password}
+  	WHERE 
+  		`loginId` = #{loginId}
+  		AND
+  		`name` = #{name}
+  		AND
+  		`birth` = #{birth}
+  		AND
+  		`phoneNumber` = #{phoneNumber}
+  </update>
   
   </mapper>

@@ -109,8 +109,32 @@ public class UserBO {
 	}
 	
 	
-	// pw 재발급 타입: 모델
-	
+	// pw 재발급 타입: 생각해보자면 리턴타입 user일 필요가없음. 그냥 비번 조회 필요없이 update해서 비번 전달하면 되서
+	public String getPassword(String loginId
+							  , String name
+							  , String birth
+							  , String phoneNumber
+						     ) {
+		//임시비밀번호 생성 알고리즘
+		
+		// 문자 배열
+		
+		//랜덤함수 선언
+		
+		//셔플 반복문 
+		
+		// 조합 반복문 
+		
+		//카운트 변수
+		
+		//카운트 변수가 1일때 셔플 조합한 비번 전달하기
+		
+		
+		
+		return null;
+		
+		
+	}
 	
 	
 	// 회원 탈퇴
