@@ -159,21 +159,28 @@ public class UserRestController {
 	
 	//pw 재발급	
 	@PostMapping("/get_pw")
-	public Map<String, String> getPW(
+	public Map<String, Object> getPW(
 									@RequestParam("loginId") String loginId	
 									, @RequestParam("name") String name	
 									, @RequestParam("birth") String birth	
 									, @RequestParam("phoneNumber") String phoneNumber	
-										){
+									){
 											
 		
+		Map<String, Object> resultMap = new HashMap<>();
 		
+		String password = userBO.getPassword(loginId, name, birth, phoneNumber);
 		
+		//패스워드 변수주는건 잘했다. 그럼 패스워드 있을때 없을떄 조건문 
 		
+		if(password == null) {
+			resultMap.put("result", "fail");
+		} else {
+			resultMap.put("result", "success");
+			resultMap.put("info", password);//password전달
+		}
 		
-		
-		
-		return null;
+		return resultMap;
 		
 		
 	}

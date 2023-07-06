@@ -59,14 +59,22 @@
 				
 				$.ajax({
 					
-					type:""
-					, url:""
-					, data:{}
-					, success:function(){
+					type:"post"
+					, url:"/user/get_pw"
+					, data:{"loginId":id, "name":name, "birth":birth, "phoneNumber":phoneNumber}
+					, success:function(data){
+						
+						if(data.result == "success"){
+							location.reload();
+							alert("비밀번호는");
+						} else {
+							
+							alert("비밀번호 재발급 에러");
+						}
 						
 					}
 					, error:function(){
-						
+						alert("비밀번호 재발급 에러");
 					}
 					
 					

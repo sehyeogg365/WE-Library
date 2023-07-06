@@ -1,5 +1,7 @@
 package com.marondal.welibrary.user.bo;
 
+import java.util.Random;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -118,20 +120,50 @@ public class UserBO {
 		//임시비밀번호 생성 알고리즘
 		
 		// 문자 배열
-		
+		char[] arr= {'0', '1', '2', '3', '4', '5','6','7','8','9'
+					,'!', '@', '#', '$','%','^'
+					,'a','b','c','d','e','f','g','h'};
 		//랜덤함수 선언
+		Random rand = new Random();
+		
+		//전역변수
+		String password = "";
 		
 		//셔플 반복문 
+		for(int i = 0; i < 100; i++) {
+			
+			int randomNumber = rand.nextInt(arr.length);//배열길이만큼뽑느다.
+			
+			char temp = arr[i];
+			arr[i] = arr[randomNumber];
+			arr[randomNumber] = temp;
+		}
+		
 		
 		// 조합 반복문 
+		for(int i = 0; i < arr.length; i++) {// 길이만큼 패스워드 붙여넣는다.
+			
+			password = password + arr[i];
+		}
 		
-		//카운트 변수
+		
+		
+		//카운트 변수(update 횟수)
+		int count = userDAO.updatePasswordByIdNameBirthPhone(loginId, name, birth, phoneNumber);
 		
 		//카운트 변수가 1일때 셔플 조합한 비번 전달하기
 		
+		if(count == 1) {
+			
+			return password;
+			
+		} else {
+			return null;
+			
+		}
 		
 		
-		return null;
+		
 		
 		
 	}
