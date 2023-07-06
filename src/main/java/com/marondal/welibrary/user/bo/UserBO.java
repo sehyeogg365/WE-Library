@@ -122,34 +122,37 @@ public class UserBO {
 		// 문자 배열
 		char[] arr= {'0', '1', '2', '3', '4', '5','6','7','8','9'
 					,'!', '@', '#', '$','%','^'
-					,'a','b','c','d','e','f','g','h'};
+					,'a','b','c','d','e','f','g','h'
+					};
 		//랜덤함수 선언
 		Random rand = new Random();
 		
 		//전역변수
 		String password = "";
 		
-		//셔플 반복문 
+		//셔플 반복문 ->셔플이 아닌 뽑는 반복문을 해야한다.
 		for(int i = 0; i < 100; i++) {
 			
-			int randomNumber = rand.nextInt(arr.length);//배열길이만큼뽑느다.
+			int randomNumber = rand.nextInt(10);//배열길이만큼뽑느다.->10개만뽑는다.
 			
-			char temp = arr[i];
-			arr[i] = arr[randomNumber];
+			char temp = arr[0];
+			arr[0] = arr[randomNumber];
 			arr[randomNumber] = temp;
 		}
 		
 		
 		// 조합 반복문 
-		for(int i = 0; i < arr.length; i++) {// 길이만큼 패스워드 붙여넣는다.
+		for(int i = 0; i < 12; i++) {// 길이만큼 패스워드 붙여넣는다.
 			
 			password = password + arr[i];
 		}
 		
 		
+		// 비밀번호 암호화되서 저장 해야함 안그러면 로그인 안됨
+		String ecryptPassword = EncryptService.md5(password);
 		
 		//카운트 변수(update 횟수)
-		int count = userDAO.updatePasswordByIdNameBirthPhone(loginId, name, birth, phoneNumber);
+		int count = userDAO.updatePasswordByIdNameBirthPhone(loginId, ecryptPassword, name, birth, phoneNumber);
 		
 		//카운트 변수가 1일때 셔플 조합한 비번 전달하기
 		
@@ -158,13 +161,10 @@ public class UserBO {
 			return password;
 			
 		} else {
+			
 			return null;
 			
 		}
-		
-		
-		
-		
 		
 	}
 	

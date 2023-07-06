@@ -50,7 +50,8 @@ public interface UserDAO {
 	
 	
 	//pw 재발급 여기선 String 이 아닌 int 여야함 update 횟수를 전달해야 해서
-	public int updatePasswordByIdNameBirthPhone(@Param("loginId") String loginId
+	public int updatePasswordByIdNameBirthPhone(@Param("loginId") String loginId						
+												, @Param("password") String password
 												, @Param("name") String name
 												, @Param("birth") String birth
 												, @Param("phoneNumber") String phoneNumber);

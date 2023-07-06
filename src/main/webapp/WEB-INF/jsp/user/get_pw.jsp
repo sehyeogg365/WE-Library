@@ -24,7 +24,7 @@
 		<input type="text" id="nameInput" placeholder="이름" class="form-control mt-4">
 		<input type="text" id="birthInput" placeholder="생년월일 8자리" class="form-control mt-4">	
 		<input type="text" id="phoneNumberInput" placeholder="휴대폰 번호 -없이 입력" class="form-control mt-4">
-		<button type="button" id="getPwBtn" class="btn btn-primary btn-block mt-3 mb-3" >비밀번호 재발급</button>
+		<button type="button" id="getPwBtn" class="btn btn-primary btn-block mt-3 mb-3" data-user-password = "${user.password }" >비밀번호 재발급</button>
 	</div>											<!-- 굳이 pw 재발급 버튼에 모델값 넣어야하나?아이디 찾기는 모델의 id값을 불러와야 해서 그랬다지만 -->
 	
 	</section>
@@ -36,6 +36,7 @@
 			$("#getPwBtn").on("click", function(){
 				
 				let id = $("#loginIdInput").val();
+				let password = $(this).data("user-password");
 				let name = $("#nameInput").val();
 				let birth = $("#birthInput").val();
 				let phoneNumber = $("#phoneNumberInput").val();
@@ -45,15 +46,19 @@
 					return ;
 				}
 				if(name == ""){
-					alert("아이디를 입력하세요.");
+					alert("이름을 입력하세요.");
 					return ;
 				}
 				if(birth == ""){
-					alert("아이디를 입력하세요.");
+					alert("생일을 입력하세요.");
+					return ;
+				}
+				if(birth.length < 8){
+					alert("생일을 확인하세요.");
 					return ;
 				}
 				if(phoneNumber == ""){
-					alert("아이디를 입력하세요.");
+					alert("전화번호를 입력하세요.");
 					return ;
 				}
 				
@@ -66,10 +71,10 @@
 						
 						if(data.result == "success"){
 							location.reload();
-							alert("비밀번호는");
+							alert("비밀번호는" + data.info);
 						} else {
 							
-							alert("비밀번호 재발급 에러");
+							alert("비밀번호 재발급 실패");
 						}
 						
 					}
