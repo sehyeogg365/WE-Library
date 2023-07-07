@@ -124,27 +124,30 @@ public class UserBO {
 					,'!', '@', '#', '$','%','^'
 					,'a','b','c','d','e','f','g','h'
 					};
+
 		//랜덤함수 선언
 		Random rand = new Random();
+		
+		
+		// 저장할 배열
+		char[] pw= new char[10]; 
+		
 		
 		//전역변수
 		String password = "";
 		
-		//셔플 반복문 ->셔플이 아닌 뽑는 반복문을 해야한다.
-		for(int i = 0; i < 100; i++) {
+		//셔플이 아닌 뽑는 반복문을 해야한다. pw 배열 길이동안, 길이수만큼 랜덤하게 뽑기
+		
+		for(int i = 0; i < pw.length; i++) {
 			
-			int randomNumber = rand.nextInt(10);//배열길이만큼뽑느다.->10개만뽑는다.
+			pw[i] = arr[rand.nextInt(24)];//임의의 원소 뽑은 후 저장. arr배열 인덱스 24개중에서 pw배열 길이 수만큼 임의로 뽑는다.
 			
-			char temp = arr[0];
-			arr[0] = arr[randomNumber];
-			arr[randomNumber] = temp;
 		}
 		
-		
-		// 조합 반복문 
-		for(int i = 0; i < 12; i++) {// 길이만큼 패스워드 붙여넣는다.
+		// 조합 반복문 이거를 하나의 변수에 합치기
+		for(int i = 0; i < pw.length; i++) {// 길이만큼 패스워드 붙여넣는다.
 			
-			password = password + arr[i];
+			password  +=  pw[i];
 		}
 		
 		
@@ -168,6 +171,26 @@ public class UserBO {
 		
 	}
 	
+	//회원정보 수정 리턴타입 생각해보기
+	public int updateUserInfo() {
+		
+		
+		return 0;
+		
+		
+	}
+	
+	
+	//회원정보 1행 조회 리턴타입 생각해보기
+	public User getUserInfo(int id) {
+		
+		
+		return userDAO.selectUserInfo(id);
+		
+		
+	}
+	
+	//비밀번호 변경
 	
 	// 회원 탈퇴
 	

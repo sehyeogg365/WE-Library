@@ -18,7 +18,42 @@
 	<div id="wrap" class="">
 	<c:import url="/WEB-INF/jsp/include/header.jsp"/>
 	<section class="contents d-flex justify-content-center">
+		
 	
+		<div class="userinfo-page  bg-secondary mt-3">
+		
+			
+			<h2 class="text-center mt-3"><b>회원정보 수정</b></h2>
+			
+			<div class="d-flex">
+			
+			<nav class="bg-success col-3">
+				<ul class="nav flex-column"> 
+				
+					<li class="nav-item"><h4>회원정보</h4></li>
+					<li class="nav-item"><a href="/user/mypage/view"><h4>회원정보수정</h4></a></li>
+					<li class="nav-item"><a href="/user/update_pw/view"><h4>비밀번호 변경</h4></a></li>
+					<li class="nav-item"><a href="/user/withdrawl/view"><h4>회원탈퇴</h4></a></li>
+			
+				</ul>
+			</nav>
+			
+			<div class="bg-info col-9">
+			
+				<div class="bg-warning col-8">
+					<input type="text" id="nameInput" placeholder="성명" class="form-control mt-4">
+					<input type="text" id="loginIdInput" placeholder="로그인 ID" class="form-control mt-4">
+					<input type="text" id="phoneNumberInput" placeholder="휴대폰번호" class="form-control mt-4">
+					<input type="text" id="emailInput" placeholder="이메일" class="form-control mt-4">
+					<input type="text" id="phoneNumberInput" placeholder="전화번호" class="form-control mt-4">
+					<input type="text" id="phoneNumberInput" placeholder="주소" class="form-control mt-4">
+				
+					<button type="button" class="btn btn-primary btn-block mt-3 mb-3" id="loginBtn">로그인</button>
+				</div>
+			</div>
+			
+			</div>
+		</div>
 	</section>
 	
 	

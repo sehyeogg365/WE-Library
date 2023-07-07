@@ -139,4 +139,34 @@
   		`phoneNumber` = #{phoneNumber}
   </update>
   
+  
+  
+  <!-- 회원정보 수정 -->
+  
+  
+  
+  
+  <!-- 회원정보 한행 조회 -->
+  <select id="selectUserInfo" parameterType="int" resultType="com.marondal.welibrary.user.model.User">
+  	SELECT
+  		`id`
+  		,`loginId`
+  		, `password`
+  		, `name`
+  		, `birth`
+  		, `email`
+  		, `phoneNumber`
+  		, `isAdmin`
+  		, `createdAt` 
+		, `updatedAt` 
+  	FROM
+  		`user`
+  	WHERE
+  		`id`=#{id};
+  
+  </select>
+  
+  
+  <!-- 비밀번호 변경 -->
+  
   </mapper>

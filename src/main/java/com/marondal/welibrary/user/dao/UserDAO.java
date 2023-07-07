@@ -57,4 +57,14 @@ public interface UserDAO {
 												, @Param("phoneNumber") String phoneNumber);
 
 	
+	//회원정보 수정
+	
+	//회원정보 한행 조회
+	
+	public User selectUserInfo(@Param("id") int id);
+	
+	
+	
+	//비밀번호 변경
+	
 }

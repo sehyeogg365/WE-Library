@@ -185,6 +185,18 @@ public class UserRestController {
 		
 	}
 
+	//회원정보 수정
+	@PostMapping("/updateinfo")
+	public Map<String, String> mypageUpdate(){
+		
+		
+		
+		return null;
+		
+		
+		
+	}
+	
 	
 
 }

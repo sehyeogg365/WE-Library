@@ -3,16 +3,23 @@ package com.marondal.welibrary.user;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.marondal.welibrary.user.dao.UserDAO;
+import com.marondal.welibrary.user.model.User;
+
 
 @Controller
 @RequestMapping("/user")
 public class UserController {
+	
+	@Autowired
+	private UserDAO userDAO;
 
 
 	
@@ -68,8 +75,13 @@ public class UserController {
 	}
 	
 	@GetMapping("/mypage/view")
-	public String mypage(Model model, @RequestParam("id") int id) {
+	public String mypage(Model model
+						//, @RequestParam("id") int id
+						) {
 		
+		//회원정보 한행을 조회하는 기능
+		//User user = userDAO.selectUserInfo(id); 
+				
 		return "/user/mypage";
 		
 	}
