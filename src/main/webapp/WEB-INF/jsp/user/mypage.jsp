@@ -29,7 +29,7 @@
 			<c:import url="/WEB-INF/jsp/include/sidenav.jsp"/>
 			
 			
-			<div class="bg-info col-9">
+			<div class="bg-info d-flex justify-content-center col-9">
 			
 				<div class="bg-warning col-8">
 					<div class="">${user.loginId }</div>

@@ -20,7 +20,17 @@
 	<section class="contents d-flex justify-content-center">
 	
 	
-	
+		<div class="userinfo-page">
+		
+			<h2 class="text-center mt-3"><b>비밀번호 변경</b></h2>
+			
+			<div class="d-flex">
+			
+				<c:import url="/WEB-INF/jsp/include/sidenav.jsp"/>
+			</div>
+		
+		
+		</div>
 	
 	
 	</section>

@@ -30,10 +30,10 @@
 			<c:import url="/WEB-INF/jsp/include/sidenav.jsp"/>
 			
 			<div class="d-flex justify-content-center bg-info col-9">
-				<div style= "text-align: center;" class="bg-warning col-6">
+				<div style= "text-align: center;" class="bg-warning col-8">
 					<input type="password" id="passwordInput" placeholder="비밀번호" class="form-control mt-4">				
 					
-					<button type="button" class="btn btn-primary  my-3 text-center" id="pwCheckBtn">비밀번호 확인</button>
+					<button type="button" class="btn btn-primary  my-3 text-center" id="pwCheckBtn" data-user-id ="${user.id }">비밀번호 확인</button>
 				</div>
 				
 			</div>
@@ -46,7 +46,18 @@
 	<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
 	</div>
 	<script>
-	
+	$(document).ready(function(){
+		
+		$("#pwCheckBtn").on("click", function(){
+			let id = 
+			let password = $("#passwordInput").val();
+			
+			
+			
+		});
+		
+		
+	});	
 	
 	</script>
 
