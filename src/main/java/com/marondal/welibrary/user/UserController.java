@@ -86,6 +86,12 @@ public class UserController {
 		
 	}
 	
+	@GetMapping("/pwcheck/view")
+	public String pwcheck() {
+		
+		return "/user/pwcheck";
+		
+	}
 	
 	
 	@GetMapping("/update_pw/view")

@@ -38,18 +38,13 @@
 				</ul>
 			</nav>
 			
-			<div class="bg-info col-9">
-			
-				<div class="bg-warning col-8">
-					<input type="text" id="nameInput" placeholder="성명" value="" class="form-control mt-4">
-					<input type="text" id="loginIdInput" placeholder="로그인 ID" value="" class="form-control mt-4">
-					<input type="text" id="phoneNumberInput" placeholder="휴대폰번호" value="" class="form-control mt-4">
-					<input type="text" id="emailInput" placeholder="이메일" value="" class="form-control mt-4">
-					<input type="text" id="phoneNumberInput" placeholder="전화번호" value="" class="form-control mt-4">
+			<div class="d-flex bg-info col-9">
+				<div style= "text-align: center;" class="bg-warning col-6">
+					<input type="password" id="passwordInput" placeholder="비밀번호" class="form-control mt-4">				
 					
-				
-					<button type="button" class="btn btn-primary btn-block mt-3 mb-3" id="loginBtn">로그인</button>
+					<button type="button" class="btn btn-primary  my-3 text-center" id="pwCheckBtn">비밀번호 확인</button>
 				</div>
+				
 			</div>
 			
 			</div>

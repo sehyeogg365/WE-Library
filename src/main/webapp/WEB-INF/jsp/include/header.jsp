@@ -30,7 +30,7 @@
 				<c:choose>
 					<c:when test = "${not empty userId}">
 						<h3 class="ml-3"><a href="/user/signout" class="text-dark font-weight-bold">로그아웃</a></h3>
-						<h3 class="ml-3"><a href="/user/mypage/view" class="text-dark font-weight-bold">정보수정</a></h3>
+						<h3 class="ml-3"><a href="/user/mypage/view?id=${userId }" class="text-dark font-weight-bold">정보수정</a></h3>
 					</c:when>
 					<c:otherwise>
 						<h3 class="ml-3"><a href="/user/signin/view" class="text-dark font-weight-bold">로그인</a></h3>
