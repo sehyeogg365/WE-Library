@@ -72,6 +72,7 @@ public interface UserDAO {
 	
 	//비밀번호 확인
 	
+	public int selectPassword(@Param("id") int id, @Param("password") String password);
 	
 	//비밀번호 변경
 	

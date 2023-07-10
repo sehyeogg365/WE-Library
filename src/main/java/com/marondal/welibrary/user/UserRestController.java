@@ -196,7 +196,7 @@ public class UserRestController {
 		
 		Map<String, String> resultMap = new HashMap<>();
 		
-		int id = (Integer)session.getAttribute("id");
+		int id = (Integer)session.getAttribute("userId");
 		
 		int count = userBO.updateUser(id, name, birth, email, phoneNumber);
 		
@@ -213,6 +213,28 @@ public class UserRestController {
 	}
 	
 	//비밀번호 확인
+	@GetMapping("/pw_check")
+	public Map<String, Boolean > pwcheck(@RequestParam("password") String password
+										, HttpSession session
+										){
+		
+		Map<String, Boolean> resultMap = new HashMap<>();
+		
+		int id = (Integer)session.getAttribute("userId");
+		
+		boolean isCorrect = userBO.isCorrectPw(id, password);
+		
+		if(isCorrect) {//맞을시
+			resultMap.put("isCorrect", true);
+		} else {//틀릴시
+			resultMap.put("isCorrect", false);
+		}
+		
+		return resultMap;
+		
+	
+	}
+	
 	
 
 }

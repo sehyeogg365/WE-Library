@@ -26,26 +26,19 @@
 			<h2 class="text-center mt-3"><b>회원정보 수정</b></h2>
 			
 			<div class="d-flex">
+			<c:import url="/WEB-INF/jsp/include/sidenav.jsp"/>
 			
-			<nav class="bg-success col-3">
-				<ul class="nav small nav-fill flex-column bg-danger"> 
-				
-					<li class="nav-item"><h4>회원정보</h4></li>
-					<li class="nav-item"><a href="/user/mypage/view" class="nav-link text-dark"><h4>회원정보수정</h4></a></li>
-					<li class="nav-item"><a href="/user/update_pw/view" class="nav-link text-dark"><h4>비밀번호 변경</h4></a></li>
-					<li class="nav-item"><a href="/user/withdrawl/view" class="nav-link text-dark"><h4>회원탈퇴</h4></a></li>
-			
-				</ul>
-			</nav>
 			
 			<div class="bg-info col-9">
 			
 				<div class="bg-warning col-8">
 					<div class="">${user.loginId }</div>
-					<input type="text" id="loginIdInput" placeholder="성명" value="${user.loginId }" class="form-control mt-4">
+					
 					<input type="text" id="nameInput" placeholder="성명" value="${user.name }" class="form-control mt-4">
-					<input type="text" id="phoneNumberInput" placeholder="휴대폰번호" value="${user.phoneNumber }" class="form-control mt-4">
+					<input type="text" id="birthInput" placeholder="생일" value="${user.birth }" class="form-control mt-4">
 					<input type="text" id="emailInput" placeholder="이메일" value="${user.email }" class="form-control mt-4">
+					<input type="text" id="phoneNumberInput" placeholder="휴대폰번호" value="${user.phoneNumber }" class="form-control mt-4">
+					
 
 					
 				
@@ -65,11 +58,39 @@
 		$("#updateBtn").on("click", function(){
 			
 			let id = $(this).data("user-id");
-			let name = 
-			let birth = 
-			let email = 
-			let phoneNumber =
+			let name = $("#nameInput").val();
+			let birth = $("#birthInput").val();
+			let email = $("#emailInput").val();
+			let phoneNumber = $("#phoneNumberInput").val();
 			
+			
+			//alert(id);
+			//alert(name);
+			//alert(birth);
+			//alert(email);
+			//alert(phoneNumber);
+			
+			
+			$.ajax({
+				type:"post"
+				, url:"/user/updateinfo"
+				, data: {"name":name, "birth":birth, "email" : email, "phoneNumber":phoneNumber}
+				, success:function(data){
+					if(data.result == "success"){
+						alert("회원정보 수정 성공");
+						location.reload();
+					} else {
+						alert("회원정보 수정 실패");
+						
+					}
+				}
+				,error:function(){
+					
+					alert("회원정보 수정 오류");
+				}
+				
+				
+			});
 			
 		});
 	})
