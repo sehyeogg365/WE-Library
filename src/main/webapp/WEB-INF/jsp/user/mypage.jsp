@@ -41,14 +41,15 @@
 			<div class="bg-info col-9">
 			
 				<div class="bg-warning col-8">
-					<input type="text" id="nameInput" placeholder="성명" value="" class="form-control mt-4">
-					<input type="text" id="loginIdInput" placeholder="로그인 ID" value="" class="form-control mt-4">
-					<input type="text" id="phoneNumberInput" placeholder="휴대폰번호" value="" class="form-control mt-4">
-					<input type="text" id="emailInput" placeholder="이메일" value="" class="form-control mt-4">
-					<input type="text" id="phoneNumberInput" placeholder="전화번호" value="" class="form-control mt-4">
+					<div class="">${user.loginId }</div>
+					<input type="text" id="loginIdInput" placeholder="성명" value="${user.loginId }" class="form-control mt-4">
+					<input type="text" id="nameInput" placeholder="성명" value="${user.name }" class="form-control mt-4">
+					<input type="text" id="phoneNumberInput" placeholder="휴대폰번호" value="${user.phoneNumber }" class="form-control mt-4">
+					<input type="text" id="emailInput" placeholder="이메일" value="${user.email }" class="form-control mt-4">
+
 					
 				
-					<button type="button" class="btn btn-primary btn-block mt-3 mb-3" id="loginBtn">로그인</button>
+					<button type="button" class="btn btn-primary btn-block mt-3 mb-3" id="updateBtn" data-user-id = "${user.id }">회원정보 수정 </button>
 				</div>
 			</div>
 			
@@ -59,6 +60,23 @@
 	
 	<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
 	</div>
+	<script>
+	$(document).ready(function(){
+		$("#updateBtn").on("click", function(){
+			
+			let id = $(this).data("user-id");
+			let name = 
+			let birth = 
+			let email = 
+			let phoneNumber =
+			
+			
+		});
+	})
+	
+	
+	
+	</script>
 
 </body>
 </html>

@@ -172,10 +172,14 @@ public class UserBO {
 	}
 	
 	//회원정보 수정 리턴타입 생각해보기
-	public int updateUserInfo() {
+	public int updateUser( int id		
+						   , String name
+						   , String birth
+						   , String email
+						   , String phoneNumber) {
 		
 		
-		return 0;
+		return userDAO.updateUser(id, name, birth, email, phoneNumber);
 		
 		
 	}
@@ -189,6 +193,8 @@ public class UserBO {
 		
 		
 	}
+	
+	//비밀번호 확인
 	
 	//비밀번호 변경
 	

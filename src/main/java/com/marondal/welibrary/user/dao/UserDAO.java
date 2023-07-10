@@ -58,11 +58,19 @@ public interface UserDAO {
 
 	
 	//회원정보 수정
+	public int updateUser( @Param("id") int id
+						  ,	@Param("name") String name
+						  , @Param("birth") String birth
+						  , @Param("email") String email
+						  , @Param("phoneNumber") String phoneNumber
+						  );
+	
 	
 	//회원정보 한행 조회
 	
 	public User selectUserInfo(@Param("id") int id);
 	
+	//비밀번호 확인
 	
 	
 	//비밀번호 변경

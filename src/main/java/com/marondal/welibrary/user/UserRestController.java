@@ -187,16 +187,32 @@ public class UserRestController {
 
 	//회원정보 수정
 	@PostMapping("/updateinfo")
-	public Map<String, String> mypageUpdate(){
+	public Map<String, String> mypageUpdate(@RequestParam("name") String name
+											, @RequestParam("birth") String birth
+											, @RequestParam("email") String email
+											, @RequestParam("phoneNumber") String phoneNumber
+											, HttpSession session//이번엔 파라미터가 아닌 세션값으로 id 불러오기
+											){
 		
+		Map<String, String> resultMap = new HashMap<>();
 		
+		int id = (Integer)session.getAttribute("id");
 		
-		return null;
+		int count = userBO.updateUser(id, name, birth, email, phoneNumber);
+		
+		if(count == 1) {
+			resultMap.put("result", "success");
+		} else {
+			resultMap.put("result", "fail");
+		}
+		
+		return resultMap;
 		
 		
 		
 	}
 	
+	//비밀번호 확인
 	
 
 }

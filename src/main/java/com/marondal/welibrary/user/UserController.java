@@ -76,18 +76,22 @@ public class UserController {
 	
 	@GetMapping("/mypage/view")
 	public String mypage(Model model
-						//, @RequestParam("id") int id
+						, @RequestParam("id") int id
 						) {
 		
 		//회원정보 한행을 조회하는 기능
-		//User user = userDAO.selectUserInfo(id); 
-				
+		User user = userDAO.selectUserInfo(id); 
+		
+		model.addAttribute("user", user);
+		
 		return "/user/mypage";
 		
 	}
 	
 	@GetMapping("/pwcheck/view")
 	public String pwcheck() {
+		
+		//세션값? 모델값?
 		
 		return "/user/pwcheck";
 		

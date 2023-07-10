@@ -142,7 +142,22 @@
   
   
   <!-- 회원정보 수정 -->
-  
+  <update id ="updateUser" parameterType="map">
+  	UPDATE
+  		`id`
+  		,`loginId`
+  		, `password`
+  		, `name`
+  		, `birth`
+  		, `email`
+  		, `phoneNumber`
+  		, `createdAt` 
+		, `updatedAt` 
+  	SET
+  		`user`
+  	WHERE
+  		`id`=#{id}
+  </update>
   
   
   
