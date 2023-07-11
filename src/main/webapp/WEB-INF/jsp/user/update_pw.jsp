@@ -1,11 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>            
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>                   
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>WE-Library 비밀번호 변경</title>
+<title>WE-Library 마이페이지</title>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	
 	<script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
@@ -18,30 +19,48 @@
 	<div id="wrap" class="">
 	<c:import url="/WEB-INF/jsp/include/header.jsp"/>
 	<section class="contents d-flex justify-content-center">
-	
-	
-		<div class="userinfo-page">
 		
-			<h2 class="text-center mt-3"><b>비밀번호 변경</b></h2>
+	
+		<div class="userinfo-page  bg-secondary mt-3">
+		
+			
+			<h2 class="text-center mt-3"><b>회원정보 수정</b></h2>
 			
 			<div class="d-flex">
+			<c:import url="/WEB-INF/jsp/include/sidenav.jsp"/>
 			
-				<c:import url="/WEB-INF/jsp/include/sidenav.jsp"/>
+			
+			<div class="bg-info d-flex justify-content-center col-9">
+			
+				<div class="bg-warning col-8">
+					
+					
+					<input type="text" id="passwordInput" placeholder="기존 비밀번호" value="${user.name }" class="form-control mt-4">
+					<input type="text" id="newpasswordInput" placeholder="새 비밀번호" value="${user.name }" class="form-control mt-4">
+					<input type="text" id="newpasswordConfirmInput" placeholder="새 비밀번호 확인" value="${user.name }" class="form-control mt-4">
+					
+					
+						 
+					
+					
+				
+					<button type="button" class="btn btn-primary btn-block mt-3 mb-3" id="updateBtn" data-user-id = "${user.id }">비밀번호 변경 </button>
+				</div>
 			</div>
-		
-		
+			
+			</div>
 		</div>
-	
-	
 	</section>
-	
-	
 	
 	
 	<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
 	</div>
+	<script>
 	
-
+	
+	
+	
+	</script>
 
 </body>
 </html>

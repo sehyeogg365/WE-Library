@@ -31,6 +31,8 @@
 			
 			<div class="d-flex justify-content-center bg-info col-9">
 				<div style= "text-align: center;" class="bg-warning col-8">
+				
+					<div class="">${user.loginId }</div>
 					<input type="password" id="passwordInput" placeholder="비밀번호" class="form-control mt-4">				
 					
 					<button type="button" class="btn btn-primary  my-3 text-center" id="pwCheckBtn" data-user-id ="${user.id }">비밀번호 확인</button>
