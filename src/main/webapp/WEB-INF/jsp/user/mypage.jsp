@@ -42,7 +42,7 @@
 						<input type="text" id="yearInput" value="${fn:substring(user.birth,0,4) }" class="form-control mt-4 col-3"> 	
 						<div class="mt-4 col-1">년</div>
 						<select class="form-control mt-4 col-3" id="monthSelector">
-							<option value="">${fn:substring(user.birth,4,6) }</option>
+							<option value="${fn:substring(user.birth,4,6) }">${fn:substring(user.birth,4,6) }</option>
 						 	<option value="01">1</option>
 						 	<option value="02">2</option>
 						 	<option value="03">3</option>
@@ -60,7 +60,7 @@
 						 </select>
 						 <div class="mt-4 col-1">월</div>
 						<select class="form-control mt-4 col-3" id="daySelector">
-							<option value="">${fn:substring(user.birth,6,8) }</option>
+							<option value="${fn:substring(user.birth,6,8) }">${fn:substring(user.birth,6,8) }</option>
 						 	<option value="01">1</option>
 						 	<option value="02">2</option>
 						 	<option value="03">3</option>
@@ -100,8 +100,17 @@
 					<div class="">
 						<input type="text" id="emailInput" placeholder="이메일" value="${user.email }" class="form-control mt-4">
 					</div>
-					<div class="">
-						<input type="text" id="phoneNumberInput" placeholder="휴대폰번호" value="${user.phoneNumber }" class="form-control mt-4">
+					<div class="d-flex justify-content-between">
+						<select class="form-control mt-4 col-3" id="phoneNumberSelector">
+						 	<option value="${fn:substring(user.phoneNumber,0,2) }">${fn:substring(user.phoneNumber,0,2) }</option>
+						 	<option value="02">02</option>
+						 	<option value="010">010</option>
+						 	<option value="011">011</option>	
+						 </select>
+						<div class="d-flex align-items-center mt-4">-</div>
+						<input type="text" id="phoneNumberInput2"  value="${fn:substring(user.phoneNumber,2,6) }" class="form-control mt-4 ml-1 col-3">
+						<div class="d-flex align-items-center mt-4">-</div>
+						<input type="text" id="phoneNumberInput3" value="${fn:substring(user.phoneNumber,6,10) }" class="form-control mt-4 ml-1 col-3">
 					</div>
 
 					
@@ -123,10 +132,19 @@
 			
 			let id = $(this).data("user-id");
 			let name = $("#nameInput").val();
-			let birth = $("#birthInput").val();
-			let email = $("#emailInput").val();
-			let phoneNumber = $("#phoneNumberInput").val();
 			
+			let year = $("#yearInput").val(); 
+			let month = $("#monthSelector").val(); 
+			let day = $("#daySelector").val(); 
+			let birth = year + month + day;
+			
+			let email = $("#emailInput").val();
+			
+			let phoneNumber1 = $("#phoneNumberSelector").val();
+			let phoneNumber2 = $("#phoneNumberInput2").val();
+			let phoneNumber3 = $("#phoneNumberInput3").val();
+			let phoneNumber = phoneNumber1 + phoneNumber2 + phoneNumber3;
+			//폰번호에대한 유효성검사도 필요한듯 각요소 별 네글자 초과시.
 			
 			//alert(id);
 			//alert(name);

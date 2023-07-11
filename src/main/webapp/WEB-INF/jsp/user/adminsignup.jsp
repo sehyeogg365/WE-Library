@@ -219,6 +219,7 @@
 			let phoneNumber2 = $("#phoneNumberInput2").val();
 			let phoneNumber3 = $("#phoneNumberInput3").val();
 			let phoneNumber = phoneNumber1 + phoneNumber2 + phoneNumber3;
+			//폰번호에대한 유효성검사도 필요한듯 각요소 별 네글자 초과시.
 			
 			let isAdmin = $("#isAdminInput").val();
 			
