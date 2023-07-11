@@ -224,12 +224,12 @@ public class UserRestController {
 		
 		
 		int count = userBO.checkPassword(id, password);
-		//맞을시
 		
-		if(count == 1) {
-			resultMap.put("result", "success");
-		} else {//틀릴시
+		
+		if(count == 0) {//틀릴시
 			resultMap.put("result", "fail");
+		} else {//맞을시
+			resultMap.put("result", "success");
 		}
 		
 		return resultMap;
