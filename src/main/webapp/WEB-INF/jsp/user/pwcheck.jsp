@@ -32,10 +32,12 @@
 			<div class="d-flex justify-content-center bg-info col-9">
 				<div style= "text-align: center;" class="bg-warning col-8">
 				
-					<div class="">${user.loginId }</div>
-					<input type="password" id="passwordInput" placeholder="비밀번호" class="form-control mt-4">				
+					<div class="d-flex justify-content-bewtween"><label><h5>아이디</h5></label><h5 class="ml-5">${user.loginId }</h5></div>
+					<div class="d-flex "><label class="mt-4"><h5>비밀번호</h5></label ><input type="password" id="passwordInput" placeholder="비밀번호" class="form-control mt-4 ml-5 col-4"></div>
 					
-					<button type="button" class="btn btn-primary  my-3 text-center" id="pwCheckBtn" data-user-id ="${user.id }">비밀번호 확인</button>
+							
+					
+					<a href="/user/mypage/view?id=${user.id } " id="pwCheckBtn" class="btn btn-sm btn-primary" data-user-id="{user.id}">비밀번호 확인</a>
 				</div>
 				
 			</div>
@@ -59,21 +61,23 @@
 				alert("비밀번호를 입력하세요.");
 			}
 			
+			alert(password);
+			
 			$.ajax({
 				type:"get"
 				, url:"/user/pw_check"
 				, data: {"password":password}
 				, success:function(data){
 					if(data.result == "success"){
-						alert("회원정보 수정 성공");
+						alert("비밀번호 확인 성공");
 						
 					} else {
-						alert("회원정보 수정 실패");
+						alert("비밀번호 확인 실패");
 						location.reload();
 					}
 				}
 				, error:function(){
-					alert("회원정보 수정 오류");
+					alert("비밀번호 확인 오류");
 				}
 				
 			});

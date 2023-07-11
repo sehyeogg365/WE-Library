@@ -195,28 +195,29 @@ public class UserBO {
 	}
 	
 	//비밀번호 확인
-	public boolean isCorrectPw(int id, String password) {
+	public int checkPassword(int id, String password) {
 		
-		String ecryptPassword = EncryptService.md5(password);
-		
-		int count = userDAO.selectPassword(id, ecryptPassword);
+		//String ecryptPassword = EncryptService.md5(password);
 		
 		
-		if(count == 1) {//비밀번호가 맞을시
-			
-			return true;
-			
-		} else {//아닐시
-			
-			return false;
-		}
+		return userDAO.selectPassword(id, password);
 		
 		
+		//비밀번호가 맞을시
+	
 		
 	}
 	
 	
 	//비밀번호 변경
+	public User updatePassword(int id, String password) {
+		
+		
+		return null;
+		
+		
+	}
+	
 	
 	// 회원 탈퇴
 	

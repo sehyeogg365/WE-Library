@@ -89,9 +89,13 @@ public class UserController {
 	}
 	
 	@GetMapping("/pwcheck/view")
-	public String pwcheck() {
+	public String pwcheck(Model model
+			, @RequestParam("id") int id) {
 		
 		//세션값? 모델값?
+		User user = userDAO.selectUserInfo(id); 
+		
+		model.addAttribute("user", user);
 		
 		return "/user/pwcheck";
 		
@@ -100,6 +104,7 @@ public class UserController {
 	
 	@GetMapping("/update_pw/view")
 	public String update_pw() {
+		
 		
 		return "/user/update_pw";
 		

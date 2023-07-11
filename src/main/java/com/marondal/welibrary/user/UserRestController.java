@@ -214,20 +214,22 @@ public class UserRestController {
 	
 	//비밀번호 확인
 	@GetMapping("/pw_check")
-	public Map<String, Boolean > pwcheck(@RequestParam("password") String password
+	public Map<String, String> pwcheck(@RequestParam("password") String password
 										, HttpSession session
 										){
 		
-		Map<String, Boolean> resultMap = new HashMap<>();
+		Map<String, String> resultMap = new HashMap<>();
 		
 		int id = (Integer)session.getAttribute("userId");
 		
-		boolean isCorrect = userBO.isCorrectPw(id, password);
 		
-		if(isCorrect) {//맞을시
-			resultMap.put("isCorrect", true);
+		int count = userBO.checkPassword(id, password);
+		//맞을시
+		
+		if(count == 1) {
+			resultMap.put("result", "success");
 		} else {//틀릴시
-			resultMap.put("isCorrect", false);
+			resultMap.put("result", "fail");
 		}
 		
 		return resultMap;
@@ -235,6 +237,22 @@ public class UserRestController {
 	
 	}
 	
+	// 비밀번호 변경
+	@PostMapping("/update_pw")
+	public Map<String, String> updatePw(@RequestParam("password") String password
+										, HttpSession session){
+		
+		
+		Map<String, String> resultMap = new HashMap<>();
+		
+		int id = (Integer)session.getAttribute("userId");
+		
+		
+		
+		return null;
+		
+		
+	}
 	
 
 }
