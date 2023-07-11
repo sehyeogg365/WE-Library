@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>        
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>                   
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,10 +36,73 @@
 					<div class="">${user.loginId }</div>
 					
 					<input type="text" id="nameInput" placeholder="성명" value="${user.name }" class="form-control mt-4">
-					<input type="text" id="birthInput" placeholder="생일" value="${user.birth }" class="form-control mt-4">
-					<input type="text" id="emailInput" placeholder="이메일" value="${user.email }" class="form-control mt-4">
-					<input type="text" id="phoneNumberInput" placeholder="휴대폰번호" value="${user.phoneNumber }" class="form-control mt-4">
 					
+					<div class="d-flex align-items-center">
+						<label></label>
+						<input type="text" id="yearInput" value="${fn:substring(user.birth,0,4) }" class="form-control mt-4 col-3"> 	
+						<div class="mt-4 col-1">년</div>
+						<select class="form-control mt-4 col-3" id="monthSelector">
+							<option value="">${fn:substring(user.birth,4,6) }</option>
+						 	<option value="01">1</option>
+						 	<option value="02">2</option>
+						 	<option value="03">3</option>
+						 	<option value="04">4</option>
+						 	<option value="05">5</option>
+						 	<option value="06">6</option>
+						 	<option value="07">7</option>
+						 	<option value="08">8</option>
+						 	<option value="09">9</option>
+						 	<option value="09">9</option>
+						 	<option value="10">10</option>
+						 	<option value="11">11</option>
+						 	<option value="12">12</option>
+						 	
+						 </select>
+						 <div class="mt-4 col-1">월</div>
+						<select class="form-control mt-4 col-3" id="daySelector">
+							<option value="">${fn:substring(user.birth,6,8) }</option>
+						 	<option value="01">1</option>
+						 	<option value="02">2</option>
+						 	<option value="03">3</option>
+						 	<option value="04">4</option>
+						 	<option value="05">5</option>
+						 	<option value="06">6</option>
+						 	<option value="07">7</option>
+						 	<option value="08">8</option>
+						 	<option value="09">9</option>
+						 	<option value="09">9</option>
+						 	<option value="10">10</option>
+						 	<option value="11">11</option>
+						 	<option value="12">12</option>
+						 	<option value="13">13</option>
+						 	<option value="14">14</option>
+						 	<option value="15">15</option>
+						 	<option value="16">16</option>
+						 	<option value="17">17</option>
+						 	<option value="18">18</option>
+						 	<option value="19">19</option>
+						 	<option value="20">20</option>
+						 	<option value="21">21</option>
+						 	<option value="22">22</option>
+						 	<option value="23">23</option>
+						 	<option value="24">24</option>
+						 	<option value="25">25</option>
+						 	<option value="26">26</option>
+						 	<option value="27">27</option>
+						 	<option value="28">28</option>
+						 	<option value="29">29</option>
+						 	<option value="30">30</option>
+						 	<option value="31">31</option>
+						 	
+						 </select>
+						<div class="mt-4 col-1">일</div>
+					</div>
+					<div class="">
+						<input type="text" id="emailInput" placeholder="이메일" value="${user.email }" class="form-control mt-4">
+					</div>
+					<div class="">
+						<input type="text" id="phoneNumberInput" placeholder="휴대폰번호" value="${user.phoneNumber }" class="form-control mt-4">
+					</div>
 
 					
 				

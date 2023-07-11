@@ -123,10 +123,10 @@
 						</div>
 						<hr>	
 			
-						<div class="announce-box">
+						<div class="announce-box"><!-- 21글자가 넘으면 자르담에 뒤에 ... -->
 							<div class=""><a href="#" class="text-dark">[역삼푸른솔 도서관]분신물폐기 안내</a>  2023.07.03</div>
 							<div class=""><a href="#" class="text-dark">[역삼푸른솔 도서관] 7월 휴관일 안내</a>  2023.07.03</div>
-							<div class=""><a href="#" class="text-dark">[역삼푸른솔 도서관][신착도서]</a> 6월 2023.06.29</div>
+							<div class=""><a href="#" class="text-dark">[역삼푸른솔 도서관][신착도서]dddddd</a> 6월 2023.06.29</div>
 							<div class=""><a href="#" class="text-dark"></a></div>
 							<div class=""><a href="#" class="text-dark"></a></div>
 						

@@ -102,6 +102,7 @@
 						 	<option value="@daum.com">daum.com</option>
 						 	<option value="@kakao.com">kakao.com</option>
 						 	<option value="@gmail.com">gmail.com</option>
+						 	<!-- 시간날때 해보기 <option value = "selfInput">직접입력</option>-->
 						 	
 						 </select>
 					 
