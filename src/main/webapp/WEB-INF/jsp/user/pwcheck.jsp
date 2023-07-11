@@ -51,8 +51,32 @@
 	$(document).ready(function(){
 		
 		$("#pwCheckBtn").on("click", function(){
-			let id = 
+			let id = $(this).data("user-id");
 			let password = $("#passwordInput").val();
+			
+			if(password==""){
+				
+				alert("비밀번호를 입력하세요.");
+			}
+			
+			$.ajax({
+				type:"get"
+				, url:"/user/pw_check"
+				, data: {"password":password}
+				, success:function(data){
+					if(data.result == "success"){
+						alert("회원정보 수정 성공");
+						
+					} else {
+						alert("회원정보 수정 실패");
+						location.reload();
+					}
+				}
+				, error:function(){
+					alert("회원정보 수정 오류");
+				}
+				
+			});
 			
 			
 			

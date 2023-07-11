@@ -24,7 +24,7 @@
 		<div class="userinfo-page  bg-secondary mt-3">
 		
 			
-			<h2 class="text-center mt-3"><b>회원정보 수정</b></h2>
+			<h2 class="text-center mt-3"><b>비밀번호 변경</b></h2>
 			
 			<div class="d-flex">
 			<c:import url="/WEB-INF/jsp/include/sidenav.jsp"/>
