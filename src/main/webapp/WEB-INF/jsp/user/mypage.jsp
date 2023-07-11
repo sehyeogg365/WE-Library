@@ -97,8 +97,20 @@
 						 </select>
 						<div class="mt-4 col-1">일</div>
 					</div>
-					<div class="">
-						<input type="text" id="emailInput" placeholder="이메일" value="${user.email }" class="form-control mt-4">
+					<div class="d-flex align-items-center">
+						<input type="text" id="emailIdInput" value="${fn:split(user.email, "@")[0]}" class="form-control mt-4 col-5">
+						
+						 <div class="mt-4 col-1">@</div>
+						 <select class="form-control mt-4 col-6" id="emailSelctor">
+						 
+						 	<option value="@${fn:split(user.email, "@")[1]}">${fn:split(user.email, "@")[1]}</option>
+						 	<option value="@naver.com">naver.com</option>
+						 	<option value="@daum.com">daum.com</option>
+						 	<option value="@kakao.com">kakao.com</option>
+						 	<option value="@gmail.com">gmail.com</option>
+						 	<!-- 시간날때 해보기 <option value = "selfInput">직접입력</option>-->
+						 </select>
+					 
 					</div>
 					<div class="d-flex justify-content-between">
 						<select class="form-control mt-4 col-3" id="phoneNumberSelector">
@@ -138,7 +150,9 @@
 			let day = $("#daySelector").val(); 
 			let birth = year + month + day;
 			
-			let email = $("#emailInput").val();
+			let emailId = $("#emailIdInput").val();
+			let emailDomain = $("#emailSelctor").val();
+			let email = emailId + emailDomain;
 			
 			let phoneNumber1 = $("#phoneNumberSelector").val();
 			let phoneNumber2 = $("#phoneNumberInput2").val();
