@@ -197,10 +197,10 @@ public class UserBO {
 	//비밀번호 확인
 	public int checkPassword(int id, String password) {
 		
-		//String ecryptPassword = EncryptService.md5(password);
+		String ecryptPassword = EncryptService.md5(password);
 		
 		
-		return userDAO.selectPassword(id, password);
+		return userDAO.selectPassword(id, ecryptPassword);
 		
 		
 		//비밀번호가 맞을시
