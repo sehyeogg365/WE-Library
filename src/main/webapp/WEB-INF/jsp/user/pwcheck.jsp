@@ -36,7 +36,8 @@
 					<div class="d-flex "><label class="mt-4"><h5>비밀번호</h5></label ><input type="password" id="passwordInput" placeholder="비밀번호" class="form-control mt-4 ml-5 col-4"></div>
 					
 
-					<a href="/user/mypage/view?id=${user.id }" id="pwCheckBtn" class="btn  btn-primary" data-user-id="${user.id }">비밀번호 확인</a>
+					<!--  <a href="#" id="pwCheckBtn" class="btn  btn-primary" data-user-id="${user.id }">비밀번호 확인</a>-->
+					<button type="button" id="pwCheckBtn" class="btn btn-primary"  data-user-id = "${user.id }">비밀번호 확인 </button>
 				</div>
 				
 			</div>
@@ -68,6 +69,7 @@
 				, data: {"password":password}
 				, success:function(data){
 					if(data.result == "success"){
+						location.href="/user/mypage/view?id=${user.id}";
 						alert("비밀번호 확인 성공");
 						
 					} else {
