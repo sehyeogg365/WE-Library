@@ -21,7 +21,7 @@
 	<section class="contents d-flex justify-content-center">
 		
 	
-		<div class="userinfo-page  bg-secondary mt-3">
+		<div class="userinfo-page  mt-3">
 		
 			
 			<h2 class="text-center mt-3"><b>회원 탈퇴</b></h2>
@@ -34,10 +34,10 @@
 			
 				<div class="user-box bg-warning col-8">
 					
-					<div class="">성명</div>
-					<div class="">아이디</div>
+					<div class="mt-4">성명: ${user.name }</div>
+					<div class="">아이디 : ${user.loginId }</div>
 					
-					<input type="text" id="passwordInput" placeholder="비밀번호" value="${user.name }" class="form-control mt-4">
+					<input type="text" id="passwordInput" placeholder="비밀번호"  class="form-control mt-4">
 				
 				 
 					

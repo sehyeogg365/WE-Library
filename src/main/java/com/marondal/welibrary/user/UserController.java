@@ -103,15 +103,24 @@ public class UserController {
 	
 	
 	@GetMapping("/update_pw/view")
-	public String update_pw() {
+	public String update_pw(Model model
+			, @RequestParam("id") int id) {
 		
+		User user = userDAO.selectUserInfo(id); 
+		
+		model.addAttribute("user", user);
 		
 		return "/user/update_pw";
 		
 	}
 	
 	@GetMapping("/withdrawl/view")
-	public String withdrawl() {
+	public String withdrawl(Model model
+			, @RequestParam("id") int id) {
+		
+		User user = userDAO.selectUserInfo(id); 
+		
+		model.addAttribute("user", user);
 		
 		return "/user/withdrawl";
 		

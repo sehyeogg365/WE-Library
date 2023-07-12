@@ -24,7 +24,7 @@
 		<div class="userinfo-page  mt-3">
 		
 			<div class="">
-			<h2 class="text-center mt-3"><b>비밀번호 변경</b></h2>
+				<h2 class="text-center mt-3"><b>비밀번호 변경</b></h2>
 			</div>
 			<div class="d-flex">
 			<c:import url="/WEB-INF/jsp/include/sidenav.jsp"/>
@@ -34,13 +34,16 @@
 			
 				<div class="user-box bg-warning col-8">
 					
-					
-					<input type="text" id="passwordInput" placeholder="기존 비밀번호" value="${user.name }" class="form-control mt-4">
-					<input type="text" id="newpasswordInput" placeholder="새 비밀번호" value="${user.name }" class="form-control mt-4">
-					<input type="text" id="newpasswordConfirmInput" placeholder="새 비밀번호 확인" value="${user.name }" class="form-control mt-4">
+					<div class="bg-secondary text-center col-8">
+					<input type="text" id="passwordInput" placeholder="기존 비밀번호"  class="form-control mt-4">
+					<input type="text" id="newpasswordInput" placeholder="새 비밀번호"  class="form-control mt-4">
+					<div class="small text-info">※8~20자리 비밀번호 영문, 숫자, 특수문자를 조합하여 입력</div>
+					<input type="text" id="newpasswordConfirmInput" placeholder="새 비밀번호 확인" class="form-control mt-4">
 					
 				
-					<button type="button" class="btn btn-primary btn-block mt-3 mb-3" id="updateBtn" data-user-id = "${user.id }">비밀번호 변경 </button>
+					
+					</div>
+					<button type="button" id="updateBtn" class="btn btn-primary btn-block mt-3 mb-3"  data-user-id = "${user.id }">비밀번호 변경 </button>
 				</div>
 			</div>
 			
@@ -52,6 +55,15 @@
 	<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
 	</div>
 	<script>
+	$(document).ready(function(){
+		
+		let id = $(this).data("user-id");
+		let password = $("#passwordInput").val();
+		let newpassword = $("#newpasswordInput").val();
+		let newpasswordConfirm = $("#newpasswordConfirmInput").val();
+		
+		
+	});
 	
 	
 	
