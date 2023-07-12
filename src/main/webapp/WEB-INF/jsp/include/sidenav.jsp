@@ -8,17 +8,43 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
+	<style>
+	
+	</style>
 <body>
-	<nav class="bg-success col-3">
-			<ul class="nav small nav-fill flex-column bg-danger"> 
+
+	<nav class="side-nav col-3">
+			<ul class="nav flex-column mt-4 "> 
 				
-				<li class="nav-item"><h4>회원정보</h4></li>
-				<li class="nav-item"><a href="/user/pwcheck/view?id=${userId}" class="nav-link text-dark"><h4>회원정보수정</h4></a></li>
-				<li class="nav-item"><a href="/user/update_pw/view" class="nav-link text-dark"><h4>비밀번호 변경</h4></a></li>
-				<li class="nav-item"><a href="/user/withdrawl/view" class="nav-link text-dark"><h4>회원탈퇴</h4></a></li>
+				<li class="nav-item"><h4 class="text-center text-white">회원정보</h4><hr></li>
+				<li class="nav-item"><h5><a href="/user/pwcheck/view?id=${userId}" class="nav-link text-dark">회원정보수정</a></h5><hr></li>
+				<li class="nav-item"><h5><a href="/user/update_pw/view?id=${userId}" class="nav-link text-dark">비밀번호 변경</a></h5><hr></li>
+				<li class="nav-item"><h5><a href="/user/withdrawl/view?id=${userId}" class="nav-link text-dark">회원탈퇴</a></h5></li>
 			
 			</ul>
 	</nav>
-
+	
+	
+	<script>
+	$(document).ready(function(){
+		
+		$(function(){
+			
+			$("li").click(function(){
+				
+				$("li").removeClass()
+				
+				
+			});
+			
+		});
+		
+		
+	});
+	
+	
+	
+	</script>
 </body>
+	
 </html>

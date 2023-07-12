@@ -21,19 +21,19 @@
 	<section class="contents d-flex justify-content-center">
 		
 	
-		<div class="userinfo-page  bg-secondary mt-3">
+		<div class="userinfo-page   mt-3">
 		
-			
+			<div class="">
 			<h2 class="text-center mt-3"><b>회원정보 수정</b></h2>
-			
+			</div>
 			<div class="d-flex">
 			<c:import url="/WEB-INF/jsp/include/sidenav.jsp"/>
 			
 			
 			<div class="bg-info d-flex justify-content-center col-9">
 			
-				<div class="bg-warning col-8">
-					<div class="">${user.loginId }</div>
+				<div class="user-box bg-warning col-8">
+					<div class="mt-4">${user.loginId }</div>
 					
 					<input type="text" id="nameInput" placeholder="성명" value="${user.name }" class="form-control mt-4">
 					

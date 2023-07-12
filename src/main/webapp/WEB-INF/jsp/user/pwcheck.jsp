@@ -20,24 +20,25 @@
 	<section class="contents d-flex justify-content-center">
 		
 	
-		<div class="userinfo-page  bg-secondary mt-3">
+		<div class="userinfo-page  mt-3">
 		
-			
+			<div class="">
 			<h2 class="text-center mt-3"><b>회원정보 수정</b></h2>
-			
+			</div>
 			<div class="d-flex">
 			
 			<c:import url="/WEB-INF/jsp/include/sidenav.jsp"/>
 			
-			<div class="d-flex justify-content-center bg-info col-9">
-				<div style= "text-align: center;" class="bg-warning col-8">
+			<div class="bg-info d-flex justify-content-center col-9">
+				<div class="user-box bg-warning text-center col-8">
 				
-					<div class="d-flex justify-content-bewtween"><label><h5>아이디</h5></label><h5 class="ml-5">${user.loginId }</h5></div>
-					<div class="d-flex "><label class="mt-4"><h5>비밀번호</h5></label ><input type="password" id="passwordInput" placeholder="비밀번호" class="form-control mt-4 ml-5 col-4"></div>
-					
+					<div style="text-align-center" class="">
+						<div class="d-flex justify-content-bewtween mt-4 mx-5"><label><h5>아이디</h5></label><h5 class="ml-5">${user.loginId }</h5></div>
+						<div class="d-flex  mt-4 mx-5"><label ><h5>비밀번호</h5></label><input type="password" id="passwordInput" placeholder="비밀번호" class="form-control ml-4 col-4"></div>
+					</div>
 
 					<!--  <a href="#" id="pwCheckBtn" class="btn  btn-primary" data-user-id="${user.id }">비밀번호 확인</a>-->
-					<button type="button" id="pwCheckBtn" class="btn btn-primary"  data-user-id = "${user.id }">비밀번호 확인 </button>
+					<button type="button" id="pwCheckBtn" class="btn btn-primary text-center mt-4"  data-user-id = "${user.id }">비밀번호 확인 </button>
 				</div>
 				
 			</div>

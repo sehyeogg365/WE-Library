@@ -96,9 +96,24 @@ footer{
 	height:800px;
 }
 
+
+
+
 .userinfo-page{
 	
 	width:1000px;
 }
 
+
+.side-nav {
+	
+	background-color: 	#87CEEB;
+	height:300px;
+
+}
+
+.user-box{
+	
+	border: 1px solid;
+}
 

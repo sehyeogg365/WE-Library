@@ -21,27 +21,23 @@
 	<section class="contents d-flex justify-content-center">
 		
 	
-		<div class="userinfo-page  bg-secondary mt-3">
+		<div class="userinfo-page  mt-3">
 		
-			
+			<div class="">
 			<h2 class="text-center mt-3"><b>비밀번호 변경</b></h2>
-			
+			</div>
 			<div class="d-flex">
 			<c:import url="/WEB-INF/jsp/include/sidenav.jsp"/>
 			
 			
 			<div class="bg-info d-flex justify-content-center col-9">
 			
-				<div class="bg-warning col-8">
+				<div class="user-box bg-warning col-8">
 					
 					
 					<input type="text" id="passwordInput" placeholder="기존 비밀번호" value="${user.name }" class="form-control mt-4">
 					<input type="text" id="newpasswordInput" placeholder="새 비밀번호" value="${user.name }" class="form-control mt-4">
 					<input type="text" id="newpasswordConfirmInput" placeholder="새 비밀번호 확인" value="${user.name }" class="form-control mt-4">
-					
-					
-						 
-					
 					
 				
 					<button type="button" class="btn btn-primary btn-block mt-3 mb-3" id="updateBtn" data-user-id = "${user.id }">비밀번호 변경 </button>

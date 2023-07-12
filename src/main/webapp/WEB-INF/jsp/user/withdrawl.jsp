@@ -32,7 +32,7 @@
 			
 			<div class="bg-info d-flex justify-content-center col-9">
 			
-				<div class="bg-warning col-8">
+				<div class="user-box bg-warning col-8">
 					
 					<div class="">성명</div>
 					<div class="">아이디</div>
