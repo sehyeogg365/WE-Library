@@ -193,11 +193,12 @@
   	UPDATE
   		`user`
   	SET
-  		`password`
+  		`password`= #{password}
   		, `updatedAt` = now()
   	WHERE
   		`id`= #{id}
-  	
+  		AND `password` = #{password};
+  		
   </update>
   
   
