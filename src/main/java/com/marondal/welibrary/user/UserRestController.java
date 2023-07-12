@@ -119,7 +119,7 @@ public class UserRestController {
 			
 			session.setAttribute("userId", user.getId());
 			session.setAttribute("loginId", user.getLoginId());
-			session.setAttribute("password", user.getPassword());
+			//session.setAttribute("password", user.getPassword());
 			session.setAttribute("userName", user.getName());
 			session.setAttribute("isAdmin", user.getIsAdmin());//사실상 이것도 있어야 할것같다. 관리자 여부에 따라 보여지는것 안보여지는것 나눠야 함 
 			
@@ -215,7 +215,7 @@ public class UserRestController {
 	//비밀번호 확인
 	@GetMapping("/pw_check")
 	public Map<String, String> pwcheck(@RequestParam("password") String password
-										, HttpSession session
+										, HttpSession session //이번엔 세션값이 아닌 파라미터로 해보자. 세션사용을 최소화 해야 하므로
 										){
 		
 		Map<String, String> resultMap = new HashMap<>();
@@ -239,20 +239,35 @@ public class UserRestController {
 	
 	// 비밀번호 변경
 	@PostMapping("/update_pw")
-	public Map<String, String> updatePw(@RequestParam("password") String password
-										, HttpSession session){
+	public Map<String, String> updatePw(@RequestParam("id") int id//이번엔 파라미터로 불러오자 왜냐면 세션 사용 최소화를 위해서
+										, @RequestParam("password") String password
+										){
 		
 		
 		Map<String, String> resultMap = new HashMap<>();
 		
-		int id = (Integer)session.getAttribute("userId");
 		
+		int count = userBO.updatePassword(id, password);
 		
+		// 비밀번호가 맞는지 확인 + 맞으면 변경
 		
-		return null;
+		if(count == 1) {
+			resultMap.put("result", "success");
+			
+		} else {
+			
+			resultMap.put("result", "fail");
+			
+		}
+
+		return resultMap;
 		
 		
 	}
+	
+	//회원 탈퇴
+	
+	
 	
 
 }

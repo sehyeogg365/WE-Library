@@ -210,10 +210,11 @@ public class UserBO {
 	
 	
 	//비밀번호 변경
-	public User updatePassword(int id, String password) {
+	public int updatePassword(int id, String password) {
 		
+		String ecryptPassword = EncryptService.md5(password);
 		
-		return null;
+		return userDAO.updatePassword(id, ecryptPassword);
 		
 		
 	}
