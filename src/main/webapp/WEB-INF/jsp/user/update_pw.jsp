@@ -35,10 +35,10 @@
 				<div class="user-box bg-warning col-8">
 					
 					<div class="bg-secondary text-center col-8">
-					<input type="text" id="passwordInput" placeholder="기존 비밀번호"  class="form-control mt-4">
-					<input type="text" id="newpasswordInput" placeholder="새 비밀번호"  class="form-control mt-4">
+					<input type="password" id="passwordInput" placeholder="기존 비밀번호"  class="form-control mt-4">
+					<input type="password" id="newpasswordInput" placeholder="새 비밀번호"  class="form-control mt-4">
 					<div class="small text-info">※8~20자리 비밀번호 영문, 숫자, 특수문자를 조합하여 입력</div>
-					<input type="text" id="newpasswordConfirmInput" placeholder="새 비밀번호 확인" class="form-control mt-4">
+					<input type="password" id="newpasswordConfirmInput" placeholder="새 비밀번호 확인" class="form-control mt-4">
 					
 				
 					
@@ -57,10 +57,60 @@
 	<script>
 	$(document).ready(function(){
 		
-		let id = $(this).data("user-id");
-		let password = $("#passwordInput").val();
-		let newpassword = $("#newpasswordInput").val();
-		let newpasswordConfirm = $("#newpasswordConfirmInput").val();
+		
+		$("#updateBtn").on("click", function(){
+			
+			let id = $(this).data("user-id");
+			let password = $("#passwordInput").val();
+			let newpassword = $("#newpasswordInput").val();
+			let newpasswordConfirm = $("#newpasswordConfirmInput").val();
+			
+			if(password == ""){
+				alert("비밀번호를 입력해주세요.");
+				return ;
+			}
+			
+			if(newpassword == ""){
+				alert("새 비밀번호를 입력해주세요.");
+				return ;
+			}
+			
+			if(newpasswordConfirm == ""){
+				alert("새 비밀번호 확인을 입력해주세요.");
+				return ;
+			}
+			
+			
+			if(newpassword != newpasswordConfirm){
+				alert("새 비밀번호가 일치하지 않습니다.");
+				return ;
+			}
+			
+			$.ajax({
+				type: "post"
+				, url: "/user/update_pw"
+				, data: {"id":id, "password":password}
+				, success:function(data){
+					if(data.result == "success"){
+						alert("비밀번호 변경 성공");
+						location.reload();
+					} else {
+						alert("비밀번호 변경 실패");
+					}
+					
+				}
+				, error:function(){
+					alert("비밀번호 변경 오류");
+				}
+				
+				
+				
+			});
+		});
+		
+		
+		
+		
 		
 		
 	});

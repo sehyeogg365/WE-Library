@@ -119,7 +119,7 @@ public class UserRestController {
 			
 			session.setAttribute("userId", user.getId());
 			session.setAttribute("loginId", user.getLoginId());
-			//session.setAttribute("password", user.getPassword());
+			//session.setAttribute("password", user.getPassword()); //사실상 없어도 될것같다. 
 			session.setAttribute("userName", user.getName());
 			session.setAttribute("isAdmin", user.getIsAdmin());//사실상 이것도 있어야 할것같다. 관리자 여부에 따라 보여지는것 안보여지는것 나눠야 함 
 			
