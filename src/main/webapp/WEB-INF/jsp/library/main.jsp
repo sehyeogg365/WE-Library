@@ -52,15 +52,15 @@
 					
 					
 					<article class="main-contents  col-4">
-						<div class="">메인 컨텐츠</div>
+						<div class=""></div>
 						
-						<div class="main-login-box col-12">
+						<div class="main-login-box col-12 bg-info">
 
 							<div class=" main-login-box-contents">
 							<c:choose>
 
 								<c:when test = "${not empty userId }">
-									<div class="mt-3 ml-3"><h3>${userName} 님 환영합니다!</h3>  </div>
+									<div class="mt-3 ml-3"><h3 class="pt-3">${userName} 님 환영합니다!</h3>  </div>
 									<div class="text-center">
 									<a href="/user/signout" class="btn btn-primary my-3 col-11">로그아웃</a>
 									</div>
@@ -120,7 +120,7 @@
 						
 					</article>
 					<article class="sub-contents col-4">
-						<div class="">서브 컨텐츠</div>
+						<div class=""></div>
 						<div class="d-flex justify-content-between mt-2">
 							<div class="d-flex">
 								<div class=""><a href="#"class="btn btn-light">공지사항</a></div>
@@ -146,7 +146,7 @@
 						
 					</article>
 					<article class="sub-contents2 col-4">
-						<div class="">서브 컨텐츠2</div>
+						<div class=""></div>
 					</article>
 					
 				
