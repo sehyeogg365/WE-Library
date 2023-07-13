@@ -203,7 +203,7 @@ public class UserBO {
 		return userDAO.selectPassword(id, ecryptPassword);
 		
 		
-		//비밀번호가 맞을시
+		//비밀번호 확인 + 회원정보 수정 
 	
 		
 	}
@@ -211,6 +211,8 @@ public class UserBO {
 	
 	//비밀번호 변경
 	public int updatePassword(int id, String password) {
+		
+		//비밀번호가 일치하면 비밀번호를 입력한 뉴 패스워드로 바꿔준다.
 		
 		String ecryptPassword = EncryptService.md5(password);
 		

@@ -249,8 +249,6 @@ public class UserRestController {
 		
 		int count = userBO.updatePassword(id, password);
 		
-		// 비밀번호가 맞는지 확인 + 맞으면 변경
-		
 		if(count == 1) {
 			resultMap.put("result", "success");
 			

@@ -16,10 +16,10 @@
 	<nav class="side-nav col-3">
 			<ul class="nav flex-column mt-4 "> 
 				
-				<li class="nav-item"><h4 class="text-center text-white">회원정보</h4><hr></li>
-				<li class="nav-item"><h5><a href="/user/pwcheck/view?id=${userId}" class="nav-link text-dark">회원정보수정</a></h5><hr></li>
-				<li class="nav-item"><h5><a href="/user/update_pw/view?id=${userId}" class="nav-link text-dark">비밀번호 변경</a></h5><hr></li>
-				<li class="nav-item"><h5><a href="/user/withdrawl/view?id=${userId}" class="nav-link text-dark">회원탈퇴</a></h5></li>
+				<li class="nav-item"><h4 class="text-center text-white font-weight-bold">회원정보</h4><hr></li>
+				<li class="nav-item"><h5 class="font-weight-bold"><a href="/user/pwcheck/view?id=${userId}" class="nav-link text-dark">회원정보수정</a></h5><hr></li>
+				<li class="nav-item"><h5 class="font-weight-bold"><a href="/user/update_pw/view?id=${userId}" class="nav-link text-dark">비밀번호 변경</a></h5><hr></li>
+				<li class="nav-item"><h5 class="font-weight-bold"><a href="/user/withdrawl/view?id=${userId}" class="nav-link text-dark">회원탈퇴</a></h5></li>
 			
 			</ul>
 	</nav>

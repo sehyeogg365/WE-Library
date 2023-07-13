@@ -29,8 +29,8 @@
 			
 			<c:import url="/WEB-INF/jsp/include/sidenav.jsp"/>
 			
-			<div class="bg-info d-flex justify-content-center col-9">
-				<div class="user-box bg-warning text-center col-8">
+			<div class="d-flex justify-content-center col-9">
+				<div class="user-box text-center col-8">
 				
 					<div style="text-align-center" class="">
 						<div class="d-flex justify-content-bewtween mt-4 mx-5"><label><h5>아이디</h5></label><h5 class="ml-5">${user.loginId }</h5></div>

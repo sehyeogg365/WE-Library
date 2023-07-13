@@ -30,15 +30,17 @@
 			<c:import url="/WEB-INF/jsp/include/sidenav.jsp"/>
 			
 			
-			<div class="bg-info d-flex justify-content-center col-9">
+			<div class="d-flex justify-content-center col-9">
 			
-				<div class="user-box bg-warning col-8">
+				<div class="user-box col-8">
 					
-					<div class="mt-4">성명: ${user.name }</div>
-					<div class="">아이디 : ${user.loginId }</div>
+					<div class="mt-4"><b>성명: </b>${user.name }</div>
+					<div class="mt-4"><b>아이디 : </b>${user.loginId }</div>
 					
-					<input type="text" id="passwordInput" placeholder="비밀번호"  class="form-control mt-4">
-				
+					
+					<div class="d-flex">
+						<label class="mt-4 col-4">비밀번호 입력</label><input type="text" id="passwordInput" placeholder="비밀번호"  class="form-control col-8 mt-4">
+					</div>
 				 
 					
 					

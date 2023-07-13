@@ -30,18 +30,15 @@
 			<c:import url="/WEB-INF/jsp/include/sidenav.jsp"/>
 			
 			
-			<div class="bg-info d-flex justify-content-center col-9">
+			<div class="d-flex justify-content-center col-9">
 			
-				<div class="user-box bg-warning col-8">
-					
-					<div class="bg-secondary text-center col-8">
+				<div class="user-box col-8">
+					<div class="text-center col-8">
 					<input type="password" id="passwordInput" placeholder="기존 비밀번호"  class="form-control mt-4">
 					<input type="password" id="newpasswordInput" placeholder="새 비밀번호"  class="form-control mt-4">
 					<div class="small text-info">※8~20자리 비밀번호 영문, 숫자, 특수문자를 조합하여 입력</div>
 					<input type="password" id="newpasswordConfirmInput" placeholder="새 비밀번호 확인" class="form-control mt-4">
-					
-				
-					
+	
 					</div>
 					<button type="button" id="updateBtn" class="btn btn-primary btn-block mt-3 mb-3"  data-user-id = "${user.id }">비밀번호 변경 </button>
 				</div>
@@ -85,6 +82,10 @@
 				alert("새 비밀번호가 일치하지 않습니다.");
 				return ;
 			}
+			
+			alert(password);
+			alert(newpassword);
+			alert(newpasswordConfirm);
 			
 			$.ajax({
 				type: "post"
