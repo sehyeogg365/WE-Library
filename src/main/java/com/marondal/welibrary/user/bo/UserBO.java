@@ -239,8 +239,19 @@ public class UserBO {
 	// 회원 탈퇴
 	public int deleteUser(int id, String password) {
 		
+		//비밀번호 일치 여부
 		
-		return userDAO.deleteUser(id, password) ;
+		int count = userDAO.selectPassword(id, password);
+		
+		if(count == 1) {//일치하면 탈퇴해라.
+			
+			return userDAO.deleteUser(id, password);
+			
+		} else {
+			
+			return 0;
+			
+		}
 		
 		
 	}

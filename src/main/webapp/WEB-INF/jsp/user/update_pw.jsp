@@ -67,6 +67,8 @@
 				return ;
 			}
 			
+			
+			
 			if(password == ""){
 				alert("새 비밀번호를 입력해주세요.");
 				return ;
