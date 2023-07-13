@@ -33,14 +33,23 @@
 			<div class="d-flex justify-content-center col-9">
 			
 				<div class="user-box col-8">
-					<div class="text-center col-8">
-					<input type="password" id="existingpasswordInput" placeholder="기존 비밀번호"  class="form-control mt-4">
-					<input type="password" id="passwordInput" placeholder="새 비밀번호"  class="form-control mt-4">
-					<div class="small text-info">※8~20자리 비밀번호 영문, 숫자, 특수문자를 조합하여 입력</div>
-					<input type="password" id="passwordConfirmInput" placeholder="새 비밀번호 확인" class="form-control mt-4">
-	
+					<div class="text-center py-4 px-4 ">
+					
+						<div class="d-flex">
+							<label class="mt-4 col-6">현재 비밀번호</label><input type="password" id="passwordInput" placeholder="기존 비밀번호"  class="form-control mt-4 col-6">
+						</div>
+						<div class="d-flex">
+							<label class="mt-4 col-6">새 비밀번호</label><input type="password" id="newpasswordInput" placeholder="새 비밀번호"  class="form-control mt-4 col-6">
+						</div>
+						<div class="d-flex">
+							<label class="mt-4 col-6">새 비밀번호 확인</label><input type="password" id="newpasswordConfirmInput" placeholder="새 비밀번호 확인" class="form-control mt-4 col-6">
+						</div>
+						
+		
 					</div>
-					<button type="button" id="updateBtn" class="btn btn-primary btn-block mt-3 mb-3"  data-user-id = "${user.id }">비밀번호 변경 </button>
+					<div class="d-flex justify-content-center">
+						<button type="button" id="updateBtn" class="btn btn-primary col-6 mt-3 mb-3"  data-user-id = "${user.id }">비밀번호 변경 </button>
+					</div>
 				</div>
 			</div>
 			
@@ -58,18 +67,16 @@
 		$("#updateBtn").on("click", function(){
 			
 			let id = $(this).data("user-id");
-			let existingpassword = $("#existingpasswordInput").val();
-			let password = $("#passwordInput").val();// 새비밀번호를 password로 하고 기존비밀번호를 다른변수로 잡으면?
-			let passwordConfirm = $("#passwordConfirmInput").val();
+			let password = $("#passwordInput").val();
+			let password2 = $("#newpasswordInput").val();// 새비밀번호를 password로 하고 기존비밀번호를 다른변수로 잡으면?
+			let passwordConfirm = $("#newpasswordConfirmInput").val();
 			
-			if(existingpassword == ""){
+			if(password == ""){
 				alert("기존 비밀번호를 입력해주세요.");
 				return ;
 			}
 			
-			
-			
-			if(password == ""){
+			if(password2 == ""){
 				alert("새 비밀번호를 입력해주세요.");
 				return ;
 			}
@@ -80,13 +87,13 @@
 			}
 			
 			
-			if(password != passwordConfirm){
+			if(password2 != passwordConfirm){
 				alert("새 비밀번호가 일치하지 않습니다.");
 				return ;
 			}
 			
-			alert(existingpassword);
 			alert(password);
+			alert(password2);
 			alert(passwordConfirm);
 			
 			$.ajax({

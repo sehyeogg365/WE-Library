@@ -31,21 +31,22 @@
 			
 			
 			<div class="d-flex justify-content-center col-9">
-			
-				<div class="user-box col-8">
-					
-					<div class="mt-4"><b>성명: </b>${user.name }</div>
-					<div class="mt-4"><b>아이디 : </b>${user.loginId }</div>
+				
+				<div class="user-box col-10">
+					<div class="mt-4 ml-4	">※비밀번호를 입력하시고 홈페이지 회원 탈퇴 버튼을 클릭하시면 탈퇴처리가 완료됩니다.</div>
+					<div class="ml-4 mt-4"><b>성명: </b>${user.name }</div>
+					<div class="ml-4 mt-4"><b>아이디 : </b>${user.loginId }</div>
 					
 					
 					<div class="d-flex">
-						<label class="mt-4 col-4">비밀번호 입력</label><input type="password" id="passwordInput" placeholder="비밀번호"  class="form-control col-8 mt-4">
+					
+						<label class="mt-4 col-3">비밀번호 입력</label> <input type="password" id="passwordInput" placeholder="비밀번호"  class="form-control col-8 mt-4">
+					
 					</div>
-				 
-					
-					
+				 	<div class="text-center">
+						<button type="button" id="deleteBtn" class="btn btn-primary col-6 mt-3 mb-3"  data-user-id = "${user.id }">회원탈퇴 </button>
+					</div>
 				
-					<button type="button" id="deleteBtn" class="btn btn-primary btn-block mt-3 mb-3"  data-user-id = "${user.id }">회원탈퇴 </button>
 				</div>
 			</div>
 			
@@ -73,15 +74,15 @@
 			alert(password);
 			
 			$.ajax({
-				type ="get"
+				type :"get"
 				, url :"/user/withdrawl"
 				, data: {"id": id, "password":password}
 				, success:function(data){
 					if(data.result == "success"){
 						alert("회원탈퇴 성공");	
-						location.href("/user/signin/view");
+						location.href("/user/signout");
 					} else {
-						alert("");	
+						alert("회원탈퇴 실패");	
 						location.reload();
 						
 					}
@@ -90,7 +91,7 @@
 				}
 				
 				,error:function(){
-					alert("");	
+					alert("회원탈퇴 에러");	
 					location.reload();
 					
 				}

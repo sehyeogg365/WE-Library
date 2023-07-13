@@ -24,9 +24,15 @@
 		<section class="contents">
 			
 			<div class="main-page">
-				<h2 class="text-center"><b>책과 함께 꿈꾸는 도서관</b></h2><br>
-				<h1 class="text-center"><b>WE-Library</b></h1>
+			<div class="main-profile">
+				<img class="profile" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FlAG5Z%2Fbtsnhr3rPGd%2FKeJ2kZ3AGgbzql1R1aDdr1%2Fimg.jpg" alt="메인로고 사진">
 				
+				
+				<div class="main-text bg-info">
+					<h2 class="text-center text-white"><b>책과 함께 꿈꾸는 도서관</b></h2><br>
+					<h1 class="text-center text-white"><b>WE-Library</b></h1>
+				</div>
+			</div>	
 				<nav class="main-nav d-flex justify-content-center align-items-center col-12">
 				<div class="text-white">
 					<h5>통합검색</h5>
@@ -93,16 +99,21 @@
 						
 						
 						<div class="mybook mt-3">
-							<div class=""><h4>내 서재</h4></div>
+							<div class="d-flex justify-content-between mt-2">
+								<div class="pt-3 pl-3"><h4 class="text-white">내 서재</h4></div>
+								<div class="pt-3 pr-3">
+									<i class="bi bi-plus-lg text-white " style="font-size :20px;"></i>
+								</div>
+							</div>
 							<div class="d-flex justify-content-between flex-wrap">
 								
-								<div class="mt-3"><a href="#" class="text-dark">대출조회/반납연기</a></div>
-								<div class="ml-5 mt-3"><a href="#" class="text-dark">예약취소/조회</a></div>
+								<div class="mt-3 pl-3"><a href="#" class="text-white">대출조회/반납연기</a></div>
+								<div class="ml-5 mt-3 pr-3"><a href="#" class="text-white">예약취소/조회</a></div>
 								
-								<div class="mt-3"><a href="#" class="text-dark">상호대차신청조회</a></div>
+								<div class="mt-3 pl-3 text-white"><a href="#" class="text-white">상호대차신청조회</a></div>
 						
-								<div class="ml-5 mt-3"><a href="#" class="text-dark">희망도서신청조회</a></div>
-								<div class="mt-3"><a href="#" class="text-dark">관심도서목록</a></div>
+								<div class="ml-5 mt-3 pr-3"><a href="#" class="text-white">희망도서신청조회</a></div>
+								<div class="pl-3 py-3"><a href="#" class="text-white">관심도서목록</a></div>
 							</div>
 						</div>
 						
@@ -140,7 +151,7 @@
 					
 				
 				</section>
-				<section class="subsection bg-transparent d-flex">
+				<section class="sub-section d-flex">
 				
 					<article class="col-4">
 						<div class="">1</div>

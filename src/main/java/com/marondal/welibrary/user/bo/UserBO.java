@@ -220,11 +220,11 @@ public class UserBO {
 		int count = userDAO.selectPassword(id, password);
 		
 		
-		//일치할때 수정을 진행해라.
+		
 		String ecryptPassword = EncryptService.md5(password);
 		
 		
-		if(count == 1) {
+		if(count == 1) {//일치할때 수정을 진행해라.
 			
 			return userDAO.updatePassword(id, ecryptPassword);
 			

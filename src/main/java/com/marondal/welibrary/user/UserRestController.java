@@ -273,13 +273,13 @@ public class UserRestController {
 		
 		int count = userBO.deleteUser(id, password);
 		
-		if(count == 1) {
+		if(count == 0) {
 			
-			resultMap.put("result", "success");
+			resultMap.put("result", "fail");
 			
 		} else {
 			
-			resultMap.put("result", "fail");
+			resultMap.put("result", "success");
 			
 		}
 		
