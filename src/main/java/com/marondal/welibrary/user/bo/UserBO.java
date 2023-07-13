@@ -203,7 +203,7 @@ public class UserBO {
 		return userDAO.selectPassword(id, ecryptPassword);
 		
 		
-		//비밀번호 확인 + 회원정보 수정 
+		
 	
 		
 	}
@@ -213,6 +213,23 @@ public class UserBO {
 	public int updatePassword(int id, String password) {
 		
 		//비밀번호가 일치하면 비밀번호를 입력한 뉴 패스워드로 바꿔준다.
+		//비밀번호 확인 + 회원정보 수정 
+		
+		//기존 비밀번호 일치 여부
+		
+		int count = userDAO.selectPassword(id, password);
+		
+		
+		//일치할때 수정을 진행해라.
+		
+		if(count == 1) {
+			
+			
+		} else {
+			
+			
+		}
+		
 		
 		String ecryptPassword = EncryptService.md5(password);
 		

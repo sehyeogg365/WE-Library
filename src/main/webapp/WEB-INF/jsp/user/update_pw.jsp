@@ -59,11 +59,11 @@
 			
 			let id = $(this).data("user-id");
 			let password = $("#passwordInput").val();
-			let newpassword = $("#newpasswordInput").val();
+			let newpassword = $("#newpasswordInput").val();// 새비밀번호를 password로 하고 기존비밀번호를 다른변수로 잡으면?
 			let newpasswordConfirm = $("#newpasswordConfirmInput").val();
 			
 			if(password == ""){
-				alert("비밀번호를 입력해주세요.");
+				alert("기존 비밀번호를 입력해주세요.");
 				return ;
 			}
 			

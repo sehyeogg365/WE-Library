@@ -197,7 +197,6 @@
   		, `updatedAt` = now()
   	WHERE
   		`id`= #{id}
-  		AND `password` = #{password};
   		
   </update>
   
