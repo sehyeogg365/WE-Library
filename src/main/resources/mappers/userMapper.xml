@@ -201,4 +201,17 @@
   </update>
   
   
+  <!-- 회원탈퇴 -->
+  <delete id="deleteUser" parameterType="map">
+  	DELETE
+  	FROM
+  		`user`
+  	WHERE
+  		`id` =#{id}
+  		AND
+  		`password` = `password`;
+  
+  </delete>
+  
+  
   </mapper>

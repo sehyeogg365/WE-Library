@@ -221,26 +221,29 @@ public class UserBO {
 		
 		
 		//일치할때 수정을 진행해라.
+		String ecryptPassword = EncryptService.md5(password);
+		
 		
 		if(count == 1) {
 			
+			return userDAO.updatePassword(id, ecryptPassword);
 			
 		} else {
 			
-			
+			return 0; //일치 안할시 아무것도 진행하지 마라.
 		}
-		
-		
-		String ecryptPassword = EncryptService.md5(password);
-		
-		return userDAO.updatePassword(id, ecryptPassword);
-		
 		
 	}
 	
 	
 	// 회원 탈퇴
-	
+	public int deleteUser(int id, String password) {
+		
+		
+		return userDAO.deleteUser(id, password) ;
+		
+		
+	}
 	
 	
 	

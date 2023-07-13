@@ -39,13 +39,13 @@
 					
 					
 					<div class="d-flex">
-						<label class="mt-4 col-4">비밀번호 입력</label><input type="text" id="passwordInput" placeholder="비밀번호"  class="form-control col-8 mt-4">
+						<label class="mt-4 col-4">비밀번호 입력</label><input type="password" id="passwordInput" placeholder="비밀번호"  class="form-control col-8 mt-4">
 					</div>
 				 
 					
 					
 				
-					<button type="button" class="btn btn-primary btn-block mt-3 mb-3" id="updateBtn" data-user-id = "${user.id }">회원탈퇴 </button>
+					<button type="button" id="deleteBtn" class="btn btn-primary btn-block mt-3 mb-3"  data-user-id = "${user.id }">회원탈퇴 </button>
 				</div>
 			</div>
 			
@@ -58,6 +58,53 @@
 	</div>
 	<script>
 	
+	$(document).ready(function(){
+		
+		$("#deleteBtn").on("click", function(){
+			
+			let id = $(this).data("user-id");
+			let password = $("#passwordInput").val();
+			
+			if(password==""){
+				
+				alert("비밀번호를 입력하세요.");
+			}
+			
+			alert(password);
+			
+			$.ajax({
+				type ="get"
+				, url :"/user/withdrawl"
+				, data: {"id": id, "password":password}
+				, success:function(data){
+					if(data.result == "success"){
+						alert("회원탈퇴 성공");	
+						location.href("/user/signin/view");
+					} else {
+						alert("");	
+						location.reload();
+						
+					}
+					
+					
+				}
+				
+				,error:function(){
+					alert("");	
+					location.reload();
+					
+				}
+				
+				
+			});
+			
+			
+			
+			
+		});
+		
+		
+	});
 	
 	
 	

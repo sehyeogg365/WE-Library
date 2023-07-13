@@ -264,7 +264,30 @@ public class UserRestController {
 	}
 	
 	//회원 탈퇴
-	
+	@GetMapping("/withdrawl")
+	public Map<String, String> withdrawl(@RequestParam("id") int id
+										, @RequestParam("password") String password
+										){
+		
+		Map<String, String> resultMap = new HashMap<>();
+		
+		int count = userBO.deleteUser(id, password);
+		
+		if(count == 1) {
+			
+			resultMap.put("result", "success");
+			
+		} else {
+			
+			resultMap.put("result", "fail");
+			
+		}
+		
+		
+		return resultMap;
+		
+		
+	}
 	
 	
 
