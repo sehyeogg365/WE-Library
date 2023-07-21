@@ -112,8 +112,11 @@
 						 </select>
 					 
 					</div>
-					<div class="d-flex justify-content-between">
-						<select class="form-control mt-4 col-3" id="phoneNumberSelector">
+					<div class="d-flex justify-content-between bg-info ">
+					
+					<c:choose>
+						<c:when test="${fn:startsWith(user.phoneNumber, '02') }">
+							<select class="form-control mt-4 col-3" id="phoneNumberSelector">
 						 	<option value="${fn:substring(user.phoneNumber,0,2) }">${fn:substring(user.phoneNumber,0,2) }</option>
 						 	<option value="02">02</option>
 						 	<option value="010">010</option>
@@ -123,6 +126,21 @@
 						<input type="text" id="phoneNumberInput2"  value="${fn:substring(user.phoneNumber,2,6) }" class="form-control mt-4 ml-1 col-3">
 						<div class="d-flex align-items-center mt-4">-</div>
 						<input type="text" id="phoneNumberInput3" value="${fn:substring(user.phoneNumber,6,10) }" class="form-control mt-4 ml-1 col-3">
+						</c:when>
+						<c:otherwise>
+							<select class="form-control mt-4 col-3" id="phoneNumberSelector">
+						 	<option value="${fn:substring(user.phoneNumber,0,3) }">${fn:substring(user.phoneNumber,0,3) }</option>
+						 	<option value="02">02</option>
+						 	<option value="010">010</option>
+						 	<option value="011">011</option>	
+						 </select>
+						<div class="d-flex align-items-center mt-4">-</div>
+						<input type="text" id="phoneNumberInput2"  value="${fn:substring(user.phoneNumber,3,7) }" class="form-control mt-4 ml-1 col-3">
+						<div class="d-flex align-items-center mt-4">-</div>
+						<input type="text" id="phoneNumberInput3" value="${fn:substring(user.phoneNumber,7,11) }" class="form-control mt-4 ml-1 col-3">
+						</c:otherwise>
+					</c:choose>
+						
 					</div>
 
 					
