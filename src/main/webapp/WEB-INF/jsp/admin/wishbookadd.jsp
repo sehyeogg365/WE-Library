@@ -21,6 +21,9 @@
 	
 	<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
 	</div>
-
+	<script>
+	
+	
+	</script>
 </body>
 </html>

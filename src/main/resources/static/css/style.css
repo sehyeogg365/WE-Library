@@ -125,14 +125,19 @@ footer{
 .userinfo-page{
 	
 	width:1000px;
+	
 }
 
+.user-box{
+	
+	height:300px;
+}
 
 .side-nav {
 	
 	background-color: 	#87CEEB;
 	border-radius: 8px;
-	height:300px;
+	/*height:300px;*/
 	
 }
 
