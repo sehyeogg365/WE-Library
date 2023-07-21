@@ -69,7 +69,7 @@
 			let id = $(this).data("user-id");
 			let password = $("#passwordInput").val();
 			let password2 = $("#newpasswordInput").val();// 새비밀번호를 password로 하고 기존비밀번호를 다른변수로 잡으면?
-			let passwordConfirm = $("#newpasswordConfirmInput").val();
+			let password2Confirm = $("#newpasswordConfirmInput").val();
 			
 			if(password == ""){
 				alert("기존 비밀번호를 입력해주세요.");
@@ -81,20 +81,20 @@
 				return ;
 			}
 			
-			if(passwordConfirm == ""){
+			if(password2Confirm == ""){
 				alert("새 비밀번호 확인을 입력해주세요.");
 				return ;
 			}
 			
 			
-			if(password2 != passwordConfirm){
+			if(password2 != password2Confirm){
 				alert("새 비밀번호가 일치하지 않습니다.");
 				return ;
 			}
 			
 			alert(password);
 			alert(password2);
-			alert(passwordConfirm);
+			alert(password2Confirm);
 			
 			$.ajax({
 				type: "post"

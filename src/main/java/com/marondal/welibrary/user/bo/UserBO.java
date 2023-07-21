@@ -203,9 +203,6 @@ public class UserBO {
 		return userDAO.selectPassword(id, ecryptPassword);
 		
 		
-		
-	
-		
 	}
 	
 	
@@ -220,13 +217,9 @@ public class UserBO {
 		int count = userDAO.selectPassword(id, password);
 		
 		
-		
-		String ecryptPassword = EncryptService.md5(password);
-		
-		
 		if(count == 1) {//일치할때 수정을 진행해라.
-			
-			return userDAO.updatePassword(id, ecryptPassword);
+			//String ecryptPassword = EncryptService.md5(password);//암호화가 굳이 필요한가? 비밀번호 확인도 마찬가지
+			return userDAO.updatePassword(id, password);
 			
 		} else {
 			
@@ -239,20 +232,17 @@ public class UserBO {
 	// 회원 탈퇴
 	public int deleteUser(int id, String password) {
 		
-		//비밀번호 일치 여부
 		
 		int count = userDAO.selectPassword(id, password);
+
+		//비밀번호 일치 여부
 		
 		if(count == 1) {//일치하면 탈퇴해라.
 			
 			return userDAO.deleteUser(id, password);
-			
 		} else {
-			
 			return 0;
-			
 		}
-		
 		
 	}
 	

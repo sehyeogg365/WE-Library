@@ -239,13 +239,15 @@ public class UserRestController {
 	
 	// 비밀번호 변경
 	@PostMapping("/update_pw")
-	public Map<String, String> updatePw(@RequestParam("id") int id//이번엔 파라미터로 불러오자 왜냐면 세션 사용 최소화를 위해서
-										, @RequestParam("password") String password
+	public Map<String, String> updatePw(//이번엔 파라미터로 불러오자 왜냐면 세션 사용 최소화를 위해서
+										 @RequestParam("password") String password
+										 , HttpSession session
 										){
 		
 		
 		Map<String, String> resultMap = new HashMap<>();
 		
+		int id = (Integer)session.getAttribute("userId");
 		
 		int count = userBO.updatePassword(id, password);
 		
@@ -265,24 +267,25 @@ public class UserRestController {
 	
 	//회원 탈퇴
 	@GetMapping("/withdrawl")
-	public Map<String, String> withdrawl(@RequestParam("id") int id
-										, @RequestParam("password") String password
+	public Map<String, String> withdrawl(@RequestParam("password") String password
+										, @RequestParam("id") int id
 										){
 		
 		Map<String, String> resultMap = new HashMap<>();
 		
+		
 		int count = userBO.deleteUser(id, password);
 		
-		if(count == 0) {
-			
-			resultMap.put("result", "fail");
-			
-		} else {
+		
+		if(count == 1) {
 			
 			resultMap.put("result", "success");
 			
+		} else {
+			
+			resultMap.put("result", "fail");
+			
 		}
-		
 		
 		return resultMap;
 		
