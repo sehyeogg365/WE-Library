@@ -54,7 +54,7 @@
 					<article class="main-contents  col-4">
 						<div class=""></div>
 						
-						<div class="main-login-box col-12 bg-info">
+						<div class="main-login-box col-12">
 
 							<div class=" main-login-box-contents">
 							<c:choose>
@@ -73,7 +73,7 @@
 								</c:when>
 								<c:otherwise>
 								
-									<div class="mt-3 ml-3"><h4 class="">로그인</h4></div>
+									<div class="mt-3 ml-3"><h4 class="pt-3">로그인</h4></div>
 									<div class="d-flex justify-content-center">
 										<div class="">
 											<input type="text" id="loginIdInput" placeholder="로그인 ID" class="form-control mt-3">
