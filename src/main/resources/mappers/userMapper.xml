@@ -198,7 +198,7 @@
   	WHERE
   		`id`= #{id}
   		AND
-  		`password` = #{password};
+  		`password` = #{password}
   </update>
   
   
@@ -208,9 +208,9 @@
    FROM 
    		`user`
    WHERE
-	   	`id`= #{id}
-	  	AND
-  		`password` = #{password};
+		`id`= #{id}
+  		AND
+  		`password` = #{password}
    </delete>
   
   

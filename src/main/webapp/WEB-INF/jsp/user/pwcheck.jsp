@@ -32,7 +32,7 @@
 			<div class="d-flex justify-content-center col-9">
 				<div class="user-box text-center col-8 ">
 				
-					<div style="text-align-center" class="bg-info py-4 px-4">
+					<div style="text-align-center" class="py-4 px-4">
 						<div class="d-flex justify-content-bewtween mt-4 mx-5"><label class="mr-4"><h5>아이디</h5></label><h5 class="ml-5">${user.loginId }</h5></div>
 						<div class="d-flex  mt-4 mx-5"><label class="mr-4" ><h5>비밀번호</h5></label><input type="password" id="passwordInput" placeholder="비밀번호" class="form-control ml-4 col-4"></div>
 					</div>

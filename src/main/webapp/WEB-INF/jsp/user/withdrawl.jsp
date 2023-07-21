@@ -80,7 +80,7 @@
 				, success:function(data){
 					if(data.result == "success"){
 						alert("회원탈퇴 성공");	
-						location.href("/user/signout");
+						location.href="/user/signin/view";
 					} else {
 						alert("회원탈퇴 실패");	
 						location.reload();
