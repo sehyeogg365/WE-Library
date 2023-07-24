@@ -21,7 +21,31 @@
 <body>
 	<div id="wrap" class="">
 		<c:import url="/WEB-INF/jsp/include/header.jsp"/>
-	
+		<section class="contents d-flex justify-content-center">
+			
+			<div class="mybookinfo-page mt-3">
+				<div class="">
+				<h2 class="text-center mt-3"><b>대출 현황</b></h2>
+				</div>
+				
+				<div class="d-flex">
+				<nav class="side-nav col-3">
+				<ul class="nav flex-column mt-4 "> 
+				
+					<li class="nav-item first-nav"><h4 class="text-center text-white font-weight-bold mt-2">도서이용정보</h4><hr></li>
+					<li class="nav-item"><h5 class="font-weight-bold"><a href="#" class="nav-link text-dark">관심자료 목록</a></h5><hr></li>
+					<li class="nav-item"><h5 class="font-weight-bold"><a href="#" class="nav-link text-dark">희망도서 신청조회</a></h5><hr></li>
+					<li class="nav-item"><h5 class="font-weight-bold"><a href="#" class="nav-link text-dark">문화행사 신청조회</a></h5><hr></li>				
+				
+				</ul>
+				
+				</nav>
+				
+				</div>
+			
+			</div>
+		
+		</section>
 		<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
 	</div>
 	
