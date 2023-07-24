@@ -241,8 +241,7 @@ public class UserRestController {
 	@PostMapping("/update_pw")
 	public Map<String, String> updatePw(//이번엔 파라미터로 불러오자 왜냐면 세션 사용 최소화를 위해서
 										// 새로 파라미터를 추가하는게 맞을듯. 인증번호때도 admin 테이블에 없는 인증번호를 불러넣었기 떄문에
-										 @RequestParam("oldpassword") String password	 
-										 , @RequestParam("newpassword") String newpassword	 
+										 @RequestParam("password") String password	  
 										 , HttpSession session
 										){
 		
@@ -270,7 +269,7 @@ public class UserRestController {
 	//회원 탈퇴
 	@GetMapping("/withdrawl")
 	public Map<String, String> withdrawl(@RequestParam("password") String password
-										, HttpSession session //old password, new password로 파라미터 추가해보기
+										, HttpSession session 
 										){
 		
 		Map<String, String> resultMap = new HashMap<>();

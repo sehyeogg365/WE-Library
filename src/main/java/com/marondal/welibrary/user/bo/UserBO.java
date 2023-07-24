@@ -210,22 +210,12 @@ public class UserBO {
 	public int updatePassword(int id, String password) {
 		
 		//비밀번호가 일치하면 비밀번호를 입력한 뉴 패스워드로 바꿔준다.
-		//비밀번호 확인 + 회원정보 수정 
+		//비밀번호 확인 + 회원정보 수정  -> 이건 나중에. 
 		
-		//기존 비밀번호 일치 여부
-		String ecryptPassword = EncryptService.md5(password);
-		int count = userDAO.selectPassword(id, ecryptPassword);
-		
-		
-		if(count == 1) {//일치할때 수정을 진행해라.
-			//String ecryptPassword = EncryptService.md5(password);//암호화가 굳이 필요한가? 비밀번호 확인도 마찬가지
-			return userDAO.updatePassword(id, password);
-			
-		} else {
-			
-			return 0; //일치 안할시 아무것도 진행하지 마라.
-		}
-		
+			String ecryptPassword = EncryptService.md5(password);
+	
+			return userDAO.updatePassword(id, ecryptPassword);
+
 	}
 	
 	

@@ -35,14 +35,12 @@
 				<div class="user-box col-8">
 					<div class="text-center py-4 px-4 ">
 					
+
 						<div class="d-flex">
-							<label class="mt-4 col-6">현재 비밀번호</label><input type="password" id="passwordInput" placeholder="기존 비밀번호"  class="form-control mt-4 col-6">
+							<label class="mt-4 col-6">새 비밀번호</label><input type="password" id="passwordInput" placeholder="새 비밀번호"  class="form-control mt-4 col-6">
 						</div>
 						<div class="d-flex">
-							<label class="mt-4 col-6">새 비밀번호</label><input type="password" id="newpasswordInput" placeholder="새 비밀번호"  class="form-control mt-4 col-6">
-						</div>
-						<div class="d-flex">
-							<label class="mt-4 col-6">새 비밀번호 확인</label><input type="password" id="newpasswordConfirmInput" placeholder="새 비밀번호 확인" class="form-control mt-4 col-6">
+							<label class="mt-4 col-6">새 비밀번호 확인</label><input type="password" id="passwordConfirmInput" placeholder="새 비밀번호 확인" class="form-control mt-4 col-6">
 						</div>
 						
 		
@@ -67,44 +65,33 @@
 		$("#updateBtn").on("click", function(){
 			
 			let id = $(this).data("user-id");
-			let password = $("#passwordInput").val();//기존 비번
-			let newpassword = $("#newpasswordInput").val();// 새비번
-			let newpasswordConfirm = $("#newpasswordConfirmInput").val();
+			let password = $("#passwordInput").val();
+			let passwordConfirm = $("#passwordConfirmInput").val();
 			
 			if(password == ""){
-				alert("기존 비밀번호를 입력해주세요.");
+				alert("비밀번호를 입력해주세요.");
 				return ;
 			}
 			
-			//if(password != ${user.password}){//이게 가능하다고?
-			//	alert("기존 비밀번호가 일치 하지 않습니다.");
-			//	return ;
-			//}
-			
-			if(newpassword == ""){
-				alert("새 비밀번호를 입력해주세요.");
-				return ;
-			}
-			
-			if(newpasswordConfirm == ""){
+			if(passwordConfirm == ""){
 				alert("새 비밀번호 확인을 입력해주세요.");
 				return ;
 			}
 			
 			
-			if(newpassword != newpasswordConfirm){
-				alert("새 비밀번호가 일치하지 않습니다.");
+			if(password != passwordConfirm){
+				alert(" 비밀번호가 일치하지 않습니다.");
 				return ;
 			}
 			
+			alert(id);
 			alert(password);
-			alert(newpassword);
-			alert(newpasswordConfirm);
+			alert(passwordConfirm);
 			
 			$.ajax({
 				type: "post"
 				, url: "/user/update_pw"
-				, data: {"id":id, "oldpassword":password, "newpassword":newpassword}
+				, data: {"id":id, "password":password}
 				, success:function(data){
 					if(data.result == "success"){
 						alert("비밀번호 변경 성공");
