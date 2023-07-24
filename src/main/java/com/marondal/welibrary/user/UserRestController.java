@@ -119,7 +119,7 @@ public class UserRestController {
 			
 			session.setAttribute("userId", user.getId());
 			session.setAttribute("loginId", user.getLoginId());
-			//session.setAttribute("password", user.getPassword()); //사실상 없어도 될것같다. 
+			session.setAttribute("password", user.getPassword()); //사실상 없어도 될것같다. 
 			session.setAttribute("userName", user.getName());
 			session.setAttribute("isAdmin", user.getIsAdmin());//사실상 이것도 있어야 할것같다. 관리자 여부에 따라 보여지는것 안보여지는것 나눠야 함 
 			
@@ -240,7 +240,9 @@ public class UserRestController {
 	// 비밀번호 변경
 	@PostMapping("/update_pw")
 	public Map<String, String> updatePw(//이번엔 파라미터로 불러오자 왜냐면 세션 사용 최소화를 위해서
-										 @RequestParam("password") String password
+										// 새로 파라미터를 추가하는게 맞을듯. 인증번호때도 admin 테이블에 없는 인증번호를 불러넣었기 떄문에
+										 @RequestParam("oldpassword") String password	 
+										 , @RequestParam("newpassword") String newpassword	 
 										 , HttpSession session
 										){
 		
@@ -268,11 +270,12 @@ public class UserRestController {
 	//회원 탈퇴
 	@GetMapping("/withdrawl")
 	public Map<String, String> withdrawl(@RequestParam("password") String password
-										, @RequestParam("id") int id
+										, HttpSession session //old password, new password로 파라미터 추가해보기
 										){
 		
 		Map<String, String> resultMap = new HashMap<>();
 		
+		int id = (Integer)session.getAttribute("userId");
 		
 		int count = userBO.deleteUser(id, password);
 		

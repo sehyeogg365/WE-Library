@@ -213,9 +213,7 @@ public class UserBO {
 		//비밀번호 확인 + 회원정보 수정 
 		
 		//기존 비밀번호 일치 여부
-		
 		String ecryptPassword = EncryptService.md5(password);
-		
 		int count = userDAO.selectPassword(id, ecryptPassword);
 		
 		
@@ -235,9 +233,9 @@ public class UserBO {
 	public int deleteUser(int id, String password) {
 		
 		
-		String ecryptPassword = EncryptService.md5(password);
+		//String ecryptPassword = EncryptService.md5(password);
 		
-		int count = userDAO.selectPassword(id, ecryptPassword);
+		int count = userDAO.selectPassword(id, password);
 
 		//비밀번호 일치 여부
 		

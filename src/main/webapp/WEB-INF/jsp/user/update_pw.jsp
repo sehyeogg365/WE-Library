@@ -67,39 +67,44 @@
 		$("#updateBtn").on("click", function(){
 			
 			let id = $(this).data("user-id");
-			let password = $("#passwordInput").val();
-			let password2 = $("#newpasswordInput").val();// 새비밀번호를 password로 하고 기존비밀번호를 다른변수로 잡으면?
-			let password2Confirm = $("#newpasswordConfirmInput").val();
+			let password = $("#passwordInput").val();//기존 비번
+			let newpassword = $("#newpasswordInput").val();// 새비번
+			let newpasswordConfirm = $("#newpasswordConfirmInput").val();
 			
 			if(password == ""){
 				alert("기존 비밀번호를 입력해주세요.");
 				return ;
 			}
 			
-			if(password2 == ""){
+			//if(password != ${user.password}){//이게 가능하다고?
+			//	alert("기존 비밀번호가 일치 하지 않습니다.");
+			//	return ;
+			//}
+			
+			if(newpassword == ""){
 				alert("새 비밀번호를 입력해주세요.");
 				return ;
 			}
 			
-			if(password2Confirm == ""){
+			if(newpasswordConfirm == ""){
 				alert("새 비밀번호 확인을 입력해주세요.");
 				return ;
 			}
 			
 			
-			if(password2 != password2Confirm){
+			if(newpassword != newpasswordConfirm){
 				alert("새 비밀번호가 일치하지 않습니다.");
 				return ;
 			}
 			
 			alert(password);
-			alert(password2);
-			alert(password2Confirm);
+			alert(newpassword);
+			alert(newpasswordConfirm);
 			
 			$.ajax({
 				type: "post"
 				, url: "/user/update_pw"
-				, data: {"id":id, "password":password}
+				, data: {"id":id, "oldpassword":password, "newpassword":newpassword}
 				, success:function(data){
 					if(data.result == "success"){
 						alert("비밀번호 변경 성공");
