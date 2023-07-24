@@ -29,18 +29,63 @@
 				</div>
 				
 				<div class="d-flex">
-				<nav class="side-nav col-3">
-				<ul class="nav flex-column mt-4 "> 
 				
-					<li class="nav-item first-nav"><h4 class="text-center text-white font-weight-bold mt-2">도서이용정보</h4><hr></li>
-					<li class="nav-item"><h5 class="font-weight-bold"><a href="#" class="nav-link text-dark">관심자료 목록</a></h5><hr></li>
-					<li class="nav-item"><h5 class="font-weight-bold"><a href="#" class="nav-link text-dark">희망도서 신청조회</a></h5><hr></li>
-					<li class="nav-item"><h5 class="font-weight-bold"><a href="#" class="nav-link text-dark">문화행사 신청조회</a></h5><hr></li>				
+				<c:import url="/WEB-INF/jsp/include/sidenav2.jsp"/>
 				
-				</ul>
+				<div class="col-9 bg-info">
+					<div class="">
+						
+						<div class="">
+							 대출현황 : 1건
+						</div>
+							
+						<hr>
+						<div class="bg-primary">
+							<div class="">
+								신입사원 제대로 미쳐라.
+							</div>
+							<div class="">
+								도서관 : 역삼푸른솔도서관
+							</div>
+							<div class="">
+								상태 : 반납 대출일 : 2023.06.13
+							</div>
+						</div>
+						<hr>
+						<div class="bg-primary">
+							<div class="">
+								신입사원 제대로 미쳐라.
+							</div>
+							<div class="">
+								도서관 : 역삼푸른솔도서관
+							</div>
+							<div class="">
+								상태 : 반납 대출일 : 2023.06.13
+							</div>
+						</div>
+						<hr>
+						<div class="bg-primary">
+							<div class="">
+								신입사원 제대로 미쳐라.
+							</div>
+							<div class="">
+								도서관 : 역삼푸른솔도서관
+							</div>
+							<div class="">
+								상태 : 반납 대출일 : 2023.06.13
+							</div>
+						</div>
+						<hr>
+					
+					</div><br>
+					
 				
-				</nav>
+					
+					
+				</div>
 				
+					
+					<hr>
 				</div>
 			
 			</div>

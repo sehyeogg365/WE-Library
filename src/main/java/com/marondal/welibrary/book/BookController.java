@@ -32,7 +32,12 @@ public class BookController {
 	}
 	
 	@GetMapping("/wishbook/list/view")
-	public String wishbookList() {
+	public String wishbookList(Model model
+			, @RequestParam("id") int id) {
+		
+		User user = userDAO.selectUserInfo(id); 
+		
+		model.addAttribute("user", user);
 		
 		return "book/wishbooklist";
 		
