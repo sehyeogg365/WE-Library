@@ -223,21 +223,22 @@ public class UserBO {
 	public int deleteUser(int id, String password) {
 		
 		
-		//String ecryptPassword = EncryptService.md5(password);
-		
 		int count = userDAO.selectPassword(id, password);
-
-		//비밀번호 일치 여부
 		
-		if(count == 1) {//일치하면 탈퇴해라.
+		String encryptPassword = EncryptService.md5(password);
+		
+		
+		if(count == 1) {
 			
-			return userDAO.deleteUser(id, password);
-			
+			return userDAO.selectPassword(id, encryptPassword);
+			 
 		} else {
 			
 			return 0;
-		
 		}
+		
+		
+
 		
 	}
 	

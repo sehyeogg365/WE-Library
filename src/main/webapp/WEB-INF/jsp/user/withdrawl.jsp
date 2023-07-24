@@ -33,14 +33,14 @@
 			<div class="d-flex justify-content-center col-9">
 				
 				<div class="user-box col-10">
-					<div class="mt-4 ml-4	">※비밀번호를 입력하시고 홈페이지 회원 탈퇴 버튼을 클릭하시면 탈퇴처리가 완료됩니다.</div>
+					<div class="mt-4 mx-4">※비밀번호를 입력하시고 홈페이지 회원 탈퇴 버튼을 클릭하시면 탈퇴처리가 완료됩니다.</div>
 					<div class="ml-4 mt-4"><b>성명: </b>${user.name }</div>
 					<div class="ml-4 mt-4"><b>아이디 : </b>${user.loginId }</div>
 					
 					
 					<div class="d-flex">
 					
-						<label class="mt-4 col-3">비밀번호 입력</label> <input type="password" id="passwordInput" placeholder="비밀번호"  class="form-control col-8 mt-4">
+						<label class=" ml-4 mt-4 font-weight-bold">비밀번호 입력</label> <input type="password" id="passwordInput" placeholder="비밀번호"  class="form-control col-8 mt-4">
 					
 					</div>
 				 	<div class="text-center">
@@ -71,6 +71,7 @@
 				alert("비밀번호를 입력하세요.");
 			}
 			
+			alert(id);
 			alert(password);
 			
 			$.ajax({

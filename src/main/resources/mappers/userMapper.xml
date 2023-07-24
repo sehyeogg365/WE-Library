@@ -208,8 +208,7 @@
    		`user`
    WHERE
 		`id`= #{id}
-  		AND
-  		`password` = #{password}
+
    </delete>
   
   

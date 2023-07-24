@@ -16,10 +16,10 @@
 </head>
 <body>
 	<div id="wrap" class="">
-	<c:import url="/WEB-INF/jsp/include/header.jsp"/>
+		<c:import url="/WEB-INF/jsp/include/header.jsp"/>
 	
 	
-	<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
+		<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
 	</div>
 	<script>
 	
