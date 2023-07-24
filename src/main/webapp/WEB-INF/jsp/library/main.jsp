@@ -66,7 +66,7 @@
 									</div>
 									<hr>
 									<div class="d-flex justify-content-between mt-3">
-										<a href="#" class="btn btn-light ml-2 col-5">내서재</a>
+										<a href="/book/borrowstatus/view?id=${userId }" class="btn btn-light ml-2 col-5">내서재</a>
 										<a href="/user/pwcheck/view?id=${userId }" class="btn btn-light mr-2 col-5">정보수정</a>
 									</div>
 								
