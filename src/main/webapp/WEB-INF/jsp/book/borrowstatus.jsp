@@ -36,43 +36,43 @@
 					<div class="">
 						
 						<div class="mt-3 bg-danger">
-							 대출현황 : 1건
+							 대출현황 : 3건
 						</div>
 							
 						<hr>
 						<div class="bg-primary">
 							<div class="">
-								신입사원 제대로 미쳐라.
+								<h5>신입사원 제대로 미쳐라.</h5>
 							</div>
 							<div class="">
 								도서관 : 역삼푸른솔도서관
 							</div>
 							<div class="">
-								상태 : 반납 대출일 : 2023.06.13
+								상태 : 반납 | 대출일 : 2023.06.13 | 반납일 : 2023.06.27
 							</div>
 						</div>
 						<hr>
 						<div class="bg-primary">
 							<div class="">
-								신입사원 제대로 미쳐라.
+								<h5>신입사원 제대로 미쳐라.</h5>
 							</div>
 							<div class="">
 								도서관 : 역삼푸른솔도서관
 							</div>
 							<div class="">
-								상태 : 반납 대출일 : 2023.06.13
+								상태 : 반납 대출일 : 2023.06.13 | 반납일 : 2023.06.27
 							</div>
 						</div>
 						<hr>
 						<div class="bg-primary">
 							<div class="">
-								신입사원 제대로 미쳐라.
+								<h5>신입사원 제대로 미쳐라.</h5>
 							</div>
 							<div class="">
 								도서관 : 역삼푸른솔도서관
 							</div>
 							<div class="">
-								상태 : 반납 대출일 : 2023.06.13
+								상태 : 반납 대출일 : 2023.06.13 | 반납일 : 2023.06.27
 							</div>
 						</div>
 						<hr>

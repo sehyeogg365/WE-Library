@@ -41,14 +41,19 @@
 							
 						<hr>
 						<div class="bg-primary">
+							
+						
 							<div class="">
-								신입사원 제대로 미쳐라.
+								<h5>신입사원 제대로 미쳐라.</h5>
+							</div>
+							<div class="">
+								저자 : xx | 출판사 : xx | ISBN : xxxxxxxxxxxx 
 							</div>
 							<div class="">
 								도서관 : 역삼푸른솔도서관
 							</div>
 							<div class="">
-								상태 : 반납 대출일 : 2023.06.13
+								상태 : 소장중 or 신청중
 							</div>
 						</div>
 						<hr>

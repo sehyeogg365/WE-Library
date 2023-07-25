@@ -9,7 +9,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<nav class="side-nav col-3">
+	<nav class="side-nav2 col-3">
 	
 	
 		<ul class="nav flex-column mt-4 "> 
