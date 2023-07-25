@@ -21,9 +21,9 @@
 <body>
 	<div id="wrap" class="">
 		<c:import url="/WEB-INF/jsp/include/header.jsp"/>
-		<section class="contents">
+		<section class="contents d-flex justify-content-center">
 			
-			<div class="main-page">
+			<div class="main-page ">
 			<div class="main-profile">
 				<img class="profile" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FlAG5Z%2Fbtsnhr3rPGd%2FKeJ2kZ3AGgbzql1R1aDdr1%2Fimg.jpg" alt="메인로고 사진">
 				
@@ -112,7 +112,7 @@
 								
 								<div class="mt-3 pl-3 text-white"><a href="#" class="text-white">상호대차신청조회</a></div>
 						
-								<div class="ml-5 mt-3 pr-3"><a href="#" class="text-white">희망도서신청조회</a></div>
+								<div class="ml-5 mt-3 pr-3"><a href="/book/wishbook/list/view?id=${userId }" class="text-white">희망도서신청조회</a></div>
 								<div class="pl-3 py-3"><a href="#" class="text-white">관심도서목록</a></div>
 							</div>
 						</div>

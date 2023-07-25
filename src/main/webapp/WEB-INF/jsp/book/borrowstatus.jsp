@@ -35,7 +35,7 @@
 				<div class="col-9 bg-info">
 					<div class="">
 						
-						<div class="">
+						<div class="mt-3 bg-danger">
 							 대출현황 : 1건
 						</div>
 							

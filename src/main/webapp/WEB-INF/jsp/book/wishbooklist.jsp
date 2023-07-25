@@ -22,6 +22,51 @@
 <body>
 	<div id="wrap" class="">
 		<c:import url="/WEB-INF/jsp/include/header.jsp"/>
+		<section class="contents d-flex justify-content-center">
+		
+		<div class="mybookinfo-page mt-3">
+		
+		<div class="">
+			<h2 class="text-center mt-3"><b>희망도서 신청 조회</b></h2>
+		</div>
+		<div class="d-flex">
+		<c:import url="/WEB-INF/jsp/include/sidenav2.jsp"/>
+		
+		<div class="col-9 bg-info">
+		
+			<div class="">
+				<div class="mt-3 bg-danger">
+						희망도서 신청현황 : 1건
+				</div>
+							
+						<hr>
+						<div class="bg-primary">
+							<div class="">
+								신입사원 제대로 미쳐라.
+							</div>
+							<div class="">
+								도서관 : 역삼푸른솔도서관
+							</div>
+							<div class="">
+								상태 : 반납 대출일 : 2023.06.13
+							</div>
+						</div>
+						<hr>
+			
+			</div>
+		
+			
+		
+			<div class="text-center">
+				<a href="/book/wishbook/add/view?id=${userId }" class="btn btn-primary	">희망도서 신청하기</a>
+			</div>
+		</div>
+		
+		</div>
+		</div>
+		
+		</section>
+		
 		
 		<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
 	

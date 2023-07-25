@@ -44,10 +44,16 @@ public class BookController {
 	}
 	
 	@GetMapping("/wishbook/add/view")
-	public String wishbookAdd() {
+	public String wishbookAdd(Model model
+			, @RequestParam("id") int id) {
 		
+		User user = userDAO.selectUserInfo(id); 
+		
+		model.addAttribute("user", user);
 
 		return "book/wishbookadd";
 	}
+	
+	
 	
 }
