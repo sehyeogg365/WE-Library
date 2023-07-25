@@ -24,11 +24,17 @@
 		<c:import url="/WEB-INF/jsp/include/header.jsp"/>
 		<section class="contents d-flex justify-content-center">
 		
-		<div class="mybookinfo-page mt-3">
+		<div class="mybookinfo-page">
 		
-		<div class="">
-			<h2 class="text-center mt-3"><b>희망도서 신청 조회</b></h2>
+		<div class="sub-profile bg-secondary">
+			<img class="profile" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FlAG5Z%2Fbtsnhr3rPGd%2FKeJ2kZ3AGgbzql1R1aDdr1%2Fimg.jpg" alt="메인로고 사진">
+			
+			<div class="sub-text bg-info">
+				<h2 class="text-center text-white mt-3"><b>희망도서 신청 조회</b></h2>
+			</div>
 		</div>
+		
+		
 		<div class="d-flex">
 		<c:import url="/WEB-INF/jsp/include/sidenav2.jsp"/>
 		
