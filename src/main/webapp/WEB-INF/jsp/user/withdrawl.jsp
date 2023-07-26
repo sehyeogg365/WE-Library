@@ -23,8 +23,10 @@
 	
 		<div class="userinfo-page  mt-3">
 		
+			<div class="sub-text bg-info">
+				<h2 class="text-center mt-3"><b>회원 탈퇴</b></h2>
+			</div>
 			
-			<h2 class="text-center mt-3"><b>회원 탈퇴</b></h2>
 			
 			<div class="d-flex">
 			<c:import url="/WEB-INF/jsp/include/sidenav.jsp"/>

@@ -17,7 +17,66 @@
 <body>
 	<div id="wrap" class="">
 		<c:import url="/WEB-INF/jsp/include/header.jsp"/>
-	
+		<section class="contents d-flex justify-content-center">
+		
+		<div class="mybookinfo-page">
+		
+		<div class="sub-profile bg-secondary">
+			<c:import url="/WEB-INF/jsp/include/subprofile.jsp"/>
+			
+			<div class="sub-text bg-info">
+				<h2 class="text-center text-white mt-3"><b>관리자 희망도서/도서 추가</b></h2>
+			</div>
+		</div>
+		
+		<div class="d-flex">
+		<c:import url="/WEB-INF/jsp/include/sidenav.jsp"/>
+		
+		<div class="col-9 bg-info">
+		
+			<div class="">
+				<div class="mt-3 d-flex bg-danger">
+						희망도서 신청현황 :&nbsp<div class="text-primary"> 1 </div>건
+				</div>
+							
+						<hr>
+						<div class="bg-primary">
+							
+						
+							<div class="">
+								<h5>신입사원 제대로 미쳐라.</h5>
+							</div>
+							<div class="">
+								저자 : xx | 출판사 : xx | ISBN : xxxxxxxxxxxx 
+							</div>
+							<div class="">
+								도서관 : 역삼푸른솔도서관
+							</div>
+							<div class="">
+								상태 : 소장중 or 신청중
+							</div>
+						</div>
+						<hr>
+			
+			</div>
+			
+			
+			<div class="text-center">
+				<a href="/book/wishbook/add/view?id=${userId }" class="btn btn-primary	">희망도서/도서 추가하기</a>
+			</div>
+		
+		
+		</div>
+		
+		
+		</div>
+		
+		
+		
+		</div>
+		
+		
+		</section>
 	
 		<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
 	</div>
