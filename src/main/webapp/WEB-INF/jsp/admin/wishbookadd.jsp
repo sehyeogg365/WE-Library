@@ -36,37 +36,67 @@
 		
 			<div class="">
 				<div class="mt-3 d-flex bg-danger">
-						희망도서 신청현황 :&nbsp<div class="text-primary"> 1 </div>건
+						희망도서 신청현황 :&nbsp<div class="text-primary"> 2 </div>건
 				</div>
 							
-						<hr>
-						<div class="bg-primary">
-							
+					<hr>
+				<div class="bg-primary">
+					
+					<table class="table">
+					
+					<thead>
+					<tr class="bg-secondary">
+						<td><b>No.</b></td>
+						<td><b>Name</b></td>
+						<td><b>이메일</b></td>
+						<td><b>책제목</b></td>
+						<td><b>도서관</b></td>
+						<td><b>신청일</b></td>
+						<td></td>
+					</tr>
+					
+					</thead>
+					
+					<tbody>
+					<tr>
+						<td>1</td>
+						<td>김ㅇㅇ</td>
+						<td>hagulu@naver.com</td>
+						<td>혼자 공부하는 c언어</td>
+						<td>역삼푸른솔도서관</td>
+						<td>2023-06-03</td>
+						<td><button class="btn btn-primary">추가하기</button></td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td>임세혁</td>
+						<td>lsh2757@naver.com</td>
+						<td>혼자공부하는 python</td>
+						<td>행복한 도서관</td>
+						<td>2023-07-04</td>
+						<td><button class="btn btn-primary">추가하기</button></td>
+					</tr>
+					
+					
+					
+					</tbody>
+					
+					
+					
+					</table>
 						
-							<div class="">
-								<h5>신입사원 제대로 미쳐라.</h5>
-							</div>
-							<div class="">
-								저자 : xx | 출판사 : xx | ISBN : xxxxxxxxxxxx 
-							</div>
-							<div class="">
-								도서관 : 역삼푸른솔도서관
-							</div>
-							<div class="">
-								상태 : 소장중 or 신청중
-							</div>
-						</div>
-						<hr>
+					
+					<hr>
 			
-			</div>
+				</div>
 			
 			
-			<div class="text-center">
-				<a href="/book/wishbook/add/view?id=${userId }" class="btn btn-primary	">희망도서/도서 추가하기</a>
-			</div>
+				<div class="text-center">
+					<a href="/book/wishbook/add/view?id=${userId }" class="btn btn-primary	">희망도서/도서 추가하기</a>
+				</div>
 		
 		
-		</div>
+			</div>
 		
 		
 		</div>
