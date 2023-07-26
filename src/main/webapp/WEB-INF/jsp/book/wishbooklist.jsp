@@ -37,27 +37,27 @@
 		<div class="d-flex">
 		<c:import url="/WEB-INF/jsp/include/sidenav2.jsp"/>
 		
-		<div class="col-9 bg-info">
+		<div class="col-9 ">
 		
 			<div class="">
-				<div class="mt-3 d-flex bg-danger">
-						희망도서 신청현황 :&nbsp<div class="text-primary"> 1 </div>건
+				<div class="mt-3 d-flex text-secondary">
+						희망도서 신청 :&nbsp<div class="text-primary"> 1 </div>건
 				</div>
 							
 						<hr>
-						<div class="bg-primary">
+						<div class="">
 							
 						
 							<div class="">
 								<h5>신입사원 제대로 미쳐라.</h5>
 							</div>
-							<div class="">
+							<div class="text-secondary">
 								저자 : xx | 출판사 : xx | ISBN : xxxxxxxxxxxx 
 							</div>
-							<div class="">
+							<div class="text-secondary">
 								도서관 : 역삼푸른솔도서관
 							</div>
-							<div class="">
+							<div class="text-secondary">
 								상태 : 소장중 or 신청중
 							</div>
 						</div>

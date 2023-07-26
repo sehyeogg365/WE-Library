@@ -39,9 +39,9 @@
 		
 		<c:import url="/WEB-INF/jsp/include/sidenav2.jsp"/>
 		
-		<div class="col-9 bg-info">
+		<div class="col-9 ">
 		<!-- 신청자 정보 -->
-		<div class ="bg-danger"><h4><b>신청자 정보</b></h4></div>
+		<div class ="mt-4"><h4><b>신청자 정보</b></h4></div>
 		
 		<div class="">
 		
@@ -56,15 +56,15 @@
 			<tbody>
 			
 				<tr>
-					<td>신청자명</td>
-					<td>김ㅇㅇ</td>
+					<td class="item col-3">신청자명</td>
+					<td class="col-9">김ㅇㅇ</td>
 				</tr>
 				<tr>
-					<td>휴대폰 번호</td>
+					<td class="item">휴대폰 번호</td>
 					<td>010-1111-1111</td>
 				</tr>
 				<tr>
-					<td>이메일</td>
+					<td class="item">이메일</td>
 					<td>hagulu@naver.com</td>
 				</tr>
 			</tbody>
@@ -77,14 +77,14 @@
 		
 		
 		<!-- 희망도서 도서 정보 -->
-		<div class ="bg-danger"><h4><b>희망도서 정보</b></h4></div>
+		<div class ="mt-4"><h4><b>희망도서 정보</b></h4></div>
 		
 		
 		<table class="table">
 		<thead>
 		<tr>
-			<td>신청도서관</td>
-			<td>
+			<td class="item col-3">신청도서관</td>
+			<td class="col-9">
 				<select id="librarySelector" class="form-control">
 					<option value="역삼푸른솔도서관">역삼푸른솔도서관</option>
 					<option value="역삼도서관">역삼도서관</option>
@@ -100,7 +100,7 @@
 		
 		<tbody>
 			<tr>
-				<td>희망도서명</td>
+				<td class="item">희망도서명</td>
 				<td>
 				  <form method="get" class="">
 					<div class="search d-flex justify-content-center">
@@ -113,23 +113,23 @@
 				</td>
 			</tr>
 			<tr>
-				<td>저자</td>
+				<td class="item ">저자</td>
 				<td>22</td>
 			</tr>
 			<tr>
-				<td>출판사</td>
+				<td class="item ">출판사</td>
 				<td>22</td>
 			</tr>
 			<tr>
-				<td>발행연도</td>
+				<td class="item ">발행연도</td>
 				<td>22</td>
 			</tr>
 			<tr>
-				<td>ISBN</td>
+				<td class="item">ISBN</td>
 				<td>22</td>
 			</tr>
 			<tr>
-				<td>정가</td>
+				<td class="item">정가</td>
 				<td>22</td>
 			</tr>
 			
@@ -140,7 +140,7 @@
 		</table>
 		
 			<div class="text-center">
-				<button id="" class="btn btn-secondary my-3">신청하기</button>
+				<button id="" class="btn btn-primary my-3">신청하기</button>
 			</div>
 			
 		</div>

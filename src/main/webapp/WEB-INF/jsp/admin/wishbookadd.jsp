@@ -32,20 +32,20 @@
 		<div class="d-flex">
 		<c:import url="/WEB-INF/jsp/include/sidenav.jsp"/>
 		
-		<div class="col-9 bg-info">
+		<div class="col-9">
 		
 			<div class="">
-				<div class="mt-3 d-flex bg-danger">
+				<div class="mt-3 d-flex text-secondary">
 						희망도서 신청현황 :&nbsp<div class="text-primary"> 2 </div>건
 				</div>
 							
 					<hr>
-				<div class="bg-primary">
+				<div class="">
 					
 					<table class="table">
 					
 					<thead>
-					<tr class="bg-secondary">
+					<tr class="item">
 						<td><b>No.</b></td>
 						<td><b>Name</b></td>
 						<td><b>이메일</b></td>
