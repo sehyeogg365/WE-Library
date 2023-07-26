@@ -43,13 +43,44 @@
 		<!-- 신청자 정보 -->
 		<div class ="bg-danger"><h4><b>신청자 정보</b></h4></div>
 		
+		<div class="">
+		
+		<table class="table">
+			<thead>
+				<tr>
+					<td></td>
+					<td></td>
+				</tr>
+			</thead>
+			
+			<tbody>
+			
+				<tr>
+					<td>신청자명</td>
+					<td>김ㅇㅇ</td>
+				</tr>
+				<tr>
+					<td>휴대폰 번호</td>
+					<td>010-1111-1111</td>
+				</tr>
+				<tr>
+					<td>이메일</td>
+					<td>hagulu@naver.com</td>
+				</tr>
+			</tbody>
+		</table>
+		
+		
+		</div>
+		
+
+		
+		
 		<!-- 희망도서 도서 정보 -->
 		<div class ="bg-danger"><h4><b>희망도서 정보</b></h4></div>
 		
-		<div class="bg-primary">
 		
 		<table class="table">
-		
 		<thead>
 		<tr>
 			<td>신청도서관</td>
@@ -109,8 +140,9 @@
 		</table>
 		
 			<div class="text-center">
-				<button id="" class="btn btn-secondary">신청하기</button>
+				<button id="" class="btn btn-secondary my-3">신청하기</button>
 			</div>
+			
 		</div>
 		
 		
@@ -121,13 +153,15 @@
 		
 		
 		</div>
+		
 		
 		
 		</section>
 		
+		
 		<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
 	
-	</div>
+	
 	<style>
 	</style>
 	<script>
