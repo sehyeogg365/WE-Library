@@ -21,11 +21,15 @@
 	<section class="contents d-flex justify-content-center">
 		
 	
-		<div class="userinfo-page mt-3">
+		<div class="userinfo-page">
+		<div class="sub-profile bg-secondary">
+			<c:import url="/WEB-INF/jsp/include/subprofile.jsp"/>
 		
-			<div class="">
-			<h2 class="text-center mt-3"><b>회원정보 수정</b></h2>
+			<div class="sub-text bg-info">
+				<h2 class="text-center text-white mt-3"><b>회원정보 수정</b></h2>
 			</div>
+		</div>	
+			
 			<div class="d-flex">
 			<c:import url="/WEB-INF/jsp/include/sidenav.jsp"/>
 			
