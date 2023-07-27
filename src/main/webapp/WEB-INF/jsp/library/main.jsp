@@ -102,12 +102,12 @@
 							<div class="d-flex justify-content-between mt-2">
 								<div class="pt-3 pl-3"><h4 class="text-white">내 서재</h4></div>
 								<div class="pt-3 pr-3">
-									<i class="bi bi-plus-lg text-white " style="font-size :20px;"></i>
+									<a href="/book/borrowstatus/view?id=${userId }"><i class="bi bi-plus-lg text-white " style="font-size :20px;"></i></a>
 								</div>
 							</div>
 							<div class="d-flex justify-content-between flex-wrap">
 								
-								<div class="mt-3 pl-3"><a href="#" class="text-white">대출조회/반납연기</a></div>
+								<div class="mt-3 pl-3"><a href="/book/borrowstatus/view?id=${userId }" class="text-white">대출조회/반납연기</a></div>
 								<div class="ml-5 mt-3 pr-3"><a href="#" class="text-white">예약취소/조회</a></div>
 								
 								<div class="mt-3 pl-3 text-white"><a href="#" class="text-white">상호대차신청조회</a></div>
@@ -127,7 +127,7 @@
 								<div class="ml-2"><a href="#" class="btn btn-light">행사안내</a></div>
 							</div>
 							<div class="">
-								<i class="bi bi-plus-lg" style="font-size :20px;"></i>
+								<a href="#"><i class="bi bi-plus-lg" style="font-size :20px;"></i></a>
 							</div>
 							
 							
