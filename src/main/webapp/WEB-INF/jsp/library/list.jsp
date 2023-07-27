@@ -18,6 +18,50 @@
 	<link rel="stylesheet" href="/static/css/style.css" type="text/css">
 </head>
 <body>
-
+	<div id="wrap" class="">
+		<c:import url="/WEB-INF/jsp/include/header.jsp"/>
+		<section class="contents d-flex justify-content-center">
+		
+		<div class="librarylist-page">
+		<div class="sub-profile bg-secondary">
+			<c:import url="/WEB-INF/jsp/include/subprofile.jsp"/>
+			
+			<div class="sub-text bg-info">
+				<h2 class="text-center text-white mt-3"><b>간략검색</b></h2>
+			</div>
+		</div>
+		
+		
+		<div class="">
+			<nav class="main-nav d-flex justify-content-center align-items-center col-12">
+				<div class="text-white">
+					<h5>통합검색</h5>
+				</div>
+				
+				<form action="/library/list/view" method="get" class="col-9"><!-- bootstrap input group 검색 -->
+					<div class="search d-flex justify-content-center">
+		                <input type="text" value="" placeholder="검색어 입력" class="form-control" name="title">
+		                <div class="input-group-append">
+		                	<button type="submit" class="btn">검색</button>
+		                </div>
+		            </div>
+		         </form>
+		         </nav> 
+		
+		
+		</div>
+		
+		
+		
+		
+		</div>
+		
+	
+		
+		
+		</section>
+		
+		<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
+	</div>
 </body>
 </html>

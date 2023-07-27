@@ -163,6 +163,21 @@ footer{
 }
 */
 
+.sub-profile >.profile {
+	width:100%;
+	height:200px;
+	object-fit: cover;
+	margin : auto;
+}
+.sub-profile >.sub-text {
+	
+	position: absolute;
+	
+	transform: translate( 130%, -130% );
+
+}
+
+
 .user-box{
 	height:300px;
 	border: 1px solid;
@@ -192,3 +207,8 @@ footer{
 	
 }
 
+
+
+.librarylist-page{
+	width:1000px;
+}

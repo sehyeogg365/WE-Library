@@ -15,6 +15,11 @@ public class LibraryController {
 		
 	}
 	
+	@GetMapping("/list/view")
+	public String listPage(){
+		
+		return "library/list";
+	}
 	
 	
 	
