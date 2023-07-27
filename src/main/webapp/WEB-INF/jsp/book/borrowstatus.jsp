@@ -34,7 +34,7 @@
 					
 				</div>
 				
-				<div class="d-flex">
+				<div class="d-flex mx-5">
 				
 				<c:import url="/WEB-INF/jsp/include/sidenav2.jsp"/>
 				

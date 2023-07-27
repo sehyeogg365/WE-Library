@@ -29,7 +29,7 @@
 			</div>
 		</div>
 		
-		<div class="d-flex">
+		<div class="d-flex mx-5">
 		<c:import url="/WEB-INF/jsp/include/sidenav.jsp"/>
 		
 		<div class="col-9">
