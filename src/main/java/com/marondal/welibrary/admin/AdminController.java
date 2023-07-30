@@ -8,11 +8,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/admin")
 public class AdminController {
 
+	
+	
+	//희망도서/ 도서 추가 겸 희망도서 조회창
 	@GetMapping("/wishbook/add/view")
 	public String wishbookInput() {
 		
 		return "/admin/wishbookadd";
 	}
+	
+	
+	
 	
 	//희망도서/도서 추가, 공지사항 등록/수정, 행사 등록/수정
 	
