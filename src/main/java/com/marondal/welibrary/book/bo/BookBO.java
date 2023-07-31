@@ -53,12 +53,22 @@ public class BookBO {
 		
 		for(WishBook wishbook:wishbookList) {
 			
+			//갯수, 소장여부 변수
 			
+			WishBookDetail wishbookDetail = new WishBookDetail();
 			
+			wishbookDetail.setId(id);
+			wishbookDetail.setUserId(userId);
+			wishbookDetail.setLibrary(wishbook.getLibrary());
+			wishbookDetail.setTitle(wishbook.getTitle());
+			wishbookDetail.setAuthor(wishbook.getAuthor());
+			wishbookDetail.setCreatedAt(wishbook.getCreatedAt());
+			
+			wishbookDetailList.add(wishbookDetail);
 		}
 		
 		
-		return bookDAO.selectWishBookList(userId, id);
+		return wishbookDetailList;
 		
 	}
 	
