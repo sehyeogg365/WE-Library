@@ -37,13 +37,13 @@ public class BookRestController {
 								, @RequestParam("price") int price
 								, @RequestParam("isbn") String isbn
 								, @DateTimeFormat(pattern="yyyy-MM-dd")
-								 @RequestParam("Date") Date pubdate// 날짜 형식?
+								 @RequestParam("pubyear") int pubyear// 날짜 형식이 아니라 년도만 추출해내서 int 가 맞을듯 
 								, HttpSession session
 								){
 		
 		int userId = (Integer) session.getAttribute("userId");
 		
-		int count = bookBO.addWishbook(userId, library, title, file, author, publisher, price, isbn, pubdate);
+		int count = bookBO.addWishbook(userId, library, title, file, author, publisher, price, isbn, pubyear);
 		
 		Map<String, String> resultMap = new HashMap<>();
 		

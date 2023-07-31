@@ -27,13 +27,13 @@ public class BookBO {
 						   , String publisher   
 						   , int price   
 						   , String isbn   
-						   , Date pubdate
+						   , int pubyear
 						   ) {
 		//파일매니저 서비스 추가하기
 		//String imagePath = FileManagerService.saveFile(userId, file);
 		
 		
-		return bookDAO.insertWishBook(userId, library, title, title, author, publisher, price, isbn, pubdate);		
+		return bookDAO.insertWishBook(userId, library, title, title, author, publisher, price, isbn, pubyear);		
 
 	}
 	

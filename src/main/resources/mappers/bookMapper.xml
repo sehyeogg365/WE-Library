@@ -22,7 +22,7 @@
   			, `publisher`
   			, `price`
   			, `isbn`
-  			, `pubdate`
+  			, `pubyear`
   			, `createdAt` 
 		    , `updatedAt`
   		)
@@ -37,7 +37,7 @@
   			, #{publisher}
   			, #{price}
   			, #{isbn}
-  			, #{pubdate}
+  			, #{pubyear}
   			, now()
 			, now()
   		)

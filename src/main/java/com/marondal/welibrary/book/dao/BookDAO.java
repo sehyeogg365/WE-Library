@@ -23,7 +23,7 @@ public interface BookDAO {
 							  , @Param("publisher") String publisher
 							  , @Param("price") int price
 							  , @Param("isbn") String isbn
-							  , @Param("pubdate") Date pubdate
+							  , @Param("pubyear") int pubyear
 							  );
 	
 	//희망도서 리스트

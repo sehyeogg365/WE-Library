@@ -12,7 +12,7 @@ public class WishBook {
 	private String publisher;
 	private int price;
 	private String isbn;
-	private Date pubdate;
+	private int pubyear;
 	private Date createdAt;
 	private Date updatedAt;
 	public int getId() {
@@ -69,11 +69,11 @@ public class WishBook {
 	public void setIsbn(String isbn) {
 		this.isbn = isbn;
 	}
-	public Date getPubdate() {
-		return pubdate;
+	public int getPubyear() {
+		return pubyear;
 	}
-	public void setPubdate(Date pubdate) {
-		this.pubdate = pubdate;
+	public void setPubyear(int pubyear) {
+		this.pubyear = pubyear;
 	}
 	public Date getCreatedAt() {
 		return createdAt;
@@ -87,6 +87,6 @@ public class WishBook {
 	public void setUpdatedAt(Date updatedAt) {
 		this.updatedAt = updatedAt;
 	}
-	
+
 	
 }

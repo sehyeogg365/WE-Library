@@ -12,7 +12,7 @@ public class Book {//lombok 써보기
 	private int price;
 	private String isbn;
 	private String description;
-	private Date pubdate;
+	private int pubyear;
 	private String appendix;
 	private Date createdAt;
 	private Date updatedAt;
@@ -70,11 +70,11 @@ public class Book {//lombok 써보기
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public Date getPubdate() {
-		return pubdate;
+	public int getPubyear() {
+		return pubyear;
 	}
-	public void setPubdate(Date pubdate) {
-		this.pubdate = pubdate;
+	public void setPubyear(int pubyear) {
+		this.pubyear = pubyear;
 	}
 	public String getAppendix() {
 		return appendix;
@@ -95,5 +95,6 @@ public class Book {//lombok 써보기
 		this.updatedAt = updatedAt;
 	}
 	
+
 	
 }
