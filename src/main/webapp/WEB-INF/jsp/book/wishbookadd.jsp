@@ -123,7 +123,7 @@
 			</tr>
 			<tr>
 				<td class="item ">발행연도</td>
-				<td><input type="text" value="" placeholder="" id="pubdateInput" class="form-control"></td>
+				<td><input type="text" value="" placeholder="" id="pubyearInput" class="form-control"></td>
 			</tr>
 			<tr>
 				<td class="item">ISBN</td>
@@ -175,7 +175,7 @@
 			let title = $("#titleInput").val();
 			let author = $("#authorInput").val();
 			let publisher = $("#publisherInput").val();
-			let pubdate = $("#pubdateInput").val();
+			let pubyear = $("#pubyearInput").val();
 			let isbn = $("#isbnInput").val();
 			let price =  $("#priceInput").val();
 			
@@ -202,7 +202,7 @@
 				return;
 			}
 			
-			if(pubdate == ""){
+			if(pubyear == ""){
 				alert("발행년도를 입력하세요.");
 				return;
 			}
@@ -217,11 +217,20 @@
 				return;
 			}
 			
+			//alert(id); 이거만 안뜨긴 하는데 정상적으로 저장은된다.
+			//alert(library);
+			//alert(title);
+			//alert(author);
+			//alert(publisher);
+			//alert(pubyear);
+			//alert(isbn);
+			//alert(price);
+			
 			$.ajax({
 				
 				type:"post"
 				, url: "/book/wishbook/create"
-				, data:{"library" : library, "title": title, "author" : author, "publisher" : publisher, "pubdate": pubdate, "isbn" : isbn, "price" : price}
+				, data:{"library" : library, "title": title, "author" : author, "publisher" : publisher, "pubyear": pubyear, "isbn" : isbn, "price" : price}
 				, success:function(data){
 					if(data.result == "success"){
 						location.reload();

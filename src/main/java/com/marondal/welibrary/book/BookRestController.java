@@ -36,8 +36,7 @@ public class BookRestController {
 								, @RequestParam("publisher") String publisher
 								, @RequestParam("price") int price
 								, @RequestParam("isbn") String isbn
-								, @DateTimeFormat(pattern="yyyy-MM-dd")
-								 @RequestParam("pubyear") int pubyear// 날짜 형식이 아니라 년도만 추출해내서 int 가 맞을듯 
+								, @RequestParam("pubyear") int pubyear// 날짜 형식이 아니라 년도만 추출해내서 int 가 맞을듯 
 								, HttpSession session
 								){
 		
