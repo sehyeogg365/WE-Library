@@ -6,8 +6,48 @@
   
   <mapper namespace="com.marondal.welibrary.book.dao.BookDAO">
   
-  <!-- 희망도서 신청 -->
   
+  
+  
+  <!-- 희망도서 신청 -->
+  <insert id="insertWishBook" parameterType="map">
+  	INSERT INTO
+  		`book`
+  		(
+  			`userId`
+  			, `library`
+  			, `title`
+  			, `imagePath`
+  			, `author`
+  			, `publisher`
+  			, `price`
+  			, `isbn`
+  			, `pubdate`
+  			, `createdAt` 
+		    , `updatedAt`
+  		)
+  		
+  		VALUES
+  		(
+  			#{userId}
+  			, #{library}
+  			, #{title}
+  			, #{imagePath}
+  			, #{author}
+  			, #{publisher}
+  			, #{price}
+  			, #{isbn}
+  			, #{pubdate}
+  			, now()
+			, now()
+  		)
+  	
+  </insert>
+  
+  <select id= "selectWishBookList"  resultType="com.marondal.welibrary.book.model.WishBook" parameterType="map">
+  
+  
+  </select>
   
   
   
