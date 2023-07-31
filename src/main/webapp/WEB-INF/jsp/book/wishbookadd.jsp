@@ -58,15 +58,15 @@
 			
 				<tr>
 					<td class="item col-3">신청자명</td>
-					<td class="col-9">김ㅇㅇ</td>
+					<td class="col-9">${user.name }</td>
 				</tr>
 				<tr>
 					<td class="item">휴대폰 번호</td>
-					<td>010-1111-1111</td>
+					<td>${user.phoneNumber }</td>
 				</tr>
 				<tr>
 					<td class="item">이메일</td>
-					<td>hagulu@naver.com</td>
+					<td>${user.email }</td>
 				</tr>
 			</tbody>
 		</table>
@@ -105,7 +105,7 @@
 				<td>
 				  <form method="get" class="">
 					<div class="search d-flex justify-content-center">
-		                <input type="text" value="" placeholder="검색어를 입력하세요." class="form-control" name="title">
+		                <input type="text" value="" placeholder="검색어를 입력하세요." id="titleInput" class="form-control" name="title">
 		                <div class="input-group-append">
 		                	<button type="submit" class="btn">검색</button>
 		                </div>
@@ -115,23 +115,23 @@
 			</tr>
 			<tr>
 				<td class="item ">저자</td>
-				<td>22</td>
+				<td><input type="text" value="" placeholder="" id="authorInput" class="form-control"></td>
 			</tr>
 			<tr>
 				<td class="item ">출판사</td>
-				<td>22</td>
+				<td><input type="text" value="" placeholder="" id="publisherInput" class="form-control"></td>
 			</tr>
 			<tr>
 				<td class="item ">발행연도</td>
-				<td>22</td>
+				<td><input type="text" value="" placeholder="" id="pubdateInput" class="form-control"></td>
 			</tr>
 			<tr>
 				<td class="item">ISBN</td>
-				<td>22</td>
+				<td><input type="text" value="" placeholder="" id="isbnInput" class="form-control"></td>
 			</tr>
 			<tr>
 				<td class="item">정가</td>
-				<td>22</td>
+				<td><input type="text" value="" placeholder="" id="priceInput" class="form-control"></td>
 			</tr>
 			
 			
@@ -141,7 +141,7 @@
 		</table>
 		
 			<div class="text-center">
-				<button id="" class="btn btn-primary my-3">신청하기</button>
+				<button id="addBtn" class="btn btn-primary my-3" data-user-id="${wishbook.userId }">신청하기</button>
 			</div>
 			
 		</div>
@@ -166,7 +166,82 @@
 	<style>
 	</style>
 	<script>
-	
+	$(document).ready(function(){
+		
+		$("#addBtn").on("click", function(){
+			
+			let id = $(this).data("user-id");
+			let library = $("#librarySelector").val();
+			let title = $("#titleInput").val();
+			let author = $("#authorInput").val();
+			let publisher = $("#publisherInput").val();
+			let pubdate = $("#pubdateInput").val();
+			let isbn = $("#isbnInput").val();
+			let price =  $("#priceInput").val();
+			
+			
+			if(library == ""){
+				alert("도서관을 선택하세요.");
+				return;
+			}
+			
+			if(title == ""){
+				alert("제목을 입력하세요.");
+				return;
+			}
+			
+			
+			
+			if(author == ""){
+				alert("저자를 입력하세요.");
+				return;
+			}
+			
+			if(publisher == ""){
+				alert("출판사를 입력하세요.");
+				return;
+			}
+			
+			if(pubdate == ""){
+				alert("발행년도를 입력하세요.");
+				return;
+			}
+			
+			if(isbn == ""){
+				alert("ISBN를 입력하세요.");
+				return;
+			}
+			
+			if(price == ""){
+				alert("정가를 입력하세요.");
+				return;
+			}
+			
+			$.ajax({
+				
+				type:"post"
+				, url: "/book/wishbook/create"
+				, data:{"library" : library, "title": title, "author" : author, "publisher" : publisher, "pubdate": pubdate, "isbn" : isbn, "price" : price}
+				, success:function(data){
+					if(data.result == "success"){
+						location.reload();
+						alert("추가 성공");
+					} else {
+						alert("추가 실패");
+					}
+					
+				}
+				, error:function(){
+					
+					alert("추가 오류");
+				}
+				
+			});
+			
+			
+			
+		});
+	});
 	</script>
 	
 </body>

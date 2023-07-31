@@ -79,7 +79,7 @@
 						
 					}
 					, error:function(){
-						alert("비밀번호 재발급 에러");
+						alert("비밀번호 재발급 오류");
 					}
 					
 					
