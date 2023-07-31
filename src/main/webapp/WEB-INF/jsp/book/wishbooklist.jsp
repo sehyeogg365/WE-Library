@@ -42,30 +42,32 @@
 		
 		<div class="col-9 ">
 		
-			<div class="">
+			<div class="bg-info">
 				<div class="mt-3 d-flex text-secondary">
 						희망도서 신청 :&nbsp<div class="text-primary"> 1 </div>건
 				</div>
-							
+						
+						<c:forEach var="wishbook" items="${wishbookList }">	
 						<hr>
-						<div class="">
+						
+						<div class="bg-warning">
 							
 						
 							<div class="">
-								<h5>신입사원 제대로 미쳐라.</h5>
+								<h5>${wishbook.title }</h5>
 							</div>
 							<div class="text-secondary">
-								저자 : xx | 출판사 : xx | ISBN : xxxxxxxxxxxx 
+								저자 : ${wishbook.author } | 출판사 : ${wishbook.publisher } | ISBN : ${wishbook.isbn }
 							</div>
 							<div class="text-secondary">
-								도서관 : 역삼푸른솔도서관
+								도서관 : ${wishbook.library }
 							</div>
 							<div class="text-secondary">
 								상태 : 소장중 or 신청중
 							</div>
 						</div>
 						<hr>
-			
+					</c:forEach>
 			</div>
 		
 			

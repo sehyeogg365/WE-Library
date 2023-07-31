@@ -1,5 +1,6 @@
 package com.marondal.welibrary.book.bo;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -9,6 +10,8 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.marondal.welibrary.book.dao.BookDAO;
 import com.marondal.welibrary.book.model.WishBook;
+import com.marondal.welibrary.book.model.WishBookDetail;
+import com.marondal.welibrary.user.bo.UserBO;
 
 @Service
 public class BookBO {
@@ -17,6 +20,9 @@ public class BookBO {
 	@Autowired
 	private BookDAO bookDAO;
 
+	@Autowired
+	private UserBO userBO;
+	
 	//희망도서 신청
 	
 	public int addWishbook( int userId
@@ -39,9 +45,19 @@ public class BookBO {
 	
 	//희망도서 리스트(사용자가 신청한 리스트)
 	
-	public List<WishBook> getWishBookList(int userId, int id){
+	public List<WishBookDetail> getWishBookList(int userId, int id){
 			
-
+		List<WishBook> wishbookList =bookDAO.selectWishBookList(userId, id);
+		
+		List<WishBookDetail> wishbookDetailList = new ArrayList<>();
+		
+		for(WishBook wishbook:wishbookList) {
+			
+			
+			
+		}
+		
+		
 		return bookDAO.selectWishBookList(userId, id);
 		
 	}
