@@ -29,5 +29,7 @@ public interface WishBookDAO {
 		
 		
 		//희망도서 신청 여부 
+		public int selectBookByLibraryTitle(@Param("Library") String library, @Param("title")String title);
+		
 			
 }

@@ -58,6 +58,18 @@
   		AND `id` =#{id}
   </select>
   
+  <!-- 희망도서 추가 여부(book테이블에 추가되었는지 여부) -->
+  <select id="selectBookByLibraryTitle"  parameterType="map" resultType="int">
+  	SELECT
+  		count(1)
+  	FROM
+  		`book`
+  	WHERE 
+  		`library`=#{library}
+  		AND
+  		`title` =#{title}
+  
+  </select>
   
   
   </mapper>

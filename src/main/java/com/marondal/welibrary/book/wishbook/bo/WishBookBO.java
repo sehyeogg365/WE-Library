@@ -20,9 +20,9 @@ public class WishBookBO {
 	@Autowired
 	private WishBookDAO wishBookDAO;
 
-	//@Autowired
-	//private UserBO userBO;
 	
+	@Autowired
+	private WishBookCheckBO wishBookCheckBO;
 	
 	//희망도서 신청
 	
@@ -54,6 +54,10 @@ public class WishBookBO {
 			
 			for(WishBook wishbook:wishbookList) {
 				
+				//boolean isHave = wishBookCheckBO.isWishAdd(library, title);//희망도서 추가 여부
+				//갯수
+				
+				
 				//갯수, 소장여부 변수
 				// 이거 관련 비오를 하나 더 파는게 나을듯 신청 갯수랑 소장여부 변수는..
 				WishBookDetail wishbookDetail = new WishBookDetail();
@@ -73,8 +77,8 @@ public class WishBookBO {
 			
 		}
 		
-		//희망도서 신청 여부 
-		//우선 Book 테이블에 추가됐는지 안됐는지 여부 확인 아마 도서관명, 책이름으로 할듯
+		
+		
 		
 		
 		
