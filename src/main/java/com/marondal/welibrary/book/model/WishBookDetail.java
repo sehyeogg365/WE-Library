@@ -6,6 +6,8 @@ public class WishBookDetail {//희망도서 리스트 카드 한장에 들어가
 
 	private int id;
 	private int userId;
+	private String name;
+	private String email;//이름, 이메일 추가 
 	private String library;
 	private String title;
 	private String author;
@@ -24,6 +26,18 @@ public class WishBookDetail {//희망도서 리스트 카드 한장에 들어가
 	}
 	public void setUserId(int userId) {
 		this.userId = userId;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
 	}
 	public String getLibrary() {
 		return library;
@@ -67,7 +81,8 @@ public class WishBookDetail {//희망도서 리스트 카드 한장에 들어가
 	public void setCreatedAt(Date createdAt) {
 		this.createdAt = createdAt;
 	}
-	
+
+		
 	
 	
 	

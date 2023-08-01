@@ -65,7 +65,7 @@
 						<td>혼자 공부하는 c언어</td>
 						<td>역삼푸른솔도서관</td>
 						<td>2023-06-03</td>
-						<td><button class="btn btn-primary">추가하기</button></td>
+						<td><button class="addBtn btn-primary">추가하기</button></td>
 					</tr>
 					<tr>
 						<td>2</td>
@@ -74,7 +74,7 @@
 						<td>혼자공부하는 python</td>
 						<td>행복한 도서관</td>
 						<td>2023-07-04</td>
-						<td><button class="btn btn-primary">추가하기</button></td>
+						<td><button class="addBtn btn btn-primary">추가하기</button></td>
 					</tr>
 					
 					
@@ -112,7 +112,21 @@
 		<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
 	</div>
 	<script>
-	
+		$(document).ready(function(){
+			
+			$(".addBtn").on("click", function(){
+				
+				let id = $(this).data("");
+				let 
+				
+				
+			});
+			
+			
+			
+			
+		});
+		
 	
 	</script>
 </body>

@@ -34,4 +34,8 @@ public interface WishBookDAO {
 		
 		// 유저별 희망도서 신청 갯수세기
 		public int selectWishBookNumber(@Param("userId") int userId);
+		
+		// 관리자 희망도서 신청 리스트 조회
+		public List<WishBook> selectWishBookListById(@Param("id") int id);
+		
 }

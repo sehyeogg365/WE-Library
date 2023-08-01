@@ -74,6 +74,7 @@ public class WishBookBO {
 			
 		}
 		
+		// 관리자 희망도서 신청 리스트
 		
 		
 		
