@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.marondal.welibrary.book.bo.BookBO;
+import com.marondal.welibrary.wishbook.bo.WishBookBO;
 
 
 
@@ -24,6 +25,9 @@ public class BookRestController {
 
 	@Autowired
 	private BookBO bookBO;
+	
+	@Autowired
+	private WishBookBO wishBookBO;
 	
 	
 	//희망도서 신청
@@ -42,7 +46,7 @@ public class BookRestController {
 		
 		int userId = (Integer) session.getAttribute("userId");
 		
-		int count = bookBO.addWishbook(userId, library, title, file, author, publisher, price, isbn, pubyear);
+		int count = wishBookBO.addWishbook(userId, library, title, file, author, publisher, price, isbn, pubyear);
 		
 		Map<String, String> resultMap = new HashMap<>();
 		

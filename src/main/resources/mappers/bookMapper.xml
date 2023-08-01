@@ -9,54 +9,7 @@
   
   
   
-  <!-- 희망도서 신청 -->
-  <insert id="insertWishBook" parameterType="map">
-  	INSERT INTO
-  		`wish_book`
-  		(
-  			`userId`
-  			, `library`
-  			, `title`
-  			, `imagePath`
-  			, `author`
-  			, `publisher`
-  			, `price`
-  			, `isbn`
-  			, `pubyear`
-  			, `createdAt` 
-		    , `updatedAt`
-  		)
-  		
-  		VALUES
-  		(
-  			#{userId}
-  			, #{library}
-  			, #{title}
-  			, #{imagePath}
-  			, #{author}
-  			, #{publisher}
-  			, #{price}
-  			, #{isbn}
-  			, #{pubyear}
-  			, now()
-			, now()
-  		)
-  	
-  </insert>
   
-  <select id= "selectWishBookList"  resultType="com.marondal.welibrary.book.model.WishBook" parameterType="map">
-  	SELECT
-  		`userId`
-  		, `library`
-  		, `title`
-  		, `createdAt`
-  		
-  	FROM
-  		`wish_book`
-  	WHERE 
-  		`userId` =#{userId}
-  		AND `id` =#{id}
-  </select>
   
   
   

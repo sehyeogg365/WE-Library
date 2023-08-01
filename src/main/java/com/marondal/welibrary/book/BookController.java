@@ -14,10 +14,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.marondal.welibrary.book.bo.BookBO;
 import com.marondal.welibrary.book.dao.BookDAO;
 import com.marondal.welibrary.book.model.Book;
-import com.marondal.welibrary.book.model.WishBook;
-import com.marondal.welibrary.book.model.WishBookDetail;
 import com.marondal.welibrary.user.dao.UserDAO;
 import com.marondal.welibrary.user.model.User;
+import com.marondal.welibrary.wishbook.bo.WishBookBO;
+import com.marondal.welibrary.wishbook.model.WishBook;
+import com.marondal.welibrary.wishbook.model.WishBookDetail;
 
 @Controller
 @RequestMapping("/book")
@@ -28,6 +29,9 @@ public class BookController {
 	
 	@Autowired
 	private BookBO bookBO;
+	
+	@Autowired
+	private WishBookBO wishBookBO;
 	
 	
 	@GetMapping("/borrowstatus/view")
@@ -54,7 +58,7 @@ public class BookController {
 		
 		int userId = (Integer) session.getAttribute("userId");
 		
-		List<WishBookDetail> wishbookList = bookBO.getWishBookList(userId, id);
+		List<WishBookDetail> wishbookList = wishBookBO.getWishBookList(userId, id);
 		model.addAttribute("wishbookList", wishbookList);
 		
 		return "book/wishbooklist";

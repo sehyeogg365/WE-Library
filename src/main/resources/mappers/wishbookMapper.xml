@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+ <!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  
+  <mapper namespace="com.marondal.welibrary.wishbook.dao.WishBookDAO">
+  
+  
+  <!-- 희망도서 신청 -->
+  <insert id="insertWishBook" parameterType="map">
+  	INSERT INTO
+  		`wish_book`
+  		(
+  			`userId`
+  			, `library`
+  			, `title`
+  			, `imagePath`
+  			, `author`
+  			, `publisher`
+  			, `price`
+  			, `isbn`
+  			, `pubyear`
+  			, `createdAt` 
+		    , `updatedAt`
+  		)
+  		
+  		VALUES
+  		(
+  			#{userId}
+  			, #{library}
+  			, #{title}
+  			, #{imagePath}
+  			, #{author}
+  			, #{publisher}
+  			, #{price}
+  			, #{isbn}
+  			, #{pubyear}
+  			, now()
+			, now()
+  		)
+  	
+  </insert>
+  
+  <!-- 희망도서 조회 -->
+  <select id= "selectWishBookList"  resultType="com.marondal.welibrary.wishbook.model.WishBook" parameterType="map">
+  	SELECT
+  		`userId`
+  		, `library`
+  		, `title`
+  		, `createdAt`
+  		
+  	FROM
+  		`wish_book`
+  	WHERE 
+  		`userId` =#{userId}
+  		AND `id` =#{id}
+  </select>
+  
+  
+  
+  </mapper>
