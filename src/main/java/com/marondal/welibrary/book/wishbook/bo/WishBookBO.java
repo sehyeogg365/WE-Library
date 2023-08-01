@@ -55,10 +55,7 @@ public class WishBookBO {
 			for(WishBook wishbook:wishbookList) {
 				
 				//boolean isHave = wishBookCheckBO.isWishAdd(library, title);//희망도서 추가 여부
-				//갯수
-				
-				
-				//갯수, 소장여부 변수
+				//소장여부 변수
 				// 이거 관련 비오를 하나 더 파는게 나을듯 신청 갯수랑 소장여부 변수는..
 				WishBookDetail wishbookDetail = new WishBookDetail();
 				

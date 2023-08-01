@@ -2,7 +2,7 @@ package com.marondal.welibrary.book.model;
 
 import java.util.Date;
 
-public class WishBookDetail {
+public class WishBookDetail {//희망도서 리스트 카드 한장에 들어가는 정보
 
 	private int id;
 	private int userId;
@@ -12,7 +12,6 @@ public class WishBookDetail {
 	private String publisher;
 	private String isbn;
 	private boolean isHave;//소장여부
-	private int numberCount;// 갯수
 	private Date createdAt;// 신청날짜	
 	public int getId() {
 		return id;
@@ -61,12 +60,6 @@ public class WishBookDetail {
 	}
 	public void setHave(boolean isHave) {
 		this.isHave = isHave;
-	}
-	public int getNumberCount() {
-		return numberCount;
-	}
-	public void setNumberCount(int numberCount) {
-		this.numberCount = numberCount;
 	}
 	public Date getCreatedAt() {
 		return createdAt;

@@ -15,8 +15,11 @@ import com.marondal.welibrary.book.bo.BookBO;
 import com.marondal.welibrary.book.dao.BookDAO;
 import com.marondal.welibrary.book.model.Book;
 import com.marondal.welibrary.book.model.WishBook;
+import com.marondal.welibrary.book.model.WishBookCount;
 import com.marondal.welibrary.book.model.WishBookDetail;
 import com.marondal.welibrary.book.wishbook.bo.WishBookBO;
+import com.marondal.welibrary.book.wishbook.bo.WishBookCountBO;
+import com.marondal.welibrary.user.bo.UserBO;
 import com.marondal.welibrary.user.dao.UserDAO;
 import com.marondal.welibrary.user.model.User;
 
@@ -25,20 +28,22 @@ import com.marondal.welibrary.user.model.User;
 public class BookController {
 	
 	@Autowired
-	private UserDAO userDAO;
+	private UserBO userBO;
 	
-	@Autowired
-	private BookBO bookBO;
 	
 	@Autowired
 	private WishBookBO wishBookBO;
+	
+	@Autowired
+	private WishBookCountBO wishBookCountBO;
+	
 	
 	
 	@GetMapping("/borrowstatus/view")
 	public String borrowStatus(Model model
 			, @RequestParam("id") int id) {
 			
-		User user = userDAO.selectUserInfo(id); 
+		User user = userBO.getUserInfo(id); 
 		
 		model.addAttribute("user", user);
 		
@@ -51,12 +56,14 @@ public class BookController {
 			, @RequestParam("id") int id
 			, HttpSession session
 			) {
-		
-		User user = userDAO.selectUserInfo(id); 
-		
-		model.addAttribute("user", user);
+	
 		
 		int userId = (Integer) session.getAttribute("userId");
+		
+		
+		int wishbook = wishBookCountBO.getWishBookNumber(userId);// 갯수 
+		model.addAttribute("wishbook", wishbook);
+		
 		
 		List<WishBookDetail> wishbookList = wishBookBO.getWishBookList(userId, id);
 		model.addAttribute("wishbookList", wishbookList);
@@ -69,7 +76,7 @@ public class BookController {
 	public String wishbookAdd(Model model
 			, @RequestParam("id") int id) {
 		
-		User user = userDAO.selectUserInfo(id); 
+		User user = userBO.getUserInfo(id); //이상하게 DAO로 해도 잘불러와지더라.
 		
 		model.addAttribute("user", user);
 

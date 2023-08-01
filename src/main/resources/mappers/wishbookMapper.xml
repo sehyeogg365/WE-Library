@@ -71,5 +71,15 @@
   
   </select>
   
+  <!-- 유저별 희망도서 신청 갯수 세기 -->
+  <select id="selectWishBookNumber" parameterType="map" resultType="int">
+  	SELECT
+  		count(1)
+  	FROM
+  		`wish_book`
+  	WHERE
+  		`userId` = #{userId}
+  
+  </select>
   
   </mapper>
