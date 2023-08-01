@@ -54,7 +54,7 @@ public class BookBO {
 		for(WishBook wishbook:wishbookList) {
 			
 			//갯수, 소장여부 변수
-			
+			// 이거 관련 비오를 하나 더 파는게 나을듯 신청 갯수랑 소장여부 변수는..
 			WishBookDetail wishbookDetail = new WishBookDetail();
 			
 			wishbookDetail.setId(id);

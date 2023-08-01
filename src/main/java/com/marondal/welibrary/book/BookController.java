@@ -15,6 +15,7 @@ import com.marondal.welibrary.book.bo.BookBO;
 import com.marondal.welibrary.book.dao.BookDAO;
 import com.marondal.welibrary.book.model.Book;
 import com.marondal.welibrary.book.model.WishBook;
+import com.marondal.welibrary.book.model.WishBookDetail;
 import com.marondal.welibrary.user.dao.UserDAO;
 import com.marondal.welibrary.user.model.User;
 
@@ -53,7 +54,7 @@ public class BookController {
 		
 		int userId = (Integer) session.getAttribute("userId");
 		
-		List<WishBook> wishbookList = bookBO.getWishBookList(userId, id);
+		List<WishBookDetail> wishbookList = bookBO.getWishBookList(userId, id);
 		model.addAttribute("wishbookList", wishbookList);
 		
 		return "book/wishbooklist";
