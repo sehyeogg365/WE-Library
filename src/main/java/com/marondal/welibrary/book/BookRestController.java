@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.marondal.welibrary.book.bo.BookBO;
-import com.marondal.welibrary.wishbook.bo.WishBookBO;
+import com.marondal.welibrary.book.wishbook.bo.WishBookBO;
 
 
 

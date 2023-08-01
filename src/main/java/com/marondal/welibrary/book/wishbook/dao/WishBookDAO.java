@@ -1,11 +1,11 @@
-package com.marondal.welibrary.wishbook.dao;
+package com.marondal.welibrary.book.wishbook.dao;
 
 import java.util.List;
 
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
-import com.marondal.welibrary.wishbook.model.WishBook;
+import com.marondal.welibrary.book.model.WishBook;
 
 @Repository
 public interface WishBookDAO {
@@ -25,5 +25,9 @@ public interface WishBookDAO {
 		
 		//희망도서 리스트
 		public List<WishBook> selectWishBookList(@Param("userId") int userId, @Param("id") int id);
+		
+		
+		
+		//희망도서 신청 여부 
 			
 }

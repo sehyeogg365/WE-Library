@@ -9,9 +9,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.marondal.welibrary.book.dao.BookDAO;
+import com.marondal.welibrary.book.model.WishBook;
+import com.marondal.welibrary.book.model.WishBookDetail;
 import com.marondal.welibrary.user.bo.UserBO;
-import com.marondal.welibrary.wishbook.model.WishBook;
-import com.marondal.welibrary.wishbook.model.WishBookDetail;
 
 @Service
 public class BookBO {

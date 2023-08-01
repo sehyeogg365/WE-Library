@@ -5,7 +5,7 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
   
-  <mapper namespace="com.marondal.welibrary.wishbook.dao.WishBookDAO">
+  <mapper namespace="com.marondal.welibrary.book.wishbook.dao.WishBookDAO">
   
   
   <!-- 희망도서 신청 -->
@@ -44,7 +44,7 @@
   </insert>
   
   <!-- 희망도서 조회 -->
-  <select id= "selectWishBookList"  resultType="com.marondal.welibrary.wishbook.model.WishBook" parameterType="map">
+  <select id= "selectWishBookList"  resultType="com.marondal.welibrary.book.model.WishBook" parameterType="map">
   	SELECT
   		`userId`
   		, `library`

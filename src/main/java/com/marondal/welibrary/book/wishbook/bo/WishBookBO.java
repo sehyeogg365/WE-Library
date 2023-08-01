@@ -1,4 +1,4 @@
-package com.marondal.welibrary.wishbook.bo;
+package com.marondal.welibrary.book.wishbook.bo;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,10 +9,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.marondal.welibrary.book.dao.BookDAO;
+import com.marondal.welibrary.book.model.WishBook;
+import com.marondal.welibrary.book.model.WishBookDetail;
+import com.marondal.welibrary.book.wishbook.dao.WishBookDAO;
 import com.marondal.welibrary.user.bo.UserBO;
-import com.marondal.welibrary.wishbook.dao.WishBookDAO;
-import com.marondal.welibrary.wishbook.model.WishBook;
-import com.marondal.welibrary.wishbook.model.WishBookDetail;
 
 @Service
 public class WishBookBO {
@@ -20,8 +20,8 @@ public class WishBookBO {
 	@Autowired
 	private WishBookDAO wishBookDAO;
 
-	@Autowired
-	private UserBO userBO;
+	//@Autowired
+	//private UserBO userBO;
 	
 	
 	//희망도서 신청
@@ -72,7 +72,10 @@ public class WishBookBO {
 			return wishbookDetailList;
 			
 		}
-			
+		
+		//희망도서 신청 여부 
+		//우선 Book 테이블에 추가됐는지 안됐는지 여부 확인 아마 도서관명, 책이름으로 할듯
+		
 		
 		
 }

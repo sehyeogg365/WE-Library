@@ -14,11 +14,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.marondal.welibrary.book.bo.BookBO;
 import com.marondal.welibrary.book.dao.BookDAO;
 import com.marondal.welibrary.book.model.Book;
+import com.marondal.welibrary.book.model.WishBook;
+import com.marondal.welibrary.book.model.WishBookDetail;
+import com.marondal.welibrary.book.wishbook.bo.WishBookBO;
 import com.marondal.welibrary.user.dao.UserDAO;
 import com.marondal.welibrary.user.model.User;
-import com.marondal.welibrary.wishbook.bo.WishBookBO;
-import com.marondal.welibrary.wishbook.model.WishBook;
-import com.marondal.welibrary.wishbook.model.WishBookDetail;
 
 @Controller
 @RequestMapping("/book")
