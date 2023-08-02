@@ -47,10 +47,15 @@
 					<thead>
 					<tr class="item">
 						<td><b>No.</b></td>
-						<td><b>Name</b></td>
-						<td><b>이메일</b></td>
+						<td><b>유저아이디</b></td>
 						<td><b>책제목</b></td>
 						<td><b>도서관</b></td>
+						<td><b>사진</b></td>
+						<td><b>저자</b></td>
+						<td><b>가격</b></td>
+						<td><b>isbn</b></td>
+						<td><b>출판년도</b></td>
+	
 						<td><b>신청일</b></td>
 						<td></td>
 					</tr>
@@ -62,10 +67,15 @@
 					<c:forEach var="wishbook" items= "${wishbookList }" varStatus="status">
 					<tr>
 						<td>${status.count}</td>
-						<td>${wishbook.name }</td>
-						<td>${wishbook.email }</td>
-						<td>${wishbook.title} </td>
-						<td>${wishbook.library }</td>
+						<td>${wishbook.userId }</td>
+						<td><input type="text" id="titleInput" value="${wishbook.title} ${wishbook.id}" class="form-control" readonly> </td>
+						<td><input type="text" id="libraryInput" value="${wishbook.library }" class="form-control" readonly></td>
+						<td><input type="text" id="imageInput" value="${wishbook.imagePath }" class="form-control" readonly></td>
+						<td><input type="text" id="authorInput" value="${wishbook.author }" class="form-control" readonly></td>
+						<td><input type="text" id="publisherInput" value="${wishbook.publisher }" class="form-control" readonly></td>
+						<td><input type="text" id="priceInput" value="${wishbook.price }" class="form-control" readonly></td>
+						<td><input type="text" id="isbnInput" value="${wishbook.isbn }" class="form-control" readonly></td>
+						<td><input type="text" id="pubyearInput" value="${wishbook.pubyear }" class="form-control" readonly></td>
 						<td>${wishbook.createdAt }</td>
 						<td><button class="addBtn btn btn-primary" data-book-id="${book.id }">추가하기</button></td>
 					</tr>
@@ -86,7 +96,7 @@
 			
 			
 				<div class="text-center">
-					<a href="/book/wishbook/add/view?userId=${userId }" class="btn btn-primary	">도서 추가하기</a>
+					<a href="#" class="btn btn-primary	">도서 추가하기</a>
 				</div>
 		
 		
@@ -110,8 +120,7 @@
 			
 			$(".addBtn").on("click", function(){
 				
-				let id = $(this).data("");
-				let 
+				
 				
 				
 			});

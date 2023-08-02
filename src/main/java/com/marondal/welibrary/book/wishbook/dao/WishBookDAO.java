@@ -31,7 +31,7 @@ public interface WishBookDAO {
 		
 		
 		//희망도서 신청 여부 
-		public int selectBookByLibraryTitle(@Param("Library") String library, @Param("title")String title);
+		public int selectBookByLibraryTitle(@Param("library") String library, @Param("title")String title);
 		
 		
 		// 유저별 희망도서 신청 갯수세기

@@ -86,31 +86,12 @@ public class WishBookBO {
 		
 		// 관리자 희망도서 신청 리스트 제너레이트 진행
 		
-		public List<WishBookDetail> getWishBookListById(int id){
+		public List<WishBook> getWishBookListById(int id){
 			
-			List<WishBook> wishbookList = wishBookDAO.selectWishBookListById(id);
 			
-			List<WishBookDetail> wishbookDetailList = new ArrayList<>();
+			return wishBookDAO.selectWishBookListById(id);
 			
-			for(WishBook wishbook:wishbookList) {
-				
-				User user = userBO.getUserInfo(id);
-				
-				WishBookDetail wishbookDetail = new WishBookDetail();
-				wishbookDetail.setUserId(user.getId());//userId
-				wishbookDetail.setName(user.getName());//이름
-				wishbookDetail.setEmail(user.getEmail());//이메일
-				wishbookDetail.setTitle(wishbook.getTitle());//책제목
-				wishbookDetail.setLibrary(wishbook.getLibrary());//도서관
-				wishbookDetail.setCreatedAt(wishbook.getCreatedAt());//신청일
-			
-				
-				wishbookDetailList.add(wishbookDetail);
-				
-			}
-			
-			return wishbookDetailList;
-			
+		
 			
 		}
 		

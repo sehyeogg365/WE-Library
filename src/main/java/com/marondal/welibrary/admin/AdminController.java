@@ -2,6 +2,8 @@ package com.marondal.welibrary.admin;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,10 +25,15 @@ public class AdminController {
 	
 	//희망도서/ 도서 추가 겸 희망도서 조회창
 	@GetMapping("/wishbook/add/view")
-	public String wishbookInput(Model model
-								, @RequestParam("id") int id) {
+	public String wishbookInput(
+								Model model
+								, int id
+								//, HttpSession session
+			) {
 		
-		List<WishBookDetail> wishbookList = wishBookBO.getWishBookListById(id);
+		//int userId = (Integer)session.getAttribute("userId");
+		
+		List<WishBook> wishbookList = wishBookBO.getWishBookListById(id);
 		model.addAttribute("wishbookList", wishbookList);		
 		
 		
