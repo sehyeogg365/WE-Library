@@ -59,8 +59,9 @@ public class WishBookBO {
 			
 			for(WishBook wishbook:wishbookList) {
 				
-				//boolean isHave = wishBookCheckBO.isWishAdd(library, title);//희망도서 추가 여부
-				//소장여부 변수
+				
+				
+				boolean isHave = wishBookCheckBO.isWishAdd(wishbook.getLibrary(), wishbook.getTitle());//희망도서 추가 여부
 				// 이거 관련 비오를 하나 더 파는게 나을듯 신청 갯수랑 소장여부 변수는..
 				
 				//유저 하나 
@@ -75,6 +76,7 @@ public class WishBookBO {
 				wishbookDetail.setPublisher(wishbook.getPublisher());
 				wishbookDetail.setAuthor(wishbook.getAuthor());
 				wishbookDetail.setCreatedAt(wishbook.getCreatedAt());
+				wishbookDetail.setHave(isHave);
 				
 				wishbookDetailList.add(wishbookDetail);
 			}
@@ -83,6 +85,10 @@ public class WishBookBO {
 			return wishbookDetailList;
 			
 		}
+		// 희망도서 갯수 표시
+		
+		
+		
 		
 		// 관리자 희망도서 신청 리스트 제너레이트 진행
 		
@@ -94,6 +100,8 @@ public class WishBookBO {
 		
 			
 		}
+		
+		
 		
 		
 		
