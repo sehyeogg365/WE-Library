@@ -52,10 +52,10 @@
 						<td><b>도서관</b></td>
 						<td><b>사진</b></td>
 						<td><b>저자</b></td>
+						<td><b>출판사</b></td>
 						<td><b>가격</b></td>
 						<td><b>isbn</b></td>
 						<td><b>출판년도</b></td>
-	
 						<td><b>신청일</b></td>
 						<td></td>
 					</tr>
