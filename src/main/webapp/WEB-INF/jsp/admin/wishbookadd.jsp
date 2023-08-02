@@ -67,7 +67,7 @@
 						<td>${wishbook.title} </td>
 						<td>${wishbook.library }</td>
 						<td>${wishbook.createdAt }</td>
-						<td><button class="addBtn btn btn-primary">추가하기</button></td>
+						<td><button class="addBtn btn btn-primary" data-book-id="${book.id }">추가하기</button></td>
 					</tr>
 				
 					</c:forEach>
@@ -86,7 +86,7 @@
 			
 			
 				<div class="text-center">
-					<a href="/book/wishbook/add/view?id=${userId }" class="btn btn-primary	">희망도서/도서 추가하기</a>
+					<a href="/book/wishbook/add/view?userId=${userId }" class="btn btn-primary	">도서 추가하기</a>
 				</div>
 		
 		
