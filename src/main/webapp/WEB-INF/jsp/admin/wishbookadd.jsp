@@ -120,8 +120,15 @@
 			
 			$(".addBtn").on("click", function(){
 				
-				
-				
+				let id = $(this).data("book-id");
+				let title = $("#titleInput").val();
+				let library = $("#libraryInput").val();
+				let file = $("#imageInput")[0];
+				let author = $("#authorInput").val();
+				let publisher = $("#publisherInput").val();
+				let price = $("#priceInput").val();
+				let isbn = $("#isbnInput").val();
+				let pubyear =$("#pubyearInput").val();
 				
 			});
 			
