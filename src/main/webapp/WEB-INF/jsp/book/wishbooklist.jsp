@@ -44,7 +44,7 @@
 		
 			<div class="bg-info">
 				<div class="mt-3 d-flex text-secondary">
-						희망도서 신청 :&nbsp<div class="text-primary"> ${wishbook.numberCount } </div>건
+						희망도서 신청 :&nbsp<div class="text-primary"> 1 </div>건
 				</div>
 						
 						<c:forEach var="wishbook" items="${wishbookList }">	
@@ -73,7 +73,7 @@
 			
 		
 			<div class="text-center">
-				<a href="/book/wishbook/add/view?id=${userId }" class="btn btn-primary	">희망도서 신청하기</a>
+				<a href="/book/wishbook/add/view?userId=${userId }" class="btn btn-primary	">희망도서 신청하기</a>
 			</div>
 		</div>
 		

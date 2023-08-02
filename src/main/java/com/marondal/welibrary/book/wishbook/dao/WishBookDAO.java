@@ -6,6 +6,8 @@ import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import com.marondal.welibrary.book.model.WishBook;
+import com.marondal.welibrary.book.model.WishBookCount;
+import com.marondal.welibrary.book.model.WishBookDetail;
 
 @Repository
 public interface WishBookDAO {
@@ -24,7 +26,7 @@ public interface WishBookDAO {
 								  );
 		
 		//희망도서 리스트
-		public List<WishBook> selectWishBookList(@Param("userId") int userId, @Param("id") int id);
+		public List<WishBook> selectWishBookList(@Param("userId") int userId);
 		
 		
 		
@@ -33,7 +35,7 @@ public interface WishBookDAO {
 		
 		
 		// 유저별 희망도서 신청 갯수세기
-		public int selectWishBookNumber(@Param("userId") int userId);
+		public WishBookCount selectWishBookNumber(@Param("userId") int userId);
 		
 		// 관리자 희망도서 신청 리스트 조회
 		public List<WishBook> selectWishBookListById(@Param("id") int id);

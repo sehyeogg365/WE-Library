@@ -58,25 +58,19 @@
 					</thead>
 					
 					<tbody>
+					
+					<c:forEach var="wishbook" items= "${wishbookList }" varStatus="status">
 					<tr>
-						<td>1</td>
-						<td>김ㅇㅇ</td>
-						<td>hagulu@naver.com</td>
-						<td>혼자 공부하는 c언어</td>
-						<td>역삼푸른솔도서관</td>
-						<td>2023-06-03</td>
-						<td><button class="addBtn btn-primary">추가하기</button></td>
-					</tr>
-					<tr>
-						<td>2</td>
-						<td>임세혁</td>
-						<td>lsh2757@naver.com</td>
-						<td>혼자공부하는 python</td>
-						<td>행복한 도서관</td>
-						<td>2023-07-04</td>
+						<td>${status.count}</td>
+						<td>${wishbook.name }</td>
+						<td>${wishbook.email }</td>
+						<td>${wishbook.title} </td>
+						<td>${wishbook.library }</td>
+						<td>${wishbook.createdAt }</td>
 						<td><button class="addBtn btn btn-primary">추가하기</button></td>
 					</tr>
-					
+				
+					</c:forEach>
 					
 					
 					</tbody>

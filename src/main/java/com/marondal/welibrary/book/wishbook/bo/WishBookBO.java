@@ -13,6 +13,7 @@ import com.marondal.welibrary.book.model.WishBook;
 import com.marondal.welibrary.book.model.WishBookDetail;
 import com.marondal.welibrary.book.wishbook.dao.WishBookDAO;
 import com.marondal.welibrary.user.bo.UserBO;
+import com.marondal.welibrary.user.model.User;
 
 @Service
 public class WishBookBO {
@@ -23,6 +24,10 @@ public class WishBookBO {
 	
 	@Autowired
 	private WishBookCheckBO wishBookCheckBO;
+	
+	@Autowired
+	private UserBO userBO;
+	
 	
 	//희망도서 신청
 	
@@ -46,9 +51,9 @@ public class WishBookBO {
 		//희망도서 리스트
 		//희망도서 리스트(사용자가 신청한 리스트)
 		
-		public List<WishBookDetail> getWishBookList(int userId, int id){
+		public List<WishBookDetail> getWishBookList(int userId){
 				
-			List<WishBook> wishbookList = wishBookDAO.selectWishBookList(userId, id);
+			List<WishBook> wishbookList = wishBookDAO.selectWishBookList(userId);
 			
 			List<WishBookDetail> wishbookDetailList = new ArrayList<>();
 			
@@ -57,12 +62,17 @@ public class WishBookBO {
 				//boolean isHave = wishBookCheckBO.isWishAdd(library, title);//희망도서 추가 여부
 				//소장여부 변수
 				// 이거 관련 비오를 하나 더 파는게 나을듯 신청 갯수랑 소장여부 변수는..
+				
+				//유저 하나 
+				
+				
 				WishBookDetail wishbookDetail = new WishBookDetail();
 				
-				wishbookDetail.setId(id);
 				wishbookDetail.setUserId(userId);
 				wishbookDetail.setLibrary(wishbook.getLibrary());
 				wishbookDetail.setTitle(wishbook.getTitle());
+				wishbookDetail.setIsbn(wishbook.getIsbn());
+				wishbookDetail.setPublisher(wishbook.getPublisher());
 				wishbookDetail.setAuthor(wishbook.getAuthor());
 				wishbookDetail.setCreatedAt(wishbook.getCreatedAt());
 				
@@ -74,9 +84,35 @@ public class WishBookBO {
 			
 		}
 		
-		// 관리자 희망도서 신청 리스트
+		// 관리자 희망도서 신청 리스트 제너레이트 진행
 		
-		
+		public List<WishBookDetail> getWishBookListById(int id){
+			
+			List<WishBook> wishbookList = wishBookDAO.selectWishBookListById(id);
+			
+			List<WishBookDetail> wishbookDetailList = new ArrayList<>();
+			
+			for(WishBook wishbook:wishbookList) {
+				
+				User user = userBO.getUserInfo(id);
+				
+				WishBookDetail wishbookDetail = new WishBookDetail();
+				wishbookDetail.setUserId(user.getId());//userId
+				wishbookDetail.setName(user.getName());//이름
+				wishbookDetail.setEmail(user.getEmail());//이메일
+				wishbookDetail.setTitle(wishbook.getTitle());//책제목
+				wishbookDetail.setLibrary(wishbook.getLibrary());//도서관
+				wishbookDetail.setCreatedAt(wishbook.getCreatedAt());//신청일
+			
+				
+				wishbookDetailList.add(wishbookDetail);
+				
+			}
+			
+			return wishbookDetailList;
+			
+			
+		}
 		
 		
 		

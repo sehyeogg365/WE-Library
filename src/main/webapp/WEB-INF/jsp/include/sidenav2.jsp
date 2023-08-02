@@ -18,7 +18,7 @@
 			
 			<li class="nav-item"><h5 class="font-weight-bold"><a href="/book/borrowstatus/view?id=${userId }" class="nav-link text-dark">도서이용정보</a></h5><hr></li>
 			<li class="nav-item"><h5 class="font-weight-bold"><a href="#" class="nav-link text-dark">관심자료 목록</a></h5><hr></li>
-			<li class="nav-item"><h5 class="font-weight-bold"><a href="/book/wishbook/list/view?id=${userId }" class="nav-link text-dark">희망도서 신청조회</a></h5><hr></li>
+			<li class="nav-item"><h5 class="font-weight-bold"><a href="/book/wishbook/list/view?userId=${userId }" class="nav-link text-dark">희망도서 신청조회</a></h5><hr></li>
 			<li class="nav-item"><h5 class="font-weight-bold"><a href="#" class="nav-link text-dark">문화행사 신청조회</a></h5><hr></li>				
 				
 		</ul>

@@ -53,19 +53,18 @@ public class BookController {
 	
 	@GetMapping("/wishbook/list/view")
 	public String wishbookList(Model model
-			, @RequestParam("id") int id
-			, HttpSession session
+			, HttpSession session                                                                    
 			) {
 	
-		
+		                                                                                                                                                              
 		int userId = (Integer) session.getAttribute("userId");
 		
 		
-		int wishbook = wishBookCountBO.getWishBookNumber(userId);// 갯수 
-		model.addAttribute("wishbook", wishbook);
+		//WishBookCount wishbookcount = wishBookCountBO.getWishBookNumber(userId);// 갯수 
+		//model.addAttribute("wishbookcount", wishbookcount);
 		
 		
-		List<WishBookDetail> wishbookList = wishBookBO.getWishBookList(userId, id);
+		List<WishBookDetail> wishbookList = wishBookBO.getWishBookList(userId);
 		model.addAttribute("wishbookList", wishbookList);
 		
 		return "book/wishbooklist";
@@ -74,9 +73,9 @@ public class BookController {
 	
 	@GetMapping("/wishbook/add/view")
 	public String wishbookAdd(Model model
-			, @RequestParam("id") int id) {
+			, int userId) {
 		
-		User user = userBO.getUserInfo(id); //이상하게 DAO로 해도 잘불러와지더라.
+		User user = userBO.getUserInfo(userId); //이상하게 DAO로 해도 잘불러와지더라.
 		
 		model.addAttribute("user", user);
 
