@@ -25,19 +25,19 @@ public class AdminController {
 	
 	//희망도서/ 도서 추가 겸 희망도서 조회창
 	@GetMapping("/wishbook/add/view")
-	public List<WishBook> wishbookInput(
+	public String wishbookInput(
 								Model model
-								, @RequestParam("id") int id
-								//, HttpSession session
+								//, @RequestParam("id") int id
+								, HttpSession session
 			) {
 		
-		//int userId = (Integer)session.getAttribute("userId");
+		int userId = (Integer)session.getAttribute("userId");
 		
-		List<WishBook> wishbookList = wishBookBO.getWishBookListById(id);
+		List<WishBook> wishbookList = wishBookBO.getWishBookListById(userId);
 		model.addAttribute("wishbookList", wishbookList);		
 		
 		
-		return wishbookList;
+		return "/admin/wishbookadd";
 	}
 	
 	
