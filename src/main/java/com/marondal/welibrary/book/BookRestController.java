@@ -71,11 +71,26 @@ public class BookRestController {
 											, @RequestParam("publisher") String publisher
 											, @RequestParam("price") int price
 											, @RequestParam("isbn") String isbn
-											, @RequestParam("pubyear") int pubyear){
+											, @RequestParam("pubyear") int pubyear
+											, @RequestParam("appendix") String appendix
+											){
 		
 
+		int count = wishBookBO.addWishbookIntoBook(library, title, file, author, publisher, price, isbn, pubyear, appendix);
+			
+		Map<String, String> resultMap = new HashMap<>();
 		
-					return null;
+		if(count == 1) {
+			
+			resultMap.put("result", "success");
+			
+		} else {
+			
+			resultMap.put("result", "fail");
+			
+			
+		}
+		return resultMap;
 		
 		
 		

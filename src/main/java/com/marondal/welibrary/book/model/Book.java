@@ -11,7 +11,6 @@ public class Book {//lombok 써보기
 	private String publisher;
 	private int price;
 	private String isbn;
-	private String description;
 	private int pubyear;
 	private String appendix;
 	private Date createdAt;
@@ -63,12 +62,6 @@ public class Book {//lombok 써보기
 	}
 	public void setIsbn(String isbn) {
 		this.isbn = isbn;
-	}
-	public String getDescription() {
-		return description;
-	}
-	public void setDescription(String description) {
-		this.description = description;
 	}
 	public int getPubyear() {
 		return pubyear;
