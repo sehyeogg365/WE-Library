@@ -111,5 +111,41 @@
   </select>
   
   <!-- 희망도서 추가  -->
-  
+	  <insert id ="insertWishbookIntoBook" parameterType="map">
+	  INSERT INTO
+  		`wish_book`
+  		(
+  			`userId`
+  			, `library`
+  			, `title`
+  			<if test = "imagePath != null">
+  			, `imagePath` <!-- 파일업로드 예외처리 딱히 수정할거 아니면 기존의 것 업로드 -->
+  			</if>
+  			, `author`
+  			, `publisher`
+  			, `price`
+  			, `isbn`
+  			, `pubyear`
+  			, `createdAt` 
+		    , `updatedAt`
+  		)
+  		
+  		VALUES
+  		(
+  			#{userId}
+  			, #{library}
+  			, #{title}
+  			, #{imagePath}
+  			, #{author}
+  			, #{publisher}
+  			, #{price}
+  			, #{isbn}
+  			, #{pubyear}
+  			, now()
+			, now()
+  		)
+	  
+	  
+	  
+	  </insert>
   </mapper>

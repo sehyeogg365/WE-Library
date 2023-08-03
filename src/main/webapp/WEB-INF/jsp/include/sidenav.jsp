@@ -28,7 +28,7 @@
 				<li class="nav-item"><h5 class="font-weight-bold"><a href="/user/pwcheck/view?id=${userId}" class="nav-link text-dark">회원정보수정</a></h5><hr></li>
 				<li class="nav-item"><h5 class="font-weight-bold"><a href="/user/update_pw/view?id=${userId}" class="nav-link text-dark">비밀번호 변경</a></h5><hr></li>
 				<li class="nav-item"><h5 class="font-weight-bold"><a href="/user/withdrawl/view?id=${userId}" class="nav-link text-dark">회원탈퇴</a></h5><hr></li>
-				<li class="nav-item"><h5 class="font-weight-bold"><a href="/admin/wishbook/add/view" class="nav-link text-dark">희망도서 추가</a></h5><hr></li>
+				<li class="nav-item"><h5 class="font-weight-bold"><a href="/admin/wishbook/list/view" class="nav-link text-dark">희망도서 추가</a></h5><hr></li>
 				<li class="nav-item"><h5 class="font-weight-bold"><a href="#" class="nav-link text-dark">공지사항 추가/수정</a></h5><hr></li>
 				<li class="nav-item"><h5 class="font-weight-bold"><a href="#" class="nav-link text-dark">행사 추가/수정</a></h5></li>
 			

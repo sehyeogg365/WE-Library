@@ -193,3 +193,10 @@ footer{
 .librarylist-page{
 	width:1200px;
 }
+
+.wishbookcard{
+	
+	width:250px;
+	border: 1px solid;
+	border-radius: 8px;
+}

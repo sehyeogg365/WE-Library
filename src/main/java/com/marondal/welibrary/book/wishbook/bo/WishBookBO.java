@@ -12,6 +12,7 @@ import com.marondal.welibrary.book.dao.BookDAO;
 import com.marondal.welibrary.book.model.WishBook;
 import com.marondal.welibrary.book.model.WishBookDetail;
 import com.marondal.welibrary.book.wishbook.dao.WishBookDAO;
+import com.marondal.welibrary.common.FileManagerService;
 import com.marondal.welibrary.user.bo.UserBO;
 import com.marondal.welibrary.user.model.User;
 
@@ -42,10 +43,10 @@ public class WishBookBO {
 							   , int pubyear
 							   ) {
 			//파일매니저 서비스 추가하기
-			//String imagePath = FileManagerService.saveFile(userId, file);
+			String imagePath = FileManagerService.saveFile(userId, file);
 			
 			
-			return wishBookDAO.insertWishBook(userId, library, title, title, author, publisher, price, isbn, pubyear);		
+			return wishBookDAO.insertWishBook(userId, library, title, imagePath, author, publisher, price, isbn, pubyear);		
 
 		}
 		//희망도서 리스트
@@ -102,7 +103,25 @@ public class WishBookBO {
 		}
 		
 		
+		//희망도서 북테이블에 추가 
 		
+		public int addWishbookIntoBook(String library
+							   , String title   
+							   , MultipartFile file 
+							   , String author   
+							   , String publisher   
+							   , int price   
+							   , String isbn   
+							   , int pubyear
+							   , String appnedix) {
+			
+			String imagePath = FileManagerService.saveFile(0, file);//임시로 0 넣어둠
+			
+			
+			return wishBookDAO.insertWishbookIntoBook(library, title, imagePath, author, publisher, price, isbn, pubyear, appnedix);
+			
+			
+		}
 		
 		
 }

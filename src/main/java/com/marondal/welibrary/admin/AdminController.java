@@ -24,7 +24,7 @@ public class AdminController {
 	
 	
 	//희망도서/ 도서 추가 겸 희망도서 조회창
-	@GetMapping("/wishbook/add/view")
+	@GetMapping("/wishbook/list/view")
 	public String wishbookInput(
 								Model model
 								//, @RequestParam("id") int id
@@ -37,7 +37,7 @@ public class AdminController {
 		model.addAttribute("wishbookList", wishbookList);		
 		
 		
-		return "/admin/wishbookadd";
+		return "/admin/wishbooklist";
 	}
 	
 	

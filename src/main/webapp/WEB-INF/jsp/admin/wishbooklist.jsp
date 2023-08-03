@@ -40,57 +40,30 @@
 				</div>
 							
 					<hr>
-				<div class="">
-					
-					<table class="table">
-					
-					<thead>
-					<tr class="item">
-						<td><b>No.</b></td>
-						<td><b>유저아이디</b></td>
-						<td><b>책제목</b></td>
-						<td><b>도서관</b></td>
-						<td><b>사진</b></td>
-						<td><b>저자</b></td>
-						<td><b>출판사</b></td>
-						<td><b>가격</b></td>
-						<td><b>isbn</b></td>
-						<td><b>출판년도</b></td>
-						<td><b>신청일</b></td>
-						<td></td>
-					</tr>
-					
-					</thead>
-					
-					<tbody>
+				<div class="bg-warning d-flex flex-wrap">
+				
 					
 					<c:forEach var="wishbook" items= "${wishbookList }" varStatus="status">
-					<tr>
-						<td>${status.count}</td>
-						<td>${wishbook.userId }</td>
-						<td><input type="text" id="titleInput" value="${wishbook.title} ${wishbook.id}" class="form-control" readonly> </td>
-						<td><input type="text" id="libraryInput" value="${wishbook.library }" class="form-control" readonly></td>
-						<td><input type="text" id="imageInput" value="${wishbook.imagePath }" class="form-control" readonly></td>
-						<td><input type="text" id="authorInput" value="${wishbook.author }" class="form-control" readonly></td>
-						<td><input type="text" id="publisherInput" value="${wishbook.publisher }" class="form-control" readonly></td>
-						<td><input type="text" id="priceInput" value="${wishbook.price }" class="form-control" readonly></td>
-						<td><input type="text" id="isbnInput" value="${wishbook.isbn }" class="form-control" readonly></td>
-						<td><input type="text" id="pubyearInput" value="${wishbook.pubyear }" class="form-control" readonly></td>
-						<td>${wishbook.createdAt }</td>
-						<td><button class="addBtn btn btn-primary" data-book-id="${book.id }">추가하기</button></td>
-					</tr>
+						<div class="wishbookcard bg-info">
+							<div class="">No.${status.count}</div>
+							<div class="">유저아이디${wishbook.userId }</div>
+							<div class=""><img class="wishbookprofile" width ="40" height="40" src="${wishbook.imagePath}" value="${wishbook.imagePath}"><input type="file" name="file" id="fileInput" class="" readonly></div>
+							<div class=""><label>책제목</label><input type="text" id="titleInput" value="${wishbook.title} ${wishbook.id}" class="form-control" readonly> </div>
+							<div class=""><label>도서관</label><input type="text" id="libraryInput" value="${wishbook.library }" class="form-control" readonly></div>
+							<div class=""><label>사진</label><input type="text" id="imageInput" value="${wishbook.imagePath }" class="form-control" readonly></div>
+							<div class=""><label>저자</label><input type="text" id="authorInput" value="${wishbook.author }" class="form-control" readonly></div>
+							<div class=""><label>출판사</label><input type="text" id="publisherInput" value="${wishbook.publisher }" class="form-control" readonly></div>
+							<div class=""><label>가격</label><input type="text" id="priceInput" value="${wishbook.price }" class="form-control" readonly></div>
+							<div class=""><label>isbn</label><input type="text" id="isbnInput" value="${wishbook.isbn }" class="form-control" readonly></div>
+							<div class=""><label>출판년도</label><input type="text" id="pubyearInput" value="${wishbook.pubyear }" class="form-control" readonly></div>
+							<div class="">신청일${wishbook.createdAt }</div>
+							<div class=""><button class="addBtn btn btn-primary" data-book-id="${book.id }">추가하기</button></div>
+						</div>
 				
 					</c:forEach>
 					
-					
-					</tbody>
-					
-					
-					
-					</table>
-						
-					
-					<hr>
+		
+		
 			
 				</div>
 			
@@ -123,7 +96,7 @@
 				let id = $(this).data("book-id");
 				let title = $("#titleInput").val();
 				let library = $("#libraryInput").val();
-				let file = $("#imageInput")[0];
+				let file = $("#fileInput")[0];
 				let author = $("#authorInput").val();
 				let publisher = $("#publisherInput").val();
 				let price = $("#priceInput").val();
