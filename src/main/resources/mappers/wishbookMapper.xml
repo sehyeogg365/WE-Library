@@ -113,34 +113,35 @@
   <!-- 희망도서 도서 테이블에추가  -->
 	  <insert id ="insertWishbookIntoBook" parameterType="map">
 	  INSERT INTO
-  		`wish_book`
+  		`book`
   		(
-  			`userId`
-  			, `library`
+  			`library`
   			, `title`
-  			<if test = "imagePath != null">
-  			, `imagePath` <!-- 파일업로드 예외처리 딱히 수정할거 아니면 기존의 것 업로드 -->
-  			</if>
+  			, `imagePath` 
   			, `author`
   			, `publisher`
   			, `price`
   			, `isbn`
   			, `pubyear`
+  			, `appendix`
   			, `createdAt` 
 		    , `updatedAt`
   		)
   		
   		VALUES
   		(
-  			#{userId}
-  			, #{library}
+  	
+  			 #{library}
   			, #{title}
+  			<if test ="imagePath != null"><!-- 파일업로드 예외처리 딱히 수정할거 아니면 기존의 것 업로드 -->
   			, #{imagePath}
+  			</if>
   			, #{author}
   			, #{publisher}
   			, #{price}
   			, #{isbn}
   			, #{pubyear}
+  			, #{appendix}
   			, now()
 			, now()
   		)

@@ -129,8 +129,8 @@
 				formData.append("library", library);
 				formData.append("file", file);
 				formData.append("author", author);
-				formData.append("roomName", roomName);
 				formData.append("publisher", publisher);
+				formData.append("price", price);
 				formData.append("isbn", isbn);
 				formData.append("pubyear", pubyear);
 				formData.append("appendix", appendix);
@@ -138,15 +138,25 @@
 				
 				$.ajax({
 					
-					type:""
-					, url :""
-					, data:{}
-					,success:function(){
-						
+					type:"post"
+					, url :"/book/book/create"
+					, data:formData////파일이 포함되어있는경우 일반적인 형태:{}로는 전달안된다고 함. 위의 formData.append("file", file.files[0]);이 전달안되서.
+					, enctype :"multipart/form-data"
+					, processData:false// 파일 업로드 필수(근데 여기선 필수로 하면안됨)
+					, contentType:false
+					
+					,success:function(data){
+						if(data.result ==  "success"){
+							alert("추가 성공");
+							location.reload();
+						} else {
+							
+							alert("추가 실패");
+						}
 					}
 					,error:function(){
 						
-						
+						alert("추가 에러");
 					}
 					
 					
