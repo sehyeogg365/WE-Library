@@ -113,6 +113,11 @@
 				  </form>
 				</td>
 			</tr>
+			
+			<tr>
+				<td class="item ">사진</td>
+				<td><input type="text" value="" placeholder="" id="authorInput" class="form-control"></td>
+			</tr>
 			<tr>
 				<td class="item ">저자</td>
 				<td><input type="text" value="" placeholder="" id="authorInput" class="form-control"></td>
