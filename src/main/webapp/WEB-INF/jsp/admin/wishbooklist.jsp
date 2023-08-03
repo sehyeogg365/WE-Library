@@ -136,6 +136,21 @@
 				formData.append("appendix", appendix);
 				
 				
+				$.ajax({
+					
+					type:""
+					, url :""
+					, data:{}
+					,success:function(){
+						
+					}
+					,error:function(){
+						
+						
+					}
+					
+					
+				});
 				
 				
 				
