@@ -62,7 +62,24 @@ public class BookRestController {
 		
 	}
 	
-	
+	// 희망도서/ 도서 북테이블에 추가
+	@PostMapping("/book/create")
+	public Map<String, String > bookCreate(@RequestParam("library") String library
+											, @RequestParam("title") String title
+											, @RequestParam(value="file", required=false) MultipartFile file
+											, @RequestParam("author") String author
+											, @RequestParam("publisher") String publisher
+											, @RequestParam("price") int price
+											, @RequestParam("isbn") String isbn
+											, @RequestParam("pubyear") int pubyear){
+		
+
+		
+					return null;
+		
+		
+		
+	}
 	
 	
 	

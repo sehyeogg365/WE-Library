@@ -6,13 +6,15 @@ public class WishBookDetail {//희망도서 리스트 카드 한장에 들어가
 
 	private int id;
 	private int userId;
-	private String name;
-	private String email;//이름, 이메일 추가 
 	private String library;
 	private String title;
+	private String name;
+	private String email;//이름, 이메일 추가 
 	private String author;
 	private String publisher;
+	private int price;
 	private String isbn;
+	private int pubyear;
 	private boolean isHave;//소장여부
 	private Date createdAt;// 신청날짜	
 	public int getId() {
@@ -27,18 +29,6 @@ public class WishBookDetail {//희망도서 리스트 카드 한장에 들어가
 	public void setUserId(int userId) {
 		this.userId = userId;
 	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
-	}
 	public String getLibrary() {
 		return library;
 	}
@@ -51,6 +41,18 @@ public class WishBookDetail {//희망도서 리스트 카드 한장에 들어가
 	public void setTitle(String title) {
 		this.title = title;
 	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
 	public String getAuthor() {
 		return author;
 	}
@@ -62,6 +64,12 @@ public class WishBookDetail {//희망도서 리스트 카드 한장에 들어가
 	}
 	public void setPublisher(String publisher) {
 		this.publisher = publisher;
+	}
+	public int getPrice() {
+		return price;
+	}
+	public void setPrice(int price) {
+		this.price = price;
 	}
 	public String getIsbn() {
 		return isbn;
@@ -81,9 +89,16 @@ public class WishBookDetail {//희망도서 리스트 카드 한장에 들어가
 	public void setCreatedAt(Date createdAt) {
 		this.createdAt = createdAt;
 	}
-
-		
+	public int getPubyear() {
+		return pubyear;
+	}
+	public void setPubyear(int pubyear) {
+		this.pubyear = pubyear;
+	}
 	
+	
+	
+
 	
 	
 }

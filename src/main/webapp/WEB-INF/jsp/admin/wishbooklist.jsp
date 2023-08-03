@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>            
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> 
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>                 
 <!DOCTYPE html>
 <html>
 <head>
@@ -48,7 +49,7 @@
 							<div class="">No.${status.count}</div>
 							<div class="">유저아이디${wishbook.userId }</div>
 							<div class=""><img class="wishbookprofile" width ="40" height="40" src="${wishbook.imagePath}" value="${wishbook.imagePath}"><input type="file" name="file" id="fileInput" class="" readonly></div>
-							<div class=""><label>책제목</label><input type="text" id="titleInput" value="${wishbook.title} ${wishbook.id}" class="form-control" readonly> </div>
+							<div class=""><label>책제목</label><input type="text" id="titleInput" value="${wishbook.title}" class="form-control" readonly> </div>
 							<div class=""><label>도서관</label><input type="text" id="libraryInput" value="${wishbook.library }" class="form-control" readonly></div>
 							<div class=""><label>사진</label><input type="text" id="imageInput" value="${wishbook.imagePath }" class="form-control" readonly></div>
 							<div class=""><label>저자</label><input type="text" id="authorInput" value="${wishbook.author }" class="form-control" readonly></div>
@@ -56,8 +57,10 @@
 							<div class=""><label>가격</label><input type="text" id="priceInput" value="${wishbook.price }" class="form-control" readonly></div>
 							<div class=""><label>isbn</label><input type="text" id="isbnInput" value="${wishbook.isbn }" class="form-control" readonly></div>
 							<div class=""><label>출판년도</label><input type="text" id="pubyearInput" value="${wishbook.pubyear }" class="form-control" readonly></div>
-							<div class="">신청일${wishbook.createdAt }</div>
-							<div class=""><button class="addBtn btn btn-primary" data-book-id="${book.id }">추가하기</button></div>
+							<div class=""><label>부록여부</label><input type="text" id="appendixInput" value="" class="form-control"></div>
+							
+							<div class="">신청일<fmt:formatDate value="${wishbook.createdAt }" pattern="yyyy년 MM월 dd일"/></div>
+							<div class="text-center"><button class="addBtn btn btn-primary">추가하기</button></div>
 						</div>
 				
 					</c:forEach>
@@ -102,6 +105,39 @@
 				let price = $("#priceInput").val();
 				let isbn = $("#isbnInput").val();
 				let pubyear =$("#pubyearInput").val();
+				let appendix = $("#appendixInput").val();
+				
+				if(appendix == ""){
+					
+					alert("부록물을 입력하세요.");
+					return ;
+				}
+				
+				//alert(id);
+				alert(title);
+				alert(library);
+				alert(file);
+				alert(author);
+				alert(publisher);
+				alert(price);
+				alert(isbn);
+				alert(pubyear);
+				alert(appendix);
+				
+				var formData = new FormData();
+				formData.append("title", title);
+				formData.append("library", library);
+				formData.append("file", file);
+				formData.append("author", author);
+				formData.append("roomName", roomName);
+				formData.append("publisher", publisher);
+				formData.append("isbn", isbn);
+				formData.append("pubyear", pubyear);
+				formData.append("appendix", appendix);
+				
+				
+				
+				
 				
 			});
 			
