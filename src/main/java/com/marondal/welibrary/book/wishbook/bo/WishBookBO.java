@@ -115,7 +115,7 @@ public class WishBookBO {
 							   , int pubyear
 							   , String appnedix) {
 			
-			String imagePath = FileManagerService.saveFile(0, file);//임시로 0 넣어둠
+			String imagePath = FileManagerService.saveFile(price, file);//임시로 0 넣어둠
 			
 			
 			return wishBookDAO.insertWishbookIntoBook(library, title, imagePath, author, publisher, price, isbn, pubyear, appnedix);

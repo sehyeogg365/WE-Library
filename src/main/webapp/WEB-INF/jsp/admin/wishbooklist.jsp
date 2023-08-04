@@ -41,17 +41,17 @@
 				</div>
 							
 					<hr>
-				<div class="bg-warning d-flex flex-wrap">
+				<div class="d-flex flex-wrap">
 				
 					
 					<c:forEach var="wishbook" items= "${wishbookList }" varStatus="status">
-						<div class="wishbookcard bg-info">
+						<div class="wishbookcard">
 							<div class="">No.${status.count}</div>
-							<div class="">유저아이디${wishbook.userId }</div>
+							<div class="">유저아이디${wishbook.userId }</div>																				<!-- <input type="file" name="file" id="fileInput" class="" readonly> -->
 							<div class=""><img class="wishbookprofile" width ="40" height="40" src="${wishbook.imagePath}" value="${wishbook.imagePath}"><input type="file" name="file" id="fileInput" class="" readonly></div>
 							<div class=""><label>책제목</label><input type="text" id="titleInput" value="${wishbook.title}" class="form-control" readonly> </div>
 							<div class=""><label>도서관</label><input type="text" id="libraryInput" value="${wishbook.library }" class="form-control" readonly></div>
-							<div class=""><label>사진</label><input type="text" id="imageInput" value="${wishbook.imagePath }" class="form-control" readonly></div>
+							<div class=""><label>사진</label><input type="text" id="fileInput" value="${wishbook.imagePath }" class="form-control" readonly></div> 
 							<div class=""><label>저자</label><input type="text" id="authorInput" value="${wishbook.author }" class="form-control" readonly></div>
 							<div class=""><label>출판사</label><input type="text" id="publisherInput" value="${wishbook.publisher }" class="form-control" readonly></div>
 							<div class=""><label>가격</label><input type="text" id="priceInput" value="${wishbook.price }" class="form-control" readonly></div>
@@ -72,7 +72,7 @@
 			
 			
 				<div class="text-center">
-					<a href="#" class="btn btn-primary	">도서 추가하기</a>
+					<a href="/book/bookaddpopup/view" class="btn btn-primary	">도서 추가하기</a>
 				</div>
 		
 		

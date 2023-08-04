@@ -115,9 +115,9 @@
 	  INSERT INTO
   		`book`
   		(
-  			`library`
+  			 `library`
   			, `title`
-  			, `imagePath` 
+  			, `imagePath`
   			, `author`
   			, `publisher`
   			, `price`
@@ -130,12 +130,9 @@
   		
   		VALUES
   		(
-  	
   			 #{library}
   			, #{title}
-  			<if test ="imagePath != null"><!-- 파일업로드 예외처리 딱히 수정할거 아니면 기존의 것 업로드 -->
   			, #{imagePath}
-  			</if>
   			, #{author}
   			, #{publisher}
   			, #{price}
