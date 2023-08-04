@@ -103,7 +103,7 @@
 			<tr>
 				<td class="item">희망도서명</td>
 				<td>
-				  <form action="/book/bookaddpopup" method="get" class="">
+				  <form action="/book/bookaddpopup/view" method="get" class="">
 					<div class="search d-flex justify-content-center">
 		                <input type="text" value="" placeholder="검색어를 입력하세요." id="titleInput" class="form-control" name="title">
 		                <div class="input-group-append">
@@ -225,18 +225,20 @@
 			}
 			
 			
-			//alert(library);
-			//alert(title);
-			//alert(author);
-			//alert(publisher);
-			//alert(pubyear);
-			//alert(isbn);
-			//alert(price);
+			alert(library);
+			alert(title);
+			alert(file);
+			alert(author);
+			alert(publisher);
+			alert(pubyear);
+			alert(isbn);
+			alert(price);
 			
 			var formData = new FormData();
 			
 			formData.append("id", id);//여기도 로그인id 그냥 id 로 수정
 			formData.append("library", library);			
+			formData.append("title", title);			
 			formData.append("file", file.files[0]);
 			formData.append("author", author);
 			formData.append("publisher", publisher);
