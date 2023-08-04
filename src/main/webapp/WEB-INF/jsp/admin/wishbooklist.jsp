@@ -96,7 +96,7 @@
 			
 			$(".addBtn").on("click", function(){
 				
-				let id = $(this).data("book-id");
+				
 				let title = $("#titleInput").val();
 				let library = $("#libraryInput").val();
 				let file = $("#fileInput")[0];
@@ -113,7 +113,7 @@
 					return ;
 				}
 				
-				//alert(id);
+	
 				alert(title);
 				alert(library);
 				alert(file);
