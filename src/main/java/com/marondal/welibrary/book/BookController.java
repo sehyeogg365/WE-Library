@@ -82,6 +82,12 @@ public class BookController {
 		return "book/wishbookadd";
 	}
 	
+	@GetMapping("/bookaddpopup/view")
+	public String bookAddPopUp() {
+		
+		
+		return "book/bookaddpopup";
+	}
 	
 	
 }

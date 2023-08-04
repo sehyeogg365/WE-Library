@@ -103,7 +103,7 @@
 			<tr>
 				<td class="item">희망도서명</td>
 				<td>
-				  <form method="get" class="">
+				  <form action="/book/bookaddpopup" method="get" class="">
 					<div class="search d-flex justify-content-center">
 		                <input type="text" value="" placeholder="검색어를 입력하세요." id="titleInput" class="form-control" name="title">
 		                <div class="input-group-append">
@@ -116,7 +116,8 @@
 			
 			<tr>
 				<td class="item ">사진</td>
-				<td><input type="text" value="" placeholder="" id="authorInput" class="form-control"></td>
+				<td><input type="file" name="file" id="fileInput" class=""><img class="wishbookprofile" width ="40" height="40" src="${wishbook.imagePath}" value="${wishbook.imagePath}"></td>
+				
 			</tr>
 			<tr>
 				<td class="item ">저자</td>
@@ -177,6 +178,7 @@
 			
 			let id = $(this).data("user-id");
 			let library = $("#librarySelector").val();
+			let file = $("#fileInput")[0];
 			let title = $("#titleInput").val();
 			let author = $("#authorInput").val();
 			let publisher = $("#publisherInput").val();
@@ -222,7 +224,7 @@
 				return;
 			}
 			
-			//alert(id); 이거만 안뜨긴 하는데 정상적으로 저장은된다.
+			
 			//alert(library);
 			//alert(title);
 			//alert(author);
@@ -231,11 +233,27 @@
 			//alert(isbn);
 			//alert(price);
 			
+			var formData = new FormData();
+			
+			formData.append("id", id);//여기도 로그인id 그냥 id 로 수정
+			formData.append("library", library);			
+			formData.append("file", file.files[0]);
+			formData.append("author", author);
+			formData.append("publisher", publisher);
+			formData.append("pubyear", pubyear);
+			formData.append("isbn", isbn);
+			formData.append("price", price);
+			
+			
+			
 			$.ajax({
 				
 				type:"post"
 				, url: "/book/wishbook/create"
-				, data:{"library" : library, "title": title, "author" : author, "publisher" : publisher, "pubyear": pubyear, "isbn" : isbn, "price" : price}
+				, data:formData//파일이 포함되어있는경우 일반적인 형태:{}로는 전달안된다고 함. 위의 formData.append("file", file.files[0]);이 전달안되서.
+				, enctype :"multipart/form-data"
+				, processData:false// 파일 업로드 필수(근데 여기선 필수로 하면안됨)
+				, contentType:false// 파일 업로드 필수
 				, success:function(data){
 					if(data.result == "success"){
 						location.reload();
