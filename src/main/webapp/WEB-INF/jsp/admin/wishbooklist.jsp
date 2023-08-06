@@ -33,9 +33,9 @@
 		<div class="d-flex mx-5">
 		<c:import url="/WEB-INF/jsp/include/sidenav.jsp"/>
 		
-		<div class="col-9">
+		<div class="col-9 bg-info">
 		
-			<div class="">
+			<div class="bg-danger">
 				<div class="mt-3 d-flex text-secondary">
 						희망도서 신청현황 :&nbsp<div class="text-primary"> 2 </div>건
 				</div>
@@ -45,24 +45,33 @@
 				
 					
 					<c:forEach var="wishbook" items= "${wishbookList }" varStatus="status">
-						<div class="wishbookcard">
-							<div class="">No.${status.count}</div>
-							<div class="">유저아이디${wishbook.userId }</div>																				<!-- <input type="file" name="file" id="fileInput" class="" readonly> -->
-							<div class=""><img class="wishbookprofile" width ="40" height="40" src="${wishbook.imagePath}" value="${wishbook.imagePath}"><input type="file" name="file" id="fileInput" class="" readonly></div>
-							<div class=""><label>책제목</label><input type="text" id="titleInput" value="${wishbook.title}" class="form-control" readonly> </div>
-							<div class=""><label>도서관</label><input type="text" id="libraryInput" value="${wishbook.library }" class="form-control" readonly></div>
-							<div class=""><label>사진</label><input type="text" id="fileInput" value="${wishbook.imagePath }" class="form-control" readonly></div> 
-							<div class=""><label>저자</label><input type="text" id="authorInput" value="${wishbook.author }" class="form-control" readonly></div>
-							<div class=""><label>출판사</label><input type="text" id="publisherInput" value="${wishbook.publisher }" class="form-control" readonly></div>
-							<div class=""><label>가격</label><input type="text" id="priceInput" value="${wishbook.price }" class="form-control" readonly></div>
-							<div class=""><label>isbn</label><input type="text" id="isbnInput" value="${wishbook.isbn }" class="form-control" readonly></div>
-							<div class=""><label>출판년도</label><input type="text" id="pubyearInput" value="${wishbook.pubyear }" class="form-control" readonly></div>
-							<div class=""><label>부록여부</label><input type="text" id="appendixInput" value="" class="form-control"></div>
+						<hr>
+						<div class="wishbookcard bg-warning d-flex justify-content-between">
+							<div class="bg-info">
+								<div class="">
+									<h5>No.${status.count}</h5>
+									<h5>유저아이디${wishbook.userId }</h5>
+								</div>
+								
+								<div class="">
+									<h5>${wishbook.title }</h5>
+								</div>
+								<div class="text-secondary">
+									저자 : ${wishbook.author } | 출판사 : ${wishbook.publisher } | ISBN : ${wishbook.isbn }
+								</div>
+								<div class="text-secondary">
+									도서관 : ${wishbook.library }
+								</div>
+							</div>
+							<form action="/book/bookaddpopup/view?title=" method="get" class="d-flex align-items-center bg-secondary">
+							<div class="">
+								<button class="wishbookaddBtn btn btn-primary">희망도서 추가</button>
+							</div>
+							</form>
 							
-							<div class="">신청일<fmt:formatDate value="${wishbook.createdAt }" pattern="yyyy년 MM월 dd일"/></div>
-							<div class="text-center"><button class="addBtn btn btn-primary">추가하기</button></div>
 						</div>
-				
+						
+						<hr>
 					</c:forEach>
 					
 		
@@ -76,8 +85,82 @@
 				</div>
 		
 		
+		
+		
 			</div>
 		
+		
+			<div class="bg-secondary">
+				<table class="table">
+		<thead>
+		<tr>
+			<td class="item col-3">신청도서관</td>
+			<td class="col-9">
+				<select id="librarySelector" class="form-control">
+					<option value="역삼푸른솔도서관">역삼푸른솔도서관</option>
+					<option value="역삼도서관">역삼도서관</option>
+					<option value="행복한 도서관">행복한 도서관</option>
+					<option value="논현 도서관">논현 도서관</option>
+					<option value="대치 도서관">대치 도서관</option>
+					
+				</select>
+			
+			</td><!-- 이것도 옵션 -->
+		</tr>
+		</thead>
+		
+		<tbody>
+			<tr>
+				<td class="item">희망도서명</td>
+				<td>
+				  <form action="/book/bookaddpopup/view" method="get" class="">
+					<div class="search d-flex justify-content-center">
+		                <input type="text" value="" placeholder="검색어를 입력하세요." id="titleInput" class="form-control" name="title">
+		                <div class="input-group-append">
+		                	<button type="submit" class="btn">검색</button>
+		                </div>
+		            </div>
+				  </form>
+				</td>
+			</tr>
+			
+			<tr>
+				<td class="item ">사진</td>
+				<td><input type="file" name="file" id="fileInput" class=""><img class="wishbookprofile" width ="40" height="40" src="${wishbook.imagePath}" value="${wishbook.imagePath}"></td>
+				
+			</tr>
+			<tr>
+				<td class="item ">저자</td>
+				<td><input type="text" value="" placeholder="" id="authorInput" class="form-control"></td>
+			</tr>
+			<tr>
+				<td class="item ">출판사</td>
+				<td><input type="text" value="" placeholder="" id="publisherInput" class="form-control"></td>
+			</tr>
+			<tr>
+				<td class="item ">발행연도</td>
+				<td><input type="text" value="" placeholder="" id="pubyearInput" class="form-control"></td>
+			</tr>
+			<tr>
+				<td class="item">ISBN</td>
+				<td><input type="text" value="" placeholder="" id="isbnInput" class="form-control"></td>
+			</tr>
+			<tr>
+				<td class="item">정가</td>
+				<td><input type="text" value="" placeholder="" id="priceInput" class="form-control"></td>
+			</tr>
+			<tr>
+				<td colspan="2"class="text-center"><button id ="addBtn" class="btn btn-primary	">추가하기</button></td>
+					
+			</tr>
+			
+		</tbody>
+		
+		
+		</table>
+			
+			
+			</div>
 		
 		</div>
 		
@@ -94,7 +177,7 @@
 	<script>
 		$(document).ready(function(){
 			
-			$(".addBtn").on("click", function(){
+			$("#addBtn").on("click", function(){
 				
 				
 				let title = $("#titleInput").val();
