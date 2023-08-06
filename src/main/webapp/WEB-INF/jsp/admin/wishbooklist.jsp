@@ -63,12 +63,11 @@
 									도서관 : ${wishbook.library }
 								</div>
 							</div>
-							<form action="/book/bookaddpopup/view?title=" method="get" class="d-flex align-items-center bg-secondary">
-							<div class="">
-								<button class="wishbookaddBtn btn btn-primary">희망도서 추가</button>
-							</div>
-							</form>
 							
+							<div class="d-flex align-items-center bg-secondary">
+								<button class="wishbookaddBtn btn btn-primary" onclick="window.open('/book/bookaddpopup/view?title=${wishbook.title}','new','scrollbars=yes,resizable=no width=500 height=500, left=0,top=0');return false">희망도서 추가</button>
+							</div>
+						
 						</div>
 						
 						<hr>
@@ -81,7 +80,7 @@
 			
 			
 				<div class="text-center">
-					<a href="#" class="btn btn-primary" onclick="window.open('/book/bookaddpopup/view','new','scrollbars=yes,resizable=no width=200 height=250, left=0,top=0');return false">도서 검색하기</a>
+					<a href="#" class="btn btn-primary" onclick="window.open('/book/bookaddpopup/view','new','scrollbars=yes,resizable=no width=500 height=500, left=0,top=0');return false">도서 검색하기</a>
 				</div>
 		
 		
@@ -177,18 +176,7 @@
 	<script>
 		$(document).ready(function(){
 			
-			
-			// 팝업창 버튼
-			
-			
 		
-			function openPopup(){
-		        window.open("", "new", "toolbar=no, menubar=no, scrollbars=yes, resizable=no, width=700, height=700, left=0, top=0" );
-		    }
-			
-			
-			
-			
 			$("#addBtn").on("click", function(){
 				
 				
