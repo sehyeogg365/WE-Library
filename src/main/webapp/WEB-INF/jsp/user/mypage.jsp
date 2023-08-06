@@ -117,7 +117,7 @@
 						 </select>
 					 
 					</div>
-					<div class="d-flex justify-content-between bg-info ">
+					<div class="d-flex justify-content-between">
 					
 					<c:choose>
 						<c:when test="${fn:startsWith(user.phoneNumber, '02') }">

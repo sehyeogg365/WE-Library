@@ -22,6 +22,9 @@ import com.marondal.welibrary.book.wishbook.bo.WishBookCountBO;
 import com.marondal.welibrary.user.bo.UserBO;
 import com.marondal.welibrary.user.dao.UserDAO;
 import com.marondal.welibrary.user.model.User;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 
 @Controller
 @RequestMapping("/book")
@@ -83,10 +86,10 @@ public class BookController {
 	}
 	
 	@GetMapping("/bookaddpopup/view")
-	public String bookAddPopUp() {
-		
-		
+	public String bookAddPopUp(Model model) {
+
 		return "book/bookaddpopup";
+		
 	}
 	
 	

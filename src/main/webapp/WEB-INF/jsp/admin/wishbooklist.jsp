@@ -81,7 +81,7 @@
 			
 			
 				<div class="text-center">
-					<a href="/book/bookaddpopup/view" class="btn btn-primary	">도서 추가하기</a>
+					<a href="/book/bookaddpopup/view" class="btn btn-primary	">도서 검색하기</a>
 				</div>
 		
 		
@@ -176,6 +176,25 @@
 	</div>
 	<script>
 		$(document).ready(function(){
+			
+			
+			// 팝업창 버튼
+			
+			let popuptestbtn = document.querySelector('button#popuptestbtn');
+			
+			popuptestbtn.onclick = function(){
+		
+				e.preventDefault();
+				
+				let popUrl = "/book/bookaddpopup/view";
+				let popOption = "width = 650px, height=550px, top=300px, left=300px, scrollbars=yes";
+				
+				window.open(popUrl,"도서 찾기",popOption);
+				
+			});
+			
+			
+			
 			
 			$("#addBtn").on("click", function(){
 				
