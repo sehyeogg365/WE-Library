@@ -107,7 +107,7 @@
 					<div class="search d-flex justify-content-center">
 		                <input type="text" value="" placeholder="검색어를 입력하세요." id="titleInput" class="form-control" name="title">
 		                <div class="input-group-append">
-		                	<button type="submit" class="btn">검색</button>
+		                	<button type="submit" class="btn" onclick="window.open('/book/bookaddpopup/view?title=${wishbook.title}','new','scrollbars=yes,resizable=no width=500 height=500, left=0,top=0');return false">검색</button>
 		                </div>
 		            </div>
 				  </form>
