@@ -103,11 +103,11 @@
 			<tr>
 				<td class="item">희망도서명</td>
 				<td>
-				  <form action="/book/bookaddpopup/view" method="get" class="">
+				  <form method="get" action="/book/bookaddpopup/view"  class="popup-form" >
 					<div class="search d-flex justify-content-center">
 		                <input type="text" value="" placeholder="검색어를 입력하세요." id="titleInput" class="form-control" name="title">
 		                <div class="input-group-append">
-		                	<button type="submit" class="btn" onclick="window.open('/book/bookaddpopup/view?title=${wishbook.title}','new','scrollbars=yes,resizable=no width=500 height=500, left=0,top=0');return false">검색</button>
+		                	<button id="search" type="submit" class="btn" >검색</button>
 		                </div>
 		            </div>
 				  </form>
@@ -173,6 +173,22 @@
 	</style>
 	<script>
 	$(document).ready(function(){
+		
+		$("#search").on("click", function(){
+			
+			let title = $("#titleInput").val();
+			
+			
+			if(title == ""){
+				
+				alert("제목을 입력해주세요.");
+				return;
+			}
+			
+			
+			
+		});
+		
 		
 		$("#addBtn").on("click", function(){
 			

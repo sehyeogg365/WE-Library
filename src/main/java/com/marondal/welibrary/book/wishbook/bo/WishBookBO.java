@@ -102,6 +102,7 @@ public class WishBookBO {
 			
 		}
 		
+		//희망도서 한행조회
 		
 		//희망도서 북테이블에 추가 
 		

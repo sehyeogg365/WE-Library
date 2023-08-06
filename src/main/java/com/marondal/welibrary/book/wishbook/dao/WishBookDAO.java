@@ -41,6 +41,10 @@ public interface WishBookDAO {
 		// 관리자 희망도서 신청 리스트 조회
 		public List<WishBook> selectWishBookListById(@Param("id") int id);
 		
+		
+		//희망도서 한행조회
+		
+		
 		//희망도서 북테이블에 추가 
 		
 		public int insertWishbookIntoBook( @Param("library") String libray

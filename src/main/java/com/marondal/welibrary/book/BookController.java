@@ -86,8 +86,11 @@ public class BookController {
 	}
 	
 	@GetMapping("/bookaddpopup/view")
-	public String bookAddPopUp(Model model) {
+	public String bookAddPopUp(Model model
+							   , @RequestParam("title") String title) {
 
+		
+		
 		return "book/bookaddpopup";
 		
 	}

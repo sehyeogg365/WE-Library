@@ -16,15 +16,49 @@
 </head>
 <body>
 
-	<form action="#" method="get" class="col-9"><!-- bootstrap input group 검색 -->
+	<!-- bootstrap input group 검색 -->
 		<div class="search d-flex justify-content-center">
-		   <input type="text" value="" placeholder="도서명 또는 저자명을 입력해주세요" class="form-control col-9" name="title">
+		   <input id="titleInput" type="text" value="${wishbook.title }" placeholder="도서명 또는 저자명을 입력해주세요" class="form-control col-9" name="title">
 		      <div class="input-group-append">
-		      	<button type="submit" class="btn btn-primary">검색</button>
+		      	<button id="search" type="submit" class="btn btn-primary">검색</button>
 		     </div>
 		</div>			
-	</form>
-	
+
+			
+
+
 
 </body>
+<script>
+	$(document).ready(function(){
+		
+		$("#search").on("click", function(){
+			
+			let title = $("#titleInput").val();
+			
+			
+			if(title == ""){
+				
+				alert("제목을 입력해주세요.");
+				return;
+			}
+			
+			$.ajax({
+				
+				method:"GET"
+				, url:""
+				, data:{}
+				
+				
+			});
+			
+			
+		});
+		
+		
+		
+	});
+	
+
+</script>
 </html>
