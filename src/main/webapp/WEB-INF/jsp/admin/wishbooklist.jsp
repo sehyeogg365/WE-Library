@@ -81,7 +81,7 @@
 			
 			
 				<div class="text-center">
-					<a href="/book/bookaddpopup/view" class="btn btn-primary	">도서 검색하기</a>
+					<a href="#" class="btn btn-primary" onclick="window.open('/book/bookaddpopup/view','new','scrollbars=yes,resizable=no width=200 height=250, left=0,top=0');return false">도서 검색하기</a>
 				</div>
 		
 		
@@ -180,18 +180,11 @@
 			
 			// 팝업창 버튼
 			
-			let popuptestbtn = document.querySelector('button#popuptestbtn');
 			
-			popuptestbtn.onclick = function(){
 		
-				e.preventDefault();
-				
-				let popUrl = "/book/bookaddpopup/view";
-				let popOption = "width = 650px, height=550px, top=300px, left=300px, scrollbars=yes";
-				
-				window.open(popUrl,"도서 찾기",popOption);
-				
-			});
+			function openPopup(){
+		        window.open("", "new", "toolbar=no, menubar=no, scrollbars=yes, resizable=no, width=700, height=700, left=0, top=0" );
+		    }
 			
 			
 			
