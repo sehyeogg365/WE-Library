@@ -200,3 +200,26 @@ footer{
 	border: 1px solid;
 	border-radius: 8px;
 }
+
+.searchbox{
+	width:1000px;
+	margin:auto;
+}
+
+.booksearch-nav{
+	
+	width:1000px;
+	background-color: #4169E1;
+	margin:auto;
+}
+
+.bookcard-list{
+	width:1000px;
+	margin:auto;
+}
+
+.bookcard{
+	width:1000px;
+	margin:auto;
+}
+

@@ -30,9 +30,23 @@
   	<select id = "selectBookById" resultType="com.marondal.welibrary.book.model.Book" parameterType="int">
   	
   		SELECT
+  			`id`
+	  		`library`
+			`title`
+			`imagePath`
+			`author`
+			`publisher`
+			`price`
+			`isbn`
+			`pubyear`
+			`appendix`
+			`createdAt`
+			`updatedAt`
   		FROM
+  			`book`
   		WHERE
   			`id` = #{id}
+
   	
   	</select>
   
