@@ -48,8 +48,7 @@ public interface WishBookDAO {
 		//희망도서 북테이블에 추가 
 		
 		public int insertWishbookIntoBook(
-										  @Param("userId") int userId
-										  , @Param("library") String libray
+										  @Param("library") String libray
 										  , @Param("title") String title
 										  , @Param("imagePath") String imagePath
 										  , @Param("author") String author

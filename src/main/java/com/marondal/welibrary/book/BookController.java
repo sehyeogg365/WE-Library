@@ -85,6 +85,9 @@ public class BookController {
 		return "book/wishbookadd";
 	}
 	
+	
+	
+	
 	@GetMapping("/bookaddpopup/view")
 	public String bookAddPopUp(Model model
 							   //, @RequestParam("title") String title

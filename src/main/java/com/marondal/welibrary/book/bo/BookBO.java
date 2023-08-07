@@ -16,9 +16,19 @@ import com.marondal.welibrary.user.bo.UserBO;
 @Service
 public class BookBO {
 	
-
 	
+	@Autowired
+	private BookDAO bookDAO;
 	
+	//책목록 조회
+	
+	//책 1행정보 조회
+	
+	//대출
+	//반납
+	//예약
+	//관심도서
+	//상호대차
 	
 	
 	

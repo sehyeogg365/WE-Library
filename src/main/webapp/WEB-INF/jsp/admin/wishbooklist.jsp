@@ -23,7 +23,7 @@
 		
 		<div class="mybookinfo-page">
 		
-		<div class="sub-profile bg-secondary">
+		<div class="sub-profile">
 			<c:import url="/WEB-INF/jsp/include/subprofile.jsp"/>
 			
 			<div class="sub-text bg-info">
@@ -47,8 +47,8 @@
 					
 					<c:forEach var="wishbook" items= "${wishbookList }" varStatus="status">
 						<hr>
-						<div class="wishbookcard bg-warning d-flex justify-content-between">
-							<div class="bg-info">
+						<div class="wishbookcard d-flex justify-content-between">
+							<div class="">
 								<div class="">
 									<h5>No.${fn:length(wishbookList) - status.index}</h5>
 									<h5>유저아이디${wishbook.userId }</h5>
@@ -65,7 +65,7 @@
 								</div>
 							</div>
 							
-							<div class="d-flex align-items-center bg-secondary">
+							<div class="d-flex align-items-center pr-3">
 								<button class="wishbookaddBtn btn btn-primary" onclick="window.open('/book/bookaddpopup/view?title=${wishbook.title}','new','scrollbars=yes,resizable=no width=500 height=500, left=0,top=0');return false">희망도서 추가</button>
 							</div>
 						
@@ -126,7 +126,7 @@
 			
 			<tr>
 				<td class="item ">사진</td>
-				<td></td>
+				<td><input type="file" name="file" id="fileInput" class=""><img class="wishbookprofile" width ="40" height="40" src="${wishbook.imagePath}" value="${wishbook.imagePath}"></td>
 				
 			</tr>
 			<tr>
@@ -215,7 +215,7 @@
 				var formData = new FormData();
 				formData.append("title", title);
 				formData.append("library", library);
-				formData.append("file", file);
+				formData.append("file", file.files[0]);
 				formData.append("author", author);
 				formData.append("publisher", publisher);
 				formData.append("price", price);

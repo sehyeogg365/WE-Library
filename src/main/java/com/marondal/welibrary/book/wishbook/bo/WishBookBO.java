@@ -107,8 +107,7 @@ public class WishBookBO {
 		//희망도서 북테이블에 추가 
 		
 		public int addWishbookIntoBook(
-							   int userId
-							   , String library
+							   String library
 							   , String title   
 							   , MultipartFile file 
 							   , String author   
@@ -118,10 +117,10 @@ public class WishBookBO {
 							   , int pubyear
 							   , String appnedix) {
 			
-			String imagePath = FileManagerService.saveFile(userId, file);//임시로 0 넣어둠
+			String imagePath = FileManagerService.saveFile(price, file);//임시로 0 넣어둠
 			
 			
-			return wishBookDAO.insertWishbookIntoBook(userId, library, title, imagePath, author, publisher, price, isbn, pubyear, appnedix);
+			return wishBookDAO.insertWishbookIntoBook(library, title, imagePath, author, publisher, price, isbn, pubyear, appnedix);
 			
 			
 		}
