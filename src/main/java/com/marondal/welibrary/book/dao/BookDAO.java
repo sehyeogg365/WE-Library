@@ -14,14 +14,25 @@ public interface BookDAO {
 	
 	
 	//책목록 조회
+	public List<Book> selectBookListByTitle(@Param("title") String title);
 	
-		//책 1행정보 조회
+	
+	//책 1행정보 조회(상세정보)
+	public Book selectBook(@Param("id")int id);
 		
-		//대출
-		//반납
-		//예약
-		//관심도서
-		//상호대차
+	//관심도서
+	
+	//대출
+	
+	//반납
+	
+	
+	//예약
+	
+	
+	
+	//상호대차
+	
 	
 	
 	
