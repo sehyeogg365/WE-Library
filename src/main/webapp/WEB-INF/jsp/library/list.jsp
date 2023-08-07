@@ -34,7 +34,7 @@
 		
 		<div class="searchbox bg-success">
 			<form action="/library/list/view" method="get" class=""><!-- bootstrap input group 검색 -->
-			<nav class="bg-primary booksearch-nav d-flex justify-content-center align-items-center">
+			<nav class="bg-primary booksearch-nav d-flex justify-content-center align-items-center col-10">
 				<div class="text-white col-2">
 					<h5>통합검색</h5>
 				</div>
@@ -48,7 +48,7 @@
 		        </div>
 		         
 		    </nav> 
-		   		<div class="mt-3 ">
+		   		<div class="mt-3 library-selectbox bg-secondary col-10">
 		   		<label class=""><input type="checkbox" id="allCheck" class="mr-2">전체 선택</label> <br>
 		   		<hr>
 			   		<div class="">
@@ -64,30 +64,77 @@
 		</div>
 		
 		<div class="bg-info bookcard-list">
-		<hr>
 		
-			<div class="bg-warning bookcard d-flex">
-				<div class="profile bg-secondary">
-					<img src="" width=50 height=50>
+			<hr>
+			<div class="bg-warning bookcard d-flex ">
+			
+				<div class="bg-secondary book-profile">
+					
+					<a href="/library/bookinfo/view">
+						<img class="profile" src="" width=100 height=100>
+					</a>
 				</div>	
 				
-				<div class="info ml-2">		
+				<div class="book-card-body ml-2">		
 					<div class="">
-						<h5>${wishbook.title }</h5>
+						<h5>혼자 공부하는 c언어</h5>
 					</div>
 					<div class="text-secondary">
 						저자 : 김인규 | 출판사 : 마론달 | ISBN : 0000 1111 2222 3333
 					</div>
 					<div class="text-secondary">
-						도서관 : 역삼도서관
+						도서관 : 역삼도서관 | 부록 : 없음
 					</div>
-					<div class="text-secondary">
-						상태 : 소장중 or 신청중
+					<div class="bg-info book-status text-secondary d-flex justify-content-between">
+						<div class="">
+							대출가능 도서 대출 불가 
+						</div>
+						<div class="">	
+							<button class="btn btn-danger btn-sm reserveBtn"><i class="bi bi-journal-arrow-down"></i>도서 예약신청</button>
+							<button class="btn btn-success btn-sm interibraryAddBtn"><i class="bi bi-shuffle"></i>상호대차 신청</button> 
+							<button class="btn btn-primary btn-sm interestAddBtn"><i class="bi bi-download"></i>관심도서 담기</button>
+						</div>
 					</div>
 				</div>
 				
 			</div>
-		<hr>
+			<hr>
+			
+			
+			<hr>
+			<div class="bg-warning bookcard d-flex">
+			
+				<div class="bg-secondary book-profile">
+					
+					<a href="/library/bookinfo/view">
+						<img class="profile" src="" width=100 height=100>
+					</a>
+				</div>	
+				
+				<div class="book-card-body ml-2">		
+					<div class="">
+						<h5>혼자 공부하는 c언어</h5>
+					</div>
+					<div class="text-secondary">
+						저자 : 김인규 | 출판사 : 마론달 | ISBN : 0000 1111 2222 3333
+					</div>
+					<div class="text-secondary">
+						도서관 : 역삼도서관 | 부록 : 없음
+					</div>
+					<div class="bg-info book-status text-secondary d-flex justify-content-between">
+						<div class="">
+							대출가능 도서 예약 불가 
+						</div>
+						<div class="">	
+							<button class="btn btn-danger btn-sm reserveBtn"><i class="bi bi-journal-arrow-down"></i>도서 예약신청</button>
+							<button class="btn btn-success btn-sm interibraryAddBtn"><i class="bi bi-shuffle"></i>상호대차 신청</button> 
+							<button class="btn btn-primary btn-sm interestAddBtn"><i class="bi bi-download"></i>관심도서 담기</button>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			<hr>
 		</div>
 		
 		
@@ -114,6 +161,22 @@
                 $("input[name='check']").prop("checked", false);
             }
             
+         $(".reserveBtn").on("click", function(){
+        	 
+         });
+         
+         
+         
+         $(".interibraryAddBtn").on("click", function(){
+        	 
+         });
+         
+         
+         
+         $(".interestAddBtn").on("click", function(){
+        	 
+         });
+         
         
          
             

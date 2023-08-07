@@ -213,13 +213,23 @@ footer{
 	margin:auto;
 }
 
+.library-selectbox{
+	
+	width:1000px;
+	margin:auto;
+}
+
 .bookcard-list{
 	width:1000px;
 	margin:auto;
 }
 
 .bookcard{
-	width:1000px;
+	width:900px;
 	margin:auto;
+}
+
+.book-status{
+	width:750px;
 }
 

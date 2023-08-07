@@ -39,7 +39,13 @@ public class LibraryController {
 	}
 	
 	
-	
+	@GetMapping("/bookinfo/view")
+	public String infoPage(Model model) {
+		
+		
+		return "/library/bookinfo";
+		
+	}
 	
 	
 }
