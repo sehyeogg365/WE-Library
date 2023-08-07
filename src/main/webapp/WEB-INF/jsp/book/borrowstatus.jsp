@@ -41,6 +41,20 @@
 				<div class="col-9 ">
 					<div class="">
 						
+						<div class="">
+						
+						<nav class="d-flex justify-content-center align-items-center col-12">
+							<ul class="nav nav-fill">
+								<li class="nav-item"><h5><a href="/book/borrowstatus/view?id=${userId }" class="nav-link text-dark font-weight-bold">대출현황</a></h5></li>
+								<li class="nav-item"><h5><a href="/book/reservelist/view?id=${userId }" class="nav-link text-dark font-weight-bold">예약현황</a></h5></li>
+								<li class="nav-item"><h5><a href="#" class="nav-link text-dark font-weight-bold">대출이력</a></h5></li>
+								<li class="nav-item"><h5><a href="/book/interibrarylist/view?id=${userId }" class="nav-link text-dark font-weight-bold">상호대차</a></h5></li>
+							</ul>
+						</nav>
+						
+						</div>
+						
+						
 						<div class="mt-3 d-flex ">
 							 대출현황 : &nbsp<div class="text-primary">3</div>건
 						</div>
