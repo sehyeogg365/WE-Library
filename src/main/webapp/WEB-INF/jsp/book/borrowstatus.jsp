@@ -58,6 +58,7 @@
 							</div>
 						</div>
 						<hr>
+						<hr>
 						<div class="">
 							<div class="">
 								<h5>신입사원 제대로 미쳐라.</h5>
@@ -69,6 +70,7 @@
 								상태 : 반납 대출일 : 2023.06.13 | 반납일 : 2023.06.27
 							</div>
 						</div>
+						<hr>
 						<hr>
 						<div class="">
 							<div class="">

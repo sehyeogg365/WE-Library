@@ -85,6 +85,28 @@ public class BookController {
 		return "book/wishbookadd";
 	}
 	
+	@GetMapping("/interestbooklist/view")
+	public String interestBookList(Model model
+			, int id) {
+		
+		User user = userBO.getUserInfo(id); //이상하게 DAO로 해도 잘불러와지더라.
+		
+		model.addAttribute("user", user);
+
+		return "book/interestbooklist";
+	}
+	
+	@GetMapping("/interibrarybooklist/view")
+	public String interibraryBookList(Model model
+			, int id) {
+		
+		User user = userBO.getUserInfo(id); //이상하게 DAO로 해도 잘불러와지더라.
+		
+		model.addAttribute("user", user);
+		
+		return "book/interibrarybooklist";
+	}
+	
 	
 	
 	
