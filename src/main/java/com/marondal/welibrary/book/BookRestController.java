@@ -73,10 +73,12 @@ public class BookRestController {
 											, @RequestParam("isbn") String isbn
 											, @RequestParam("pubyear") int pubyear
 											, @RequestParam("appendix") String appendix
+											, HttpSession session
 											){
 		
+		int userId = (Integer) session.getAttribute("userId");
 
-		int count = wishBookBO.addWishbookIntoBook(library, title, file, author, publisher, price, isbn, pubyear, appendix);
+		int count = wishBookBO.addWishbookIntoBook(userId, library, title, file, author, publisher, price, isbn, pubyear, appendix);
 			
 		Map<String, String> resultMap = new HashMap<>();
 		

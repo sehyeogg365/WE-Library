@@ -110,40 +110,36 @@
   		`id` DESC;
   </select>
   
-  <!-- 희망도서 도서 테이블에추가  -->
-	  <insert id ="insertWishbookIntoBook" parameterType="map">
-	  INSERT INTO
-  		`book`
-  		(
-  			 `library`
-  			, `title`
-  			, `imagePath`
-  			, `author`
-  			, `publisher`
-  			, `price`
-  			, `isbn`
-  			, `pubyear`
-  			, `appendix`
-  			, `createdAt` 
-		    , `updatedAt`
-  		)
-  		
-  		VALUES
-  		(
-  			 #{library}
-  			, #{title}
-  			, #{imagePath}
-  			, #{author}
-  			, #{publisher}
-  			, #{price}
-  			, #{isbn}
-  			, #{pubyear}
-  			, #{appendix}
-  			, now()
-			, now()
-  		)
-	  
-	  
-	  
-	  </insert>
+	  <!-- 희망도서 도서 테이블에추가  -->
+		  <insert id ="insertWishbookIntoBook" parameterType="map">
+		  INSERT INTO
+		  		`book`
+		  		(
+		  		`userId`
+		  		, `library`
+	  			, `title`
+	  			, `imagePath`
+	  			, `author`
+	  			, `publisher`
+	  			, `price`
+	  			, `isbn`
+	  			, `pubyear`
+		  		, `appendix`	
+		  		)
+		  VALUES
+		  	(
+		  		#{userId}
+		  		, #{library}
+		  		, #{title}
+		  		, #{imagePath}
+		  		, #{author}
+		  		, #{publisher}
+		  		, #{price}
+		  		, #{isbn}
+		  		, #{pubyear}
+		  		, #{appendix}
+	
+		  	)
+		  
+		  </insert>
   </mapper>

@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> 
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>                 
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %> 
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>                   
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,9 +34,9 @@
 		<div class="d-flex mx-5">
 		<c:import url="/WEB-INF/jsp/include/sidenav.jsp"/>
 		
-		<div class="col-9 bg-info">
+		<div class="col-9">
 		
-			<div class="bg-danger">
+			<div class="">
 				<div class="mt-3 d-flex text-secondary">
 						희망도서 신청현황 :&nbsp<div class="text-primary"> 2 </div>건
 				</div>
@@ -49,7 +50,7 @@
 						<div class="wishbookcard bg-warning d-flex justify-content-between">
 							<div class="bg-info">
 								<div class="">
-									<h5>No.${status.count}</h5>
+									<h5>No.${fn:length(wishbookList) - status.index}</h5>
 									<h5>유저아이디${wishbook.userId }</h5>
 								</div>
 								
@@ -125,7 +126,7 @@
 			
 			<tr>
 				<td class="item ">사진</td>
-				<td><input type="file" name="file" id="fileInput" class=""><img class="wishbookprofile" width ="40" height="40" src="${wishbook.imagePath}" value="${wishbook.imagePath}"></td>
+				<td></td>
 				
 			</tr>
 			<tr>
@@ -147,6 +148,10 @@
 			<tr>
 				<td class="item">정가</td>
 				<td><input type="text" value="" placeholder="" id="priceInput" class="form-control"></td>
+			</tr>
+			<tr>
+				<td class="item">부록 여부</td>
+				<td><input type="text" value="" placeholder="" id="appendixInput" class="form-control"></td>
 			</tr>
 			<tr>
 				<td colspan="2"class="text-center"><button id ="addBtn" class="btn btn-primary	">추가하기</button></td>
@@ -181,7 +186,7 @@
 				
 				
 				let title = $("#titleInput").val();
-				let library = $("#libraryInput").val();
+				let library = $("#librarySelector").val();
 				let file = $("#fileInput")[0];
 				let author = $("#authorInput").val();
 				let publisher = $("#publisherInput").val();
