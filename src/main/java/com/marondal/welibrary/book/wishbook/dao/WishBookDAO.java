@@ -35,8 +35,11 @@ public interface WishBookDAO {
 		public int selectBookByLibraryTitle(@Param("library") String library, @Param("title")String title);
 		
 		
-		// 유저별 희망도서 신청 갯수세기
-		public WishBookCount selectWishBookNumber(@Param("userId") int userId);
+		// 유저별 희망도서 갯수세기 return type int 타입이 맞다.
+		public WishBookCount selectWishBookNumberByuserId(@Param("userId") int userId);
+		
+		// 전체 희망도서 갯수세기
+		public WishBookCount selectWishBookNumberById(@Param("id")int id);
 		
 		// 관리자 희망도서 신청 리스트 조회
 		public List<WishBook> selectWishBookListById(@Param("id") int id);

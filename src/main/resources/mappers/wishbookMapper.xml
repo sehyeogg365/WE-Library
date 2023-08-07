@@ -76,7 +76,7 @@
   </select>
   
   <!-- 유저별 희망도서 신청 갯수 세기 -->
-  <select id="selectWishBookNumber" parameterType="map" resultType="int">
+  <select id="selectWishBookNumberByuserId" resultType="com.marondal.welibrary.book.model.WishBook" parameterType="int" >
   	SELECT
   		count(1)
   	FROM
@@ -86,6 +86,15 @@
   
   </select>
   
+  <!-- 전체 희망도서 신청 갯수 세기 -->
+  <select id="selectWishBookNumberById" resultType="com.marondal.welibrary.book.model.WishBook" parameterType="int" >
+  	SELECT
+  		count(1)
+  	FROM
+  		`wish_book`
+  	
+  
+  </select>
   <!-- 관리자 희망도서 추가 -->
   
   

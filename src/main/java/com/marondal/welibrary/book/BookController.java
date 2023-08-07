@@ -65,10 +65,13 @@ public class BookController {
 		
 		//WishBookCount wishbookcount = wishBookCountBO.getWishBookNumber(userId);// 갯수 
 		//model.addAttribute("wishbookcount", wishbookcount);
-		
-		
+
 		List<WishBookDetail> wishbookList = wishBookBO.getWishBookList(userId);
 		model.addAttribute("wishbookList", wishbookList);
+		
+		//여기서 관심도서개수 추가
+		int wishbookcount = wishBookCountBO.getWishBookNumberByuserId(userId);
+		model.addAttribute("wishbookcount", wishbookcount);
 		
 		return "book/wishbooklist";
 		
@@ -93,6 +96,9 @@ public class BookController {
 		
 		model.addAttribute("user", user);
 
+		
+		//여기서 관심도서개수 추가
+		
 		return "book/interestbooklist";
 	}
 	
@@ -103,6 +109,8 @@ public class BookController {
 		User user = userBO.getUserInfo(id); //이상하게 DAO로 해도 잘불러와지더라.
 		
 		model.addAttribute("user", user);
+		
+		//여기서 상호대차도서개수 추가
 		
 		return "book/interibrarybooklist";
 	}

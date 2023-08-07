@@ -38,7 +38,7 @@
 		
 			<div class="">
 				<div class="mt-3 d-flex text-secondary">
-						희망도서 신청현황 :&nbsp<div class="text-primary"> 2 </div>건
+						희망도서 신청현황 :&nbsp<div class="text-primary"> ${wishbookcount.numberCount }</div>건
 				</div>
 							
 					<hr>
