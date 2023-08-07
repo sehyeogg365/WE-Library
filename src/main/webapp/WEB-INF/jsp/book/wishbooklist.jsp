@@ -32,7 +32,7 @@
 			<img class="profile" width="1000px" height="200px" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FlAG5Z%2Fbtsnhr3rPGd%2FKeJ2kZ3AGgbzql1R1aDdr1%2Fimg.jpg" alt="메인로고 사진">
 			
 			
-			<div class="sub-text bg-info">
+			<div class="sub-text ">
 				<h2 class="text-center text-white mt-3"><b>희망도서 신청 조회</b></h2>
 			</div>
 		</div>
@@ -42,7 +42,7 @@
 		
 		<div class="col-9 ">
 		
-			<div class="bg-info">
+			<div class="">
 				<div class="mt-3 d-flex text-secondary">
 						희망도서 신청 :&nbsp<div class="text-primary"> 1 </div>건
 				</div>
@@ -50,7 +50,7 @@
 						<c:forEach var="wishbook" items="${wishbookList }">	
 						<hr>
 						
-						<div class="bg-warning">
+						<div class="">
 							
 						
 							<div class="">

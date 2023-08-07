@@ -23,7 +23,7 @@
 		
 		<section class="contents d-flex justify-content-center">
 		
-		<div class="librarybookinfo-page bg-secondary">	
+		<div class="librarybookinfo-page">	
 			<div class="sub-profile bg-secondary">
 				<c:import url="/WEB-INF/jsp/include/subprofile.jsp"/>
 				
@@ -48,8 +48,37 @@
 
 		</div>	
 		
-			<div class="info-box"><h5>상세정보</h5></div>
-			<div class="possessioninfo-box"><h5>소장정보</h5></div>
+			<div class="info-box">
+				<h5>상세정보</h5>
+				<p class="text-secondary">가나다라마바사아자카타파하</p>
+			</div>
+			<div class="possessioninfo-box">
+				<h5>소장정보</h5>
+				<table class="table" border=1>
+					
+					<thead>
+						<tr class="item">
+						
+							<th class="col-2">대출상태</th>
+							<th class="col-3">반납예정일</th>
+							<th class="col-1">부록</th>
+							<th class="col-3">도서예약</th>
+							<th class="col-3">상호대차</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+						
+							<td>대출중</td>
+							<td>2023-08-07</td>
+							<td>cd</td>
+							<td><button class="btn btn-sm btn-danger reserveBtn">예약불가능</button></td>
+							<td><button class="btn btn-sm btn-success interibraryAddBtn">상호대차불가능</button></td>
+						</tr>
+					</tbody>
+				
+				</table>
+			</div>
 			<div class=""></div>
 			<div class=""></div>
 			
