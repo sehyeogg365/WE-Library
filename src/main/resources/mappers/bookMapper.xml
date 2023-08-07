@@ -6,9 +6,35 @@
   
   <mapper namespace="com.marondal.welibrary.book.dao.BookDAO">
   
-  
-  
-  
+  	<select id = "selectBookListByTitle" resultType="com.marondal.welibrary.book.model.Book" parameterType="map" >
+	  	SELECT
+	  		`id`
+	  		`library`
+			`title`
+			`imagePath`
+			`author`
+			`publisher`
+			`price`
+			`isbn`
+			`pubyear`
+			`appendix`
+			`createdAt`
+			`updatedAt`
+	  	FROM
+	  		`book`
+	  	WHERE 	
+	  		`title` = #{title}
+	  	ORDER BY `id` DESC;
+  	</select>	
+  		
+  	<select id = "selectBookById" resultType="com.marondal.welibrary.book.model.Book" parameterType="int">
+  	
+  		SELECT
+  		FROM
+  		WHERE
+  			`id` = #{id}
+  	
+  	</select>
   
   
   

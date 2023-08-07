@@ -29,9 +29,9 @@ public class BookBO {
 	
 	
 	//책 1행정보 조회
-	public Book getBook(int id) {
+	public Book getBookById(int id) {
 				
-		return null;
+		return bookDAO.selectBookById(id);
 
 	}
 	
