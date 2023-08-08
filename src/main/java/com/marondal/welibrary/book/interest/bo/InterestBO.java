@@ -26,7 +26,7 @@ public class InterestBO {
 	public List<InterestBook> getInterestList(int userId){
 		
 		
-		return null;
+		return interestDAO.selectInterestList(userId);
 		
 		
 	}

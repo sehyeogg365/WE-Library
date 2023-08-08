@@ -137,11 +137,27 @@ public class BookRestController {
 	
 	// 관심도서 삭제 
 	@GetMapping("/interest/delete")
-	public Map<String, String> interestDelete(@RequestParam("id")int id){
+	public Map<String, String> interestDelete(@RequestParam("id")int id
+											  , HttpSession session
+											  ){
 		
+		int userId = (Integer) session.getAttribute("userId");
 		
+		int count = interestBO.addInterest(userId, id);
 		
-		return null;
+		Map<String, String> resultMap = new HashMap<>();
+		
+		if(count == 0) {
+			
+			resultMap.put("result", "fail");
+			
+		} else {
+			
+			resultMap.put("result", "success");
+			
+		}
+		
+		return resultMap;
 		
 		
 	}

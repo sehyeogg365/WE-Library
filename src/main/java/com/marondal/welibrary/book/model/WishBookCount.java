@@ -22,6 +22,8 @@ public class WishBookCount {
 	public void setNumberCount(int numberCount) {
 		this.numberCount = numberCount;
 	}
+
+	
 	
 	
 	
