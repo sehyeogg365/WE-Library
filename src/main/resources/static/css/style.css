@@ -229,9 +229,24 @@ footer{
 	margin:auto;
 }
 
+
+
+.bookgimg-box >.book-profile{
+	width: 150px;
+	height: 150px;
+}
+
+.book-profile >.profile{
+	width: 150px;
+	height: 150px;
+	object-fit: contain;  
+}
+
 .book-status{
 	width:750px;
 }
+
+
 
 .librarybookinfo-page{
 	width:1200px;
@@ -249,8 +264,17 @@ footer{
 }
 
 .bookinfo-box >.bookinfo-profile{
-	
+	width:120px;
+  	height:120px;
 }
+.bookinfo-profile>.profile{
+	
+	width:120px;
+  	height:120px;
+  	object-fit: contain;  
+  	
+}
+
 
 .possessioninfo-box{
 	width:900px;

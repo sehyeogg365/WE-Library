@@ -69,10 +69,10 @@
 			<hr>
 			<div class="bg-warning bookcard d-flex ">
 			
-				<div class="bg-secondary book-profile">
+				<div class="bg-secondary bookimg-box">
 					
 					<a href="/library/bookinfo/view?id=${book.id }" class="book-profile">
-						<img class="profile" src="${book.imagePath }" width=100 height=100>
+						<img class="profile" src="${book.imagePath }">
 					</a>
 				</div>	
 				
@@ -93,7 +93,7 @@
 						<div class="">
 							대출가능 도서 대출 불가 
 						</div>
-						<div class="">	
+						<div class="mr-2">	
 							<button class="btn btn-danger btn-sm reserveBtn"><i class="bi bi-journal-arrow-down"></i>도서 예약신청</button>
 							<button class="btn btn-success btn-sm interibraryAddBtn"><i class="bi bi-shuffle"></i>상호대차 신청</button> 
 							<button class="btn btn-primary btn-sm interestAddBtn"><i class="bi bi-download"></i>관심도서 담기</button>

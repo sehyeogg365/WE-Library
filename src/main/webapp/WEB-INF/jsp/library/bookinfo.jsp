@@ -34,7 +34,7 @@
 			
 		<div class="bookinfo-box bg-info d-flex">
 			<div class="bookinfo-profile ml-3 mt-3">
-				<img class="profile" src="${book.imagePath }" width=120 height=120>
+				<img class="profile" src="${book.imagePath }" >
 			</div>
 			
 			<div class="book-info-body ml-3 mt-3">
