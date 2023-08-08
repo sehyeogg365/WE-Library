@@ -62,15 +62,12 @@ public class BookController {
 		                                                                                                                                                              
 		int userId = (Integer) session.getAttribute("userId");
 		
-		
-		//WishBookCount wishbookcount = wishBookCountBO.getWishBookNumber(userId);// 갯수 
-		//model.addAttribute("wishbookcount", wishbookcount);
 
 		List<WishBookDetail> wishbookList = wishBookBO.getWishBookList(userId);
 		model.addAttribute("wishbookList", wishbookList);
 		
 		//여기서 관심도서개수 추가
-		int wishbookcount = wishBookCountBO.getWishBookNumberByuserId(userId);
+		WishBookCount wishbookcount = wishBookCountBO.getWishBookNumberByuserId(userId);
 		model.addAttribute("wishbookcount", wishbookcount);
 		
 		return "book/wishbooklist";
