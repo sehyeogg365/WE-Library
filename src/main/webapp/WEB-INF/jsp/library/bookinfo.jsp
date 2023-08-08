@@ -34,12 +34,12 @@
 			
 		<div class="bookinfo-box bg-info d-flex">
 			<div class="bookinfo-profile ml-3 mt-3">
-				<img class="profile" src="" width=120 height=120>
+				<img class="profile" src="${book.imagePath }" width=120 height=120>
 			</div>
 			
 			<div class="book-info-body ml-3 mt-3">
-				<div class=""><b>저자사항</b> &nbsp 김인규 지음</div>
-				<div class=""><b>발행사항</b> &nbsp Marondal 2022</div>
+				<div class=""><b>저자사항</b> &nbsp ${book.author }지음</div>
+				<div class=""><b>발행사항</b> &nbsp ${book.publisher } ${book.pubyear }</div>
 				<div class=""><b>형태사항</b> &nbsp</div>
 				<div class=""><b>표준부호</b> &nbsp</div>
 				<div class=""><b>부록여부</b> &nbsp</div>
@@ -71,7 +71,7 @@
 						
 							<td>대출중</td>
 							<td>2023-08-07</td>
-							<td>cd</td>
+							<td>${book.appendix }</td>
 							<td><button class="btn btn-sm btn-danger reserveBtn">예약불가능</button></td>
 							<td><button class="btn btn-sm btn-success interibraryAddBtn">상호대차불가능</button></td>
 						</tr>

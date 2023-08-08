@@ -9,17 +9,17 @@
   	<select id = "selectBookListByTitle" resultType="com.marondal.welibrary.book.model.Book" parameterType="map" >
 	  	SELECT
 	  		`id`
-	  		`library`
-			`title`
-			`imagePath`
-			`author`
-			`publisher`
-			`price`
-			`isbn`
-			`pubyear`
-			`appendix`
-			`createdAt`
-			`updatedAt`
+	  		, `library`
+			, `title`
+			, `imagePath`
+			, `author`
+			, `publisher`
+			, `price`
+			, `isbn`
+			, `pubyear`
+			, `appendix`
+			, `createdAt`
+			, `updatedAt`
 	  	FROM
 	  		`book`
 	  	WHERE 	
@@ -31,17 +31,17 @@
   	
   		SELECT
   			`id`
-	  		`library`
-			`title`
-			`imagePath`
-			`author`
-			`publisher`
-			`price`
-			`isbn`
-			`pubyear`
-			`appendix`
-			`createdAt`
-			`updatedAt`
+	  		, `library`
+			, `title`
+			, `imagePath`
+			, `author`
+			, `publisher`
+			, `price`
+			, `isbn`
+			, `pubyear`
+			, `appendix`
+			, `createdAt`
+			, `updatedAt`
   		FROM
   			`book`
   		WHERE

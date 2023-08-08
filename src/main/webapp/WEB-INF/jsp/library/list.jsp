@@ -65,25 +65,29 @@
 		
 		<div class="bg-info bookcard-list">
 		
+		<c:forEach var="book" items="${bookList }">
 			<hr>
 			<div class="bg-warning bookcard d-flex ">
 			
 				<div class="bg-secondary book-profile">
 					
-					<a href="/library/bookinfo/view">
-						<img class="profile" src="" width=100 height=100>
+					<a href="/library/bookinfo/view?id=${book.id }" class="book-profile">
+						<img class="profile" src="${book.imagePath }" width=100 height=100>
 					</a>
 				</div>	
 				
 				<div class="book-card-body ml-2">		
 					<div class="">
-						<h5>혼자 공부하는 c언어</h5>
+						<h5>${book.title }</h5>
 					</div>
 					<div class="text-secondary">
-						저자 : 김인규 | 출판사 : 마론달 | ISBN : 0000 1111 2222 3333
+						저자 : ${book.author } | 출판사 : ${book.publisher } | 발행년도 : ${book.pubyear }
+					</div>
+					<div class="">
+					ISBN : ${book.isbn }
 					</div>
 					<div class="text-secondary">
-						도서관 : 역삼도서관 | 부록 : 없음
+						도서관 : 역삼도서관 | 부록 : ${book.appendix }
 					</div>
 					<div class="bg-info book-status text-secondary d-flex justify-content-between">
 						<div class="">
@@ -99,42 +103,9 @@
 				
 			</div>
 			<hr>
+			</c:forEach>
 			
 			
-			<hr>
-			<div class="bg-warning bookcard d-flex">
-			
-				<div class="bg-secondary book-profile">
-					
-					<a href="/library/bookinfo/view">
-						<img class="profile" src="" width=100 height=100>
-					</a>
-				</div>	
-				
-				<div class="book-card-body ml-2">		
-					<div class="">
-						<h5>혼자 공부하는 c언어</h5>
-					</div>
-					<div class="text-secondary">
-						저자 : 김인규 | 출판사 : 마론달 | ISBN : 0000 1111 2222 3333
-					</div>
-					<div class="text-secondary">
-						도서관 : 역삼도서관 | 부록 : 없음
-					</div>
-					<div class="bg-info book-status text-secondary d-flex justify-content-between">
-						<div class="">
-							대출가능 도서 예약 불가 
-						</div>
-						<div class="">	
-							<button class="btn btn-danger btn-sm reserveBtn"><i class="bi bi-journal-arrow-down"></i>도서 예약신청</button>
-							<button class="btn btn-success btn-sm interibraryAddBtn"><i class="bi bi-shuffle"></i>상호대차 신청</button> 
-							<button class="btn btn-primary btn-sm interestAddBtn"><i class="bi bi-download"></i>관심도서 담기</button>
-						</div>
-					</div>
-				</div>
-				
-			</div>
-			<hr>
 		</div>
 		
 		
