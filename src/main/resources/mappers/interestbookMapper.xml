@@ -7,10 +7,40 @@
   <mapper namespace="com.marondal.welibrary.book.interest.dao.InterestDAO">
   
   <!-- 관심도서 추가 -->
+  <insert id ="insertInterest" parameterType="int">
+  	INSERT INTO
+  		`interest_book`
+  		(
+  			`userId`
+  			, `bookId`
+  			, `createdAt` 
+		    , `updatedAt`
+  		)
+  		
+  		VALUES
+  		(
+			#{userId}  			
+  			, #{bookId}
+  			, now()
+  			, now()	
+  		)
   
+  </insert>
   
   
   <!-- 관심도서 조회 -->
+  <select id ="selectInterestList" resultType="com.marondal.welibrary.book.model.InterestBook" parameterType="int" >
+  	SELECT
+  		`id`
+  		, `userId`
+  		, `bookId`
+  	FROM
+  		`interest_book`
+  	WHERE
+  		`userId`=#{userId}
+  	ORDER BY
+  		`id` DESC;
+  </select>
   
   
   

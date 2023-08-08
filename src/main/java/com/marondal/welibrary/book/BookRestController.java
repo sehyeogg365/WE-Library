@@ -109,9 +109,13 @@ public class BookRestController {
 	
 	// 관심도서 추가
 	@PostMapping("/interest/create")
-	public Map<String, String> interestCreate(@RequestParam("bookId") int bookId){
+	public Map<String, String> interestCreate(@RequestParam("bookId") int bookId
+											  , HttpSession session
+												){
 		
-		int count = interestBO.addInterest(bookId);
+		int userId = (Integer) session.getAttribute("userId");
+		
+		int count = interestBO.addInterest(userId, bookId);
 		
 		Map<String, String> resultMap = new HashMap<>();
 		
