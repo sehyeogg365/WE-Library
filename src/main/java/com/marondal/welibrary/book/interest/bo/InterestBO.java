@@ -22,7 +22,7 @@ public class InterestBO {
 		
 	}
 	
-	//관심도서 조회
+	//관심도서 조회 (dto)
 	public List<InterestBook> getInterestList(int userId){
 		
 		
@@ -30,6 +30,8 @@ public class InterestBO {
 		
 		
 	}
+	
+	//관심도서 갯수
 	
 	
 	//관심도서 삭제 

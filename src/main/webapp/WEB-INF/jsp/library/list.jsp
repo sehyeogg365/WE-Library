@@ -49,7 +49,7 @@
 		         
 		    </nav> 
 		    <hr style="border: solid 1px;">
-		   		<div class="mt-3 library-selectbox bg-secondary col-10">
+		   		<div class="mt-3 library-selectbox col-10">
 		   		<label class=""><input type="checkbox" id="allCheck" class="mr-2">전체 선택</label> <br>
 		   		<hr>
 			   		<div class="">
@@ -64,13 +64,13 @@
 		
 		</div>
 		
-		<div class="bg-info bookcard-list">
+		<div class="bookcard-list">
 		
 		<c:forEach var="book" items="${bookList }">
 			<hr>
-			<div class="bg-warning bookcard d-flex ">
+			<div class="bookcard d-flex ">
 			
-				<div class="bg-secondary bookimg-box">
+				<div class="bookimg-box">
 					
 					<a href="/library/bookinfo/view?id=${book.id }" class="book-profile">
 						<img class="profile" src="${book.imagePath }">

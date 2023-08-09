@@ -32,7 +32,7 @@
 				</div>
 			</div>
 			
-		<div class="bookinfo-box bg-info d-flex">
+		<div class="bookinfo-box d-flex">
 			<div class="bookinfo-profile ml-3 mt-3">
 				<img class="profile" src="${book.imagePath }" >
 			</div>

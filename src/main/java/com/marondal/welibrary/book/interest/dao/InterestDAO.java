@@ -17,6 +17,8 @@ public interface InterestDAO {
 	//관심도서 조회
 	public List<InterestBook> selectInterestList(@Param("userId")int userId);
 	
+	//관심도서 갯수
+	
 	
 	//관심도서 삭제 
 	public int deleteInterest(@Param("id") int id);
