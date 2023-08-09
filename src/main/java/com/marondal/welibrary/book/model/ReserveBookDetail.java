@@ -1,6 +1,6 @@
 package com.marondal.welibrary.book.model;
 
-public class BorrowBookDetail {
+public class ReserveBookDetail {
 	private int id;
 	private int userId;
 	private int bookId;
@@ -78,5 +78,6 @@ public class BorrowBookDetail {
 	public void setAppendix(String appendix) {
 		this.appendix = appendix;
 	}
+	
 	
 }

@@ -206,8 +206,7 @@
 			var keywords = search.split(" ");// // 검색어를 공백으로 분리하여 각 단어를 배열로 저장
 			 
 			var result = []; //검색어를 저장할 배열
-	 			
-			
+		
 			var data = [];
 			
 			let search = $("#searchInput").val();

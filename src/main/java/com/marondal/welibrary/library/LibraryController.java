@@ -39,6 +39,9 @@ public class LibraryController {
 		List<Book> bookList = bookBO.getBookListByTitle(title);
 		model.addAttribute("bookList", bookList);
 		
+//		Book book = bookBO.getBookById(id);
+//		model.addAttribute("book", book);
+		
 		
 		return "library/list";
 	}

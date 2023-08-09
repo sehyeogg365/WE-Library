@@ -41,7 +41,7 @@
 				
 				
 				<div class="search d-flex justify-content-center col-9">
-		             <input type="text" value="" placeholder="검색어 입력" id="searchInput"class="form-control" name="title">
+		             <input type="text" value=" " placeholder="검색어 입력" id="searchInput"class="form-control" name="title">
 		             <div class="input-group-append">
 		                <button type="submit" id="searchBtn" class="btn">검색</button>
 		             </div>
@@ -95,9 +95,9 @@
 							대출가능 도서 대출 불가 
 						</div>
 						<div class="mr-2">	
-							<button class="btn btn-danger btn-sm reserveBtn"><i class="bi bi-journal-arrow-down"></i>도서 예약신청</button>
-							<button class="btn btn-success btn-sm interibraryAddBtn"><i class="bi bi-shuffle"></i>상호대차 신청</button> 
-							<button class="btn btn-primary btn-sm interestAddBtn"><i class="bi bi-download"></i>관심도서 담기</button>
+							<button class="btn btn-danger btn-sm reserveBtn" data-book-id="${book.id }"><i class="bi bi-journal-arrow-down"></i>도서 예약신청</button>
+							<button class="btn btn-success btn-sm interibraryAddBtn" data-book-id="${book.id }"><i class="bi bi-shuffle"></i>상호대차 신청</button> 
+							<button class="btn btn-primary btn-sm interestAddBtn" data-book-id="${book.id }"><i class="bi bi-download"></i>관심도서 담기</button>
 						</div>
 					</div>
 				</div>
@@ -153,19 +153,25 @@
 		  }); 
 		 
          $(".reserveBtn").on("click", function(){
+        	 let id = $(this).data("book-id");
+        	 
         	 
          });
          
          
          
          $(".interibraryAddBtn").on("click", function(){
+        	 let id = $(this).data("book-id");
+        	 
         	 
          });
          
          
          
          $(".interestAddBtn").on("click", function(){
-        	 let id = $("#")
+        	 let id = $(this).data("book-id");
+        	 
+        	 
          });
          
         

@@ -86,8 +86,6 @@ public class WishBookBO {
 			return wishbookDetailList;
 			
 		}
-		// 희망도서 갯수 표시
-		
 		
 		
 		

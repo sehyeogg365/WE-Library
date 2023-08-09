@@ -6,6 +6,7 @@ import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import com.marondal.welibrary.book.model.InterestBook;
+import com.marondal.welibrary.book.model.InterestBookCount;
 
 @Repository
 public interface InterestDAO {
@@ -18,8 +19,10 @@ public interface InterestDAO {
 	public List<InterestBook> selectInterestList(@Param("userId")int userId);
 	
 	//관심도서 갯수
-	
+	public InterestBookCount selectInterestBookNumberByuserId(@Param("userId") int userId);
 	
 	//관심도서 삭제 
 	public int deleteInterest(@Param("id") int id);
+
+
 }

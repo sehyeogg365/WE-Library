@@ -1,6 +1,6 @@
 package com.marondal.welibrary.book.model;
 
-public class InterestBookCount {
+public class ReserveBookCount {
 	private int id;
 	private int userId;
 	private int numberCount;
