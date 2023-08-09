@@ -32,7 +32,7 @@
 			</div>
 		
 		
-		<div class="searchbox bg-success">
+		<div class="searchbox ">
 			<form action="/library/list/view" method="get" class=""><!-- bootstrap input group 검색 -->
 			<nav class="bg-primary booksearch-nav d-flex justify-content-center align-items-center col-10">
 				<div class="text-white col-2">
@@ -40,14 +40,15 @@
 				</div>
 				
 				
-				<div class="search d-flex justify-content-center col-8">
-		             <input type="text" value="" placeholder="검색어 입력" class="form-control" name="title">
+				<div class="search d-flex justify-content-center col-9">
+		             <input type="text" value="" placeholder="검색어 입력" id="searchInput"class="form-control" name="title">
 		             <div class="input-group-append">
-		                <button type="submit" class="btn">검색</button>
+		                <button type="submit" id="searchBtn" class="btn">검색</button>
 		             </div>
 		        </div>
 		         
 		    </nav> 
+		    <hr style="border: solid 1px;">
 		   		<div class="mt-3 library-selectbox bg-secondary col-10">
 		   		<label class=""><input type="checkbox" id="allCheck" class="mr-2">전체 선택</label> <br>
 		   		<hr>
@@ -122,6 +123,20 @@
 	<script>
 	$(document).ready(function(){
 		
+		 $("#searchBtn").on("click", function(){
+	 			
+	 			
+	 		let search = $("#searchInput").val();
+	 			
+	 		if(search == ""){
+	 			alert("검색어를 입력하세요.");
+	 			return ;
+	 		}
+	 			
+	 			
+	 	});
+	            
+		
 		
 		var chkList = $("input[name = check]");
 		 $("#allCheck").on("change", function() {
@@ -132,6 +147,8 @@
                 $("input[name='check']").prop("checked", false);
             }
             
+		  }); 
+		 
          $(".reserveBtn").on("click", function(){
         	 
          });
@@ -145,13 +162,13 @@
          
          
          $(".interestAddBtn").on("click", function(){
-        	 
+        	 let id = $("#")
          });
          
         
+       
          
-            
-        });
+      
 		
 		
 	});

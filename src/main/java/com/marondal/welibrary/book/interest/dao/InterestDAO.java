@@ -19,5 +19,5 @@ public interface InterestDAO {
 	
 	
 	//관심도서 삭제 
-	
+	public int deleteInterest(@Param("id") int id);
 }

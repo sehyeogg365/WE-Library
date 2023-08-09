@@ -40,9 +40,9 @@
 				
 				<form action="/library/list/view" method="get" class="col-9"><!-- bootstrap input group 검색 -->
 					<div class="search d-flex justify-content-center">
-		                <input type="text" value="" placeholder="도서명 또는 저자명을 입력해주세요" class="form-control" name="title">
+		                <input type="text" value="" placeholder="도서명 또는 저자명을 입력해주세요" id ="searchInput" class="form-control" name="title">
 		                <div class="input-group-append">
-		                	<button type="submit" class="btn">검색</button>
+		                	<button type="submit" id="searchBtn" class="btn">검색</button>
 		                </div>
 		            </div>
 		         </form>
@@ -199,6 +199,18 @@
 	</style>
 	<script>
 	$(document).ready(function(){
+		
+		
+		$("#searchBtn").on("click", function(){
+			
+			
+			let search = $("#searchInput").val();
+			
+			if(search == ""){
+				alert("검색어를 입력하세요.");
+				return ;
+			}
+		});
 		
 		$("#loginBtn").on("click", function(){
 			let id = $("#loginIdInput").val();

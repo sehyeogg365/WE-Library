@@ -45,7 +45,12 @@
   
   
   <!-- 관심도서 삭제 -->
+  <delete id="deleteInterest" parameterType="int">
+  	DELETE
+  	FROM `interest_book`
+  	WHERE `id` = #{id}
   
+  </delete>
   
   
   </mapper>
