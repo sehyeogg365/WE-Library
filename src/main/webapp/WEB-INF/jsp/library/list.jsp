@@ -172,6 +172,30 @@
         	 let id = $(this).data("book-id");
         	 
         	 
+        	 alert(id);
+        	 
+        	 $.ajax({
+        	
+        		 type:"post"
+        		 , url:"/book/interest/create"
+        		 , data :{"bookId":id}
+        	 	 , success:function(data){
+        	 		 if(data.result =="success"){
+        	 			 alert("추가 성공");
+        	 		 } else {
+        	 			 alert("추가 실패")
+        	 		 }
+        	 	 }
+        	 	 , error:function(){
+        	 		 alert("추가 에러");
+        	 	 }
+        	 	 
+        	 });
+        	 
+        	 
+        	 
+        	 
+        	 
          });
          
         
