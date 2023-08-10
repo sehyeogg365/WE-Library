@@ -26,7 +26,64 @@
 		<c:import url="/WEB-INF/jsp/include/header.jsp"/>
 		<section class="contents d-flex justify-content-center">
 		
+		<div class="mybookinfo-page">
 		
+		<div class="sub-profile bg-secondary">
+			
+
+			<img class="profile" width="1000px" height="200px" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FlAG5Z%2Fbtsnhr3rPGd%2FKeJ2kZ3AGgbzql1R1aDdr1%2Fimg.jpg" alt="메인로고 사진">
+			
+			
+			<div class="sub-text ">
+				<h2 class="text-center text-white mt-3"><b>관심도서 조회</b></h2>
+			</div>
+		</div>
+		
+		<div class="d-flex mx-5">
+		<c:import url="/WEB-INF/jsp/include/sidenav2.jsp"/>
+		
+		<div class="col-9 ">
+		
+			<div class="">
+				<div class="mt-3 d-flex text-secondary">
+						관심도서 신청 :&nbsp<div class="text-primary"> 1 </div>건
+				</div>
+					
+					
+					<!-- hr 부터 div 까지 반복문 -->
+					<c:forEach var="interestbook" items="${interestDetailList }">
+					<hr>
+					
+					<div class="">
+							
+						
+							<div class="">
+								<h5>${interestbook.title }</h5>
+							</div>
+							<div class="text-secondary">
+								저자 : ${interestbook.author } | 출판사 : ${interestbook.publisher } | ISBN : ${interestbook.isbn }
+							</div>
+							<div class="text-secondary">
+								도서관 : ${interestbook.library } | 추가날짜 : ${interestbook.createdAt }
+							</div>
+							<div class="text-secondary">
+								<button class="btn btn-danger btn-sm deleteBtn" data-interest-id="${interestbook.id }"><i class="bi bi-x-circle"></i>관심도서 삭제</button>
+							</div>
+					</div>
+					
+					</c:forEach>
+					<hr>
+			</div>
+		
+			
+		
+		</div>
+		
+		
+		</div>
+		
+		
+		</div>
 		
 		</section>
 	

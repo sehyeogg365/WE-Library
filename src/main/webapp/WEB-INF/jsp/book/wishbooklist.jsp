@@ -60,7 +60,7 @@
 								저자 : ${wishbook.author } | 출판사 : ${wishbook.publisher } | ISBN : ${wishbook.isbn }
 							</div>
 							<div class="text-secondary">
-								도서관 : ${wishbook.library }
+								도서관 : ${wishbook.library } | 신청일 : ${wishbook.createdAt }
 							</div>
 							<div class="text-secondary">
 								상태 : 소장중 or 신청중
@@ -73,7 +73,7 @@
 			
 		
 			<div class="text-center">
-				<a href="/book/wishbook/add/view?userId=${userId }" class="btn btn-primary	">희망도서 신청하기</a>
+				<a href="/book/wishbook/add/view?id=${userId }" class="btn btn-primary	">희망도서 신청하기</a>
 			</div>
 		</div>
 		
