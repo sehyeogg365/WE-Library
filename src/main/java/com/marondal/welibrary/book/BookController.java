@@ -14,7 +14,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.marondal.welibrary.book.bo.BookBO;
 import com.marondal.welibrary.book.dao.BookDAO;
 import com.marondal.welibrary.book.interest.bo.InterestBO;
+import com.marondal.welibrary.book.interest.bo.InterestCountBO;
 import com.marondal.welibrary.book.model.Book;
+import com.marondal.welibrary.book.model.InterestBookCount;
 import com.marondal.welibrary.book.model.InterestBookDetail;
 import com.marondal.welibrary.book.model.WishBook;
 import com.marondal.welibrary.book.model.WishBookCount;
@@ -44,6 +46,9 @@ public class BookController {
 	
 	@Autowired
 	private InterestBO interestBO;
+	
+	@Autowired
+	private InterestCountBO interestCountBO;
 	
 	
 	
@@ -106,6 +111,9 @@ public class BookController {
 		
 		model.addAttribute("interestDetailList", interestDetailList);
 		
+		
+		InterestBookCount interestbookcount = interestCountBO.getInterestBookNumberByuserId(userId);
+		model.addAttribute("interestbookcount", interestbookcount);
 		//여기서 관심도서개수 추가
 		
 		return "book/interestbooklist";

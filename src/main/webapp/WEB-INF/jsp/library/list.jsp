@@ -90,11 +90,11 @@
 					<div class="text-secondary">
 						도서관 : 역삼도서관 | 부록 : ${book.appendix }
 					</div>
-					<div class="bg-info book-status text-secondary d-flex justify-content-between">
-						<div class="">
-							대출가능 도서 대출 불가 
+					<div class=" book-status text-secondary d-flex justify-content-between">
+						<div class=""><!-- 대출중일때 대출불가 예약 -->
+							<button class="btn btn-info btn-sm borrowBtn" data-book-id="${book.id }"><i class="bi bi-bookmark-plus"></i>대출하기</button>
 						</div>
-						<div class="mr-2">	
+						<div class="mr-2">	<!-- 대출가능일때 예약불가 --><!-- 상호대차중일때 상호대차불가 -->
 							<button class="btn btn-danger btn-sm reserveBtn" data-book-id="${book.id }"><i class="bi bi-journal-arrow-down"></i>도서 예약신청</button>
 							<button class="btn btn-success btn-sm interibraryAddBtn" data-book-id="${book.id }"><i class="bi bi-shuffle"></i>상호대차 신청</button> 
 							<button class="btn btn-primary btn-sm interestAddBtn" data-book-id="${book.id }"><i class="bi bi-download"></i>관심도서 담기</button>
@@ -167,6 +167,13 @@
          });
          
          
+         $(".borrowBtn").on("click", function(){
+        	 let id = $(this).data("book-id");
+        	 
+        	 alert(id);
+        	 
+        	 
+         });
          
          $(".interestAddBtn").on("click", function(){
         	 let id = $(this).data("book-id");

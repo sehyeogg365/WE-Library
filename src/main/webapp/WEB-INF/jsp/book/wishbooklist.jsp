@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>        
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>     
 <!DOCTYPE html>
 <html>
 <head>
@@ -60,7 +61,7 @@
 								저자 : ${wishbook.author } | 출판사 : ${wishbook.publisher } | ISBN : ${wishbook.isbn }
 							</div>
 							<div class="text-secondary">
-								도서관 : ${wishbook.library } | 신청일 : ${wishbook.createdAt }
+								도서관 : ${wishbook.library } | 신청일 : <fmt:formatDate value ="${wishbook.createdAt }" pattern ="yyyy-MM-dd"/>
 							</div>
 							<div class="text-secondary">
 								상태 : 소장중 or 신청중

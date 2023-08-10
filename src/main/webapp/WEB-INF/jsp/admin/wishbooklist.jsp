@@ -202,15 +202,15 @@
 				}
 				
 	
-				alert(title);
-				alert(library);
-				alert(file);
-				alert(author);
-				alert(publisher);
-				alert(price);
-				alert(isbn);
-				alert(pubyear);
-				alert(appendix);
+				//alert(title);
+				//alert(library);
+				//alert(file);
+				//alert(author);
+				//alert(publisher);
+				//alert(price);
+				//alert(isbn);
+				//alert(pubyear);
+				//alert(appendix);
 				
 				var formData = new FormData();
 				formData.append("title", title);

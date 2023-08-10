@@ -143,7 +143,7 @@ public class BookRestController {
 		
 		int userId = (Integer) session.getAttribute("userId");
 		
-		int count = interestBO.addInterest(userId, id);
+		int count = interestBO.deleteInterest(id);
 		
 		Map<String, String> resultMap = new HashMap<>();
 		

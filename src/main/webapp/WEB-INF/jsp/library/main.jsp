@@ -203,11 +203,11 @@
 		
 		$("#searchBtn").on("click", function(){
 			
-			var keywords = search.split(" ");// // 검색어를 공백으로 분리하여 각 단어를 배열로 저장
+			//var keywords = search.split(" ");// // 검색어를 공백으로 분리하여 각 단어를 배열로 저장
 			 
-			var result = []; //검색어를 저장할 배열
+			//var result = []; //검색어를 저장할 배열
 		
-			var data = [];
+			//var data = [];
 			
 			let search = $("#searchInput").val();
 			
@@ -217,37 +217,34 @@
 			}
 			
 			
-			for (var i = 0; i < data.length; i++) {
+			//for (var i = 0; i < data.length; i++) {
 
-				var match = true;
+			//	var match = true;
 
-				for (var j = 0; j < keywords.length; j++) {
+			//	for (var j = 0; j < keywords.length; j++) {
 
 				// 대소문자 구분 없이 검색하기 위해 소문자로 변환 후 비교
 
-					if (data[i].toLowerCase().indexOf(keywords[j].toLowerCase()) === -1) {
+			//		if (data[i].toLowerCase().indexOf(keywords[j].toLowerCase()) === -1) {
 	
-					match = false;
+			//		match = false;
 	
-					break;
+			//		break;
 	
-					}
+			//		}
 
-				}
+			//	}
 
-				if (match) {
+			//	if (match) {
+
+				//	results.push(data[i]);
 	
-					results.push(data[i]);
-	
-				}
+			//	}
 
-				}
+			//	}
+​
 
-				​
-
-				return results;
-			
-			
+			//	return results;
 			
 			
 		});
@@ -285,11 +282,8 @@
 			,error:function(){
 				alert("로그인 에러");
 			}
-				
-				
 			
-			
-		});
+			});
 		
 		
 		

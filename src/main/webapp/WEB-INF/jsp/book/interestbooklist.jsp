@@ -64,7 +64,7 @@
 								저자 : ${interestbook.author } | 출판사 : ${interestbook.publisher } | ISBN : ${interestbook.isbn }
 							</div>
 							<div class="text-secondary">
-								도서관 : ${interestbook.library } | 추가날짜 : ${interestbook.createdAt }
+								도서관 : ${interestbook.library } | 추가날짜 : <fmt:formatDate value="${interestbook.createdAt }" pattern="yyyy-MM-dd"/>
 							</div>
 							<div class="text-secondary">
 								<button class="btn btn-danger btn-sm deleteBtn" data-interest-id="${interestbook.id }"><i class="bi bi-x-circle"></i>관심도서 삭제</button>
@@ -91,7 +91,45 @@
 	
 		<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
 	</div>
-
+	<script>
+		$(document).ready(function(){
+			
+			$(".deleteBtn").on("click", function(){
+				
+				let id = $(this).data("interest-id");
+				
+				
+				alert(id);
+				$.ajax({
+					
+					type:"get"
+					, url:"/book/interest/delete"
+					, data:{"id":id}
+					, success:function(data){
+						if(data.result == "success"){
+							alert("삭제 성공");
+							location.reload();
+							
+						} else {
+							alert("삭제 실패")
+						}
+					}
+					, error:function(){
+						alert("삭제 에러");
+					}
+					
+					
+				});
+				
+				
+				
+			});
+			
+			
+		});
+	
+	
+	</script>
 
 
 
