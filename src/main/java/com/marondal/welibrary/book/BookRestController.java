@@ -168,10 +168,24 @@ public class BookRestController {
 											, HttpSession session
 											){
 		
+		int userId = (Integer) session.getAttribute("userId");
+		
+		int count = borrowBO.addBorrow(userId, bookId);
+		
+		Map<String, String> resultMap = new HashMap<>();
+		
+		if(count == 1) {
+			
+			resultMap.put("result", "success");
+			
+		} else {
+			
+			resultMap.put("result", "fail");
+			
+		}
 		
 		
-		
-		return null;
+		return resultMap;
 		
 		
 	}

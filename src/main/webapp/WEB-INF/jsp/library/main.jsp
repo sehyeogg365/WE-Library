@@ -279,9 +279,9 @@
 						alert("아이디/비밀번호가 일치하지 않습니다.");
 					}
 				}
-			,error:function(){
-				alert("로그인 에러");
-			}
+				,error:function(){
+					alert("로그인 에러");
+				}
 			
 			});
 		

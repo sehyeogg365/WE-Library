@@ -5,8 +5,46 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
   
-   <mapper namespace="com.marondal.welibrary.book.wishbook.dao.WishBookDAO">
+   <mapper namespace="com.marondal.welibrary.book.borrow.dao.BorrowDAO">
    
+   <!-- 대여 -->
+   <insert id ="insertBorrow" parameterType="int" >
+   	INSERT INTO
+   		`borrow_book`
+   		(
+   			`userId`
+  			, `bookId`
+  			, `createdAt` 
+		    , `updatedAt`
+   		)
+   		VALUES
+   		(
+   			#{userId}
+   			, #{bookId}
+   			, now()
+   			, now()
+   		
+   		)
+   		
+   
+   </insert>
+   <!-- 대출목록 -->
+   <select id ="selectBorrowList" resultType="com.marondal.welibrary.book.model.BorrowBook">
+   	SELECT
+   		`id`
+   		, `userId`
+   		, `bookId`
+   	FROM
+   		`borrow_book`
+   	WHERE
+   		`userId` = #{userId}
+   	ORDER BY
+  		`id` DESC;
+   </select>
+   
+   <!-- 대출도서 갯수 -->
+   
+   <!-- 반납 -->
    
    
    
