@@ -48,7 +48,7 @@
 								<li class="nav-item"><h5><a href="/book/borrowstatus/view?id=${userId }" class="nav-link text-dark font-weight-bold">대출현황</a></h5></li>
 								<li class="nav-item"><h5><a href="/book/reservelist/view?id=${userId }" class="nav-link text-dark font-weight-bold">예약현황</a></h5></li>
 								<li class="nav-item"><h5><a href="#" class="nav-link text-dark font-weight-bold">대출이력</a></h5></li>
-								<li class="nav-item"><h5><a href="/book/interibrarylist/view?id=${userId }" class="nav-link text-dark font-weight-bold">상호대차</a></h5></li>
+								<li class="nav-item"><h5><a href="/book/interibrarybooklist/view?id=${userId }" class="nav-link text-dark font-weight-bold">상호대차</a></h5></li>
 							</ul>
 						</nav>
 						
@@ -68,35 +68,11 @@
 								도서관 : 역삼푸른솔도서관
 							</div>
 							<div class="">
-								상태 : 반납 | 대출일 : 2023.06.13 | 반납일 : 2023.06.27
+								상태 : 반납 | 대출일 : 2023.06.13 | 반납예정일 : 2023.06.27
 							</div>
 						</div>
-						<hr>
-						<hr>
-						<div class="">
-							<div class="">
-								<h5>신입사원 제대로 미쳐라.</h5>
-							</div>
-							<div class="">
-								도서관 : 역삼푸른솔도서관
-							</div>
-							<div class="">
-								상태 : 반납 대출일 : 2023.06.13 | 반납일 : 2023.06.27
-							</div>
-						</div>
-						<hr>
-						<hr>
-						<div class="">
-							<div class="">
-								<h5>신입사원 제대로 미쳐라.</h5>
-							</div>
-							<div class="">
-								도서관 : 역삼푸른솔도서관
-							</div>
-							<div class="">
-								상태 : 반납 대출일 : 2023.06.13 | 반납일 : 2023.06.27
-							</div>
-						</div>
+						
+						
 						<hr>
 					
 					</div><br>

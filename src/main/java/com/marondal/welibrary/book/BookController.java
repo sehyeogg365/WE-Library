@@ -52,17 +52,7 @@ public class BookController {
 	
 	
 	
-	@GetMapping("/borrowstatus/view")
-	public String borrowStatus(Model model
-			, @RequestParam("id") int id) {
-			
-		User user = userBO.getUserInfo(id); 
-		
-		model.addAttribute("user", user);
-		
-		return "book/borrowstatus";
-		
-	}
+	
 	
 	@GetMapping("/wishbook/list/view")
 	public String wishbookList(Model model
@@ -117,6 +107,33 @@ public class BookController {
 		//여기서 관심도서개수 추가
 		
 		return "book/interestbooklist";
+	}
+	
+	@GetMapping("/borrowstatus/view")
+	public String borrowStatus(Model model
+			, @RequestParam("id") int id) {
+			
+		User user = userBO.getUserInfo(id); 
+		
+		model.addAttribute("user", user);
+		
+		return "book/borrowstatus";
+		
+	}
+	
+	@GetMapping("/reservelist/view")
+	public String reserveList(Model model
+			, @RequestParam("id") int id) {
+		
+		User user = userBO.getUserInfo(id); 
+		
+		model.addAttribute("user", user);
+		
+		
+		return "book/reservelist";
+		
+		
+		
 	}
 	
 	@GetMapping("/interibrarybooklist/view")
