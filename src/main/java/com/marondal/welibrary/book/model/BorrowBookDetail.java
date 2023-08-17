@@ -1,5 +1,7 @@
 package com.marondal.welibrary.book.model;
 
+import java.util.Date;
+
 public class BorrowBookDetail {
 	private int id;
 	private int userId;
@@ -12,6 +14,7 @@ public class BorrowBookDetail {
 	private String isbn;
 	private int pubyear;
 	private String appendix;
+	private Date createdAt;
 	public int getId() {
 		return id;
 	}
@@ -78,5 +81,13 @@ public class BorrowBookDetail {
 	public void setAppendix(String appendix) {
 		this.appendix = appendix;
 	}
+	public Date getCreatedAt() {
+		return createdAt;
+	}
+	public void setCreatedAt(Date createdAt) {
+		this.createdAt = createdAt;
+	}
+	
+	
 	
 }

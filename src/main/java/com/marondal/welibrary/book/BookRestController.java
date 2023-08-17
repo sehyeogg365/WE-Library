@@ -162,6 +162,24 @@ public class BookRestController {
 		
 	}
 	
+	//대여
+	@PostMapping("/borrow")
+	public Map<String, String> borrowCreate(@RequestParam("bookId") int bookId
+											, HttpSession session
+											){
+		
+		
+		
+		
+		return null;
+		
+		
+	}
+	
+	//반납
+	
+	
+	
 	
 	
 	
