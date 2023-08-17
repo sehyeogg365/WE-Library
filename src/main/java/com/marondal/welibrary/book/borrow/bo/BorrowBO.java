@@ -45,22 +45,23 @@ public class BorrowBO {
 			borrowBookDetail.setId(borrowBook.getId());
 			borrowBookDetail.setUserId(borrowBook.getUserId());
 			borrowBookDetail.setBookId(borrowBook.getBookId());
+			//borrowBookDetail.setImagePath(book.getImagePath());
+			borrowBookDetail.setLibrary(book.getLibrary());
+			borrowBookDetail.setTitle(book.getTitle());
+			//borrowBookDetail.setIsbn(book.getIsbn());
+			borrowBookDetail.setAuthor(book.getAuthor());
+			//borrowBookDetail.setPubyear(book.getPubyear());
+			borrowBookDetail.setPublisher(book.getPublisher());
+			//borrowBookDetail.setAppendix(book.getAppendix());
+			borrowBookDetail.setCreatedAt(borrowBook.getCreatedAt());
 			
+			borrowDetailList.add(borrowBookDetail);
+		}	
 		
+
+		return borrowDetailList;
 		
-		
-		}
-		
-		
-		
-		
-		
-		
-		
-		return null;
-		
-		
-		
+	
 	}
 	
 	//반납

@@ -8,12 +8,8 @@ public class BorrowBookDetail {
 	private int bookId;
 	private String library;
 	private String title;
-	private String imagePath;
 	private String author;
 	private String publisher;
-	private String isbn;
-	private int pubyear;
-	private String appendix;
 	private Date createdAt;
 	public int getId() {
 		return id;
@@ -45,12 +41,6 @@ public class BorrowBookDetail {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	public String getImagePath() {
-		return imagePath;
-	}
-	public void setImagePath(String imagePath) {
-		this.imagePath = imagePath;
-	}
 	public String getAuthor() {
 		return author;
 	}
@@ -62,24 +52,6 @@ public class BorrowBookDetail {
 	}
 	public void setPublisher(String publisher) {
 		this.publisher = publisher;
-	}
-	public String getIsbn() {
-		return isbn;
-	}
-	public void setIsbn(String isbn) {
-		this.isbn = isbn;
-	}
-	public int getPubyear() {
-		return pubyear;
-	}
-	public void setPubyear(int pubyear) {
-		this.pubyear = pubyear;
-	}
-	public String getAppendix() {
-		return appendix;
-	}
-	public void setAppendix(String appendix) {
-		this.appendix = appendix;
 	}
 	public Date getCreatedAt() {
 		return createdAt;
