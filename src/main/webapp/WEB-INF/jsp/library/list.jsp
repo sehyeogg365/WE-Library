@@ -88,7 +88,7 @@
 					ISBN : ${book.isbn }
 					</div>
 					<div class="text-secondary">
-						도서관 : 역삼도서관 | 부록 : ${book.appendix }
+						도서관 : ${book.library } | 부록 : ${book.appendix }
 					</div>
 					<div class=" book-status text-secondary d-flex justify-content-between">
 						<div class=""><!-- 대출중일때 대출불가 예약 -->
@@ -103,9 +103,9 @@
 				</div>
 				
 			</div>
-			<hr>
-			</c:forEach>
 			
+			</c:forEach>
+			<hr>
 			
 		</div>
 		
@@ -171,6 +171,28 @@
         	 let id = $(this).data("book-id");
         	 
         	 alert(id);
+        	 
+        	 $.ajax({
+        	
+        		 type:"post"
+        		 , url:"/book/borrow/create"
+        		 , data:{"bookId":id}
+        	 	 , success:function(data){
+        	 		 if(data.result == "success"){
+        	 			alert("대출 성공")
+        	 		 } else {
+        	 			alert("대출 실패")
+        	 			 
+        	 		 }
+        	 		 
+        	 	 }
+        	 	 , error:function(){
+        	 		 alert("대출 에러");
+ 
+        	 	 }
+        		 
+        	 });
+        	 
         	 
         	 
          });

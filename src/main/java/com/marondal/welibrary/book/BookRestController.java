@@ -163,7 +163,7 @@ public class BookRestController {
 	}
 	
 	//대여
-	@PostMapping("/borrow")
+	@PostMapping("/borrow/create")
 	public Map<String, String> borrowCreate(@RequestParam("bookId") int bookId
 											, HttpSession session
 											){

@@ -12,10 +12,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.marondal.welibrary.book.bo.BookBO;
+import com.marondal.welibrary.book.borrow.bo.BorrowBO;
+import com.marondal.welibrary.book.borrow.bo.BorrowCountBO;
 import com.marondal.welibrary.book.dao.BookDAO;
 import com.marondal.welibrary.book.interest.bo.InterestBO;
 import com.marondal.welibrary.book.interest.bo.InterestCountBO;
 import com.marondal.welibrary.book.model.Book;
+import com.marondal.welibrary.book.model.BorrowBookCount;
+import com.marondal.welibrary.book.model.BorrowBookDetail;
 import com.marondal.welibrary.book.model.InterestBookCount;
 import com.marondal.welibrary.book.model.InterestBookDetail;
 import com.marondal.welibrary.book.model.WishBook;
@@ -50,8 +54,11 @@ public class BookController {
 	@Autowired
 	private InterestCountBO interestCountBO;
 	
+	@Autowired
+	private BorrowBO borrowBO;
 	
-	
+	@Autowired
+	private BorrowCountBO borroCountBO;
 	
 	
 	@GetMapping("/wishbook/list/view")
@@ -111,11 +118,17 @@ public class BookController {
 	
 	@GetMapping("/borrowstatus/view")
 	public String borrowStatus(Model model
-			, @RequestParam("id") int id) {
+			, @RequestParam("id") int id
+			, HttpSession session) {
 			
+		int userId = (Integer)session.getAttribute("userId");
+		
 		User user = userBO.getUserInfo(id); 
 		
 		model.addAttribute("user", user);
+		
+		List<BorrowBookDetail> borrowDetailList = borrowBO.getBorrowList(userId);
+		model.addAttribute("borrowDetailList", borrowDetailList);
 		
 		return "book/borrowstatus";
 		

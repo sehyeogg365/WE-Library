@@ -25,9 +25,9 @@
 			
 			<div class="mybookinfo-page">
 				<div class="sub-profile bg-secondary">
-					
+					<div class="img-box">
 						<img class="profile" width="1000px" height="200px" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FlAG5Z%2Fbtsnhr3rPGd%2FKeJ2kZ3AGgbzql1R1aDdr1%2Fimg.jpg" alt="메인로고 사진">
-					
+					</div>
 					<div class="sub-text ">
 						<h2 class="text-center text-white mt-3"><b>대출 현황</b></h2>
 					</div>
@@ -58,20 +58,27 @@
 						<div class="mt-3 d-flex ">
 							 대출현황 : &nbsp<div class="text-primary">3</div>건
 						</div>
-							
+						<c:forEach var="borrow" items="${borrowDetailList }">	
 						<hr>
-						<div class="">
+						<div class="d-flex justify-content-between ">
+						<div class="bg-danger col-9">
 							<div class="">
-								<h5>신입사원 제대로 미쳐라.</h5>
+								<h5>${borrow.title }</h5>
 							</div>
 							<div class="">
-								도서관 : 역삼푸른솔도서관
+								도서관 : ${borrow.library }
 							</div>
 							<div class="">
-								상태 : 반납 | 대출일 : 2023.06.13 | 반납예정일 : 2023.06.27
+								상태 : 반납 | 대출일 : ${borrow.createdAt }| 반납예정일 : 2023.06.27
 							</div>
 						</div>
 						
+						<div class="bg-info">
+							<button id="borrowdeleteBtn" class="btn btn-primary my-3" data-book-id="${borrow.bookId }">반납하기</button>
+						</div>
+						</div>
+						
+						</c:forEach>
 						
 						<hr>
 					
