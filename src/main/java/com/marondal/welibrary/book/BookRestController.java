@@ -191,6 +191,32 @@ public class BookRestController {
 	}
 	
 	//반납
+	@GetMapping("/borrow/delete")
+	public Map<String, String> borrowDelete(@RequestParam("bookId") int bookId
+											, HttpSession session
+											){
+		
+		int userId = (Integer) session.getAttribute("userId");
+		
+		int count = borrowBO.deleteBorrow(userId, bookId);
+		
+
+		Map<String, String> resultMap = new HashMap<>();
+		
+		if(count == 1) {
+			
+			resultMap.put("result", "success");
+			
+		} else {
+			
+			resultMap.put("result", "fail");
+			
+		}
+
+
+		return resultMap;
+		
+	}
 	
 	
 	

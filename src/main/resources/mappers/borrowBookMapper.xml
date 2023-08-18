@@ -8,7 +8,7 @@
    <mapper namespace="com.marondal.welibrary.book.borrow.dao.BorrowDAO">
    
    <!-- 대여 -->
-   <insert id ="insertBorrow" parameterType="int" >
+   <insert id ="insertBorrow" parameterType="map" >
    	INSERT INTO
    		`borrow_book`
    		(
@@ -29,7 +29,7 @@
    
    </insert>
    <!-- 대출목록 -->
-   <select id ="selectBorrowList" resultType="com.marondal.welibrary.book.model.BorrowBook">
+   <select id ="selectBorrowList" resultType="com.marondal.welibrary.book.model.BorrowBook" parameterType="map">
    	SELECT
    		`id`
    		, `userId`
@@ -45,7 +45,16 @@
    <!-- 대출도서 갯수 -->
    
    <!-- 반납 -->
+   <delete id = "deleteBorrow" parameterType="map">
+   	DELETE 
+   	FROM
+   		`borrow_book`
+   	WHERE
+   		`bookId`=#{bookId}
+   		AND
+   		`userId`=#{userId}
    
+   </delete>
    
    
    </mapper>

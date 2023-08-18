@@ -22,6 +22,7 @@ public interface BorrowDAO {
 	public BorrowBookCount selectBorrowBookNumberByuserId(@Param("userId") int userId);
 	
 	//반납
+	public int deleteBorrow(@Param("userId") int userId, @Param("bookId") int bookId);
 
 	
 }

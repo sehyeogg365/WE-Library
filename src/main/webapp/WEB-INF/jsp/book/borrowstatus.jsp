@@ -69,12 +69,12 @@
 								도서관 : ${borrow.library }
 							</div>
 							<div class="">
-								상태 : 반납 | 대출일 : ${borrow.createdAt }| 반납예정일 : 2023.06.27
+								상태 : 반납 | 대출일 : ${borrow.createdAt }| 반납예정일 : ${borrow.createdAt }
 							</div>
 						</div>
 						
 						<div class="bg-info">
-							<button id="borrowdeleteBtn" class="btn btn-primary my-3" data-book-id="${borrow.bookId }">반납하기</button>
+							<button id="borrowdeleteBtn" class="deleteBtn btn-primary my-3" data-book-id="${borrow.bookId }">반납하기</button>
 						</div>
 						</div>
 						
@@ -100,6 +100,26 @@
 	</div>
 	
 	<script>
+		$(document).ready(function(){
+			
+			$(".deleteBtn").on("click", function(){
+				
+				let id = $(this).data("book-id");
+				
+				$.ajax({
+					
+					type:"get"
+					, url:"/book/borrow/delete"
+					, data :{""}
+				});
+				
+				
+				
+				
+			});
+			
+			
+		});
 		
 	
 	
