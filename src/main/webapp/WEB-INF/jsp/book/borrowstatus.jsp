@@ -74,7 +74,7 @@
 						</div>
 						
 						<div class="bg-info">
-							<button id="borrowdeleteBtn" class="deleteBtn btn-primary my-3" data-book-id="${borrow.bookId }">반납하기</button>
+							<button id="borrowdeleteBtn" class="btn btn-primary btn-sm deleteBtn my-3" data-book-id="${borrow.bookId }">반납하기</button>
 						</div>
 						</div>
 						
@@ -106,11 +106,24 @@
 				
 				let id = $(this).data("book-id");
 				
+				alert(id);
+				
 				$.ajax({
 					
 					type:"get"
 					, url:"/book/borrow/delete"
-					, data :{""}
+					, data :{"bookId":id}
+					, success:function(data){
+						if(data.result== "success"){
+							alert("반납 성공");
+						} else {
+							alert("반납 실패");
+						}
+						
+					}
+					,error:function(){
+						alert("반납 에러");
+					}
 				});
 				
 				
