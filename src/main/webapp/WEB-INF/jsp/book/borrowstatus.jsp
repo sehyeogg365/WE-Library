@@ -61,7 +61,7 @@
 						<c:forEach var="borrow" items="${borrowDetailList }">	
 						<hr>
 						<div class="d-flex justify-content-between ">
-						<div class="bg-danger col-9">
+						<div class="col-9">
 							<div class="">
 								<h5>${borrow.title }</h5>
 							</div>
@@ -73,8 +73,8 @@
 							</div>
 						</div>
 						
-						<div class="bg-info">
-							<button id="borrowdeleteBtn" class="btn btn-primary btn-sm deleteBtn my-3" data-book-id="${borrow.bookId }">반납하기</button>
+						<div class="">
+							<button id="borrowdeleteBtn" class="btn btn-primary btn-sm deleteBtn my-3" data-book-id="${borrow.id }">반납하기</button>
 						</div>
 						</div>
 						
@@ -112,10 +112,11 @@
 					
 					type:"get"
 					, url:"/book/borrow/delete"
-					, data :{"bookId":id}
+					, data :{"id":id}
 					, success:function(data){
 						if(data.result== "success"){
 							alert("반납 성공");
+							location.reload();
 						} else {
 							alert("반납 실패");
 						}

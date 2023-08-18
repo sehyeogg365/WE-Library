@@ -65,9 +65,9 @@ public class BorrowBO {
 	}
 	
 	//반납
-	public int deleteBorrow(int userId, int bookId) {
+	public int deleteBorrow(int userId, int id) {
 		
-		return borrowDAO.deleteBorrow(userId, bookId);
+		return borrowDAO.deleteBorrow(userId, id);
 	}
 	
 }

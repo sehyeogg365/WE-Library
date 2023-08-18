@@ -19,7 +19,10 @@
 	<c:import url="/WEB-INF/jsp/include/header.jsp"/>
 	
 	<section class="contents d-flex justify-content-center">
+		
 		<div class="login-box mt-3">
+			
+		
 			<h2 class="text-center mt-3"><b>로그인</b></h2>
 		
 			<input type="text" id="loginIdInput" placeholder="로그인 ID" class="form-control mt-4">
