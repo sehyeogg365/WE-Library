@@ -209,6 +209,7 @@
 		
 			//var data = [];
 			
+			
 			let search = $("#searchInput").val();
 			
 			if(search == ""){
@@ -217,34 +218,7 @@
 			}
 			
 			
-			//for (var i = 0; i < data.length; i++) {
-
-			//	var match = true;
-
-			//	for (var j = 0; j < keywords.length; j++) {
-
-				// 대소문자 구분 없이 검색하기 위해 소문자로 변환 후 비교
-
-			//		if (data[i].toLowerCase().indexOf(keywords[j].toLowerCase()) === -1) {
-	
-			//		match = false;
-	
-			//		break;
-	
-			//		}
-
-			//	}
-
-			//	if (match) {
-
-				//	results.push(data[i]);
-	
-			//	}
-
-			//	}
-​
-
-			//	return results;
+			
 			
 			
 		});
