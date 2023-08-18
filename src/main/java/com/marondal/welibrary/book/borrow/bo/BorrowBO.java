@@ -67,7 +67,7 @@ public class BorrowBO {
 	//반납
 	public int deleteBorrow(int userId, int bookId) {
 		
-		return borrowDAO.insertBorrow(userId, bookId);
+		return borrowDAO.deleteBorrow(userId, bookId);
 	}
 	
 }
