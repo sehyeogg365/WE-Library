@@ -9,7 +9,7 @@
 <title>Insert title here</title>
 </head>
 	<style>
-	
+		
 	</style>
 <body>
 
@@ -62,7 +62,7 @@
 			$("li").click(function(){
 				
 				$("li").removeClass()
-				
+					$(this).addClass("on");
 				
 			});
 			
