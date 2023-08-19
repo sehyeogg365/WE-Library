@@ -246,8 +246,11 @@
 								alert("추가 실패");
 							
 							} 
+							
 						} else {
+							
 							alert("추가 실패");
+							
 						}
 					}
 					,error:function(){
