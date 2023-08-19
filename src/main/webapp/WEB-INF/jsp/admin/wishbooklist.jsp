@@ -26,7 +26,7 @@
 		<div class="sub-profile bg-secondary">
 			<c:import url="/WEB-INF/jsp/include/subprofile.jsp"/>
 			
-			<div class="sub-text ">
+			<div class="sub-text11 bg-info">
 				<h2 class="text-center text-white mt-3"><b>관리자 희망도서/도서 추가</b></h2>
 			</div>
 		</div>
