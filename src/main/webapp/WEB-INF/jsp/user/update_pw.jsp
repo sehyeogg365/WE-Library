@@ -39,6 +39,9 @@
 				<div class="user-box col-8">
 					<div class="text-center py-4 px-4 ">
 					
+						<div class="d-flex">
+							<label class="mt-4 col-6">기존 비밀번호</label><input type="password" id="oldpasswordInput" placeholder="기존 비밀번호"  class="form-control mt-4 col-6">
+						</div>
 
 						<div class="d-flex">
 							<label class="mt-4 col-6">새 비밀번호</label><input type="password" id="passwordInput" placeholder="새 비밀번호"  class="form-control mt-4 col-6">
@@ -112,6 +115,31 @@
 				
 				
 			});
+			
+			
+			$.ajax({
+				type:"get"
+				, url:"/user/pw_check"
+				, data: {"oldpassword":password}
+				, success:function(data){
+					if(data.result == "success"){
+						//location.href="/user/mypage/view?id=${user.id}";
+						alert("비밀번호 확인 성공");
+						
+					} else {
+						alert("비밀번호 확인 실패");
+						location.reload();
+					}
+				}
+				, error:function(){
+					alert("비밀번호 확인 오류");
+					location.reload();
+				}
+				
+			});
+		
+			
+			
 		});
 		
 		
