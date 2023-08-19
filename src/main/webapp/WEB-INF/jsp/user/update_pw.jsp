@@ -127,7 +127,7 @@
 			$.ajax({
 				type:"get"
 				, url:"/user/pw_check"
-				, data: {"oldpassword":password}
+				, data: {"oldpassword":oldpassword}//password인지 oldpassword인지 헷갈리고 자꾸 비밀번호 확인은 비밀번호 확인 에러가 뜨는상태
 				, success:function(data){
 					if(data.result == "success"){
 						//location.href="/user/mypage/view?id=${user.id}";
@@ -139,7 +139,7 @@
 					}
 				}
 				, error:function(){
-					alert("비밀번호 확인 오류");
+					alert("비밀번호 확인 에러");
 					location.reload();
 				}
 				
