@@ -72,8 +72,14 @@
 		$("#updateBtn").on("click", function(){
 			
 			let id = $(this).data("user-id");
+			let oldpassword = $("#oldpasswordInput").val();
 			let password = $("#passwordInput").val();
 			let passwordConfirm = $("#passwordConfirmInput").val();
+			
+			if(oldpassword == ""){
+				alert("기존 비밀번호를 입력해주세요.");
+				return ;
+			}
 			
 			if(password == ""){
 				alert("비밀번호를 입력해주세요.");
@@ -92,6 +98,7 @@
 			}
 			
 			alert(id);
+			alert(oldpassword);
 			alert(password);
 			alert(passwordConfirm);
 			
