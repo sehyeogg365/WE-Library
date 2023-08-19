@@ -9,7 +9,8 @@
 <title>Insert title here</title>
 </head>
 	<style>
-		
+		.clear{clear:both} 
+		li.on{background-color:blue}
 	</style>
 <body>
 
