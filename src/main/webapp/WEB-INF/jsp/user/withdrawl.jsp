@@ -72,6 +72,7 @@
 			let id = $(this).data("user-id");
 			let password = $("#passwordInput").val();
 			var result = confirm("회원탈퇴 하시겠습니까?");
+			
 			if(password==""){
 				
 				alert("비밀번호를 입력하세요.");
@@ -85,14 +86,21 @@
 				, url :"/user/withdrawl"
 				, data: {"id": id, "password":password}
 				, success:function(data){
-					if(data.result == "success"){
-						alert("회원탈퇴 성공");	
-						location.href="/user/signin/view";
+					
+					if(result){
+						if(data.result == "success"){
+							alert("회원탈퇴 성공");	
+							location.href="/user/signin/view";
+						} else {
+							alert("회원탈퇴 실패");	
+							location.reload();
+							
+						}
 					} else {
 						alert("회원탈퇴 실패");	
 						location.reload();
-						
 					}
+					
 					
 					
 				}
