@@ -15,6 +15,12 @@
 
 	<link rel="stylesheet" href="/static/css/style.css" type="text/css">
 </head>
+<style>
+	.clear{clear:both} 
+	li.on{background-color:blue}
+
+</style>
+
 <body>
 	<div id="wrap" class="">
 	<c:import url="/WEB-INF/jsp/include/header.jsp"/>
@@ -163,6 +169,18 @@
 	</div>
 	<script>
 	$(document).ready(function(){
+		
+		$(function(){
+			
+			$("li").click(function(){
+				
+				$("li").removeClass()
+					$(this).addClass("on");
+				
+			});
+			
+		});
+		
 		$("#updateBtn").on("click", function(){
 			
 			let id = $(this).data("user-id");

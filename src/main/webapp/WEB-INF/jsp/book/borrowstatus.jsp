@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>        
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>      
 <!DOCTYPE html>
 <html>
 <head>
@@ -69,7 +70,7 @@
 								도서관 : ${borrow.library }
 							</div>
 							<div class="">
-								상태 : 반납 | 대출일 : ${borrow.createdAt }| 반납예정일 : ${borrow.createdAt }
+								상태 : 반납 | 대출일 : <fmt:formatDate value ="${borrow.createdAt }" pattern ="yyyy-MM-dd"/> | 반납예정일 : ${borrow.createdAt }
 							</div>
 						</div>
 						
