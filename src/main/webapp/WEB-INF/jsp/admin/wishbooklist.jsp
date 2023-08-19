@@ -195,6 +195,8 @@
 				let pubyear =$("#pubyearInput").val();
 				let appendix = $("#appendixInput").val();
 				
+				var result = confirm("추가 하시겠습니까?");
+				
 				if(appendix == ""){
 					
 					alert("부록물을 입력하세요.");
@@ -234,11 +236,17 @@
 					, contentType:false
 					
 					,success:function(data){
-						if(data.result ==  "success"){
-							alert("추가 성공");
-							location.reload();
-						} else {
+						if(result){
 							
+							if(data.result ==  "success"){
+								alert("추가 성공");
+								location.reload();
+							} else {
+								
+								alert("추가 실패");
+							
+							} 
+						} else {
 							alert("추가 실패");
 						}
 					}

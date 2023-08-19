@@ -238,14 +238,14 @@
 			}
 			
 			
-			alert(library);
-			alert(title);
-			alert(file);
-			alert(author);
-			alert(publisher);
-			alert(pubyear);
-			alert(isbn);
-			alert(price);
+			//alert(library);
+			//alert(title);
+			//alert(file);
+			//alert(author);
+			//alert(publisher);
+			//alert(pubyear);
+			//alert(isbn);
+			//alert(price);
 			
 			var formData = new FormData();
 			
