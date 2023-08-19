@@ -65,11 +65,13 @@
 	
 	$(document).ready(function(){
 		
+		
+		
 		$("#deleteBtn").on("click", function(){
 			
 			let id = $(this).data("user-id");
 			let password = $("#passwordInput").val();
-			
+			var result = confirm("회원탈퇴 하시겠습니까?");
 			if(password==""){
 				
 				alert("비밀번호를 입력하세요.");
