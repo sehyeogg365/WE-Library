@@ -78,6 +78,12 @@
 				alert("비밀번호를 입력하세요.");
 			}
 			
+			if(result){
+				alert("");
+			} else {
+				return ;
+			}
+			
 			alert(id);
 			alert(password);
 			
@@ -87,27 +93,21 @@
 				, data: {"id": id, "password":password}
 				, success:function(data){
 					
-					if(result){
-						if(data.result == "success"){
-							alert("회원탈퇴 성공");	
-							location.href="/user/signin/view";
-						} else {
-							alert("회원탈퇴 실패");	
-							location.reload();
-							
-						}
+					
+					if(data.result == "success"){
+						alert("회원탈퇴 성공");	
+						location.href="/user/signin/view";
 					} else {
 						alert("회원탈퇴 실패");	
-						location.reload();
+						
+							
 					}
-					
-					
 					
 				}
 				
 				,error:function(){
 					alert("회원탈퇴 에러");	
-					location.reload();
+					
 					
 				}
 				
