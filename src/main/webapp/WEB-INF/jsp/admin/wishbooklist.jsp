@@ -203,6 +203,11 @@
 					return ;
 				}
 				
+				if(result){
+					alert("");
+				} else {
+					return ;
+				}
 	
 				//alert(title);
 				//alert(library);
@@ -235,23 +240,19 @@
 					, processData:false// 파일 업로드 필수(근데 여기선 필수로 하면안됨)
 					, contentType:false
 					
-					,success:function(data){
-						if(result){
+					, success:function(data){
+						
 							
-							if(data.result ==  "success"){
-								alert("추가 성공");
-								location.reload();
-							} else {
-								
-								alert("추가 실패");
-							
-							} 
-							
+						if(data.result ==  "success"){
+							alert("추가 성공");
+							location.reload();
 						} else {
-							
+								
 							alert("추가 실패");
 							
-						}
+						} 
+							
+					
 					}
 					,error:function(){
 						
