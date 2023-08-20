@@ -54,10 +54,10 @@ footer{
 	margin : auto;
 }
 .main-profile >.main-text {
-	padding: 5px 10px;
+	padding: 10px 10px;
 	position: absolute;
-	
-	transform: translate( 120%, -120% );
+	left: 50%;
+    transform: translate(-50%, -120%);
 
 }
 
@@ -68,37 +68,14 @@ footer{
 	margin : auto;
 }
 
-.sub-profile >.sub-text4 {
-	padding: 5px 10px;
+.sub-profile >.sub-text {
+	padding: 10px 10px;/*5px->10px*/
 	position: absolute;
-	
-	transform: translate( 340%, -180% );
+	left: 50%;
+    transform: translate(-50%, -160%);
 
 }
 
-.sub-profile >.sub-text6 {
-	padding: 5px 10px;
-	position: absolute;
-	
-	transform: translate( 230%, -180% );
-
-}
-
-.sub-profile >.sub-text8 {
-	padding: 5px 10px;
-	position: absolute;
-	
-	transform: translate( 160%, -180% );
-
-}
-
-.sub-profile >.sub-text11 {
-	padding: 5px 10px;
-	position: absolute;
-	
-	transform: translate( 110%, -200% );
-
-}
 
 .main-nav{
 	

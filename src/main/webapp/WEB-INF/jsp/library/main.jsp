@@ -122,8 +122,8 @@
 					</article>
 					<article class="sub-contents col-4">
 						<div class=""></div>
-						<div class="d-flex justify-content-between mt-2">
-							<div class="d-flex">
+						<div class="d-flex justify-content-between mt-3 ">
+							<div class="d-flex ">
 								<div class=""><a href="#"class="btn btn-light">공지사항</a></div>
 								<div class="ml-2"><a href="#" class="btn btn-light">행사안내</a></div>
 							</div>

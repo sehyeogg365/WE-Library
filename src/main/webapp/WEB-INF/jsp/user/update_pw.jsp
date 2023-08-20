@@ -25,7 +25,7 @@
 		<div class="sub-profile bg-secondary">
 			<c:import url="/WEB-INF/jsp/include/subprofile.jsp"/>
 			
-			<div class="sub-text6">
+			<div class="sub-text bg-info">
 				<h2 class="text-center text-white mt-3"><b>비밀번호 변경</b></h2>
 			</div>
 		</div>	

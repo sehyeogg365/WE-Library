@@ -30,7 +30,7 @@
 					
 					<c:import url="/WEB-INF/jsp/include/subprofile.jsp"/>
 					
-					<div class="sub-text6">
+					<div class="sub-text">
 						<h2 class="text-center text-white mt-3"><b>상호대차 현황</b></h2>
 					</div>
 					

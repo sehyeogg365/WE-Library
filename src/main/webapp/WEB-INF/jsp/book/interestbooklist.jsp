@@ -38,7 +38,7 @@
 
 			<c:import url="/WEB-INF/jsp/include/subprofile.jsp"/>
 			
-			<div class="sub-text6">
+			<div class="sub-text">
 				<h2 class="text-center text-white mt-3"><b>관심도서 조회</b></h2>
 			</div>
 		</div>
