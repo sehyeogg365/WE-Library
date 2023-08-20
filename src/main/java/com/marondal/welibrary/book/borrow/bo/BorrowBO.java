@@ -65,7 +65,9 @@ public class BorrowBO {
 		
 	
 	}
-
+	//갯수 보여주기 (내 뇌피셜상 카운트하는 BO를 만들고, 보여주는BO를 만들어야 함 그래야 보여질듯)
+	
+	
 		
 	//반납
 	public int deleteBorrow(int userId, int id) {
