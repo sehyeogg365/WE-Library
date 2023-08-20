@@ -70,12 +70,14 @@
 								도서관 : ${borrow.library }
 							</div>
 							<div class="">
-								상태 : 반납 | 대출일 : <fmt:formatDate value ="${borrow.createdAt }" pattern ="yyyy-MM-dd"/> | 반납예정일 : ${borrow.createdAt }
+								상태 : 반납 | 대출일 : <fmt:formatDate value ="${borrow.createdAt }" pattern ="yyyy-MM-dd"/> | 반납예정일 : <fmt:formatDate value ="${borrow.createdAt }" pattern ="yyyy-MM-dd"/>
 							</div>
 						</div>
 						
 						<div class="">
 							<button id="borrowdeleteBtn" class="btn btn-primary btn-sm deleteBtn my-3" data-book-id="${borrow.id }">반납하기</button>
+							<button id="borrowupdateBtn" class="btn btn-primary btn-sm updateBtn my-3" data-book-id="${borrow.id }">반납연장</button>
+						
 						</div>
 						</div>
 						

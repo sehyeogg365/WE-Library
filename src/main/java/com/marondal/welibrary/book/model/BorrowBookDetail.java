@@ -10,6 +10,7 @@ public class BorrowBookDetail {
 	private String title;
 	private String author;
 	private String publisher;
+	private boolean isUpdate;//반납연장 여부 
 	private Date createdAt;
 	public int getId() {
 		return id;
@@ -53,12 +54,19 @@ public class BorrowBookDetail {
 	public void setPublisher(String publisher) {
 		this.publisher = publisher;
 	}
+	public boolean isUpdate() {
+		return isUpdate;
+	}
+	public void setUpdate(boolean isUpdate) {
+		this.isUpdate = isUpdate;
+	}
 	public Date getCreatedAt() {
 		return createdAt;
 	}
 	public void setCreatedAt(Date createdAt) {
 		this.createdAt = createdAt;
 	}
+	
 	
 	
 	
