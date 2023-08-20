@@ -54,10 +54,10 @@ footer{
 	margin : auto;
 }
 .main-profile >.main-text {
-	
+	padding: 5px 10px;
 	position: absolute;
 	
-	transform: translate( 130%, -130% );
+	transform: translate( 120%, -120% );
 
 }
 
@@ -69,31 +69,31 @@ footer{
 }
 
 .sub-profile >.sub-text4 {
-	
+	padding: 5px 10px;
 	position: absolute;
 	
-	transform: translate( 400%, -200% );
+	transform: translate( 340%, -180% );
 
 }
 
 .sub-profile >.sub-text6 {
-	
+	padding: 5px 10px;
 	position: absolute;
 	
-	transform: translate( 250%, -200% );
+	transform: translate( 230%, -180% );
 
 }
 
 .sub-profile >.sub-text8 {
-	
+	padding: 5px 10px;
 	position: absolute;
 	
-	transform: translate( 180%, -200% );
+	transform: translate( 160%, -180% );
 
 }
 
 .sub-profile >.sub-text11 {
-	
+	padding: 5px 10px;
 	position: absolute;
 	
 	transform: translate( 110%, -200% );
