@@ -32,7 +32,7 @@
 
 			<c:import url="/WEB-INF/jsp/include/subprofile.jsp"/>
 			
-			<div class="sub-text8 bg-info">
+			<div class="sub-text8">
 				<h2 class="text-center text-white mt-3"><b>희망도서 신청 조회</b></h2>
 			</div>
 		</div>

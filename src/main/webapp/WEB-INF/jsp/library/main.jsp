@@ -29,7 +29,7 @@
 					<img class="profile" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FlAG5Z%2Fbtsnhr3rPGd%2FKeJ2kZ3AGgbzql1R1aDdr1%2Fimg.jpg" alt="메인로고 사진">
 				</div>
 				
-				<div class="main-text bg-info">
+				<div class="main-text">
 					<h2 class="text-center text-white"><b>책과 함께 꿈꾸는 도서관</b></h2><br>
 					<h1 class="text-center text-white"><b>WE-Library</b></h1>
 				</div>
