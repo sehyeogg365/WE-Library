@@ -19,7 +19,7 @@ public interface BorrowDAO {
 	public List<BorrowBook> selectBorrowList(@Param("userId")int userId);
 	
 	//대출도서 갯수
-	public BorrowBookCount selectBorrowBookNumberByuserId(@Param("userId") int userId);
+	public int selectBorrowBookNumberByuserId(@Param("userId") int userId);
 	
 	//반납
 	public int deleteBorrow(@Param("userId") int userId, @Param("id") int id);

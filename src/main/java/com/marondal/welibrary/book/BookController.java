@@ -58,7 +58,7 @@ public class BookController {
 	private BorrowBO borrowBO;
 	
 	@Autowired
-	private BorrowCountBO borroCountBO;
+	private BorrowCountBO borrowCountBO;
 	
 	
 	@GetMapping("/wishbook/list/view")
@@ -128,7 +128,11 @@ public class BookController {
 		model.addAttribute("user", user);
 		
 		List<BorrowBookDetail> borrowDetailList = borrowBO.getBorrowList(userId);
+		
 		model.addAttribute("borrowDetailList", borrowDetailList);
+		
+		int borrowBookCount = borrowCountBO.getBorrowBookNumberByuserId(userId);
+		model.addAttribute("borrowBookCount", borrowBookCount);
 		
 		return "book/borrowstatus";
 		

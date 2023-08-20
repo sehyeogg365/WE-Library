@@ -44,6 +44,14 @@
    </select>
    
    <!-- 대출도서 갯수 -->
+   <select id="selectBorrowBookNumberByuserId" resultType="int" parameterType="int">
+   	SELECT
+   		count(1)
+   	FROM	
+   		`borrow_book`
+   	WHERE
+   		`userId` = #{userId}
+   </select>
    
    <!-- 반납 -->
    <delete id = "deleteBorrow" parameterType="map">

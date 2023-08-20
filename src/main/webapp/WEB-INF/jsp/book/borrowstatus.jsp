@@ -57,7 +57,7 @@
 						
 						
 						<div class="mt-3 d-flex ">
-							 대출현황 : &nbsp<div class="text-primary">3</div>건
+							 대출현황 : &nbsp<div class="text-primary">${borrowBookCount.numberCount }</div>건
 						</div>
 						<c:forEach var="borrow" items="${borrowDetailList }">	
 						<hr>

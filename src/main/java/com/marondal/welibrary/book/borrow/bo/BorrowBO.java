@@ -3,6 +3,7 @@ package com.marondal.welibrary.book.borrow.bo;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,6 +11,7 @@ import com.marondal.welibrary.book.bo.BookBO;
 import com.marondal.welibrary.book.borrow.dao.BorrowDAO;
 import com.marondal.welibrary.book.model.Book;
 import com.marondal.welibrary.book.model.BorrowBook;
+import com.marondal.welibrary.book.model.BorrowBookCount;
 import com.marondal.welibrary.book.model.BorrowBookDetail;
 
 @Service
@@ -63,7 +65,8 @@ public class BorrowBO {
 		
 	
 	}
-	
+
+		
 	//반납
 	public int deleteBorrow(int userId, int id) {
 		
