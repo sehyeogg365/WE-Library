@@ -169,6 +169,15 @@
         	 
         	 alert(id);
         	 
+        	 $.ajax({
+        		
+        		 type:""
+        		 , url:
+        		 , data:{"bookId":id}
+        		 
+        		 
+        	 });
+        	 
         	 
         	 
          });

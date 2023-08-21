@@ -5,8 +5,28 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
   <mapper namespace="com.marondal.welibrary.book.borrow.dao.BorrowDAO">
-  
-  
+  	
+  <!-- 예약 -->
+  <insert id ="insertReserve" parameterType="map">
+  	INSERT INTO 
+  		`reserve_book`
+  		(
+  			`userId`
+  			, `bookId`
+  			, `createdAt`
+  			, `updatedAt`
+  		) 
+  		VALUES
+  		(
+  			#{userId}
+   			, #{bookId}
+   			, now()
+   			, now()	
+  		
+  		)
+  </insert>
+  	
+  	
   
   
   </mapper>

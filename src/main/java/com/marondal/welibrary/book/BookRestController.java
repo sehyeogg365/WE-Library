@@ -220,7 +220,20 @@ public class BookRestController {
 	//반납 연장
 	
 	//예약
-	
+	@PostMapping("/reservation/create")
+	public Map<String, String> reservationCreate(@RequestParam("bookId") int bookId
+												, HttpSession session){
+		
+		int userId = (Integer) session.getAttribute("userId");
+		
+		
+		
+		
+		return null;
+		
+		
+		
+	}
 	
 	
 	
