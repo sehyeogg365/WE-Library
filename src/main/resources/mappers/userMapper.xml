@@ -188,7 +188,7 @@
   		`password`=#{password}
   </select>
   
-  <!-- 비밀번호 변경 -->
+  <!-- 비밀번호 변경 아마 여기를 고쳐야 기존 비밀번호가 일치하면 바뀔듯 조건문 AND password=#${password}츠가해보기-->
   <update id="updatePassword" parameterType="map">
   	UPDATE
   		`user`

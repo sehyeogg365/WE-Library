@@ -211,7 +211,7 @@ public class UserBO {
 		
 		//비밀번호가 일치하면 비밀번호를 입력한 뉴 패스워드로 바꿔준다.
 		//비밀번호 확인 + 회원정보 수정  -> 이건 나중에. 
-		
+		//아마 여기서 비밀번호 확인이라는걸 추가해줘야 한다. if문 써서 count == 1일때 변경한다 이런식으로
 			String ecryptPassword = EncryptService.md5(password);
 	
 			return userDAO.updatePassword(id, ecryptPassword);
