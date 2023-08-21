@@ -106,7 +106,7 @@
 			$.ajax({
 				type:"get"
 				, url:"/user/pw_check"
-				, data: {"id":id, "oldpassword":oldpassword}//password인지 oldpassword인지 헷갈리고 자꾸 비밀번호 확인은 비밀번호 확인 에러가 뜨는상태
+				, data: {"id":id, "password":oldpassword}//"" 안의 값이 파라미터 값 : 이후의 값이 아작스에서 변수
 				, success:function(data){
 					if(data.result == "success"){
 						//location.href="/user/mypage/view?id=${user.id}";
