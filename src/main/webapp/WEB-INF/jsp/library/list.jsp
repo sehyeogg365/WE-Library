@@ -171,9 +171,22 @@
         	 
         	 $.ajax({
         		
-        		 type:""
-        		 , url:
+        		 type:"post"
+        		 , url:"/book/reservation/create"
         		 , data:{"bookId":id}
+        		 , success:function(data){
+        			 if(data.result == "success"){
+         	 			alert("예약 성공")
+         	 		 } else {
+         	 			alert("예약 실패")
+         	 			 
+         	 		 }
+        			 
+        		 }
+        		 , error:function(){
+        	 		 alert("예약 에러");
+ 
+        	 	 }
         		 
         		 
         	 });
