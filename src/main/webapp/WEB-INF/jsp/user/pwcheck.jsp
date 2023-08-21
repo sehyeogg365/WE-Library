@@ -73,7 +73,7 @@
 			$.ajax({
 				type:"get"
 				, url:"/user/pw_check"
-				, data: {"password":password}
+				, data: {"id":id, "password":password}
 				, success:function(data){
 					if(data.result == "success"){
 						location.href="/user/mypage/view?id=${user.id}";

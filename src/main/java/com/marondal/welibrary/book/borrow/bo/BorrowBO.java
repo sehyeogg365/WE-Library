@@ -75,4 +75,6 @@ public class BorrowBO {
 		return borrowDAO.deleteBorrow(userId, id);
 	}
 	
+	//반납 연장
+	
 }

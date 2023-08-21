@@ -152,16 +152,23 @@
             
 		  }); 
 		 
-         $(".reserveBtn").on("click", function(){
+        
+         
+         
+         $(".interibraryAddBtn").on("click", function(){
         	 let id = $(this).data("book-id");
+        	 alert(id);
+        	 
         	 
         	 
          });
          
          
-         
-         $(".interibraryAddBtn").on("click", function(){
+         $(".reserveBtn").on("click", function(){
         	 let id = $(this).data("book-id");
+        	 
+        	 alert(id);
+        	 
         	 
         	 
          });
