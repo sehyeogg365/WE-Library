@@ -18,6 +18,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.marondal.welibrary.book.bo.BookBO;
 import com.marondal.welibrary.book.borrow.bo.BorrowBO;
 import com.marondal.welibrary.book.interest.bo.InterestBO;
+import com.marondal.welibrary.book.reserve.bo.ReserveBO;
 import com.marondal.welibrary.book.wishbook.bo.WishBookBO;
 
 
@@ -38,6 +39,8 @@ public class BookRestController {
 	@Autowired
 	private BorrowBO borrowBO;
 	
+	@Autowired
+	private ReserveBO reserveBO;
 	
 	//희망도서 신청
 	@PostMapping("/wishbook/create")
@@ -227,9 +230,22 @@ public class BookRestController {
 		int userId = (Integer) session.getAttribute("userId");
 		
 		
+		int count = reserveBO.addReserve(bookId, userId);
 		
+
+		Map<String, String> resultMap = new HashMap<>();
 		
-		return null;
+		if(count == 1) {
+			
+			resultMap.put("result", "success");
+			
+		} else {
+			
+			resultMap.put("result", "fail");
+			
+		}
+		
+		return resultMap;
 		
 		
 		

@@ -21,5 +21,9 @@ public class ReserveBO {
 		
 	}
 	
+	//예약 조회 
+	
+	
+	
 	
 }
