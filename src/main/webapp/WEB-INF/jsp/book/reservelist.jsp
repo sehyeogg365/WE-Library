@@ -57,21 +57,31 @@
 						</div>
 						
 						<div class="mt-3 d-flex ">
-							 대출현황 : &nbsp<div class="text-primary">3</div>건
+							 예약현황 : &nbsp<div class="text-primary">3</div>건
 						</div>
 						
+						<c:forEach var="reserve" items="${reserveDetailList }">	
 						<hr>
-						<div class="">
+						<div class="d-flex justify-content-between ">
+						<div class="col-9">
 							<div class="">
-								<h5>신입사원 제대로 미쳐라.</h5>
+								<h5>${reserve.title }</h5>
 							</div>
 							<div class="">
-								도서관 : 역삼푸른솔도서관
+								도서관 : ${reserve.library }
 							</div>
-							<div class="">
-								상태 : 반납 | 대출일 : 2023.06.13 | 반납예정일 : 2023.06.27
+							<div class=""><!-- <fmt:parseDate var="parseBorrow" value ="${formatBorrow }" pattern ="yyyy-MM-dd"/><fmt:parseNumber var="parseReturn" value="${parseBorrow.time + 60*60*24*1000*14}"/> <c:set var="fourteenDayAfter" value=""/> -->
+								상태 : 예약중 | 예약일 : <fmt:formatDate value ="${reserve.createdAt }" pattern ="yyyy-MM-dd"/> | 
 							</div>
 						</div>
+						
+						<div class="">
+							<button id="borrowdeleteBtn" class="btn btn-primary btn-sm deleteBtn my-3" data-book-id="${reserve.id }">예약취소</button>
+						
+						</div>
+						</div>
+						
+						</c:forEach>
 						
 						
 						<hr>

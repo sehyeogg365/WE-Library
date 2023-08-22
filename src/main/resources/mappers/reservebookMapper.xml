@@ -25,7 +25,20 @@
   		
   		)
   </insert>
-  	
+  
+  <select id ="selectReserveList" resultType="com.marondal.welibrary.book.model.ReserveBook" parameterType="int">
+  	SELECT
+  		`id`
+   		, `userId`
+   		, `bookId`
+   		, `createdAt`
+  	FROM
+  		`reserve_book`
+  	WHERE
+  		`userId` = #{userId}
+  	ORDER BY
+  		`id` DESC;
+  </select>
   	
   
   
