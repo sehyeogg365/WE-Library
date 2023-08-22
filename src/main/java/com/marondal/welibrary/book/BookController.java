@@ -22,9 +22,12 @@ import com.marondal.welibrary.book.model.BorrowBookCount;
 import com.marondal.welibrary.book.model.BorrowBookDetail;
 import com.marondal.welibrary.book.model.InterestBookCount;
 import com.marondal.welibrary.book.model.InterestBookDetail;
+import com.marondal.welibrary.book.model.ReserveBookCount;
+import com.marondal.welibrary.book.model.ReserveBookDetail;
 import com.marondal.welibrary.book.model.WishBook;
 import com.marondal.welibrary.book.model.WishBookCount;
 import com.marondal.welibrary.book.model.WishBookDetail;
+import com.marondal.welibrary.book.reserve.bo.ReserveBO;
 import com.marondal.welibrary.book.wishbook.bo.WishBookBO;
 import com.marondal.welibrary.book.wishbook.bo.WishBookCountBO;
 import com.marondal.welibrary.user.bo.UserBO;
@@ -60,6 +63,10 @@ public class BookController {
 	@Autowired
 	private BorrowCountBO borrowCountBO;
 	
+	@Autowired
+	private ReserveBO reserveBO;
+	
+
 	
 	@GetMapping("/wishbook/list/view")
 	public String wishbookList(Model model
@@ -140,12 +147,18 @@ public class BookController {
 	
 	@GetMapping("/reservelist/view")
 	public String reserveList(Model model
-			, @RequestParam("id") int id) {
+			, @RequestParam("id") int id
+			, HttpSession session) {
+		
+		int userId = (Integer)session.getAttribute("userId");
 		
 		User user = userBO.getUserInfo(id); 
 		
 		model.addAttribute("user", user);
 		
+		List<ReserveBookDetail> reserveDetailList = reserveBO.getReserveList(userId);
+		
+		model.addAttribute("reserveDetailList", reserveDetailList);
 		
 		return "book/reservelist";
 		
