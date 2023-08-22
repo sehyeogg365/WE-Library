@@ -76,7 +76,7 @@
 						</div>
 						
 						<div class="">
-							<button id="borrowdeleteBtn" class="btn btn-primary btn-sm deleteBtn my-3" data-book-id="${reserve.id }">예약취소</button>
+							<button id="reservedeleteBtn" class="btn btn-primary btn-sm deleteBtn my-3" data-reserve-id="${reserve.id }">예약취소</button>
 						
 						</div>
 						</div>
@@ -101,7 +101,53 @@
 	
 	
 	</div>
-
+	<script>
+		$(document).ready(function(){
+			
+			
+			$(".deleteBtn").on("click", function(){
+				
+				
+				let id = $(this).data("reserve-id");
+				
+				alert(id);
+				
+				$.ajax({
+					
+					type:"get"
+					, url:"/book/reservation/delete"
+					, data: {"id":id}
+					, success:function(data){
+						if(data.result == "success"){
+							alert("예약취소 성공");
+							location.reload();
+						} else {
+							alert("예약취소 실패");
+							
+						}
+						
+					}
+					,error:function(){
+						alert("예약취소 에러");
+					}
+					
+					
+					
+				});
+				
+				
+			});
+			
+			
+			
+			
+			
+			
+		});
+		
+	
+	
+	</script>
 
 
 

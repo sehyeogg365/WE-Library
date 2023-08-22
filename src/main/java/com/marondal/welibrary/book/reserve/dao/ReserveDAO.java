@@ -18,4 +18,8 @@ public interface ReserveDAO {
 	
 	public List<ReserveBook> selectReserveList(@Param("userId") int userId);
 	
+	
+	//예약 삭제 
+	public int deleteReserve(@Param("id") int id
+							, @Param("userId") int userId);
 }

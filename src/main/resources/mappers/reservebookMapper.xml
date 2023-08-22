@@ -26,6 +26,7 @@
   		)
   </insert>
   
+  <!-- 예약 목록 -->
   <select id ="selectReserveList" resultType="com.marondal.welibrary.book.model.ReserveBook" parameterType="int">
   	SELECT
   		`id`
@@ -41,5 +42,13 @@
   </select>
   	
   
+  <!-- 예약 취소 -->
+  <delete id="deleteReserve" parameterType="map">
+  	DELETE
+  	FROM
+  		`reserve_book`
+  	WHERE
+  		`id`=#{id};
   
+  </delete>
   </mapper>

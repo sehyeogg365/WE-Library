@@ -69,8 +69,8 @@
 							<div class="">
 								도서관 : ${borrow.library }
 							</div>
-							<div class=""><!-- <fmt:parseDate var="parseBorrow" value ="${formatBorrow }" pattern ="yyyy-MM-dd"/><fmt:parseNumber var="parseReturn" value="${parseBorrow.time + 60*60*24*1000*14}"/> <c:set var="fourteenDayAfter" value=""/> -->
-								상태 : 반납 | 대출일 : <fmt:formatDate value ="${borrow.createdAt }" pattern ="yyyy-MM-dd"/> | 반납예정일 : <fmt:formatDate value ="${borrow.createdAt}" pattern ="yyyy-MM-dd"/>
+							<div class=""><!-- ${borrowDate.time +(1000*60*60*24*14)} -->
+								상태 : 반납 | 대출일 : <fmt:formatDate value="${borrow.createdAt}" pattern ="yyyy-MM-dd"/> | 반납예정일 : <fmt:formatDate value="${borrow.createdAt.time +(1000*60*60*24*14)}" pattern ="yyyy-MM-dd"/>
 							</div>
 						</div>
 						
