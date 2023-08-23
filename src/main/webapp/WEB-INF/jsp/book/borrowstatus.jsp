@@ -59,7 +59,7 @@
 						<div class="mt-3 d-flex ">
 							 대출현황 : &nbsp<div class="text-primary">${borrowBookCount.numberCount }</div>건
 						</div>
-						<c:forEach var="borrow" items="${borrowDetailList }">	
+						<c:forEach var="borrow" items="${borrowDetailList }">	<!-- 한번 반납연장을 했을때 반납 연장 못하게 -->
 						<hr>
 						<div class="d-flex justify-content-between ">
 						<div class="col-9">
@@ -76,8 +76,16 @@
 						
 						<div class="">
 							<button id="borrowdeleteBtn" class="btn btn-primary btn-sm deleteBtn my-3" data-book-id="${borrow.id }">반납하기</button>
-							<button id="borrowupdateBtn" class="btn btn-primary btn-sm updateBtn my-3" data-book-id="${borrow.id }">반납연장</button>
-						
+							
+							<c:choose>
+								<c:when test="${borrow.update }">
+								<button class="btn btn-primary btn-sm">반납연장불가</button>
+								
+								</c:when>
+								<c:otherwise>
+									<button id="borrowupdateBtn" class="btn btn-primary btn-sm updateBtn my-3" data-book-id="${borrow.id }">반납연장</button>					
+								</c:otherwise>
+							</c:choose>
 						</div>
 						</div>
 						
@@ -105,11 +113,41 @@
 	<script>
 		$(document).ready(function(){
 			
-			$(".deleteBtn").on("click", function(){
+			$(".updateBtn").on("click", function(){
 				
 				let id = $(this).data("book-id");
 				
 				alert(id);
+				
+				$.ajax({
+					
+					type:"post"
+					, url:"/book/borrow/update"
+					, data :{"id":id}
+					, success:function(data){
+						if(data == "success"){
+							alert("반납 연장 성공");
+							location.reload();
+						} else {
+							alert("반납 연장 실패");
+						}
+						
+					}
+					, error:function(){
+						
+						alert("반납 연장 에러");
+					}
+					
+				});
+				
+			});
+			
+			
+			$(".deleteBtn").on("click", function(){
+				
+				let id = $(this).data("book-id");
+				
+				//alert(id);
 				
 				$.ajax({
 					

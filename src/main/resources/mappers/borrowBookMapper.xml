@@ -69,7 +69,7 @@
    <!-- 반납 연장 -->
    <update id ="updateBorrow" parameterType="map">
    	UPDATE
-   		`borrw_book` 
+   		`borrow_book` 
    	SET
    		`returnDate` = DATE_ADD(`returnDate`, INTERVAL 1 WEEK)
    	WHERE
