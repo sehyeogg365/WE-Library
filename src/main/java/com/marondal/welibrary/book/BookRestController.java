@@ -167,8 +167,9 @@ public class BookRestController {
 	
 	//대여
 	@PostMapping("/borrow/create")
-	public Map<String, String> borrowCreate(@RequestParam("bookId") int bookId
+	public Map<String, String> borrowCreate(@RequestParam("bookId") int bookId								
 											, HttpSession session
+											//,@RequestParam("returnDate") Date returnDate
 											){
 		
 		int userId = (Integer) session.getAttribute("userId");

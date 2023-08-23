@@ -12,6 +12,7 @@ public class BorrowBookDetail {
 	private String publisher;
 	private boolean isUpdate;//반납연장 여부 
 	private Date createdAt;
+	private Date returnDate;
 	public int getId() {
 		return id;
 	}
@@ -66,6 +67,13 @@ public class BorrowBookDetail {
 	public void setCreatedAt(Date createdAt) {
 		this.createdAt = createdAt;
 	}
+	public Date getReturnDate() {
+		return returnDate;
+	}
+	public void setReturnDate(Date returnDate) {
+		this.returnDate = returnDate;
+	}
+	
 	
 	
 	

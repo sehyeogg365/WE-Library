@@ -16,6 +16,7 @@
   			, `bookId`
   			, `createdAt` 
 		    , `updatedAt`
+		    , `returnDate`
    		)
    		VALUES
    		(
@@ -23,7 +24,7 @@
    			, #{bookId}
    			, now()
    			, now()
-   		
+   			, now()
    		)
    		
    
@@ -35,6 +36,7 @@
    		, `userId`
    		, `bookId`
    		, `createdAt`
+   		, `returnDate`
    	FROM
    		`borrow_book`
    	WHERE

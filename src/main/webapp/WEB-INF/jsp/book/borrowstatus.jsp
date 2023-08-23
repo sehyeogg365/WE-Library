@@ -70,7 +70,7 @@
 								도서관 : ${borrow.library }
 							</div>
 							<div class=""><!-- ${borrowDate.time +(1000*60*60*24*14)} -->
-								상태 : 반납 | 대출일 : <fmt:formatDate value="${borrow.createdAt}" pattern ="yyyy-MM-dd"/> | 반납예정일 : <fmt:formatDate value="${borrow.createdAt.time +(1000*60*60*24*14)}" pattern ="yyyy-MM-dd"/>
+								상태 : 반납 | 대출일 : <fmt:formatDate value="${borrow.createdAt}" pattern ="yyyy-MM-dd"/> | 반납예정일 : <fmt:formatDate value="${borrow.returnDate}" pattern ="yyyy-MM-dd"/>
 							</div>
 						</div>
 						
