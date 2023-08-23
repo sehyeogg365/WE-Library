@@ -67,5 +67,12 @@
    
    </delete>
    <!-- 반납 연장 -->
+   <update id ="updateBorrow" parameterType="map">
+   
+   
+   
+   </update>
+   
+   
    
    </mapper>

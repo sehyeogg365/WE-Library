@@ -78,5 +78,11 @@ public class BorrowBO {
 	}
 	
 	//반납 연장
+	public int updateBorrow(int userId, int id) {
+		
+		return borrowDAO.updateBorrow(userId, id);
+		
+	}
+	
 	
 }

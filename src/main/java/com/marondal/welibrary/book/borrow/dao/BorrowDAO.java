@@ -26,4 +26,5 @@ public interface BorrowDAO {
 	public int deleteBorrow(@Param("userId") int userId, @Param("id") int id);
 
 	//반납 연장
+	public int updateBorrow(@Param("userId") int userId, @Param("id") int id);
 }

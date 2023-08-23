@@ -222,6 +222,32 @@ public class BookRestController {
 		
 	}	
 	//반납 연장
+	@PostMapping("/borrow/update")
+	public Map<String, String> borrowUpdate(@RequestParam("id") int id
+											, HttpSession session){
+		
+		
+		int userId = (Integer) session.getAttribute("userId");
+		
+		int count = borrowBO.updateBorrow(userId, id);
+		
+		Map<String, String> resultMap = new HashMap<>();
+		
+		if(count == 1) {
+			
+			resultMap.put("result", "success");
+			
+		} else {
+			
+			resultMap.put("result", "fail");
+			
+		}
+		
+		return resultMap;
+		
+		
+	}
+	
 	
 	//예약
 	@PostMapping("/reservation/create")
