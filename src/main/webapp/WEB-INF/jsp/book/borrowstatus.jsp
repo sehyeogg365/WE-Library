@@ -76,12 +76,17 @@
 						
 						<div class="">
 							<button id="borrowdeleteBtn" class="btn btn-primary btn-sm deleteBtn my-3" data-book-id="${borrow.id }">반납하기</button>
+							
 							<!-- 반납예정일과 대출일이 3주이상 차이날시  반납연장불가버튼 그외에 반납연장 버튼 이렇게 해보기-->
 							<!-- parse Date->String -->
+							<!-- 
 							<fmt:parseDate value="${borrow.createdAt}" var="borrowDate" pattern="yyyy-MM-dd"/>
 							<fmt:parseNumber value="${borrowDate.time / (1000*60*60*24)}" integerOnly="true" var="borrowDate"></fmt:parseNumber>
 							<fmt:parseDate value="${borrow.returnDate }" var="returnDate" pattern="yyyy-MM-dd"/>
 							<fmt:parseNumber value="${returnDate.time / (1000*60*60*24)}" integerOnly="true" var="returnDate"></fmt:parseNumber>
+							 -->
+							 
+							<!--  
 							<c:choose>
 								<c:when test="${returnDate - borrowDate >=21}">
 								<button class="btn btn-primary btn-sm">반납연장불가</button>
@@ -91,6 +96,8 @@
 									<button id="borrowupdateBtn" class="btn btn-primary btn-sm updateBtn my-3" data-book-id="${borrow.id }">반납연장</button>					
 								</c:otherwise>
 							</c:choose>
+							--> 
+							<button id="borrowupdateBtn" class="btn btn-primary btn-sm updateBtn my-3" data-book-id="${borrow.id }">반납연장</button>					
 						</div>
 						</div>
 						
