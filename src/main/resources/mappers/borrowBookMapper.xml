@@ -24,7 +24,7 @@
    			, #{bookId}
    			, now()
    			, now()
-   			, now()
+   			, date_add(now(),interval 14 DAY)
    		)
    		
    
@@ -68,7 +68,14 @@
    </delete>
    <!-- 반납 연장 -->
    <update id ="updateBorrow" parameterType="map">
-   
+   	UPDATE
+   		`borrw_book` 
+   	SET
+   		`returnDate` = DATE_ADD(`returnDate`, INTERVAL 1 WEEK)
+   	WHERE
+   		`userId` = #{userId}
+   		AND
+   		`id` = #{id}
    
    
    </update>
