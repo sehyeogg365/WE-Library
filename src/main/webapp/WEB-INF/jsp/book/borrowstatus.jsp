@@ -76,7 +76,7 @@
 						
 						<div class="">
 							<button id="borrowdeleteBtn" class="btn btn-primary btn-sm deleteBtn my-3" data-book-id="${borrow.id }">반납하기</button>
-							
+							<!-- 반납예정일과 대출일이 3주이상 차이날시  반납연장불가버튼 그외에 반납연장 버튼 이렇게 해보기-->
 							<c:choose>
 								<c:when test="${borrow.update }">
 								<button class="btn btn-primary btn-sm">반납연장불가</button>
