@@ -8,6 +8,7 @@ public class BorrowBook {
 	private int bookId;
 	private Date createdAt;
 	private Date updatedAt;
+	private Date returnDate;
 	public int getId() {
 		return id;
 	}
@@ -38,8 +39,14 @@ public class BorrowBook {
 	public void setUpdatedAt(Date updatedAt) {
 		this.updatedAt = updatedAt;
 	}
-	
+	public Date getReturnDate() {
+		return returnDate;
+	}
+	public void setReturnDate(Date returnDate) {
+		this.returnDate = returnDate;
+	}
 
+	
 	
 	
 }

@@ -35,6 +35,7 @@
    		, `userId`
    		, `bookId`
    		, `createdAt`
+   		, `returnDate`
    	FROM
    		`borrow_book`
    	WHERE
