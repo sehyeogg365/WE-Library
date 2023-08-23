@@ -57,6 +57,7 @@ public class BorrowBO {
 			borrowBookDetail.setPublisher(book.getPublisher());
 			//borrowBookDetail.setAppendix(book.getAppendix());
 			borrowBookDetail.setCreatedAt(borrowBook.getCreatedAt());
+			borrowBookDetail.setReturnDate(borrowBook.getReturnDate());
 			
 			borrowDetailList.add(borrowBookDetail);
 		}	
