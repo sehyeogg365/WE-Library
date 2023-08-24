@@ -114,11 +114,13 @@
        	 		 if(data.result == "success"){
        	 			 
        	 			 alert("상호대차 성공");
-       	 			 location.reload();
+       	 			 history.back();
+       	 			 //location.href="/library/list/view";
        	 			 
        	 		 } else {
        	 			 
-       	 			alert("상호대차 성공");
+       	 			alert("상호대차 오류");
+       	 			
        	 		 }
        	 	 }
        	 	 , error:function(){
