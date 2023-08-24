@@ -90,7 +90,7 @@
 	
 	
 	<button id= "interibraryAddBtn" class="btn btn-success btn-sm interibraryAddBtn" data-book-id="${book.id }"><i class="bi bi-shuffle"></i>상호대차 신청</button> 
-	<a href="" class="btn btn-danger btn-sm">취소</a> 
+	<a href="/library/list/view?title=${book.title }" class="btn btn-danger btn-sm">취소</a> 
 	
 	
 	
