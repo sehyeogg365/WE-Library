@@ -26,7 +26,7 @@ public interface BookDAO {
 	public int selectBorrowByBookId(@Param("bookId") int bookId);
 	
 	
-	//예약 갯수 표시
+	//현재 예약 인원 표시
 	public int selectReserveBookId(@Param("bookId") int bookId);
 	
 	

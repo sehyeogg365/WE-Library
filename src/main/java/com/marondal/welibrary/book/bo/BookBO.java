@@ -50,7 +50,13 @@ public class BookBO {
 		
 	}
 	
-	//예약 갯수 표시
+	//현재 예약 인원 표시 3권이 되면 예약못함 여기서 하던 아니면 jstl상에서 버튼표시로 하던
+	public int isReserve(int bookId) {
+		
+		return bookDAO.selectReserveBookId(bookId);
+
+	}
+	
 	
 	//상호대차 가능 여부
 	
