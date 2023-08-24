@@ -58,5 +58,20 @@ public class LibraryController {
 		
 	}
 	
+	@GetMapping("/interibrarypopup/view")
+	public String interibraryPopUp(Model model
+			   , @RequestParam("id") int id) {
+		
+		
+		Book book = bookBO.getBookById(id);
+		model.addAttribute("book", book);
+		
+		
+		return "/library/interibrarypopup";
+		
+		
+		
+	}
+	
 	
 }
