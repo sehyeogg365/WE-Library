@@ -1,8 +1,13 @@
 package com.marondal.welibrary.book.interibrary.dao;
 
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class InteribraryDAO {
+public interface InteribraryDAO {
 
+	
+	public int insertInteribrary(@Param("bookId") int bookId, @Param("userId") int userId);
+	
+	
 }

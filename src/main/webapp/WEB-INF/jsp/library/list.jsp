@@ -159,6 +159,28 @@
         	 let id = $(this).data("book-id");
         	 alert(id);
         	 
+        	 $.ajax({
+        		
+        		 type:"post"
+        		 , url:"/book/interibrary/create"
+        		 , data : {"bookId" :id}
+        	 	 , success:function(data){
+        	 		 if(data.result == "success"){
+        	 			 
+        	 			 alert("상호대차 성공");
+        	 			 location.reload();
+        	 			 
+        	 		 } else {
+        	 			 
+        	 			alert("상호대차 성공");
+        	 		 }
+        	 	 }
+        	 	 , error:function(){
+        	 		 alert("상호대차 에러");
+ 
+        	 	 }
+        		 
+        	 });
         	 
         	 
          });
@@ -176,9 +198,10 @@
         		 , data:{"bookId":id}
         		 , success:function(data){
         			 if(data.result == "success"){
-         	 			alert("예약 성공")
+         	 			alert("예약 성공");
+         	 			location.reload();
          	 		 } else {
-         	 			alert("예약 실패")
+         	 			alert("예약 실패");
          	 			 
          	 		 }
         			 
@@ -208,9 +231,10 @@
         		 , data:{"bookId":id}
         	 	 , success:function(data){
         	 		 if(data.result == "success"){
-        	 			alert("대출 성공")
+        	 			alert("대출 성공");
+        	 			location.reload();
         	 		 } else {
-        	 			alert("대출 실패")
+        	 			alert("대출 실패");
         	 			 
         	 		 }
         	 		 
@@ -240,8 +264,9 @@
         	 	 , success:function(data){
         	 		 if(data.result =="success"){
         	 			 alert("추가 성공");
+        	 			location.reload();
         	 		 } else {
-        	 			 alert("추가 실패")
+        	 			 alert("추가 실패");
         	 		 }
         	 	 }
         	 	 , error:function(){
