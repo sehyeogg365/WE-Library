@@ -6,8 +6,7 @@ public class InteribraryBookDetail {
 	private int id;
 	private int userId;
 	private int bookId;
-	private String library;
-	private String receivelibrary;
+	private String library;//수령도서관
 	private String title;
 	private String author;
 	private boolean isStatus;//상태
@@ -37,12 +36,7 @@ public class InteribraryBookDetail {
 	public void setLibrary(String library) {
 		this.library = library;
 	}
-	public String getReceivelibrary() {
-		return receivelibrary;
-	}
-	public void setReceivelibrary(String receivelibrary) {
-		this.receivelibrary = receivelibrary;
-	}
+	
 	public String getTitle() {
 		return title;
 	}

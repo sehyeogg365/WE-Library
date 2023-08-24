@@ -11,9 +11,9 @@ public class InteribraryBO {
 	@Autowired
 	private InteribraryDAO interibraryDAO;
 	
-	public int addInteribrary(int bookId, int userId) {
+	public int addInteribrary(int bookId, int userId, String library) {
 	
-		return interibraryDAO.insertInteribrary(bookId, userId);
+		return interibraryDAO.insertInteribrary(bookId, userId, library);
 		
 	}
 }

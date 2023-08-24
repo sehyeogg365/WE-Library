@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,18 +23,70 @@
 	<div class="">
 		<div class="">${book.library }</div>
 		<div class="">${book.title }</div>
-		<div class=""></div>
+		<div class="">부록:${book.appendix }</div>
 	</div>
 	
 	<!-- 클릭한 도서관 이외의 도서관이 나와야 함 -->
-	<select id="librarySelector" class="form-control">
-			<option value="역삼푸른솔도서관">역삼푸른솔도서관</option>
-			<option value="역삼도서관">역삼도서관</option>
-			<option value="행복한 도서관">행복한 도서관</option>
-			<option value="논현 도서관">논현 도서관</option>
-			<option value="대치 도서관">대치 도서관</option>
+	<c:choose>
+		<c:when test ="${book.library eq '역삼푸른솔도서관' }">
+			<select id="librarySelector" class="form-control">
+				<option value="역삼도서관">역삼도서관</option>
+				<option value="행복한 도서관">행복한 도서관</option>
+				<option value="논현 도서관">논현 도서관</option>
+				<option value="대치 도서관">대치 도서관</option>
 					
-	</select>
+			</select>
+		</c:when>
+		<c:when test ="${book.library eq '역삼도서관' }">
+			<select id="librarySelector" class="form-control">
+				<option value="역삼푸른솔도서관">역삼푸른솔도서관</option>
+				<option value="행복한 도서관">행복한 도서관</option>
+				<option value="논현 도서관">논현 도서관</option>
+				<option value="대치 도서관">대치 도서관</option>
+					
+			</select>
+		</c:when>
+		<c:when test ="${book.library eq '행복한 도서관' }">
+			<select id="librarySelector" class="form-control">
+				<option value="역삼푸른솔도서관">역삼푸른솔도서관</option>
+				<option value="역삼도서관">역삼도서관</option>
+				<option value="논현 도서관">논현 도서관</option>
+				<option value="대치 도서관">대치 도서관</option>
+					
+			</select>
+		</c:when>
+		<c:when test ="${book.library eq '논현 도서관' }">
+			<select id="librarySelector" class="form-control">
+				<option value="역삼푸른솔도서관">역삼푸른솔도서관</option>
+				<option value="역삼도서관">역삼도서관</option>
+				<option value="행복한 도서관">행복한 도서관</option>
+				<option value="대치 도서관">대치 도서관</option>
+					
+			</select>
+		</c:when>
+		<c:when test ="${book.library eq '대치 도서관' }">
+			<select id="librarySelector" class="form-control">
+				<option value="역삼푸른솔도서관">역삼푸른솔도서관</option>
+				<option value="역삼도서관">역삼도서관</option>
+				<option value="행복한 도서관">행복한 도서관</option>
+				<option value="논현 도서관">논현 도서관</option>
+		
+					
+			</select>
+		</c:when>
+		<c:otherwise>
+			<select id="librarySelector" class="form-control">
+				<option value="역삼푸른솔도서관">역삼푸른솔도서관</option>
+				<option value="역삼도서관">역삼도서관</option>
+				<option value="행복한 도서관">행복한 도서관</option>
+				<option value="논현 도서관">논현 도서관</option>
+				<option value="대치 도서관">대치 도서관</option>
+					
+			</select>
+		</c:otherwise>
+	
+	</c:choose>
+	
 	
 	
 	<button id= "interibraryAddBtn" class="btn btn-success btn-sm interibraryAddBtn" data-book-id="${book.id }"><i class="bi bi-shuffle"></i>상호대차 신청</button> 
@@ -47,7 +100,7 @@
 		
 		$("#interibraryAddBtn").on("click", function(){
        	 let id = $(this).data("book-id");
-       	 
+       	 let library = $("#librarySelector").val();
        	 
        	 alert(id);
        	 alert(library);

@@ -12,6 +12,7 @@
    		(
    			`userId`
   			, `bookId`
+  			, `library`
   			, `createdAt` 
 		    , `updatedAt`
    		
@@ -21,6 +22,7 @@
    		VALUES(
    			#{userId}
    			, #{bookId}
+   			, #{library}
    			, now()
    			, now()
    		

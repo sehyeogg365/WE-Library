@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 public interface InteribraryDAO {
 
 	
-	public int insertInteribrary(@Param("bookId") int bookId, @Param("userId") int userId);
+	public int insertInteribrary(@Param("bookId") int bookId, @Param("userId") int userId, @Param("library") String library);
 	
 	
 }

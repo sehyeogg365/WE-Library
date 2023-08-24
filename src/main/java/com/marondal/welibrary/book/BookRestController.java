@@ -315,12 +315,13 @@ public class BookRestController {
 	//상호대차
 	@PostMapping("/interibrary/create")
 	public Map<String, String> addInteribrary(@RequestParam("bookId") int bookId
+											  , @RequestParam("library") String library	
 											  , HttpSession session){
 		
 		
 		int userId = (Integer) session.getAttribute("userId");
 		
-		int count = interibraryBO.addInteribrary(bookId, userId);
+		int count = interibraryBO.addInteribrary(bookId, userId, library);
 		
 		Map<String, String> resultMap = new HashMap<>();
 		
