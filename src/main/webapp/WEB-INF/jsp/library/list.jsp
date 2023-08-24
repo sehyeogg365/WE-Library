@@ -228,7 +228,7 @@
          
          $(".interestAddBtn").on("click", function(){
         	 let id = $(this).data("book-id");
-        	 
+        	 //이것도 한번 된 책이면 두번이상 못누르게 해보기
         	 
         	 alert(id);
         	 

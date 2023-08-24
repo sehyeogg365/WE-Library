@@ -6,6 +6,7 @@
   
   <mapper namespace="com.marondal.welibrary.book.dao.BookDAO">
   
+  	<!-- 책목록 조회 -->
   	<select id = "selectBookListByTitle" resultType="com.marondal.welibrary.book.model.Book" parameterType="map" >
 	  	SELECT
 	  		`id`
@@ -26,7 +27,8 @@
 	  		`title` = #{title}
 	  	ORDER BY `id` DESC;
   	</select>	
-  		
+  	
+  	<!-- 책 1행정보 조회 -->
   	<select id = "selectBookById" resultType="com.marondal.welibrary.book.model.Book" parameterType="int">
   	
   		SELECT
@@ -49,9 +51,36 @@
 
   	
   	</select>
+  	
+  	<!-- 대출 가능 여부 -->
+  	<select id ="selectBorrowByBookId" resultType="int" parameterType="int">
+  		SELECT
+  			count(1)
+  		FROM
+  			`borrow_book`
+  		WHERE
+  			`bookId` = #{bookId}
+  			
+  	</select>
+  	<!-- 예약 인원 세기  -->
+  	<select id ="selectReserveBookId" resultType="int" parameterType="int">
+  		SELECT 
+  			count(1)
+  		FROM
+  			`reserve_book`
+  		WHERE
+  			`bookId` = #{bookId}
+  	
+  	</select>
   
-  
-  
-  
+  	<!-- 상호대차 가능 여부 -->
+  	<select id="selectInteribraryBookId" resultType="int" parameterType="int">
+  		SELECT
+  			count(1)
+  		FROM
+  			`interibrary_book`
+  		WHERE
+  			`bookId` = #{bookId}
+  	</select>
   </mapper>
   

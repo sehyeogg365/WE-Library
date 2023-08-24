@@ -20,21 +20,18 @@ public interface BookDAO {
 	//책 1행정보 조회(상세정보)
 	public Book selectBookById(@Param("id")int id);
 		
-	//관심도서
+
+	
+	//대출 가능 여부 
+	public int selectBorrowByBookId(@Param("bookId") int bookId);
 	
 	
-	
-	//대출
-	
-	//반납
+	//예약 갯수 표시
+	public int selectReserveBookId(@Param("bookId") int bookId);
 	
 	
-	//예약
-	
-	
-	
-	//상호대차
-	
+	//상호대차 가능 여부
+	public int selectInteribraryBookId(@Param("bookId") int bookId);
 	
 	
 	
