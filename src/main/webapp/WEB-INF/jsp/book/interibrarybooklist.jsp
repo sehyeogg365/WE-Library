@@ -71,13 +71,16 @@
 								제공도서관: 행복한 도서관 | 수령도서관 : 역삼푸른솔도서관
 							</div>
 							<div class="">
-								신청일: | 반납일 : 2023.06.13 
+								신청일: | 반납일: 
+							</div>
+							<div class="">
+								상태: 신청중| 
 							</div>
 						</div>
 						<div class="">
 							
 							<button id="interibraryaddBtn" class="btn btn-primary btn-sm addBtn my-3" data-interibray-id="${interibrary.id }">상호대차 수령</button>
-							<button id="interibrarydeleteBtn" class="btn btn-primary btn-sm deleteBtn my-3" data-interibray-id="${interibrary.id }">상호대차 취소</button>
+							<button id="interibrarydeleteBtn" class="btn btn-primary btn-sm deleteBtn my-3" data-interibray-id="${interibrary.id }">취소</button>
 						
 						</div>
 						

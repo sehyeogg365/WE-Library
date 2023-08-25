@@ -6,12 +6,14 @@ public class InteribraryBookDetail {
 	private int id;
 	private int userId;
 	private int bookId;
-	private String library;//수령도서관
+	private String library;//제공도서관
+	private String receivelibrary;
 	private String title;
 	private String author;
 	private boolean isStatus;//상태
 	private String publisher;
 	private Date createdAt;
+	private Date returnDate;
 	public int getId() {
 		return id;
 	}
@@ -36,7 +38,12 @@ public class InteribraryBookDetail {
 	public void setLibrary(String library) {
 		this.library = library;
 	}
-	
+	public String getReceivelibrary() {
+		return receivelibrary;
+	}
+	public void setReceivelibrary(String receivelibrary) {
+		this.receivelibrary = receivelibrary;
+	}
 	public String getTitle() {
 		return title;
 	}
@@ -66,6 +73,12 @@ public class InteribraryBookDetail {
 	}
 	public void setCreatedAt(Date createdAt) {
 		this.createdAt = createdAt;
+	}
+	public Date getReturnDate() {
+		return returnDate;
+	}
+	public void setReturnDate(Date returnDate) {
+		this.returnDate = returnDate;
 	}
 	
 	

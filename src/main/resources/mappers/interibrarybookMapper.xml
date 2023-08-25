@@ -12,20 +12,20 @@
    		(
    			`userId`
   			, `bookId`
-  			, `library`
+  			, `receivelibrary`
   			, `createdAt` 
 		    , `updatedAt`
-   		
+   			, `returnDate`
    		
    		)
    		
    		VALUES(
    			#{userId}
    			, #{bookId}
-   			, #{library}
+   			, #{receivelibrary}
    			, now()
    			, now()
-   		
+   			, date_add(now(),interval 14 DAY)
    		)
    		
    	

@@ -6,8 +6,9 @@ public class InteribraryBook {
 	private int id;
 	private int userId;
 	private int bookId;
-	private String library;
+	private String receivelibrary;
 	private Date createdAt;
+	private Date returnDate;
 	private Date updatedAt;
 	public int getId() {
 		return id;
@@ -27,17 +28,23 @@ public class InteribraryBook {
 	public void setBookId(int bookId) {
 		this.bookId = bookId;
 	}
-	public String getLibrary() {
-		return library;
+	public String getReceivelibrary() {
+		return receivelibrary;
 	}
-	public void setLibrary(String library) {
-		this.library = library;
+	public void setReceivelibrary(String receivelibrary) {
+		this.receivelibrary = receivelibrary;
 	}
 	public Date getCreatedAt() {
 		return createdAt;
 	}
 	public void setCreatedAt(Date createdAt) {
 		this.createdAt = createdAt;
+	}
+	public Date getReturnDate() {
+		return returnDate;
+	}
+	public void setReturnDate(Date returnDate) {
+		this.returnDate = returnDate;
 	}
 	public Date getUpdatedAt() {
 		return updatedAt;
