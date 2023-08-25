@@ -62,7 +62,7 @@
 						
 						<c:forEach var="reserve" items="${reserveDetailList }">	
 						<hr>
-						<div class="d-flex justify-content-between ">
+						<div class="d-flex justify-content-between align-items-center">
 						<div class="col-9">
 							<div class="">
 								<h5>${reserve.title }</h5>
@@ -71,7 +71,10 @@
 								도서관 : ${reserve.library }
 							</div>
 							<div class=""><!-- <fmt:parseDate var="parseBorrow" value ="${formatBorrow }" pattern ="yyyy-MM-dd"/><fmt:parseNumber var="parseReturn" value="${parseBorrow.time + 60*60*24*1000*14}"/> <c:set var="fourteenDayAfter" value=""/> -->
-								상태 : 예약중 | 예약일 : <fmt:formatDate value ="${reserve.createdAt }" pattern ="yyyy-MM-dd"/> | 
+								 예약일 : <fmt:formatDate value ="${reserve.createdAt }" pattern ="yyyy-MM-dd"/> 
+							</div>
+							<div class="">
+								대출상태 : 대출중 | 반납예정일 : | 예약순번 : 번쨰
 							</div>
 						</div>
 						
