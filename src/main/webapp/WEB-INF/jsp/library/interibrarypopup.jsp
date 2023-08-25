@@ -21,12 +21,15 @@
 </head>
 <body>
 	<div class="">
-		<div class="">${book.library }</div>
 		<div class="">${book.title }</div>
+		<div class="">발행자:${book.publisher }</div>
+		<div class="">저자:${book.author }</div>
 		<div class="">부록:${book.appendix }</div>
+		<div class="">보내는도서관 : ${book.library }</div>
 	</div>
 	
 	<!-- 클릭한 도서관 이외의 도서관이 나와야 함 -->
+	<div class=""><b>수령도서관</b></div>
 	<c:choose>
 		<c:when test ="${book.library eq '역삼푸른솔도서관' }">
 			<select id="librarySelector" class="form-control">
@@ -86,11 +89,19 @@
 		</c:otherwise>
 	
 	</c:choose>
+	<div class="">
+	<p>
+		[유의사항] 신청이 불가하거나 거절되는 사유는 다음과 같습니다.
+	받는도서관에 해당자료가 존재하는 경우 신청불가
+	최대신청건수(5권)를 초과한 경우 신청불가
+	대출정지, 연체, 제적, 탈퇴 회원인경우 신청거절
+	신청 당일에 한해 다른 회원이 방문 대출을 한 경우 신청거절
+	해당자료가 대출, 예약, 파손, 소재불명인 경우 신청거절</p>
+	</div>
 	
 	
-	
-	<button id= "interibraryAddBtn" class="btn btn-success btn-sm interibraryAddBtn" data-book-id="${book.id }"><i class="bi bi-shuffle"></i>상호대차 신청</button> 
-	<a href="/library/list/view?title=${book.title }" class="btn btn-danger btn-sm">취소</a> 
+	<button id= "interibraryAddBtn" class="btn btn-success btn-sm" data-book-id="${book.id }"><i class="bi bi-shuffle"></i>상호대차 신청</button> 
+	<button class="btn btn-danger btn-sm" onclick="window.close()">취소</button> 
 	
 	
 	
@@ -101,10 +112,16 @@
 		$("#interibraryAddBtn").on("click", function(){
        	 let id = $(this).data("book-id");
        	 let library = $("#librarySelector").val();
+       	 let window
        	 
        	 alert(id);
        	 alert(library);
        	 
+       	function closeTabClick() {
+        	// 변수를 close해 새창을 닫음
+        	window.close();
+        }
+       	
        	 $.ajax({
        		
        		 type:"post"
@@ -114,7 +131,7 @@
        	 		 if(data.result == "success"){
        	 			 
        	 			 alert("상호대차 성공");
-       	 			 history.back();
+       	 			 window.close();
        	 			 //location.href="/library/list/view";
        	 			 
        	 		 } else {
