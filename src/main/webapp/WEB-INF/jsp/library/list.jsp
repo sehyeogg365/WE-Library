@@ -96,7 +96,7 @@
 						</div>
 						<div class="mr-2">	<!-- 대출가능일때 예약불가 --><!-- 상호대차중일때 상호대차불가 -->
 							<button class="btn btn-danger btn-sm reserveBtn" data-book-id="${book.id }"><i class="bi bi-journal-arrow-down"></i>도서 예약신청</button>
-							<a href="/library/interibrarypopup/view?id=${book.id }"class="btn btn-success btn-sm interibraryAddBtn" data-book-id="${book.id }"><i class="bi bi-shuffle"></i>상호대차 신청</a> 
+							<a href="/library/interibrarypopup/view?id=${book.id }"class="btn btn-success btn-sm interibraryAddBtn" onclick="window.open('/library/interibrarypopup/view?id=${book.id}','new','scrollbars=yes,resizable=no width=500 height=500, left=0,top=0');return false"><i class="bi bi-shuffle"></i>상호대차 신청</a> 
 							<button class="btn btn-primary btn-sm interestAddBtn" data-book-id="${book.id }"><i class="bi bi-download"></i>관심도서 담기</button>
 						</div>
 					</div>

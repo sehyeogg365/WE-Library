@@ -58,11 +58,12 @@
 						
 						
 						<div class="mt-3 d-flex ">
-							 대출현황 : &nbsp<div class="text-primary">3</div>건
+							 상호대차 현황 : &nbsp<div class="text-primary">3</div>건
 						</div>
 							
 						<hr>
-						<div class="">
+						<div class="d-flex justify-content-between ">
+						<div class="col-9">
 							<div class="">
 								<h5>신입사원 제대로 미쳐라.</h5>
 							</div>
@@ -73,7 +74,13 @@
 								상태 : 반납 | 대출일 : 2023.06.13 | 반납예정일 : 2023.06.27
 							</div>
 						</div>
+						<div class="">
+							<button id="interibrarydeleteBtn" class="btn btn-primary btn-sm deleteBtn my-3" data-interibray-id="${interibrary.id }">상호대차 취소</button>
 						
+						</div>
+						
+						
+						</div>	
 						
 						<hr>
 					
