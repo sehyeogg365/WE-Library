@@ -109,8 +109,14 @@
 				
 				
 				let id = $(this).data("reserve-id");
+				var result = confirm("취소 하시겠습니까?");
 				
-				alert(id);
+				if(result){
+					//alert(""); 아무것도 안쓰면 바로 추가성공이 뜬다.
+				} else {
+					return ;
+				}
+				//alert(id);
 				
 				$.ajax({
 					

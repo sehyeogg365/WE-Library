@@ -99,10 +99,10 @@
 	해당자료가 대출, 예약, 파손, 소재불명인 경우 신청거절</p>
 	</div>
 	
-	
-	<button id= "interibraryAddBtn" class="btn btn-success btn-sm" data-book-id="${book.id }"><i class="bi bi-shuffle"></i>상호대차 신청</button> 
-	<button class="btn btn-danger btn-sm" onclick="window.close()">취소</button> 
-	
+	<div class="text-center">
+		<button id= "interibraryAddBtn" class="btn btn-success btn-sm" data-book-id="${book.id }"><i class="bi bi-shuffle"></i>상호대차 신청</button> 
+		<button class="btn btn-danger btn-sm" onclick="window.close()">취소</button> 
+	</div>
 	
 	
 	<script>
@@ -112,7 +112,15 @@
 		$("#interibraryAddBtn").on("click", function(){
        	 let id = $(this).data("book-id");
        	 let library = $("#librarySelector").val();
-       	 let window
+       	
+       	 
+       	 var result = confirm("신청 하시겠습니까?");
+       	 
+	     if(result){
+			//alert(""); 아무것도 안쓰면 바로 추가성공이 뜬다.
+		 } else {
+			return ;
+		 }
        	 
        	 alert(id);
        	 alert(library);
