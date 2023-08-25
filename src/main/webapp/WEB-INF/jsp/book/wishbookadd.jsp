@@ -238,7 +238,7 @@
 			var result = confirm("신청 하시겠습니까?");
 			
 			if(result){
-				alert("신청");
+				
 			} else {
 				return ;
 			}
