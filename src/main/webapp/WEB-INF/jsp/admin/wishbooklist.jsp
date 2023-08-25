@@ -204,7 +204,7 @@
 				}
 				
 				if(result){
-					alert("");
+					//alert(""); 아무것도 안쓰면 바로 추가성공이 뜬다.
 				} else {
 					return ;
 				}
