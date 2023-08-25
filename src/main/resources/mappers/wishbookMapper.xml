@@ -46,7 +46,8 @@
   <!-- 희망도서 조회 -->
   <select id= "selectWishBookList"  resultType="com.marondal.welibrary.book.model.WishBook" parameterType="map">
   	SELECT
-  		`userId`
+  		`id`
+  		, `userId`
   		, `library`
   		, `title`
   		, `author`

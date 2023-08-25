@@ -77,7 +77,7 @@ public class WishBookBO {
 				wishbookDetail.setPublisher(wishbook.getPublisher());
 				wishbookDetail.setAuthor(wishbook.getAuthor());
 				wishbookDetail.setCreatedAt(wishbook.getCreatedAt());
-				wishbookDetail.setHave(isHave);
+				//wishbookDetail.setHave(isHave);
 				
 				wishbookDetailList.add(wishbookDetail);
 			}

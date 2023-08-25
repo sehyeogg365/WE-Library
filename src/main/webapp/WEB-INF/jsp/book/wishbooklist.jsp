@@ -59,11 +59,11 @@
 							<div class="text-secondary">
 								저자 : ${wishbook.author } | 출판사 : ${wishbook.publisher } | ISBN : ${wishbook.isbn }
 							</div>
-							<!--  
+							
 							<div class="text-secondary">
 								도서관 : ${wishbook.library } | 신청일 : <fmt:formatDate value ="${wishbook.createdAt }" pattern ="yyyy-MM-dd"/>
 							</div>
-							-->
+							
 							<div class="text-secondary">
 								상태 : 소장중 or 신청중
 							</div>
