@@ -41,7 +41,7 @@
 				
 				
 				<div class="search d-flex justify-content-center col-9">
-		             <input type="text" value=" " placeholder="검색어 입력" id="searchInput"class="form-control" name="title">
+		             <input type="text" value="${title } " placeholder="검색어 입력" id="searchInput"class="form-control" name="title">
 		             <div class="input-group-append">
 		                <button type="submit" id="searchBtn" class="btn">검색</button>
 		             </div>
@@ -52,12 +52,13 @@
 		   		<div class="mt-3 library-selectbox col-10">
 		   		<label class=""><input type="checkbox" id="allCheck" class="mr-2">전체 선택</label> <br>
 		   		<hr>
-			   		<div class="">
-				        <label class=""><input type="checkbox" name="check" value="역삼푸른솔도서관" class="mr-2">역삼푸른솔도서관</label>
-				        <label class="ml-4"><input type="checkbox" name="check" value="역삼도서관" class="mr-2">역삼도서관</label>
-				        <label class="ml-4"><input type="checkbox" name="check" value="행복한도서관" class="mr-2">행복한도서관</label>
-				        <label class="ml-4"><input type="checkbox" name="check" value="논현도서관" class="mr-2">논현도서관</label>
-				        <label class="ml-4"><input type="checkbox" name="check" value="대치도서관" class="mr-2">대치도서관</label>
+			   		<div class="d-flex">
+				        <label class=""><input type="checkbox" name="library" value="역삼푸른솔도서관" class="mr-2">역삼푸른솔도서관</label>
+				        <label class="ml-4"><input type="checkbox" name="library" value="역삼도서관" class="mr-2">역삼도서관</label>
+				        <label class="ml-4"><input type="checkbox" name="library" value="행복한도서관" class="mr-2">행복한도서관</label>
+				        <label class="ml-4"><input type="checkbox" name="library" value="논현도서관" class="mr-2">논현도서관</label>
+				        <label class="ml-4"><input type="checkbox" name="library" value="대치도서관" class="mr-2">대치도서관</label>
+			    		<div class=""><button class="btn btn-sm btn-secondary">적용하기</button></div>
 			    	</div>
 		    	</div>
 			</form>
@@ -141,13 +142,13 @@
 	            
 		
 		
-		var chkList = $("input[name = check]");
+		var chkList = $("input[name = library]");
 		 $("#allCheck").on("change", function() {
             // 내 자신이 체크 되었는지 안되었는지
             if($(this).is(":checked")) {
-                $("input[name='check']").prop("checked", true);
+                $("input[name='library']").prop("checked", true);
             } else {
-                $("input[name='check']").prop("checked", false);
+                $("input[name='library']").prop("checked", false);
             }
             
 		  }); 
