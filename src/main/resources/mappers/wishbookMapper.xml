@@ -62,7 +62,19 @@
   	ORDER BY `id` DESC
   </select>
   
-  <!-- 희망도서 추가 여부(book테이블에 추가되었는지 여부) -->
+  
+  
+  <!-- 유저별 희망도서 신청 갯수 세기 -->
+  <select id="selectWishBookNumberByuserId" resultType="com.marondal.welibrary.book.model.WishBook" parameterType="int" >
+  	SELECT
+  		count(1)
+  	FROM
+  		`wish_book`
+  	WHERE
+  		`userId` = #{userId}
+  
+  </select>
+  <!-- 희망도서 신청 여부(book테이블에 추가되었는지 여부) -->
   <select id="selectBookByLibraryTitle"  parameterType="map" resultType="int">
   	SELECT
   		count(1)
@@ -75,17 +87,7 @@
   
   </select>
   
-  <!-- 유저별 희망도서 신청 갯수 세기 -->
-  <select id="selectWishBookNumberByuserId" resultType="com.marondal.welibrary.book.model.WishBook" parameterType="int" >
-  	SELECT
-  		count(1)
-  	FROM
-  		`wish_book`
-  	WHERE
-  		`userId` = #{userId}
-  
-  </select>
-  
+  <!-- 관리자 -->
   <!-- 전체 희망도서 신청 갯수 세기 -->
   <select id="selectWishBookNumberById" resultType="com.marondal.welibrary.book.model.WishBook" parameterType="int" >
   	SELECT
@@ -95,7 +97,7 @@
   	
   
   </select>
-  <!-- 관리자 희망도서 추가 -->
+
   
   
   <!-- 관리자 희망도서 리스트 조회 -->
@@ -119,11 +121,11 @@
   		`id` DESC;
   </select>
   
-	  <!-- 희망도서 도서 테이블에추가  -->
-		  <insert id ="insertWishbookIntoBook" parameterType="map">
-		  INSERT INTO
-		  		`book`
-		  		(
+  <!-- 희망도서/도서 테이블에추가  -->
+	<insert id ="insertWishbookIntoBook" parameterType="map">
+		 INSERT INTO
+		  	`book`
+		  	(
 		  		`library`
 	  			, `title`
 	  			, `imagePath`
@@ -135,7 +137,7 @@
 		  		, `appendix`
 		  		, `createdAt`
   				, `updatedAt`	
-		  		)
+		  	)
 		  VALUES
 		  	(
 		  	    #{library}
@@ -151,5 +153,5 @@
  				, now()
 		  	)
 		  
-		  </insert>
+	</insert>
   </mapper>
