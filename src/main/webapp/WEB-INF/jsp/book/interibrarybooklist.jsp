@@ -62,7 +62,7 @@
 						</div>
 							
 						<hr>
-						<div class="d-flex justify-content-between ">
+						<div class="d-flex justify-content-between align-items-center">
 						<div class="col-9">
 							<div class="">
 								<h5>신입사원 제대로 미쳐라.</h5>
