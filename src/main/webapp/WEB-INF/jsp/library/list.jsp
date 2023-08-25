@@ -244,6 +244,14 @@
         	 let id = $(this).data("book-id");
         	 //이것도 한번 된 책이면 두번이상 못누르게 해보기
         	 
+			var result = confirm("관심도서 추가 하시겠습니까?");
+        	 
+        	 if(result){
+				//alert(""); 아무것도 안쓰면 바로 추가성공이 뜬다.
+			 } else {
+				return ;
+			 }
+        	 
         	 alert(id);
         	 
         	 $.ajax({
