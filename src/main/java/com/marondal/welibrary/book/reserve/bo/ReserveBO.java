@@ -48,7 +48,7 @@ public class ReserveBO {
 			reserveBookDetail.setTitle(book.getTitle());
 			reserveBookDetail.setAuthor(book.getAuthor());
 			reserveBookDetail.setPublisher(book.getPublisher());
-			reserveBookDetail.setCreatedAt(reserveBook.getCreatedAt());
+			reserveBookDetail.setCreatedAt(reserveBook.getCreatedAt());//반납예정일도 추가하기
 		
 			reserveDetailList.add(reserveBookDetail);
 		}

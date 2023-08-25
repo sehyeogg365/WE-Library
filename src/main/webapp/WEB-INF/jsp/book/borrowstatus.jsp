@@ -58,10 +58,10 @@
 						
 						<div class="mt-3 d-flex ">
 							 대출현황 : &nbsp<div class="text-primary">${borrowBookCount.numberCount }</div>건
-						</div>
+						</div><!-- 여기서도  반납연장 1회 누를시 반납연장불가로 바뀜, 상태는:반납연기 연체되면 연체로 나오게해야함-->
 						<c:forEach var="borrow" items="${borrowDetailList }">	<!-- 한번 반납연장을 했을때 반납 연장 못하게 -->
 						<hr>
-						<div class="d-flex justify-content-between ">
+						<div class="d-flex justify-content-between align-items-center">
 						<div class="col-9">
 							<div class="">
 								<h5>${borrow.title }</h5>
@@ -70,7 +70,7 @@
 								도서관 : ${borrow.library }
 							</div>
 							<div class=""><!-- ${borrowDate.time +(1000*60*60*24*14)} -->
-								상태 : 반납 | 대출일 : <fmt:formatDate value="${borrow.createdAt}" pattern ="yyyy-MM-dd"/> | 반납예정일 : <fmt:formatDate value="${borrow.returnDate}" pattern ="yyyy-MM-dd"/>
+								상태 : 대출중 | 대출일 : <fmt:formatDate value="${borrow.createdAt}" pattern ="yyyy-MM-dd"/> | 반납예정일 : <fmt:formatDate value="${borrow.returnDate}" pattern ="yyyy-MM-dd"/>
 							</div>
 						</div>
 						

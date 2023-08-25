@@ -10,6 +10,7 @@ public class ReserveBookDetail {
 	private String title;
 	private String author;
 	private String publisher;
+	private Date reuturnDate;//반납예정일도 추가
 	private Date createdAt;
 	public int getId() {
 		return id;
@@ -53,12 +54,19 @@ public class ReserveBookDetail {
 	public void setPublisher(String publisher) {
 		this.publisher = publisher;
 	}
+	public Date getReuturnDate() {
+		return reuturnDate;
+	}
+	public void setReuturnDate(Date reuturnDate) {
+		this.reuturnDate = reuturnDate;
+	}
 	public Date getCreatedAt() {
 		return createdAt;
 	}
 	public void setCreatedAt(Date createdAt) {
 		this.createdAt = createdAt;
 	}
+	
 	
 	
 }
