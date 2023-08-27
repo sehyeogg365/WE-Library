@@ -32,8 +32,9 @@
    
    <!-- 대출 1행정보 -->
    <select id = "selectBorrow" resultType="com.marondal.welibrary.book.model.BorrowBook" parameterType="int">
-   	SELECT
-   			`userId`
+   	SELECT	
+   			`id`
+   			, `userId`
   			, `bookId`
   			, `createdAt` 
 		    , `updatedAt`
@@ -41,7 +42,7 @@
    	FROM
    		`borrow_book`
    	WHERE
-   		`id` =#{id}
+   		`bookId` =#{bookId}
    
    </select>
    <!-- 대출목록 -->

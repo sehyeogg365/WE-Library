@@ -32,10 +32,10 @@ public class BorrowBO {
 
 	
 	//대출 1행정보
-	public BorrowBook getBorrow(int id) {
+	public BorrowBook getBorrow(int bookId) {
 		
 		
-		return borrowDAO.selectBorrow(id);
+		return borrowDAO.selectBorrow(bookId);
 		
 		
 	}

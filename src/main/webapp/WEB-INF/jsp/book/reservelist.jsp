@@ -74,7 +74,7 @@
 								 예약일 : <fmt:formatDate value ="${reserve.createdAt }" pattern ="yyyy-MM-dd"/> 
 							</div>
 							<div class="">
-								대출상태 : 대출중 | 반납예정일 : | 예약순번 : 번쨰(명 예약중)
+								대출상태 : 대출중 | 반납예정일 : <fmt:formatDate value="${reserve.returnDate }" pattern ="yyyy-MM-dd"/> | 예약순번 : 번쨰(명 예약중)
 							</div>
 						</div>
 						

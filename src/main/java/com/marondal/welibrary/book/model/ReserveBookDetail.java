@@ -10,8 +10,9 @@ public class ReserveBookDetail {
 	private String title;
 	private String author;
 	private String publisher;
-	private Date reuturnDate;//반납예정일도 추가
 	private Date createdAt;
+	private Date returnDate;//반납예정일도 추가
+	private boolean isBorrow;//대출상태
 	public int getId() {
 		return id;
 	}
@@ -54,19 +55,24 @@ public class ReserveBookDetail {
 	public void setPublisher(String publisher) {
 		this.publisher = publisher;
 	}
-	public Date getReuturnDate() {
-		return reuturnDate;
-	}
-	public void setReuturnDate(Date reuturnDate) {
-		this.reuturnDate = reuturnDate;
-	}
 	public Date getCreatedAt() {
 		return createdAt;
 	}
 	public void setCreatedAt(Date createdAt) {
 		this.createdAt = createdAt;
 	}
-	
+	public Date getReturnDate() {
+		return returnDate;
+	}
+	public void setReturnDate(Date returnDate) {
+		this.returnDate = returnDate;
+	}
+	public boolean isBorrow() {
+		return isBorrow;
+	}
+	public void setBorrow(boolean isBorrow) {
+		this.isBorrow = isBorrow;
+	}
 	
 	
 }
