@@ -31,6 +31,15 @@ public class BorrowBO {
 	}
 
 	
+	//대출 1행정보
+	public BorrowBook getBorrow(int id) {
+		
+		
+		return borrowDAO.selectBorrow(id);
+		
+		
+	}
+	
 	//대출 목록
 	public List<BorrowBookDetail> getBorrowList(int userId){
 		

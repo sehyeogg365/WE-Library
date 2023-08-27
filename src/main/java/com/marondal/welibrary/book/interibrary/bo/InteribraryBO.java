@@ -35,22 +35,20 @@ public class InteribraryBO {
 		
 		List<InteribraryBookDetail> interibraryDetailList = new ArrayList<>();
 		
-		for(InteribraryBook interibraryBook: interibraryList) {
+		for(InteribraryBook interibrarybook: interibraryList) {
 			
-			Book book = bookBO.getBookById(interibraryBook.getBookId());
+			Book book = bookBO.getBookById(interibrarybook.getBookId());
 			
 			InteribraryBookDetail interibraryBookDetail = new InteribraryBookDetail();
 			
-			interibraryBookDetail.setId(interibraryBook.getId());
-			interibraryBookDetail.setUserId(userId);
-			interibraryBookDetail.setBookId(interibraryBook.getBookId());
+			interibraryBookDetail.setId(interibrarybook.getId());
+			interibraryBookDetail.setUserId(interibrarybook.getUserId());
+			interibraryBookDetail.setBookId(interibrarybook.getBookId());
 			interibraryBookDetail.setTitle(book.getTitle());
-			
 			interibraryBookDetail.setLibrary(book.getLibrary());// 제공도서관
-			interibraryBookDetail.setReceivelibrary(interibraryBook.getReceivelibrary());//수령도서관
-			
-			interibraryBookDetail.setCreatedAt(interibraryBook.getCreatedAt());
-			interibraryBookDetail.setReturnDate(interibraryBook.getReturnDate());
+			interibraryBookDetail.setReceivelibrary(interibrarybook.getReceivelibrary());//수령도서관
+			interibraryBookDetail.setCreatedAt(interibrarybook.getCreatedAt());//수령일
+			interibraryBookDetail.setReturnDate(interibrarybook.getReturnDate());//반납예정일
 			
 			interibraryDetailList.add(interibraryBookDetail);
 		}

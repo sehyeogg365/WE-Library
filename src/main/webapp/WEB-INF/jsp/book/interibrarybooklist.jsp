@@ -60,21 +60,22 @@
 						<div class="mt-3 d-flex ">
 							 상호대차 현황 : &nbsp<div class="text-primary">3</div>건
 						</div>
-							
+						
+						<c:forEach var="interibrarybook" items ="${interibraryDetailList }">
 						<hr>
 						<div class="d-flex justify-content-between align-items-center">
 						<div class="col-9">
 							<div class="">
-								<h5>신입사원 제대로 미쳐라.</h5>
+								<h5>${interibrarybook.title }</h5>
 							</div>
 							<div class="">
-								제공도서관: 행복한 도서관 | 수령도서관 : 역삼푸른솔도서관
+								제공도서관: ${interibrarybook.library } | 수령도서관 : ${interibrarybook.receivelibrary }
 							</div>
 							<div class="">
-								신청일: | 반납일: 
+								신청일: <fmt:formatDate value="${interibrarybook.createdAt }" pattern = "yyyy-MM-dd"/>| 반납예정일: <fmt:formatDate value="${interibrarybook.returnDate }" pattern = "yyyy-MM-dd"/>
 							</div>
-							<div class="">
-								상태: 신청중| 
+							<div class="d-flex"><!-- 여기서도 요청된자료/ 입수된 자료/ 신청취소된자료로 구분  -->
+								상태: <p class="text-primary">요청된 자료</p>
 							</div>
 						</div>
 						<div class="">
@@ -86,6 +87,8 @@
 						
 						
 						</div>	
+						</c:forEach>	
+						
 						
 						<hr>
 					
@@ -107,7 +110,7 @@
 	
 	</div>
 	<script>
-	
+	//수령 = 대여목록 추가, 대여를 의미하고 dto로는 borrow_book테이블에 있는지여부를 조사하여 있으며 있으면 대여중 이런식으로 글자 변경
 	
 	
 	</script>

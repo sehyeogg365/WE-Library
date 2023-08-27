@@ -17,11 +17,13 @@ import com.marondal.welibrary.book.borrow.bo.BorrowCountBO;
 import com.marondal.welibrary.book.dao.BookDAO;
 import com.marondal.welibrary.book.interest.bo.InterestBO;
 import com.marondal.welibrary.book.interest.bo.InterestCountBO;
+import com.marondal.welibrary.book.interibrary.bo.InteribraryBO;
 import com.marondal.welibrary.book.model.Book;
 import com.marondal.welibrary.book.model.BorrowBookCount;
 import com.marondal.welibrary.book.model.BorrowBookDetail;
 import com.marondal.welibrary.book.model.InterestBookCount;
 import com.marondal.welibrary.book.model.InterestBookDetail;
+import com.marondal.welibrary.book.model.InteribraryBookDetail;
 import com.marondal.welibrary.book.model.ReserveBookCount;
 import com.marondal.welibrary.book.model.ReserveBookDetail;
 import com.marondal.welibrary.book.model.WishBook;
@@ -66,6 +68,8 @@ public class BookController {
 	@Autowired
 	private ReserveBO reserveBO;
 	
+	@Autowired
+	private InteribraryBO interibraryBO;
 
 	
 	@GetMapping("/wishbook/list/view")
@@ -168,12 +172,18 @@ public class BookController {
 	
 	@GetMapping("/interibrarybooklist/view")
 	public String interibraryBookList(Model model
-			, int id) {
+			, @RequestParam("id") int id
+			, HttpSession session) {
+		
+		int userId = (Integer)session.getAttribute("userId");
 		
 		User user = userBO.getUserInfo(id); //이상하게 DAO로 해도 잘불러와지더라.
 		
 		model.addAttribute("user", user);
 		
+		List<InteribraryBookDetail> interibraryDetailList = interibraryBO.getInteribraryList(userId);
+		
+		model.addAttribute("interibraryDetailList", interibraryDetailList);
 		//여기서 상호대차도서개수 추가
 		
 		return "book/interibrarybooklist";

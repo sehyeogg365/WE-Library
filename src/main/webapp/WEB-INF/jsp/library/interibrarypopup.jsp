@@ -134,7 +134,7 @@
        		
        		 type:"post"
        		 , url:"/book/interibrary/create"
-       		 , data : {"bookId" :id, "library":library}
+       		 , data : {"bookId" :id, "receivelibrary":library}
        	 	 , success:function(data){
        	 		 if(data.result == "success"){
        	 			 

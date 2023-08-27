@@ -31,6 +31,21 @@
    	
    	
    	</insert>
+   	
+   	<select id = "selectInteribraryList" resultType="com.marondal.welibrary.book.model.InteribraryBook" parameterType="int">
+   		SELECT
+   			`id`
+   			,`userId`
+  			, `bookId`
+  			, `receivelibrary`
+  			, `createdAt` 
+   			, `returnDate`
+   		FROM
+   			`interibrary_book`
+   		WHERE
+   			`userId` = #{userId}
+   		ORDER BY `id` DESC
+   	</select>
    
    
    </mapper>
