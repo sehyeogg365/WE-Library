@@ -22,4 +22,15 @@ public interface ReserveDAO {
 	//예약 삭제 
 	public int deleteReserve(@Param("id") int id
 							, @Param("userId") int userId);
+
+
+	//예약권수 
+	
+	
+	//예약인원수
+	
+	//대출상태
+	public int selectBorrowByBookId(@Param("bookId") int bookId);
+	
+	
 }

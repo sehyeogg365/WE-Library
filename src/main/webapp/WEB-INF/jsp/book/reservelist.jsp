@@ -59,7 +59,7 @@
 						<div class="mt-3 d-flex ">
 							 예약현황 : &nbsp<div class="text-primary">3</div>건
 						</div>
-						
+						<!-- 대출중일때 if문 써서 대출중  boolean 타입변수 is 빼고 소문자로-->
 						<c:forEach var="reserve" items="${reserveDetailList }">	
 						<hr>
 						<div class="d-flex justify-content-between align-items-center">
@@ -73,8 +73,16 @@
 							<div class=""><!-- <fmt:parseDate var="parseBorrow" value ="${formatBorrow }" pattern ="yyyy-MM-dd"/><fmt:parseNumber var="parseReturn" value="${parseBorrow.time + 60*60*24*1000*14}"/> <c:set var="fourteenDayAfter" value=""/> -->
 								 예약일 : <fmt:formatDate value ="${reserve.createdAt }" pattern ="yyyy-MM-dd"/> 
 							</div>
-							<div class="">
-								대출상태 : 대출중 | 반납예정일 : <fmt:formatDate value="${reserve.returnDate }" pattern ="yyyy-MM-dd"/> | 예약순번 : 번쨰(명 예약중)
+							<div class="d-flex">
+								대출상태 :<c:choose> 
+										<c:when test = "${reserve.borrow }" >
+											<p class="text-primary">대출중</p>
+										</c:when>
+										<c:otherwise>
+											<p class="text-primary">대출 가능</p>
+										</c:otherwise>
+										</c:choose>
+								| 반납예정일 : <fmt:formatDate value="${reserve.returnDate }" pattern ="yyyy-MM-dd"/> | 예약순번 : 번쨰(명 예약중)
 							</div>
 						</div>
 						

@@ -51,4 +51,21 @@
   		`id`=#{id};
   
   </delete>
+  
+  <!-- 예약 권수 -->
+  
+  <!-- 예약인원수 -->
+  	
+  
+  <!-- 대출상태 -->
+  <select id = "selectBorrowByBookId" resultType="int" parameterType="int">
+  	SELECT
+  		count(1)
+  	FROM
+  		`borrow_book`
+  	WHERE
+  		`bookId` = #{bookId};
+  
+  </select>
+  
   </mapper>

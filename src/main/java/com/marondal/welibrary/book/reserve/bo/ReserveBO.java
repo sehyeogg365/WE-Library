@@ -11,6 +11,7 @@ import com.marondal.welibrary.book.borrow.bo.BorrowBO;
 import com.marondal.welibrary.book.model.Book;
 import com.marondal.welibrary.book.model.BorrowBook;
 import com.marondal.welibrary.book.model.ReserveBook;
+import com.marondal.welibrary.book.model.ReserveBookCount;
 import com.marondal.welibrary.book.model.ReserveBookDetail;
 import com.marondal.welibrary.book.reserve.dao.ReserveDAO;
 
@@ -26,6 +27,8 @@ public class ReserveBO {
 	@Autowired
 	private BorrowBO borrowBO;
 	
+	@Autowired
+	private ReserveCountBO reserveCountBO;
 	//예약
 	public int addReserve(int bookId, int userId) {
 		
@@ -47,6 +50,11 @@ public class ReserveBO {
 			
 			BorrowBook borrowbook = borrowBO.getBorrow(reserveBook.getBookId());
 			
+			//갯수
+			
+			//대출상태
+			boolean isBorrow = reserveCountBO.isBorrow(book.getId());//상태
+			
 			ReserveBookDetail reserveBookDetail = new ReserveBookDetail();
 			
 			reserveBookDetail.setId(reserveBook.getId());
@@ -58,6 +66,8 @@ public class ReserveBO {
 			reserveBookDetail.setCreatedAt(reserveBook.getCreatedAt());//반납예정일도 추가하기
 			reserveBookDetail.setReturnDate(borrowbook.getReturnDate());//반납예정일
 			//대출상태, 예약순번/예약인원수도 필요함
+			reserveBookDetail.setBorrow(isBorrow);//대출상태
+			
 			reserveDetailList.add(reserveBookDetail);
 		}
 		
