@@ -96,10 +96,10 @@
 						
 							<c:choose>
 								<c:when test="${book.borrow }">
-									<button class="btn btn-info btn-sm" ><i class="bi bi-bookmark-plus"></i>대출불가</button> <div class="">예약인원 ${book.reserveCount } 명</div>
+									<button class="btn btn-info btn-sm" ><i class="bi bi-bookmark-plus"></i>대출불가</button> <div class="">예약인원 ${book.reserveCount }/3 명</div>
 								</c:when>
 								<c:when test="${book.interibrary }">
-									<button class="btn btn-info btn-sm" ><i class="bi bi-bookmark-plus"></i>대출불가</button> <div class="">예약인원 ${book.reserveCount } 명</div>
+									<button class="btn btn-info btn-sm" ><i class="bi bi-bookmark-plus"></i>대출불가</button> <div class="">예약인원 ${book.reserveCount }/3 명</div>
 								</c:when>
 								<c:otherwise>
 									<button class="btn btn-info btn-sm borrowBtn" data-book-id="${book.id }"><i class="bi bi-bookmark-plus"></i>대출하기</button>
@@ -115,6 +115,9 @@
 								</c:when>
 								<c:when test="${book.interibrary }">
 									<button class="btn btn-danger btn-sm reserveBtn" data-book-id="${book.id }"><i class="bi bi-journal-arrow-down"></i>도서 예약신청</button>
+								</c:when>
+								<c:when test="${book.reserveCount }>=3">
+									<button class="btn btn-danger btn-sm" ><i class="bi bi-journal-arrow-down"></i>예약불가</button>
 								</c:when>
 								<c:otherwise>
 									<button class="btn btn-danger btn-sm" ><i class="bi bi-journal-arrow-down"></i>예약불가</button>

@@ -82,7 +82,7 @@
 											<p class="text-primary">대출 가능</p>
 										</c:otherwise>
 										</c:choose>
-								| 반납예정일 : <fmt:formatDate value="${reserve.returnDate }" pattern ="yyyy-MM-dd"/> | 예약순번 : 번쨰(명 예약중)
+								| 반납예정일 : <fmt:formatDate value="${reserve.returnDate }" pattern ="yyyy-MM-dd"/> | 예약순번 : 번쨰(${reserve.reserveCount }명 예약중)
 							</div>
 						</div>
 						
