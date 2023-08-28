@@ -22,11 +22,11 @@ public interface BookDAO {
 		
 	
 	//현재 예약 인원 표시
-	public int selectReserveBookId(@Param("bookId") int bookId);
+	//public int selectReserveBookId(@Param("bookId") int bookId);
 	
 	
 	//상호대차 가능 여부
-	public int selectInteribraryBookId(@Param("bookId") int bookId);
+	//public int selectInteribraryBookId(@Param("bookId") int bookId);
 	
 	
 	

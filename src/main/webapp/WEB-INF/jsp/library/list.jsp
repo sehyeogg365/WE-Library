@@ -92,14 +92,14 @@
 						도서관 : ${book.library } | 부록 : ${book.appendix }
 					</div>
 					<div class=" book-status text-secondary d-flex justify-content-between">
-						<div class=""><!-- 대출중일때 대출불가 예약 -->
+						<div class="d-flex"><!-- 대출중일때 대출불가 예약 -->
 						
 							<c:choose>
 								<c:when test="${book.borrow }">
-									<button class="btn btn-info btn-sm" ><i class="bi bi-bookmark-plus"></i>대출불가</button>
+									<button class="btn btn-info btn-sm" ><i class="bi bi-bookmark-plus"></i>대출불가</button> <div class="">예약인원 ${book.reserveCount } 명</div>
 								</c:when>
 								<c:when test="${book.interibrary }">
-									<button class="btn btn-info btn-sm" ><i class="bi bi-bookmark-plus"></i>대출불가</button>
+									<button class="btn btn-info btn-sm" ><i class="bi bi-bookmark-plus"></i>대출불가</button> <div class="">예약인원 ${book.reserveCount } 명</div>
 								</c:when>
 								<c:otherwise>
 									<button class="btn btn-info btn-sm borrowBtn" data-book-id="${book.id }"><i class="bi bi-bookmark-plus"></i>대출하기</button>
