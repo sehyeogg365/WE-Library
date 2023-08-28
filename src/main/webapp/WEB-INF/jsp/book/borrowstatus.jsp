@@ -57,7 +57,7 @@
 						
 						
 						<div class="mt-3 d-flex ">
-							 대출현황 : &nbsp<div class="text-primary">${borrowBookCount.numberCount }</div>건
+							 대출현황 : &nbsp<div class="text-primary">${BorrowBookCount.numberCount }</div>건
 						</div><!-- 여기서도  반납연장 1회 누를시 반납연장불가로 바뀜, 상태는:반납연기 연체되면 연체로 나오게해야함-->
 						<c:forEach var="borrow" items="${borrowDetailList }">	<!-- 한번 반납연장을 했을때 반납 연장 못하게 -->
 						<hr>
