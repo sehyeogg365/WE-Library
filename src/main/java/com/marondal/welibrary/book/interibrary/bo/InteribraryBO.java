@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.marondal.welibrary.book.bo.BookBO;
+import com.marondal.welibrary.book.borrow.bo.BorrowCountBO;
 import com.marondal.welibrary.book.interibrary.dao.InteribraryDAO;
 import com.marondal.welibrary.book.model.Book;
 import com.marondal.welibrary.book.model.InteribraryBook;
@@ -20,6 +21,9 @@ public class InteribraryBO {
 	
 	@Autowired
 	private BookBO bookBO;
+	
+	@Autowired
+	private InteribrayCountBO interibrayCountBO;
 	
 	//상호대차 신청
 	public int addInteribrary(int bookId, int userId, String receivelibrary) {
@@ -39,6 +43,7 @@ public class InteribraryBO {
 			
 			Book book = bookBO.getBookById(interibrarybook.getBookId());
 			
+			boolean isBorrow = interibrayCountBO.isBorrow(interibrarybook.getBookId());
 			InteribraryBookDetail interibraryBookDetail = new InteribraryBookDetail();
 			
 			interibraryBookDetail.setId(interibrarybook.getId());
@@ -49,6 +54,7 @@ public class InteribraryBO {
 			interibraryBookDetail.setReceivelibrary(interibrarybook.getReceivelibrary());//수령도서관
 			interibraryBookDetail.setCreatedAt(interibrarybook.getCreatedAt());//수령일
 			interibraryBookDetail.setReturnDate(interibrarybook.getReturnDate());//반납예정일
+			interibraryBookDetail.setStatus(isBorrow);
 			
 			interibraryDetailList.add(interibraryBookDetail);
 		}
@@ -63,10 +69,10 @@ public class InteribraryBO {
 	
 	
 	//상호대차 취소
-	public int deleteInteribrary(int id) {
+	public int deleteInteribrary(int userId, int id) {
 		
 		
-		return interibraryDAO.deleteInteribrary(id);
+		return interibraryDAO.deleteInteribrary(userId, id);
 		
 		
 	}

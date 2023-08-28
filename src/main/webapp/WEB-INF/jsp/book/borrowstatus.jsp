@@ -121,7 +121,7 @@
 				
 				let id = $(this).data("book-id");
 				
-				alert(id);
+				//alert(id);
 				
 				$.ajax({
 					

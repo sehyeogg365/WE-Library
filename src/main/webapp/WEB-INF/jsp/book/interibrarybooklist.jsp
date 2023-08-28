@@ -67,6 +67,8 @@
 						<div class="col-9">
 							<div class="">
 								<h5>${interibrarybook.title }</h5>
+								<h5>상호대차아이디${interibraybook.id }</h5>
+								<h5>북아이디${interibraybook.bookId }</h5>
 							</div>
 							<div class="">
 								제공도서관: ${interibrarybook.library } | 수령도서관 : ${interibrarybook.receivelibrary }
@@ -75,7 +77,16 @@
 								신청일: <fmt:formatDate value="${interibrarybook.createdAt }" pattern = "yyyy-MM-dd"/>| 반납예정일: <fmt:formatDate value="${interibrarybook.returnDate }" pattern = "yyyy-MM-dd"/>
 							</div>
 							<div class="d-flex"><!-- 여기서도 요청된자료/ 입수된 자료/ 신청취소된자료로 구분  -->
-								상태: <p class="text-primary">요청된 자료</p>
+								상태: 
+								<c:choose>
+									<c:when test="${interibrarybook.status }">
+										<p class="text-primary">수령완료</p>
+									</c:when>
+									<c:otherwise>
+										<p class="text-primary">요청된 자료</p>
+									</c:otherwise>
+								</c:choose>
+								
 							</div>
 						</div>
 						<div class="">
@@ -116,9 +127,9 @@
 			
 			$(".addBtn").on("click", function(){
 				
-				let id = $(this).data("book-id");
+				let bookId = $(this).data("book-id");
 				
-				alert(id);
+				alert(bookId);
 				
 				
 				
@@ -130,6 +141,15 @@
 				
 				let id = $(this).data("interibrary-id");
 				
+				
+				var result = confirm("상호대차 취소 하시겠습니까?");
+				
+				if(result){
+					//alert(""); 아무것도 안쓰면 바로 추가성공이 뜬다.
+				} else {
+					return ;
+				}
+				
 				alert(id);
 				
 				
@@ -139,6 +159,13 @@
 					, url:"/book/interibrary/delete"
 					, data:{"id" : id}
 					, success:function(data){
+						
+						if(data.result == "success"){
+							alert("상호대차 취소 성공");
+							location.reload();
+						} else {
+							alert("상호대차 취소 실패");
+						}
 						
 						
 					}
