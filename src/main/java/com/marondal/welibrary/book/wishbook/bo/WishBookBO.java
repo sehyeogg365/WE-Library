@@ -22,9 +22,9 @@ public class WishBookBO {
 	@Autowired
 	private WishBookDAO wishBookDAO;
 
-	
+
 	@Autowired
-	private WishBookCheckBO wishBookCheckBO;
+	private WishBookCountBO wishBookCountBO;
 	
 	@Autowired
 	private UserBO userBO;
@@ -62,7 +62,7 @@ public class WishBookBO {
 				
 				
 				
-				boolean isHave = wishBookCheckBO.isWishAdd(wishbook.getLibrary(), wishbook.getTitle());//희망도서 추가 여부
+				boolean isAdd = wishBookCountBO.isWishAdd(wishbook.getLibrary(), wishbook.getTitle());//희망도서 추가 여부
 				// 이거 관련 비오를 하나 더 파는게 나을듯 신청 갯수랑 소장여부 변수는..
 				
 				//유저 하나 
@@ -77,7 +77,7 @@ public class WishBookBO {
 				wishbookDetail.setPublisher(wishbook.getPublisher());
 				wishbookDetail.setAuthor(wishbook.getAuthor());
 				wishbookDetail.setCreatedAt(wishbook.getCreatedAt());
-				//wishbookDetail.setHave(isHave);
+				wishbookDetail.setAdd(isAdd);
 				
 				wishbookDetailList.add(wishbookDetail);
 			}

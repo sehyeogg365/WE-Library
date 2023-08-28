@@ -64,8 +64,15 @@
 								도서관 : ${wishbook.library } | 신청일 : <fmt:formatDate value ="${wishbook.createdAt }" pattern ="yyyy-MM-dd"/>
 							</div>
 							
-							<div class="text-secondary">
-								상태 : 소장중 or 신청중
+							<div class="text-secondary d-flex">
+								상태 : <c:choose>
+										<c:when test = "${wishbook.add }">
+											<p>소장중</p>
+										</c:when>
+										<c:otherwise>
+											<p>신청중</p>
+										</c:otherwise>
+									  </c:choose>
 							</div>
 						</div>
 						

@@ -15,8 +15,11 @@ public interface InteribraryDAO {
 	
 	
 	//상호대차 조회
-	
 	public List<InteribraryBook> selectInteribraryList(@Param("userId") int userId);
+	
+	
+	//상호대차 권수
+	public InteribraryBook selectInteribraryBookNumberByuserId(@Param("userId") int userId);
 	
 	
 	//대출 상태
@@ -27,7 +30,6 @@ public interface InteribraryDAO {
 	public int selectInteribraryByBookId(@Param("bookId") int bookId);
 	
 	//상호대차 취소
-	
 	public int deleteInteribrary(@Param("userId") int userId, @Param("id") int id);
 	
 	

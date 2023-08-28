@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.marondal.welibrary.book.interibrary.dao.InteribraryDAO;
+import com.marondal.welibrary.book.model.InteribraryBook;
 
 @Service
 public class InteribrayCountBO {
@@ -11,6 +12,13 @@ public class InteribrayCountBO {
 	@Autowired
 	private InteribraryDAO interibraryDAO;
 	//상호대차 권수
+	public InteribraryBook getInteribraryBookNumberByuserId(int userId) {
+		
+		
+		return interibraryDAO.selectInteribraryBookNumberByuserId(userId);
+		
+		
+	}
 	
 	//대출 상태
 	public boolean isBorrow(int bookId) {

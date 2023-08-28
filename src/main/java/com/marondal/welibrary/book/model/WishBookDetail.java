@@ -16,7 +16,7 @@ public class WishBookDetail {//희망도서 리스트 카드 한장에 들어가
 	private String isbn;
 	private int pubyear;
 	private boolean isHave;//소장여부(관리자)
-	private boolean isAdd;// 신청여부(사용자
+	private boolean isAdd;// 신청여부(사용자)
 	private Date createdAt;// 신청날짜	
 	public int getId() {
 		return id;

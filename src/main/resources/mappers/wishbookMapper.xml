@@ -75,6 +75,7 @@
   		`userId` = #{userId}
   
   </select>
+  
   <!-- 희망도서 신청 여부(book테이블에 추가되었는지 여부) -->
   <select id="selectBookByLibraryTitle"  parameterType="map" resultType="int">
   	SELECT
