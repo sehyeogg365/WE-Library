@@ -105,8 +105,16 @@
 							
 						</div>
 						<div class="mr-2">	<!-- 대출가능일때 예약불가 --><!-- 상호대차중일때 상호대차불가 -->
-							<button class="btn btn-danger btn-sm reserveBtn" data-book-id="${book.id }"><i class="bi bi-journal-arrow-down"></i>도서 예약신청</button>
+						
+							<c:choose>
+								<c:when test="${book.borrow }">
+									<button class="btn btn-danger btn-sm reserveBtn" data-book-id="${book.id }"><i class="bi bi-journal-arrow-down"></i>도서 예약신청</button>
+								</c:when>
+								<c:otherwise>
+									<button class="btn btn-danger btn-sm" ><i class="bi bi-journal-arrow-down"></i>예약불가</button>
+								</c:otherwise>
 							
+							</c:choose>
 							<c:choose>
 								<c:when test="${book.borrow }">
 									<a href="#"class="btn btn-success btn-sm interibraryAddBtn" onclick=""></i>상호대차 신청 불가</a> 

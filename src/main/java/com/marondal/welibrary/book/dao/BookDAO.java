@@ -20,11 +20,6 @@ public interface BookDAO {
 	//책 1행정보 조회(상세정보)
 	public Book selectBookById(@Param("id")int id);
 		
-
-	
-	//대출 가능 여부 
-	public int selectBorrowByBookId(@Param("bookId") int bookId);
-	
 	
 	//현재 예약 인원 표시
 	public int selectReserveBookId(@Param("bookId") int bookId);

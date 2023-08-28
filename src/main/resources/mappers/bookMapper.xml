@@ -53,15 +53,7 @@
   	</select>
   	
   	<!-- 대출 가능 여부 -->
-  	<select id ="selectBorrowByBookId" resultType="int" parameterType="int">
-  		SELECT
-  			count(1)
-  		FROM
-  			`borrow_book`
-  		WHERE
-  			`bookId` = #{bookId}
-  			
-  	</select>
+  	
   	<!-- 예약 인원 세기  -->
   	<select id ="selectReserveBookId" resultType="int" parameterType="int">
   		SELECT 
