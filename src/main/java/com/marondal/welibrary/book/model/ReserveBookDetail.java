@@ -13,6 +13,7 @@ public class ReserveBookDetail {
 	private Date createdAt;
 	private Date returnDate;//반납예정일도 추가
 	private boolean isStatus;//대출상태
+	private int reserveCount;//예약 인원수
 	public int getId() {
 		return id;
 	}
@@ -72,6 +73,12 @@ public class ReserveBookDetail {
 	}
 	public void setStatus(boolean isStatus) {
 		this.isStatus = isStatus;
+	}
+	public int getReserveCount() {
+		return reserveCount;
+	}
+	public void setReserveCount(int reserveCount) {
+		this.reserveCount = reserveCount;
 	}
 	
 	

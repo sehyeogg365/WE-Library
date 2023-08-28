@@ -55,6 +55,8 @@ public class ReserveBO {
 			//대출상태
 			boolean isBorrow = reserveCountBO.isBorrow(book.getId());//상태
 			
+			int reserveCount = reserveCountBO.getreserveCount(book.getId());
+			
 			ReserveBookDetail reserveBookDetail = new ReserveBookDetail();
 			
 			reserveBookDetail.setId(reserveBook.getId());
@@ -67,6 +69,7 @@ public class ReserveBO {
 			reserveBookDetail.setReturnDate(borrowbook.getReturnDate());//반납예정일
 			//대출상태, 예약순번/예약인원수도 필요함
 			reserveBookDetail.setStatus(isBorrow);//대출상태
+			reserveBookDetail.setReserveCount(reserveCount);//예약 인원수
 			
 			reserveDetailList.add(reserveBookDetail);
 		}

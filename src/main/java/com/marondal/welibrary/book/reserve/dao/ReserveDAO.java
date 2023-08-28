@@ -28,6 +28,7 @@ public interface ReserveDAO {
 	
 	
 	//예약인원수
+	public int selectReserveCount(@Param("bookId") int bookId);
 	
 	//대출상태
 	public int selectBorrowByBookId(@Param("bookId") int bookId);

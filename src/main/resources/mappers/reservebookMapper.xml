@@ -55,7 +55,15 @@
   <!-- 예약 권수 -->
   
   <!-- 예약인원수 -->
-  	
+  <select id = "selectReserveCount" resultType="int" parameterType="int">
+  	SELECT	
+  		count(1)
+  	FROM
+  		`reserve_book`
+  	WHERE
+  		`bookId` = #{bookId};
+  
+  </select>
   
   <!-- 대출상태 -->
   <select id = "selectBorrowByBookId" resultType="int" parameterType="int">

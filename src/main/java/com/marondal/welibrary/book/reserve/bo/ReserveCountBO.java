@@ -14,6 +14,11 @@ public class ReserveCountBO {
 	//예약권수
 	
 	//예약인원수
+	public int getreserveCount(int bookId) {
+
+		return reserveDAO.selectReserveCount(bookId);
+		
+	}
 	
 	//대출상태
 	public boolean isBorrow(int bookId) {
