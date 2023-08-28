@@ -3,6 +3,8 @@ package com.marondal.welibrary.book.reserve.bo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.marondal.welibrary.book.model.ReserveBook;
+import com.marondal.welibrary.book.model.ReserveBookCount;
 import com.marondal.welibrary.book.reserve.dao.ReserveDAO;
 
 @Service
@@ -12,7 +14,13 @@ public class ReserveCountBO {
 	private ReserveDAO reserveDAO;
 	
 	//예약권수
-	//public Reser
+	public ReserveBookCount getReserveBookCount(int userId) {
+		
+		
+		return reserveDAO.selectReserveBookCount(userId);
+		
+		
+	}
 	
 	//예약인원수
 	public int getreserveCount(int bookId) {
@@ -33,8 +41,24 @@ public class ReserveCountBO {
 			
 			return true;
 		}
-		
-		
-		
 	}
+	
+	//예약 여부 (본인이 예약한건 예약 못한다)
+	public boolean isReserve(int userId, int id) {
+		
+		int count = reserveDAO.isReserve(userId ,id);
+		
+		if(count == 0) {
+			
+			return false;
+		} else {
+			
+			return true;
+		}
+		
+		 
+	}	
+		
+		
+	
 }
