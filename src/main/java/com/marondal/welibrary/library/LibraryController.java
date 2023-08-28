@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.marondal.welibrary.book.bo.BookBO;
 import com.marondal.welibrary.book.model.Book;
+import com.marondal.welibrary.book.model.BookDetail;
 import com.marondal.welibrary.library.bo.LibraryBO;
 
 @Controller
@@ -36,8 +37,8 @@ public class LibraryController {
 	public String listPage(Model model
 						 , @RequestParam("title") String title){
 		
-		List<Book> bookList = bookBO.getBookListByTitle(title);
-		model.addAttribute("bookList", bookList);
+		List<BookDetail> bookDetailList = bookBO.getBookListByTitle(title);
+		model.addAttribute("bookDetailList", bookDetailList);
 		
 //		Book book = bookBO.getBookById(id);
 //		model.addAttribute("book", book);

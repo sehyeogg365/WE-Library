@@ -48,7 +48,7 @@ public class ReserveBO {
 			
 			Book book = bookBO.getBookById(reserveBook.getBookId());
 			
-			BorrowBook borrowbook = borrowBO.getBorrow(reserveBook.getBookId());
+			BorrowBook borrowbook = borrowBO.getBorrow(book.getId());
 			
 			//갯수
 			

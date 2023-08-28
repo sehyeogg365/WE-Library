@@ -105,9 +105,9 @@ public class BookController {
 	
 	@GetMapping("/interestbooklist/view")
 	public String interestBookList(Model model
-			, @RequestParam("id") int id
-			, HttpSession session
-			) {
+								, @RequestParam("id") int id
+								, HttpSession session
+								) {
 		
 		int userId = (Integer)session.getAttribute("userId");
 		
@@ -129,8 +129,8 @@ public class BookController {
 	
 	@GetMapping("/borrowstatus/view")
 	public String borrowStatus(Model model
-			, @RequestParam("id") int id
-			, HttpSession session) {
+							, @RequestParam("id") int id
+							, HttpSession session) {
 			
 		int userId = (Integer)session.getAttribute("userId");
 		
@@ -151,8 +151,8 @@ public class BookController {
 	
 	@GetMapping("/reservelist/view")
 	public String reserveList(Model model
-			, @RequestParam("id") int id
-			, HttpSession session) {
+							, @RequestParam("id") int id
+							, HttpSession session) {
 		
 		int userId = (Integer)session.getAttribute("userId");
 		
@@ -172,8 +172,8 @@ public class BookController {
 	
 	@GetMapping("/interibrarybooklist/view")
 	public String interibraryBookList(Model model
-			, @RequestParam("id") int id
-			, HttpSession session) {
+									, @RequestParam("id") int id
+									, HttpSession session) {
 		
 		int userId = (Integer)session.getAttribute("userId");
 		

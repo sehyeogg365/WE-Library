@@ -67,7 +67,7 @@
 		
 		<div class="bookcard-list">
 		
-		<c:forEach var="book" items="${bookList }">
+		<c:forEach var="book" items="${bookDetailList }">
 			<hr>
 			<div class="bookcard d-flex ">
 			

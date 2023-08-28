@@ -12,6 +12,7 @@ public class ReserveCountBO {
 	private ReserveDAO reserveDAO;
 	
 	//예약권수
+	//public Reser
 	
 	//예약인원수
 	public int getreserveCount(int bookId) {

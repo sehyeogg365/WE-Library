@@ -1,6 +1,7 @@
 package com.marondal.welibrary.book.bo;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,8 @@ import org.springframework.stereotype.Service;
 
 import com.marondal.welibrary.book.dao.BookDAO;
 import com.marondal.welibrary.book.model.Book;
+import com.marondal.welibrary.book.model.BookDetail;
+import com.marondal.welibrary.book.reserve.bo.ReserveCountBO;
 
 
 @Service
@@ -18,11 +21,48 @@ public class BookBO {
 	@Autowired
 	private BookDAO bookDAO;
 	
+	@Autowired
+	private ReserveCountBO reserveCountBO;
+
+	
+	
 	//책목록 조회(dto로 바꾸기)
-	public List<Book> getBookListByTitle(String title){
+	public List<BookDetail> getBookListByTitle(String title){
+		
+		List<Book> bookList = bookDAO.selectBookListByTitle(title);
+		
+		List<BookDetail> bookDetailList = new ArrayList<>();
 		
 		
-		return bookDAO.selectBookListByTitle(title);
+		for(Book book : bookList) {
+			
+			
+			BookDetail bookDetail = new BookDetail();
+			
+			int reserveCount = reserveCountBO.getreserveCount(book.getId());
+			
+			boolean isBorrow = reserveCountBO.isBorrow(book.getId());
+			
+			
+			bookDetail.setId(book.getId());
+			bookDetail.setLibrary(book.getLibrary());
+			bookDetail.setTitle(book.getTitle());
+			bookDetail.setImagePath(book.getImagePath());
+			bookDetail.setAuthor(book.getAuthor());
+			bookDetail.setPublisher(book.getPublisher());
+			bookDetail.setIsbn(book.getIsbn());
+			bookDetail.setPubyear(book.getPubyear());
+			bookDetail.setAppendix(book.getAppendix());
+			bookDetail.setReserveCount(reserveCount);
+			bookDetail.setBorrow(isBorrow);
+			
+			bookDetailList.add(bookDetail);
+		}
+		
+		
+		
+		
+		return bookDetailList;
 		
 		
 	}
