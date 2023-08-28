@@ -19,5 +19,9 @@ public interface InteribraryDAO {
 	public List<InteribraryBook> selectInteribraryList(@Param("userId") int userId);
 	
 	
+	//상호대차 취소
+	
+	public int deleteInteribrary(@Param("id") int id);
+	
 	
 }

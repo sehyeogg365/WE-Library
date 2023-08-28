@@ -80,8 +80,8 @@
 						</div>
 						<div class="">
 							
-							<button id="interibraryaddBtn" class="btn btn-primary btn-sm addBtn my-3" data-interibray-id="${interibrary.id }">상호대차 수령</button>
-							<button id="interibrarydeleteBtn" class="btn btn-primary btn-sm deleteBtn my-3" data-interibray-id="${interibrary.id }">취소</button>
+							<button id="interibraryaddBtn" class="btn btn-primary btn-sm addBtn my-3" data-book-id="${interibrary.bookId }">상호대차 수령</button>
+							<button id="interibrarydeleteBtn" class="btn btn-primary btn-sm deleteBtn my-3" data-interibrary-id="${interibrary.id }">취소</button>
 						
 						</div>
 						
@@ -110,8 +110,54 @@
 	
 	</div>
 	<script>
-	//수령 = 대여목록 추가, 대여를 의미하고 dto로는 borrow_book테이블에 있는지여부를 조사하여 있으며 있으면 대여중 이런식으로 글자 변경
-	
+	//수령 = 대여목록 추가(대출), 대여를 의미하고 dto로는 borrow_book테이블에 있는지여부를 조사하여 있으며 있으면 대여중 이런식으로 글자 변경
+		$(document).ready(function(){
+			
+			
+			$(".addBtn").on("click", function(){
+				
+				let id = $(this).data("book-id");
+				
+				alert(id);
+				
+				
+				
+			});
+			
+			
+			
+			$(".deleteBtn").on("click", function(){
+				
+				let id = $(this).data("interibrary-id");
+				
+				alert(id);
+				
+				
+				$.ajax({
+					
+					type:"get"
+					, url:"/book/interibrary/delete"
+					, data:{"id" : id}
+					, success:function(data){
+						
+						
+					}
+					
+					, error:function(){
+						
+						alert("상호대차 취소 에러");
+					}
+					
+					
+				});
+				
+				
+				
+				
+			});
+			
+		});
+		
 	
 	</script>
 </body>

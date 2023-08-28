@@ -63,6 +63,12 @@ public class InteribraryBO {
 	
 	
 	//상호대차 취소
-	
+	public int deleteInteribrary(int id) {
+		
+		
+		return interibraryDAO.deleteInteribrary(id);
+		
+		
+	}
 	
 }

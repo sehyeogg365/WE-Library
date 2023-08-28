@@ -129,7 +129,7 @@
 					, url:"/book/borrow/update"
 					, data :{"id":id}
 					, success:function(data){
-						if(data == "success"){
+						if(data.result == "success"){
 							alert("반납 연장 성공");
 							location.reload();
 						} else {
