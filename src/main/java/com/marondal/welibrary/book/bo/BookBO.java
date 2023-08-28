@@ -55,6 +55,7 @@ public class BookBO {
 			bookDetail.setAppendix(book.getAppendix());
 			bookDetail.setReserveCount(reserveCount);
 			bookDetail.setBorrow(isBorrow);
+			//bookDetail.setInteribrary(isBorrow);
 			
 			bookDetailList.add(bookDetail);
 		}
