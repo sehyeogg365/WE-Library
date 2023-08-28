@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 
 import com.marondal.welibrary.book.dao.BookDAO;
+import com.marondal.welibrary.book.interibrary.bo.InteribrayCountBO;
 import com.marondal.welibrary.book.model.Book;
 import com.marondal.welibrary.book.model.BookDetail;
 import com.marondal.welibrary.book.reserve.bo.ReserveCountBO;
@@ -24,7 +25,8 @@ public class BookBO {
 	@Autowired
 	private ReserveCountBO reserveCountBO;
 
-	
+	@Autowired
+	private InteribrayCountBO interibrayCountBO;
 	
 	//책목록 조회(dto로 바꾸기)
 	public List<BookDetail> getBookListByTitle(String title){
@@ -43,6 +45,7 @@ public class BookBO {
 			
 			boolean isBorrow = reserveCountBO.isBorrow(book.getId());
 			
+			boolean isInteribrary = interibrayCountBO.isInteribrary(book.getId());
 			
 			bookDetail.setId(book.getId());
 			bookDetail.setLibrary(book.getLibrary());
@@ -55,7 +58,7 @@ public class BookBO {
 			bookDetail.setAppendix(book.getAppendix());
 			bookDetail.setReserveCount(reserveCount);
 			bookDetail.setBorrow(isBorrow);
-			//bookDetail.setInteribrary(isBorrow);
+			bookDetail.setInteribrary(isInteribrary);
 			
 			bookDetailList.add(bookDetail);
 		}

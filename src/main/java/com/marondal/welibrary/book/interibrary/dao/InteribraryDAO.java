@@ -23,6 +23,9 @@ public interface InteribraryDAO {
 	public int selectBorrowByBookId(@Param("bookId") int bookId);
 	
 	
+	//상호대차 여부
+	public int selectInteribraryByBookId(@Param("bookId") int bookId);
+	
 	//상호대차 취소
 	
 	public int deleteInteribrary(@Param("userId") int userId, @Param("id") int id);

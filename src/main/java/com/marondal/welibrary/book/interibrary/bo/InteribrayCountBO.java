@@ -26,7 +26,26 @@ public class InteribrayCountBO {
 			return false;
 			
 		}
+	
+	}
+	//상호대차 여부
+	public boolean isInteribrary(int bookId) {
 		
+		int count = interibraryDAO.selectInteribraryByBookId(bookId);
+		
+		
+		if(count == 1) {
+			
+			return true;
+			
+		} else {
+			
+			
+			return false;
+			
+		}
+		
+
 		
 		
 		

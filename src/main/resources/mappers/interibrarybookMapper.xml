@@ -46,7 +46,7 @@
    			`userId` = #{userId}
    		ORDER BY `id` DESC
    	</select>
-   	
+   	<!--대출 상태  -->
    	<select id = "selectBorrowByBookId" resultType="int" parameterType="int">
    		SELECT
    			count(1)
@@ -56,7 +56,17 @@
    			`bookId` = #{bookId}
    	</select>
    
+   <!--상호대차 여부  -->
+   <select id = "selectInteribraryByBookId" resultType="int" parameterType="int">
+   		SELECT
+   			count(1)
+   		FROM
+   			`interibrary_book`
+   		WHERE
+   			`bookId` = #{bookId}
+   </select>
    
+   <!--상호대차 취소  -->
    <delete id="deleteInteribrary" parameterType="map">
    	DELETE
    	FROM
