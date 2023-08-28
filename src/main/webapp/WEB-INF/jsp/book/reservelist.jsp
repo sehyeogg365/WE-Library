@@ -75,7 +75,7 @@
 							</div>
 							<div class="d-flex">
 								대출상태 :<c:choose> 
-										<c:when test = "${reserve.borrow }" >
+										<c:when test = "${reserve.status }" >
 											<p class="text-primary">대출중</p>
 										</c:when>
 										<c:otherwise>

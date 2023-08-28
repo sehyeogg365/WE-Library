@@ -12,7 +12,7 @@ public class ReserveBookDetail {
 	private String publisher;
 	private Date createdAt;
 	private Date returnDate;//반납예정일도 추가
-	private boolean isBorrow;//대출상태
+	private boolean isStatus;//대출상태
 	public int getId() {
 		return id;
 	}
@@ -67,11 +67,11 @@ public class ReserveBookDetail {
 	public void setReturnDate(Date returnDate) {
 		this.returnDate = returnDate;
 	}
-	public boolean isBorrow() {
-		return isBorrow;
+	public boolean isStatus() {
+		return isStatus;
 	}
-	public void setBorrow(boolean isBorrow) {
-		this.isBorrow = isBorrow;
+	public void setStatus(boolean isStatus) {
+		this.isStatus = isStatus;
 	}
 	
 	

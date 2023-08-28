@@ -66,7 +66,7 @@ public class ReserveBO {
 			reserveBookDetail.setCreatedAt(reserveBook.getCreatedAt());//반납예정일도 추가하기
 			reserveBookDetail.setReturnDate(borrowbook.getReturnDate());//반납예정일
 			//대출상태, 예약순번/예약인원수도 필요함
-			reserveBookDetail.setBorrow(isBorrow);//대출상태
+			reserveBookDetail.setStatus(isBorrow);//대출상태
 			
 			reserveDetailList.add(reserveBookDetail);
 		}
