@@ -48,7 +48,7 @@
    	</select>
    	
    	<!-- 상호대차 권수 -->
-   	<select id="selectInteribraryBookNumberByuserId" resultType="com.marondal.welibrary.book.model.InteribraryBook" parameterType="int">
+   	<select id="selectInteribraryBookCount" resultType="int" parameterType="int">
    		SELECT
    			count(1)
    		FROM
@@ -57,6 +57,10 @@
    			`userId` = #{userId}
    	
    	</select>
+   	
+   	
+   	<!-- 상호대차 권수 표시 -->
+   	
    	<!--대출 상태  -->
    	<select id = "selectBorrowByBookId" resultType="int" parameterType="int">
    		SELECT

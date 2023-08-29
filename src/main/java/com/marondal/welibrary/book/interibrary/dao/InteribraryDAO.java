@@ -19,8 +19,10 @@ public interface InteribraryDAO {
 	
 	
 	//상호대차 권수
-	public InteribraryBook selectInteribraryBookNumberByuserId(@Param("userId") int userId);
+	public int selectInteribraryBookCount(@Param("userId") int userId);
 	
+	//상호대차 권수 표시
+	public List<InteribraryBook> selectInteribrayBookNumberByUserId(@Param("userId") int userId);
 	
 	//대출 상태
 	public int selectBorrowByBookId(@Param("bookId") int bookId);

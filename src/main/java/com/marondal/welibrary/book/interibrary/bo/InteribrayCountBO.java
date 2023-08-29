@@ -12,10 +12,10 @@ public class InteribrayCountBO {
 	@Autowired
 	private InteribraryDAO interibraryDAO;
 	//상호대차 권수
-	public InteribraryBook getInteribraryBookNumberByuserId(int userId) {
+	public int getInteribraryBookCount(int userId) {
 		
 		
-		return interibraryDAO.selectInteribraryBookNumberByuserId(userId);
+		return interibraryDAO.selectInteribraryBookCount(userId);
 		
 		
 	}

@@ -58,7 +58,14 @@
 						
 						
 						<div class="mt-3 d-flex ">
-							 상호대차 현황 : &nbsp<div class="text-primary">3</div>건
+							 상호대차 현황 : &nbsp<div class="text-primary">
+							 <c:forEach var="interibrarybook" begin="0" end="0" items="${interibraryCountList }">
+							 
+							 	${interibrarybook.numberCount }
+							 
+							 </c:forEach>
+							 
+							 </div>건
 						</div>
 						
 						<c:forEach var="interibrarybook" items ="${interibraryDetailList }">

@@ -12,6 +12,7 @@ import com.marondal.welibrary.book.interibrary.dao.InteribraryDAO;
 import com.marondal.welibrary.book.model.Book;
 import com.marondal.welibrary.book.model.BookDetail;
 import com.marondal.welibrary.book.model.InteribraryBook;
+import com.marondal.welibrary.book.model.InteribraryBookCount;
 import com.marondal.welibrary.book.model.InteribraryBookDetail;
 
 @Service
@@ -67,7 +68,30 @@ public class InteribraryBO {
 		
 	}
 	
-	
+	//상호대차 권수 표시
+	public List<InteribraryBookCount> getInteribraryBookNumberByUserId(int userId){
+		
+		List<InteribraryBook> interibraryList = interibraryDAO.selectInteribraryList(userId);
+		
+		List<InteribraryBookCount> interibraryCountlList = new ArrayList<>();
+		
+		for(InteribraryBook interibrarybook : interibraryList) {
+			
+			InteribraryBookCount interibraryBookCount = new InteribraryBookCount();
+			
+			int numberCount = interibrayCountBO.getInteribraryBookCount(userId);
+			
+			interibraryBookCount.setNumberCount(numberCount);
+			
+			interibraryCountlList.add(interibraryBookCount);
+			
+		}
+		
+		
+		
+		return interibraryCountlList;
+		
+	}
 	
 	//상호대차 취소
 	public int deleteInteribrary(int userId, int id) {

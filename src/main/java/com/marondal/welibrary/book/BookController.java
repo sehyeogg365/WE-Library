@@ -23,6 +23,7 @@ import com.marondal.welibrary.book.model.BorrowBookCount;
 import com.marondal.welibrary.book.model.BorrowBookDetail;
 import com.marondal.welibrary.book.model.InterestBookCount;
 import com.marondal.welibrary.book.model.InterestBookDetail;
+import com.marondal.welibrary.book.model.InteribraryBookCount;
 import com.marondal.welibrary.book.model.InteribraryBookDetail;
 import com.marondal.welibrary.book.model.ReserveBookCount;
 import com.marondal.welibrary.book.model.ReserveBookDetail;
@@ -190,6 +191,9 @@ public class BookController {
 		
 		model.addAttribute("interibraryDetailList", interibraryDetailList);
 		//여기서 상호대차도서개수 추가
+		
+		List<InteribraryBookCount> interibraryCountList = interibraryBO.getInteribraryBookNumberByUserId(userId);
+		model.addAttribute("interibraryCountList", interibraryCountList);
 		
 		return "book/interibrarybooklist";
 	}
