@@ -46,8 +46,11 @@
 		                <button type="submit" id="searchBtn" class="btn">검색</button>
 		             </div>
 		        </div>
-		         
+		       
 		    </nav> 
+		    	 <div class="ml-5">
+		        	<h5 class="ml-5">검색 결과 10건이 검색되었습니다.</h5>
+		        </div>
 		    <hr style="border: solid 1px;">
 		   		<div class="mt-3 library-selectbox col-10">
 		   		<label class=""><input type="checkbox" id="allCheck" class="mr-2">전체 선택</label> <br>

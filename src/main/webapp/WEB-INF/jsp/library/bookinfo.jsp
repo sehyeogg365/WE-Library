@@ -95,7 +95,7 @@
 							<td>
 								<c:choose>
 									<c:when test ="${book.borrow }">
-										<button id="reserveBtn" class="btn btn-sm btn-danger reserveBtn"><i class="bi bi-journal-arrow-down"></i>예약하기</button>
+										<button id="reserveBtn" class="btn btn-sm btn-danger reserveBtn"><i class="bi bi-journal-arrow-down"></i>도서 예약신청</button>
 									</c:when>
 									<c:otherwise>
 										<button class="btn btn-danger btn-sm" ><i class="bi bi-journal-arrow-down"></i>예약불가</button>

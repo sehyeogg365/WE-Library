@@ -24,7 +24,8 @@ public interface BookDAO {
 	//책 1행정보 조회(상호대차 팝업창)
 	public BookDetail selectBookById(@Param("id")int id);
 		
-	
+	//책 갯수 표시
+	public List<Book> selectBookNumberByTitle(@Param("title") String title);
 	
 	//현재 예약 인원 표시
 	//public int selectReserveBookId(@Param("bookId") int bookId);
