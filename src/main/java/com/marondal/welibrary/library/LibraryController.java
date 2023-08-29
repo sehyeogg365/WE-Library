@@ -56,8 +56,8 @@ public class LibraryController {
 	public String infoPage(Model model
 						   , @RequestParam("id") int id) {
 		
-		BookDetail book = bookBO.getBookById(id);
-		model.addAttribute("book", book);
+		List<BookDetail> bookDetailList = bookBO.getBookListById(id);
+		model.addAttribute("bookDetailList", bookDetailList);
 		
 		
 		BorrowBook borrow = borrowBO.getBorrow(id);

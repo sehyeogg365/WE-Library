@@ -33,7 +33,7 @@
 					<h2 class="text-center text-white mt-3"><b>도서 상세정보</b></h2>
 				</div>
 			</div>
-			
+		<c:forEach var="book" items="${bookDetailList}">	
 		<div class="bookinfo-box d-flex">
 			<div class="bookinfo-profile ml-3 mt-3 bg-primary">
 				<img class="profile" src="${book.imagePath }" >
@@ -70,9 +70,11 @@
 						</tr>
 					</thead>
 					<tbody>
+					
 						<tr>
 						
 							<td>
+						
 								<c:choose>
 									<c:when test = "${book.borrow }" >
 										<button class="btn btn-info btn-sm" ><i class="bi bi-bookmark-plus"></i>대출불가</button> 
@@ -81,6 +83,7 @@
 										<button id ="borrowBtn"class="btn btn-info btn-sm borrowBtn" data-book-id="${book.id }"><i class="bi bi-bookmark-plus"></i>대출하기</button>
 									</c:otherwise>
 								</c:choose>
+								
 							</td>
 							<td>
 								<fmt:formatDate value="${borrow.returnDate }" pattern ="yyyy-MM-dd"/>
@@ -98,9 +101,10 @@
 										<a href="/library/interibrarypopup/view?id=${book.id }"class="btn btn-success btn-sm interibraryAddBtn" onclick="window.open('/library/interibrarypopup/view?id=${book.id}','new','scrollbars=yes,resizable=no width=500 height=500, left=0,top=0');return false"><i class="bi bi-shuffle"></i>상호대차 신청</a>
 									</c:otherwise>
 								</c:choose>
-								
+
 							</td>
 						</tr>
+						</c:forEach>
 					</tbody>
 				
 				</table>

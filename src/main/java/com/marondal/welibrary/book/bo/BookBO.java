@@ -7,11 +7,12 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-
+import com.marondal.welibrary.book.borrow.bo.BorrowBO;
 import com.marondal.welibrary.book.dao.BookDAO;
 import com.marondal.welibrary.book.interibrary.bo.InteribrayCountBO;
 import com.marondal.welibrary.book.model.Book;
 import com.marondal.welibrary.book.model.BookDetail;
+import com.marondal.welibrary.book.model.BorrowBook;
 import com.marondal.welibrary.book.reserve.bo.ReserveBO;
 import com.marondal.welibrary.book.reserve.bo.ReserveCountBO;
 
@@ -74,17 +75,59 @@ public class BookBO {
 		
 		
 	}
-	
-	
-	//책 1행정보 조회
-	public BookDetail getBookById(int id) {
+	//상세정보 정보 id로 불러오기
+	public List<BookDetail> getBookListById(int id){
+		
+		List<Book> bookList = bookDAO.selectBookListById(id);
+		
+		List<BookDetail> bookDetailList = new ArrayList<>();
+		
+		
+		for(Book book : bookList) {
 			
-		//대출여부
-		boolean count1 = reserveCountBO.isBorrow(id);
-		//상호대차 여부
-		boolean count2 = interibrayCountBO.isInteribrary(id);
+			
+			BookDetail bookDetail = new BookDetail();
+			
+			int reserveCount = reserveCountBO.getreserveCount(book.getId());
+			
+			boolean isBorrow = reserveCountBO.isBorrow(book.getId());
+			
+			boolean isInteribrary = interibrayCountBO.isInteribrary(book.getId());
+			
+			
+			
+			bookDetail.setId(book.getId());
+			bookDetail.setLibrary(book.getLibrary());
+			bookDetail.setTitle(book.getTitle());
+			bookDetail.setImagePath(book.getImagePath());
+			bookDetail.setAuthor(book.getAuthor());
+			bookDetail.setPublisher(book.getPublisher());
+			bookDetail.setIsbn(book.getIsbn());
+			bookDetail.setPubyear(book.getPubyear());
+			bookDetail.setAppendix(book.getAppendix());
+			bookDetail.setReserveCount(reserveCount);
+			bookDetail.setBorrow(isBorrow);
+			bookDetail.setInteribrary(isInteribrary);
+			
+			
+			
+			bookDetailList.add(bookDetail);
+		}
 		
 		
+		
+		
+		return bookDetailList;
+		
+		
+	}
+	
+	
+	
+	
+	//책 1행정보 조회(상호대차 팝업창)
+	public BookDetail getBookById(int id) {
+	
 		return bookDAO.selectBookById(id);
 
 	}

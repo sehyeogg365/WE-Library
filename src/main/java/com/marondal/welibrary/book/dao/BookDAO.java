@@ -18,9 +18,13 @@ public interface BookDAO {
 	public List<Book> selectBookListByTitle(@Param("title") String title);
 	
 	
-	//책 1행정보 조회(상세정보)
+	//책 1행정보(상세정보)
+	public List<Book> selectBookListById(@Param("id")int id);
+	
+	//책 1행정보 조회(상호대차 팝업창)
 	public BookDetail selectBookById(@Param("id")int id);
 		
+	
 	
 	//현재 예약 인원 표시
 	//public int selectReserveBookId(@Param("bookId") int bookId);

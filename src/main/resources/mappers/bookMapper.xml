@@ -7,7 +7,7 @@
   <mapper namespace="com.marondal.welibrary.book.dao.BookDAO">
   
   	<!-- 책목록 조회 -->
-  	<select id = "selectBookListByTitle" resultType="com.marondal.welibrary.book.model.Book" parameterType="map" >
+  	<select id = "selectBookListByTitle" resultType="com.marondal.welibrary.book.model.Book" parameterType="string" >
 	  	SELECT
 	  		`id`
 	  		, `library`
@@ -28,7 +28,27 @@
 	  	ORDER BY `id` DESC;
   	</select>	
   	
-  	<!-- 책 1행정보 조회 -->
+  	<!-- 상세정보 -->
+  	<select id ="selectBookListById" resultType="com.marondal.welibrary.book.model.Book" parameterType="int">
+  		SELECT
+  			`id`
+	  		, `library`
+			, `title`
+			, `imagePath`
+			, `author`
+			, `publisher`
+			, `price`
+			, `isbn`
+			, `pubyear`
+			, `appendix`
+		
+  		FROM
+  			`book`
+  		WHERE
+  			`id`= #{id}
+  	</select>
+  	
+  	<!-- 책 1행정보 조회(상호대차 팝업창) -->
   	<select id = "selectBookById" resultType="com.marondal.welibrary.book.model.BookDetail" parameterType="int">
   	
   		SELECT
