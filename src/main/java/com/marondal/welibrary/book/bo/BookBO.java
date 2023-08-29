@@ -28,6 +28,8 @@ public class BookBO {
 	@Autowired
 	private InteribrayCountBO interibrayCountBO;
 	
+	
+	
 	//책목록 조회(dto로 바꾸기)
 	public List<BookDetail> getBookListByTitle(String title){
 		

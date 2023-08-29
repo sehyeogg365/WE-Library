@@ -10,6 +10,7 @@ import com.marondal.welibrary.book.bo.BookBO;
 import com.marondal.welibrary.book.borrow.bo.BorrowCountBO;
 import com.marondal.welibrary.book.interibrary.dao.InteribraryDAO;
 import com.marondal.welibrary.book.model.Book;
+import com.marondal.welibrary.book.model.BookDetail;
 import com.marondal.welibrary.book.model.InteribraryBook;
 import com.marondal.welibrary.book.model.InteribraryBookDetail;
 
@@ -41,7 +42,7 @@ public class InteribraryBO {
 		
 		for(InteribraryBook interibrarybook: interibraryList) {
 			
-			Book book = bookBO.getBookById(interibrarybook.getBookId());
+			BookDetail book = bookBO.getBookById(interibrarybook.getBookId());
 			
 			boolean isBorrow = interibrayCountBO.isBorrow(interibrarybook.getBookId());
 			InteribraryBookDetail interibraryBookDetail = new InteribraryBookDetail();

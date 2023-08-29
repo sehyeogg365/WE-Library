@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import com.marondal.welibrary.book.bo.BookBO;
 import com.marondal.welibrary.book.borrow.dao.BorrowDAO;
 import com.marondal.welibrary.book.model.Book;
+import com.marondal.welibrary.book.model.BookDetail;
 import com.marondal.welibrary.book.model.BorrowBook;
 import com.marondal.welibrary.book.model.BorrowBookCount;
 import com.marondal.welibrary.book.model.BorrowBookDetail;
@@ -50,7 +51,7 @@ public class BorrowBO {
 		
 		for(BorrowBook borrowBook : borrowList) {
 			
-			Book book = bookBO.getBookById(borrowBook.getBookId());
+			BookDetail book = bookBO.getBookById(borrowBook.getBookId());
 		
 			BorrowBookDetail borrowBookDetail = new BorrowBookDetail();
 			

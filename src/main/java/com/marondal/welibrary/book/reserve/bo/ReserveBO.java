@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.marondal.welibrary.book.bo.BookBO;
 import com.marondal.welibrary.book.borrow.bo.BorrowBO;
 import com.marondal.welibrary.book.model.Book;
+import com.marondal.welibrary.book.model.BookDetail;
 import com.marondal.welibrary.book.model.BorrowBook;
 import com.marondal.welibrary.book.model.ReserveBook;
 import com.marondal.welibrary.book.model.ReserveBookCount;
@@ -46,7 +47,7 @@ public class ReserveBO {
 		
 		for(ReserveBook reserveBook : reserveList) {
 			
-			Book book = bookBO.getBookById(reserveBook.getBookId());
+			BookDetail book = bookBO.getBookById(reserveBook.getBookId());
 			
 			BorrowBook borrowbook = borrowBO.getBorrow(book.getId());
 			

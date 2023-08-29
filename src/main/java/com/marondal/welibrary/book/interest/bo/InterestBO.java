@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import com.marondal.welibrary.book.bo.BookBO;
 import com.marondal.welibrary.book.interest.dao.InterestDAO;
 import com.marondal.welibrary.book.model.Book;
+import com.marondal.welibrary.book.model.BookDetail;
 import com.marondal.welibrary.book.model.InterestBook;
 import com.marondal.welibrary.book.model.InterestBookDetail;
 
@@ -41,7 +42,7 @@ public class InterestBO {
 		
 		for (InterestBook interestbook : interestList) {
 			
-			Book book = bookBO.getBookById(interestbook.getBookId());
+			BookDetail book = bookBO.getBookById(interestbook.getBookId());
 			
 			InterestBookDetail interestbookDetail = new InterestBookDetail();
 			
