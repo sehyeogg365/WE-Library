@@ -33,28 +33,28 @@
 			</div>
 			
 		<div class="bookinfo-box d-flex">
-			<div class="bookinfo-profile ml-3 mt-3">
+			<div class="bookinfo-profile ml-3 mt-3 bg-primary">
 				<img class="profile" src="${book.imagePath }" >
 			</div>
 			
-			<div class="book-info-body ml-3 mt-3">
+			<div class="book-info-body ml-3 mt-3 bg-info">
 				<div class=""><b>저자사항</b> &nbsp ${book.author }지음</div>
 				<div class=""><b>발행사항</b> &nbsp ${book.publisher } ${book.pubyear }</div>
 				<div class=""><b>형태사항</b> &nbsp</div>
-				<div class=""><b>표준부호</b> &nbsp</div>
-				<div class=""><b>부록여부</b> &nbsp</div>
+				<div class=""><b>표준부호</b> &nbsp ${book.isbn }</div>
+				<div class=""><b>부록여부</b> &nbsp${book.appendix }</div>
 			
 			</div>
 
 		</div>	
 		
-			<div class="info-box">
+			<div class="info-box bg-warning">
 				<h5>상세정보</h5>
 				<p class="text-secondary">가나다라마바사아자카타파하</p>
 			</div>
 			<div class="possessioninfo-box">
 				<h5>소장정보</h5>
-				<table class="table" border=1>
+				<table class="table bg-info" border=1>
 					
 					<thead>
 						<tr class="item">
@@ -69,7 +69,7 @@
 					<tbody>
 						<tr>
 						
-							<td>대출중</td>
+							<td>${book.borrow }</td>
 							<td>2023-08-07</td>
 							<td>${book.appendix }</td>
 							<td><button class="btn btn-sm btn-danger reserveBtn">예약불가능</button></td>
@@ -79,7 +79,7 @@
 				
 				</table>
 			</div>
-			<div class=""></div>
+			<div class="text-center"><button class="btn btn-sm btn-primary interestAddBtn" data-book-id="${book.id }"><i class="bi bi-download"></i>관심도서 담기</button></div>
 			<div class=""></div>
 			
 			
@@ -93,5 +93,15 @@
 		
 		<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
 	</div>
+	<script>
+	$(document).ready(function(){
+		
+		
+		
+		
+	});
+	
+	
+	</script>
 </body>
 </html>

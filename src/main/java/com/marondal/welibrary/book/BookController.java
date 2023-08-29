@@ -194,7 +194,7 @@ public class BookController {
 	
 	@GetMapping("/bookaddpopup/view")
 	public String bookAddPopUp(Model model
-							   //, @RequestParam("title") String title
+							   , @RequestParam("title") String title
 							   ) {
 
 		

@@ -73,7 +73,7 @@ public class BookBO {
 	
 	
 	//책 1행정보 조회
-	public Book getBookById(int id) {
+	public BookDetail getBookById(int id) {
 				
 		return bookDAO.selectBookById(id);
 

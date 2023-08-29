@@ -52,7 +52,7 @@ public class LibraryController {
 	public String infoPage(Model model
 						   , @RequestParam("id") int id) {
 		
-		Book book = bookBO.getBookById(id);
+		BookDetail book = bookBO.getBookById(id);
 		model.addAttribute("book", book);
 		
 		return "/library/bookinfo";
@@ -64,7 +64,7 @@ public class LibraryController {
 			   , @RequestParam("id") int id) {
 		
 		
-		Book book = bookBO.getBookById(id);
+		BookDetail book = bookBO.getBookById(id);
 		model.addAttribute("book", book);
 		
 		

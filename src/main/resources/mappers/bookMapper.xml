@@ -29,7 +29,7 @@
   	</select>	
   	
   	<!-- 책 1행정보 조회 -->
-  	<select id = "selectBookById" resultType="com.marondal.welibrary.book.model.Book" parameterType="int">
+  	<select id = "selectBookById" resultType="com.marondal.welibrary.book.model.BookDetail" parameterType="int">
   	
   		SELECT
   			`id`

@@ -7,6 +7,7 @@ import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import com.marondal.welibrary.book.model.Book;
+import com.marondal.welibrary.book.model.BookDetail;
 
 @Repository
 public interface BookDAO {
@@ -18,7 +19,7 @@ public interface BookDAO {
 	
 	
 	//책 1행정보 조회(상세정보)
-	public Book selectBookById(@Param("id")int id);
+	public BookDetail selectBookById(@Param("id")int id);
 		
 	
 	//현재 예약 인원 표시

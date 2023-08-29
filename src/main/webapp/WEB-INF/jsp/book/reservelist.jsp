@@ -57,7 +57,7 @@
 						</div>
 						
 						<div class="mt-3 d-flex ">
-							 예약현황 : &nbsp<div class="text-primary">3</div>건
+							 예약현황 : &nbsp<div class="text-primary">${ReserveBookCount.numberCount }</div>건
 						</div>
 						<!-- 대출중일때 if문 써서 대출중  boolean 타입변수 is 빼고 소문자로-->
 						<c:forEach var="reserve" items="${reserveDetailList }">	
