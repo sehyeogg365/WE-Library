@@ -93,7 +93,7 @@ public class BorrowBO {
 			BorrowBookCount borrowbookCount = new BorrowBookCount();
 			
 			
-			int numberCount = borrowDAO.selectBorrowBookNumberByuserId(userId);
+			int numberCount = borrowDAO.selectBorrowBookCount(userId);
 			
 			
 			borrowbookCount.setNumberCount(numberCount);

@@ -142,8 +142,8 @@ public class BookController {
 		
 		model.addAttribute("borrowDetailList", borrowDetailList);
 		
-		//BorrowBookCount borrowBookCount = borrowCountBO.getBorrowBookNumberByuserId(userId);
-		//model.addAttribute("borrowBookCount", borrowBookCount);
+		List<BorrowBookCount> borrowCountList = borrowBO.getBorrowBookNumberByUserId(userId);
+		model.addAttribute("borrowCountList", borrowCountList);
 		
 		return "book/borrowstatus";
 		
