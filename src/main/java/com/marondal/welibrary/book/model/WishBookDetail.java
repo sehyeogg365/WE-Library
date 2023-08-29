@@ -15,7 +15,6 @@ public class WishBookDetail {//희망도서 리스트 카드 한장에 들어가
 	private int price;
 	private String isbn;
 	private int pubyear;
-	private boolean isHave;//소장여부(관리자)
 	private boolean isAdd;// 신청여부(사용자)
 	private Date createdAt;// 신청날짜	
 	public int getId() {
@@ -83,12 +82,6 @@ public class WishBookDetail {//희망도서 리스트 카드 한장에 들어가
 	}
 	public void setPubyear(int pubyear) {
 		this.pubyear = pubyear;
-	}
-	public boolean isHave() {
-		return isHave;
-	}
-	public void setHave(boolean isHave) {
-		this.isHave = isHave;
 	}
 	public boolean isAdd() {
 		return isAdd;
