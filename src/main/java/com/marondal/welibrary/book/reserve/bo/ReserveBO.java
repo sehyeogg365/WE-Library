@@ -56,7 +56,7 @@ public class ReserveBO {
 			//대출상태
 			boolean isBorrow = reserveCountBO.isBorrow(book.getId());//상태
 			
-			int reserveCount = reserveCountBO.getreserveCount(book.getId());
+			int reserveCount = reserveCountBO.getReserveCount(book.getId());
 			
 			ReserveBookDetail reserveBookDetail = new ReserveBookDetail();
 			

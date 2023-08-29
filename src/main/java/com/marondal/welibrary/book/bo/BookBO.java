@@ -47,7 +47,7 @@ public class BookBO {
 			
 			BookDetail bookDetail = new BookDetail();
 			
-			int reserveCount = reserveCountBO.getreserveCount(book.getId());
+			int reserveCount = reserveCountBO.getReserveCount(book.getId());
 			
 			boolean isBorrow = reserveCountBO.isBorrow(book.getId());
 			
@@ -89,7 +89,7 @@ public class BookBO {
 			
 			BookDetail bookDetail = new BookDetail();
 			
-			int reserveCount = reserveCountBO.getreserveCount(book.getId());
+			int reserveCount = reserveCountBO.getReserveCount(book.getId());
 			
 			boolean isBorrow = reserveCountBO.isBorrow(book.getId());
 			
