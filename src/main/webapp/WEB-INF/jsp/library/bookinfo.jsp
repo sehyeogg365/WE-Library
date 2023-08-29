@@ -104,25 +104,27 @@
 
 							</td>
 						</tr>
-						</c:forEach>
+						
 					</tbody>
 				
 				</table>
+				</c:forEach>
 			</div>
 			<div class="text-center"><button class="btn btn-sm btn-primary interestAddBtn" data-book-id="${book.id }"><i class="bi bi-download"></i>관심도서 담기</button></div>
 			<div class=""></div>
 			
 			
 			
-			
+			</section>
+			<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
 		</div>
-		</section>
 		
 		
 		
 		
-		<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
-	</div>
+		
+		
+
 	<script>
 	$(document).ready(function(){
 		
