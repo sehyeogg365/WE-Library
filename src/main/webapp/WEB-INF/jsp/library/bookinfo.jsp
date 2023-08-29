@@ -69,8 +69,18 @@
 					<tbody>
 						<tr>
 						
-							<td>${book.borrow }</td>
-							<td>2023-08-07</td>
+							<td>
+								<c:choose>
+									<c:when test = "${book.borrow }" >
+											<button class="btn btn-info btn-sm" ><i class="bi bi-bookmark-plus"></i>대출불가</button> <div class="">예약인원 ${book.reserveCount } 명</div>
+									</c:when>
+									<c:otherwise>
+										<button class="btn btn-info btn-sm borrowBtn" data-book-id="${book.id }"><i class="bi bi-bookmark-plus"></i>대출하기</button>
+									</c:otherwise>
+								</c:choose>
+							</td>
+							<td>
+							</td>
 							<td>${book.appendix }</td>
 							<td><button class="btn btn-sm btn-danger reserveBtn">예약불가능</button></td>
 							<td><button class="btn btn-sm btn-success interibraryAddBtn">상호대차불가능</button></td>
