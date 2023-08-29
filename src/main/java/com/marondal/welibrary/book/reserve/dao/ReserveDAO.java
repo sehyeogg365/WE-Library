@@ -29,6 +29,9 @@ public interface ReserveDAO {
 	public int selectReserveBookCount(@Param("userId") int userId);
 	
 	
+	//예약 권수 표시
+	public List<ReserveBook> selectReserveBookNumberByUserId(@Param("userId") int userId);
+	
 	//예약인원수
 	public int selectReserveCount(@Param("bookId") int bookId);
 	

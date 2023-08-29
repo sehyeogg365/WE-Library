@@ -164,6 +164,9 @@ public class BookController {
 		
 		model.addAttribute("reserveDetailList", reserveDetailList);
 		
+		List<ReserveBookCount> reserveCountList = reserveBO.getReserveBookNumberByUserId(userId);
+		model.addAttribute("reserveCountList", reserveCountList);
+		
 		return "book/reservelist";
 		
 		

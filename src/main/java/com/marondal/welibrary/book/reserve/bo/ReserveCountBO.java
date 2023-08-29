@@ -1,5 +1,7 @@
 package com.marondal.welibrary.book.reserve.bo;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,6 +23,8 @@ public class ReserveCountBO {
 		
 		
 	}
+	
+	
 	
 	//예약인원수
 	public int getReserveCount(int bookId) {

@@ -53,13 +53,19 @@
   </delete>
   
   <!-- 예약 권수 -->
-  <select id ="selectReserveBookCount" resultType="com.marondal.welibrary.book.model.ReserveBookCount" parameterType="int">
+  <select id ="selectReserveBookCount" resultType="int" parameterType="int">
   	SELECT
   		count(1)
   	FROM
   		`reserve_book`
   	WHERE
   		`userId`= #{userId};
+  
+  </select>
+  
+  <!-- 예약 권수 표시 -->
+  <select id ="selectReserveBookNumberByUserId" resultType="com.marondal.welibrary.book.model.ReserveBook" parameterType="int">
+  	
   
   </select>
   

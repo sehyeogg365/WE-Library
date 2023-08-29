@@ -51,7 +51,6 @@ public class ReserveBO {
 			
 			BorrowBook borrowbook = borrowBO.getBorrow(book.getId());
 			
-			//갯수
 			
 			//대출상태
 			boolean isBorrow = reserveCountBO.isBorrow(book.getId());//상태
@@ -80,6 +79,30 @@ public class ReserveBO {
 		
 		
 	}
+	
+	
+	//예약 권수 표시
+	
+	public List<ReserveBookCount> getReserveBookNumberByUserId(int userId){
+			
+		List<ReserveBook> reserveList = reserveDAO.selectReserveList(userId);
+		
+		List<ReserveBookCount> reserveCountList = new ArrayList<>();
+		
+		for(ReserveBook reservebook : reserveList) {
+			
+			ReserveBookCount reservebookCount = new ReserveBookCount();
+			
+			int numberCount = reserveDAO.selectReserveBookCount(userId);
+		
+		
+			reservebookCount.setNumberCount(numberCount);
+			reserveCountList.add(reservebookCount);
+		}
+		
+		return reserveCountList;
+	}
+	
 	
 	//예약 취소
 	public int deleteReserve(int id, int userId) {
