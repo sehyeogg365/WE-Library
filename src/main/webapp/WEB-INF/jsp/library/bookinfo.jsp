@@ -72,18 +72,19 @@
 							<td>
 								<c:choose>
 									<c:when test = "${book.borrow }" >
-											<button class="btn btn-info btn-sm" ><i class="bi bi-bookmark-plus"></i>대출불가</button> <div class="">예약인원 ${book.reserveCount } 명</div>
+										<button class="btn btn-info btn-sm" ><i class="bi bi-bookmark-plus"></i>대출불가</button> 
 									</c:when>
 									<c:otherwise>
-										<button class="btn btn-info btn-sm borrowBtn" data-book-id="${book.id }"><i class="bi bi-bookmark-plus"></i>대출하기</button>
+										<button id ="borrowBtn"class="btn btn-info btn-sm borrowBtn" data-book-id="${book.id }"><i class="bi bi-bookmark-plus"></i>대출하기</button>
 									</c:otherwise>
 								</c:choose>
 							</td>
 							<td>
+								
 							</td>
 							<td>${book.appendix }</td>
-							<td><button class="btn btn-sm btn-danger reserveBtn">예약불가능</button></td>
-							<td><button class="btn btn-sm btn-success interibraryAddBtn">상호대차불가능</button></td>
+							<td><button id="reserveBtn" class="btn btn-sm btn-danger reserveBtn">예약불가능</button></td>
+							<td><a href="/library/interibrarypopup/view?id=${book.id }"class="btn btn-success btn-sm interibraryAddBtn" onclick="window.open('/library/interibrarypopup/view?id=${book.id}','new','scrollbars=yes,resizable=no width=500 height=500, left=0,top=0');return false"><i class="bi bi-shuffle"></i>상호대차 신청</a></td>
 						</tr>
 					</tbody>
 				
@@ -106,7 +107,11 @@
 	<script>
 	$(document).ready(function(){
 		
-		
+		$("#borrowBtn").on("click", function(){
+			
+			
+			
+		});
 		
 		
 	});
