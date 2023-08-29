@@ -12,9 +12,9 @@ public class InterestCountBO {
 	@Autowired
 	private InterestDAO interestDAO;
 	
-	public InterestBookCount getInterestBookNumberByuserId(int userId) {
+	public int getInterestBookCount(int userId) {
 		
-		return interestDAO.selectInterestBookNumberByuserId(userId);
+		return interestDAO.selectInterestBookCount(userId);
 		
 	}
 

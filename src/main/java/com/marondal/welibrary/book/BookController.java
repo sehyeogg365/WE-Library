@@ -119,9 +119,11 @@ public class BookController {
 		
 		model.addAttribute("interestDetailList", interestDetailList);
 		
+		List<InterestBookCount> interestCountList = interestBO.getInterestBookNumberByUserId(userId);
 		
-		InterestBookCount interestbookcount = interestCountBO.getInterestBookNumberByuserId(userId);
-		model.addAttribute("interestbookcount", interestbookcount);
+		model.addAttribute("interestCountList", interestCountList);
+		//InterestBookCount interestbookcount = interestCountBO.getInterestBookNumberByuserId(userId);
+		//model.addAttribute("interestbookcount", interestbookcount);
 		//여기서 관심도서개수 추가
 		
 		return "book/interestbooklist";

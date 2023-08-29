@@ -44,7 +44,7 @@
   </select>
   
   <!-- 관심도서 개수 -->
-  <select id="selectInterestBookNumberByuserId" resultType="com.marondal.welibrary.book.model.InterestBookCount" parameterType="int">
+  <select id="selectInterestBookCount" resultType="int" parameterType="int">
   	SELECT
   		count(1)
   	FROM
@@ -53,6 +53,7 @@
   		`userId`=#{userId}
   </select>
   
+  <!-- 관심도서 개수 표시 일부러 안함 -->
   
   <!-- 관심도서 삭제 -->
   <delete id="deleteInterest" parameterType="int">
