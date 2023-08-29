@@ -92,7 +92,7 @@ public class BookBO {
 			
 			boolean isBorrow = reserveCountBO.isBorrow(book.getId());
 			
-			boolean isInteribrary = interibrayCountBO.isInteribrary(book.getId());
+			boolean isInteribrary = interibrayCountBO.isInteribrary(id);
 			
 			
 			

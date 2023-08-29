@@ -35,11 +35,11 @@
 			</div>
 		<c:forEach var="book" items="${bookDetailList}">	
 		<div class="bookinfo-box d-flex">
-			<div class="bookinfo-profile ml-3 mt-3 bg-primary">
+			<div class="bookinfo-profile ml-3 mt-3">
 				<img class="profile" src="${book.imagePath }" >
 			</div>
 			
-			<div class="book-info-body ml-3 mt-3 bg-info">
+			<div class="book-info-body ml-3 mt-3">
 				<div class=""><b>저자사항</b> &nbsp ${book.author }지음</div>
 				<div class=""><b>발행사항</b> &nbsp ${book.publisher } ${book.pubyear }</div>
 				<div class=""><b>형태사항</b> &nbsp</div>
@@ -51,13 +51,13 @@
 
 		</div>	
 		
-			<div class="info-box bg-warning">
+			<div class="info-box">
 				<h5>상세정보</h5>
 				<p class="text-secondary">가나다라마바사아자카타파하</p>
 			</div>
 			<div class="possessioninfo-box">
 				<h5>소장정보</h5>
-				<table class="table bg-info" border=1>
+				<table class="table" border=1>
 					
 					<thead>
 						<tr class="item">
@@ -79,6 +79,9 @@
 									<c:when test = "${book.borrow }" >
 										<button class="btn btn-info btn-sm" ><i class="bi bi-bookmark-plus"></i>대출불가</button> 
 									</c:when>
+									<c:when test="${book.interibrary }">
+										<button class="btn btn-info btn-sm" ><i class="bi bi-bookmark-plus"></i>대출불가</button> <div class="">예약인원 ${book.reserveCount } 명</div>
+									</c:when>
 									<c:otherwise>
 										<button id ="borrowBtn"class="btn btn-info btn-sm borrowBtn" data-book-id="${book.id }"><i class="bi bi-bookmark-plus"></i>대출하기</button>
 									</c:otherwise>
@@ -90,13 +93,22 @@
 							</td>
 							<td>${book.appendix }</td>
 							<td>
-								<button id="reserveBtn" class="btn btn-sm btn-danger reserveBtn">예약하기</button>
+								<c:choose>
+									<c:when test ="${book.borrow }">
+										<button id="reserveBtn" class="btn btn-sm btn-danger reserveBtn"><i class="bi bi-journal-arrow-down"></i>예약하기</button>
+									</c:when>
+									<c:otherwise>
+										<button class="btn btn-danger btn-sm" ><i class="bi bi-journal-arrow-down"></i>예약불가</button>
+									</c:otherwise>
+								</c:choose>
 							</td>
 							<td>
 								<c:choose>
-									<c:when test ="${book.interibrary }">
-										<a href="#"class="btn btn-success btn-sm interibraryAddBtn"></i>상호대차 신청 불가</a> 
+									<c:when test ="${book.borrow }">
+										<a href="#"class="btn btn-success btn-sm interibraryAddBtn"><i class="bi bi-shuffle"></i>상호대차 신청 불가</a> 
 									</c:when>
+									
+									
 									<c:otherwise>
 										<a href="/library/interibrarypopup/view?id=${book.id }"class="btn btn-success btn-sm interibraryAddBtn" onclick="window.open('/library/interibrarypopup/view?id=${book.id}','new','scrollbars=yes,resizable=no width=500 height=500, left=0,top=0');return false"><i class="bi bi-shuffle"></i>상호대차 신청</a>
 									</c:otherwise>
@@ -108,10 +120,12 @@
 					</tbody>
 				
 				</table>
+				</div>
 				</c:forEach>
+				<div class="text-center"><button id ="interestAddBtn" class="btn btn-sm btn-primary interestAddBtn" data-book-id="${book.id }"><i class="bi bi-download"></i>관심도서 담기</button></div>
 			</div>
-			<div class="text-center"><button class="btn btn-sm btn-primary interestAddBtn" data-book-id="${book.id }"><i class="bi bi-download"></i>관심도서 담기</button></div>
-			<div class=""></div>
+			
+	
 			
 			
 			
@@ -119,11 +133,7 @@
 			<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
 		</div>
 		
-		
-		
-		
-		
-		
+	
 
 	<script>
 	$(document).ready(function(){
@@ -214,6 +224,45 @@
 			
 			
 		});
+		
+		$("#interestAddBtn").on("click", function(){
+       	 let id = $(this).data("book-id");
+       	 //이것도 한번 된 책이면 두번이상 못누르게 해보기
+       	 
+			var result = confirm("관심도서 추가 하시겠습니까?");
+       	 
+       	 if(result){
+				//alert(""); 아무것도 안쓰면 바로 추가성공이 뜬다.
+			 } else {
+				return ;
+			 }
+       	 
+       	 alert(id);
+       	 
+       	 $.ajax({
+       	
+       		 type:"post"
+       		 , url:"/book/interest/create"
+       		 , data :{"bookId":id}
+       	 	 , success:function(data){
+       	 		 if(data.result =="success"){
+       	 			 alert("추가 성공");
+       	 			location.reload();
+       	 		 } else {
+       	 			 alert("추가 실패");
+       	 		 }
+       	 	 }
+       	 	 , error:function(){
+       	 		 alert("추가 에러");
+       	 	 }
+       	 	 
+       	 });
+       	 
+       	 
+       	 
+       	 
+       	 
+        });
 		
 		
 	});
