@@ -50,7 +50,7 @@
 		    </nav> 
 		    	 <div class="ml-5">
 		        	<h5 class="ml-5">검색 결과 
-					<c:forEach var="book" items="${bookCountList }">
+					<c:forEach var="book" begin="0" end="0" items="${bookCountList }">
 						${book.numberCount }
 					
 					</c:forEach>

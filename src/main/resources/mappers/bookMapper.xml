@@ -82,7 +82,14 @@
   			`title` = #{title}
   	</select>
   	
-  	<!--  -->
-  	
+  	<!-- 책 갯수 표시 -->
+  	<select id ="selectBookNumberByTitle" resultType="com.marondal.welibrary.book.model.BookCount" parameterType="String">
+  		SELECT
+  			count(1)
+  		FROM
+  			`book`
+  		WHERE
+  			`title` =#{title}
+  	</select>
   </mapper>
   
