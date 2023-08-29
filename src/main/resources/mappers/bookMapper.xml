@@ -72,30 +72,17 @@
   	
   	</select>
   	
-  	<!-- 대출 가능 여부 -->
-  	
-  	<!-- 예약 인원 세기  -->
-  	<!--  
-  	<select id ="selectReserveBookId" resultType="int" parameterType="int">
-  		SELECT 
-  			count(1)
-  		FROM
-  			`reserve_book`
-  		WHERE
-  			`bookId` = #{bookId}
-  	
-  	</select>
-  	-->
-  	<!-- 상호대차 가능 여부 -->
-  	<!--  
-  	<select id="selectInteribraryBookId" resultType="int" parameterType="int">
+  	<!-- 책 갯수 세기 -->
+  	<select id="selectBookCount" resultType="int" parameterType="String">
   		SELECT
   			count(1)
   		FROM
-  			`interibrary_book`
+  			`book`
   		WHERE
-  			`bookId` = #{bookId}
+  			`title` = #{title}
   	</select>
-  	-->
+  	
+  	<!--  -->
+  	
   </mapper>
   
