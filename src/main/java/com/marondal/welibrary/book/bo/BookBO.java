@@ -12,6 +12,7 @@ import com.marondal.welibrary.book.dao.BookDAO;
 import com.marondal.welibrary.book.interibrary.bo.InteribrayCountBO;
 import com.marondal.welibrary.book.model.Book;
 import com.marondal.welibrary.book.model.BookDetail;
+import com.marondal.welibrary.book.reserve.bo.ReserveBO;
 import com.marondal.welibrary.book.reserve.bo.ReserveCountBO;
 
 
@@ -27,6 +28,7 @@ public class BookBO {
 
 	@Autowired
 	private InteribrayCountBO interibrayCountBO;
+	
 	
 	
 	
@@ -76,7 +78,13 @@ public class BookBO {
 	
 	//책 1행정보 조회
 	public BookDetail getBookById(int id) {
-				
+			
+		//대출여부
+		boolean count1 = reserveCountBO.isBorrow(id);
+		//상호대차 여부
+		boolean count2 = interibrayCountBO.isInteribrary(id);
+		
+		
 		return bookDAO.selectBookById(id);
 
 	}

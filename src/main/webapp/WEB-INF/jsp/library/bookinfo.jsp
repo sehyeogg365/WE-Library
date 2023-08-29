@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>   
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>      
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -42,6 +44,7 @@
 				<div class=""><b>발행사항</b> &nbsp ${book.publisher } ${book.pubyear }</div>
 				<div class=""><b>형태사항</b> &nbsp</div>
 				<div class=""><b>표준부호</b> &nbsp ${book.isbn }</div>
+				<div class=""><b>도서관</b> &nbsp ${book.library }</div>
 				<div class=""><b>부록여부</b> &nbsp${book.appendix }</div>
 			
 			</div>
@@ -80,11 +83,23 @@
 								</c:choose>
 							</td>
 							<td>
-								
+								<fmt:formatDate value="${borrow.returnDate }" pattern ="yyyy-MM-dd"/>
 							</td>
 							<td>${book.appendix }</td>
-							<td><button id="reserveBtn" class="btn btn-sm btn-danger reserveBtn">예약불가능</button></td>
-							<td><a href="/library/interibrarypopup/view?id=${book.id }"class="btn btn-success btn-sm interibraryAddBtn" onclick="window.open('/library/interibrarypopup/view?id=${book.id}','new','scrollbars=yes,resizable=no width=500 height=500, left=0,top=0');return false"><i class="bi bi-shuffle"></i>상호대차 신청</a></td>
+							<td>
+								<button id="reserveBtn" class="btn btn-sm btn-danger reserveBtn">예약하기</button>
+							</td>
+							<td>
+								<c:choose>
+									<c:when test ="${book.interibrary }">
+										<a href="#"class="btn btn-success btn-sm interibraryAddBtn"></i>상호대차 신청 불가</a> 
+									</c:when>
+									<c:otherwise>
+										<a href="/library/interibrarypopup/view?id=${book.id }"class="btn btn-success btn-sm interibraryAddBtn" onclick="window.open('/library/interibrarypopup/view?id=${book.id}','new','scrollbars=yes,resizable=no width=500 height=500, left=0,top=0');return false"><i class="bi bi-shuffle"></i>상호대차 신청</a>
+									</c:otherwise>
+								</c:choose>
+								
+							</td>
 						</tr>
 					</tbody>
 				
@@ -107,8 +122,89 @@
 	<script>
 	$(document).ready(function(){
 		
+		
+		$("#reserveBtn").on("click", function(){
+       	 let id = $(this).data("book-id");
+       	 
+			var result = confirm("예약 하시겠습니까?");
+       	 
+       	 if(result){
+				//alert(""); 아무것도 안쓰면 바로 추가성공이 뜬다.
+			 } else {
+				return ;
+			 }
+       	 
+       	 alert(id);
+       	 
+       	 $.ajax({
+       		
+       		 type:"post"
+       		 , url:"/book/reservation/create"
+       		 , data:{"bookId":id}
+       		 , success:function(data){
+       			 if(data.result == "success"){
+        	 			alert("예약 성공");
+        	 			location.reload();
+        	 		 } else {
+        	 			alert("예약 실패");
+        	 			 
+        	 		 }
+       			 
+       		 }
+       		 , error:function(){
+       	 		 alert("예약 에러");
+
+       	 	 }
+       		 
+       		 
+       	 });
+       	 
+       	 
+       	 
+        });
+		
+		
+		
+		
+		
+		
 		$("#borrowBtn").on("click", function(){
 			
+			let id = $(this).data("book-id");
+       	 
+       	 
+       		 var result = confirm("대출 하시겠습니까?");
+       	 
+       		 if(result){
+				//alert(""); 아무것도 안쓰면 바로 추가성공이 뜬다.
+			 } else {
+				return ;
+			 }
+	
+       	 
+       		 alert(id);
+       	 
+       	 	$.ajax({
+       	
+       		 	type:"post"
+       		 	, url:"/book/borrow/create"
+       		 	, data:{"bookId":id}
+       	 	 	, success:function(data){
+       	 		 	if(data.result == "success"){
+       	 				alert("대출 성공");
+       	 				location.reload();
+       	 		 	} else {
+       	 			alert("대출 실패");
+       	 			 
+       	 		 	}
+       	 		 
+       	 	 	}
+       	 	 	, error:function(){
+       	 			 alert("대출 에러");
+
+       	 	 	}
+       		 
+       		});
 			
 			
 		});

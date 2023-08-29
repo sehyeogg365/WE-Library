@@ -10,8 +10,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.marondal.welibrary.book.bo.BookBO;
+import com.marondal.welibrary.book.borrow.bo.BorrowBO;
 import com.marondal.welibrary.book.model.Book;
 import com.marondal.welibrary.book.model.BookDetail;
+import com.marondal.welibrary.book.model.BorrowBook;
 import com.marondal.welibrary.library.bo.LibraryBO;
 
 @Controller
@@ -21,6 +23,8 @@ public class LibraryController {
 	@Autowired
 	private BookBO bookBO;
 	
+	@Autowired
+	private BorrowBO borrowBO;
 	//@Autowired
 	//private LibraryBO libraryBO;
 	
@@ -54,6 +58,10 @@ public class LibraryController {
 		
 		BookDetail book = bookBO.getBookById(id);
 		model.addAttribute("book", book);
+		
+		
+		BorrowBook borrow = borrowBO.getBorrow(id);
+		model.addAttribute("borrow", borrow);
 		
 		return "/library/bookinfo";
 		

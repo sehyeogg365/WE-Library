@@ -17,7 +17,6 @@ public class BookDetail {//책카드 한장에 들어가는 정보
 	private boolean isBorrow;//대출여부 대출가능/ 대출불가 대출중 일때 대출불가 상호대차불가 예약가능 대출중 아닐때 대출 가능 상호대차가능 예약불가
 	private int reserveCount;//예약 인원 예약인원/예약불가
 	private boolean isInteribrary;// 상호대차 여부 아예 안뜨거나 아님 상호대차중 이렇게 표시 
-	private Date returnDate;//반납예정일
 	public int getId() {
 		return id;
 	}
@@ -96,12 +95,7 @@ public class BookDetail {//책카드 한장에 들어가는 정보
 	public void setInteribrary(boolean isInteribrary) {
 		this.isInteribrary = isInteribrary;
 	}
-	public Date getReturnDate() {
-		return returnDate;
-	}
-	public void setReturnDate(Date returnDate) {
-		this.returnDate = returnDate;
-	}
+
 	
 	
 
