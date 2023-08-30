@@ -38,11 +38,7 @@ public class ReserveBO {
 		
 	}
 	
-	//예약 정보 1행 조회
-	public ReserveBook getReserveBook(int bookId) {
-		
-		return reserveDAO.selectReserveBook(bookId);
-	}
+	
 	
 	
 	//예약 조회 

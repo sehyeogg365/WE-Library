@@ -125,7 +125,9 @@
 								<c:when test="${book.interibrary }">
 									<button class="btn btn-danger btn-sm reserveBtn" data-book-id="${book.id }"><i class="bi bi-journal-arrow-down"></i>도서 예약신청</button>
 								</c:when>
-						
+								<c:when test="${book.reserve }">
+									<button class="btn btn-danger btn-sm" ><i class="bi bi-journal-arrow-down"></i>예약불가</button>
+								</c:when>
 								<c:otherwise>
 									<button class="btn btn-danger btn-sm" ><i class="bi bi-journal-arrow-down"></i>예약불가</button>
 								</c:otherwise>

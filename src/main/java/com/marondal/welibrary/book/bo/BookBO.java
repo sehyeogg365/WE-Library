@@ -34,8 +34,7 @@ public class BookBO {
 	@Autowired
 	private InteribrayCountBO interibrayCountBO;
 	
-	@Autowired
-	private ReserveBO reserveBO;
+	
 	//@Autowired
 	//private UserBO userBO;
 	
@@ -55,7 +54,7 @@ public class BookBO {
 			
 			
 			//예약정보1행 이거 만들기
-			ReserveBook reservebook = reserveBO.getReserveBook(book.getId());
+			//ReserveBook reservebook = reserveCountBO.getReserveBook(book.getId());
 			
 			int reserveCount = reserveCountBO.getReserveCount(book.getId());
 			
@@ -63,7 +62,7 @@ public class BookBO {
 			
 			boolean isInteribrary = interibrayCountBO.isInteribrary(book.getId());
 			
-			boolean isReserve = reserveCountBO.isReserve(book.getId(), reservebook.getUserId());
+			//boolean isReserve = reserveCountBO.isReserve(book.getId(), reservebook.getUserId());
 			
 			bookDetail.setId(book.getId());
 			bookDetail.setLibrary(book.getLibrary());
@@ -77,7 +76,7 @@ public class BookBO {
 			bookDetail.setReserveCount(reserveCount);
 			bookDetail.setBorrow(isBorrow);
 			bookDetail.setInteribrary(isInteribrary);
-			bookDetail.setReserve(isReserve);
+			//bookDetail.setReserve(isReserve);
 			
 			bookDetailList.add(bookDetail);
 		}
