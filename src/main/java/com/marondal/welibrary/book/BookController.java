@@ -11,14 +11,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.marondal.welibrary.book.bo.BookBO;
 import com.marondal.welibrary.book.borrow.bo.BorrowBO;
-import com.marondal.welibrary.book.borrow.bo.BorrowCountBO;
-import com.marondal.welibrary.book.dao.BookDAO;
 import com.marondal.welibrary.book.interest.bo.InterestBO;
-import com.marondal.welibrary.book.interest.bo.InterestCountBO;
 import com.marondal.welibrary.book.interibrary.bo.InteribraryBO;
-import com.marondal.welibrary.book.model.Book;
 import com.marondal.welibrary.book.model.BorrowBookCount;
 import com.marondal.welibrary.book.model.BorrowBookDetail;
 import com.marondal.welibrary.book.model.InterestBookCount;
@@ -27,17 +22,13 @@ import com.marondal.welibrary.book.model.InteribraryBookCount;
 import com.marondal.welibrary.book.model.InteribraryBookDetail;
 import com.marondal.welibrary.book.model.ReserveBookCount;
 import com.marondal.welibrary.book.model.ReserveBookDetail;
-import com.marondal.welibrary.book.model.WishBook;
 import com.marondal.welibrary.book.model.WishBookCount;
 import com.marondal.welibrary.book.model.WishBookDetail;
 import com.marondal.welibrary.book.reserve.bo.ReserveBO;
 import com.marondal.welibrary.book.wishbook.bo.WishBookBO;
-import com.marondal.welibrary.book.wishbook.bo.WishBookCountBO;
 import com.marondal.welibrary.user.bo.UserBO;
-import com.marondal.welibrary.user.dao.UserDAO;
 import com.marondal.welibrary.user.model.User;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+
 
 
 @Controller
@@ -52,19 +43,12 @@ public class BookController {
 	private WishBookBO wishBookBO;
 	
 	@Autowired
-	private WishBookCountBO wishBookCountBO;
-	
-	@Autowired
 	private InterestBO interestBO;
 	
-	@Autowired
-	private InterestCountBO interestCountBO;
-	
+
 	@Autowired
 	private BorrowBO borrowBO;
 	
-	@Autowired
-	private BorrowCountBO borrowCountBO;
 	
 	@Autowired
 	private ReserveBO reserveBO;
@@ -85,9 +69,10 @@ public class BookController {
 		List<WishBookDetail> wishbookList = wishBookBO.getWishBookList(userId);
 		model.addAttribute("wishbookList", wishbookList);
 		
-		//여기서 관심도서개수 추가
-		WishBookCount wishbookcount = wishBookCountBO.getWishBookNumberByuserId(userId);
-		model.addAttribute("wishbookcount", wishbookcount);
+		//여기서 희망도서개수 추가
+		List<WishBookCount> wishbookCountList = wishBookBO.getWishBookNumberByUserId(userId);
+		model.addAttribute("wishbookCountList", wishbookCountList);
+		
 		
 		return "book/wishbooklist";
 		
@@ -123,8 +108,7 @@ public class BookController {
 		List<InterestBookCount> interestCountList = interestBO.getInterestBookNumberByUserId(userId);
 		
 		model.addAttribute("interestCountList", interestCountList);
-		//InterestBookCount interestbookcount = interestCountBO.getInterestBookNumberByuserId(userId);
-		//model.addAttribute("interestbookcount", interestbookcount);
+
 		//여기서 관심도서개수 추가
 		
 		return "book/interestbooklist";

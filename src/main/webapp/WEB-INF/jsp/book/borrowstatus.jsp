@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>        
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>      
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %> 
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>     
 <!DOCTYPE html>
 <html>
 <head>
@@ -58,6 +59,7 @@
 						
 						<div class="mt-3 d-flex ">
 							 대출현황 : &nbsp<div class="text-primary">
+							 					
 							 					<c:forEach var="borrow" begin="0" end="0" items="${borrowCountList }">
 							 					
 							 						${borrow.numberCount }

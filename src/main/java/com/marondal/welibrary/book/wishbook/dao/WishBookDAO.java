@@ -4,11 +4,9 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
-import org.springframework.web.multipart.MultipartFile;
 
 import com.marondal.welibrary.book.model.WishBook;
-import com.marondal.welibrary.book.model.WishBookCount;
-import com.marondal.welibrary.book.model.WishBookDetail;
+
 
 @Repository
 public interface WishBookDAO {
@@ -32,8 +30,11 @@ public interface WishBookDAO {
 		
 
 		// 유저별 희망도서 갯수세기 return type int 타입이 맞다.
-		public WishBookCount selectWishBookNumberByuserId(@Param("userId") int userId);
+		public int selectWishBookCount(@Param("userId") int userId);
 		
+		
+		//희망도서 갯수 표시(유저별)
+		public List<WishBook> selectWishBookNumberByUserId(@Param("userId") int userId);
 		
 		//희망도서 신청 여부 
 		public int selectBookByLibraryTitle(@Param("library") String library, @Param("title")String title);
@@ -42,7 +43,7 @@ public interface WishBookDAO {
 		//관리자	
 		
 		// 전체 희망도서 갯수세기
-		public WishBookCount selectWishBookNumberById(@Param("id")int id);
+		public int selectWishBookNumberById(@Param("id")int id);
 		
 			
 				

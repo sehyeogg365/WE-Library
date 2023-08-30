@@ -33,16 +33,16 @@ public class WishBookCountBO {
 	
 	//유저별 희망도서 갯수세기
 	//이갯수가 희망도서 신청 리스트 내 정보는 아니니 제너레이트 할필요는 없다.
-	public WishBookCount getWishBookNumberByuserId(int userId) {
+	public int getWishBookCount(int userId) {
 		
 		
-		return wishBookDAO.selectWishBookNumberByuserId(userId);
+		return wishBookDAO.selectWishBookCount(userId);
 		
 		
 	}
 	
-	//전체 희망도서 갯수세기
-	public WishBookCount getWishBookNumberById(int id) {
+	//전체 희망도서 갯수세기(관리자)
+	public int getWishBookNumberById(int id) {
 		
 		return wishBookDAO.selectWishBookNumberById(id);
 		

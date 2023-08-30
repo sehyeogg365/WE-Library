@@ -42,8 +42,8 @@ public class AdminController {
 		
 		
 		//여기서 관심도서개수 추가
-		WishBookCount wishbookcount = wishBookCountBO.getWishBookNumberById(userId);
-		model.addAttribute("wishbookcount", wishbookcount);
+		//WishBookCount wishbookcount = wishBookCountBO.getWishBookNumberById(userId);
+		//model.addAttribute("wishbookcount", wishbookcount);
 				
 		
 		return "/admin/wishbooklist";

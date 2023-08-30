@@ -44,7 +44,11 @@
 		
 			<div class="">
 				<div class="mt-3 d-flex text-secondary">
-						희망도서 신청 :&nbsp<div class="text-primary"> ${wishbookcount.numberCount } </div>건
+						희망도서 신청 :&nbsp<div class="text-primary"> 
+											<c:forEach var="wishbook" items="${wishbookCountList }">
+												${wishbook.numberCount }
+											</c:forEach>
+										</div>건
 				</div>
 						<!-- 신청여부 조사 북테이블에있을시 소장중 없을시 신청중 -->
 						<c:forEach var="wishbook" items="${wishbookList }">	

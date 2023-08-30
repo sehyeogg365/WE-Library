@@ -3,18 +3,18 @@ package com.marondal.welibrary.book.wishbook.bo;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.ibatis.annotations.Param;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.marondal.welibrary.book.dao.BookDAO;
+
 import com.marondal.welibrary.book.model.WishBook;
+import com.marondal.welibrary.book.model.WishBookCount;
 import com.marondal.welibrary.book.model.WishBookDetail;
 import com.marondal.welibrary.book.wishbook.dao.WishBookDAO;
 import com.marondal.welibrary.common.FileManagerService;
-import com.marondal.welibrary.user.bo.UserBO;
-import com.marondal.welibrary.user.model.User;
+
 
 @Service
 public class WishBookBO {
@@ -26,8 +26,7 @@ public class WishBookBO {
 	@Autowired
 	private WishBookCountBO wishBookCountBO;
 	
-	@Autowired
-	private UserBO userBO;
+
 	
 	
 	//희망도서 신청
@@ -88,8 +87,40 @@ public class WishBookBO {
 		}
 		
 		
+		//희망도서 권수 표시(사용자)
+		public List<WishBookCount> getWishBookNumberByUserId(int userId){
+			
+			List<WishBook> wishbookList = wishBookDAO.selectWishBookList(userId);
+			
+			List<WishBookCount> wishbookCountList = new ArrayList<>();
+			
+			for(WishBook wishbook : wishbookList) {
+				
+				
+				
+				WishBookCount wishbookCount = new WishBookCount();
+				
+				
+				int numberCount = wishBookCountBO.getWishBookCount(userId);
+				
+				
+				wishbookCount.setNumberCount(numberCount);
+				
+				wishbookCountList.add(wishbookCount);
+				
+				
+			}
+			
+			
+			return wishbookCountList;
+			
+			
+			
+		}
 		
-		// 관리자 희망도서 신청 리스트 제너레이트 진행
+		
+		
+		// 관리자 희망도서 신청 리스트 
 		
 		public List<WishBook> getWishBookListById(int id){
 			

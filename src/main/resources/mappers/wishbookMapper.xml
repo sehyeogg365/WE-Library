@@ -66,7 +66,7 @@
   
   
   <!-- 유저별 희망도서 신청 갯수 세기 -->
-  <select id="selectWishBookNumberByuserId" resultType="com.marondal.welibrary.book.model.WishBook" parameterType="int" >
+  <select id="selectWishBookCount" resultType="int" parameterType="int" >
   	SELECT
   		count(1)
   	FROM
@@ -74,6 +74,15 @@
   	WHERE
   		`userId` = #{userId}
   
+  </select>
+  
+  <select id ="selectWishBookNumberByUserId" resultType="com.marondal.welibrary.book.model.WishBook" parameterType="int">
+  	SELECT
+  		count(1)
+  	FROM
+  		`wish_book`
+  	WHERE
+  		`userId` = #{userId}
   </select>
   
   <!-- 희망도서 신청 여부(book테이블에 추가되었는지 여부) -->
