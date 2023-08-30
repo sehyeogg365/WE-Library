@@ -42,11 +42,13 @@ public interface WishBookDAO {
 				
 		//관리자	
 		
-		// 전체 희망도서 갯수세기
-		public int selectWishBookNumberById(@Param("id")int id);
+		// 전체 희망도서 권수세기
+		public int selectAllWishBookCount(@Param("id")int id);
 		
 			
-				
+		// 전체 희망도서 권수 표시
+		public List<WishBook> selectAllWishBookNumberById(@Param("id")int id);
+		
 		// 관리자 희망도서 신청 리스트 조회
 		public List<WishBook> selectWishBookListById(@Param("id") int id);
 		

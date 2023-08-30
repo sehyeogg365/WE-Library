@@ -116,14 +116,14 @@ public class BookController {
 	
 	@GetMapping("/borrowstatus/view")
 	public String borrowStatus(Model model
-							, @RequestParam("id") int id
+							//, @RequestParam("id") int id
 							, HttpSession session) {
 			
 		int userId = (Integer)session.getAttribute("userId");
 		
-		User user = userBO.getUserInfo(id); 
+		//User user = userBO.getUserInfo(id); 
 		
-		model.addAttribute("user", user);
+		//model.addAttribute("user", user);
 		
 		List<BorrowBookDetail> borrowDetailList = borrowBO.getBorrowList(userId);
 		
@@ -138,14 +138,14 @@ public class BookController {
 	
 	@GetMapping("/reservelist/view")
 	public String reserveList(Model model
-							, @RequestParam("id") int id
+							//, @RequestParam("id") int id
 							, HttpSession session) {
 		
 		int userId = (Integer)session.getAttribute("userId");
 		
-		User user = userBO.getUserInfo(id); 
+		//User user = userBO.getUserInfo(id); 
 		
-		model.addAttribute("user", user);
+		//model.addAttribute("user", user);
 		
 		List<ReserveBookDetail> reserveDetailList = reserveBO.getReserveList(userId);
 		
@@ -162,14 +162,14 @@ public class BookController {
 	
 	@GetMapping("/interibrarybooklist/view")
 	public String interibraryBookList(Model model
-									, @RequestParam("id") int id
+									//, @RequestParam("id") int id
 									, HttpSession session) {
 		
 		int userId = (Integer)session.getAttribute("userId");
 		
-		User user = userBO.getUserInfo(id); //이상하게 DAO로 해도 잘불러와지더라.
+		//User user = userBO.getUserInfo(id); //이상하게 DAO로 해도 잘불러와지더라.
 		
-		model.addAttribute("user", user);
+		//model.addAttribute("user", user);
 		
 		List<InteribraryBookDetail> interibraryDetailList = interibraryBO.getInteribraryList(userId);
 		

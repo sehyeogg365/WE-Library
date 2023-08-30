@@ -131,6 +131,38 @@ public class WishBookBO {
 			
 		}
 		
+		
+		// 희망도서 권수 표시(전체 권수)
+		
+		public List<WishBookCount> getAllWishBookNumberById(int id){
+			
+			List<WishBook> wishbookList = wishBookDAO.selectWishBookListById(id);
+			
+			List<WishBookCount> wishbookCountList = new ArrayList<>();
+			
+			for(WishBook wishbook : wishbookList) {
+				
+				
+				int allNumberCount = wishBookCountBO.getAllWishBookCount(id);
+				
+				
+				WishBookCount wishbookCount = new WishBookCount();
+				
+				
+				
+				
+				wishbookCount.setAllNumberCount(allNumberCount);
+				
+				
+				wishbookCountList.add(wishbookCount);
+				
+			}
+			
+			return wishbookCountList;
+			
+			
+		}
+		
 	
 		//희망도서 북테이블에 추가 
 		

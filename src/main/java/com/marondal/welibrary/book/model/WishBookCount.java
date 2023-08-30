@@ -3,7 +3,8 @@ package com.marondal.welibrary.book.model;
 public class WishBookCount {
 	private int id;
 	private int userId;
-	private int numberCount;
+	private int numberCount;//사용자별 권수
+	private int allNumberCount;//전체 권수
 	public int getId() {
 		return id;
 	}
@@ -22,6 +23,14 @@ public class WishBookCount {
 	public void setNumberCount(int numberCount) {
 		this.numberCount = numberCount;
 	}
+	public int getAllNumberCount() {
+		return allNumberCount;
+	}
+	public void setAllNumberCount(int allNumberCount) {
+		this.allNumberCount = allNumberCount;
+	}
+	
+	
 
 	
 	

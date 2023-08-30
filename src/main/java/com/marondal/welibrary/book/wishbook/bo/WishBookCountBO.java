@@ -3,8 +3,6 @@ package com.marondal.welibrary.book.wishbook.bo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.marondal.welibrary.book.model.WishBook;
-import com.marondal.welibrary.book.model.WishBookCount;
 import com.marondal.welibrary.book.wishbook.dao.WishBookDAO;
 
 @Service
@@ -42,9 +40,9 @@ public class WishBookCountBO {
 	}
 	
 	//전체 희망도서 갯수세기(관리자)
-	public int getWishBookNumberById(int id) {
+	public int getAllWishBookCount(int id) {
 		
-		return wishBookDAO.selectWishBookNumberById(id);
+		return wishBookDAO.selectAllWishBookCount(id);
 		
 		
 	}

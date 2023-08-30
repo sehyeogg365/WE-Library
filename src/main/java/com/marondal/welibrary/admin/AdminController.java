@@ -9,11 +9,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import com.marondal.welibrary.book.model.WishBook;
 import com.marondal.welibrary.book.model.WishBookCount;
-import com.marondal.welibrary.book.model.WishBookDetail;
 import com.marondal.welibrary.book.wishbook.bo.WishBookBO;
 import com.marondal.welibrary.book.wishbook.bo.WishBookCountBO;
 
@@ -42,9 +40,9 @@ public class AdminController {
 		
 		
 		//여기서 관심도서개수 추가
-		//WishBookCount wishbookcount = wishBookCountBO.getWishBookNumberById(userId);
-		//model.addAttribute("wishbookcount", wishbookcount);
-				
+		List<WishBookCount> wishBookCountList = wishBookBO.getAllWishBookNumberById(userId);
+		model.addAttribute("wishBookCountList", wishBookCountList);
+			
 		
 		return "/admin/wishbooklist";
 	}

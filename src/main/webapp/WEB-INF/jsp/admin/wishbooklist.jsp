@@ -38,7 +38,13 @@
 		
 			<div class="">
 				<div class="mt-3 d-flex text-secondary">
-						희망도서 신청현황 :&nbsp<div class="text-primary"> ${wishbookcount.numberCount }</div>건
+						희망도서 신청현황 :&nbsp
+						<div class="text-primary"> 
+						<c:forEach var="wihsbook" begin="0" end="0" items= "${wishbookCountList }">
+							${wishbook.allNumberCount }
+						
+						</c:forEach>
+						</div>건
 				</div>
 							
 					<hr>
