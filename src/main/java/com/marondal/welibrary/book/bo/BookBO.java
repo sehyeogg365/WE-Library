@@ -14,8 +14,11 @@ import com.marondal.welibrary.book.model.Book;
 import com.marondal.welibrary.book.model.BookCount;
 import com.marondal.welibrary.book.model.BookDetail;
 import com.marondal.welibrary.book.model.BorrowBook;
+import com.marondal.welibrary.book.model.ReserveBook;
 import com.marondal.welibrary.book.reserve.bo.ReserveBO;
 import com.marondal.welibrary.book.reserve.bo.ReserveCountBO;
+import com.marondal.welibrary.user.bo.UserBO;
+import com.marondal.welibrary.user.model.User;
 
 
 @Service
@@ -31,7 +34,10 @@ public class BookBO {
 	@Autowired
 	private InteribrayCountBO interibrayCountBO;
 	
-	
+	@Autowired
+	private ReserveBO reserveBO;
+	//@Autowired
+	//private UserBO userBO;
 	
 	
 	//책목록 조회(dto로 바꾸기)
@@ -47,11 +53,17 @@ public class BookBO {
 			
 			BookDetail bookDetail = new BookDetail();
 			
+			
+			//예약정보1행 이거 만들기
+			ReserveBook reservebook = reserveBO.getReserveBook(book.getId());
+			
 			int reserveCount = reserveCountBO.getReserveCount(book.getId());
 			
 			boolean isBorrow = reserveCountBO.isBorrow(book.getId());
 			
 			boolean isInteribrary = interibrayCountBO.isInteribrary(book.getId());
+			
+			boolean isReserve = reserveCountBO.isReserve(book.getId(), reservebook.getUserId());
 			
 			bookDetail.setId(book.getId());
 			bookDetail.setLibrary(book.getLibrary());
@@ -65,6 +77,7 @@ public class BookBO {
 			bookDetail.setReserveCount(reserveCount);
 			bookDetail.setBorrow(isBorrow);
 			bookDetail.setInteribrary(isInteribrary);
+			bookDetail.setReserve(isReserve);
 			
 			bookDetailList.add(bookDetail);
 		}

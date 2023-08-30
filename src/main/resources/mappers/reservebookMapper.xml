@@ -26,6 +26,18 @@
   		)
   </insert>
   
+  <!-- 예약 정보 1행 조회 -->
+  <select id = "selectReserveBook" resultType="com.marondal.welibrary.book.model.ReserveBook" parameterType="int">
+  	SELECT
+  		`id`
+   		, `userId`
+   		, `bookId`
+   		, `createdAt`
+  	FROM
+  		`reserve_book`
+  	WHERE
+  		`bookId` = #{bookId}
+  </select>
   <!-- 예약 목록 -->
   <select id ="selectReserveList" resultType="com.marondal.welibrary.book.model.ReserveBook" parameterType="int">
   	SELECT
@@ -95,5 +107,21 @@
   		`bookId` = #{bookId};
   
   </select>
+  
+  <!-- 예약 여부(본인이 예약한 책은 예약 못한다.) -->
+  <select id ="isReserve" resultType="int" parameterType="int">
+  	SELECT
+  		count(1)
+  	FROM
+  		`reserve_book`
+  	WHERE
+  		`bookId` =#{bookId}
+  		AND
+  		`userId` = #{userId}
+  		
+  
+  </select>
+  
+  
   
   </mapper>

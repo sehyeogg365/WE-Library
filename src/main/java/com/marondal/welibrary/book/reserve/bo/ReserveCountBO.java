@@ -1,12 +1,11 @@
 package com.marondal.welibrary.book.reserve.bo;
 
-import java.util.List;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.marondal.welibrary.book.model.ReserveBook;
-import com.marondal.welibrary.book.model.ReserveBookCount;
+
 import com.marondal.welibrary.book.reserve.dao.ReserveDAO;
 
 @Service
@@ -48,9 +47,9 @@ public class ReserveCountBO {
 	}
 	
 	//예약 여부 (본인이 예약한건 예약 못한다)
-	public boolean isReserve(int userId, int id) {
+	public boolean isReserve(int userId, int bookId) {
 		
-		int count = reserveDAO.isReserve(userId ,id);
+		int count = reserveDAO.isReserve(userId, bookId);
 		
 		if(count == 0) {
 			

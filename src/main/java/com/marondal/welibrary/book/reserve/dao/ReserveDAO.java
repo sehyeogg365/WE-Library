@@ -6,7 +6,6 @@ import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import com.marondal.welibrary.book.model.ReserveBook;
-import com.marondal.welibrary.book.model.ReserveBookCount;
 
 @Repository
 public interface ReserveDAO {
@@ -14,6 +13,9 @@ public interface ReserveDAO {
 	//예약 
 	public int insertReserve(@Param("bookId") int bookId
 							, @Param("userId") int userId);
+	
+	//예약 정보 1행 조회
+	public ReserveBook selectReserveBook(@Param("bookId") int bookId);
 	
 	//예약 목록 
 	
@@ -38,8 +40,8 @@ public interface ReserveDAO {
 	//대출상태
 	public int selectBorrowByBookId(@Param("bookId") int bookId);
 	
-	//예약 여부
+	//예약 여부(본인이 예약한 책은 예약 못한다.)
 	
-	public int isReserve(@Param("userId") int userId, @Param("id") int id);
+	public int isReserve(@Param("userId") int userId, @Param("bookId") int bookId);
 	
 }
