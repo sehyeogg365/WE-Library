@@ -82,14 +82,13 @@
    </select>
    
    <!--상호대차 취소  -->
-   <delete id="deleteInteribrary" parameterType="map">
+   <delete id="deleteInteribrary" parameterType="int">
    	DELETE
    	FROM
    		`interibrary_book`
    	WHERE
    		`id` = #{id}
-   		AND
-   		`userId` = #{userId}
+
    </delete>
    
    </mapper>

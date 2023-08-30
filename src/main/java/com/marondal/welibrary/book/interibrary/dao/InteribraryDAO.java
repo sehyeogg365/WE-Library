@@ -32,7 +32,7 @@ public interface InteribraryDAO {
 	public int selectInteribraryByBookId(@Param("bookId") int bookId);
 	
 	//상호대차 취소
-	public int deleteInteribrary(@Param("userId") int userId, @Param("id") int id);
+	public int deleteInteribrary(@Param("id") int id);
 	
 	
 	

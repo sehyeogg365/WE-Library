@@ -94,10 +94,10 @@ public class InteribraryBO {
 	}
 	
 	//상호대차 취소
-	public int deleteInteribrary(int userId, int id) {
+	public int deleteInteribrary(int id) {
 		
 		
-		return interibraryDAO.deleteInteribrary(userId, id);
+		return interibraryDAO.deleteInteribrary(id);
 		
 		
 	}
