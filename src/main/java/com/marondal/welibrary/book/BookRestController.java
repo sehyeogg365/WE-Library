@@ -146,10 +146,9 @@ public class BookRestController {
 	// 관심도서 삭제 
 	@GetMapping("/interest/delete")
 	public Map<String, String> interestDelete(@RequestParam("id")int id
-											  , HttpSession session
 											  ){
 		
-		int userId = (Integer) session.getAttribute("userId");
+	
 		
 		int count = interestBO.deleteInterest(id);
 		
