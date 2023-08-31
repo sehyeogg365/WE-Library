@@ -89,8 +89,7 @@
    		`borrow_book`
    	WHERE
    		`id`=#{id}
-   		AND
-   		`userId`=#{userId}
+
    
    </delete>
    <!-- 반납 연장 -->

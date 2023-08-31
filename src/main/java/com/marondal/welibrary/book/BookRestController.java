@@ -201,12 +201,10 @@ public class BookRestController {
 	//반납
 	@GetMapping("/borrow/delete")
 	public Map<String, String> borrowDelete(@RequestParam("id") int id
-											, HttpSession session
 											){
 		
-		int userId = (Integer) session.getAttribute("userId");
 		
-		int count = borrowBO.deleteBorrow(userId, id);
+		int count = borrowBO.deleteBorrow(id);
 		
 
 		Map<String, String> resultMap = new HashMap<>();
