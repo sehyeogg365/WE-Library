@@ -340,10 +340,10 @@ public class BookRestController {
 	//상호대차 취소
 	@GetMapping("/interibrary/delete")
 	public Map<String, String> deleteInteribrary(@RequestParam("id") int id
-												 //, HttpSession session //이 세션값도 굳이 해야하나?
+												 //이 세션값도 굳이 해야하나?
 												){
 		
-		//int userId = (Integer) session.getAttribute("userId");
+	
 		
 		int count = interibraryBO.deleteInteribrary(id);
 		
