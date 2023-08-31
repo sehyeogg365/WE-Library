@@ -23,8 +23,7 @@ public interface ReserveDAO {
 	
 	
 	//예약 삭제 
-	public int deleteReserve(@Param("id") int id
-							, @Param("userId") int userId);
+	public int deleteReserve(@Param("id") int id);
 
 
 	//예약권수

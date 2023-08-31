@@ -108,9 +108,9 @@ public class ReserveBO {
 	
 	
 	//예약 취소
-	public int deleteReserve(int id, int userId) {
+	public int deleteReserve(int id) {
 		
-		return reserveDAO.deleteReserve(id, userId);
+		return reserveDAO.deleteReserve(id);
 		
 		
 	}

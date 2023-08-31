@@ -287,11 +287,9 @@ public class BookRestController {
 	//예약 취소 
 	@GetMapping("/reservation/delete")
 	public Map<String, String> reservationDelete(@RequestParam("id") int id
-												, HttpSession session){
+												){
 		
-		int userId = (Integer) session.getAttribute("userId");
-		
-		int count = reserveBO.deleteReserve(id, userId);
+		int count = reserveBO.deleteReserve(id);
 		
 		Map<String, String> resultMap = new HashMap<>();
 		
