@@ -160,23 +160,23 @@
 				
 				
 				$.ajax({
+					
 					type:"get"
-					, url: "/book/interibrary/delete"
-					, data:{"id":id}
-					, success:function(data){
+					, url:"/book/interibrary/delete"
+					, data :{"id":id}
+					,success:function(data){
 						if(data.result == "success"){
 							alert("상호대차 취소 성공");
 							location.reload();
 						} else {
 							alert("상호대차 취소 실패");
-							
 						}
-						
 					}
 					,error:function(){
-						alert("상호대차 취소 에러");
+						
+						 alert("상호대차 취소 에러");
+						
 					}
-					
 					
 					
 				});
@@ -185,6 +185,8 @@
 				
 				
 			});
+			
+			
 			
 		});
 		

@@ -309,7 +309,7 @@ public class BookRestController {
 	
 	//상호대차
 	@PostMapping("/interibrary/create")
-	public Map<String, String> addInteribrary(@RequestParam("bookId") int bookId
+	public Map<String, String> interibraryAdd(@RequestParam("bookId") int bookId
 											  , @RequestParam("receivelibrary") String receivelibrary	
 											  , HttpSession session){
 		
@@ -339,28 +339,26 @@ public class BookRestController {
 	
 	//상호대차 취소
 	@GetMapping("/interibrary/delete")
-	public Map<String, String> deleteInteribrary(@RequestParam("id") int id
-												 //이 세션값도 굳이 해야하나?
-												){
+	public Map<String, String> interibraryDelete(@RequestParam("id") int id){
 		
-
+		
+		
 		int count = interibraryBO.deleteInteribrary(id);
 		
 		Map<String, String> resultMap = new HashMap<>();
 		
-		if(count == 1) {
-			
-			resultMap.put("result", "success");
-	
-		} else {
+		if(count == 0) {
 			
 			resultMap.put("result", "fail");
 			
+		} else {
+			
+			resultMap.put("result", "success");
+			
 		}
 		
-
-		return resultMap;
 		
+		return resultMap;
 		
 		
 	}

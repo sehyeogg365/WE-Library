@@ -3,6 +3,7 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>        
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %> 
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>     
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -78,7 +79,21 @@
 								도서관 : ${borrow.library }
 							</div>
 							<div class=""><!-- ${borrowDate.time +(1000*60*60*24*14)} -->
-								상태 : 대출중 | 대출일 : <fmt:formatDate value="${borrow.createdAt}" pattern ="yyyy-MM-dd"/> | 반납예정일 : <fmt:formatDate value="${borrow.returnDate}" pattern ="yyyy-MM-dd"/>
+								<c:set var=borrowDate value= <fmt:parseDate(${borrow.createdAt}, "yyyy-MM-dd")}/> />
+
+								<c:set var=returnDate value= <fmt:parseDate(${borrow.returnDate}, "yyyy-MM-dd")}/> />
+								
+								
+								상태 : <c:choose>
+										<c:when test ="${returnDate - borrowDate>= 21}">
+											반납연장
+										</c:when>
+										<c:otherwise>
+											대출중
+										</c:otherwise>
+									 </c:choose> 
+								
+								| 대출일 : <fmt:formatDate value="${borrow.createdAt}" pattern ="yyyy-MM-dd"/> | 반납예정일 : <fmt:formatDate value="${borrow.returnDate}" pattern ="yyyy-MM-dd"/>
 							</div>
 						</div>
 						
@@ -90,7 +105,7 @@
 							<!-- parseDate String -> Date -->
 							
 							<c:choose>
-								<c:when test="${returnDate - borrowDate >=21}">
+								<c:when test="${returnDate - borrowDate >= 21}">
 									<button class="btn btn-primary btn-sm">반납연장불가</button>
 								
 								</c:when>
