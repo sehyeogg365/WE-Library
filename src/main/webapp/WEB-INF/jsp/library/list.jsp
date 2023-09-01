@@ -104,16 +104,16 @@
 						<div class="d-flex align-items-center"><!-- 대출중일때 대출불가 예약 -->
 						
 							<c:choose>
-								<c:when test="${book.borrow }">
-									<button class="btn btn-info btn-sm" ><i class="bi bi-bookmark-plus"></i>대출불가</button> <div class="">예약인원 ${book.reserveCount } 명</div>
-								</c:when>
-								<c:when test="${book.interibrary }">
-									<button class="btn btn-info btn-sm" ><i class="bi bi-bookmark-plus"></i>대출불가</button> <div class="">예약인원 ${book.reserveCount } 명</div>
-								</c:when>
-								<c:otherwise>
-									<button class="btn btn-info btn-sm borrowBtn" data-book-id="${book.id }"><i class="bi bi-bookmark-plus"></i>대출하기</button>
-								</c:otherwise>
-							</c:choose>
+									<c:when test = "${book.borrow }" >
+										<button class="btn btn-info btn-sm" ><i class="bi bi-bookmark-plus"></i>대출불가</button> 
+									</c:when>
+									<c:when test="${book.interibrary }">
+										<button class="btn btn-info btn-sm" ><i class="bi bi-bookmark-plus"></i>대출불가</button> <div class="">예약인원 ${book.reserveCount } 명</div>
+									</c:when>
+									<c:otherwise>
+										<button id ="borrowBtn"class="btn btn-info btn-sm borrowBtn" data-book-id="${book.id }"><i class="bi bi-bookmark-plus"></i>대출하기</button>
+									</c:otherwise>
+								</c:choose>
 							
 						</div>
 						<div class="mr-2">	<!-- 대출가능일때 예약불가 --><!-- 상호대차중일때 상호대차불가 -->
