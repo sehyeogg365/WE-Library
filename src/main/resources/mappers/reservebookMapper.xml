@@ -55,7 +55,7 @@
   	
   
   <!-- 예약 취소 -->
-  <delete id="deleteReserve" parameterType="map">
+  <delete id="deleteReserve" parameterType="int">
   	DELETE
   	FROM
   		`reserve_book`
