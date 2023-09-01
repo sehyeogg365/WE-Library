@@ -343,8 +343,7 @@ public class BookRestController {
 												 //이 세션값도 굳이 해야하나?
 												){
 		
-	
-		
+
 		int count = interibraryBO.deleteInteribrary(id);
 		
 		Map<String, String> resultMap = new HashMap<>();

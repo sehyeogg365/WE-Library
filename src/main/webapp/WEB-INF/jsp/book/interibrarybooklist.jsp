@@ -74,8 +74,8 @@
 						<div class="col-9">
 							<div class="">
 								<h5>${interibrarybook.title }</h5>
-								<h5>상호대차아이디${interibraybook.id }</h5>
-								<h5>북아이디${interibraybook.bookId }</h5>
+								<h5>상호대차아이디${interibrarybook.id }</h5>
+								<h5>북아이디${interibrarybook.bookId }</h5>
 							</div>
 							<div class="">
 								제공도서관: ${interibrarybook.library } | 수령도서관 : ${interibrarybook.receivelibrary }
@@ -161,26 +161,23 @@
 				
 				
 				$.ajax({
-					
 					type:"get"
-					, url:"/book/interibrary/delete"
-					, data:{"id" : id}
+					, url: "/book/interibrary/delete"
+					, data:{"id":id}
 					, success:function(data){
-						
 						if(data.result == "success"){
 							alert("상호대차 취소 성공");
 							location.reload();
 						} else {
 							alert("상호대차 취소 실패");
+							
 						}
 						
-						
 					}
-					
-					, error:function(){
-						
+					,error:function(){
 						alert("상호대차 취소 에러");
 					}
+					
 					
 					
 				});
