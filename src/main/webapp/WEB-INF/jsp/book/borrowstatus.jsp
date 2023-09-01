@@ -3,7 +3,6 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>        
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %> 
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>     
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -78,18 +77,15 @@
 							<div class="">
 								도서관 : ${borrow.library }
 							</div>
-							<div class=""><!-- ${borrowDate.time +(1000*60*60*24*14)} -->
-								<c:set var=borrowDate value= <fmt:parseDate(${borrow.createdAt}, "yyyy-MM-dd")}/> />
-
-								<c:set var=returnDate value= <fmt:parseDate(${borrow.returnDate}, "yyyy-MM-dd")}/> />
-								
+							<div class="d-flex"><!-- ${borrowDate.time +(1000*60*60*24*14)} 여기서 String->Date 변환 한번 해야함(parse) -->
+						
 								
 								상태 : <c:choose>
-										<c:when test ="${returnDate - borrowDate>= 21}">
-											반납연장
+										<c:when test ="${returnDate_c - borrowDate_c >= 21}">
+											<div class="">반납연장</div>
 										</c:when>
 										<c:otherwise>
-											대출중
+											<div class="">대출중</div>
 										</c:otherwise>
 									 </c:choose> 
 								
