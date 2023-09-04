@@ -43,10 +43,10 @@
 			<p class="title"></p>
 			<p class="author"></p>
 			<p class="publisher"></p>
+			<p class="year"></p>
 			<p class="isbn"></p>
 			<p class="price"></p>
-			<p class="year"></p>
-			<button class="btn btn-primary interestAdd">희망도서 신청</button>
+			<p class="button"><button class="btn interestAddBtn">희망도서 신청</button></p>
 		</div>
 		
 		
@@ -97,9 +97,9 @@
 				console.log(msg.documents[0].isbn);//isbn
 				console.log(msg.documents[0].price);//price
 				console.log(msg.documents[0].publisher);//publisher
-				console.log(msg.documents[0].authors);//publisher
-				console.log(msg.documents[0].datetime);//publisher
-				
+				console.log(msg.documents[0].authors);//authors
+				console.log(msg.documents[0].datetime);//datetime
+				console.log(msg.documents[0].button);
 				
 				$( ".title" ).append( "<strong>"+"제목:"+msg.documents[0].title+"</strong>" );//여기에 제목 코드를 붙여 넣는다.
 				$( ".thumbnail" ).append( "<img src='"+msg.documents[0].thumbnail+"'/><br>" );//여기에 썸네일 코드를 붙여 넣는다.
@@ -108,6 +108,7 @@
 				$( ".publisher" ).append( "<strong>"+"발행사:" + msg.documents[0].publisher+"</strong><br>" );//여기에 출판사 코드를 붙여 넣는다.
 				$( ".author" ).append( "<strong>"+"작가:"+msg.documents[0].authors+"</strong>" );//여기에 작가 코드를 붙여 넣는다.
 				$( ".year" ).append( "<strong>"+"발행년도:"+msg.documents[0].datetime.substring(0,4)+"</strong>" );//여기에 작가 코드를 붙여 넣는다.
+				//$( ".button" ).append( "<button>" +희망도서 신청+"</button>" );//여기에 작가 코드를 붙여 넣는다.
 			
 			});
 			
