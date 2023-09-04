@@ -34,7 +34,23 @@
 			<button id="search" type="submit" class="btn btn-primary">검색</button>
 		</div>
 	</div>
-	<p></p>
+	
+	<div class="book-card d-flex">
+		<div class="">
+			<p class="thumbnail"></p>
+		</div>
+		<div class="">
+			<p class="title"></p>
+			<p class="author"></p>
+			<p class="publisher"></p>
+			<p class="isbn"></p>
+			<p class="price"></p>
+			<p class=""><button class="btn btn-primary">희망도서 신청</button></p>
+		</div>
+		
+		
+	</div>
+	
 
 
 
@@ -69,12 +85,12 @@
 				console.log(msg.documents[0].publisher);//publisher
 				console.log(msg.documents[0].authors);//publisher
 				
-				$( "p" ).append( "<strong>"+msg.documents[0].title+"</strong>" );//여기에 제목 코드를 붙여 넣는다.
-				$( "p" ).append( "<img src='"+msg.documents[0].thumbnail+"'/><br>" );//여기에 썸네일 코드를 붙여 넣는다.
-				$( "p" ).append( "<strong>"+msg.documents[0].isbn+"</strong><br>" );//여기에 isbn 코드를 붙여 넣는다.
-				$( "p" ).append( "<strong>"+msg.documents[0].price+"</strong><br>" );//여기에 가격 코드를 붙여 넣는다.
-				$( "p" ).append( "<strong>"+msg.documents[0].publisher+"</strong><br>" );//여기에 출판사 코드를 붙여 넣는다.
-				$( "p" ).append( "<strong>"+msg.documents[0].author+"</strong>" );//여기에 작가 코드를 붙여 넣는다.
+				$( ".title" ).append( "<strong>"+msg.documents[0].title+"</strong>" );//여기에 제목 코드를 붙여 넣는다.
+				$( ".thumbnail" ).append( "<img src='"+msg.documents[0].thumbnail+"'/><br>" );//여기에 썸네일 코드를 붙여 넣는다.
+				$( ".isbn" ).append( "<strong>"+msg.documents[0].isbn+"</strong><br>" );//여기에 isbn 코드를 붙여 넣는다.
+				$( ".price" ).append( "<strong>"+msg.documents[0].price+"</strong><br>" );//여기에 가격 코드를 붙여 넣는다.
+				$( ".publisher" ).append( "<strong>"+msg.documents[0].publisher+"</strong><br>" );//여기에 출판사 코드를 붙여 넣는다.
+				$( ".author" ).append( "<strong>"+msg.documents[0].author+"</strong>" );//여기에 작가 코드를 붙여 넣는다.
 			});
 			
 
