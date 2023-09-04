@@ -45,7 +45,7 @@
 			<p class="publisher"></p>
 			<p class="isbn"></p>
 			<p class="price"></p>
-			<p class=""><button class="btn btn-primary">희망도서 신청</button></p>
+			<p class=""><button class="btn btn-primary interestAdd">희망도서 신청</button></p>
 		</div>
 		
 		
@@ -60,6 +60,13 @@
 </body>
 <script>
 	$(document).ready(function() {
+		
+		
+		$(".interestAdd").on("click", function(){
+			
+			
+			
+		});
 
 		$("#search").on("click", function() {
 
@@ -90,7 +97,7 @@
 				$( ".isbn" ).append( "<strong>"+msg.documents[0].isbn+"</strong><br>" );//여기에 isbn 코드를 붙여 넣는다.
 				$( ".price" ).append( "<strong>"+msg.documents[0].price+"</strong><br>" );//여기에 가격 코드를 붙여 넣는다.
 				$( ".publisher" ).append( "<strong>"+msg.documents[0].publisher+"</strong><br>" );//여기에 출판사 코드를 붙여 넣는다.
-				$( ".author" ).append( "<strong>"+msg.documents[0].author+"</strong>" );//여기에 작가 코드를 붙여 넣는다.
+				$( ".author" ).append( "<strong>"+msg.documents[0].authors+"</strong>" );//여기에 작가 코드를 붙여 넣는다.
 			});
 			
 
