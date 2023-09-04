@@ -39,14 +39,20 @@
 					<h5>통합검색</h5>
 				</div>
 				
-				<c:forEach var="book" begin ="0" end="0" items="${bookDetailList }">
+				
 				<div class="search d-flex justify-content-center col-9">
+				<!-- 0건일때랑 아닐때로 나눠야 함 제목 입력여부가 아니라 -->
+				<c:forEach var="book" begin ="0" end="0" items="${bookDetailList }">
+		             
 		             <input type="text" value="${book.title } " placeholder="검색어 입력" id="searchInput"class="form-control" name="title">
+		         
+		         
+		         </c:forEach>   
 		             <div class="input-group-append">
 		                <button type="submit" id="searchBtn" class="btn">검색</button>
 		             </div>
 		        </div>
-		        </c:forEach>
+		      
 		       
 		    </nav> 
 		    	 <div class="ml-5">
