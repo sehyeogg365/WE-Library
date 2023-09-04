@@ -39,13 +39,14 @@
 					<h5>통합검색</h5>
 				</div>
 				
-				
+				<c:forEach var="book" begin ="0" end="0" items="${bookDetailList }">
 				<div class="search d-flex justify-content-center col-9">
-		             <input type="text" value="${title } " placeholder="검색어 입력" id="searchInput"class="form-control" name="title">
+		             <input type="text" value="${book.title } " placeholder="검색어 입력" id="searchInput"class="form-control" name="title">
 		             <div class="input-group-append">
 		                <button type="submit" id="searchBtn" class="btn">검색</button>
 		             </div>
 		        </div>
+		        </c:forEach>
 		       
 		    </nav> 
 		    	 <div class="ml-5">

@@ -46,6 +46,8 @@ public class LibraryController {
 		List<BookCount> bookCountList = bookBO.getBookNumberBytitle(title);
 		model.addAttribute("bookCountList", bookCountList);
 		
+		
+		
 		return "library/list";
 	}
 	
