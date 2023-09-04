@@ -45,7 +45,7 @@
 			<div class="">
 				<div class="mt-3 d-flex text-secondary">
 						희망도서 신청 :&nbsp<div class="text-primary"> 
-											<c:forEach var="wishbook" items="${wishbookCountList }">
+											<c:forEach var="wishbook" begin="0" end="0" items="${wishbookCountList }">
 												${wishbook.numberCount }
 											</c:forEach>
 										</div>건
