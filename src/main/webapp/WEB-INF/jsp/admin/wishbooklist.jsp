@@ -38,13 +38,16 @@
 		
 			<div class="">
 				<div class="mt-3 d-flex text-secondary">
-						희망도서 신청현황 :&nbsp
+						희망도서 신청현황 :
+						<!--  
+						&nbsp
 						<div class="text-primary"> 
 						<c:forEach var="wihsbook" begin="0" end="0" items= "${wishbookCountList }">
 							${wishbook.allNumberCount }
 						
 						</c:forEach>
 						</div>건
+						-->
 				</div>
 							
 					<hr>
@@ -123,7 +126,7 @@
 							<div class="search d-flex justify-content-center">
 				                <input type="text" value="" placeholder="검색어를 입력하세요." id="titleInput" class="form-control" name="title">
 				                <div class="input-group-append">
-				                	<button type="submit" class="btn" onclick="window.open('/book/bookaddpopup/view?title=${wishbook.title}','new','scrollbars=yes,resizable=no width=500 height=500, left=0,top=0');return false">검색</button>
+				                	<button type="submit" id ="search" class="btn" onclick="window.open('/book/bookaddpopup/view?title=${wishbook.title}','new','scrollbars=yes,resizable=no width=500 height=500, left=0,top=0');return false">검색</button>
 				                </div>
 				            </div>
 						  </form>
@@ -187,7 +190,11 @@
 	<script>
 		$(document).ready(function(){
 			
-		
+			
+
+			
+			
+			
 			$("#addBtn").on("click", function(){
 				
 				

@@ -48,6 +48,9 @@ public class WishBookBO {
 			return wishBookDAO.insertWishBook(userId, library, title, imagePath, author, publisher, price, isbn, pubyear);		
 
 		}
+		
+
+		
 		//희망도서 리스트
 		//희망도서 리스트(사용자가 신청한 리스트)
 		

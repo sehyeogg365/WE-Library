@@ -45,7 +45,7 @@
 			<p class="publisher"></p>
 			<p class="isbn"></p>
 			<p class="price"></p>
-			<p class=""><button class="btn btn-primary interestAdd">희망도서 신청</button></p>
+			<button class="btn btn-primary interestAdd">희망도서 신청</button>
 		</div>
 		
 		
@@ -64,7 +64,13 @@
 		
 		$(".interestAdd").on("click", function(){
 			
+			let title = $("#titleInput").val();
 			
+			if (title == "") {
+
+				alert("제목을 입력해주세요.");
+				return;
+			}
 			
 		});
 

@@ -24,6 +24,7 @@ public interface WishBookDAO {
 								  , @Param("pubyear") int pubyear
 								  );
 		
+		
 		//희망도서 리스트
 		public List<WishBook> selectWishBookList(@Param("userId") int userId);
 		
