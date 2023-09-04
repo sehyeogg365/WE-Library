@@ -85,11 +85,11 @@
 			
 				</div>
 			
-			
+				<!--  
 				<div class="text-center">
 					<a href="#" class="btn btn-primary" onclick="window.open('/book/bookaddpopup/view','new','scrollbars=yes,resizable=no width=500 height=500, left=0,top=0');return false">도서 검색하기</a>
 				</div>
-		
+				-->
 		
 		
 		
