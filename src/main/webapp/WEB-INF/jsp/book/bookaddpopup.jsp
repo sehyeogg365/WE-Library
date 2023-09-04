@@ -29,14 +29,14 @@
 
 	<!-- bootstrap input group 검색 -->
 	<div class="search d-flex justify-content-center">
-		<input id="titleInput" type="text" value="${wishbook.title }"
-			placeholder="도서명 또는 저자명을 입력해주세요" class="form-control col-9"
-			name="title">
+		<input id="titleInput" type="text" placeholder="도서명 또는 저자명을 입력해주세요" class="form-control col-9">
 		<div class="input-group-append">
 			<button id="search" type="submit" class="btn btn-primary">검색</button>
 		</div>
 	</div>
 	<p></p>
+
+
 
 
 
@@ -54,22 +54,32 @@
 				alert("제목을 입력해주세요.");
 				return;
 			}
-
+			
+			$.ajax({
+				method : "GET",//post->get
+				url : "https://dapi.kakao.com/v3/search/book?target=title",// 전송주소 변경
+				data : { query: $("#titleInput").val()}, // query 미움받을 용기
+				headers:{Authorization: "KakaoAK 08b2336b349cf3687a2b5cc1c1c9f48e"}//헤더 정보로 api키 전달 포함 키는 REST API 키 넣기
+			}).done(function(msg) {
+				//alert("Data Saved: " + msg);
+				console.log(msg.documents[0].title);//제목
+				console.log(msg.documents[0].thumbnail);//썸네일
+				console.log(msg.documents[0].isbn);//isbn
+				console.log(msg.documents[0].price);//price
+				console.log(msg.documents[0].publisher);//publisher
+				console.log(msg.documents[0].authors);//publisher
+				
+				$( "p" ).append( "<strong>"+msg.documents[0].title+"</strong>" );//여기에 제목 코드를 붙여 넣는다.
+				$( "p" ).append( "<img src='"+msg.documents[0].thumbnail+"'/><br>" );//여기에 썸네일 코드를 붙여 넣는다.
+				$( "p" ).append( "<strong>"+msg.documents[0].isbn+"</strong><br>" );//여기에 isbn 코드를 붙여 넣는다.
+				$( "p" ).append( "<strong>"+msg.documents[0].price+"</strong><br>" );//여기에 가격 코드를 붙여 넣는다.
+				$( "p" ).append( "<strong>"+msg.documents[0].publisher+"</strong><br>" );//여기에 출판사 코드를 붙여 넣는다.
+				$( "p" ).append( "<strong>"+msg.documents[0].author+"</strong>" );//여기에 작가 코드를 붙여 넣는다.
+			});
 			
 
 		});
-		$.ajax({
-			method : "GET",//post->get
-			url : "https://dapi.kakao.com/v3/search/book?target=title",// 전송주소 변경
-			data : { query:"미움받을 용기"}, // query 미움받을 용기
-			headers:{Authorization: "KakaoAK 08b2336b349cf3687a2b5cc1c1c9f48e"}//헤더 정보로 api키 전달 포함 키는 REST API 키 넣기
-		}).done(function(msg) {
-			//alert("Data Saved: " + msg);
-			console.log(msg.documents[0].title);//제목
-			console.log(msg.documents[0].thumbnail);//썸네일
-			$( "p" ).append( "<strong>"+msg.documents[0].title+"</strong>" );//여기에 제목 코드를 붙여 넣는다.
-			$( "p" ).append( "<img src='"+msg.documents[0].thumbnail+"'/>" );//여기에 제목 코드를 붙여 넣는다.
-		});
+		
 
 	});
 </script>
