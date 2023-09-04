@@ -125,10 +125,33 @@ public class WishBookBO {
 		
 		// 관리자 희망도서 신청 리스트 
 		
-		public List<WishBook> getWishBookListById(int id){
+		public List<WishBookDetail> getWishBookListById(int id){
+			
+			List<WishBook> wishbookList = wishBookDAO.selectWishBookListById(id);
+			
+			List<WishBookDetail> wishbookDetailList = new ArrayList<>();
+			
+			for(WishBook wishbook : wishbookList) {
+				
+				boolean isAdd = wishBookCountBO.isWishAdd(wishbook.getLibrary(), wishbook.getTitle());
+				
+				WishBookDetail wishbookDetail = new WishBookDetail();
+				
+				wishbookDetail.setId(wishbook.getId());
+				wishbookDetail.setUserId(wishbook.getUserId());
+				wishbookDetail.setLibrary(wishbook.getLibrary());
+				wishbookDetail.setTitle(wishbook.getTitle());
+				wishbookDetail.setIsbn(wishbook.getIsbn());
+				wishbookDetail.setPublisher(wishbook.getPublisher());
+				wishbookDetail.setAuthor(wishbook.getAuthor());
+				//wishbookDetail.setCreatedAt(wishbook.getCreatedAt());
+				wishbookDetail.setAdd(isAdd);
+				
+				wishbookDetailList.add(wishbookDetail);
+			}
 			
 			
-			return wishBookDAO.selectWishBookListById(id);
+			return wishbookDetailList;
 			
 		
 			
@@ -137,34 +160,34 @@ public class WishBookBO {
 		
 		// 희망도서 권수 표시(전체 권수)
 		
-		public List<WishBookCount> getAllWishBookNumberById(int id){
+		//public List<WishBookCount> getAllWishBookNumberById(int id){
 			
-			List<WishBook> wishbookList = wishBookDAO.selectWishBookListById(id);
+		//	List<WishBook> wishbookList = wishBookDAO.selectWishBookListById(id);
 			
-			List<WishBookCount> wishbookCountList = new ArrayList<>();
+		//	List<WishBookCount> wishbookCountList = new ArrayList<>();
+		//	
+		//	for(WishBook wishbook : wishbookList) {
+				
+				
+		//		int allNumberCount = wishBookCountBO.getAllWishBookCount(id);
+				
+				
+		//		WishBookCount wishbookCount = new WishBookCount();
+				
+				
+				
+				
+		//		wishbookCount.setAllNumberCount(allNumberCount);
+				
+				
+		//		wishbookCountList.add(wishbookCount);
+				
+		//	}
 			
-			for(WishBook wishbook : wishbookList) {
-				
-				
-				int allNumberCount = wishBookCountBO.getAllWishBookCount(id);
-				
-				
-				WishBookCount wishbookCount = new WishBookCount();
-				
-				
-				
-				
-				wishbookCount.setAllNumberCount(allNumberCount);
-				
-				
-				wishbookCountList.add(wishbookCount);
-				
-			}
-			
-			return wishbookCountList;
+		//	return wishbookCountList;
 			
 			
-		}
+		//}
 		
 	
 		//희망도서 북테이블에 추가 

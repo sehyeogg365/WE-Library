@@ -54,7 +54,7 @@
 				<div class="d-flex flex-wrap">
 				
 					
-					<c:forEach var="wishbook" items= "${wishbookList }" varStatus="status">
+					<c:forEach var="wishbook" items= "${wishbookDetailList }" varStatus="status">
 						<hr>
 						<div class="wishbookcard d-flex justify-content-between">
 							<div class="">
@@ -70,7 +70,7 @@
 									저자 : ${wishbook.author } | 출판사 : ${wishbook.publisher } | ISBN : ${wishbook.isbn }
 								</div>
 								<div class="text-secondary">
-									도서관 : ${wishbook.library }
+									도서관 : ${wishbook.library } | 소장여부 : ${wishbook.add }
 								</div>
 							</div>
 							

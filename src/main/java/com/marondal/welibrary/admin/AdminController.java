@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.marondal.welibrary.book.model.WishBook;
 import com.marondal.welibrary.book.model.WishBookCount;
+import com.marondal.welibrary.book.model.WishBookDetail;
 import com.marondal.welibrary.book.wishbook.bo.WishBookBO;
 import com.marondal.welibrary.book.wishbook.bo.WishBookCountBO;
 
@@ -35,13 +36,13 @@ public class AdminController {
 		
 		int userId = (Integer)session.getAttribute("userId");
 		
-		List<WishBook> wishbookList = wishBookBO.getWishBookListById(userId);
-		model.addAttribute("wishbookList", wishbookList);		
+		List<WishBookDetail> wishbookDetailList = wishBookBO.getWishBookListById(userId);
+		model.addAttribute("wishbookDetailList", wishbookDetailList);		
 		
 		
 		//여기서 관심도서개수 추가
-		List<WishBookCount> wishBookCountList = wishBookBO.getAllWishBookNumberById(userId);
-		model.addAttribute("wishBookCountList", wishBookCountList);
+		//List<WishBookCount> wishBookCountList = wishBookBO.getAllWishBookNumberById(userId);
+		//model.addAttribute("wishBookCountList", wishBookCountList);
 			
 		
 		return "/admin/wishbooklist";
