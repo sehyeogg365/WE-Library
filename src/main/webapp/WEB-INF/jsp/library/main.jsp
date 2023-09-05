@@ -109,12 +109,12 @@
 							<div class="d-flex justify-content-between flex-wrap">
 								
 								<div class="mt-3 pl-3"><a href="/book/borrowstatus/view?id=${userId }" class="text-white">대출조회/반납연기</a></div>
-								<div class="ml-5 mt-3 pr-3"><a href="#" class="text-white">예약취소/조회</a></div>
+								<div class="ml-5 mt-3 pr-3"><a href="/book/reservelist/view?id=${userId }" class="text-white">예약취소/조회</a></div>
 								
-								<div class="mt-3 pl-3 text-white"><a href="#" class="text-white">상호대차신청조회</a></div>
+								<div class="mt-3 pl-3 text-white"><a href="/book/interibrarybooklist/view?id=${userId }" class="text-white">상호대차신청조회</a></div>
 						
 								<div class="ml-5 mt-3 pr-3"><a href="/book/wishbook/list/view?id=${userId }" class="text-white">희망도서신청조회</a></div>
-								<div class="pl-3 py-3"><a href="#" class="text-white">관심도서목록</a></div>
+								<div class="pl-3 py-3"><a href="/book/interestbooklist/view?id=${userId }" class="text-white">관심도서목록</a></div>
 							</div>
 						</div>
 						
