@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>        
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>        
 <!DOCTYPE html>
 <html>
 <head>
@@ -46,8 +47,14 @@
 		             
 		         <c:forEach var="book" begin="0" end="0" items="${bookDetailList }">
 		         	
-					<input type="text" value="${book.title } " placeholder="검색어 입력" id="searchInput"class="form-control" name="title">
-					
+		         	<c:choose>
+		         		<c:when test ="${fn:length(book.title) == 0}">
+							<input type="text" placeholder="검색어 입력" id="searchInput"class="form-control" name="title">
+						</c:when>
+						<c:otherwise>
+							<input type="text" value="${book.title } " placeholder="검색어 입력" id="searchInput"class="form-control" name="title">
+						</c:otherwise>
+					</c:choose>
 		         </c:forEach>
 		         <div class="input-group-append">
 		              <button type="submit" id="searchBtn" class="btn">검색</button>
