@@ -145,7 +145,7 @@
 							<hr class="dotted">
 							<div class=""><a href="#" class="text-dark">[역삼푸른솔 도서관]분신물폐기 안내</a>  2023.07.03</div>
 							<div class=""><a href="#" class="text-dark">[역삼푸른솔 도서관] 7월 휴관일 안내</a>  2023.07.03</div>
-							<div class=""><a href="#" class="text-dark">[역삼푸른솔 도서관][신착도서]dddddd</a> 6월 2023.06.29</div>
+							<div class=""><a href="#" class="text-dark">[역삼푸른솔 도서관][신착도서]dddd..</a> 2023.06.29</div>
 							<div class=""><a href="#" class="text-dark"></a></div>
 							<div class=""><a href="#" class="text-dark"></a></div>
 						

@@ -72,10 +72,10 @@
 		        	<h5 class="ml-5">검색 결과 
 					<c:forEach var="book" begin="0" end="0" items="${bookCountList }">
 						${book.numberCount }
-					
+						건이 검색되었습니다.
 					</c:forEach>
-						
-					건이 검색되었습니다.</h5>
+						</h5>
+					
 		        </div>
 		    <hr style="border: solid 1px;">
 		   		<div class="mt-3 library-selectbox col-10">
