@@ -108,13 +108,13 @@
 						<h5>${book.title }</h5>
 					</div>
 					<div class="text-secondary">
-						저자 : ${book.author } | 출판사 : ${book.publisher } | 발행년도 : ${book.pubyear }
+						저자 : ${book.author } &nbsp|&nbsp 출판사 : ${book.publisher } &nbsp|&nbsp 발행년도 : ${book.pubyear }
 					</div>
-					<div class="">
+					<div class="text-secondary">
 					ISBN : ${book.isbn }
 					</div>
 					<div class="text-secondary">
-						도서관 : ${book.library } | 부록 : ${book.appendix }
+						도서관 : ${book.library } &nbsp|&nbsp 부록 : ${book.appendix }
 					</div>
 					<div class=" book-status text-secondary d-flex justify-content-between">
 						<div class="d-flex align-items-center"><!-- 대출중일때 대출불가 예약 -->
