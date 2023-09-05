@@ -101,12 +101,12 @@
 							<td>이메일</td>
 							<td>
 								<div class="d-flex align-items-center">
-									<input type="text" id="emailIdInput" value="${fn:split(user.email, "@")[0]}" class="form-control mt-1 col-5">
+									<input type="text" id="emailIdInput" value="${fn:split(user.email, '@')[0]}" class="form-control mt-1 col-5">
 									
 									 <div class="mt-1 col-1">@</div>
 									 <select class="form-control mt-1 col-6" id="emailSelctor">
 									 
-									 	<option value="@${fn:split(user.email, "@")[1]}">${fn:split(user.email, "@")[1]}</option>
+									 	<option value="@${fn:split(user.email, '@')[1]}">${fn:split(user.email, '@')[1]}</option>
 									 	<option value="@naver.com">naver.com</option>
 									 	<option value="@daum.com">daum.com</option>
 									 	<option value="@kakao.com">kakao.com</option>

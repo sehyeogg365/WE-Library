@@ -46,15 +46,19 @@
 				<!-- 0건일때랑 아닐때로 나눠야 함 제목 입력여부가 아니라 -->
 		             
 		         <c:forEach var="book" begin="0" end="0" items="${bookDetailList }">
-		         	
+		         	<!--  
 		         	<c:choose>
 		         		<c:when test ="${fn:length(book.title) == 0}">
 							<input type="text" placeholder="검색어 입력" id="searchInput"class="form-control" name="title">
 						</c:when>
 						<c:otherwise>
-							<input type="text" value="${book.title } " placeholder="검색어 입력" id="searchInput"class="form-control" name="title">
 						</c:otherwise>
-					</c:choose>
+						</c:choose>
+						-->
+						
+							<input type="text" value="${book.title } " placeholder="검색어 입력" id="searchInput"class="form-control" name="title">
+						
+					
 		         </c:forEach>
 		         <div class="input-group-append">
 		              <button type="submit" id="searchBtn" class="btn">검색</button>

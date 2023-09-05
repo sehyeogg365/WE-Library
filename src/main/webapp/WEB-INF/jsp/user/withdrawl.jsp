@@ -36,7 +36,7 @@
 			
 			<div class="d-flex justify-content-center col-9">
 				
-				<div class="user-box col-10">
+				<div class="user-box col-10 mt-3">
 					<div class="mt-4 mx-4">※비밀번호를 입력하시고 홈페이지 회원 탈퇴 버튼을 클릭하시면 탈퇴처리가 완료됩니다.</div>
 					<div class="ml-4 mt-4"><b>성명: </b>${user.name }</div>
 					<div class="ml-4 mt-4"><b>아이디 : </b>${user.loginId }</div>

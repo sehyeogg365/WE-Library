@@ -136,6 +136,13 @@
 						<hr>	
 			
 						<div class="announce-box"><!-- 21글자가 넘으면 자르담에 뒤에 ... -->
+							<div class="d-flex">
+							<i class="bi bi-book" style="font-size :20px;"></i>
+							<a href="#" class="text-dark"><h5>[역삼푸른솔 도서관]8월 휴관일 안내</h5></a>  
+							
+							</div>
+							<div class="ml-4">2023.07.03</div>
+							<hr class="dotted">
 							<div class=""><a href="#" class="text-dark">[역삼푸른솔 도서관]분신물폐기 안내</a>  2023.07.03</div>
 							<div class=""><a href="#" class="text-dark">[역삼푸른솔 도서관] 7월 휴관일 안내</a>  2023.07.03</div>
 							<div class=""><a href="#" class="text-dark">[역삼푸른솔 도서관][신착도서]dddddd</a> 6월 2023.06.29</div>
