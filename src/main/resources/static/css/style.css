@@ -200,7 +200,7 @@ footer{
 	
 	background-color: 	#87CEEB;
 	border-radius: 8px;
-	/*height:300px;*/
+	
 	
 }
 
@@ -215,12 +215,14 @@ footer{
 
 .user-box{
 	height:300px;
-	border: 1px solid;
+	border: 3px dotted;
+	border-color: #87CEEB;
 }
 
 .userinfo-box{
-	height:400px;
-	border: 1px solid;
+	height:500px;
+	border: 3px dotted;
+	border-color: #87CEEB;
 }
 
 .mybookinfo-page{

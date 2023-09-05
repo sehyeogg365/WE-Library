@@ -43,120 +43,155 @@
 			
 			<div class="d-flex justify-content-center col-9">
 			
-				<div class="user-box col-8">
-					<div class="mt-4">${user.loginId }</div>
-					
-					<input type="text" id="nameInput" placeholder="성명" value="${user.name }" class="form-control mt-4">
-					
-					<div class="d-flex align-items-center">
-						<label></label>
-						<input type="text" id="yearInput" value="${fn:substring(user.birth,0,4) }" class="form-control mt-4 col-3"> 	
-						<div class="mt-4 col-1">년</div>
-						<select class="form-control mt-4 col-3" id="monthSelector">
-							<option value="${fn:substring(user.birth,4,6) }">${fn:substring(user.birth,4,6) }</option>
-						 	<option value="01">1</option>
-						 	<option value="02">2</option>
-						 	<option value="03">3</option>
-						 	<option value="04">4</option>
-						 	<option value="05">5</option>
-						 	<option value="06">6</option>
-						 	<option value="07">7</option>
-						 	<option value="08">8</option>
-						 	<option value="09">9</option>
-						 	<option value="09">9</option>
-						 	<option value="10">10</option>
-						 	<option value="11">11</option>
-						 	<option value="12">12</option>
-						 	
-						 </select>
-						 <div class="mt-4 col-1">월</div>
-						<select class="form-control mt-4 col-3" id="daySelector">
-							<option value="${fn:substring(user.birth,6,8) }">${fn:substring(user.birth,6,8) }</option>
-						 	<option value="01">1</option>
-						 	<option value="02">2</option>
-						 	<option value="03">3</option>
-						 	<option value="04">4</option>
-						 	<option value="05">5</option>
-						 	<option value="06">6</option>
-						 	<option value="07">7</option>
-						 	<option value="08">8</option>
-						 	<option value="09">9</option>
-						 	<option value="09">9</option>
-						 	<option value="10">10</option>
-						 	<option value="11">11</option>
-						 	<option value="12">12</option>
-						 	<option value="13">13</option>
-						 	<option value="14">14</option>
-						 	<option value="15">15</option>
-						 	<option value="16">16</option>
-						 	<option value="17">17</option>
-						 	<option value="18">18</option>
-						 	<option value="19">19</option>
-						 	<option value="20">20</option>
-						 	<option value="21">21</option>
-						 	<option value="22">22</option>
-						 	<option value="23">23</option>
-						 	<option value="24">24</option>
-						 	<option value="25">25</option>
-						 	<option value="26">26</option>
-						 	<option value="27">27</option>
-						 	<option value="28">28</option>
-						 	<option value="29">29</option>
-						 	<option value="30">30</option>
-						 	<option value="31">31</option>
-						 	
-						 </select>
-						<div class="mt-4 col-1">일</div>
-					</div>
-					<div class="d-flex align-items-center">
-						<input type="text" id="emailIdInput" value="${fn:split(user.email, "@")[0]}" class="form-control mt-4 col-5">
-						
-						 <div class="mt-4 col-1">@</div>
-						 <select class="form-control mt-4 col-6" id="emailSelctor">
-						 
-						 	<option value="@${fn:split(user.email, "@")[1]}">${fn:split(user.email, "@")[1]}</option>
-						 	<option value="@naver.com">naver.com</option>
-						 	<option value="@daum.com">daum.com</option>
-						 	<option value="@kakao.com">kakao.com</option>
-						 	<option value="@gmail.com">gmail.com</option>
-						 	<!-- 시간날때 해보기 <option value = "selfInput">직접입력</option>-->
-						 </select>
-					 
-					</div>
-					<div class="d-flex justify-content-between">
-					
-					<c:choose>
-						<c:when test="${fn:startsWith(user.phoneNumber, '02') }">
-							<select class="form-control mt-4 col-3" id="phoneNumberSelector">
-						 	<option value="${fn:substring(user.phoneNumber,0,2) }">${fn:substring(user.phoneNumber,0,2) }</option>
-						 	<option value="02">02</option>
-						 	<option value="010">010</option>
-						 	<option value="011">011</option>	
-						 </select>
-						<div class="d-flex align-items-center mt-4">-</div>
-						<input type="text" id="phoneNumberInput2"  value="${fn:substring(user.phoneNumber,2,6) }" class="form-control mt-4 ml-1 col-3">
-						<div class="d-flex align-items-center mt-4">-</div>
-						<input type="text" id="phoneNumberInput3" value="${fn:substring(user.phoneNumber,6,10) }" class="form-control mt-4 ml-1 col-3">
-						</c:when>
-						<c:otherwise>
-							<select class="form-control mt-4 col-3" id="phoneNumberSelector">
-						 	<option value="${fn:substring(user.phoneNumber,0,3) }">${fn:substring(user.phoneNumber,0,3) }</option>
-						 	<option value="02">02</option>
-						 	<option value="010">010</option>
-						 	<option value="011">011</option>	
-						 </select>
-						<div class="d-flex align-items-center mt-4">-</div>
-						<input type="text" id="phoneNumberInput2"  value="${fn:substring(user.phoneNumber,3,7) }" class="form-control mt-4 ml-1 col-3">
-						<div class="d-flex align-items-center mt-4">-</div>
-						<input type="text" id="phoneNumberInput3" value="${fn:substring(user.phoneNumber,7,11) }" class="form-control mt-4 ml-1 col-3">
-						</c:otherwise>
-					</c:choose>
-						
-					</div>
-
-					
+				<div class="userinfo-box col-8 ">
 				
-					<button type="button" class="btn btn-primary btn-block mt-3 mb-3" id="updateBtn" data-user-id = "${user.id }">회원정보 수정 </button>
+					<table class="table">
+					
+					<thead>
+						<tr>
+							<td>id</td>
+							<th>
+							<div class="">${user.loginId }</div>
+							</th>
+						</tr>
+					</thead>
+					
+					<tbody>
+						<tr>
+							<td>이름</td>
+							<td><input type="text" id="nameInput" placeholder="성명" value="${user.name }" class="form-control "></td>
+						</tr>
+						<tr>
+							<td>휴대폰번호</td>
+							<td>
+								<div class="d-flex justify-content-between">
+					
+								<c:choose>
+									<c:when test="${fn:startsWith(user.phoneNumber, '02') }">
+										<select class="form-control mt-2 col-3" id="phoneNumberSelector">
+									 	<option value="${fn:substring(user.phoneNumber,0,2) }">${fn:substring(user.phoneNumber,0,2) }</option>
+									 	<option value="02">02</option>
+									 	<option value="010">010</option>
+									 	<option value="011">011</option>	
+									 </select>
+									<div class="d-flex align-items-center mt-2">-</div>
+									<input type="text" id="phoneNumberInput2"  value="${fn:substring(user.phoneNumber,2,6) }" class="form-control mt-2 ml-1 col-3">
+									<div class="d-flex align-items-center mt-2">-</div>
+									<input type="text" id="phoneNumberInput3" value="${fn:substring(user.phoneNumber,6,10) }" class="form-control mt-2 ml-1 col-3">
+									</c:when>
+									<c:otherwise>
+										<select class="form-control mt-4 col-3" id="phoneNumberSelector">
+									 	<option value="${fn:substring(user.phoneNumber,0,3) }">${fn:substring(user.phoneNumber,0,3) }</option>
+									 	<option value="02">02</option>
+									 	<option value="010">010</option>
+									 	<option value="011">011</option>	
+									 </select>
+									<div class="d-flex align-items-center mt-4">-</div>
+									<input type="text" id="phoneNumberInput2"  value="${fn:substring(user.phoneNumber,3,7) }" class="form-control mt-4 ml-1 col-3">
+									<div class="d-flex align-items-center mt-4">-</div>
+									<input type="text" id="phoneNumberInput3" value="${fn:substring(user.phoneNumber,7,11) }" class="form-control mt-4 ml-1 col-3">
+									</c:otherwise>
+								</c:choose>
+									
+								</div>
+							
+							</td>
+						</tr>
+						<tr>
+							<td>이메일</td>
+							<td>
+								<div class="d-flex align-items-center">
+									<input type="text" id="emailIdInput" value="${fn:split(user.email, "@")[0]}" class="form-control mt-1 col-5">
+									
+									 <div class="mt-1 col-1">@</div>
+									 <select class="form-control mt-1 col-6" id="emailSelctor">
+									 
+									 	<option value="@${fn:split(user.email, "@")[1]}">${fn:split(user.email, "@")[1]}</option>
+									 	<option value="@naver.com">naver.com</option>
+									 	<option value="@daum.com">daum.com</option>
+									 	<option value="@kakao.com">kakao.com</option>
+									 	<option value="@gmail.com">gmail.com</option>
+									 	<!-- 시간날때 해보기 <option value = "selfInput">직접입력</option>-->
+									 </select>
+								 
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>생일</td>
+							<td>
+							<div class="d-flex align-items-center">
+							<label></label>
+							<input type="text" id="yearInput" value="${fn:substring(user.birth,0,4) }" class="form-control col-3"> 	
+							<div class="col-1">년</div>
+							<select class="form-control ml-2 col-3" id="monthSelector">
+								<option value="${fn:substring(user.birth,4,6) }">${fn:substring(user.birth,4,6) }</option>
+							 	<option value="01">1</option>
+							 	<option value="02">2</option>
+							 	<option value="03">3</option>
+							 	<option value="04">4</option>
+							 	<option value="05">5</option>
+							 	<option value="06">6</option>
+							 	<option value="07">7</option>
+							 	<option value="08">8</option>
+							 	<option value="09">9</option>
+							 	<option value="09">9</option>
+							 	<option value="10">10</option>
+							 	<option value="11">11</option>
+							 	<option value="12">12</option>
+							 	
+							 </select>
+							 <div class="mt-1 col-1">월</div>
+							<select class="form-control ml-2 col-3" id="daySelector">
+								<option value="${fn:substring(user.birth,6,8) }">${fn:substring(user.birth,6,8) }</option>
+							 	<option value="01">1</option>
+							 	<option value="02">2</option>
+							 	<option value="03">3</option>
+							 	<option value="04">4</option>
+							 	<option value="05">5</option>
+							 	<option value="06">6</option>
+							 	<option value="07">7</option>
+							 	<option value="08">8</option>
+							 	<option value="09">9</option>
+							 	<option value="09">9</option>
+							 	<option value="10">10</option>
+							 	<option value="11">11</option>
+							 	<option value="12">12</option>
+							 	<option value="13">13</option>
+							 	<option value="14">14</option>
+							 	<option value="15">15</option>
+							 	<option value="16">16</option>
+							 	<option value="17">17</option>
+							 	<option value="18">18</option>
+							 	<option value="19">19</option>
+							 	<option value="20">20</option>
+							 	<option value="21">21</option>
+							 	<option value="22">22</option>
+							 	<option value="23">23</option>
+							 	<option value="24">24</option>
+							 	<option value="25">25</option>
+							 	<option value="26">26</option>
+							 	<option value="27">27</option>
+							 	<option value="28">28</option>
+							 	<option value="29">29</option>
+							 	<option value="30">30</option>
+							 	<option value="31">31</option>
+							 	
+							 </select>
+							<div class="col-1">일</div>
+						</div>
+							
+							</td>
+						</tr>
+						<tr class="">
+							<div class="">
+								<button type="button" class="btn btn-primary btn-block mt-3 mb-3" id="updateBtn" data-user-id = "${user.id }">회원정보 수정 </button>
+							</div>
+						</tr>
+					</tbody>
+					</table>
+				
+					
 				</div>
 			</div>
 			
