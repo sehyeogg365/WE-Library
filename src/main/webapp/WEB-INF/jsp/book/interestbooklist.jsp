@@ -22,8 +22,8 @@
 	
 </head>
 <style>
-	.clear{clear:both} 
-	li.on{background-color:blue}
+	/*.clear{clear:both}*/ 
+	/*li.on{background-color:blue}*/
 
 </style>
 <body>
@@ -71,14 +71,15 @@
 								<h5>${interestbook.title }</h5>
 							</div>
 							<div class="text-secondary">
-								저자 : ${interestbook.author } | 출판사 : ${interestbook.publisher } | ISBN : ${interestbook.isbn }
+								저자 : ${interestbook.author } &nbsp | &nbsp  출판사 : ${interestbook.publisher } &nbsp | &nbsp ISBN : ${interestbook.isbn }
 							</div>
-							<div class="text-secondary">
-								도서관 : ${interestbook.library } | 추가날짜 : <fmt:formatDate value="${interestbook.createdAt }" pattern="yyyy-MM-dd"/>
+							<div class="text-secondary d-flex">
+								도서관 : ${interestbook.library } &nbsp | &nbsp 추가날짜 : <fmt:formatDate value="${interestbook.createdAt }" pattern="yyyy.MM.dd"/>
+								<div class="text-secondary">
+									&nbsp<button class="btn btn-danger btn-sm deleteBtn" data-interest-id="${interestbook.id }"><i class="bi bi-x-circle"></i>관심도서 삭제</button>
+								</div>
 							</div>
-							<div class="text-secondary">
-								<button class="btn btn-danger btn-sm deleteBtn" data-interest-id="${interestbook.id }"><i class="bi bi-x-circle"></i>관심도서 삭제</button>
-							</div>
+							
 					</div>
 					
 					</c:forEach>

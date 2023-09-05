@@ -48,7 +48,7 @@
 						<nav class="d-flex justify-content-center align-items-center col-12">
 							<ul class="nav nav-fill">
 								<li class="nav-item"><h5><a href="/book/borrowstatus/view?id=${userId }" class="nav-link text-dark font-weight-bold">대출현황</a></h5></li>
-								<li class="nav-item"><h5><a href="/book/reservelist/view?id=${userId }" class="nav-link text-dark font-weight-bold">예약현황</a></h5></li>
+								<li class="nav-item bg-info"><h5><a href="/book/reservelist/view?id=${userId }" class="nav-link text-dark font-weight-bold">예약현황</a></h5></li>
 								<li class="nav-item"><h5><a href="#" class="nav-link text-dark font-weight-bold">대출이력</a></h5></li>
 								<li class="nav-item"><h5><a href="/book/interibrarybooklist/view?id=${userId }" class="nav-link text-dark font-weight-bold">상호대차</a></h5></li>
 							</ul>
@@ -87,7 +87,7 @@
 											<p class="text-primary">대출 가능</p>
 										</c:otherwise>
 										</c:choose>
-								| 반납예정일 : <fmt:formatDate value="${reserve.returnDate }" pattern ="yyyy-MM-dd"/> | 예약순번 : 번쨰(${reserve.reserveCount }명 예약중)
+								&nbsp|&nbsp 반납예정일 : <fmt:formatDate value="${reserve.returnDate }" pattern ="yyyy-MM-dd"/> &nbsp|&nbsp 예약순번 : 번쨰(${reserve.reserveCount }명 예약중)
 							</div>
 						</div>
 						

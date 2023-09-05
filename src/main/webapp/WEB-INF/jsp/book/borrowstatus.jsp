@@ -89,12 +89,12 @@
 										</c:otherwise>
 									 </c:choose> 
 								
-								| 대출일 : <fmt:formatDate value="${borrow.createdAt}" pattern ="yyyy-MM-dd"/> | 반납예정일 : <fmt:formatDate value="${borrow.returnDate}" pattern ="yyyy-MM-dd"/>
+								&nbsp | &nbsp 대출일 : <fmt:formatDate value="${borrow.createdAt}" pattern ="yyyy.MM.dd"/>&nbsp |&nbsp 반납예정일 : <fmt:formatDate value="${borrow.returnDate}" pattern ="yyyy.MM.dd"/>
 							</div>
 						</div>
 						
 						<div class="">
-							<button id="borrowdeleteBtn" class="btn btn-primary btn-sm deleteBtn my-3" data-book-id="${borrow.id }">반납하기</button>
+							<button id="borrowdeleteBtn" class="btn btn-danger btn-sm deleteBtn my-3" data-book-id="${borrow.id }">반납하기</button>
 							
 							<!-- 반납예정일과 대출일이 3주이상 차이날시  반납연장불가버튼 그외에 반납연장 버튼 이렇게 해보기-->
 							<!-- formatDate Date -> String -->

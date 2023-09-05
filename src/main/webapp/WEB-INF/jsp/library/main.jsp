@@ -147,39 +147,110 @@
 						
 					</article>
 					<article class="sub-contents2 col-4">
-						<div class=""></div>
+						<div class="table_box bg-white">
+						<h1>2023 / 09</h1>
+						<table class="table">
+							<thead>
+								<tr>
+									 <th>일</th>
+				                     <th>월</th>
+				                     <th>화</th>
+				                     <th>수</th>
+				                     <th>목</th>
+				                     <th>금</th>
+				                     <th>토</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+				                    <td></td>
+				                    <td></td>
+				                    <td></td>
+				                    <td></td>
+				                    <td></td>
+				                    <td>1</td>
+				                    <td>2</td>
+				                </tr>
+				                <tr>
+				                    <td class="text-danger">3</td>
+				                    <td><i class="bi bi-circle-fill text-info"></i>4</td>
+				                    <td>5</td>
+				                    <td>6</td>
+				                    <td>7</td>
+				                    <td>8</td>
+				                    <td>9</td>
+				                </tr>
+				                <tr>
+				                    <td class="text-danger">10</td>
+				                    <td><i class="bi bi-circle-fill text-info"></i>11</td>
+				                    <td>12</td>
+				                    <td>13</td>
+				                    <td>14</td>
+				                    <td>15</td>
+				                    <td>16</td>
+				                </tr>
+				                <tr>
+				                    <td class="text-danger">17</td>
+				                    <td><i class="bi bi-circle-fill text-info"></i>18</td>
+				                    <td>19</td>
+				                    <td>20</td>
+				                   	<td>21</td>
+				                    <td>22</td>
+				                    <td>23</td>
+				                </tr>
+				                <tr>
+				                    <td class="text-danger">24</td>
+				                    <td><i class="bi bi-circle-fill text-info"></i>25</td>
+				                    <td>26</td>
+				                    <td>27</td>
+				                    <td>28</td>
+				                    <td>29</td>
+				                    <td>30</td>
+				                  
+				                </tr>
+							
+							</tbody>
+							
+							</table>
+							<div class="d-flex">
+								<div class="">
+									행사일 <i class="bi bi-square-fill text-warning"></i>
+								</div>
+								<div class="">
+									휴관일 <i class="bi bi-circle-fill text-info"></i>
+								</div>
+								
+							
+							</div>
+						
+						</div>
 					</article>
 					
 				
 				</section>
 				<section class="sub-section d-flex">
-				
-					<article class="col-4">
-						<div class="">1</div>
-						<div class="">1</div>
-						<div class="">1</div>
-						<div class="">1</div>
-						<div class="">1</div>
-						<div class=""></div>
-					</article>
-					<article class="col-4">
-						<div class="">2</div>
-						<div class="">2</div>
-						<div class="">2</div>
-						<div class="">2</div>
-						<div class="">2</div>
-						<div class="">2</div>
-						
-					</article>
-					<article class="col-4">
-						<div class="">3</div>
-						<div class="">3</div>
-						<div class="">3</div>
-						<div class="">3</div>
-						<div class="">3</div>
-						<div class="">3</div>
 					
-					</article>
+					<div class="tab">
+					  <button class="tablinks" onclick="openCity(event, 'London')">London</button>
+					  <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
+					  <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
+					</div>
+					
+					<div id="London" class="tabcontent">
+					  <h3>London</h3>
+					  <p>London is the capital city of England.</p>
+					</div>
+					
+					<div id="Paris" class="tabcontent">
+					  <h3>Paris</h3>
+					  <p>Paris is the capital of France.</p> 
+					</div>
+					
+					<div id="Tokyo" class="tabcontent">
+					  <h3>Tokyo</h3>
+					  <p>Tokyo is the capital of Japan.</p>
+					</div>
+					
 					
 				</section>
 				
@@ -200,6 +271,21 @@
 	</style>
 	<script>
 	$(document).ready(function(){
+		
+		
+		function openCity(evt, cityName) {
+			  var i, tabcontent, tablinks;
+			  tabcontent = document.getElementsByClassName("tabcontent");
+			  for (i = 0; i < tabcontent.length; i++) {
+			    tabcontent[i].style.display = "none";
+			  }
+			  tablinks = document.getElementsByClassName("tablinks");
+			  for (i = 0; i < tablinks.length; i++) {
+			    tablinks[i].className = tablinks[i].className.replace(" active", "");
+			  }
+			  document.getElementById(cityName).style.display = "block";
+			  evt.currentTarget.className += " active";
+			}
 		
 		
 		$("#searchBtn").on("click", function(){
