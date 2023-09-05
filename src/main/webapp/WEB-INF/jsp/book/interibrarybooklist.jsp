@@ -57,7 +57,7 @@
 						</div>
 						
 						
-						<div class="mt-3 d-flex ">
+						<div class="mt-3 d-flex text-secondary">
 							 상호대차 현황 : &nbsp<div class="text-primary">
 							 <c:forEach var="interibrarybook" begin="0" end="0" items="${interibraryCountList }">
 							 
@@ -76,13 +76,13 @@
 								<h5>${interibrarybook.title }</h5>
 
 							</div>
-							<div class="">
-								제공도서관: ${interibrarybook.library } | 수령도서관 : ${interibrarybook.receivelibrary }
+							<div class="text-secondary">
+								제공도서관: ${interibrarybook.library }  &nbsp| &nbsp 수령도서관 : ${interibrarybook.receivelibrary }
 							</div>
-							<div class="">
-								신청일: <fmt:formatDate value="${interibrarybook.createdAt }" pattern = "yyyy-MM-dd"/>| 반납예정일: <fmt:formatDate value="${interibrarybook.returnDate }" pattern = "yyyy-MM-dd"/>
+							<div class="text-secondary">
+								신청일: <fmt:formatDate value="${interibrarybook.createdAt }" pattern = "yyyy.MM.dd"/>  &nbsp| &nbsp 반납예정일: <fmt:formatDate value="${interibrarybook.returnDate }" pattern = "yyyy.MM.dd"/>
 							</div>
-							<div class="d-flex"><!-- 여기서도 요청된자료/ 입수된 자료/ 신청취소된자료로 구분  -->
+							<div class="d-flex text-secondary"><!-- 여기서도 요청된자료/ 입수된 자료/ 신청취소된자료로 구분  -->
 								상태: 
 								<c:choose>
 									<c:when test="${interibrarybook.status }">

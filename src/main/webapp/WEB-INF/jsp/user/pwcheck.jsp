@@ -44,7 +44,7 @@
 					</div>
 
 					<!--  <a href="#" id="pwCheckBtn" class="btn  btn-primary" data-user-id="${user.id }">비밀번호 확인</a>-->
-					<button type="button" id="pwCheckBtn" class="btn btn-primary text-center mt-4"  data-user-id = "${user.id }">비밀번호 확인 </button>
+					<button type="button" id="pwCheckBtn" class="btn btn-primary text-center mt-3"  data-user-id = "${user.id }">비밀번호 확인 </button>
 				</div>
 				
 			</div>

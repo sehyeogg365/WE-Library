@@ -56,7 +56,7 @@
 						
 						</div>
 						
-						<div class="mt-3 d-flex ">
+						<div class="mt-3 d-flex text-secondary">
 							 예약현황 : &nbsp<div class="text-primary">
 							 <c:forEach var = "reserve"  begin="0" end="0" items="${reserveCountList }">
 							 	${reserve.numberCount }
@@ -72,14 +72,14 @@
 							<div class="">
 								<h5>${reserve.title }</h5>
 							</div>
-							<div class="">
+							<div class="text-secondary">
 								도서관 : ${reserve.library }
 							</div>
-							<div class=""><!-- <fmt:parseDate var="parseBorrow" value ="${formatBorrow }" pattern ="yyyy-MM-dd"/><fmt:parseNumber var="parseReturn" value="${parseBorrow.time + 60*60*24*1000*14}"/> <c:set var="fourteenDayAfter" value=""/> -->
-								 예약일 : <fmt:formatDate value ="${reserve.createdAt }" pattern ="yyyy-MM-dd"/> 
+							<div class="text-secondary"><!-- <fmt:parseDate var="parseBorrow" value ="${formatBorrow }" pattern ="yyyy-MM-dd"/><fmt:parseNumber var="parseReturn" value="${parseBorrow.time + 60*60*24*1000*14}"/> <c:set var="fourteenDayAfter" value=""/> -->
+								 예약일 : <fmt:formatDate value ="${reserve.createdAt }" pattern ="yyyy.MM.dd"/> 
 							</div>
 							<div class="d-flex">
-								대출상태 :<c:choose> 
+								<div class="text-secondary">대출상태 :</div><c:choose> 
 										<c:when test = "${reserve.status }" >
 											<p class="text-primary">대출중</p>
 										</c:when>
@@ -87,7 +87,9 @@
 											<p class="text-primary">대출 가능</p>
 										</c:otherwise>
 										</c:choose>
-								&nbsp|&nbsp 반납예정일 : <fmt:formatDate value="${reserve.returnDate }" pattern ="yyyy-MM-dd"/> &nbsp|&nbsp 예약순번 : 번쨰(${reserve.reserveCount }명 예약중)
+								<div class="text-secondary">		
+								&nbsp|&nbsp 반납예정일 : <fmt:formatDate value="${reserve.returnDate }" pattern ="yyyy.MM.dd"/> &nbsp|&nbsp 예약순번 : 번쨰(${reserve.reserveCount }명 예약중)
+								</div>
 							</div>
 						</div>
 						

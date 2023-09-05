@@ -57,7 +57,7 @@
 						</div>
 						
 						
-						<div class="mt-3 d-flex ">
+						<div class="mt-3 d-flex text-secondary">
 							 대출현황 : &nbsp<div class="text-primary">
 							 					
 							 					<c:forEach var="borrow" begin="0" end="0" items="${borrowCountList }">
@@ -74,10 +74,10 @@
 							<div class="">
 								<h5>${borrow.title }</h5>
 							</div>
-							<div class="">
+							<div class="text-secondary">
 								도서관 : ${borrow.library }
 							</div>
-							<div class="d-flex"><!-- ${borrowDate.time +(1000*60*60*24*14)} 여기서 String->Date 변환 한번 해야함(parse) -->
+							<div class="d-flex text-secondary"><!-- ${borrowDate.time +(1000*60*60*24*14)} 여기서 String->Date 변환 한번 해야함(parse) -->
 						
 								
 								상태 : <c:choose>
@@ -85,7 +85,7 @@
 											<div class="">반납연장</div>
 										</c:when>
 										<c:otherwise>
-											<div class="">대출중</div>
+											<div class="text-primary">대출중</div>
 										</c:otherwise>
 									 </c:choose> 
 								

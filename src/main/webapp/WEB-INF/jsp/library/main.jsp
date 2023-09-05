@@ -147,7 +147,7 @@
 						
 					</article>
 					<article class="sub-contents2 col-4">
-						<div class="table_box bg-white">
+						<div class="table_box bg-white mt-3">
 						<h1>2023 / 09</h1>
 						<table class="table">
 							<thead>

@@ -37,10 +37,10 @@
 			<div class="d-flex justify-content-center col-9">
 			
 				<div class="user-box mt-3 col-8">
-					<div class="text-center py-4 px-4 bg-info">
+					<div class="text-center py-4 px-4 ">
 					
 						<div class="d-flex">
-							<label class="mt-3 col-5 bg-danger">기존 비밀번호</label><input type="password" id="oldpasswordInput" placeholder="기존 비밀번호"  class="form-control mt-3 col-7">
+							<label class="mt-3 col-5 ">기존 비밀번호</label><input type="password" id="oldpasswordInput" placeholder="기존 비밀번호"  class="form-control mt-3 col-7">
 						</div>
 
 						<div class="d-flex">
