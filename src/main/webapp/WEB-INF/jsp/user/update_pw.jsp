@@ -36,18 +36,18 @@
 			
 			<div class="d-flex justify-content-center col-9">
 			
-				<div class="user-box col-8">
-					<div class="text-center py-4 px-4 ">
+				<div class="user-box mt-3 col-8">
+					<div class="text-center py-4 px-4 bg-info">
 					
 						<div class="d-flex">
-							<label class="mt-4 col-6">기존 비밀번호</label><input type="password" id="oldpasswordInput" placeholder="기존 비밀번호"  class="form-control mt-4 col-6">
+							<label class="mt-3 col-5 bg-danger">기존 비밀번호</label><input type="password" id="oldpasswordInput" placeholder="기존 비밀번호"  class="form-control mt-3 col-7">
 						</div>
 
 						<div class="d-flex">
-							<label class="mt-4 col-6">새 비밀번호</label><input type="password" id="passwordInput" placeholder="새 비밀번호"  class="form-control mt-4 col-6">
+							<label class="mt-4 col-5">새 비밀번호</label><input type="password" id="passwordInput" placeholder="새 비밀번호"  class="form-control mt-4 col-7">
 						</div>
 						<div class="d-flex">
-							<label class="mt-4 col-6">새 비밀번호 확인</label><input type="password" id="passwordConfirmInput" placeholder="새 비밀번호 확인" class="form-control mt-4 col-6">
+							<label class="mt-4 col-5">새 비밀번호 확인</label><input type="password" id="passwordConfirmInput" placeholder="새 비밀번호 확인" class="form-control mt-4 col-7">
 						</div>
 						
 		

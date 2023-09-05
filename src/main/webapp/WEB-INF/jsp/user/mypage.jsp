@@ -43,7 +43,7 @@
 			
 			<div class="d-flex justify-content-center col-9">
 			
-				<div class="userinfo-box col-8 ">
+				<div class="userinfo-box mt-3 col-8 ">
 				
 					<table class="table">
 					
@@ -183,14 +183,14 @@
 							
 							</td>
 						</tr>
-						<tr class="">
-							<div class="">
-								<button type="button" class="btn btn-primary btn-block mt-3 mb-3" id="updateBtn" data-user-id = "${user.id }">회원정보 수정 </button>
-							</div>
-						</tr>
+						
+							
+						
 					</tbody>
 					</table>
-				
+					<div class="">
+						<button type="button" class="btn btn-primary btn-block mt-3 mb-3" id="updateBtn" data-user-id = "${user.id }">회원정보 수정 </button>
+					</div>
 					
 				</div>
 			</div>

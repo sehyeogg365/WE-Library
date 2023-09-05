@@ -44,7 +44,7 @@
 					
 					<div class="d-flex">
 					
-						<label class=" ml-4 mt-4 font-weight-bold">비밀번호 입력</label> <input type="password" id="passwordInput" placeholder="비밀번호"  class="form-control col-8 mt-4">
+						<label class=" ml-4 mt-4 font-weight-bold">비밀번호 입력</label> <input type="password" id="passwordInput" placeholder="비밀번호"  class="form-control col-8 ml-2 mt-4">
 					
 					</div>
 				 	<div class="text-center">
