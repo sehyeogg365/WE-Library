@@ -17,7 +17,7 @@
 			
 			<nav class="d-flex justify-content-center align-items-center col-6">
 				<ul class="nav nav-fill">
-					<li class="nav-item"><h5><a href="/library/list/view?title=''" class="nav-link text-dark font-weight-bold">자료 검색</a></h5></li>
+					<li class="nav-item"><h5><a href="/library/list/view?title= " class="nav-link text-dark font-weight-bold">자료 검색</a></h5></li>
 					<li class="nav-item"><h5><a href="#" class="nav-link text-dark font-weight-bold">이용 안내</a></h5></li>
 					<li class="nav-item"><h5><a href="#" class="nav-link text-dark font-weight-bold">문화행사/참여</a></h5></li>
 					<li class="nav-item"><h5><a href="/book/borrowstatus/view?id=${userId }" class="nav-link text-dark font-weight-bold">내 서재</a></h5></li>

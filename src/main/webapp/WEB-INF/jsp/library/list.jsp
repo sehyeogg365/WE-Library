@@ -34,6 +34,7 @@
 		
 		<div class="searchbox ">
 			<form action="/library/list/view" method="get" class=""><!-- bootstrap input group 검색 -->
+			
 			<nav class="bg-primary booksearch-nav d-flex justify-content-center align-items-center col-10">
 				<div class="text-white col-2">
 					<h5>통합검색</h5>
@@ -42,21 +43,12 @@
 				
 				<div class="search d-flex justify-content-center col-9">
 				<!-- 0건일때랑 아닐때로 나눠야 함 제목 입력여부가 아니라 -->
-				<c:forEach var="book"  items="${bookDetailList }">
 		             
-		         	<c:choose>
-		             <c:when test ="${not empty bookDetailList}">
-		             	<input type="text" value="${book.title } " placeholder="검색어 입력" id="searchInput"class="form-control" name="title">
-		         	 </c:when>
-		         
-		         	 <c:otherwise>
-		         	 
-		         	  <input type="text" value="" placeholder="도서명 또는 저자명을 입력해주세요" id ="searchInput" class="form-control" name="title">
-		         	 </c:otherwise>
-		         	 
-		         	 
-		             </c:choose>
-		         </c:forEach>   
+		         <c:forEach var="book" begin="0" end="0" items="${bookDetailList }">
+		         	
+					<input type="text" value="${book.title } " placeholder="검색어 입력" id="searchInput"class="form-control" name="title">
+					
+		         </c:forEach>
 		         <div class="input-group-append">
 		              <button type="submit" id="searchBtn" class="btn">검색</button>
 		         </div>
