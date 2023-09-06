@@ -313,7 +313,8 @@ footer{
 .bookinfo-box{
 	width:900px;
 	margin:auto;
-	
+	border: 1px solid;
+	border-radius: 8px;
 }
 
 .info-box{

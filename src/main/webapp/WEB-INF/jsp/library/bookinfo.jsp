@@ -34,7 +34,7 @@
 				</div>
 			</div>
 		<c:forEach var="book" items="${bookDetailList}">	
-		<div class="bookinfo-box  d-flex">
+		<div class="bookinfo-box mt-3 d-flex">
 			<div class="bookinfo-profile  ml-3 mt-3">
 				<img class="profile" src="${book.imagePath }" >
 			</div>
@@ -104,11 +104,11 @@
 								</c:choose>
 								
 							</td>
-							<td class="text-center">${book.appendix }</td>
+							<td class="text-center text-secondary">${book.appendix }</td>
 							<td class="text-center">
 								<c:choose>
 									<c:when test ="${book.borrow }">
-										<button id="reserveBtn" class="btn btn-sm btn-danger  reserveBtn"><i class="bi bi-journal-arrow-down"></i>도서 예약신청</button>
+										<button id="reserveBtn" class="btn btn-sm btn-danger  reserveBtn" data-book-id="${book.id }"><i class="bi bi-journal-arrow-down"></i>도서 예약신청</button>
 									</c:when>
 									<c:when test="${book.interibrary }">
 										<button class="btn btn-danger btn-sm  reserveBtn" data-book-id="${book.id }"><i class="bi bi-journal-arrow-down"></i>도서 예약신청</button>
@@ -164,10 +164,10 @@
 			 var result = confirm("예약 하시겠습니까?");
 	       	 
 	       	 if(result){
-					//alert(""); 아무것도 안쓰면 바로 추가성공이 뜬다.
-				 } else {
-					return ;
-				 }
+					
+			 } else {
+				return ;
+			 }
        	 
 	       	 alert(id);
 	       	 
