@@ -75,7 +75,13 @@ footer{
     transform: translate(-50%, -160%);
 
 }
+.sub-profile >.sub-text2 {
+	padding: 10px 10px;/*5px->10px*/
+	position: absolute;
+	left: 50%;
+    transform: translate(-50%, -110%);
 
+}
 
 .main-nav{
 	
@@ -342,3 +348,9 @@ footer{
 	
 }
 
+.list-nav{
+	
+	width:150px;
+	border: 1px solid;
+	border-color:gray;
+}

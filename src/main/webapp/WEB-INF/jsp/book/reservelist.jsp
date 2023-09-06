@@ -31,7 +31,10 @@
 					<c:import url="/WEB-INF/jsp/include/subprofile.jsp"/>
 					
 					<div class="sub-text">
-						<h2 class="text-center text-white mt-3"><b>예약 현황</b></h2>
+						<h2 class="text-center text-white mt-3"><b>예약현황</b></h2>
+					</div>
+					<div class="sub-text2">
+						<h5 class="text-center text-white mt-3"><b>내서재>도서이용정보>예약현황</b></h5>
 					</div>
 					
 				</div>
@@ -45,12 +48,12 @@
 						
 						<div class="">
 						
-						<nav class="d-flex justify-content-center align-items-center col-12">
+						<nav class="d-flex justify-content-center align-items-center col-12 mt-3">
 							<ul class="nav nav-fill">
-								<li class="nav-item"><h5><a href="/book/borrowstatus/view?id=${userId }" class="nav-link text-dark font-weight-bold">대출현황</a></h5></li>
-								<li class="nav-item bg-info"><h5><a href="/book/reservelist/view?id=${userId }" class="nav-link text-dark font-weight-bold">예약현황</a></h5></li>
-								<li class="nav-item"><h5><a href="#" class="nav-link text-dark font-weight-bold">대출이력</a></h5></li>
-								<li class="nav-item"><h5><a href="/book/interibrarybooklist/view?id=${userId }" class="nav-link text-dark font-weight-bold">상호대차</a></h5></li>
+								<li class="nav-item list-nav"><h5><a href="/book/borrowstatus/view?id=${userId }" class="nav-link text-dark font-weight-bold">&nbsp대출현황&nbsp</a></h5></li>
+								<li class="nav-item list-nav" style="background-color: #1E90FF;"><h5><a href="/book/reservelist/view?id=${userId }" class="nav-link text-dark font-weight-bold">&nbsp예약현황&nbsp</a></h5></li>
+								<li class="nav-item list-nav"><h5><a href="#" class="nav-link text-dark font-weight-bold">&nbsp대출이력&nbsp</a></h5></li>
+								<li class="nav-item list-nav"><h5><a href="/book/interibrarybooklist/view?id=${userId }" class="nav-link text-dark font-weight-bold">&nbsp상호대차&nbsp</a></h5></li>
 							</ul>
 						</nav>
 						
@@ -73,13 +76,13 @@
 								<h5>${reserve.title }</h5>
 							</div>
 							<div class="text-secondary">
-								도서관 : ${reserve.library }
+								ㅇ도서관 : ${reserve.library }
 							</div>
 							<div class="text-secondary"><!-- <fmt:parseDate var="parseBorrow" value ="${formatBorrow }" pattern ="yyyy-MM-dd"/><fmt:parseNumber var="parseReturn" value="${parseBorrow.time + 60*60*24*1000*14}"/> <c:set var="fourteenDayAfter" value=""/> -->
-								 예약일 : <fmt:formatDate value ="${reserve.createdAt }" pattern ="yyyy.MM.dd"/> 
+								 ㅇ예약일 : <fmt:formatDate value ="${reserve.createdAt }" pattern ="yyyy.MM.dd"/> 
 							</div>
 							<div class="d-flex">
-								<div class="text-secondary">대출상태 :</div><c:choose> 
+								<div class="text-secondary">ㅇ대출상태 :</div><c:choose> 
 										<c:when test = "${reserve.status }" >
 											<p class="text-primary">대출중</p>
 										</c:when>

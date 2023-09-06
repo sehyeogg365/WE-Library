@@ -31,9 +31,12 @@
 						<img class="profile" width="1000px" height="200px" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FlAG5Z%2Fbtsnhr3rPGd%2FKeJ2kZ3AGgbzql1R1aDdr1%2Fimg.jpg" alt="메인로고 사진">
 					</div>
 					<div class="sub-text">
-						<h2 class="text-center text-white mt-3"><b>대출 현황</b></h2>
+						<h2 class="text-center text-white mt-3"><b>대출현황</b></h2>
+										
 					</div>
-					
+					<div class="sub-text2">
+						<h5 class="text-center text-white mt-3"><b>내서재>도서이용정보>대출현황</b></h5>
+					</div>
 				</div>
 				
 				<div class="d-flex mx-5">
@@ -45,12 +48,12 @@
 						
 						<div class="">
 						
-						<nav class="d-flex justify-content-center align-items-center col-12">
+						<nav class="d-flex justify-content-center align-items-center col-12 mt-3">
 							<ul class="nav nav-fill">
-								<li class="nav-item bg-info"><h5><a href="/book/borrowstatus/view?id=${userId }" class="nav-link text-dark font-weight-bold">대출현황</a></h5></li>
-								<li class="nav-item"><h5><a href="/book/reservelist/view?id=${userId }" class="nav-link text-dark font-weight-bold">예약현황</a></h5></li>
-								<li class="nav-item"><h5><a href="#" class="nav-link text-dark font-weight-bold">대출이력</a></h5></li>
-								<li class="nav-item"><h5><a href="/book/interibrarybooklist/view?id=${userId }" class="nav-link text-dark font-weight-bold">상호대차</a></h5></li>
+								<li class="nav-item list-nav" style="background-color: #1E90FF;"><h5><a href="/book/borrowstatus/view?id=${userId }" class="nav-link text-dark font-weight-bold">&nbsp대출현황&nbsp</a></h5></li>
+								<li class="nav-item list-nav"><h5><a href="/book/reservelist/view?id=${userId }" class="nav-link text-dark font-weight-bold">&nbsp예약현황&nbsp</a></h5></li>
+								<li class="nav-item list-nav"><h5><a href="#" class="nav-link text-dark font-weight-bold">&nbsp대출이력&nbsp</a></h5></li>
+								<li class="nav-item list-nav"><h5><a href="/book/interibrarybooklist/view?id=${userId }" class="nav-link text-dark font-weight-bold">&nbsp상호대차&nbsp</a></h5></li>
 							</ul>
 						</nav>
 						
@@ -71,16 +74,16 @@
 						<hr>
 						<div class="d-flex justify-content-between align-items-center">
 						<div class="col-9">
-							<div class="">
-								<h5>${borrow.title }</h5>
+							<div class="" style="font-size: 18px;">
+								${borrow.title }
 							</div>
-							<div class="text-secondary">
-								도서관 : ${borrow.library }
+							<div class="d-flex align-items-center text-secondary">
+								ㅇ도서관 : ${borrow.library }
 							</div>
 							<div class="d-flex text-secondary"><!-- ${borrowDate.time +(1000*60*60*24*14)} 여기서 String->Date 변환 한번 해야함(parse) -->
 						
 								
-								상태 : <c:choose>
+								ㅇ상태 : <c:choose>
 										<c:when test ="${returnDate_c - borrowDate_c >= 21}">
 											<div class="">반납연장</div>
 										</c:when>
