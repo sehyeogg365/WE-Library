@@ -84,9 +84,9 @@
 			   		<div class="d-flex align-items-center">
 				        <label class=""><input type="checkbox" name="library" value="역삼푸른솔도서관" class="mr-2">역삼푸른솔도서관</label>
 				        <label class="ml-4"><input type="checkbox" name="library" value="역삼도서관" class="mr-2">역삼도서관</label>
-				        <label class="ml-4"><input type="checkbox" name="library" value="행복한도서관" class="mr-2">행복한도서관</label>
-				        <label class="ml-4"><input type="checkbox" name="library" value="논현도서관" class="mr-2">논현도서관</label>
-				        <label class="ml-4"><input type="checkbox" name="library" value="대치도서관" class="mr-2">대치도서관</label>
+				        <label class="ml-4"><input type="checkbox" name="library" value="행복한 도서관" class="mr-2">행복한 도서관</label>
+				        <label class="ml-4"><input type="checkbox" name="library" value="논현 도서관" class="mr-2">논현 도서관</label>
+				        <label class="ml-4"><input type="checkbox" name="library" value="대치 도서관" class="mr-2">대치 도서관</label>
 			    		<div class="ml-4"><button class="btn btn-sm btn-secondary">적용하기</button></div>
 			    	</div>
 		    	</div>
