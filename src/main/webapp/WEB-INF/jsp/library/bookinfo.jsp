@@ -46,7 +46,7 @@
 				<div class=""><b>표준부호</b> &nbsp ${book.isbn }</div>
 				<div class=""><b>도서관</b> &nbsp ${book.library }</div>
 				<div class=""><b>부록여부</b> &nbsp${book.appendix }</div>
-			
+				<div class=""><b>북아이디</b> ${book.id }</div>
 			</div>
 
 		</div>	
@@ -62,60 +62,60 @@
 					<thead>
 						<tr class="item">
 						
-							<th class="col-2">대출상태</th>
-							<th class="col-3">반납예정일</th>
-							<th class="col-1">부록</th>
-							<th class="col-3">도서예약</th>
-							<th class="col-3">상호대차</th>
+							<th class="col-2 text-center">대출상태</th>
+							<th class="col-3 text-center">반납예정일</th>
+							<th class="col-1 text-center">부록</th>
+							<th class="col-3 text-center">도서예약</th>
+							<th class="col-3 text-center">상호대차</th>
 						</tr>
 					</thead>
 					<tbody>
 					
 						<tr>
 						
-							<td>
+							<td class="text-center">
 						
 								<c:choose>
 									<c:when test = "${book.borrow }" >
-										<button class="btn btn-info btn-sm" ><i class="bi bi-bookmark-plus"></i>대출불가</button> 
+										<button class="btn btn-info btn-sm " ><i class="bi bi-bookmark-plus"></i>대출불가</button> 
 									</c:when>
 									<c:when test="${book.interibrary }">
-										<button class="btn btn-info btn-sm" ><i class="bi bi-bookmark-plus"></i>대출불가</button> <div class="">예약인원 ${book.reserveCount } 명</div>
+										<button class="btn btn-info btn-sm " ><i class="bi bi-bookmark-plus"></i>대출불가</button> <div class="">예약인원 ${book.reserveCount } 명</div>
 									</c:when>
 									<c:otherwise>
-										<button id ="borrowBtn"class="btn btn-info btn-sm borrowBtn" data-book-id="${book.id }"><i class="bi bi-bookmark-plus"></i>대출하기</button>
+										<button id ="borrowBtn"class="btn btn-info btn-sm borrowBtn " data-book-id="${book.id }"><i class="bi bi-bookmark-plus"></i>대출하기</button>
 									</c:otherwise>
 								</c:choose>
 								
 							</td>
-							<td>
+							<td class="text-center">
 								<fmt:formatDate value="${borrow.returnDate }" pattern ="yyyy-MM-dd"/>
 							</td>
-							<td>${book.appendix }</td>
-							<td>
+							<td class="text-center">${book.appendix }</td>
+							<td class="text-center">
 								<c:choose>
 									<c:when test ="${book.borrow }">
-										<button id="reserveBtn" class="btn btn-sm btn-danger reserveBtn"><i class="bi bi-journal-arrow-down"></i>도서 예약신청</button>
+										<button id="reserveBtn" class="btn btn-sm btn-danger  reserveBtn"><i class="bi bi-journal-arrow-down"></i>도서 예약신청</button>
 									</c:when>
 									<c:when test="${book.interibrary }">
-										<button class="btn btn-danger btn-sm reserveBtn" data-book-id="${book.id }"><i class="bi bi-journal-arrow-down"></i>도서 예약신청</button>
+										<button class="btn btn-danger btn-sm  reserveBtn" data-book-id="${book.id }"><i class="bi bi-journal-arrow-down"></i>도서 예약신청</button>
 									</c:when>
 									<c:otherwise>
-										<button class="btn btn-danger btn-sm" ><i class="bi bi-journal-arrow-down"></i>예약불가</button>
+										<button class="btn btn-danger btn-sm text-center" ><i class="bi bi-journal-arrow-down"></i>예약불가</button>
 									</c:otherwise>
 								</c:choose>
 							</td>
-							<td>
+							<td class="text-center">
 								<c:choose>
 									<c:when test ="${book.borrow }">
-										<a href="#"class="btn btn-success btn-sm interibraryAddBtn"><i class="bi bi-shuffle"></i>상호대차 신청 불가</a> 
+										<a href="#"class="btn btn-success btn-sm  interibraryAddBtn"><i class="bi bi-shuffle"></i>상호대차 신청 불가</a> 
 									</c:when>
 									<c:when test="${book.interibrary }">
-										<a href="#"class="btn btn-success btn-sm interibraryAddBtn" ><i class="bi bi-shuffle"></i>상호대차 신청 불가</a> 
+										<a href="#"class="btn btn-success btn-sm  interibraryAddBtn" ><i class="bi bi-shuffle"></i>상호대차 신청 불가</a> 
 									</c:when>
 									
 									<c:otherwise>
-										<a href="/library/interibrarypopup/view?id=${book.id }"class="btn btn-success btn-sm interibraryAddBtn" onclick="window.open('/library/interibrarypopup/view?id=${book.id}','new','scrollbars=yes,resizable=no width=500 height=500, left=0,top=0');return false"><i class="bi bi-shuffle"></i>상호대차 신청</a>
+										<a href="/library/interibrarypopup/view?id=${book.id }"class="btn btn-success btn-sm text-center interibraryAddBtn" onclick="window.open('/library/interibrarypopup/view?id=${book.id}','new','scrollbars=yes,resizable=no width=500 height=500, left=0,top=0');return false"><i class="bi bi-shuffle"></i>상호대차 신청</a>
 									</c:otherwise>
 								</c:choose>
 
