@@ -88,7 +88,7 @@
 										</c:otherwise>
 										</c:choose>
 								<div class="text-secondary">		
-								&nbsp|&nbsp 반납예정일 : <fmt:formatDate value="${reserve.returnDate }" pattern ="yyyy.MM.dd"/> &nbsp|&nbsp 예약순번 : 번쨰(${reserve.reserveCount }명 예약중)
+								&nbsp|&nbsp 반납예정일 : <fmt:formatDate value="${reserve.returnDate }" pattern ="yyyy.MM.dd"/> &nbsp|&nbsp 예약인원 ${reserve.reserveCount }명 예약중
 								</div>
 							</div>
 						</div>

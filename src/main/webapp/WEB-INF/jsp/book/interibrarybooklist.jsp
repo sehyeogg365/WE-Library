@@ -164,7 +164,7 @@
 					type:"get"
 					, url:"/book/interibrary/delete"
 					, data :{"id":id}
-					,success:function(data){
+					, success:function(data){
 						if(data.result == "success"){
 							alert("상호대차 취소 성공");
 							location.reload();
