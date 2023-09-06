@@ -34,6 +34,15 @@ public class InteribraryBO {
 		
 	}
 	
+	//상호대차 1행정보
+	public InteribraryBook getInteribrary(int bookId) {
+		
+		
+		return interibraryDAO.selectInteribrary(bookId);
+		
+		
+	}
+	
 	//상호대차 조회
 	public List<InteribraryBookDetail> getInteribraryList(int userId){
 		

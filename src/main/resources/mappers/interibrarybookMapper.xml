@@ -32,6 +32,24 @@
    	
    	</insert>
    	
+   	<!-- 상호대차 1행정보 -->
+   	<select id="selectInteribrary" resultType="com.marondal.welibrary.book.model.InteribraryBook" parameterType="int">
+   		SELECT
+   			`id`
+   			,`userId`
+  			, `bookId`
+  			, `receivelibrary`
+  			, `createdAt` 
+   			, `returnDate`
+   		FROM
+   			`interibrary_book`
+   		WHERE
+   			`bookId` = #{bookId}
+   			
+   	
+   	</select>
+   	
+   	
    	<select id = "selectInteribraryList" resultType="com.marondal.welibrary.book.model.InteribraryBook" parameterType="int">
    		SELECT
    			`id`

@@ -13,6 +13,8 @@ public interface InteribraryDAO {
 	//상호대차 신청
 	public int insertInteribrary(@Param("bookId") int bookId, @Param("userId") int userId, @Param("receivelibrary") String receivelibrary);
 	
+	//상호대차 1행정보
+	public InteribraryBook selectInteribrary(@Param("bookId") int bookId);
 	
 	//상호대차 조회
 	public List<InteribraryBook> selectInteribraryList(@Param("userId") int userId);

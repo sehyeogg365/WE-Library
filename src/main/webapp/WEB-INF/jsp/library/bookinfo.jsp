@@ -126,8 +126,9 @@
 				
 				</table>
 				</div>
-				</c:forEach>
 				<div class="text-center"><button id ="interestAddBtn" class="btn btn-sm btn-primary interestAddBtn" data-book-id="${book.id }"><i class="bi bi-download"></i>관심도서 담기</button></div>
+				</c:forEach>
+				
 			</div>
 			
 	
@@ -144,7 +145,8 @@
 	$(document).ready(function(){
 		
 		
-		$("#reserveBtn").on("click", function(){
+		
+		$(".reserveBtn").on("click", function(){
 	       	 let id = $(this).data("book-id");
 			 var result = confirm("예약 하시겠습니까?");
 	       	 
@@ -188,7 +190,7 @@
 		
 		
 		
-		$("#borrowBtn").on("click", function(){
+		$(".borrowBtn").on("click", function(){
 			
 			let id = $(this).data("book-id");
        	 
@@ -229,7 +231,7 @@
 			
 		});
 		
-		$("#interestAddBtn").on("click", function(){
+		$(".interestAddBtn").on("click", function(){
        	 	let id = $(this).data("book-id");
        	 //이것도 한번 된 책이면 두번이상 못누르게 해보기
        	 

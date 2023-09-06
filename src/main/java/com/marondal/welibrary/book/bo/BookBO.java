@@ -76,7 +76,7 @@ public class BookBO {
 			bookDetail.setReserveCount(reserveCount);
 			bookDetail.setBorrow(isBorrow);
 			bookDetail.setInteribrary(isInteribrary);
-			//bookDetail.setReserve(isReserve);
+			
 			
 			bookDetailList.add(bookDetail);
 		}
