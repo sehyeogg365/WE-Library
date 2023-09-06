@@ -131,15 +131,15 @@
 		$(document).ready(function(){
 			
 			
-			$(".addBtn").on("click", function(){
-				
-				let bookId = $(this).data("book-id");
-				
-				alert(bookId);
-				
-				
-				
-			});
+			//$(".addBtn").on("click", function(){
+			//	
+			//	let bookId = $(this).data("book-id");
+			//	
+			//	alert(bookId);
+			//	
+			//	
+			//	
+			//});
 			
 			
 			

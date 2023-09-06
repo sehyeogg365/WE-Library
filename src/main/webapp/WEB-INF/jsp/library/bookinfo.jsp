@@ -108,7 +108,7 @@
 							<td class="text-center">
 								<c:choose>
 									<c:when test ="${book.borrow }">
-										<button id="reserveBtn" class="btn btn-sm btn-danger  reserveBtn" data-book-id="${book.id }"><i class="bi bi-journal-arrow-down"></i>도서 예약신청</button>
+										<button id="reserveBtn" class="btn btn-danger btn-sm  reserveBtn" data-book-id="${book.id }"><i class="bi bi-journal-arrow-down"></i>도서 예약신청</button>
 									</c:when>
 									<c:when test="${book.interibrary }">
 										<button class="btn btn-danger btn-sm  reserveBtn" data-book-id="${book.id }"><i class="bi bi-journal-arrow-down"></i>도서 예약신청</button>
