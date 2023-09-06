@@ -97,6 +97,9 @@
 									<c:when test ="${book.borrow }">
 										<button id="reserveBtn" class="btn btn-sm btn-danger reserveBtn"><i class="bi bi-journal-arrow-down"></i>도서 예약신청</button>
 									</c:when>
+									<c:when test="${book.interibrary }">
+										<button class="btn btn-danger btn-sm reserveBtn" data-book-id="${book.id }"><i class="bi bi-journal-arrow-down"></i>도서 예약신청</button>
+									</c:when>
 									<c:otherwise>
 										<button class="btn btn-danger btn-sm" ><i class="bi bi-journal-arrow-down"></i>예약불가</button>
 									</c:otherwise>
@@ -107,7 +110,9 @@
 									<c:when test ="${book.borrow }">
 										<a href="#"class="btn btn-success btn-sm interibraryAddBtn"><i class="bi bi-shuffle"></i>상호대차 신청 불가</a> 
 									</c:when>
-									
+									<c:when test="${book.interibrary }">
+										<a href="#"class="btn btn-success btn-sm interibraryAddBtn" ><i class="bi bi-shuffle"></i>상호대차 신청 불가</a> 
+									</c:when>
 									
 									<c:otherwise>
 										<a href="/library/interibrarypopup/view?id=${book.id }"class="btn btn-success btn-sm interibraryAddBtn" onclick="window.open('/library/interibrarypopup/view?id=${book.id}','new','scrollbars=yes,resizable=no width=500 height=500, left=0,top=0');return false"><i class="bi bi-shuffle"></i>상호대차 신청</a>
