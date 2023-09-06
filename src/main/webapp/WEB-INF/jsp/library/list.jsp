@@ -125,10 +125,10 @@
 						
 							<c:choose>
 									<c:when test = "${book.borrow }" >
-										<button class="btn btn-info btn-sm" ><i class="bi bi-bookmark-plus"></i>대출불가</button> <div class="">예약인원 ${book.reserveCount } 명</div>
+										<button class="btn btn-info btn-sm" ><i class="bi bi-bookmark-plus"></i>대출불가[대출중]</button> <div class="">예약인원 ${book.reserveCount } 명</div>
 									</c:when>
 									<c:when test="${book.interibrary }">
-										<button class="btn btn-info btn-sm" ><i class="bi bi-bookmark-plus"></i>대출불가</button> <div class="">예약인원 ${book.reserveCount } 명</div>
+										<button class="btn btn-info btn-sm" ><i class="bi bi-bookmark-plus"></i>대출불가[상호대차중]</button> <div class="">예약인원 ${book.reserveCount } 명</div>
 									</c:when>
 									<c:otherwise>
 										<button id ="borrowBtn"class="btn btn-info btn-sm borrowBtn" data-book-id="${book.id }"><i class="bi bi-bookmark-plus"></i>대출하기</button>

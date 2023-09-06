@@ -11,9 +11,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.marondal.welibrary.book.bo.BookBO;
 import com.marondal.welibrary.book.borrow.bo.BorrowBO;
+import com.marondal.welibrary.book.interibrary.bo.InteribraryBO;
 import com.marondal.welibrary.book.model.BookCount;
 import com.marondal.welibrary.book.model.BookDetail;
 import com.marondal.welibrary.book.model.BorrowBook;
+import com.marondal.welibrary.book.model.InteribraryBook;
 
 @Controller
 @RequestMapping("/library")
@@ -26,7 +28,8 @@ public class LibraryController {
 	private BorrowBO borrowBO;
 	//@Autowired
 	//private LibraryBO libraryBO;
-	
+	@Autowired
+	private InteribraryBO interibraryBO;
 	
 	
 	@GetMapping("/main/view")
@@ -63,6 +66,8 @@ public class LibraryController {
 		BorrowBook borrow = borrowBO.getBorrow(id);
 		model.addAttribute("borrow", borrow);
 		
+		InteribraryBook interibrarybook = interibraryBO.getInteribrary(id);
+		model.addAttribute("interibrarybook", interibrarybook);
 		//상호대차 1행조회를쓰면서 상호대차 반납예정일도 불러와야한다. 조건문 대출중일때 대출반납예정일 상호대차중일때 상호대차 반납예정일
 		
 		return "/library/bookinfo";
