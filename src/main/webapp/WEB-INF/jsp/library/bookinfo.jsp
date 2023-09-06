@@ -145,44 +145,43 @@
 		
 		
 		$("#reserveBtn").on("click", function(){
-       	 let id = $(this).data("book-id");
+	       	 let id = $(this).data("book-id");
+			 var result = confirm("예약 하시겠습니까?");
+	       	 
+	       	 if(result){
+					//alert(""); 아무것도 안쓰면 바로 추가성공이 뜬다.
+				 } else {
+					return ;
+				 }
        	 
-			var result = confirm("예약 하시겠습니까?");
-       	 
-       	 if(result){
-				//alert(""); 아무것도 안쓰면 바로 추가성공이 뜬다.
-			 } else {
-				return ;
-			 }
-       	 
-       	 alert(id);
-       	 
-       	 $.ajax({
-       		
-       		 type:"post"
-       		 , url:"/book/reservation/create"
-       		 , data:{"bookId":id}
-       		 , success:function(data){
-       			 if(data.result == "success"){
-        	 			alert("예약 성공");
-        	 			location.reload();
-        	 		 } else {
-        	 			alert("예약 실패");
-        	 			 
-        	 		 }
-       			 
-       		 }
-       		 , error:function(){
-       	 		 alert("예약 에러");
-
-       	 	 }
-       		 
-       		 
-       	 });
-       	 
-       	 
-       	 
-        });
+	       	 alert(id);
+	       	 
+	       	 $.ajax({
+	       		
+	       		 type:"post"
+	       		 , url:"/book/reservation/create"
+	       		 , data:{"bookId":id}
+	       		 , success:function(data){
+	       			 if(data.result == "success"){
+	        	 			alert("예약 성공");
+	        	 			location.reload();
+	        	 		 } else {
+	        	 			alert("예약 실패");
+	        	 			 
+	        	 		 }
+	       			 
+	       		 }
+	       		 , error:function(){
+	       	 		 alert("예약 에러");
+	
+	       	 	 }
+	       		 
+	       		 
+	       	 });
+	       	 
+	       	 
+	       	 
+	      });
 		
 		
 		
@@ -203,7 +202,7 @@
 			 }
 	
        	 
-       		 alert(id);
+       		alert(id);
        	 
        	 	$.ajax({
        	
@@ -231,37 +230,37 @@
 		});
 		
 		$("#interestAddBtn").on("click", function(){
-       	 let id = $(this).data("book-id");
+       	 	let id = $(this).data("book-id");
        	 //이것도 한번 된 책이면 두번이상 못누르게 해보기
        	 
 			var result = confirm("관심도서 추가 하시겠습니까?");
        	 
-       	 if(result){
-				//alert(""); 아무것도 안쓰면 바로 추가성공이 뜬다.
+	       	 if(result){
+					//alert(""); 아무것도 안쓰면 바로 추가성공이 뜬다.
 			 } else {
 				return ;
 			 }
        	 
-       	 alert(id);
+       	 	alert(id);
        	 
-       	 $.ajax({
-       	
-       		 type:"post"
-       		 , url:"/book/interest/create"
-       		 , data :{"bookId":id}
-       	 	 , success:function(data){
-       	 		 if(data.result =="success"){
-       	 			 alert("추가 성공");
-       	 			location.reload();
-       	 		 } else {
-       	 			 alert("추가 실패");
-       	 		 }
-       	 	 }
-       	 	 , error:function(){
-       	 		 alert("추가 에러");
-       	 	 }
-       	 	 
-       	 });
+	       	 $.ajax({
+	       	
+	       		 type:"post"
+	       		 , url:"/book/interest/create"
+	       		 , data :{"bookId":id}
+	       	 	 , success:function(data){
+	       	 		 if(data.result =="success"){
+	       	 			 alert("추가 성공");
+	       	 			location.reload();
+	       	 		 } else {
+	       	 			 alert("추가 실패");
+	       	 		 }
+	       	 	 }
+	       	 	 , error:function(){
+	       	 		 alert("추가 에러");
+	       	 	 }
+	       	 	 
+	       	 });
        	 
        	 
        	 
