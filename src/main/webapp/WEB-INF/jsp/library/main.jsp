@@ -17,6 +17,13 @@
 
 	
 	<link rel="stylesheet" href="/static/css/style.css" type="text/css">
+	
+	<!-- 데이트 픽커 -->
+	
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+	
 </head>
 <body>
 	<div id="wrap" class="">
@@ -30,7 +37,7 @@
 				</div>
 				
 				<div class="main-text">
-					<h2 class="text-center text-white"><b>책과 함께 꿈꾸는 도서관</b></h2><br>
+					<h3 class="text-center text-white"><b>책과 함께 꿈꾸는 도서관</b></h3><br>
 					<h1 class="text-center text-white"><b>WE-Library</b></h1>
 				</div>
 			</div>	
@@ -155,70 +162,21 @@
 					</article>
 					<article class="sub-contents2 col-4">
 						<div class="table_box bg-white mt-3">
+						<div class="">
 						<h1>2023 / 09</h1>
-						<table class="table">
-							<thead>
-								<tr>
-									 <th>일</th>
-				                     <th>월</th>
-				                     <th>화</th>
-				                     <th>수</th>
-				                     <th>목</th>
-				                     <th>금</th>
-				                     <th>토</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-				                    <td></td>
-				                    <td></td>
-				                    <td></td>
-				                    <td></td>
-				                    <td></td>
-				                    <td>1</td>
-				                    <td>2</td>
-				                </tr>
-				                <tr>
-				                    <td class="text-danger">3</td>
-				                    <td><i class="bi bi-circle-fill text-info"></i>4</td>
-				                    <td>5</td>
-				                    <td>6</td>
-				                    <td>7</td>
-				                    <td>8</td>
-				                    <td>9</td>
-				                </tr>
-				                <tr>
-				                    <td class="text-danger">10</td>
-				                    <td><i class="bi bi-circle-fill text-info"></i>11</td>
-				                    <td>12</td>
-				                    <td>13</td>
-				                    <td>14</td>
-				                    <td>15</td>
-				                    <td>16</td>
-				                </tr>
-				                <tr>
-				                    <td class="text-danger">17</td>
-				                    <td><i class="bi bi-circle-fill text-info"></i>18</td>
-				                    <td>19</td>
-				                    <td>20</td>
-				                   	<td>21</td>
-				                    <td>22</td>
-				                    <td>23</td>
-				                </tr>
-				                <tr>
-				                    <td class="text-danger">24</td>
-				                    <td><i class="bi bi-circle-fill text-info"></i>25</td>
-				                    <td>26</td>
-				                    <td>27</td>
-				                    <td>28</td>
-				                    <td>29</td>
-				                    <td>30</td>
-				                  
-				                </tr>
+						<div class="d-flex">
+						 <div class="prev mt-3" style="font-size :20px;">&#10094;</div>
+   						 <div class="next mt-3" style="font-size :20px;">&#10095;</div>
+   						 </div>
+   						 </div>
+						
+							<div id="dateOption" class="">
 							
-							</tbody>
 							
-							</table>
+							
+							
+							</div>
+						
 							<div class="d-flex">
 								<div class="">
 									행사일 <i class="bi bi-square-fill text-warning"></i>
@@ -293,6 +251,15 @@
 			  document.getElementById(cityName).style.display = "block";
 			  evt.currentTarget.className += " active";
 			}
+		
+		 $("#dateOption").datepicker({
+			 
+			 dateFormat:"yy년 mm월 dd일",
+			 changeYear:true, // 연도
+             changeMonth:true
+		 });
+		 
+		 
 		
 		
 		$("#searchBtn").on("click", function(){

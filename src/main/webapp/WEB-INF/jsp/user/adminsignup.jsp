@@ -18,9 +18,23 @@
 	<div id="wrap" class="">
 		<c:import url="/WEB-INF/jsp/include/header.jsp"/>
 		
+		<div class="sub-profile bg-secondary">
+					<c:import url="/WEB-INF/jsp/include/subprofile.jsp"/>
+					
+					<div class="sub-text">
+						<h2 class="text-center text-white mt-3"><b>관리자 회원 가입</b></h2>
+					</div>
+					
+		</div>
 		<section class="contents d-flex justify-content-center ">
+			
+			
+			
 			<div class="join-box  mt-3">
-				<h2 class="text-center mt-3"><b>관리자 회원 가입</b></h2>
+				
+			
+				
+					
 				<div class="d-flex">
 					<input type="text" id="loginIdInput" placeholder="로그인 ID" class="form-control mt-4 col-9">
 					
