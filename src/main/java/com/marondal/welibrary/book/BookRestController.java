@@ -343,13 +343,13 @@ public class BookRestController {
 		
 		Map<String, String> resultMap = new HashMap<>();
 		
-		if(count == 0) {
+		if(count == 1) {
 			
-			resultMap.put("result", "fail");
+			resultMap.put("result", "success");
 			
 		} else {
 			
-			resultMap.put("result", "success");
+			resultMap.put("result", "fail");
 			
 		}
 		

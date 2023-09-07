@@ -141,6 +141,13 @@ public class BookBO {
 
 	}
 	
+	//책 제목 조회 
+	//public List<Book> getBookByTitle(String title) {
+
+	//	return bookDAO.selectBookByTitle(title);	
+		
+	//}
+	
 	
 	//책 제목별로 갯수표시
 	public List<BookCount> getBookNumberBytitle(String title){

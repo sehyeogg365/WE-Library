@@ -72,6 +72,29 @@
   	
   	</select>
   	
+  	<!-- 책 제목 조회 -->
+  	<!--  
+  	<select id="selectBookByTitle" resultType="com.marondal.welibrary.book.model.Book" parameterType="String">
+  		SELECT
+  			`id`
+	  		, `library`
+			, `title`
+			, `imagePath`
+			, `author`
+			, `publisher`
+			, `price`
+			, `isbn`
+			, `pubyear`
+			, `appendix`
+			, `createdAt`
+			, `updatedAt`
+  		FROM
+  			`book`
+  		WHERE
+  			`title` = #{title}
+  	</select>
+  	-->
+  	
   	<!-- 책 갯수 세기 -->
   	<select id="selectBookCount" resultType="int" parameterType="String">
   		SELECT

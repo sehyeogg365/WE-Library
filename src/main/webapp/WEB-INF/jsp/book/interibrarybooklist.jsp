@@ -74,36 +74,37 @@
 						<c:forEach var="interibrarybook" items ="${interibraryDetailList }">
 						<hr>
 						<div class="d-flex justify-content-between align-items-center">
-						<div class="col-9">
+							<div class="col-9">
+								<div class="" style="font-size: 18px;">
+									${interibrarybook.title }
+									상호대차 아이디${interibrarybook.id }	
+									상호대차 북아이디 ${interibrarybook.bookId }	
+								</div>
+								<div class="text-secondary">
+									ㅇ제공도서관: ${interibrarybook.library }  &nbsp| &nbsp 수령도서관 : ${interibrarybook.receivelibrary }
+								</div>
+								<div class="text-secondary">
+									ㅇ신청일: <fmt:formatDate value="${interibrarybook.createdAt }" pattern = "yyyy.MM.dd"/>  &nbsp| &nbsp 반납예정일: <fmt:formatDate value="${interibrarybook.returnDate }" pattern = "yyyy.MM.dd"/>
+								</div>
+								<div class="d-flex text-secondary"><!-- 여기서도 요청된자료/ 입수된 자료/ 신청취소된자료로 구분  -->
+									ㅇ상태: 
+									<c:choose>
+										<c:when test="${interibrarybook.status }">
+											<p class="text-primary">수령완료</p>
+										</c:when>
+										<c:otherwise>
+											<p class="text-primary">요청된 자료</p>
+										</c:otherwise>
+									</c:choose>
+									
+								</div>
+							</div>
 							<div class="">
-								<h5>${interibrarybook.title }</h5>
-
-							</div>
-							<div class="text-secondary">
-								ㅇ제공도서관: ${interibrarybook.library }  &nbsp| &nbsp 수령도서관 : ${interibrarybook.receivelibrary }
-							</div>
-							<div class="text-secondary">
-								ㅇ신청일: <fmt:formatDate value="${interibrarybook.createdAt }" pattern = "yyyy.MM.dd"/>  &nbsp| &nbsp 반납예정일: <fmt:formatDate value="${interibrarybook.returnDate }" pattern = "yyyy.MM.dd"/>
-							</div>
-							<div class="d-flex text-secondary"><!-- 여기서도 요청된자료/ 입수된 자료/ 신청취소된자료로 구분  -->
-								ㅇ상태: 
-								<c:choose>
-									<c:when test="${interibrarybook.status }">
-										<p class="text-primary">수령완료</p>
-									</c:when>
-									<c:otherwise>
-										<p class="text-primary">요청된 자료</p>
-									</c:otherwise>
-								</c:choose>
 								
-							</div>
-						</div>
-						<div class="">
+								<button id="interibraryaddBtn" class="btn btn-primary btn-sm addBtn my-3" data-book-id="${interibrary.bookId }">상호대차 수령</button>
+								<button id="interibrarydeleteBtn" class="btn btn-primary btn-sm deleteBtn my-3" data-interibrary-id="${interibrary.id }">취소</button>
 							
-							<button id="interibraryaddBtn" class="btn btn-primary btn-sm addBtn my-3" data-book-id="${interibrary.bookId }">상호대차 수령</button>
-							<button id="interibrarydeleteBtn" class="btn btn-primary btn-sm deleteBtn my-3" data-interibrary-id="${interibrary.id }">취소</button>
-						
-						</div>
+							</div>
 						
 						
 						</div>	
@@ -134,15 +135,47 @@
 		$(document).ready(function(){
 			
 			
-			//$(".addBtn").on("click", function(){
-			//	
-			//	let bookId = $(this).data("book-id");
-			//	
-			//	alert(bookId);
-			//	
-			//	
-			//	
-			//});
+			$(".addBtn").on("click", function(){
+				
+				let id = $(this).data("book-id");
+				
+				
+				
+				var result = confirm("수령 하시겠습니까?");
+				
+				if(result){
+					//alert(""); 아무것도 안쓰면 바로 추가성공이 뜬다.
+				} else {
+					return ;
+				}
+				
+				alert(id);
+				
+				$.ajax({
+					
+					type:"post"
+		        	, url:"/book/borrow/create"
+		        	, data:{"bookId":id}
+		        	, success:function(data){
+		        	 	if(data.result == "success"){
+		        	 		alert("대출 성공");
+		        	 		location.reload();
+		        	 	} else {
+		        	 		alert("대출 실패");
+		        	 			 
+		        	 	}
+		        	 		 
+		        	 }
+		        	 , error:function(){
+		        	 	alert("대출 에러");
+		 
+		        	 }
+					
+					
+				});
+				
+				
+			});
 			
 			
 			

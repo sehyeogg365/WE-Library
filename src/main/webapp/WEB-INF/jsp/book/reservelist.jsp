@@ -72,8 +72,8 @@
 						<hr>
 						<div class="d-flex justify-content-between align-items-center">
 						<div class="col-9">
-							<div class="">
-								<h5>${reserve.title }</h5>
+							<div class="" style="font-size: 18px;">
+								${reserve.title }
 							</div>
 							<div class="text-secondary">
 								ㅇ도서관 : ${reserve.library }

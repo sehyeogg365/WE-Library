@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.marondal.welibrary.book.bo.BookBO;
 import com.marondal.welibrary.book.borrow.bo.BorrowBO;
 import com.marondal.welibrary.book.interibrary.bo.InteribraryBO;
+import com.marondal.welibrary.book.model.Book;
 import com.marondal.welibrary.book.model.BookCount;
 import com.marondal.welibrary.book.model.BookDetail;
 import com.marondal.welibrary.book.model.BorrowBook;
@@ -49,8 +50,8 @@ public class LibraryController {
 		List<BookCount> bookCountList = bookBO.getBookNumberBytitle(title);
 		model.addAttribute("bookCountList", bookCountList);
 		
-		
-		
+		//List<Book> bookList = bookBO.getBookByTitle(title);
+		//model.addAttribute("bookList", bookList);
 		return "library/list";
 	}
 	
