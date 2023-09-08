@@ -47,7 +47,7 @@ public class PermissionInterceptor implements HandlerInterceptor{
 				
 				return false;//원래 가려 했던 그 목적페이지에 못가게 하려면 폴스
 			}
-			if(uri.startsWith("/user/find_id_pw/view")) {//user 라는 시작하는걸로 접근할려면?
+			if(uri.startsWith("/user/find_id/view")) {//user 라는 시작하는걸로 접근할려면?
 				// 리다이렉트 
 				response.sendRedirect("/library/main/view");//이동하고픈 주소
 				//다른페이지로 이동하는거를 대신 try catch 대신 throw
@@ -90,6 +90,10 @@ public class PermissionInterceptor implements HandlerInterceptor{
 				}
 				
 				if(uri.startsWith("/user/withdrawl/view")) {//회원탈퇴페이지
+					response.sendRedirect("/user/signin/view");
+					return false;
+				}
+				if(uri.startsWith("/admin/wishbook")) {//어드민 희망도서 리스트페이지
 					response.sendRedirect("/user/signin/view");
 					return false;
 				}
