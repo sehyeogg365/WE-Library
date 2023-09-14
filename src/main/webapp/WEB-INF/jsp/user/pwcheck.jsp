@@ -68,7 +68,7 @@
 				alert("비밀번호를 입력하세요.");
 			}
 			
-			alert(password);
+			//alert(password);
 			
 			$.ajax({
 				type:"get"

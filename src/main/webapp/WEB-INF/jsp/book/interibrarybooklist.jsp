@@ -77,8 +77,7 @@
 							<div class="col-9">
 								<div class="" style="font-size: 18px;">
 									${interibrarybook.title }
-									상호대차 아이디${interibrarybook.id }	
-									상호대차 북아이디 ${interibrarybook.bookId }	
+									
 								</div>
 								<div class="text-secondary">
 									ㅇ제공도서관: ${interibrarybook.library }  &nbsp| &nbsp 수령도서관 : ${interibrarybook.receivelibrary }

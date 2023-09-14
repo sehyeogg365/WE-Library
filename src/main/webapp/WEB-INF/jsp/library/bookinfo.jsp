@@ -46,7 +46,7 @@
 				<div class=""><b>표준부호</b> &nbsp ${book.isbn }</div>
 				<div class=""><b>도서관</b> &nbsp ${book.library }</div>
 				<div class=""><b>부록여부</b> &nbsp${book.appendix }</div>
-				<div class=""><b>북아이디</b> ${book.id }</div>
+				<!--  <div class=""><b>북아이디</b> ${book.id }</div>-->
 			</div>
 
 		</div>	
@@ -169,7 +169,7 @@
 				return ;
 			 }
        	 
-	       	 alert(id);
+	       	 //alert(id);
 	       	 
 	       	 $.ajax({
 	       		
@@ -217,7 +217,7 @@
 			 }
 	
        	 
-       		alert(id);
+       		//alert(id);
        	 
        	 	$.ajax({
        	
@@ -256,7 +256,7 @@
 				return ;
 			 }
        	 
-       	 	alert(id);
+       	 	//alert(id);
        	 
 	       	 $.ajax({
 	       	
