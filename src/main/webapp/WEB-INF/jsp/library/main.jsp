@@ -24,8 +24,14 @@
     <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 	
+	<!-- 폰트 -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+	
 </head>
 <body>
+	
 	<div id="wrap" class="">
 		<c:import url="/WEB-INF/jsp/include/header.jsp"/>
 		<section class="contents d-flex justify-content-center">
@@ -81,7 +87,7 @@
 								</c:when>
 								<c:otherwise>
 								
-									<div class="mt-3 ml-3"><h4 class="pt-3">로그인</h4></div>
+									<div class="mt-3 ml-3"><h4 class="pt-3 text-primary">로그인</h4></div>
 									<div class="d-flex justify-content-center">
 										<div class="">
 											<input type="text" id="loginIdInput" placeholder="로그인 ID" class="form-control mt-3">
