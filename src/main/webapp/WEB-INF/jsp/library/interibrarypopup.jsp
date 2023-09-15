@@ -123,8 +123,8 @@
 			return ;
 		 }
        	 
-       	 alert(id);
-       	 alert(library);
+       	 //alert(id);
+       	 //alert(library);
        	 
        	function closeTabClick() {
         	// 변수를 close해 새창을 닫음
