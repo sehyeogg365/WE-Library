@@ -241,7 +241,13 @@
 			//alert(birth);
 			//alert(email);
 			//alert(phoneNumber);
+			var result = confirm("회원정보 수정 하시겠습니까?");
 			
+			if(result){
+				//alert(""); 아무것도 안쓰면 바로 추가성공이 뜬다.
+			} else {
+				return ;
+			}
 			
 			$.ajax({
 				type:"post"

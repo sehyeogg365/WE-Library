@@ -76,7 +76,7 @@
 			let password = $("#passwordInput").val();
 			let passwordConfirm = $("#passwordConfirmInput").val();
 			
-			var result = confirm("변경 하시겠습니까?");
+			var result = confirm("비밀번호 변경 하시겠습니까?");
 			
 			if(result){
 				//alert(""); 아무것도 안쓰면 바로 추가성공이 뜬다.
