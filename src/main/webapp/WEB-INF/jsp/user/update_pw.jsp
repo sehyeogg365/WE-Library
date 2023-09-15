@@ -76,6 +76,14 @@
 			let password = $("#passwordInput").val();
 			let passwordConfirm = $("#passwordConfirmInput").val();
 			
+			var result = confirm("변경 하시겠습니까?");
+			
+			if(result){
+				//alert(""); 아무것도 안쓰면 바로 추가성공이 뜬다.
+			} else {
+				return ;
+			}
+			
 			if(oldpassword == ""){
 				alert("기존 비밀번호를 입력해주세요.");
 				return ;

@@ -8,11 +8,6 @@
 <title>Insert title here</title>
 
 
-	<!-- 폰트 -->
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
-	
 
 </head>
 <body>
