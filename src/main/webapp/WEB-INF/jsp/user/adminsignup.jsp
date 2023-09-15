@@ -238,6 +238,14 @@
 			
 			let certificationNumber = $("#certificationInput").val();
 			
+			var result = confirm("회원가입 하시겠습니까?");
+			
+			if(result){
+				//alert(""); 아무것도 안쓰면 바로 추가성공이 뜬다.
+			} else {
+				return ;
+			}
+			
 			if(id == ""){
 				alert("아이디를 입력하세요.");
 				return ;	
