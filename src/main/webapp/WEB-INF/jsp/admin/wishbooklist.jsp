@@ -58,11 +58,12 @@
 						<hr>
 						<div class="wishbookcard d-flex justify-content-between">
 							<div class="">
+								<!--  
 								<div class="">
 									<h5>No.${fn:length(wishbookDetailList) - status.index}</h5>
 									<h5>유저아이디${wishbook.userId }</h5>
 								</div>
-								
+								-->
 								<div class="">
 									<h5>${wishbook.title }</h5>
 								</div>
