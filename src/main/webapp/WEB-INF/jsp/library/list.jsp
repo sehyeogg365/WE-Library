@@ -231,7 +231,7 @@
 				return ;
 			 }
         	 
-        	 alert(id);
+        	 //alert(id);
         	 
         	 $.ajax({
         		
@@ -274,7 +274,7 @@
 			 }
 	
         	 
-        	 alert(id);
+        	 //alert(id);
         	 
         	 $.ajax({
         	
@@ -314,7 +314,7 @@
 				return ;
 			 }
         	 
-        	 alert(id);
+        	 //alert(id);
         	 
         	 $.ajax({
         	

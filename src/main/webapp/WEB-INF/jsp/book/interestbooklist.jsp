@@ -129,7 +129,7 @@
 				}
 				
 				
-				alert(id);
+				//alert(id);
 				$.ajax({
 					
 					type:"get"
