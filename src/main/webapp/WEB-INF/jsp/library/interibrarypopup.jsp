@@ -21,7 +21,6 @@
 </head>
 <body>
 	<div class="">
-		<div class="">${book.id }</div>
 		<div class="">${book.title }</div>
 		<div class="">발행자:${book.publisher }</div>
 		<div class="">저자:${book.author }</div>
