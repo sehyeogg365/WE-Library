@@ -48,7 +48,7 @@ public class UserRestController {
 		
 	}
 	
-	//중복 아이디 확인 api(공통, get)
+	// 중복 아이디 확인 api(공통, get)
 	@GetMapping("/is_duplicate") // 맵 String, boolean 타입으로
 	public Map<String, Boolean> duplicateCheck(//Boolean 대문자로 넣기
 			@RequestParam("loginId") String loginId
@@ -74,7 +74,7 @@ public class UserRestController {
 	}
 	
 	
-	//관리자 
+	// 관리자 
 	@PostMapping("/adminsignup")
 	public Map<String, String> adminsignup(
 			@RequestParam("loginId") String loginId
@@ -103,7 +103,7 @@ public class UserRestController {
 	}
 	
 	
-	//로그인
+	// 로그인
 	@PostMapping("/signin")
 	public Map<String, String> signin(@RequestParam("loginId") String loginId
 									 , @RequestParam("password") String password
@@ -132,7 +132,7 @@ public class UserRestController {
 		
 	}
 	
-	//id찾기
+	// id찾기
 	@GetMapping("/find_id")
 	public Map<String, Object> findId(@RequestParam("loginId") String loginId//아이디 찾아야 하므로 아이디도 추가해야함
 									  ,	@RequestParam("name") String name
@@ -157,7 +157,7 @@ public class UserRestController {
 		
 	}
 	
-	//pw 재발급	
+	// pw 재발급	
 	@PostMapping("/get_pw")
 	public Map<String, Object> getPW(
 									@RequestParam("loginId") String loginId	
@@ -185,7 +185,7 @@ public class UserRestController {
 		
 	}
 
-	//회원정보 수정
+	// 회원정보 수정
 	@PostMapping("/updateinfo")
 	public Map<String, String> mypageUpdate(@RequestParam("name") String name
 											, @RequestParam("birth") String birth
@@ -212,7 +212,7 @@ public class UserRestController {
 		
 	}
 	
-	//비밀번호 확인
+	// 비밀번호 확인
 	@GetMapping("/pw_check")
 	public Map<String, String> pwcheck(@RequestParam("password") String password
 										, HttpSession session //이번엔 세션값이 아닌 파라미터로 해보자. 세션사용을 최소화 해야 하므로
@@ -266,7 +266,7 @@ public class UserRestController {
 		
 	}
 	
-	//회원 탈퇴
+	// 회원 탈퇴
 	@GetMapping("/withdrawl")
 	public Map<String, String> withdrawl(@RequestParam("password") String password
 										, HttpSession session 

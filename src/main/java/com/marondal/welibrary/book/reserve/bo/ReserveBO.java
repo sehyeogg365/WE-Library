@@ -21,101 +21,88 @@ public class ReserveBO {
 
 	@Autowired
 	private ReserveDAO reserveDAO;
-	
+
 	@Autowired
 	private BookBO bookBO;
-	
+
 	@Autowired
 	private BorrowBO borrowBO;
-	
+
 	@Autowired
 	private ReserveCountBO reserveCountBO;
-	//예약
+
+	// 예약
 	public int addReserve(int bookId, int userId) {
-		
+
 		return reserveDAO.insertReserve(bookId, userId);
-		
-		
+
 	}
-	
-	
-	
-	
-	//예약 조회 
-	public List<ReserveBookDetail> getReserveList(int userId){
-		
+
+	// 예약 조회
+	public List<ReserveBookDetail> getReserveList(int userId) {
+
 		List<ReserveBook> reserveList = reserveDAO.selectReserveList(userId);
-		
-		List<ReserveBookDetail> reserveDetailList = new ArrayList<>(); 
-		
-		for(ReserveBook reserveBook : reserveList) {
-			
+
+		List<ReserveBookDetail> reserveDetailList = new ArrayList<>();
+
+		for (ReserveBook reserveBook : reserveList) {
+
 			BookDetail book = bookBO.getBookById(reserveBook.getBookId());
-			
+
 			BorrowBook borrowbook = borrowBO.getBorrow(book.getId());
-			
-			
-			//대출상태
-			boolean isBorrow = reserveCountBO.isBorrow(book.getId());//상태
-			
+
+			// 대출상태
+			boolean isBorrow = reserveCountBO.isBorrow(book.getId());// 상태
+
 			int reserveCount = reserveCountBO.getReserveCount(book.getId());
-			
+
 			ReserveBookDetail reserveBookDetail = new ReserveBookDetail();
-			
+
 			reserveBookDetail.setId(reserveBook.getId());
 			reserveBookDetail.setBookId(reserveBook.getBookId());
 			reserveBookDetail.setLibrary(book.getLibrary());
 			reserveBookDetail.setTitle(book.getTitle());
 			reserveBookDetail.setAuthor(book.getAuthor());
 			reserveBookDetail.setPublisher(book.getPublisher());
-			reserveBookDetail.setCreatedAt(reserveBook.getCreatedAt());//반납예정일도 추가하기
-			reserveBookDetail.setReturnDate(borrowbook.getReturnDate());//반납예정일
-			//대출상태, 예약순번/예약인원수도 필요함
-			reserveBookDetail.setStatus(isBorrow);//대출상태
-			reserveBookDetail.setReserveCount(reserveCount);//예약 인원수
-			
+			reserveBookDetail.setCreatedAt(reserveBook.getCreatedAt());// 반납예정일도 추가하기
+			reserveBookDetail.setReturnDate(borrowbook.getReturnDate());// 반납예정일
+			// 대출상태, 예약순번/예약인원수도 필요함
+			reserveBookDetail.setStatus(isBorrow);// 대출상태
+			reserveBookDetail.setReserveCount(reserveCount);// 예약 인원수
+
 			reserveDetailList.add(reserveBookDetail);
 		}
-		
-		
+
 		return reserveDetailList;
-		
-		
+
 	}
-	
-	
-	//예약 권수 표시
-	
-	public List<ReserveBookCount> getReserveBookNumberByUserId(int userId){
-			
+
+	// 예약 권수 표시
+
+	public List<ReserveBookCount> getReserveBookNumberByUserId(int userId) {
+
 		List<ReserveBook> reserveList = reserveDAO.selectReserveList(userId);
-		
+
 		List<ReserveBookCount> reserveCountList = new ArrayList<>();
-		
-		for(ReserveBook reservebook : reserveList) {
-			
+
+		for (ReserveBook reservebook : reserveList) {
+
 			ReserveBookCount reservebookCount = new ReserveBookCount();
-			
+
 			int numberCount = reserveDAO.selectReserveBookCount(userId);
-		
-		
+
 			reservebookCount.setNumberCount(numberCount);
 			reserveCountList.add(reservebookCount);
 		}
-		
+
 		return reserveCountList;
 	}
-	
-	
-	//예약 취소
+
+	// 예약 취소
 	public int deleteReserve(int id) {
-		
+
 		return reserveDAO.deleteReserve(id);
-		
-		
+
 	}
-	
-	
-	
-	
+
 }

@@ -28,15 +28,15 @@ public class UserBO {
 	
 		String encryptPassword = EncryptService.md5(password);
 		
-		//인증번호가 일치하는지 여부 확인 bo 서만 수행하면 된다고 하심
-		//일치하면 회원가입 진행 
+		// 인증번호가 일치하는지 여부 확인 bo 서만 수행하면 된다
+		// 일치하면 회원가입 진행 
 		
 		return userDAO.insertUser(loginId, encryptPassword, name, birth, email, phoneNumber);
 		
 		
 	}
 	
-	//중복확인(boolean)
+	// 중복확인(boolean)
 	
 	public boolean isDuplicate(String loginId) {
 		
@@ -54,7 +54,7 @@ public class UserBO {
 	}
 	
 	
-	//관리자 회원가입
+	// 관리자 회원가입
 	public int addAdminUser(
 
 			String loginId
@@ -68,13 +68,13 @@ public class UserBO {
 			
 			) {
 		
-		//인증번호 일치 하는지 여부 
+		// 인증번호 일치 하는지 여부 
 		
 		int count = userDAO.selectcertificationNumber(certificationNumber);
 		
 		String encryptPassword = EncryptService.md5(password);
 		
-		if(count == 1) { //일치할때 
+		if(count == 1) { // 일치할때 
 			
 			return userDAO.insertAdminUser(loginId, encryptPassword, name, birth, email, phoneNumber, isAdmin);//추가하라
 			
@@ -87,10 +87,10 @@ public class UserBO {
 	}
 	
 	
-	//로그인
+	// 로그인
 	public User getUser(String loginId
 						, String password) {
-		//똑같은 방식의 암호화
+		// 똑같은 방식의 암호화
 		String ecryptPassword = EncryptService.md5(password);
 		
 		return userDAO.selectUser(loginId, ecryptPassword);
@@ -117,7 +117,7 @@ public class UserBO {
 							  , String birth
 							  , String phoneNumber
 						     ) {
-		//임시비밀번호 생성 알고리즘
+		// 임시비밀번호 생성 알고리즘
 		
 		// 문자 배열
 		char[] arr= {'0', '1', '2', '3', '4', '5','6','7','8','9'
@@ -125,7 +125,7 @@ public class UserBO {
 					,'a','b','c','d','e','f','g','h'
 					};
 
-		//랜덤함수 선언
+		// 랜덤함수 선언
 		Random rand = new Random();
 		
 		
@@ -133,10 +133,10 @@ public class UserBO {
 		char[] pw= new char[10]; 
 		
 		
-		//전역변수
+		// 전역변수
 		String password = "";
 		
-		//셔플이 아닌 뽑는 반복문을 해야한다. pw 배열 길이동안, 길이수만큼 랜덤하게 뽑기
+		// 셔플이 아닌 뽑는 반복문을 해야한다. pw 배열 길이동안, 길이수만큼 랜덤하게 뽑기
 		
 		for(int i = 0; i < pw.length; i++) {
 			
@@ -154,7 +154,7 @@ public class UserBO {
 		// 비밀번호 암호화되서 저장 해야함 안그러면 로그인 안됨
 		String ecryptPassword = EncryptService.md5(password);
 		
-		//카운트 변수(update 횟수)
+		// 카운트 변수(update 횟수)
 		int count = userDAO.updatePasswordByIdNameBirthPhone(loginId, ecryptPassword, name, birth, phoneNumber);
 		
 		//카운트 변수가 1일때 셔플 조합한 비번 전달하기
@@ -171,7 +171,7 @@ public class UserBO {
 		
 	}
 	
-	//회원정보 수정 리턴타입 생각해보기
+	// 회원정보 수정 리턴타입 생각해보기
 	public int updateUser( int id		
 						   , String name
 						   , String birth
@@ -185,7 +185,7 @@ public class UserBO {
 	}
 	
 	
-	//회원정보 1행 조회 리턴타입 생각해보기
+	// 회원정보 1행 조회 리턴타입 생각해보기
 	public User getUserInfo(int id) {
 		
 		
@@ -194,7 +194,7 @@ public class UserBO {
 		
 	}
 	
-	//비밀번호 확인
+	// 비밀번호 확인
 	public int checkPassword(int id, String password) {
 		
 		String ecryptPassword = EncryptService.md5(password);
@@ -206,7 +206,7 @@ public class UserBO {
 	}
 	
 	
-	//비밀번호 변경
+	// 비밀번호 변경
 	public int updatePassword(int id, String password) {
 		
 		//비밀번호가 일치하면 비밀번호를 입력한 뉴 패스워드로 바꿔준다.

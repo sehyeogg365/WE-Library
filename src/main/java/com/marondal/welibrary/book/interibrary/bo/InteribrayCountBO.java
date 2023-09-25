@@ -8,56 +8,49 @@ import com.marondal.welibrary.book.model.InteribraryBook;
 
 @Service
 public class InteribrayCountBO {
-	
+
 	@Autowired
 	private InteribraryDAO interibraryDAO;
-	//상호대차 권수
-	public int getInteribraryBookCount(int userId) {
-		
-		
-		return interibraryDAO.selectInteribraryBookCount(userId);
-		
-		
-	}
-	
-	//대출 상태
-	public boolean isBorrow(int bookId) {
-		
-		int count = interibraryDAO.selectBorrowByBookId(bookId);
-		
-		if(count == 1) {
-			
-			return true;
-			
-		} else {
-			
-			return false;
-			
-		}
-	
-	}
-	//상호대차 여부
-	public boolean isInteribrary(int bookId) {
-		
-		int count = interibraryDAO.selectInteribraryByBookId(bookId);
-		
-		
-		if(count == 1) {
-			
-			return true;
-			
-		} else {
-			
-			
-			return false;
-			
-		}
-		
 
-		
-		
-		
+	// 상호대차 권수
+	public int getInteribraryBookCount(int userId) {
+
+		return interibraryDAO.selectInteribraryBookCount(userId);
+
 	}
-	
-	
+
+	// 대출 상태
+	public boolean isBorrow(int bookId) {
+
+		int count = interibraryDAO.selectBorrowByBookId(bookId);
+
+		if (count == 1) {
+
+			return true;
+
+		} else {
+
+			return false;
+
+		}
+
+	}
+
+	// 상호대차 여부
+	public boolean isInteribrary(int bookId) {
+
+		int count = interibraryDAO.selectInteribraryByBookId(bookId);
+
+		if (count == 1) {
+
+			return true;
+
+		} else {
+
+			return false;
+
+		}
+
+	}
+
 }

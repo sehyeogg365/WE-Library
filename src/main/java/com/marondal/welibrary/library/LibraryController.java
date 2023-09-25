@@ -24,71 +24,60 @@ public class LibraryController {
 
 	@Autowired
 	private BookBO bookBO;
-	
+
 	@Autowired
 	private BorrowBO borrowBO;
-	//@Autowired
-	//private LibraryBO libraryBO;
+	// @Autowired
+	// private LibraryBO libraryBO;
 	@Autowired
 	private InteribraryBO interibraryBO;
-	
-	
+
 	@GetMapping("/main/view")
 	public String mainPage() {
-		
+
 		return "library/main";
-		
+
 	}
-	
+
 	@GetMapping("/list/view")
-	public String listPage(Model model
-						 , @RequestParam("title") String title){
-		
+	public String listPage(Model model, @RequestParam("title") String title) {
+
 		List<BookDetail> bookDetailList = bookBO.getBookListByTitle(title);
 		model.addAttribute("bookDetailList", bookDetailList);
-		
+
 		List<BookCount> bookCountList = bookBO.getBookNumberBytitle(title);
 		model.addAttribute("bookCountList", bookCountList);
-		
-		//List<Book> bookList = bookBO.getBookByTitle(title);
-		//model.addAttribute("bookList", bookList);
+
+		// List<Book> bookList = bookBO.getBookByTitle(title);
+		// model.addAttribute("bookList", bookList);
 		return "library/list";
 	}
-	
-	
+
 	@GetMapping("/bookinfo/view")
-	public String infoPage(Model model
-						   , @RequestParam("id") int id) {
-		
+	public String infoPage(Model model, @RequestParam("id") int id) {
+
 		List<BookDetail> bookDetailList = bookBO.getBookListById(id);
 		model.addAttribute("bookDetailList", bookDetailList);
-		
-		
+
 		BorrowBook borrow = borrowBO.getBorrow(id);
 		model.addAttribute("borrow", borrow);
-		
+
 		InteribraryBook interibrarybook = interibraryBO.getInteribrary(id);
 		model.addAttribute("interibrarybook", interibrarybook);
-		//상호대차 1행조회를쓰면서 상호대차 반납예정일도 불러와야한다. 조건문 대출중일때 대출반납예정일 상호대차중일때 상호대차 반납예정일
-		
+		// 상호대차 1행조회를쓰면서 상호대차 반납예정일도 불러와야한다. 조건문 대출중일때 대출반납예정일 상호대차중일때 상호대차 반납예정일
+
 		return "/library/bookinfo";
-		
+
 	}
-	
+
 	@GetMapping("/interibrarypopup/view")
-	public String interibraryPopUp(Model model
-			   , @RequestParam("id") int id) {
-		
-		
+	public String interibraryPopUp(Model model, @RequestParam("id") int id) {
+
 		BookDetail book = bookBO.getBookById(id);
 		model.addAttribute("book", book);
-		
-		
+
 		return "/library/interibrarypopup";
-		
-		
-		
+
 	}
-	
-	
+
 }
