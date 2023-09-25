@@ -2,11 +2,10 @@
 
 
 #wrap{
-	width:1200px;
 	
+	width:1200px;	
 	margin: auto;
-	
-	
+		
 }
 
 header{
@@ -75,6 +74,7 @@ footer{
     transform: translate(-50%, -160%);
 
 }
+
 .sub-profile >.sub-text2 {
 	padding: 10px 10px;/*5px->10px*/
 	position: absolute;
@@ -132,18 +132,18 @@ footer{
 }
 
 .main-page > .sub-contents2{
-	
-	
+		
 	height:800px;
+	
 }
 
 .table_box{
+	
 	border: 1px solid;
 	
 	border-radius: 8px;
 	
 }
-
 
 
 .sub-section{
@@ -218,9 +218,6 @@ footer{
 	
 }
 
-
-
-
 .user-box{
 	height:300px;
 	border: 3px dotted;
@@ -251,7 +248,6 @@ footer{
 	background-color:	#D3D3D3;
 	
 }
-
 
 
 .librarylist-page{
@@ -293,8 +289,6 @@ footer{
 	margin:auto;
 }
 
-
-
 .bookgimg-box >.book-profile{
 	width: 150px;
 	height: 150px;
@@ -316,6 +310,7 @@ footer{
 .librarybookinfo-page{
 	width:1200px;
 }
+
 .bookinfo-box{
 	width:900px;
 	margin:auto;
@@ -333,6 +328,7 @@ footer{
 	width:150px;
   	height:150px;
 }
+
 .bookinfo-profile>.profile{
 	
 	width:150px;
@@ -340,7 +336,6 @@ footer{
   	object-fit: contain;  
   	
 }
-
 
 .possessioninfo-box{
 	width:900px;
