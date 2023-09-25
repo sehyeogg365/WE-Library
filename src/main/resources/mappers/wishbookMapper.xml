@@ -62,8 +62,7 @@
   	
   	ORDER BY `id` DESC
   </select>
-  
-  
+
   
   <!-- 유저별 희망도서 신청 갯수 세기 -->
   <select id="selectWishBookCount" resultType="int" parameterType="int" >

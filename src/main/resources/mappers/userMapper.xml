@@ -44,8 +44,7 @@
   	WHERE
   		`loginId`=#{loginId}
   </select>
-  
-  
+   
   <!-- 관리자 회원가입 -->
   <insert id="insertAdminUser" parameterType="map">
   		INSERT INTO
@@ -137,9 +136,7 @@
   		`birth` = #{birth}
   		AND
   		`phoneNumber` = #{phoneNumber}
-  </update>
-  
-  
+  </update>  
   
   <!-- 회원정보 수정 -->
   <update id ="updateUser" parameterType="map">
@@ -153,9 +150,7 @@
   		, `updatedAt` = now()
   	WHERE
   		`id`=#{id}
-  </update>
-  
-  
+  </update> 
   
   <!-- 회원정보 한행 조회 -->
   <select id="selectUserInfo" parameterType="int" resultType="com.marondal.welibrary.user.model.User">
@@ -176,6 +171,7 @@
   		`id`=#{id};
   
   </select>
+  
   <!-- 비밀번호 확인 -->
   <select id="selectPassword" parameterType="map" resultType="int">
   	SELECT
@@ -199,7 +195,6 @@
   		`id`= #{id}
 
   </update>
-  
   
   <!-- 회원탈퇴 -->
    <delete id ="deleteUser" parameterType="map">
