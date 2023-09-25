@@ -18,18 +18,22 @@
 	<div id="wrap" class="">
 	<c:import url="/WEB-INF/jsp/include/header.jsp"/>
 	<section class="contents d-flex justify-content-center">
-	<div class="getpw-box mt-3">
-		<h2 class="text-center mt-3"><b>비밀번호 재발급</b></h2>
-		<input type="text" id="loginIdInput" placeholder="아이디" class="form-control mt-4">
-		<input type="text" id="nameInput" placeholder="이름" class="form-control mt-4">
-		<input type="text" id="birthInput" placeholder="생년월일 8자리" class="form-control mt-4">	
-		<input type="text" id="phoneNumberInput" placeholder="휴대폰 번호 -없이 입력" class="form-control mt-4">
-		<button type="button" id="getPwBtn" class="btn btn-primary btn-block mt-3 mb-3" data-user-password = "${user.password }" >비밀번호 재발급</button>
-		<div class="d-flex justify-content-between">
-			<a href="/user/find_id/view">아이디 찾기</a>
-			<a href="/user/get_pw/view">비밀번호 재발급</a>
-		</div>
-	</div>											<!-- 굳이 pw 재발급 버튼에 모델값 넣어야하나?아이디 찾기는 모델의 id값을 불러와야 해서 그랬다지만 -->
+	
+		<div class="getpw-box mt-3">
+			<h2 class="text-center mt-3"><b>비밀번호 재발급</b></h2>
+			
+			<input type="text" id="loginIdInput" placeholder="아이디" class="form-control mt-4">
+			<input type="text" id="nameInput" placeholder="이름" class="form-control mt-4">
+			<input type="text" id="birthInput" placeholder="생년월일 8자리" class="form-control mt-4">	
+			<input type="text" id="phoneNumberInput" placeholder="휴대폰 번호 -없이 입력" class="form-control mt-4">
+			
+			<button type="button" id="getPwBtn" class="btn btn-primary btn-block mt-3 mb-3" data-user-password = "${user.password }" >비밀번호 재발급</button>
+			
+			<div class="d-flex justify-content-between">
+				<a href="/user/find_id/view">아이디 찾기</a>
+				<a href="/user/get_pw/view">비밀번호 재발급</a>
+			</div>
+		</div>											<!-- 굳이 pw 재발급 버튼에 모델값 넣어야하나?아이디 찾기는 모델의 id값을 불러와야 해서 그랬다지만 -->
 	
 	</section>
 	<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
