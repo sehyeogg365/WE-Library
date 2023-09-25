@@ -17,41 +17,36 @@ import com.marondal.welibrary.book.model.InterestBookDetail;
 
 @Service
 public class InterestBO {
-	
+
 	@Autowired
 	private InterestDAO interestDAO;
-	
+
 	@Autowired
 	private BookBO bookBO;
 
-	
 	@Autowired
 	private InterestCountBO interestCountBO;
-	
-	
-	//관심도서 추가
+
+	// 관심도서 추가
 	public int addInterest(int userId, int bookId) {
-		
+
 		return interestDAO.insertInterest(userId, bookId);
-		
-		
+
 	}
-	
-	//관심도서 조회 (dto)
-	public List<InterestBookDetail> getInterestList(int userId){
-		
-		
+
+	// 관심도서 조회 (dto)
+	public List<InterestBookDetail> getInterestList(int userId) {
+
 		List<InterestBook> interestList = interestDAO.selectInterestList(userId);
-		
+
 		List<InterestBookDetail> interestDetailList = new ArrayList<>();
-		
-		
+
 		for (InterestBook interestbook : interestList) {
-			
+
 			BookDetail book = bookBO.getBookById(interestbook.getBookId());
-			
+
 			InterestBookDetail interestbookDetail = new InterestBookDetail();
-			
+
 			interestbookDetail.setId(interestbook.getId());
 			interestbookDetail.setUserId(interestbook.getUserId());
 			interestbookDetail.setBookId(interestbook.getBookId());
@@ -64,55 +59,42 @@ public class InterestBO {
 			interestbookDetail.setPublisher(book.getPublisher());
 			interestbookDetail.setAppendix(book.getAppendix());
 			interestbookDetail.setCreatedAt(interestbook.getCreatedAt());
-			
+
 			interestDetailList.add(interestbookDetail);
 		}
-		
-		
+
 		return interestDetailList;
-		
-		
+
 	}
-	
-	//관심도서 갯수 표시
-	public List<InterestBookCount> getInterestBookNumberByUserId(int userId){
-		
+
+	// 관심도서 갯수 표시
+	public List<InterestBookCount> getInterestBookNumberByUserId(int userId) {
+
 		List<InterestBook> interestList = interestDAO.selectInterestList(userId);
-		
+
 		List<InterestBookCount> interestCountList = new ArrayList<>();
-		
-		
-		for(InterestBook interestbook: interestList) {
-			
+
+		for (InterestBook interestbook : interestList) {
+
 			int numberCount = interestCountBO.getInterestBookCount(userId);
 
-			
 			InterestBookCount interestBookCount = new InterestBookCount();
-			
-			
+
 			interestBookCount.setNumberCount(numberCount);
-			
+
 			interestCountList.add(interestBookCount);
-			
-			
+
 		}
-		
-		
+
 		return interestCountList;
-		
-		
-		
-		
+
 	}
-	
-	
-	//관심도서 삭제 
+
+	// 관심도서 삭제
 	public int deleteInterest(int id) {
-		
+
 		return interestDAO.deleteInterest(id);
-		
+
 	}
-	
-	
-	
+
 }

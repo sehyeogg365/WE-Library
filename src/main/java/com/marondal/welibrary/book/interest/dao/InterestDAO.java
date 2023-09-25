@@ -10,24 +10,20 @@ import com.marondal.welibrary.book.model.InterestBookCount;
 
 @Repository
 public interface InterestDAO {
-	
-	//관심도서 추가
-	public int insertInterest(@Param("userId") int userId, @Param("bookId")int bookId);
 
-	
-	//관심도서 조회
-	public List<InterestBook> selectInterestList(@Param("userId")int userId);
-	
-	//관심도서 갯수
+	// 관심도서 추가
+	public int insertInterest(@Param("userId") int userId, @Param("bookId") int bookId);
+
+	// 관심도서 조회
+	public List<InterestBook> selectInterestList(@Param("userId") int userId);
+
+	// 관심도서 갯수
 	public int selectInterestBookCount(@Param("userId") int userId);
-	
-	//관심도서 갯수 표시
-	public List<InterestBook> selectInterestBookNumberByUserId(@Param("userId") int userId);
-	
-	
-	
-	//관심도서 삭제 
-	public int deleteInterest(@Param("id") int id);
 
+	// 관심도서 갯수 표시
+	public List<InterestBook> selectInterestBookNumberByUserId(@Param("userId") int userId);
+
+	// 관심도서 삭제
+	public int deleteInterest(@Param("id") int id);
 
 }

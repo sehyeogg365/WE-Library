@@ -8,14 +8,14 @@ import com.marondal.welibrary.book.model.InterestBookCount;
 
 @Service
 public class InterestCountBO {
-	
+
 	@Autowired
 	private InterestDAO interestDAO;
-	
+
 	public int getInterestBookCount(int userId) {
-		
+
 		return interestDAO.selectInterestBookCount(userId);
-		
+
 	}
 
 }
