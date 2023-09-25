@@ -43,7 +43,7 @@
 						<h5 class="text-center text-white mt-3"><b>내서재>도서이용정보>예약현황</b></h5>
 					</div>
 					
-				</div>
+			</div>
 				
 				<div class="d-flex mx-5">
 				
@@ -66,10 +66,11 @@
 						</div>
 						
 						<div class="mt-3 d-flex text-secondary">
-							 예약현황 : &nbsp<div class="text-primary">
-							 <c:forEach var = "reserve"  begin="0" end="0" items="${reserveCountList }">
-							 	${reserve.numberCount }
-							 </c:forEach>
+							 예약현황 : &nbsp
+							 <div class="text-primary">
+								 <c:forEach var = "reserve"  begin="0" end="0" items="${reserveCountList }">
+								 	${reserve.numberCount }
+								 </c:forEach>
 							 
 							 </div>건
 						</div>

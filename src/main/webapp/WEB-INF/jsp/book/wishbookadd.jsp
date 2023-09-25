@@ -115,7 +115,6 @@
 			<tr>
 				<td class="item ">사진</td>
 				<td><input type="file" name="file" id="fileInput" class=""><img class="wishbookprofile" width ="40" height="40" src="${wishbook.imagePath}" ></td>
-				
 			</tr>
 			<tr>
 				<td class="item ">저자</td>

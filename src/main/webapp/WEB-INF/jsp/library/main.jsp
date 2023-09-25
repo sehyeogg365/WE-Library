@@ -32,29 +32,29 @@
 		<section class="contents d-flex justify-content-center">
 			
 			<div class="main-page ">
-			<div class="main-profile">
-				<div class="img-box">
-					<img class="profile" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FlAG5Z%2Fbtsnhr3rPGd%2FKeJ2kZ3AGgbzql1R1aDdr1%2Fimg.jpg" alt="메인로고 사진">
-				</div>
-				
-				<div class="main-text">
-					<h3 class="text-center text-white"><b>책과 함께 꿈꾸는 도서관</b></h3><br>
-					<h1 class="text-center text-white"><b>WE-Library</b></h1>
-				</div>
-			</div>	
+				<div class="main-profile">
+					<div class="img-box">
+						<img class="profile" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FlAG5Z%2Fbtsnhr3rPGd%2FKeJ2kZ3AGgbzql1R1aDdr1%2Fimg.jpg" alt="메인로고 사진">
+					</div>
+					
+					<div class="main-text">
+						<h3 class="text-center text-white"><b>책과 함께 꿈꾸는 도서관</b></h3><br>
+						<h1 class="text-center text-white"><b>WE-Library</b></h1>
+					</div>
+				</div>	
 				<nav class="main-nav d-flex justify-content-center align-items-center col-12">
-				<div class="text-white">
-					<h5>통합검색</h5>
-				</div>
+					<div class="text-white">
+						<h5>통합검색</h5>
+					</div>
 				
-				<form action="/library/list/view" method="get" class="col-9"><!-- bootstrap input group 검색 -->
-					<div class="search d-flex justify-content-center">
-		                <input type="text" value="" placeholder="도서명 또는 저자명을 입력해주세요" id ="searchInput" class="form-control" name="title">
-		                <div class="input-group-append">
-		                	<button type="submit" id="searchBtn" class="btn">검색</button>
-		                </div>
-		            </div>
-		         </form>
+					<form action="/library/list/view" method="get" class="col-9"><!-- bootstrap input group 검색 -->
+						<div class="search d-flex justify-content-center">
+			                <input type="text" value="" placeholder="도서명 또는 저자명을 입력해주세요" id ="searchInput" class="form-control" name="title">
+			                <div class="input-group-append">
+			                	<button type="submit" id="searchBtn" class="btn">검색</button>
+			                </div>
+			            </div>
+			         </form>
 		         </nav>   
 				
 				<section class="main-section d-flex justify-content-center">
@@ -70,9 +70,9 @@
 
 								<c:when test = "${not empty userId }">
 									<div class="mt-3 ml-3"><h3 class="pt-3">${userName} 님 환영합니다!</h3>  </div>
-									<div class="text-center">
-									<a href="/user/signout" class="btn btn-primary my-3 col-11">로그아웃</a>
-									</div>
+										<div class="text-center">
+											<a href="/user/signout" class="btn btn-primary my-3 col-11">로그아웃</a>
+										</div>
 									<hr>
 									<div class="d-flex justify-content-between mt-3">
 										<a href="/book/borrowstatus/view?id=${userId }" class="btn btn-light ml-2 col-5">내서재</a>
@@ -145,9 +145,9 @@
 			
 						<div class="announce-box"><!-- 21글자가 넘으면 자르담에 뒤에 ... -->
 							<div class="d-flex">
-							<i class="bi bi-book" style="font-size :20px;"></i>
-							<a href="#" class="text-dark"><h5>[역삼푸른솔 도서관]8월 휴관일 안내</h5></a>  
-							
+								<i class="bi bi-book" style="font-size :20px;"></i>
+								<a href="#" class="text-dark"><h5>[역삼푸른솔 도서관]8월 휴관일 안내</h5></a>  
+								
 							</div>
 							<div class="ml-4">2023.07.03</div>
 							<hr class="dotted">

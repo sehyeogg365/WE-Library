@@ -106,7 +106,6 @@
 							<c:choose>
 								<c:when test="${returnDate - borrowDate >= 21}">
 									<button class="btn btn-primary btn-sm">반납연장불가</button>
-								
 								</c:when>
 								<c:otherwise>
 									<button id="borrowupdateBtn" class="btn btn-primary btn-sm updateBtn my-3" data-book-id="${borrow.id }">반납연장</button>					
