@@ -45,6 +45,7 @@
    		`bookId` =#{bookId}
    
    </select>
+   
    <!-- 대출목록 -->
    <select id ="selectBorrowList" resultType="com.marondal.welibrary.book.model.BorrowBook" parameterType="map">
    	SELECT
@@ -72,7 +73,6 @@
    </select>
 
    <!-- 대출도서 갯수 표시 -->
-  
    <select id="selectBorrowBookNumberByUserId" resultType="com.marondal.welibrary.book.model.BorrowBookCount" parameterType="int">
    	SELECT
    		count(1)
@@ -90,8 +90,8 @@
    	WHERE
    		`id`=#{id}
 
-   
    </delete>
+   
    <!-- 반납 연장 -->
    <update id ="updateBorrow" parameterType="map">
    	UPDATE
@@ -102,8 +102,7 @@
    		`userId` = #{userId}
    		AND
    		`id` = #{id}
-   
-   
+
    </update>
    
    

@@ -38,6 +38,7 @@
   	WHERE
   		`bookId` = #{bookId}
   </select>
+  
   <!-- 예약 목록 -->
   <select id ="selectReserveList" resultType="com.marondal.welibrary.book.model.ReserveBook" parameterType="int">
   	SELECT
@@ -51,8 +52,7 @@
   		`userId` = #{userId}
   	ORDER BY
   		`id` DESC;
-  </select>
-  	
+  </select>  	
   
   <!-- 예약 취소 -->
   <delete id="deleteReserve" parameterType="int">
