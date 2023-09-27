@@ -106,10 +106,10 @@
 				return ;
 			}
 			
-			alert(id);
-			alert(oldpassword);
-			alert(password);
-			alert(passwordConfirm);
+			//alert(id);
+			//alert(oldpassword);
+			//alert(password);
+			//alert(passwordConfirm);
 			
 			
 			$.ajax({
