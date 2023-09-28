@@ -37,12 +37,12 @@ public class ReserveCountBO {
 
 		int count = reserveDAO.selectBorrowByBookId(bookId);
 
-		if (count == 0) {
-
-			return false;
-		} else {
+		if (count == 1) {//이거를 1 true else false 로 바꿔보기
 
 			return true;
+		} else {
+
+			return false;
 		}
 	}
 
@@ -51,7 +51,7 @@ public class ReserveCountBO {
 
 		int count = reserveDAO.isReserve(userId, bookId);
 
-		if (count == 0) {
+		if (count == 0) {//0일때 예약 안한거 else일떄 예약한거
 
 			return false;
 		} else {
