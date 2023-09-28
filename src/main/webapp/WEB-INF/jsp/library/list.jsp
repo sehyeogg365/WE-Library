@@ -102,6 +102,7 @@
 				<div class="book-card-body ml-2">		
 					<div class="">
 						<h5>${book.title }</h5>
+						<h5>${book.id }</h5>
 					</div>
 					<div class="text-secondary">
 						저자 : ${book.author } &nbsp|&nbsp 출판사 : ${book.publisher } &nbsp|&nbsp 발행년도 : ${book.pubyear }
