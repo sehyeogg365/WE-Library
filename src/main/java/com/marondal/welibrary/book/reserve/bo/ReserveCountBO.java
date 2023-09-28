@@ -51,7 +51,7 @@ public class ReserveCountBO {
 
 		int count = reserveDAO.isReserve(userId, bookId);
 
-		if (count == 0) {//0일때 false else 일때 true
+		if (count == 0) {// 0일때 false else 일때 true
 
 			return false;
 		} else {
