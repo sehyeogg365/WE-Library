@@ -55,7 +55,7 @@ public class ReserveCountBO {
 
 
 		
-		if (count == 0) {// 0일때 false else 일때 true(commit test)
+		if (count == 0) {// 0일때 false else 일때 true(commit test, merge test)
 
 			return false;
 			
