@@ -11,10 +11,10 @@ public class BookCountBO {
 	@Autowired
 	private BookDAO bookDAO;
 
-	public int getBookCount(String title) {
-
-		return bookDAO.selectBookCount(title);
-
-	}
+//	public int getBookCount(String title) {
+//
+//		return bookDAO.selectBookCount(title);
+//
+//	}
 
 }
