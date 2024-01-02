@@ -12,10 +12,10 @@ public class BorrowCountBO {
 	@Autowired
 	private  BorrowDAO borrowDAO;
 	
-	public int getBorrowBookCount(int userId) {
-		
-		
-		return borrowDAO.selectBorrowBookCount(userId);
-
-	}
+//	public int getBorrowBookCount(int userId) {
+//		
+//		
+//		return borrowDAO.selectBorrowBookCount(userId);
+//
+//	}
 }
