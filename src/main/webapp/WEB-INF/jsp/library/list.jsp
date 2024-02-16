@@ -18,7 +18,8 @@
 	
 	<link rel="stylesheet" href="/static/css/style.css" type="text/css">
 	
-	
+	<!-- 2024-02-16 추가내용 페이지네이션 -->
+	<link rel="stylesheet" type="text/css" media="screen" href="/resources/css/tui-grid/tui-pagination.css">
 
 </head>
 <body>
@@ -176,7 +177,10 @@
 		
 		</div>
 		
-	
+		<!--2024-02-16 수정 내용  tui-pagination 추가 -->
+		<div id="pagination" class="tui-pagination"></div>
+		
+		</div>
 		
 		
 		</section>

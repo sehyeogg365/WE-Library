@@ -14,7 +14,7 @@ import com.marondal.welibrary.common.FileManagerService;
 
 public class FileManagerService {
 
-	public static final String FILE_UPLOAD_PATH = "D:\\임세혁\\spring\\springProject\\upload\\WE-Library\\image";
+	public static final String FILE_UPLOAD_PATH = "D:\\limsehyeok\\spring\\springProject\\upload\\WE-Library\\image";
 
 	
 	private static Logger logger = LoggerFactory.getLogger(FileManagerService.class);
