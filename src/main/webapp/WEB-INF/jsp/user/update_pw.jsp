@@ -118,8 +118,26 @@
 				, data: {"id":id, "password":oldpassword}//"" 안의 값이 파라미터 값 : 이후의 값이 아작스에서 변수
 				, success:function(data){
 					if(data.result == "success"){
-						//location.href="/user/mypage/view?id=${user.id}";
 						alert("비밀번호 확인 성공");
+						//2024-03-15 이중아작스문 확인성공시 비밀번호 변경
+						$.ajax({
+							type: "post"
+							, url: "/user/update_pw"
+							, data: {"id":id, "password":password}
+							, success:function(data){
+								if(data.result == "success"){
+									alert("비밀번호 변경 성공");
+									location.reload();
+								} else {
+									alert("비밀번호 변경 실패");
+								}
+								
+							}
+							, error:function(){
+								alert("비밀번호 변경 오류");
+							}				
+							
+						});
 						
 					} else {
 						alert("비밀번호 확인 실패");
@@ -134,36 +152,7 @@
 			});
 		
 			
-			
-			$.ajax({
-				type: "post"
-				, url: "/user/update_pw"
-				, data: {"id":id, "password":password}
-				, success:function(data){
-					if(data.result == "success"){
-						alert("비밀번호 변경 성공");
-						location.reload();
-					} else {
-						alert("비밀번호 변경 실패");
-					}
-					
-				}
-				, error:function(){
-					alert("비밀번호 변경 오류");
-				}
-				
-				
-				
-			});
-			
-			
-			
-			
-			
 		});
-		
-		
-		
 		
 		
 		
