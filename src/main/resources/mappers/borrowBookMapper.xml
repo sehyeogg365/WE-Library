@@ -105,7 +105,25 @@
 
    </update>
    
-   
+   <!-- 2024-03-17 대출이력 추가 -->
+   <insert id ="insertBorrowHistory" parameterType="int">
+    INSERT INTO
+   	`borrow_history`
+   		(
+   			`userId`
+  			, `bookId`
+  			, `createdAt` 
+		    , `returnDate`
+   		)
+   		VALUES
+   		(
+   			#{userId}
+   			, #{bookId}
+   			, now()
+   			, date_add(now(),interval 14 DAY)
+   		)
+   		
+   </insert>
    
    
    </mapper>

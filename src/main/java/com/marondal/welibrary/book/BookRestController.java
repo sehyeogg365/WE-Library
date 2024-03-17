@@ -355,7 +355,32 @@ public class BookRestController {
 	}
 	
 	
-	//03/17대출이력 추가
+	//2024-03-17 대출이력 추가
+	@PostMapping("borrowhistory/create")
+	public Map<String, String>borrowhistoryAdd(@RequestParam("bookId") int bookId
+											   , HttpSession session){
+		
+		
+		Map<String, String> resultMap = new HashMap<>();
+		
+		int userId = (Integer) session.getAttribute("userId");
+		
+		int count = borrowBO.insertBorrowHistory(bookId, userId);
+		
+		
+		if(count == 1) {
+			
+			resultMap.put("result", "success");
+			
+		} else {
+			
+			resultMap.put("result", "fail");
+			
+		}
+		
+		return resultMap;
+		
+	}
 	
 	//03/17상호대차 이력 추가 
 	
