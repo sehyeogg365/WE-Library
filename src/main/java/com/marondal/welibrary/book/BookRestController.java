@@ -309,7 +309,6 @@ public class BookRestController {
 											  , @RequestParam("receivelibrary") String receivelibrary	
 											  , HttpSession session){
 		
-		
 		int userId = (Integer) session.getAttribute("userId");
 		
 		int count = interibraryBO.addInteribrary(bookId, userId, receivelibrary);
@@ -326,7 +325,6 @@ public class BookRestController {
 			
 		}
 		
-		
 		return resultMap;
 
 	}
@@ -336,7 +334,6 @@ public class BookRestController {
 	//상호대차 취소
 	@GetMapping("/interibrary/delete")
 	public Map<String, String> interibraryDelete(@RequestParam("id") int id){
-		
 		
 		
 		int count = interibraryBO.deleteInteribrary(id);
@@ -352,13 +349,15 @@ public class BookRestController {
 			resultMap.put("result", "fail");
 			
 		}
-		
-		
+			
 		return resultMap;
-		
 		
 	}
 	
+	
+	//03/17대출이력 추가
+	
+	//03/17상호대차 이력 추가 
 	
 	
 }
