@@ -113,12 +113,15 @@
    			`userId`
   			, `bookId`
   			, `createdAt` 
+  			, `borrowDate`
 		    , `returnDate`
+		    
    		)
    		VALUES
    		(
    			#{userId}
    			, #{bookId}
+   			, now()
    			, now()
    			, date_add(now(),interval 14 DAY)
    		)
