@@ -118,5 +118,6 @@ public class BorrowBO {
 	}
 	
 	//대출 이력 권수
+	
 
 }
