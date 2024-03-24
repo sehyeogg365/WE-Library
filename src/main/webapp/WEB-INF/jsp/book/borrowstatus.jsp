@@ -84,8 +84,8 @@
 						
 								
 								ㅇ상태 : <c:choose>
-										<c:when test ="${returnDate - borrowDate >= 21}">
-											<div class="" id="returnExtensionBtn">반납연장</div>
+										<c:when test ="${returnDateTime - borrowDateTime >= 21}">
+											<div class="" id="returnExtensionBtn">반납연장 됨</div>
 											
 										</c:when>
 										<c:otherwise>
@@ -104,16 +104,26 @@
 							<!-- formatDate Date -> String -->
 							<!-- parseDate String -> Date -->
 							 
+							 <c:set var="borrowDate" value="${borrow.createdAt}" />
+   							 <c:set var="returnDate" value="${borrow.returnDate}" />
+   							 <!-- 대출일자와 반납일자를 문자열로 변환 -->
+   							 <c:set var="borrowDateStr" value="<fmt:formatDate value='${borrowDate}' pattern='yyyy-MM-dd' />" />
+    						 <c:set var="returnDateStr" value="<fmt:formatDate value='${returnDate}' pattern='yyyy-MM-dd' />" />
+							 
+							 <c:set var="borrowDateTime" value="${borrowDate.time}" />
+    						 <c:set var="returnDateTime" value="${returnDate.time}" />
+    						 <c:set var="diffInDays" value="${(returnDateTime - borrowDateTime) / (1000 * 60 * 60 * 24)}" />
+							<!-- 21일이상 차이나는지 여부 판단 -->
 							<c:choose>
-								<c:when test="${returnDate - borrowDate >= 21}">
-									<button class="btn btn-primary btn-sm">반납연장불가</button>
+								<c:when test="${diffInDays < 21}">
+
+									<button id="rtnExtBtn" class="btn btn-primary btn-sm updateBtn my-3" data-book-id="${borrow.id }">반납연장</button>
+								
 								</c:when>
 								<c:otherwise>
-								 
-								   
-									<button id="rtnExtBtn" class="btn btn-primary btn-sm updateBtn my-3" data-book-id="${borrow.id }">반납연장</button>					
-									<div class="d-none" id="rtnCannotBeExtd">반납연장 불가</div>
-							
+
+									<button class="btn btn-primary btn-sm">반납연장불가</button>			
+
 								</c:otherwise>
 							</c:choose>
 							
