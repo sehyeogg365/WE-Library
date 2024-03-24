@@ -81,11 +81,21 @@
 								ㅇ도서관 : ${borrow.library }
 							</div>
 							<div class="d-flex text-secondary"><!-- ${borrowDate.time +(1000*60*60*24*14)} 여기서 String->Date 변환 한번 해야함(parse) -->
-						
+							 
+							 <c:set var="borrowDate" value="${borrow.createdAt}" />
+   							 <c:set var="returnDate" value="${borrow.returnDate}" />
+   							 <!-- 대출일자와 반납일자를 문자열로 변환 -->
+   							 <c:set var="borrowDateStr" value="<fmt:formatDate value='${borrowDate}' pattern='yyyy-MM-dd' />" />
+    						 <c:set var="returnDateStr" value="<fmt:formatDate value='${returnDate}' pattern='yyyy-MM-dd' />" />
+							 
+							 <c:set var="borrowDateTime" value="${borrowDate.time}" />
+    						 <c:set var="returnDateTime" value="${returnDate.time}" />
+    						 <c:set var="diffInDays" value="${(returnDateTime - borrowDateTime) / (1000 * 60 * 60 * 24)}" />
+							<!-- 21일이상 차이나는지 여부 판단 -->
 								
 								ㅇ상태 : <c:choose>
-										<c:when test ="${returnDateTime - borrowDateTime >= 21}">
-											<div class="" id="returnExtensionBtn">반납연장 됨</div>
+										<c:when test ="${diffInDays >= 21}">
+											<div class="text-secondary" id="returnExtensionBtn">반납연장 됨</div>
 											
 										</c:when>
 										<c:otherwise>
@@ -104,16 +114,7 @@
 							<!-- formatDate Date -> String -->
 							<!-- parseDate String -> Date -->
 							 
-							 <c:set var="borrowDate" value="${borrow.createdAt}" />
-   							 <c:set var="returnDate" value="${borrow.returnDate}" />
-   							 <!-- 대출일자와 반납일자를 문자열로 변환 -->
-   							 <c:set var="borrowDateStr" value="<fmt:formatDate value='${borrowDate}' pattern='yyyy-MM-dd' />" />
-    						 <c:set var="returnDateStr" value="<fmt:formatDate value='${returnDate}' pattern='yyyy-MM-dd' />" />
-							 
-							 <c:set var="borrowDateTime" value="${borrowDate.time}" />
-    						 <c:set var="returnDateTime" value="${returnDate.time}" />
-    						 <c:set var="diffInDays" value="${(returnDateTime - borrowDateTime) / (1000 * 60 * 60 * 24)}" />
-							<!-- 21일이상 차이나는지 여부 판단 -->
+							
 							<c:choose>
 								<c:when test="${diffInDays < 21}">
 
