@@ -84,14 +84,14 @@
 							 
 							 <c:set var="borrowDate" value="${borrow.createdAt}" />
    							 <c:set var="returnDate" value="${borrow.returnDate}" />
-   							 <!-- 대출일자와 반납일자를 문자열로 변환 -->
+   							 <!-- 2024-03-24 대출일자와 반납일자를 문자열로 변환 -->
    							 <c:set var="borrowDateStr" value="<fmt:formatDate value='${borrowDate}' pattern='yyyy-MM-dd' />" />
     						 <c:set var="returnDateStr" value="<fmt:formatDate value='${returnDate}' pattern='yyyy-MM-dd' />" />
 							 
 							 <c:set var="borrowDateTime" value="${borrowDate.time}" />
     						 <c:set var="returnDateTime" value="${returnDate.time}" />
     						 <c:set var="diffInDays" value="${(returnDateTime - borrowDateTime) / (1000 * 60 * 60 * 24)}" />
-							<!-- 21일이상 차이나는지 여부 판단 -->
+							<!-- 2024-03-24 21일이상 차이나는지 여부 판단 -->
 								
 								ㅇ상태 : <c:choose>
 										<c:when test ="${diffInDays >= 21}">
@@ -110,11 +110,10 @@
 						<div class="">
 							<button id="borrowdeleteBtn" class="btn btn-danger btn-sm deleteBtn my-3" data-book-id="${borrow.id }">반납하기</button>
 							
-							<!-- 반납예정일과 대출일이 3주이상 차이날시  반납연장불가버튼 그외에 반납연장 버튼 이렇게 해보기-->
+							<!-- 2024-03-24  반납예정일과 대출일이 3주이상 차이날시  반납연장불가버튼 그외에 반납연장 버튼 이렇게 해보기-->
 							<!-- formatDate Date -> String -->
 							<!-- parseDate String -> Date -->
-							 
-							
+
 							<c:choose>
 								<c:when test="${diffInDays < 21}">
 
