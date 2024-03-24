@@ -105,7 +105,37 @@
 
    </update>
    
+   <!-- 2024-03-17 대출이력 추가 -->
+   <insert id ="insertBorrowHistory" parameterType="int">
+    INSERT INTO
+   	`borrow_history`
+   		(
+   			`userId`
+  			, `bookId`
+  			, `createdAt` 
+  			, `borrowDate`
+		    , `returnDate`
+		    
+   		)
+   		VALUES
+   		(
+   			#{userId}
+   			, #{bookId}
+   			, now()
+   			, now()
+   			, date_add(now(),interval 14 DAY)
+   		)
+   		
+   </insert>
    
-   
+   <!-- 2024-03-24 대출이력 권수 -->
+   <select id = "selectBorrowHistoryCount" parameterType="int">
+   	SELECT
+   		count(1)
+   	FROM	
+   		`borrow_history`
+   	WHERE
+   		`userId` = #{userId}
+   </select>
    
    </mapper>

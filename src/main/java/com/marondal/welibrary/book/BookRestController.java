@@ -309,7 +309,6 @@ public class BookRestController {
 											  , @RequestParam("receivelibrary") String receivelibrary	
 											  , HttpSession session){
 		
-		
 		int userId = (Integer) session.getAttribute("userId");
 		
 		int count = interibraryBO.addInteribrary(bookId, userId, receivelibrary);
@@ -326,7 +325,6 @@ public class BookRestController {
 			
 		}
 		
-		
 		return resultMap;
 
 	}
@@ -336,7 +334,6 @@ public class BookRestController {
 	//상호대차 취소
 	@GetMapping("/interibrary/delete")
 	public Map<String, String> interibraryDelete(@RequestParam("id") int id){
-		
 		
 		
 		int count = interibraryBO.deleteInteribrary(id);
@@ -352,12 +349,39 @@ public class BookRestController {
 			resultMap.put("result", "fail");
 			
 		}
+			
+		return resultMap;
 		
+	}
+	
+	
+	//2024-03-17 대출이력 추가
+	@PostMapping("borrowhistory/create")
+	public Map<String, String>borrowhistoryAdd(@RequestParam("bookId") int bookId
+											   , HttpSession session){
+		
+		
+		Map<String, String> resultMap = new HashMap<>();
+		
+		int userId = (Integer) session.getAttribute("userId");
+		
+		int count = borrowBO.addBorrowHistory(bookId, userId);
+		
+		
+		if(count == 1) {
+			
+			resultMap.put("result", "success");
+			
+		} else {
+			
+			resultMap.put("result", "fail");
+			
+		}
 		
 		return resultMap;
 		
-		
 	}
+	
 	
 	
 	

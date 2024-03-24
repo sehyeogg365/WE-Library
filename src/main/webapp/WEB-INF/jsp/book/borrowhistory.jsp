@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>WE-Library 대출현황</title>
+<title>WE-Library 대출이력</title>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	
 	<script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
@@ -31,11 +31,11 @@
 						<img class="profile" width="1000px" height="200px" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FlAG5Z%2Fbtsnhr3rPGd%2FKeJ2kZ3AGgbzql1R1aDdr1%2Fimg.jpg" alt="메인로고 사진">
 					</div>
 					<div class="sub-text">
-						<h2 class="text-center text-white mt-3"><b>대출현황</b></h2>
+						<h2 class="text-center text-white mt-3"><b>대출이력</b></h2>
 										
 					</div>
 					<div class="sub-text2">
-						<h5 class="text-center text-white mt-3"><b>내서재>도서이용정보>대출현황</b></h5>
+						<h5 class="text-center text-white mt-3"><b>내서재>도서이용정보>대출이력</b></h5>
 					</div>
 				</div>
 				
@@ -52,7 +52,7 @@
 							<ul class="nav nav-fill">
 								<li class="nav-item list-nav" style="background-color: #1E90FF;"><h5><a href="/book/borrowstatus/view?id=${userId }" class="nav-link text-dark font-weight-bold">&nbsp대출현황&nbsp</a></h5></li>
 								<li class="nav-item list-nav"><h5><a href="/book/reservelist/view?id=${userId }" class="nav-link text-dark font-weight-bold">&nbsp예약현황&nbsp</a></h5></li>
-								<li class="nav-item list-nav"><h5><a href="/book/borrowhistory/view?id=${userId }" class="nav-link text-dark font-weight-bold">&nbsp대출이력&nbsp</a></h5></li>
+								<li class="nav-item list-nav"><h5><a href="#" class="nav-link text-dark font-weight-bold">&nbsp대출이력&nbsp</a></h5></li>
 								<li class="nav-item list-nav"><h5><a href="/book/interibrarybooklist/view?id=${userId }" class="nav-link text-dark font-weight-bold">&nbsp상호대차&nbsp</a></h5></li>
 							</ul>
 						</nav>
@@ -61,7 +61,7 @@
 						
 						
 						<div class="mt-3 d-flex text-secondary">
-							 대출현황 : &nbsp<div class="text-primary">
+							 대출이력 : &nbsp<div class="text-primary">
 							 					
 							 					<c:forEach var="borrow" begin="0" end="0" items="${borrowCountList }">
 							 					
@@ -84,9 +84,8 @@
 						
 								
 								ㅇ상태 : <c:choose>
-										<c:when test ="${returnDateTime - borrowDateTime >= 21}">
-											<div class="" id="returnExtensionBtn">반납연장 됨</div>
-											
+										<c:when test ="${returnDate_c - borrowDate_c >= 21}">
+											<div class="">반납연장</div>
 										</c:when>
 										<c:otherwise>
 											<div class="text-primary">대출중</div>
@@ -103,30 +102,15 @@
 							<!-- 반납예정일과 대출일이 3주이상 차이날시  반납연장불가버튼 그외에 반납연장 버튼 이렇게 해보기-->
 							<!-- formatDate Date -> String -->
 							<!-- parseDate String -> Date -->
-							 
-							 <c:set var="borrowDate" value="${borrow.createdAt}" />
-   							 <c:set var="returnDate" value="${borrow.returnDate}" />
-   							 <!-- 대출일자와 반납일자를 문자열로 변환 -->
-   							 <c:set var="borrowDateStr" value="<fmt:formatDate value='${borrowDate}' pattern='yyyy-MM-dd' />" />
-    						 <c:set var="returnDateStr" value="<fmt:formatDate value='${returnDate}' pattern='yyyy-MM-dd' />" />
-							 
-							 <c:set var="borrowDateTime" value="${borrowDate.time}" />
-    						 <c:set var="returnDateTime" value="${returnDate.time}" />
-    						 <c:set var="diffInDays" value="${(returnDateTime - borrowDateTime) / (1000 * 60 * 60 * 24)}" />
-							<!-- 21일이상 차이나는지 여부 판단 -->
+							
 							<c:choose>
-								<c:when test="${diffInDays < 21}">
-
-									<button id="rtnExtBtn" class="btn btn-primary btn-sm updateBtn my-3" data-book-id="${borrow.id }">반납연장</button>
-								
+								<c:when test="${returnDate - borrowDate >= 21}">
+									<button class="btn btn-primary btn-sm">반납연장불가</button>
 								</c:when>
 								<c:otherwise>
-
-									<button class="btn btn-primary btn-sm">반납연장불가</button>			
-
+									<button id="borrowupdateBtn" class="btn btn-primary btn-sm updateBtn my-3" data-book-id="${borrow.id }">반납연장</button>					
 								</c:otherwise>
 							</c:choose>
-							
 						</div>
 						</div>
 						
@@ -154,101 +138,8 @@
 	<script>
 		$(document).ready(function(){
 			
-			$(".updateBtn").on("click", function(){
-				
-				let id = $(this).data("book-id");
-				
-				//alert(id);
-				var result = confirm("반납연장 하시겠습니까?");
-				
-				if(result){
-					//alert(""); 아무것도 안쓰면 바로 추가성공이 뜬다.
-				} else {
-					return ;
-				}
-				$.ajax({
-					
-					type:"post"
-					, url:"/book/borrow/update"
-					, data :{"id":id}
-					, success:function(data){
-						if(data.result == "success"){
-							alert("반납 연장 성공");
-							
-							//2024-03-24 d-none로 반납연장버튼 숨기기, 반납연장 불가 문구 나타내기 그냥 한번 눌렸을때 되게 해야 함.
-							//$("#rtnExtBtn").addClass("d-none");
-							//$("#rtnCannotBeExtd").removeClass("d-none");
-							
-							location.reload();
-						} else {
-							alert("반납 연장 실패");
-						}
-						
-					}
-					, error:function(){
-						
-						alert("반납 연장 에러");
-					}
-					
-				});
-				
-			});
-			
-			
-			$(".deleteBtn").on("click", function(){
-				
-				let id = $(this).data("book-id");
-				
-				var result = confirm("반납 하시겠습니까?");
-				
-				if(result){
-					//alert(""); 아무것도 안쓰면 바로 추가성공이 뜬다.
-				} else {
-					return ;
-				}
 	
-				//alert(id);
-				
-				$.ajax({
-					
-					type:"get"
-					, url:"/book/borrow/delete"
-					, data :{"id":id}
-					, success:function(data){
-						if(data.result== "success"){
-							alert("반납 성공");
-							location.reload();
-							
-							// 2024-03-17 이중아작스문으로 반납과 동시에 대출이력리스트에 추가시키기 해보기
-							/*
-							$.ajax({
-								
-								type:"post"
-								, url:"/book/borowhistory/create"
-								, data :{"bookId":id}
-								, success:function(data){
-									if(data.result == "success"){
-										alert("대출이력에 추가됨");
-										location.reload();
-									}
-								}
-							})*/
-							
-						} else {
-							alert("반납 실패");
-						}
-						
-					}
-					,error:function(){
-						alert("반납 에러");
-					}
-				});
-				
-				
-				
-				
-			});
-			
+		
 			
 		});
 		

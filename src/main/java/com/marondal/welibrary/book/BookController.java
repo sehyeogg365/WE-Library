@@ -196,5 +196,14 @@ public class BookController {
 		
 	}
 	
+	@GetMapping("/borrowhistory/view")
+	public String borrowHistory(Model model
+								, HttpSession session) {
+		
+		int userId = (Integer)session.getAttribute("userId");
+		
+		return "book/borrowhistory";
+	}
+	
 	
 }

@@ -32,4 +32,12 @@ public interface BorrowDAO {
 
 	// 반납 연장
 	public int updateBorrow(@Param("userId") int userId, @Param("id") int id);
+	
+	// 2024-03-17 대출 이력 추가
+	public int insertBorrowHistory(@Param("userId") int userId, @Param("bookId") int bookId);
+	
+	
+	// 2024-03-23 대출 이력 권수
+	public int selectBorrowHistoryCount(@Param("userId") int userId);
+	
 }
