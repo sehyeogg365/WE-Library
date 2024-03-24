@@ -111,13 +111,17 @@ public class BorrowBO {
 	}
 	
 	//2024-03-17 대출 이력 추가
-	public int insertBorrowHistory(int userId, int bookId) {
+	public int addBorrowHistory(int userId, int bookId) {
 		
 		return borrowDAO.insertBorrow(userId, bookId);
 
 	}
 	
 	//대출 이력 권수
-	
+	public List<Integer> borrowHistoryNumber(int userId){
+		
+		return null;
+		
+	}
 
 }

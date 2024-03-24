@@ -365,7 +365,7 @@ public class BookRestController {
 		
 		int userId = (Integer) session.getAttribute("userId");
 		
-		int count = borrowBO.insertBorrowHistory(bookId, userId);
+		int count = borrowBO.addBorrowHistory(bookId, userId);
 		
 		
 		if(count == 1) {

@@ -128,5 +128,14 @@
    		
    </insert>
    
+   <!-- 2024-03-24 대출이력 권수 -->
+   <select id = "selectBorrowHistoryCount" parameterType="int">
+   	SELECT
+   		count(1)
+   	FROM	
+   		`borrow_history`
+   	WHERE
+   		`userId` = #{userId}
+   </select>
    
    </mapper>

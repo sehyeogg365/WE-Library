@@ -58,7 +58,7 @@
 							<ul class="nav nav-fill">
 								<li class="nav-item list-nav"><h5><a href="/book/borrowstatus/view?id=${userId }" class="nav-link text-dark font-weight-bold">&nbsp대출현황&nbsp</a></h5></li>
 								<li class="nav-item list-nav" style="background-color: #1E90FF;"><h5><a href="/book/reservelist/view?id=${userId }" class="nav-link text-dark font-weight-bold">&nbsp예약현황&nbsp</a></h5></li>
-								<li class="nav-item list-nav"><h5><a href="#" class="nav-link text-dark font-weight-bold">&nbsp대출이력&nbsp</a></h5></li>
+								<li class="nav-item list-nav"><h5><a href="/book/borrowhistory/view?id=${userId }" class="nav-link text-dark font-weight-bold">&nbsp대출이력&nbsp</a></h5></li>
 								<li class="nav-item list-nav"><h5><a href="/book/interibrarybooklist/view?id=${userId }" class="nav-link text-dark font-weight-bold">&nbsp상호대차&nbsp</a></h5></li>
 							</ul>
 						</nav>
