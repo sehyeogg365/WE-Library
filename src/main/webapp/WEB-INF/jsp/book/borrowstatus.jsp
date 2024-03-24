@@ -52,7 +52,7 @@
 							<ul class="nav nav-fill">
 								<li class="nav-item list-nav" style="background-color: #1E90FF;"><h5><a href="/book/borrowstatus/view?id=${userId }" class="nav-link text-dark font-weight-bold">&nbsp대출현황&nbsp</a></h5></li>
 								<li class="nav-item list-nav"><h5><a href="/book/reservelist/view?id=${userId }" class="nav-link text-dark font-weight-bold">&nbsp예약현황&nbsp</a></h5></li>
-								<li class="nav-item list-nav"><h5><a href="#" class="nav-link text-dark font-weight-bold">&nbsp대출이력&nbsp</a></h5></li>
+								<li class="nav-item list-nav"><h5><a href="/book/borrowhistory/view?id=${userId }" class="nav-link text-dark font-weight-bold">&nbsp대출이력&nbsp</a></h5></li>
 								<li class="nav-item list-nav"><h5><a href="/book/interibrarybooklist/view?id=${userId }" class="nav-link text-dark font-weight-bold">&nbsp상호대차&nbsp</a></h5></li>
 							</ul>
 						</nav>
@@ -84,8 +84,9 @@
 						
 								
 								ㅇ상태 : <c:choose>
-										<c:when test ="${returnDate_c - borrowDate_c >= 21}">
-											<div class="">반납연장</div>
+										<c:when test ="${returnDate - borrowDate >= 21}">
+											<div class="" id="returnExtensionBtn">반납연장</div>
+											
 										</c:when>
 										<c:otherwise>
 											<div class="text-primary">대출중</div>
@@ -102,15 +103,20 @@
 							<!-- 반납예정일과 대출일이 3주이상 차이날시  반납연장불가버튼 그외에 반납연장 버튼 이렇게 해보기-->
 							<!-- formatDate Date -> String -->
 							<!-- parseDate String -> Date -->
-							
+							 
 							<c:choose>
 								<c:when test="${returnDate - borrowDate >= 21}">
 									<button class="btn btn-primary btn-sm">반납연장불가</button>
 								</c:when>
 								<c:otherwise>
-									<button id="borrowupdateBtn" class="btn btn-primary btn-sm updateBtn my-3" data-book-id="${borrow.id }">반납연장</button>					
+								 
+								   
+									<button id="rtnExtBtn" class="btn btn-primary btn-sm updateBtn my-3" data-book-id="${borrow.id }">반납연장</button>					
+									<div class="d-none" id="rtnCannotBeExtd">반납연장 불가</div>
+							
 								</c:otherwise>
 							</c:choose>
+							
 						</div>
 						</div>
 						
@@ -158,6 +164,11 @@
 					, success:function(data){
 						if(data.result == "success"){
 							alert("반납 연장 성공");
+							
+							//2024-03-24 d-none로 반납연장버튼 숨기기, 반납연장 불가 문구 나타내기 그냥 한번 눌렸을때 되게 해야 함.
+							//$("#rtnExtBtn").addClass("d-none");
+							//$("#rtnCannotBeExtd").removeClass("d-none");
+							
 							location.reload();
 						} else {
 							alert("반납 연장 실패");
@@ -199,7 +210,11 @@
 							location.reload();
 							
 							// 2024-03-17 이중아작스문으로 반납과 동시에 대출이력리스트에 추가시키기 해보기
-							
+							$.ajax({
+								
+								type:"post"
+								, url
+							})
 							
 						} else {
 							alert("반납 실패");
