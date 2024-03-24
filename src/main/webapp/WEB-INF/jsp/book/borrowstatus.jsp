@@ -210,11 +210,19 @@
 							location.reload();
 							
 							// 2024-03-17 이중아작스문으로 반납과 동시에 대출이력리스트에 추가시키기 해보기
+							/*
 							$.ajax({
 								
 								type:"post"
-								, url
-							})
+								, url:"/book/borowhistory/create"
+								, data :{"bookId":id}
+								, success:function(data){
+									if(data.result == "success"){
+										alert("대출이력에 추가됨");
+										location.reload();
+									}
+								}
+							})*/
 							
 						} else {
 							alert("반납 실패");
