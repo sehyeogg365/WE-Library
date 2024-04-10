@@ -19,6 +19,15 @@ public class BookDetail {//책카드 한장에 들어가는 정보
 	private boolean isInteribrary;// 상호대차 여부 아예 안뜨거나 아님 상호대차중 이렇게 표시 
 	private Date returnDate;//대출한 사람반납일
 	private boolean isReserve;//본인이 이책을 예약했는지
+
+	//2024-04-10페이지네이션 관련 변수들 추가
+	/*
+	private Integer SIZE;
+	private Integer PAGE;				//현재페이지번호
+	private Integer COUNTLIST;			//한 페이지에 출력될 게시물 수 (
+	private Integer BEGIN;
+	private Integer TOTALDATA;
+	* */
 	public int getId() {
 		return id;
 	}
