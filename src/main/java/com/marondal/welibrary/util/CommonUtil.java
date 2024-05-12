@@ -3,7 +3,7 @@ package com.marondal.welibrary.util;
 import com.marondal.welibrary.book.model.PagingDTO;
 
 public class CommonUtil {
-
+    // 2024-05-12
     public static PagingDTO calculatePaging(int countPage, int currPage, int size, int totalData) {
 
 //		int totalPage = (totalData -1) / size;
