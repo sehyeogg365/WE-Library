@@ -63,10 +63,7 @@
 						<div class="mt-3 d-flex text-secondary">
 							 대출현황 : &nbsp<div class="text-primary">
 							 					
-							 					<c:forEach var="borrow" begin="0" end="0" items="${borrowCountList }">
-							 					
-							 						${borrow.numberCount }
-							 					</c:forEach>
+							 					${borrowBook}
 							 
 							 				</div>건
 						</div><!-- 여기서도  반납연장 1회 누를시 반납연장불가로 바뀜, 상태는:반납연기 연체되면 연체로 나오게해야함-->

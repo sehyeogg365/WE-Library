@@ -67,28 +67,7 @@ public class InterestBO {
 
 	}
 
-	// 관심도서 갯수 표시
-	public List<InterestBookCount> getInterestBookNumberByUserId(int userId) {
 
-		List<InterestBook> interestList = interestDAO.selectInterestList(userId);
-
-		List<InterestBookCount> interestCountList = new ArrayList<>();
-
-		for (InterestBook interestbook : interestList) {
-
-			int numberCount = interestCountBO.getInterestBookCount(userId);
-
-			InterestBookCount interestBookCount = new InterestBookCount();
-
-			interestBookCount.setNumberCount(numberCount);
-
-			interestCountList.add(interestBookCount);
-
-		}
-
-		return interestCountList;
-
-	}
 
 	// 관심도서 삭제
 	public int deleteInterest(int id) {

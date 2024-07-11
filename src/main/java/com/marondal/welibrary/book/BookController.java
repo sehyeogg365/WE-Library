@@ -70,9 +70,10 @@ public class BookController {
 		model.addAttribute("wishbookList", wishbookList);
 		
 		//여기서 희망도서개수 추가
-		List<WishBookCount> wishbookCountList = wishBookBO.getWishBookNumberByUserId(userId);
-		model.addAttribute("wishbookCountList", wishbookCountList);
-		
+		//List<WishBookCount> wishbookCountList = wishBookBO.getWishBookNumberByUserId(userId);
+		//model.addAttribute("wishbookCountList", wishbookCountList);
+		Integer wishbookCount = wishbookList.size();
+		model.addAttribute("wishBook", wishbookCount);
 		
 		return "book/wishbooklist";
 		
@@ -104,10 +105,10 @@ public class BookController {
 		List<InterestBookDetail> interestDetailList = interestBO.getInterestList(userId);
 		
 		model.addAttribute("interestDetailList", interestDetailList);
-		
-		List<InterestBookCount> interestCountList = interestBO.getInterestBookNumberByUserId(userId);
-		
-		model.addAttribute("interestCountList", interestCountList);
+
+		Integer interestBookCount = interestDetailList.size();
+
+		model.addAttribute("interestBook", interestBookCount);
 
 		//여기서 관심도서개수 추가
 		
@@ -128,9 +129,10 @@ public class BookController {
 		List<BorrowBookDetail> borrowDetailList = borrowBO.getBorrowList(userId);
 		
 		model.addAttribute("borrowDetailList", borrowDetailList);
-		
-		List<BorrowBookCount> borrowCountList = borrowBO.getBorrowBookNumberByUserId(userId);
-		model.addAttribute("borrowCountList", borrowCountList);
+
+		Integer borrowBookCount = borrowDetailList.size();
+
+		model.addAttribute("borrowBook", borrowBookCount);
 		
 		return "book/borrowstatus";
 		
@@ -150,10 +152,12 @@ public class BookController {
 		List<ReserveBookDetail> reserveDetailList = reserveBO.getReserveList(userId);
 		
 		model.addAttribute("reserveDetailList", reserveDetailList);
-		
-		List<ReserveBookCount> reserveCountList = reserveBO.getReserveBookNumberByUserId(userId);
-		model.addAttribute("reserveCountList", reserveCountList);
-		
+
+		Integer reserveBookCount = reserveDetailList.size();
+
+		model.addAttribute("reserveBook", reserveBookCount);
+
+
 		return "book/reservelist";
 		
 		
@@ -175,9 +179,9 @@ public class BookController {
 		
 		model.addAttribute("interibraryDetailList", interibraryDetailList);
 		//여기서 상호대차도서개수 추가
-		
-		List<InteribraryBookCount> interibraryCountList = interibraryBO.getInteribraryBookNumberByUserId(userId);
-		model.addAttribute("interibraryCountList", interibraryCountList);
+
+		Integer interibraryBookCount = interibraryDetailList.size();
+		model.addAttribute("interibraryBook", interibraryBookCount);
 		
 		return "book/interibrarybooklist";
 	}

@@ -62,11 +62,7 @@
 						
 						<div class="mt-3 d-flex text-secondary">
 							 상호대차 현황 : &nbsp<div class="text-primary">
-							 <c:forEach var="interibrarybook" begin="0" end="0" items="${interibraryCountList }">
-							 
-							 	${interibrarybook.numberCount }
-							 
-							 </c:forEach>
+							 ${interibraryBook}
 							 
 							 </div>건
 						</div>

@@ -51,12 +51,8 @@
 			<div class="">
 				<div class="mt-3 d-flex text-secondary">
 						관심도서 신청 :&nbsp
-						<div class="text-primary"> 
-							<c:forEach var="interestbook" begin="0" end="0" items="${interestCountList}"> 
-							
-								${interestbook.numberCount }
-							</c:forEach>
-						
+						<div class="text-primary">
+							${interestBook}
 						</div>건
 				</div>
 					
