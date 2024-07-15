@@ -38,11 +38,10 @@ public class AdminController {
 		
 		List<WishBookDetail> wishbookDetailList = wishBookBO.getWishBookListById(userId);
 		model.addAttribute("wishbookDetailList", wishbookDetailList);		
-		
-		
-		//여기서 관심도서개수 추가
-		//List<WishBookCount> wishBookCountList = wishBookBO.getAllWishBookNumberById(userId);
-		//model.addAttribute("wishBookCountList", wishBookCountList);
+
+		//여기서 희망도서개수 추가
+		Integer wishBookCount = wishbookDetailList.size();
+		model.addAttribute("wishBook", wishBookCount);
 			
 		
 		return "/admin/wishbooklist";

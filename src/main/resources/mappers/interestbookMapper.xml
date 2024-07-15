@@ -41,7 +41,7 @@
   	ORDER BY
   		`id` DESC;
   </select>
-  
+
   <!-- 관심도서 개수 -->
   <select id="selectInterestBookCount" resultType="int" parameterType="int">
   	SELECT
@@ -51,7 +51,7 @@
   	WHERE
   		`userId`=#{userId}
   </select>
-  
+
   <!-- 관심도서 개수 표시 일부러 안함 -->
   
   <!-- 관심도서 삭제 -->

@@ -67,28 +67,6 @@ public class WishBookBO {
 
 	}
 
-	// 희망도서 권수 표시(사용자)
-	public List<WishBookCount> getWishBookNumberByUserId(int userId) {
-
-		List<WishBook> wishbookList = wishBookDAO.selectWishBookList(userId);
-
-		List<WishBookCount> wishbookCountList = new ArrayList<>();
-
-		for (WishBook wishbook : wishbookList) {
-
-			WishBookCount wishbookCount = new WishBookCount();
-
-			int numberCount = wishBookCountBO.getWishBookCount(userId);
-
-			wishbookCount.setNumberCount(numberCount);
-
-			wishbookCountList.add(wishbookCount);
-
-		}
-
-		return wishbookCountList;
-
-	}
 
 	// 관리자 희망도서 신청 리스트
 
@@ -121,29 +99,6 @@ public class WishBookBO {
 
 	}
 
-	// 희망도서 권수 표시(전체 권수)
-
-	// public List<WishBookCount> getAllWishBookNumberById(int id){
-
-	// List<WishBook> wishbookList = wishBookDAO.selectWishBookListById(id);
-
-	// List<WishBookCount> wishbookCountList = new ArrayList<>();
-	//
-	// for(WishBook wishbook : wishbookList) {
-
-	// int allNumberCount = wishBookCountBO.getAllWishBookCount(id);
-
-	// WishBookCount wishbookCount = new WishBookCount();
-
-	// wishbookCount.setAllNumberCount(allNumberCount);
-
-	// wishbookCountList.add(wishbookCount);
-
-	// }
-
-	// return wishbookCountList;
-
-	// }
 
 	// 희망도서 북테이블에 추가
 

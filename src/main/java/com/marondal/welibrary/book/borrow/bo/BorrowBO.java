@@ -75,27 +75,6 @@ public class BorrowBO {
 
 	}
 
-	// 갯수 보여주기 (내 뇌피셜상 카운트하는 BO를 만들고, 보여주는BO를 만들어야 함 그래야 보여질듯)
-	public List<BorrowBookCount> getBorrowBookNumberByUserId(int userId) {
-
-		List<BorrowBook> borrowList = borrowDAO.selectBorrowList(userId);
-
-		List<BorrowBookCount> borrowCountList = new ArrayList<>();
-
-		for (BorrowBook borrowBook : borrowList) {
-
-			BorrowBookCount borrowbookCount = new BorrowBookCount();
-
-			int numberCount = borrowDAO.selectBorrowBookCount(userId);
-
-			borrowbookCount.setNumberCount(numberCount);
-
-			borrowCountList.add(borrowbookCount);
-		}
-
-		return borrowCountList;
-
-	}
 
 	// 반납
 	public int deleteBorrow(int id) {

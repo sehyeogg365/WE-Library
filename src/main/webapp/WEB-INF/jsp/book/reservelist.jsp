@@ -68,10 +68,8 @@
 						<div class="mt-3 d-flex text-secondary">
 							 예약현황 : &nbsp
 							 <div class="text-primary">
-								 <c:forEach var = "reserve"  begin="0" end="0" items="${reserveCountList }">
-								 	${reserve.numberCount }
-								 </c:forEach>
-							 
+								 ${reserveBook}
+
 							 </div>건
 						</div>
 						<!-- 대출중일때 if문 써서 대출중  boolean 타입변수 is 빼고 소문자로-->
