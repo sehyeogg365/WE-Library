@@ -65,7 +65,8 @@
 							 					
 							 					${borrowBook}
 							 
-							 				</div>건
+						</div>건
+
 						</div><!-- 여기서도  반납연장 1회 누를시 반납연장불가로 바뀜, 상태는:반납연기 연체되면 연체로 나오게해야함-->
 						<c:forEach var="borrow" items="${borrowDetailList }">	<!-- 한번 반납연장을 했을때 반납 연장 못하게 -->
 						<hr>
@@ -88,25 +89,26 @@
 							 <c:set var="borrowDateTime" value="${borrowDate.time}" />
     						 <c:set var="returnDateTime" value="${returnDate.time}" />
     						 <c:set var="diffInDays" value="${(returnDateTime - borrowDateTime) / (1000 * 60 * 60 * 24)}" />
+    						 <!-- 오늘날짜를 문자열로 변환 -->
     						 <c:set var="today" value="<%=new java.util.Date()%>" />
-    						 <c:set var="date" value="fmt:formatDate value='${today}' pattern='yyyy-MM-dd' />" />
+    						 <c:set var="date" value="<fmt:formatDate value='${today}' pattern='yyyy-MM-dd' />" />
 							<!-- 2024-03-24 21일이상 차이나는지 여부 판단 -->
 								
 								ㅇ상태 : <c:choose>
-										<c:when test ="${diffInDays >= 21 && date < returnDate}">
-											<div class="text-secondary" id="returnExtensionBtn">반납연장 됨</div>
-											
-										</c:when>
-										<c:when test="${date > returnDate}">
-										    <div class="text-danger">반납연체</div>
-										</c:when>
-										<c:when test="${diffInDays >= 21 && date > returnDate}">
-                                            <div class="text-danger">반납연체</div>
-                                        </c:when>
-										<c:otherwise>
-											<div class="text-primary">대출중</div>
-										</c:otherwise>
-									 </c:choose> 
+                                            <c:when test ="${diffInDays >= 21 && today < returnDate}">
+                                                <div class="text-secondary" id="returnExtensionBtn">반납연장 됨</div>
+
+                                            </c:when>
+                                            <c:when test="${today > returnDate}">
+                                                <div class="text-danger">반납연체</div>
+                                            </c:when>
+                                            <c:when test="${diffInDays >= 21 && date > returnDate}">
+                                                <div class="text-danger">반납연체</div>
+                                            </c:when>
+                                            <c:otherwise>
+                                                <div class="text-primary">대출중</div>
+                                            </c:otherwise>
+                                       </c:choose>
 								
 								&nbsp | &nbsp 대출일 : <fmt:formatDate value="${borrow.createdAt}" pattern ="yyyy.MM.dd"/>&nbsp |&nbsp 반납예정일 : <fmt:formatDate value="${borrow.returnDate}" pattern ="yyyy.MM.dd"/>
 							</div>
