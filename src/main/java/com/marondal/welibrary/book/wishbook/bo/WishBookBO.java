@@ -35,7 +35,6 @@ public class WishBookBO {
 
 	// 희망도서 리스트
 	// 희망도서 리스트(사용자가 신청한 리스트)
-
 	public List<WishBookDetail> getWishBookList(int userId) {
 
 		List<WishBook> wishbookList = wishBookDAO.selectWishBookList(userId);
@@ -66,7 +65,6 @@ public class WishBookBO {
 		return wishbookDetailList;
 
 	}
-
 
 	// 관리자 희망도서 신청 리스트
 
@@ -99,9 +97,7 @@ public class WishBookBO {
 
 	}
 
-
 	// 희망도서 북테이블에 추가
-
 	public int addWishbookIntoBook(String library, String title, MultipartFile file, String author, String publisher,
 			int price, String isbn, int pubyear, String appnedix) {
 

@@ -45,12 +45,11 @@
 					<h5>통합검색</h5>
 				</div>
 				
-				
 				<div class="search d-flex justify-content-center col-9">
 				<!-- 0건일때랑 아닐때로 나눠야 함 제목 입력여부가 아니라 -->
 		     
 				
-					<input type="text" value="${book.title } " placeholder="검색어 입력" id="searchInput"class="form-control" name="title">
+				<input type="text" value="${book.title } " placeholder="검색어 입력" id="searchInput"class="form-control" name="title">
 				
 		    
 		         <div class="input-group-append">
@@ -58,8 +57,7 @@
 		         </div>
 		             
 		        </div>
-		      
-		       
+
 		    </nav> 
 		    	 <div class="ml-5">
 		        	<h5 class="ml-5">검색 결과 
@@ -68,7 +66,6 @@
 						건이 검색되었습니다.
 					</c:forEach>
 						</h5>
-					
 		        </div>
 		    <hr style="border: solid 1px;">
 		   		<div class="mt-3 library-selectbox col-10">
@@ -159,8 +156,6 @@
 							
 							</c:choose>
 							
-							
-							
 							<button class="btn btn-primary btn-sm interestAddBtn" data-book-id="${book.id }"><i class="bi bi-download"></i>관심도서 담기</button>
 						</div>
 					</div>
@@ -172,16 +167,14 @@
 			<hr>
 			
 		</div>
-		
-		
+
 		</div>
 		
 		<!--2024-02-16 수정 내용  tui-pagination 추가 -->
 		<div id="pagination" class="tui-pagination"></div>
 		
 		</div>
-		
-		
+
 		</section>
 		
 		<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
@@ -206,11 +199,8 @@
 	 			return ;
 	 		}
 	 			
-	 			
 	 	});
-	            
-		
-		
+
 		var chkList = $("input[name = library]");
 		 $("#allCheck").on("change", function() {
             // 내 자신이 체크 되었는지 안되었는지
@@ -220,12 +210,7 @@
                 $("input[name='library']").prop("checked", false);
             }
             
-		  }); 
-		 
-        
-         
-         
-       
+		  });
          
          $(".reserveBtn").on("click", function(){
         	 let id = $(this).data("book-id");
@@ -262,12 +247,9 @@
         		 
         		 
         	 });
-        	 
-        	 
-        	 
+
          });
-         
-         
+
          $(".borrowBtn").on("click", function(){
         	 let id = $(this).data("book-id");
         	 
@@ -279,12 +261,10 @@
 			 } else {
 				return ;
 			 }
-	
-        	 
+
         	 //alert(id);
         	 
         	 $.ajax({
-        	
         		 type:"post"
         		 , url:"/book/borrow/create"
         		 , data:{"bookId":id}
@@ -304,9 +284,7 @@
         	 	 }
         		 
         	 });
-        	 
-        	 
-        	 
+
          });
          
          $(".interestAddBtn").on("click", function(){
@@ -324,7 +302,6 @@
         	 //alert(id);
         	 
         	 $.ajax({
-        	
         		 type:"post"
         		 , url:"/book/interest/create"
         		 , data :{"bookId":id}
@@ -341,26 +318,12 @@
         	 	 }
         	 	 
         	 });
-        	 
-        	 
-        	 
-        	 
-        	 
+
          });
-         
-        
-       
-         
-      
-		
-		
+
 	});
-	
-	
-	
-	
+
 	</script>
-	
-	
+
 </body>
 </html>

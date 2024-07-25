@@ -22,6 +22,5 @@ public class InterestBookCount {
 	public void setNumberCount(int numberCount) {
 		this.numberCount = numberCount;
 	}
-	
-	
+
 }

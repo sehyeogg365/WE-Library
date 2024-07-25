@@ -71,7 +71,6 @@
 				}
 				
 				$.ajax({
-					
 					type:"post"
 					, url:"/user/get_pw"
 					, data:{"loginId":id, "name":name, "birth":birth, "phoneNumber":phoneNumber}
@@ -93,18 +92,10 @@
 					
 				});
 				
-				
-				
-				
-				
-				
 			});
 			
-			
 		});
-			
-		
-	
+
 	</script>
 </body>
 </html>

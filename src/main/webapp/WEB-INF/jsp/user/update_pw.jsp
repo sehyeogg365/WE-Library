@@ -50,8 +50,7 @@
 						<div class="d-flex">
 							<label class="mt-4 col-5">새 비밀번호 확인</label><input type="password" id="passwordConfirmInput" placeholder="새 비밀번호 확인" class="form-control mt-4 col-7">
 						</div>
-						
-		
+
 					</div>
 					<div class="d-flex justify-content-center">
 						<button type="button" id="updateBtn" class="btn btn-primary col-6 mt-3 mb-3"  data-user-id = "${user.id }">비밀번호 변경 </button>
@@ -68,7 +67,6 @@
 	</div>
 	<script>
 	$(document).ready(function(){
-		
 		
 		$("#updateBtn").on("click", function(){
 			
@@ -110,8 +108,7 @@
 			//alert(oldpassword);
 			//alert(password);
 			//alert(passwordConfirm);
-			
-			
+
 			$.ajax({
 				type:"get"
 				, url:"/user/pw_check"
@@ -157,10 +154,7 @@
 		
 		
 	});
-	
-	
-	
-	
+
 	</script>
 
 </body>

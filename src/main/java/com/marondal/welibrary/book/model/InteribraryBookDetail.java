@@ -80,6 +80,5 @@ public class InteribraryBookDetail {
 	public void setReturnDate(Date returnDate) {
 		this.returnDate = returnDate;
 	}
-	
-	
+
 }

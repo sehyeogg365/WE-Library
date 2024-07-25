@@ -87,7 +87,5 @@ public class Book {//lombok 써보기
 	public void setUpdatedAt(Date updatedAt) {
 		this.updatedAt = updatedAt;
 	}
-	
 
-	
 }

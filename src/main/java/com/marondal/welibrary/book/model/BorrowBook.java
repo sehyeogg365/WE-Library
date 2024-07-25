@@ -46,7 +46,4 @@ public class BorrowBook {
 		this.returnDate = returnDate;
 	}
 
-	
-	
-	
 }

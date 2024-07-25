@@ -24,11 +24,4 @@ public class WishBookCount {
 		this.numberCount = numberCount;
 	}
 
-	
-	
-
-	
-	
-	
-	
 }

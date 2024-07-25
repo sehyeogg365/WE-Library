@@ -61,8 +61,7 @@ public class PermissionInterceptor implements HandlerInterceptor{
 				
 				return false;//원래 가려 했던 그 목적페이지에 못가게 하려면 폴스
 			}
-			
-			
+
 			} else {
 			// 로그인이 안되었을떄
 			// 마이페이지, 비밀번호 찾기, 대출목록 등 페이지로 접근하려고 하면
@@ -99,19 +98,9 @@ public class PermissionInterceptor implements HandlerInterceptor{
 				}
 				
 			}
-		
-		
-		
-		
 
-		
-		
-		
-		
-		
 		return true;//문제없이 여기까지 왔으면 정상수행
-		
-		
+
 		//pre handle override
 	}
 }

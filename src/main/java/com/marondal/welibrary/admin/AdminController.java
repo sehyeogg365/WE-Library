@@ -42,16 +42,11 @@ public class AdminController {
 		//여기서 희망도서개수 추가
 		Integer wishBookCount = wishbookDetailList.size();
 		model.addAttribute("wishBook", wishBookCount);
-			
-		
+
 		return "/admin/wishbooklist";
+
 	}
-	
-	
+
 	// 공지사항 등록/수정, 행사 등록/수정
-	
-	
-	
-	
-	
+
 }

@@ -49,13 +49,12 @@
 						    ${wishBook}
 						</div>건
 				</div>
-						<!-- 신청여부 조사 북테이블에있을시 소장중 없을시 신청중 -->
-						<c:forEach var="wishbook" items="${wishbookList }">	
+					<!-- 신청여부 조사 북테이블에있을시 소장중 없을시 신청중 -->
+					<c:forEach var="wishbook" items="${wishbookList }">
 						<hr>
 						
 						<div class="">
-							
-						
+
 							<div class="">
 								<h5>${wishbook.title }</h5>
 							</div>
@@ -68,22 +67,20 @@
 							</div>
 							
 							<div class="text-secondary d-flex">
-								상태 : <c:choose>
-										<c:when test = "${wishbook.add }">
-											<p>소장중</p>
-										</c:when>
-										<c:otherwise>
-											<p>신청중</p>
-										</c:otherwise>
-									  </c:choose>
+                            상태 : <c:choose>
+                                    <c:when test = "${wishbook.add }">
+                                        <p>소장중</p>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <p>신청중</p>
+                                    </c:otherwise>
+                                  </c:choose>
 							</div>
 						</div>
 						
 					</c:forEach>
 					<hr>
 			</div>
-		
-			
 		
 			<div class="text-center">
 				<a href="/book/wishbook/add/view?id=${userId }" class="btn btn-primary	">희망도서 신청하기</a>
@@ -94,8 +91,7 @@
 		</div>
 		
 		</section>
-		
-		
+
 		<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
 	
 	</div>

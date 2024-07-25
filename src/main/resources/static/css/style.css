@@ -2,47 +2,33 @@
 
 
 #wrap{
-	
 	width:1200px;	
 	margin: auto;
-		
 }
 
 header{
-	
 	height:70px;
 	background-color:#FFEBCD;
-	
 }
 
 footer{
-	
 	height:70px;
 	background-color:#FFEBCD;
 }
 
 .contents > .join-box{
-	
 	width:450px;
-
-
 }
 
 .contents > .login-box{
-	
 	width:350px;
-	
-	
 }
 
 .contents > .main-page {
-	
 	width:1200px;
-	
 }
 
 .main-profile{
-	
 	height:200px;
 }
 
@@ -52,12 +38,12 @@ footer{
 	object-fit: cover;
 	margin : auto;
 }
+
 .main-profile >.main-text {
 	padding: 10px 10px;
 	position: absolute;
 	left: 50%;
     transform: translate(-50%, -115%);
-
 }
 
 .sub-profile > .img-box> .profile {
@@ -72,7 +58,6 @@ footer{
 	position: absolute;
 	left: 50%;
     transform: translate(-50%, -160%);
-
 }
 
 .sub-profile >.sub-text2 {
@@ -80,74 +65,56 @@ footer{
 	position: absolute;
 	left: 50%;
     transform: translate(-50%, -110%);
-
 }
 
 .main-nav{
-	
 	background-color: #4169E1;
 }
 
 .main-section{
-	
 	background-color:#ADD8E6;
 }
 
 .main-page > .main-contents{
-	
 	height:800px;
-	
 }
 
 .main-contents > .main-login-box {
-	
 	height:220px;
 	background-color: white;
 	border-radius: 8px;
 }
 
 .main-login-box > .main-login-box-contents {
-	
 	height:220px;
 	background-color:white;
 	border-radius: 8px;
 }
 
 .mybook{
-	
 	background-color: #87CEEB;
 	border-radius: 8px;
 }
 
 .main-page > .sub-contents{
-	
-	
 	height:800px;
 }
 
 .sub-contents >.announce-box{
-	
 	background-color:white;
 	border-radius: 8px;
 }
 
 .main-page > .sub-contents2{
-		
 	height:800px;
-	
 }
 
 .table_box{
-	
 	border: 1px solid;
-	
 	border-radius: 8px;
-	
 }
 
-
 .sub-section{
-	
 	background-color: #FFFFF0;
 }
 
@@ -199,17 +166,13 @@ footer{
 }
 
 .userinfo-page{
-	
 	width:1200px;
-	
 }
 
 .side-nav {
-	
 	background-color: 	#87CEEB;
 	border-radius: 8px;
 	height:550px;
-	
 }
 
 .first-nav{
@@ -231,22 +194,16 @@ footer{
 }
 
 .mybookinfo-page{
-	
 	width:1200px;
-	
 }
 .side-nav2 {
-	
 	background-color: 	#87CEEB;
 	border-radius: 8px;
 	height:400px;
-	
 }
 
 .item{
-	
 	background-color:	#D3D3D3;
-	
 }
 
 
@@ -255,7 +212,6 @@ footer{
 }
 
 .wishbookcard{
-	
 	width:1000px;
 	border: 1px solid;
 	border-radius: 8px;
@@ -267,14 +223,12 @@ footer{
 }
 
 .booksearch-nav{
-	
 	width:1000px;
 	background-color: #4169E1;
 	margin:auto;
 }
 
 .library-selectbox{
-	
 	width:1000px;
 	margin:auto;
 }
@@ -305,8 +259,6 @@ footer{
 	background-color: #D3D3D3;
 }
 
-
-
 .librarybookinfo-page{
 	width:1200px;
 }
@@ -321,7 +273,6 @@ footer{
 .info-box{
 	width:900px;
 	margin:auto;
-	
 }
 
 .bookinfo-box >.bookinfo-profile{
@@ -330,21 +281,17 @@ footer{
 }
 
 .bookinfo-profile>.profile{
-	
 	width:150px;
   	height:150px;
-  	object-fit: contain;  
-  	
+  	object-fit: contain;
 }
 
 .possessioninfo-box{
 	width:900px;
 	margin:auto;
-	
 }
 
 .list-nav{
-	
 	width:150px;
 	border: 1px solid;
 	border-color:gray;

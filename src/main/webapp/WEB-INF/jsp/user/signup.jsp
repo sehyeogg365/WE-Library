@@ -66,7 +66,6 @@
 						 	<option value="10">10</option>
 						 	<option value="11">11</option>
 						 	<option value="12">12</option>
-						 	
 						 </select>
 						 <div class="mt-4 col-1">월</div>
 						<select class="form-control mt-4 col-3" id="daySelector">
@@ -102,12 +101,10 @@
 						 	<option value="29">29</option>
 						 	<option value="30">30</option>
 						 	<option value="31">31</option>
-						 	
 						 </select>
 						<div class="mt-4 col-1">일</div>
 					</div>
-					
-					
+
 					<div class="d-flex align-items-center">
 						<input type="text" id="emailIdInput" placeholder="이메일" class="form-control mt-4 col-5">
 						
@@ -121,8 +118,7 @@
 						 </select>
 					 
 					</div>
-					
-					
+
 					<div class="d-flex justify-content-between">
 						<select class="form-control mt-4 col-3" id="phoneNumberSelector">
 						 	<option value="02">02</option>
@@ -139,14 +135,9 @@
 					<!-- 테스트커밋해보기444 -->
 			
 			</div>
-		
-		
-		
+
 		</section>
-		
-		
-		
-		
+
 		<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
 		
 	</div>
@@ -168,9 +159,7 @@
 			 $("#nonDuplicated").addClass("d-none");
 			//다시 지우면 중복확인 상태가 초기화
 		});
-		
-		
-		
+
 		$("#duplicateBtn").on("click", function(){
 			
 			let id = $("#loginIdInput").val();
@@ -204,12 +193,9 @@
 				}
 				
 			});
-			
-			
+
 		});
-		
-		
-		
+
 		$("#joinBtn").on("click", function(){
 			
 			let id = $("#loginIdInput").val();
@@ -331,10 +317,6 @@
 				
 			});
 			
-			
-			
-			
-			
 		});
 		
 		
@@ -342,10 +324,6 @@
 	
 	</script>
 
-
-
 </body>
-
-
 
 </html>

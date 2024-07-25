@@ -20,8 +20,6 @@ public interface InterestDAO {
 	// 관심도서 갯수
 	public int selectInterestBookCount(@Param("userId") int userId);
 
-
-
 	// 관심도서 삭제
 	public int deleteInterest(@Param("id") int id);
 

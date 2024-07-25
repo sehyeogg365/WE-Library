@@ -22,6 +22,5 @@ public class ReserveBookCount {
 	public void setNumberCount(int numberCount) {
 		this.numberCount = numberCount;
 	}
-	
-	
+
 }
