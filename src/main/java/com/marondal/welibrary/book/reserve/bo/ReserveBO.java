@@ -3,17 +3,13 @@ package com.marondal.welibrary.book.reserve.bo;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.marondal.welibrary.book.interibrary.bo.InteribraryBO;
+import com.marondal.welibrary.book.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.marondal.welibrary.book.bo.BookBO;
 import com.marondal.welibrary.book.borrow.bo.BorrowBO;
-import com.marondal.welibrary.book.model.Book;
-import com.marondal.welibrary.book.model.BookDetail;
-import com.marondal.welibrary.book.model.BorrowBook;
-import com.marondal.welibrary.book.model.ReserveBook;
-import com.marondal.welibrary.book.model.ReserveBookCount;
-import com.marondal.welibrary.book.model.ReserveBookDetail;
 import com.marondal.welibrary.book.reserve.dao.ReserveDAO;
 
 @Service
@@ -30,6 +26,9 @@ public class ReserveBO {
 
 	@Autowired
 	private ReserveCountBO reserveCountBO;
+
+	@Autowired
+	private InteribraryBO interibraryBO;
 
 	// 예약
 	public int addReserve(int bookId, int userId) {
@@ -49,7 +48,8 @@ public class ReserveBO {
 
 			BookDetail book = bookBO.getBookById(reserveBook.getBookId());
 
-			BorrowBook borrowbook = borrowBO.getBorrow(book.getId());
+			BorrowBook borrowbook = borrowBO.getBorrow(book.getId());// 여기가 널일때 상호대차의 리턴데이트를 불러온다 이렇게 되어야 함
+			InteribraryBook interibraryBook = interibraryBO.getInteribrary(book.getId());
 
 			// 대출상태
 			boolean isBorrow = reserveCountBO.isBorrow(book.getId());// 상태
@@ -65,7 +65,7 @@ public class ReserveBO {
 			reserveBookDetail.setAuthor(book.getAuthor());
 			reserveBookDetail.setPublisher(book.getPublisher());
 			reserveBookDetail.setCreatedAt(reserveBook.getCreatedAt());// 반납예정일도 추가하기
-			reserveBookDetail.setReturnDate(borrowbook.getReturnDate());// 반납예정일
+			reserveBookDetail.setReturnDate(borrowbook.getReturnDate());// 반납예정일 대출중 도서는 대출테이블의 리턴데이트 상호대차중 도서는 상호대차테이블의 리턴데이트
 			// 대출상태, 예약순번/예약인원수도 필요함
 			reserveBookDetail.setStatus(isBorrow);// 대출상태
 			reserveBookDetail.setReserveCount(reserveCount);// 예약 인원수
@@ -76,7 +76,6 @@ public class ReserveBO {
 		return reserveDetailList;
 
 	}
-
 
 	// 예약 취소
 	public int deleteReserve(int id) {

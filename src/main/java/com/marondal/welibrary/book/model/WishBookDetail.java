@@ -95,8 +95,5 @@ public class WishBookDetail {//희망도서 리스트 카드 한장에 들어가
 	public void setCreatedAt(Date createdAt) {
 		this.createdAt = createdAt;
 	}
-	
 
-	
-	
 }

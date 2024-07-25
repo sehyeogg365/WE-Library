@@ -27,8 +27,7 @@ public class LibraryController {
 
 	@Autowired
 	private BorrowBO borrowBO;
-	// @Autowired
-	// private LibraryBO libraryBO;
+
 	@Autowired
 	private InteribraryBO interibraryBO;
 
@@ -47,6 +46,11 @@ public class LibraryController {
 
 		List<BookCount> bookCountList = bookBO.getBookNumberBytitle(title);
 		model.addAttribute("bookCountList", bookCountList);
+
+		/*
+		* Integer bookCount = bookDetailList.size();
+		* model.addAttribute("book", bookCount);
+		* */
 
 		// List<Book> bookList = bookBO.getBookByTitle(title);
 		// model.addAttribute("bookList", bookList);

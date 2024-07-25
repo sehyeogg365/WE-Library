@@ -65,7 +65,6 @@
 				return ;	
 			}
 			
-			
 			$.ajax({
 				type:"get"
 				, url:"/user/find_id"
@@ -82,19 +81,13 @@
 					alert("아이디 찾기 에러");
 				}//뭐가 들어가야할까?
 			});
-			
-			
+
 		});
-		
-		
+
 	});
-	
-	
+
 	</script>
 	
-	
 </body>
-
-
 
 </html>

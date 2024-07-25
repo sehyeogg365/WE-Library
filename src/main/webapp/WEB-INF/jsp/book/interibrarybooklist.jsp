@@ -100,18 +100,13 @@
 								<button id="interibrarydeleteBtn" class="btn btn-primary btn-sm deleteBtn my-3" data-interibrary-id="${interibrary.id }">취소</button>
 							
 							</div>
-						
-						
+
 						</div>	
 						</c:forEach>	
-						
-						
+
 						<hr>
 					
 					</div><br>
-					
-				
-					
 					
 				</div>
 				
@@ -129,13 +124,10 @@
 	//수령 = 대여목록 추가(대출), 대여를 의미하고 dto로는 borrow_book테이블에 있는지여부를 조사하여 있으며 있으면 대여중 이런식으로 글자 변경
 		$(document).ready(function(){
 			
-			
 			$(".addBtn").on("click", function(){
 				
 				let id = $(this).data("book-id");
-				
-				
-				
+
 				var result = confirm("수령 하시겠습니까?");
 				
 				if(result){
@@ -147,7 +139,6 @@
 				alert(id);
 				
 				$.ajax({
-					
 					type:"post"
 		        	, url:"/book/borrow/create"
 		        	, data:{"bookId":id}
@@ -163,22 +154,15 @@
 		        	 }
 		        	 , error:function(){
 		        	 	alert("대출 에러");
-		 
 		        	 }
-					
-					
 				});
-				
-				
+
 			});
-			
-			
-			
+
 			$(".deleteBtn").on("click", function(){
 				
 				let id = $(this).data("interibrary-id");
-				
-				
+
 				var result = confirm("상호대차 취소 하시겠습니까?");
 				
 				if(result){
@@ -189,9 +173,7 @@
 				
 				alert(id);
 				
-				
 				$.ajax({
-					
 					type:"get"
 					, url:"/book/interibrary/delete"
 					, data :{"id":id}
@@ -211,17 +193,11 @@
 					
 					
 				});
-				
-				
-				
-				
+
 			});
-			
-			
-			
+
 		});
-		
-	
+
 	</script>
 </body>
 </html>

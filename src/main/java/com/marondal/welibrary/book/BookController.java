@@ -59,12 +59,10 @@ public class BookController {
 	
 	@GetMapping("/wishbook/list/view")
 	public String wishbookList(Model model
-			, HttpSession session                                                                    
-			) {
-	
-		                                                                                                                                                              
+						      , HttpSession session
+							  ) {
+
 		int userId = (Integer) session.getAttribute("userId");
-		
 
 		List<WishBookDetail> wishbookList = wishBookBO.getWishBookList(userId);
 		model.addAttribute("wishbookList", wishbookList);
@@ -92,13 +90,13 @@ public class BookController {
 	
 	@GetMapping("/interestbooklist/view")
 	public String interestBookList(Model model
-								, @RequestParam("id") int id
+								//, @RequestParam("id") int id
 								, HttpSession session
 								) {
 		
 		int userId = (Integer)session.getAttribute("userId");
 		
-		User user = userBO.getUserInfo(id); //이상하게 DAO로 해도 잘불러와지더라.
+		User user = userBO.getUserInfo(userId); //이상하게 DAO로 해도 잘불러와지더라.
 		
 		model.addAttribute("user", user);
 
@@ -117,14 +115,9 @@ public class BookController {
 	
 	@GetMapping("/borrowstatus/view")
 	public String borrowStatus(Model model
-							//, @RequestParam("id") int id
 							, HttpSession session) {
 			
 		int userId = (Integer)session.getAttribute("userId");
-		
-		//User user = userBO.getUserInfo(id); 
-		
-		//model.addAttribute("user", user);
 		
 		List<BorrowBookDetail> borrowDetailList = borrowBO.getBorrowList(userId);
 		
@@ -140,14 +133,9 @@ public class BookController {
 	
 	@GetMapping("/reservelist/view")
 	public String reserveList(Model model
-							//, @RequestParam("id") int id
 							, HttpSession session) {
 		
 		int userId = (Integer)session.getAttribute("userId");
-		
-		//User user = userBO.getUserInfo(id); 
-		
-		//model.addAttribute("user", user);
 		
 		List<ReserveBookDetail> reserveDetailList = reserveBO.getReserveList(userId);
 		
@@ -157,16 +145,12 @@ public class BookController {
 
 		model.addAttribute("reserveBook", reserveBookCount);
 
-
 		return "book/reservelist";
-		
-		
-		
+
 	}
 	
 	@GetMapping("/interibrarybooklist/view")
 	public String interibraryBookList(Model model
-									//, @RequestParam("id") int id
 									, HttpSession session) {
 		
 		int userId = (Integer)session.getAttribute("userId");
@@ -185,29 +169,23 @@ public class BookController {
 		
 		return "book/interibrarybooklist";
 	}
-	
-	
-	
-	
+
 	@GetMapping("/bookaddpopup/view")
 	public String bookAddPopUp(Model model
 							   , @RequestParam("title") String title
 							   ) {
 
-		
-		
 		return "book/bookaddpopup";
-		
+
 	}
-	
+
 	@GetMapping("/borrowhistory/view")
 	public String borrowHistory(Model model
 								, HttpSession session) {
-		
+
 		int userId = (Integer)session.getAttribute("userId");
-		
+
 		return "book/borrowhistory";
 	}
-	
-	
+
 }

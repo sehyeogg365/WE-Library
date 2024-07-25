@@ -26,7 +26,6 @@ import com.marondal.welibrary.book.wishbook.bo.WishBookBO;
 @RequestMapping("/book")
 public class BookRestController {
 
-	
 	@Autowired
 	private WishBookBO wishBookBO;
 	
@@ -38,8 +37,7 @@ public class BookRestController {
 	
 	@Autowired
 	private ReserveBO reserveBO;
-	
-	
+
 	@Autowired
 	private InteribraryBO interibraryBO;
 	
@@ -71,8 +69,6 @@ public class BookRestController {
 		
 		return resultMap;
 		
-		
-		
 	}
 	
 	// 희망도서/ 도서 북테이블에 추가
@@ -88,8 +84,6 @@ public class BookRestController {
 											, @RequestParam("appendix") String appendix
 											
 											){
-		
-		
 
 		int count = wishBookBO.addWishbookIntoBook(library, title, file, author, publisher, price, isbn, pubyear, appendix);
 			
@@ -102,12 +96,10 @@ public class BookRestController {
 		} else {
 			
 			resultMap.put("result", "fail");
-			
-			
+
 		}
+
 		return resultMap;
-		
-		
 		
 	}
 	
@@ -132,20 +124,16 @@ public class BookRestController {
 			resultMap.put("result", "fail");
 			
 		}
-		
-		
+
 		return resultMap;
-		
-		
+
 	}
 	
 	// 관심도서 삭제 
 	@GetMapping("/interest/delete")
 	public Map<String, String> interestDelete(@RequestParam("id")int id
 											  ){
-		
-	
-		
+
 		int count = interestBO.deleteInterest(id);
 		
 		Map<String, String> resultMap = new HashMap<>();
@@ -161,8 +149,7 @@ public class BookRestController {
 		}
 		
 		return resultMap;
-		
-		
+
 	}
 	
 	//대여
@@ -187,19 +174,16 @@ public class BookRestController {
 			resultMap.put("result", "fail");
 			
 		}
-		
-		
+
 		return resultMap;
-		
-		
+
 	}
 	
 	//반납
 	@GetMapping("/borrow/delete")
 	public Map<String, String> borrowDelete(@RequestParam("id") int id
 											){
-		
-		
+
 		int count = borrowBO.deleteBorrow(id);
 		
 
@@ -215,7 +199,6 @@ public class BookRestController {
 			
 		}
 
-
 		return resultMap;
 		
 	}	
@@ -223,8 +206,7 @@ public class BookRestController {
 	@PostMapping("/borrow/update")
 	public Map<String, String> borrowUpdate(@RequestParam("id") int id
 											, HttpSession session){
-		
-		
+
 		int userId = (Integer) session.getAttribute("userId");
 		
 		int count = borrowBO.updateBorrow(userId, id);
@@ -242,11 +224,9 @@ public class BookRestController {
 		}
 		
 		return resultMap;
-		
-		
+
 	}
-	
-	
+
 	//예약
 	@PostMapping("/reservation/create")
 	public Map<String, String> reservationCreate(@RequestParam("bookId") int bookId
@@ -271,9 +251,7 @@ public class BookRestController {
 		}
 		
 		return resultMap;
-		
-		
-		
+
 	}
 	
 	
@@ -295,12 +273,9 @@ public class BookRestController {
 			resultMap.put("result", "fail");
 			
 		}
-		
-		
+
 		return resultMap;
-		
-		
-		
+
 	}
 	
 	//상호대차
@@ -328,14 +303,11 @@ public class BookRestController {
 		return resultMap;
 
 	}
-	
-	
-	
+
 	//상호대차 취소
 	@GetMapping("/interibrary/delete")
 	public Map<String, String> interibraryDelete(@RequestParam("id") int id){
-		
-		
+
 		int count = interibraryBO.deleteInteribrary(id);
 		
 		Map<String, String> resultMap = new HashMap<>();
@@ -353,21 +325,18 @@ public class BookRestController {
 		return resultMap;
 		
 	}
-	
-	
+
 	//2024-03-17 대출이력 추가
 	@PostMapping("borrowhistory/create")
 	public Map<String, String>borrowhistoryAdd(@RequestParam("bookId") int bookId
 											   , HttpSession session){
-		
-		
+
 		Map<String, String> resultMap = new HashMap<>();
 		
 		int userId = (Integer) session.getAttribute("userId");
 		
 		int count = borrowBO.addBorrowHistory(bookId, userId);
-		
-		
+
 		if(count == 1) {
 			
 			resultMap.put("result", "success");
@@ -381,8 +350,5 @@ public class BookRestController {
 		return resultMap;
 		
 	}
-	
-	
-	
 	
 }

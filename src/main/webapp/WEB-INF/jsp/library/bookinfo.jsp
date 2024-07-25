@@ -143,22 +143,15 @@
 				</c:forEach>
 				
 			</div>
-			
-	
-			
-			
-			
+
 			</section>
 			<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
 		</div>
-		
-	
+
 
 	<script>
 	$(document).ready(function(){
-		
-		
-		
+
 		$(".reserveBtn").on("click", function(){
 	       	 let id = $(this).data("book-id");
 			 var result = confirm("예약 하시겠습니까?");
@@ -172,7 +165,6 @@
 	       	 //alert(id);
 	       	 
 	       	 $.ajax({
-	       		
 	       		 type:"post"
 	       		 , url:"/book/reservation/create"
 	       		 , data:{"bookId":id}

@@ -64,9 +64,7 @@
 	<script>
 	
 	$(document).ready(function(){
-		
-		
-		
+
 		$("#deleteBtn").on("click", function(){
 			
 			let id = $(this).data("user-id");
@@ -98,33 +96,20 @@
 						alert("회원탈퇴 성공");	
 						location.href="/user/signin/view";
 					} else {
-						alert("회원탈퇴 실패");	
-						
-							
+						alert("회원탈퇴 실패");
 					}
-					
 				}
-				
 				,error:function(){
-					alert("회원탈퇴 에러");	
-					
-					
+					alert("회원탈퇴 에러");
 				}
-				
-				
+
 			});
 			
-			
-			
-			
 		});
-		
-		
+
 	});
-	
-	
-	
+
 	</script>
 
 </body>
-</html></html>
+</html>

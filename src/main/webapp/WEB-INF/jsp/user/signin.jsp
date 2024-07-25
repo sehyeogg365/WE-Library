@@ -13,7 +13,6 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 	<link rel="stylesheet" href="/static/css/style.css" type="text/css">
-
 	
 </head>
 <body>
@@ -28,13 +27,11 @@
 			</div>
 					
 	</div>
-	
-	
+
 	<section class="contents d-flex justify-content-center">
 		
 		<div class="login-box mt-3">
 
-		
 			<input type="text" id="loginIdInput" placeholder="로그인 ID" class="form-control mt-4">
 			<input type="password" id="passwordInput" placeholder="비밀번호" class="form-control mt-4">
 			
@@ -48,10 +45,8 @@
 		
 		</div>
 	
-	
 	</section>
-	
-		
+
 	<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
 	</div>
 	
@@ -99,16 +94,11 @@
 				
 			});
 			
-			
-			
 		});
-		
-		
 		
 	});
 	
 	</script>
-	
-	
+
 </body>
 </html>

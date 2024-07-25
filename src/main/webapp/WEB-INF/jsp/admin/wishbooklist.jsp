@@ -39,18 +39,15 @@
 			<div class="">
 				<div class="mt-3 d-flex text-secondary">
 						희망도서 신청현황 :
-
 						&nbsp
 						<div class="text-primary"> 
 						    ${wishBook}
 						</div>건
-
 				</div>
 							
 					<hr>
 				<div class="d-flex flex-wrap">
-				
-					
+
 					<c:forEach var="wishbook" items= "${wishbookDetailList }" varStatus="status">
 						<hr>
 						<div class="wishbookcard d-flex justify-content-between">
@@ -80,10 +77,7 @@
 						
 						<hr>
 					</c:forEach>
-					
-		
-		
-			
+
 				</div>
 			
 				<!--  
@@ -91,9 +85,7 @@
 					<a href="#" class="btn btn-primary" onclick="window.open('/book/bookaddpopup/view','new','scrollbars=yes,resizable=no width=500 height=500, left=0,top=0');return false">도서 검색하기</a>
 				</div>
 				-->
-		
-		
-		
+
 			</div>
 		
 		
@@ -188,14 +180,7 @@
 	<script>
 		$(document).ready(function(){
 			
-			
-
-			
-			
-			
 			$("#addBtn").on("click", function(){
-				
-				
 				let title = $("#titleInput").val();
 				let library = $("#librarySelector").val();
 				let file = $("#fileInput")[0];
@@ -240,8 +225,7 @@
 				formData.append("isbn", isbn);
 				formData.append("pubyear", pubyear);
 				formData.append("appendix", appendix);
-				
-				
+
 				$.ajax({
 					
 					type:"post"
@@ -262,24 +246,17 @@
 							alert("추가 실패");
 							
 						} 
-							
-					
+
 					}
 					,error:function(){
 						
 						alert("추가 에러");
 					}
-					
-					
+
 				});
 				
-				
-				
 			});
-			
-			
-			
-			
+
 		});
 		
 	

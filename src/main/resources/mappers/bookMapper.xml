@@ -50,7 +50,6 @@
   	
   	<!-- 책 1행정보 조회(상호대차 팝업창) -->
   	<select id = "selectBookById" resultType="com.marondal.welibrary.book.model.BookDetail" parameterType="int">
-  	
   		SELECT
   			`id`
 	  		, `library`
@@ -68,8 +67,6 @@
   			`book`
   		WHERE
   			`id` = #{id}
-
-  	
   	</select>
   	
   	<!-- 책 제목 조회 -->

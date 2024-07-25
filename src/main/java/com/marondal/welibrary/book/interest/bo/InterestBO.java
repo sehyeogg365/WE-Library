@@ -67,8 +67,6 @@ public class InterestBO {
 
 	}
 
-
-
 	// 관심도서 삭제
 	public int deleteInterest(int id) {
 

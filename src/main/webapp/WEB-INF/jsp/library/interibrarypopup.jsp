@@ -131,7 +131,6 @@
         }
        	
        	 $.ajax({
-       		
        		 type:"post"
        		 , url:"/book/interibrary/create"
        		 , data : {"bookId" :id, "receivelibrary":library}
@@ -154,10 +153,8 @@
        	 	 }
        		 
        	 });
-       	 
-       	 
+
         });
-		
 		
 	});
 	

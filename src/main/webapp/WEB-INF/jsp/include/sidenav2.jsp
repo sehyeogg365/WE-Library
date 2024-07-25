@@ -10,8 +10,7 @@
 </head>
 <body>
 	<nav class="side-nav2 col-3">
-	
-	
+
 		<ul class="nav flex-column mt-4 "> 
 				
 			<li class="nav-item first-nav"><h4 class="text-center text-white font-weight-bold mt-2">내서재</h4><hr></li>
@@ -20,8 +19,6 @@
 			<li class="nav-item"><div class="font-weight-bold" style="font-size :18px;"><a href="/book/wishbook/list/view?id=${userId }" class="nav-link text-dark">희망도서 신청조회</a></div><hr></li>
 			<li class="nav-item"><div class="font-weight-bold"style="font-size :18px;"><a href="#" class="nav-link text-dark">문화행사 신청조회</a></div><hr></li>		
 		</ul>
-				
-				
 				
 	</nav>
 
@@ -38,8 +35,7 @@
 			});
 			
 		});
-		
-		
+
 	});
 	</script>
 </body>

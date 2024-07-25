@@ -28,12 +28,7 @@
 		</div>
 		<section class="contents d-flex justify-content-center ">
 			
-			
-			
 			<div class="join-box  mt-3">
-				
-			
-				
 					
 				<div class="d-flex">
 					<input type="text" id="loginIdInput" placeholder="로그인 ID" class="form-control mt-4 col-9">
@@ -65,7 +60,6 @@
 						 	<option value="10">10</option>
 						 	<option value="11">11</option>
 						 	<option value="12">12</option>
-						 	
 						 </select>
 						 <div class="mt-4 col-1">월</div>
 						<select class="form-control mt-4 col-3" id="daySelector">
@@ -101,7 +95,6 @@
 						 	<option value="29">29</option>
 						 	<option value="30">30</option>
 						 	<option value="31">31</option>
-						 	
 						 </select>
 						<div class="mt-4 col-1">일</div>
 					</div>
@@ -116,12 +109,10 @@
 						 	<option value="@kakao.com">kakao.com</option>
 						 	<option value="@gmail.com">gmail.com</option>
 						 	<!-- 시간날때 해보기 <option value = "selfInput">직접입력</option>-->
-						 	
 						 </select>
-					 
+
 					</div>
-					
-					
+
 					<div class="d-flex justify-content-between">
 						<select class="form-control mt-4 col-3" id="phoneNumberSelector">
 						 	<option value="02">02</option>
@@ -133,21 +124,15 @@
 						<div class="d-flex align-items-center">-</div>
 						<input type="text" id="phoneNumberInput3" placeholder="전화번호" class="form-control mt-4 ml-1 col-3">
 					</div>
+
 					<input type="text" id="isAdminInput" value="1" class="form-control mt-4 d-none" readonly>
 					<input type="text" id="certificationInput" placeholder="인증번호" class="form-control mt-4">
 					<!-- 북마크 명 바꾸고 커밋해보기 -->
 					<button type="button" class="btn btn-primary btn-block mt-3 mb-3" id="joinBtn">회원 가입</button>
-			
-			
+
 			</div>
 		
-		
-		
 		</section>
-		
-		
-		
-		
 	
 		<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
 	</div>
@@ -169,7 +154,6 @@
 			 $("#nonDuplicated").addClass("d-none");
 			//다시 지우면 중복확인 상태가 초기화
 		});
-		
 		
 		$("#duplicateBtn").on("click", function(){
 			
@@ -204,13 +188,9 @@
 				}
 				
 			});
-			
-			
+
 		});
-			
-		
-		
-		
+
 		
 		$("#joinBtn").on("click", function(){
 			
@@ -334,8 +314,7 @@
 			//alert(phoneNumber);
 			//alert(isAdmin);
 			//alert(certificationNumber);
-			
-			
+
 			$.ajax({
 				type: "post"
 				, url: "/user/adminsignup"
@@ -353,16 +332,11 @@
 				}
 				
 			});
-			
-			
-			
-			
-			
+
 		});
 		
 	});
-	
-	
+
 	</script>
 
 </body>

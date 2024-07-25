@@ -121,7 +121,6 @@
 				
 				</div>
 		
-		
 		</div>
 	</section>
 	
@@ -129,11 +128,9 @@
 	</div>
 	<script>
 		$(document).ready(function(){
-			
-			
+
 			$(".deleteBtn").on("click", function(){
-				
-				
+
 				let id = $(this).data("reserve-id");
 				var result = confirm("취소 하시겠습니까?");
 				
@@ -163,25 +160,13 @@
 						alert("예약취소 에러");
 					}
 					
-					
-					
 				});
-				
-				
+
 			});
-			
-			
-			
-			
-			
-			
+
 		});
-		
-	
 	
 	</script>
-
-
 
 </body>
 </html>

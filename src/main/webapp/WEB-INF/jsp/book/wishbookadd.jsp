@@ -206,9 +206,7 @@
 				alert("제목을 입력하세요.");
 				return;
 			}
-			
-			
-			
+
 			if(author == ""){
 				alert("저자를 입력하세요.");
 				return;
@@ -262,9 +260,7 @@
 			formData.append("pubyear", pubyear);
 			formData.append("isbn", isbn);
 			formData.append("price", price);
-			
-			
-			
+
 			$.ajax({
 				
 				type:"post"
@@ -288,8 +284,6 @@
 				}
 				
 			});
-			
-			
 			
 		});
 	});

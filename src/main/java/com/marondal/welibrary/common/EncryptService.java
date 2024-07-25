@@ -26,8 +26,7 @@ public class EncryptService {
 				
 				resultString += Integer.toHexString(digest[i] & 0xff);
 			}
-			
-			
+
 		} catch (NoSuchAlgorithmException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

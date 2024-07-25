@@ -139,7 +139,6 @@
 							 	<option value="10">10</option>
 							 	<option value="11">11</option>
 							 	<option value="12">12</option>
-							 	
 							 </select>
 							 <div class="mt-1 col-1">월</div>
 							<select class="form-control ml-2 col-3" id="daySelector">
@@ -176,16 +175,12 @@
 							 	<option value="29">29</option>
 							 	<option value="30">30</option>
 							 	<option value="31">31</option>
-							 	
 							 </select>
 							<div class="col-1">일</div>
 						</div>
 							
 							</td>
 						</tr>
-						
-							
-						
 					</tbody>
 					</table>
 					<div class="">

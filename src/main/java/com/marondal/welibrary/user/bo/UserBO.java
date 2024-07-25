@@ -27,13 +27,12 @@ public class UserBO {
 			) {
 	
 		String encryptPassword = EncryptService.md5(password);
-		
+
 		// 인증번호가 일치하는지 여부 확인 bo 서만 수행하면 된다
-		// 일치하면 회원가입 진행 
-		
+		// 일치하면 회원가입 진행
+
 		return userDAO.insertUser(loginId, encryptPassword, name, birth, email, phoneNumber);
-		
-		
+
 	}
 	
 	// 중복확인(boolean)
@@ -49,7 +48,6 @@ public class UserBO {
 		} else {
 			return true;
 		}
-			
 		
 	}
 	
@@ -82,8 +80,7 @@ public class UserBO {
 			
 			return 0;// 아무것도 하지마라
 		}
-		
-		
+
 	}
 	
 	
@@ -94,8 +91,7 @@ public class UserBO {
 		String ecryptPassword = EncryptService.md5(password);
 		
 		return userDAO.selectUser(loginId, ecryptPassword);
-		
-		
+
 	}
 	
 	
@@ -106,8 +102,7 @@ public class UserBO {
 										, String phoneNumber) {
 		
 		return userDAO.selectUserByNameBirthPhone(loginId, name, birth, phoneNumber);
-		
-		
+
 	}
 	
 	
@@ -127,12 +122,10 @@ public class UserBO {
 
 		// 랜덤함수 선언
 		Random rand = new Random();
-		
-		
+
 		// 저장할 배열
 		char[] pw= new char[10]; 
-		
-		
+
 		// 전역변수
 		String password = "";
 		
@@ -149,8 +142,7 @@ public class UserBO {
 			
 			password  +=  pw[i];
 		}
-		
-		
+
 		// 비밀번호 암호화되서 저장 해야함 안그러면 로그인 안됨
 		String ecryptPassword = EncryptService.md5(password);
 		
@@ -177,32 +169,26 @@ public class UserBO {
 						   , String birth
 						   , String email
 						   , String phoneNumber) {
-		
-		
+
 		return userDAO.updateUser(id, name, birth, email, phoneNumber);
-		
 		
 	}
 	
 	
 	// 회원정보 1행 조회 리턴타입 생각해보기
 	public User getUserInfo(int id) {
-		
-		
+
 		return userDAO.selectUserInfo(id);
-		
-		
+
 	}
 	
 	// 비밀번호 확인
 	public int checkPassword(int id, String password) {
 		
 		String ecryptPassword = EncryptService.md5(password);
-		
-		
+
 		return userDAO.selectPassword(id, ecryptPassword);
-		
-		
+
 	}
 	
 	
@@ -237,11 +223,6 @@ public class UserBO {
 			return 0;
 		}
 		
-		
-
-		
 	}
-	
-	
-	
+
 }

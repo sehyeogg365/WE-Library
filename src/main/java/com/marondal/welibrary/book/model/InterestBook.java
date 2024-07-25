@@ -38,7 +38,5 @@ public class InterestBook {
 	public void setUpdatedAt(Date updatedAt) {
 		this.updatedAt = updatedAt;
 	}
-	
-	
-	
+
 }

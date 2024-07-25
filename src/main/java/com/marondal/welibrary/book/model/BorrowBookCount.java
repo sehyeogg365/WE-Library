@@ -22,6 +22,5 @@ public class BorrowBookCount {
 	public void setNumberCount(int numberCount) {
 		this.numberCount = numberCount;
 	}
-	
-	
+
 }

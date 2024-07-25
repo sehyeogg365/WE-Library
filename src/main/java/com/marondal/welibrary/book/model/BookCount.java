@@ -22,7 +22,5 @@ public class BookCount {
 	public void setNumberCount(int numberCount) {
 		this.numberCount = numberCount;
 	}
-	
-	
 
 }

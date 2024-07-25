@@ -80,6 +80,5 @@ public class ReserveBookDetail {
 	public void setReserveCount(int reserveCount) {
 		this.reserveCount = reserveCount;
 	}
-	
-	
+
 }

@@ -312,9 +312,6 @@
 			 dateFormat:"yy년 mm월 dd일",
 			 
 		 });
-		 
-		 
-		
 		
 		$("#searchBtn").on("click", function(){
 			
@@ -333,10 +330,6 @@
 				return ;
 			}
 			
-			
-			
-			
-			
 		});
 		
 		$("#loginBtn").on("click", function(){
@@ -346,7 +339,6 @@
 			if(id == ""){
 				alert("아이디를 입력하세요.");
 				return;
-				
 			}
 			
 			if(password == ""){
@@ -374,17 +366,11 @@
 				}
 			
 			});
-		
-		
-		
-		
+
 		});
-		
-		
-		
+
 	});
-	
-	
+
 	</script>
 	
 </body>

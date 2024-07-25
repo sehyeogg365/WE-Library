@@ -88,5 +88,4 @@ public class WishBook {
 		this.updatedAt = updatedAt;
 	}
 
-	
 }

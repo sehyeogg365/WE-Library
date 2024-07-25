@@ -27,6 +27,7 @@ public class WishBookCountBO {
 			return true;
 
 		}
+
 	}
 
 	// 유저별 희망도서 갯수세기
