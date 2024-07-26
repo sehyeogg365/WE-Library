@@ -65,7 +65,11 @@ public class ReserveBO {
 			reserveBookDetail.setAuthor(book.getAuthor());
 			reserveBookDetail.setPublisher(book.getPublisher());
 			reserveBookDetail.setCreatedAt(reserveBook.getCreatedAt());// 반납예정일도 추가하기
-			reserveBookDetail.setReturnDate(borrowbook.getReturnDate());// 반납예정일 대출중 도서는 대출테이블의 리턴데이트 상호대차중 도서는 상호대차테이블의 리턴데이트
+			if(borrowbook == null){
+				reserveBookDetail.setReturnDate(interibraryBook.getReturnDate());
+			} else {
+				reserveBookDetail.setReturnDate(borrowbook.getReturnDate());// 반납예정일 대출중 도서는 대출테이블의 리턴데이트 상호대차중 도서는 상호대차테이블의 리턴데이트
+			}
 			// 대출상태, 예약순번/예약인원수도 필요함
 			reserveBookDetail.setStatus(isBorrow);// 대출상태
 			reserveBookDetail.setReserveCount(reserveCount);// 예약 인원수
