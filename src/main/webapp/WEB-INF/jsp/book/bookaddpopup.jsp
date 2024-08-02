@@ -51,11 +51,6 @@
 		
 		
 	</div>
-	
-
-
-
-
 
 
 </body>
@@ -66,12 +61,26 @@
 		$(".interestAdd").on("click", function(){
 			
 			let title = $("#titleInput").val();
-			
+
+			let book = JSON.parse($(this).data("book"));
+
 			if (title == "") {
 
 				alert("제목을 입력해주세요.");
 				return;
 			}
+			// 부모 창의 입력 필드에 값 설정
+
+            window.opener.document.getElementById("titleInput").value = book.title;
+            window.opener.document.getElementById("authorInput").value = book.authors.join(", ");
+            window.opener.document.getElementById("publisherInput").value = book.publisher;
+            window.opener.document.getElementById("pubyearInput").value = book.datetime.substring(0, 4);
+            window.opener.document.getElementById("isbnInput").value = book.isbn;
+            window.opener.document.getElementById("priceInput").value = book.price;
+            window.opener.document.querySelector(".wishbookprofile").src = book.thumbnail;
+
+            // 팝업 창 닫기
+            window.close();
 			
 		});
 
