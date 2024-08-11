@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
+import com.marondal.welibrary.book.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,16 +15,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.marondal.welibrary.book.borrow.bo.BorrowBO;
 import com.marondal.welibrary.book.interest.bo.InterestBO;
 import com.marondal.welibrary.book.interibrary.bo.InteribraryBO;
-import com.marondal.welibrary.book.model.BorrowBookCount;
-import com.marondal.welibrary.book.model.BorrowBookDetail;
-import com.marondal.welibrary.book.model.InterestBookCount;
-import com.marondal.welibrary.book.model.InterestBookDetail;
-import com.marondal.welibrary.book.model.InteribraryBookCount;
-import com.marondal.welibrary.book.model.InteribraryBookDetail;
-import com.marondal.welibrary.book.model.ReserveBookCount;
-import com.marondal.welibrary.book.model.ReserveBookDetail;
-import com.marondal.welibrary.book.model.WishBookCount;
-import com.marondal.welibrary.book.model.WishBookDetail;
 import com.marondal.welibrary.book.reserve.bo.ReserveBO;
 import com.marondal.welibrary.book.wishbook.bo.WishBookBO;
 import com.marondal.welibrary.user.bo.UserBO;
@@ -92,10 +83,16 @@ public class BookController {
 	public String interestBookList(Model model
 								//, @RequestParam("id") int id
 								, HttpSession session
+								//, InterestBookDetail dto
 								) {
 		
 		int userId = (Integer)session.getAttribute("userId");
-		
+
+//		PagingDTO pagingDTO = null;
+//		if (dto.getTotalData() == 0) {
+//			dto.setTotalData(0);
+//		}
+
 		User user = userBO.getUserInfo(userId); //이상하게 DAO로 해도 잘불러와지더라.
 		
 		model.addAttribute("user", user);

@@ -16,7 +16,6 @@
 	<!-- 아이콘 -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
 
-	
 	<link rel="stylesheet" href="/static/css/style.css" type="text/css">
 	
 </head>
@@ -28,16 +27,14 @@
 		<div class="mybookinfo-page">
 		
 		<div class="sub-profile bg-secondary">
-			
-
 			<c:import url="/WEB-INF/jsp/include/subprofile.jsp"/>
-			
 			<div class="sub-text">
 				<h2 class="text-center text-white mt-3"><b>희망도서 신청 조회</b></h2>
 			</div>
 		</div>
 		
 		<div class="d-flex mx-5">
+
 		<c:import url="/WEB-INF/jsp/include/sidenav2.jsp"/>
 		
 		<div class="col-9 ">

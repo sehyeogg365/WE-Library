@@ -58,7 +58,7 @@
 	$(document).ready(function() {
 		
 		
-		$(".interestAdd").on("click", function(){
+		$(".interestAddBtn").on("click", function(){
 			
 			let title = $("#titleInput").val();
 
