@@ -42,12 +42,12 @@
 						<h1 class="text-center text-white"><b>WE-Library</b></h1>
 					</div>
 				</div>	
-				<nav class="main-nav d-flex justify-content-center align-items-center col-12">
-					<div class="text-white">
+				<nav class="main-nav d-flex justify-content-center align-items-center col-12 bg-success">
+					<div class="text-white mt-1">
 						<h5>통합검색</h5>
 					</div>
-				
-					<form action="/library/list/view" method="get" class="col-9"><!-- bootstrap input group 검색 -->
+
+					<form action="/library/list/view" method="get" class="col-8"><!-- bootstrap input group 검색 -->
 						<div class="search d-flex justify-content-center">
 			                <input type="text" value="" placeholder="도서명 또는 저자명을 입력해주세요" id ="searchInput" class="form-control" name="title">
 			                <div class="input-group-append">
