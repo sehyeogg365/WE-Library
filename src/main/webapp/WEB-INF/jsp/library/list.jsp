@@ -37,28 +37,29 @@
 			</div>
 		
 		
-		<div class="searchbox ">
+		<div class="searchbox" >
 			<form action="/library/list/view" method="get" class=""><!-- bootstrap input group 검색 -->
 			
-			<nav class="bg-primary booksearch-nav d-flex justify-content-center align-items-center col-10">
-				<div class="text-white col-2">
-					<h5>통합검색</h5>
-				</div>
-				
-				<div class="search d-flex justify-content-center col-9">
-				<!-- 0건일때랑 아닐때로 나눠야 함 제목 입력여부가 아니라 -->
+                <nav class="bg-primary booksearch-nav d-flex justify-content-center align-items-center col-10">
+                    <div class="text-white col-2">
+                        <h5>통합검색</h5>
+                    </div>
 
-				<input type="text" value="${book.title }" placeholder="검색어 입력" id="searchInput"class="form-control" name="title">
+                    <div class="search d-flex justify-content-center col-9">
+                    <!-- 0건일때랑 아닐때로 나눠야 함 제목 입력여부가 아니라 -->
 
-		         <div class="input-group-append">
-		              <button type="submit" id="searchBtn" class="btn">검색</button>
-		         </div>
-		             
-		        </div>
+                    <input type="text" value="" placeholder="검색어 입력" id="searchInput"class="form-control" name="title">
 
-		    </nav> 
-		    	 <div class="ml-5">
-		        	<h5 class="ml-5">검색 결과 
+                     <div class="input-group-append">
+                          <button type="submit" id="searchBtn" class="btn">검색</button>
+                     </div>
+
+                    </div>
+
+                </nav>
+		    	 <div class="d-flex align-items-center col-10 mt-3" style= "margin-left:83.338px;">
+		    	    <h5 id ="result" class="text-primary"> </h5>
+		        	<h5 class="">에 대한 검색 결과
 					<c:forEach var="book" begin="0" end="0" items="${bookCountList }">
 
                         ${book.numberCount }건이 검색되었습니다.
@@ -68,6 +69,7 @@
 					</c:forEach>
 
 					</h5>
+					<!-- <div> ${book}</div>건 -->
 		        </div>
 		    <hr style="border: solid 1px;">
 		   		<div class="mt-3 library-selectbox col-10">
@@ -188,6 +190,26 @@
 	
 	<script>
 	$(document).ready(function(){
+
+	    //URL 파라미터를 읽어오는 함수
+        function getParameterByName(name) {
+            const url = window.location.href;
+            name = name.replace(/[\[\]]/g, '\\$&');
+            const regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)');
+            const results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
+
+        // URL 파라미터에서 title 값을 읽어옴
+        const title = getParameterByName('title');
+        if (title) { //title 값있을시에 input value값에 그값을 넣는다.
+            document.getElementById('searchInput').value = title;
+        }
+
+        //파라미터 값을 h5 태그에 넣기
+        document.getElementById("result").innerText = title;
 		
 		 $("#searchBtn").on("click", function(event){
 	 			
@@ -203,6 +225,7 @@
 	 		}
 	 			
 	 	});
+
 
 		var chkList = $("input[name = library]");
 		 $("#allCheck").on("change", function() {
