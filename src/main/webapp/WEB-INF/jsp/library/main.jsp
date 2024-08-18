@@ -313,7 +313,7 @@
 			 
 		 });
 		
-		$("#searchBtn").on("click", function(){
+		$("#searchBtn").on("click", function(event){
 			
 			//var keywords = search.split(" ");// // 검색어를 공백으로 분리하여 각 단어를 배열로 저장
 			 
@@ -322,12 +322,11 @@
 			//var data = [];
 			
 			
-			let search = $("#searchInput").val();
+			let search = $("#searchInput").val().trim();
 			
 			if(search == ""){
 				alert("검색어를 입력하세요.");
-				location.reload();
-				return ;
+				event.preventDefault(); // 폼 제출을 막음
 			}
 			
 		});
