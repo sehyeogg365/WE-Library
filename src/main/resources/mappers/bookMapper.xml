@@ -103,7 +103,7 @@
   		FROM
   			`book`
   		WHERE
-  			`title` = #{title}
+			`title` LIKE CONCAT('%', #{title}, '%')
   	</select>
   	
   	<!-- 책 갯수 표시 -->
