@@ -47,11 +47,9 @@
 				
 				<div class="search d-flex justify-content-center col-9">
 				<!-- 0건일때랑 아닐때로 나눠야 함 제목 입력여부가 아니라 -->
-		     
-				
-				<input type="text" value="${book.title } " placeholder="검색어 입력" id="searchInput"class="form-control" name="title">
-				
-		    
+
+				<input type="text" value="${book.title }" placeholder="검색어 입력" id="searchInput"class="form-control" name="title">
+
 		         <div class="input-group-append">
 		              <button type="submit" id="searchBtn" class="btn">검색</button>
 		         </div>
@@ -62,10 +60,17 @@
 		    	 <div class="ml-5">
 		        	<h5 class="ml-5">검색 결과 
 					<c:forEach var="book" begin="0" end="0" items="${bookCountList }">
-						${book.numberCount }
-						건이 검색되었습니다.
+					    <c:choose>
+					        <c:when test="${book.numberCount == null }">
+					            0 건이 검색되었습니다.
+                            </c:when>
+                            <c:otherwise>
+                             ${book.numberCount }건이 검색되었습니다.
+                            </c:otherwise>
+					    </c:choose>
 					</c:forEach>
-						</h5>
+
+					</h5>
 		        </div>
 		    <hr style="border: solid 1px;">
 		   		<div class="mt-3 library-selectbox col-10">
@@ -172,31 +177,32 @@
 		
 		<!--2024-02-16 수정 내용  tui-pagination 추가 -->
 		<div id="pagination" class="tui-pagination"></div>
-		
-		</div>
+
+        </div>
+
 
 		</section>
 		
 		<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
-		<script src="/resources/dist/w2ui/w2ui-1.5.min.js"></script><!--2024-04-04 경로 고치기 -->
-        <script src="/resources/js/tui-grid/tui-pagination.js"></script><!--2024-04-04 경로 고치기 -->
-        <script src="<%= application.getContextPath() %>/resources/js/plugin/select2/dist/js/select2.min.js"></script>
+		<!--2024-04-04 경로 고치기 <script src="/resources/dist/w2ui/w2ui-1.5.min.js"></script>-->
+        <!--2024-04-04 경로 고치기 <script src="/resources/static.css/tui-pagination.js"></script>-->
+        <!-- <script src="<%= application.getContextPath() %>/resources/js/plugin/select2/dist/js/select2.min.js"></script> -->
 	</div>
 	
 	<script>
 	$(document).ready(function(){
 		
-		 $("#searchBtn").on("click", function(){
+		 $("#searchBtn").on("click", function(event){
 	 			
-			var keywords = keyword.split( );// // 검색어를 공백으로 분리하여 각 단어를 배열로 저장
+			//var keywords = keyword.split( );// // 검색어를 공백으로 분리하여 각 단어를 배열로 저장
 			 
-			var result = []; //검색어를 저장할 배열
+			//var result = []; //검색어를 저장할 배열
 	 			
-	 		let search = $("#searchInput").val();
+	 		let search = $("#searchInput").val().trim();
 	 			
 	 		if(search == ""){
 	 			alert("검색어를 입력하세요.");
-	 			return ;
+	 			event.preventDefault(); // 폼 제출을 막음
 	 		}
 	 			
 	 	});
