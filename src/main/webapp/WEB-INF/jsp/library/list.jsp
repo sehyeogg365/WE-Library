@@ -60,14 +60,11 @@
 		    	 <div class="ml-5">
 		        	<h5 class="ml-5">검색 결과 
 					<c:forEach var="book" begin="0" end="0" items="${bookCountList }">
-					    <c:choose>
-					        <c:when test="${book.numberCount == null }">
-					            0 건이 검색되었습니다.
-                            </c:when>
-                            <c:otherwise>
-                             ${book.numberCount }건이 검색되었습니다.
-                            </c:otherwise>
-					    </c:choose>
+
+                        ${book.numberCount }건이 검색되었습니다.
+                        <c:if test = "${bookCountList} == null">
+                            0건이 검색되었습니다.
+                        </c:if>
 					</c:forEach>
 
 					</h5>
