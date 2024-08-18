@@ -8,6 +8,7 @@
   
   	<!-- 책목록 조회 -->
   	<select id = "selectBookListByTitle" resultType="com.marondal.welibrary.book.model.Book" parameterType="string" >
+		-- bookMapper.selectBookListByTitle
 	  	SELECT
 	  		`id`
 	  		, `library`
@@ -24,12 +25,13 @@
 	  	FROM
 	  		`book`
 	  	WHERE 	
-	  		`title` = #{title}
+	  		 `title` LIKE CONCAT('%', #{title}, '%')
 	  	ORDER BY `id` DESC;
   	</select>	
   	
   	<!-- 상세정보 -->
   	<select id ="selectBookListById" resultType="com.marondal.welibrary.book.model.Book" parameterType="int">
+		-- bookMapper.selectBookListById
   		SELECT
   			`id`
 	  		, `library`
@@ -50,6 +52,7 @@
   	
   	<!-- 책 1행정보 조회(상호대차 팝업창) -->
   	<select id = "selectBookById" resultType="com.marondal.welibrary.book.model.BookDetail" parameterType="int">
+		-- bookMapper.selectBookById
   		SELECT
   			`id`
 	  		, `library`
@@ -94,6 +97,7 @@
   	
   	<!-- 책 갯수 세기 -->
   	<select id="selectBookCount" resultType="int" parameterType="String">
+		-- bookMapper.selectBookCount
   		SELECT
   			count(1)
   		FROM
@@ -104,6 +108,7 @@
   	
   	<!-- 책 갯수 표시 -->
   	<select id ="selectBookNumberByTitle" resultType="com.marondal.welibrary.book.model.BookCount" parameterType="String">
+		-- bookMapper.selectBookNumberByTitle
   		SELECT
   			count(1)
   		FROM
