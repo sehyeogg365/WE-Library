@@ -47,13 +47,11 @@ public class LibraryController {
 		List<BookCount> bookCountList = bookBO.getBookNumberBytitle(title);
 		model.addAttribute("bookCountList", bookCountList);
 
-		/*
-		* Integer bookCount = bookDetailList.size();
-		* model.addAttribute("book", bookCount);
-		* */
+		//Integer bookCount = bookDetailList.size();
+		//model.addAttribute("book", bookCount);
 
-		// List<Book> bookList = bookBO.getBookByTitle(title);
-		// model.addAttribute("bookList", bookList);
+		//System.out.println("도서권수 : " + bookCount);
+
 		return "library/list";
 	}
 
@@ -66,8 +64,8 @@ public class LibraryController {
 		BorrowBook borrow = borrowBO.getBorrow(id);
 		model.addAttribute("borrow", borrow);
 
-		InteribraryBook interibrarybook = interibraryBO.getInteribrary(id);
-		model.addAttribute("interibrarybook", interibrarybook);
+		//InteribraryBook interibrarybook = interibraryBO.getInteribrary(id);
+		//model.addAttribute("interibrarybook", interibrarybook);
 		// 상호대차 1행조회를쓰면서 상호대차 반납예정일도 불러와야한다. 조건문 대출중일때 대출반납예정일 상호대차중일때 상호대차 반납예정일
 
 		return "/library/bookinfo";

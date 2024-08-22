@@ -15,7 +15,6 @@
 	
 	<!-- 아이콘 -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
-
 	
 	<link rel="stylesheet" href="/static/css/style.css" type="text/css">
 	
@@ -26,164 +25,155 @@
 		<section class="contents d-flex justify-content-center">
 		
 		<div class="mybookinfo-page">
-		<div class="sub-profile bg-secondary">
-			<c:import url="/WEB-INF/jsp/include/subprofile.jsp"/>			
-			<div class="sub-text6 bg-info">
-				<h2 class="text-center text-white mt-3"><b>희망도서 신청</b></h2>
-			</div>
-		</div>
-		
-		
-		<div class="d-flex mx-5">
-		
-		<c:import url="/WEB-INF/jsp/include/sidenav2.jsp"/>
-		
-		<div class="col-9 ">
-		<!-- 신청자 정보 -->
-		<div class ="mt-4"><h4><b>신청자 정보</b></h4></div>
-		
-		<div class="">
-		
-		<table class="table">
-			<thead>
-				<tr>
-					<td></td>
-					<td></td>
-				</tr>
-			</thead>
-			
-			<tbody>
-			
-				<tr>
-					<td class="item col-3">신청자명</td>
-					<td class="col-9">${user.name }</td>
-				</tr>
-				<tr>
-					<td class="item">휴대폰 번호</td>
-					<td>${user.phoneNumber }</td>
-				</tr>
-				<tr>
-					<td class="item">이메일</td>
-					<td>${user.email }</td>
-				</tr>
-			</tbody>
-		</table>
-		
-		
-		</div>
-		
+            <div class="sub-profile">
+                <c:import url="/WEB-INF/jsp/include/subprofile.jsp"/>
+                <div class="sub-text">
+                    <h2 class="text-center text-white mt-3"><b>희망도서 신청</b></h2>
+                </div>
+            </div>
 
-		
-		
-		<!-- 희망도서 도서 정보 -->
-		<div class ="mt-4"><h4><b>희망도서 정보</b></h4></div>
-		
-		
-		<table class="table">
-		<thead>
-		<tr>
-			<td class="item col-3">신청도서관</td>
-			<td class="col-9">
-				<select id="librarySelector" class="form-control">
-					<option value="역삼푸른솔도서관">역삼푸른솔도서관</option>
-					<option value="역삼도서관">역삼도서관</option>
-					<option value="행복한 도서관">행복한 도서관</option>
-					<option value="논현 도서관">논현 도서관</option>
-					<option value="대치 도서관">대치 도서관</option>
-					
-				</select>
-			
-			</td><!-- 이것도 옵션 -->
-		</tr>
-		</thead>
-		
-		<tbody>
-			<tr>
-				<td class="item">희망도서명</td>
-				<td>
-				  <form method="get" action="/book/bookaddpopup/view"  class="popup-form" >
-					<div class="search d-flex justify-content-center">
-		                <input type="text" value="" placeholder="검색어를 입력하세요." id="titleInput" class="form-control" name="title">
-		                <div class="input-group-append">
-		                	<button id="search" type="submit" class="btn" onclick="window.open('/book/bookaddpopup/view?title=${wishbook.title}','new','scrollbars=yes,resizable=no width=500 height=500, left=0,top=0');return false">검색</button>
-		                </div>
-		            </div>
-				  </form>
-				</td>
-			</tr>
-			
-			<tr>
-				<td class="item ">사진</td>
-				<td><input type="file" name="file" id="fileInput" class=""><img class="wishbookprofile" width ="40" height="40" src="${wishbook.imagePath}" ></td>
-			</tr>
-			<tr>
-				<td class="item ">저자</td>
-				<td><input type="text" value="" placeholder="" id="authorInput" class="form-control"></td>
-			</tr>
-			<tr>
-				<td class="item ">출판사</td>
-				<td><input type="text" value="" placeholder="" id="publisherInput" class="form-control"></td>
-			</tr>
-			<tr>
-				<td class="item ">발행연도</td>
-				<td><input type="text" value="" placeholder="" id="pubyearInput" class="form-control"></td>
-			</tr>
-			<tr>
-				<td class="item">ISBN</td>
-				<td><input type="text" value="" placeholder="" id="isbnInput" class="form-control"></td>
-			</tr>
-			<tr>
-				<td class="item">정가</td>
-				<td><input type="text" value="" placeholder="" id="priceInput" class="form-control"></td>
-			</tr>
-			
-			
-		</tbody>
-		
-		
-		</table>
-		
-			<div class="text-center">
-				<button id="addBtn" class="btn btn-primary my-3" data-user-id="${wishbook.userId }">신청하기</button>
-			</div>
-			
-		</div>
-		
-		
-		
-		</div>
-		
-		</div>
-		
-		</section>
-		</div>
-		
+            <div class="d-flex mx-5">
 
+            <c:import url="/WEB-INF/jsp/include/sidenav2.jsp"/>
+
+            <div class="col-9">
+            <!-- 신청자 정보 -->
+                <div class ="mt-4"><h4><b>신청자 정보</b></h4></div>
 		
+                <div class="">
+
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+                                <td class="item col-3">신청자명</td>
+                                <td class="col-9">${user.name }</td>
+                            </tr>
+                            <tr>
+                                <td class="item">휴대폰 번호</td>
+                                <td>${user.phoneNumber }</td>
+                            </tr>
+                            <tr>
+                                <td class="item">이메일</td>
+                                <td>${user.email }</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+
+            <!-- 희망도서 도서 정보 -->
+            <div class ="mt-4"><h4><b>희망도서 정보</b></h4></div>
+                <div class="">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <td class="item col-3">신청도서관</td>
+                            <td class="col-9">
+                                <select id="librarySelector" class="form-control">
+                                    <option value="역삼푸른솔도서관">역삼푸른솔도서관</option>
+                                    <option value="역삼도서관">역삼도서관</option>
+                                    <option value="행복한 도서관">행복한 도서관</option>
+                                    <option value="논현 도서관">논현 도서관</option>
+                                    <option value="대치 도서관">대치 도서관</option>
+
+                                </select>
+
+                            </td><!-- 이것도 옵션 -->
+                        </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td class="item">희망도서명</td>
+                                <td>
+                                  <form method="get" action="/book/bookaddpopup/view"  class="popup-form" >
+                                    <div class="search d-flex justify-content-center">
+                                        <input type="text" value="" placeholder="검색어를 입력하세요." id="titleInput" class="form-control" name="title">
+                                        <div class="input-group-append">
+                                            <button id="search" type="submit" class="btn" onclick="window.open('/book/bookaddpopup/view?title=','new','scrollbars=yes,resizable=no width=500 height=500, left=0,top=0');return false">검색</button>
+                                        </div>
+                                    </div>
+                                  </form>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="item ">사진</td>
+                                <td><input type="file" name="file" id="fileInput" class=""><img class="wishbookprofile" width ="40" height="40" src="${wishbook.imagePath}" ></td>
+                            </tr>
+                            <tr>
+                                <td class="item ">저자</td>
+                                <td><input type="text" value="" placeholder="" id="authorInput" class="form-control"></td>
+                            </tr>
+                            <tr>
+                                <td class="item ">출판사</td>
+                                <td><input type="text" value="" placeholder="" id="publisherInput" class="form-control"></td>
+                            </tr>
+                            <tr>
+                                <td class="item ">발행연도</td>
+                                <td><input type="text" value="" placeholder="" id="pubyearInput" class="form-control"></td>
+                            </tr>
+                            <tr>
+                                <td class="item">ISBN</td>
+                                <td><input type="text" value="" placeholder="" id="isbnInput" class="form-control"></td>
+                            </tr>
+                            <tr>
+                                <td class="item">정가</td>
+                                <td><input type="text" value="" placeholder="" id="priceInput" class="form-control"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="text-center">
+                    <button id="addBtn" class="btn btn-primary my-3" data-user-id="${wishbook.userId }">신청하기</button>
+                </div>
+            </div>
+
+            </div>
 		
-		
-		<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
-	
-	
+            </section>
+
+            <c:import url="/WEB-INF/jsp/include/footer.jsp"/>
+
+		</div><!-- wrap 위치 수정 -->
+    </div>
 	<script>
 	$(document).ready(function(){
-		
+
+		function openPopup() {
+            // 입력창에서 제목 값을 가져옴
+            var title = document.getElementById('titleInput').value;
+
+            // URL을 동적으로 생성
+            var url = '/book/bookaddpopup/view?title=' + encodeURIComponent(title);
+
+            // 새 창 열기
+            window.open(url, 'new', 'scrollbars=yes,resizable=no,width=500,height=500,left=0,top=0');
+
+            // 폼 제출을 막음
+            return false;
+        }
+
 		$("#search").on("click", function(){
 			
 			let title = $("#titleInput").val();
-			
-			
+
 			if(title == ""){
-				
-				alert("제목을 입력해주세요.");
+
 				return;
+
 			}
 			
-			
-			
 		});
-		
-		
+
 		$("#addBtn").on("click", function(){
 			
 			let id = $(this).data("user-id");
@@ -195,8 +185,7 @@
 			let pubyear = $("#pubyearInput").val();
 			let isbn = $("#isbnInput").val();
 			let price =  $("#priceInput").val();
-			
-			
+
 			if(library == ""){
 				alert("도서관을 선택하세요.");
 				return;

@@ -43,11 +43,11 @@
 					</div>
 				</div>	
 				<nav class="main-nav d-flex justify-content-center align-items-center col-12">
-					<div class="text-white">
+					<div class="text-white mt-1">
 						<h5>통합검색</h5>
 					</div>
-				
-					<form action="/library/list/view" method="get" class="col-9"><!-- bootstrap input group 검색 -->
+
+					<form action="/library/list/view" method="get" class="col-8"><!-- bootstrap input group 검색 -->
 						<div class="search d-flex justify-content-center">
 			                <input type="text" value="" placeholder="도서명 또는 저자명을 입력해주세요" id ="searchInput" class="form-control" name="title">
 			                <div class="input-group-append">
@@ -313,7 +313,7 @@
 			 
 		 });
 		
-		$("#searchBtn").on("click", function(){
+		$("#searchBtn").on("click", function(event){
 			
 			//var keywords = search.split(" ");// // 검색어를 공백으로 분리하여 각 단어를 배열로 저장
 			 
@@ -322,12 +322,11 @@
 			//var data = [];
 			
 			
-			let search = $("#searchInput").val();
+			let search = $("#searchInput").val().trim();
 			
 			if(search == ""){
 				alert("검색어를 입력하세요.");
-				location.reload();
-				return ;
+				event.preventDefault(); // 폼 제출을 막음
 			}
 			
 		});

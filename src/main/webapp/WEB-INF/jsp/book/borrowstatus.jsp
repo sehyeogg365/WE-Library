@@ -99,7 +99,7 @@
                                             <c:when test="${today > returnDate}">
                                                 <div class="text-danger">반납연체</div>
                                             </c:when>
-                                            <c:when test="${diffInDays >= 21 && date > returnDate}">
+                                            <c:when test="${diffInDays >= 21 && today > returnDate}">
                                                 <div class="text-danger">반납연체</div>
                                             </c:when>
                                             <c:otherwise>

@@ -86,7 +86,8 @@
 			
 		
 		</div>
-		
+
+		<div id="pagination" class="tui-pagination"></div>
 		
 		</div>
 		
@@ -95,9 +96,11 @@
 		
 		</section>
 
-	
+
 		<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
+
 	</div>
+	<script src="/resources/static/css/tui-pagination.js"></script><!-- 경로 고치기  /resources/js/tui-grid/tui-pagination.js -> /resources/static/css/tui-pagination.js -->
 	<script>
 		$(document).ready(function(){
 			

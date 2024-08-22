@@ -118,7 +118,7 @@
 	
 	
 	</section>
-	
+	<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
 	</div>
 	<script>
 	//수령 = 대여목록 추가(대출), 대여를 의미하고 dto로는 borrow_book테이블에 있는지여부를 조사하여 있으며 있으면 대여중 이런식으로 글자 변경
