@@ -42,7 +42,7 @@
 						<h1 class="text-center text-white"><b>WE-Library</b></h1>
 					</div>
 				</div>	
-				<nav class="main-nav d-flex justify-content-center align-items-center col-12 bg-success">
+				<nav class="main-nav d-flex justify-content-center align-items-center col-12">
 					<div class="text-white mt-1">
 						<h5>통합검색</h5>
 					</div>
