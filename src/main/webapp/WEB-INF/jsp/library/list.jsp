@@ -239,9 +239,11 @@
         }*/
 
         if (libraries.length > 0) {
-            libraries.forEach(library => {
+            for(let i = 0; i <libraries.length; i++){
+                const library = libraries[i];
                 $("input[name='library'][value='" + library + "']").prop("checked", true);
-            });
+            }
+
             //console.log(libraries); // 확인용
 
             if(libraries.length == 5){// 5개일때 전체 선택때 체크
