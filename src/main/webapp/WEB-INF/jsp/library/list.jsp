@@ -192,6 +192,7 @@
 	$(document).ready(function(){
 
 	    //URL 파라미터를 읽어오는 함수
+	    /*
         function getParameterByName(name) {
             const url = window.location.href;
             name = name.replace(/[\[\]]/g, '\\$&');
@@ -200,12 +201,52 @@
             if (!results) return null;
             if (!results[2]) return '';
             return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }*/
+
+        function getAllParametersByName(name) {
+            const url = window.location.href;
+            const regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)', 'g'); // 'g' 플래그로 모든 일치를 찾기
+            const results = [];
+            let match;
+
+            while ((match = regex.exec(url)) !== null) {
+                results.push(decodeURIComponent(match[2].replace(/\+/g, ' ')));
+            }
+            //console.log(results);
+            return results;
         }
 
+
         // URL 파라미터에서 title 값을 읽어옴
-        const title = getParameterByName('title');
+        const title = getAllParametersByName('title');
         if (title) { //title 값있을시에 input value값에 그값을 넣는다.
             document.getElementById('searchInput').value = title;
+        }
+
+        // URL 파라미터에서 library 값을 읽어옴
+        const libraries = getAllParametersByName('library');
+
+        /*
+        for(var i = 0; i < library.lenght; i++){//반복문
+            if(library[i]){// 체크 되었을시 checkedValues 배열에 추가할것.
+                checkedValues.push(library[i]);
+            }
+        }
+
+        if(library) {
+           $("input:checkbox[name='library'][value='" + library + "']").prop("checked", true);
+           alert(library);
+        }*/
+
+        if (libraries.length > 0) {
+            libraries.forEach(library => {
+                $("input[name='library'][value='" + library + "']").prop("checked", true);
+            });
+            //console.log(libraries); // 확인용
+
+            if(libraries.length == 5){// 5개일때 전체 선택때 체크
+                 $("input[id='allCheck']").prop("checked", true);
+            }
         }
 
         //파라미터 값을 h5 태그에 넣기
