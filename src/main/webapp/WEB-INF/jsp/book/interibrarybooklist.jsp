@@ -73,8 +73,7 @@
 							<div class="col-9">
 								<div class="" style="font-size: 18px;">
 									${interibrarybook.title }
-									${interibrarybook.id} 아이디
-									${interibrarybook.bookId} 북아이디
+
 								</div>
 								<div class="text-secondary">
 									ㅇ제공도서관: ${interibrarybook.library }  &nbsp| &nbsp 수령도서관 : ${interibrarybook.receivelibrary }
@@ -96,10 +95,15 @@
 								</div>
 							</div>
 							<div class="">
-								
-								<button id="interibraryaddBtn" class="btn btn-primary btn-sm addBtn my-3" data-book-id="${interibrarybook.bookId}">상호대차 수령</button>
-								<button id="interibrarydeleteBtn" class="btn btn-primary btn-sm deleteBtn my-3" data-interibrary-id="${interibrarybook.id}">취소</button>
-							
+                                <c:choose>
+								    <c:when test="${interibrarybook.status }">
+			                            <button class="btn btn-primary btn-sm">취소불가</button>
+							        </c:when>
+							        <c:otherwise>
+							            <button id="interibraryaddBtn" class="btn btn-primary btn-sm addBtn my-3" data-book-id="${interibrarybook.bookId}">상호대차 수령</button>
+                                         <button id="interibrarydeleteBtn" class="btn btn-primary btn-sm deleteBtn my-3" data-interibrary-id="${interibrarybook.id}">취소</button>
+							        </c:otherwise>
+							    </c:choose>
 							</div>
 
 						</div>	
@@ -137,7 +141,7 @@
 					return ;
 				}
 				
-				alert(id);
+				//alert(id);
 				
 				$.ajax({
 					type:"post"
@@ -172,7 +176,7 @@
 					return ;
 				}
 				
-				alert(id);
+				//alert(id);
 
 				$.ajax({
 					type:"get"
