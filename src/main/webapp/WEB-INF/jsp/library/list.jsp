@@ -192,54 +192,21 @@
 	$(document).ready(function(){
 
 	    //URL 파라미터를 읽어오는 함수
-	    /*
-        function getParameterByName(name) {
-            const url = window.location.href;
-            name = name.replace(/[\[\]]/g, '\\$&');
-            const regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)');
-            const results = regex.exec(url);
-            if (!results) return null;
-            if (!results[2]) return '';
-            return decodeURIComponent(results[2].replace(/\+/g, ' '));
-        }*/
-
-        function getAllParametersByName(name) {
-            const url = window.location.href;
-            const regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)', 'g'); // 'g' 플래그로 모든 일치를 찾기
-            const results = [];
-            let match;
-
-            while ((match = regex.exec(url)) !== null) {
-                results.push(decodeURIComponent(match[2].replace(/\+/g, ' ')));
-            }
-            //console.log(results);
-            return results;
-        }
-
+        const url = new URL(window.location.href); //좀더 가독성있게 코드문 고쳐보기
+        const urlParams = url.searchParams;//좀더 가독성있게 코드문 고쳐보기
 
         // URL 파라미터에서 title 값을 읽어옴
-        const title = getAllParametersByName('title');
+        const title = urlParams.get('title');//좀더 가독성있게 코드문 고쳐보기
+        console.log("제목 : " + title);
         if (title) { //title 값있을시에 input value값에 그값을 넣는다.
             document.getElementById('searchInput').value = title;
         }
 
         // URL 파라미터에서 library 값을 읽어옴
-        const libraries = getAllParametersByName('library');
-
-        /*
-        for(var i = 0; i < library.lenght; i++){//반복문
-            if(library[i]){// 체크 되었을시 checkedValues 배열에 추가할것.
-                checkedValues.push(library[i]);
-            }
-        }
-
-        if(library) {
-           $("input:checkbox[name='library'][value='" + library + "']").prop("checked", true);
-           alert(library);
-        }*/
-
+        const libraries = urlParams.getAll('library');//좀더 가독성있게 코드문 고쳐보기
+        console.log("도서관 : " + libraries);
         if (libraries.length > 0) {
-            for(let i = 0; i <libraries.length; i++){
+            for(let i = 0; i < libraries.length; i++){
                 const library = libraries[i];
                 $("input[name='library'][value='" + library + "']").prop("checked", true);
             }
