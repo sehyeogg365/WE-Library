@@ -73,7 +73,7 @@
 							<div class="col-9">
 								<div class="" style="font-size: 18px;">
 									${interibrarybook.title }
-									
+
 								</div>
 								<div class="text-secondary">
 									ㅇ제공도서관: ${interibrarybook.library }  &nbsp| &nbsp 수령도서관 : ${interibrarybook.receivelibrary }
@@ -95,10 +95,15 @@
 								</div>
 							</div>
 							<div class="">
-								
-								<button id="interibraryaddBtn" class="btn btn-primary btn-sm addBtn my-3" data-book-id="${interibrary.bookId }">상호대차 수령</button>
-								<button id="interibrarydeleteBtn" class="btn btn-primary btn-sm deleteBtn my-3" data-interibrary-id="${interibrary.id }">취소</button>
-							
+                                <c:choose>
+								    <c:when test="${interibrarybook.status }">
+			                            <button class="btn btn-primary btn-sm">취소불가</button>
+							        </c:when>
+							        <c:otherwise>
+							            <button id="interibraryaddBtn" class="btn btn-primary btn-sm addBtn my-3" data-book-id="${interibrarybook.bookId}">상호대차 수령</button>
+                                         <button id="interibrarydeleteBtn" class="btn btn-primary btn-sm deleteBtn my-3" data-interibrary-id="${interibrarybook.id}">취소</button>
+							        </c:otherwise>
+							    </c:choose>
 							</div>
 
 						</div>	
@@ -123,20 +128,20 @@
 	<script>
 	//수령 = 대여목록 추가(대출), 대여를 의미하고 dto로는 borrow_book테이블에 있는지여부를 조사하여 있으며 있으면 대여중 이런식으로 글자 변경
 		$(document).ready(function(){
-			
+
 			$(".addBtn").on("click", function(){
 				
-				let id = $(this).data("book-id");
+				let id = $(this).data('book-id');
 
 				var result = confirm("수령 하시겠습니까?");
 				
 				if(result){
-					//alert(""); 아무것도 안쓰면 바로 추가성공이 뜬다.
+                    console.log("book ID:", id);
 				} else {
 					return ;
 				}
 				
-				alert(id);
+				//alert(id);
 				
 				$.ajax({
 					type:"post"
@@ -148,9 +153,9 @@
 		        	 		location.reload();
 		        	 	} else {
 		        	 		alert("대출 실패");
-		        	 			 
+
 		        	 	}
-		        	 // 03/17이중아작스문으로 반납과 동시에 상호대차내역에 추가시키기 해보기	 
+
 		        	 }
 		        	 , error:function(){
 		        	 	alert("대출 에러");
@@ -159,20 +164,20 @@
 
 			});
 
+
 			$(".deleteBtn").on("click", function(){
 				
-				let id = $(this).data("interibrary-id");
-
+				let id = $(this).data('interibrary-id');
 				var result = confirm("상호대차 취소 하시겠습니까?");
 				
 				if(result){
-					//alert(""); 아무것도 안쓰면 바로 추가성공이 뜬다.
+                    console.log("Interibrary ID:", id);
 				} else {
 					return ;
 				}
 				
-				alert(id);
-				
+				//alert(id);
+
 				$.ajax({
 					type:"get"
 					, url:"/book/interibrary/delete"
@@ -186,12 +191,11 @@
 						}
 					}
 					,error:function(){
-						
+
 						 alert("상호대차 취소 에러");
-						
+
 					}
-					
-					
+
 				});
 
 			});

@@ -193,20 +193,30 @@
 	$(document).ready(function(){
 
 	    //URL 파라미터를 읽어오는 함수
-        function getParameterByName(name) {
-            const url = window.location.href;
-            name = name.replace(/[\[\]]/g, '\\$&');
-            const regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)');
-            const results = regex.exec(url);
-            if (!results) return null;
-            if (!results[2]) return '';
-            return decodeURIComponent(results[2].replace(/\+/g, ' '));
-        }
+        const url = new URL(window.location.href); //좀더 가독성있게 코드문 고쳐보기
+        const urlParams = url.searchParams;//좀더 가독성있게 코드문 고쳐보기
 
         // URL 파라미터에서 title 값을 읽어옴
-        const title = getParameterByName('title');
+        const title = urlParams.get('title');//좀더 가독성있게 코드문 고쳐보기
+        console.log("제목 : " + title);
         if (title) { //title 값있을시에 input value값에 그값을 넣는다.
             document.getElementById('searchInput').value = title;
+        }
+
+        // URL 파라미터에서 library 값을 읽어옴
+        const libraries = urlParams.getAll('library');//좀더 가독성있게 코드문 고쳐보기
+        console.log("도서관 : " + libraries);
+        if (libraries.length > 0) {
+            for(let i = 0; i < libraries.length; i++){
+                const library = libraries[i];
+                $("input[name='library'][value='" + library + "']").prop("checked", true);
+            }
+
+            //console.log(libraries); // 확인용
+
+            if(libraries.length == 5){// 5개일때 전체 선택때 체크
+                 $("input[id='allCheck']").prop("checked", true);
+            }
         }
 
         //파라미터 값을 h5 태그에 넣기

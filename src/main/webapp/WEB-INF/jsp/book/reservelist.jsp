@@ -108,8 +108,7 @@
 						</div>
 						
 						</c:forEach>
-						
-						
+
 						<hr>
 						
 					</div><br>

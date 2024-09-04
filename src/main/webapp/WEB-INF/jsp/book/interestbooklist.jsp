@@ -17,7 +17,7 @@
 	<!-- 아이콘 -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
 
-	
+	<link rel="stylesheet" type="text/css" media="screen" href="/resources/static/css/tui-pagination.css">
 	<link rel="stylesheet" href="/static/css/style.css" type="text/css">
 	
 </head>
@@ -87,7 +87,8 @@
 		
 		</div>
 
-		<div id="pagination" class="tui-pagination"></div>
+		<div id="pagination" class="tui-pagination"
+        									style="background-color: white; margin: 0"></div>
 		
 		</div>
 		
@@ -100,10 +101,33 @@
 		<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
 
 	</div>
-	<script src="/resources/static/css/tui-pagination.js"></script><!-- 경로 고치기  /resources/js/tui-grid/tui-pagination.js -> /resources/static/css/tui-pagination.js -->
+	<script src="/resources/js/tui-grid/tui-pagination.js"></script><!-- 경로 고치기  /resources/js/tui-grid/tui-pagination.js -> /resources/static/css/tui-pagination.js -->
 	<script>
 		$(document).ready(function(){
-			
+
+			function fnSetPagination(id, obj) {
+              var _pagination = new tui.Pagination(id, {
+                totalItems: obj.totalData,
+                itemsPerPage: pageSize,
+                visiblePages: 10,
+                page: 1,
+                centerAlign: true,
+              });
+
+              _pagination.on("beforeMove", function (eventData) {
+                showPage = eventData.page;
+                fnSetMailGrid();
+
+                //return confirm('Go to page ' + eventData.page + '?');
+              });
+
+              _pagination.on("afterMove", function (eventData) {
+                //alert('The current page is ' + eventData.page);
+              });
+
+              return _pagination;
+            }
+
 			$(function(){
 				
 				$("li").click(function(){
