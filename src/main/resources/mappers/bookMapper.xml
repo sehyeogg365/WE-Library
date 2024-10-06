@@ -26,27 +26,14 @@
 	  		`book`
 	  	WHERE 	
 	  		 `title` LIKE CONCAT('%', #{title}, '%')
-		<!--
-		<if test ="library != null and library != '' ">
-			<choose>
-				<when test = "library == '역삼푸른솔도서관' ">
-					AND `library` = '역삼푸른솔도서관'
-				</when>
-				<when test = "library == '역삼도서관' ">
-					AND `library` = '역삼도서관'
-				</when>
-				<when test = "library == '행복한 도서관' ">
-					AND `library` = '행복한 도서관'
-				</when>
-				<when test = "library == '논현 도서관' ">
-					AND `library` = '논현 도서관'
-				</when>
-				<when test = "library == '대치 도서관' ">
-					AND `library` = '대치 도서관'
-				</when>
-			</choose>
 
-		</if>-->
+		<if test ="libraryList != null and libraryList.size() > 0 ">
+		AND library IN
+			(
+			<foreach collection="libraryList" item="item" separator=" , ">
+				#{item}
+			</foreach>)
+		</if>
 	  	ORDER BY `id` DESC;
   	</select>	
   	
@@ -125,6 +112,13 @@
   			`book`
   		WHERE
 			`title` LIKE CONCAT('%', #{title}, '%')
+		<if test='libraryList != null and libraryList.size() > 0'>
+
+			AND library IN(
+			<foreach collection="libraryList" item="item" separator=" , ">
+				#{item}
+			</foreach>)
+		</if>
   	</select>
   	
   	<!-- 책 갯수 표시 -->

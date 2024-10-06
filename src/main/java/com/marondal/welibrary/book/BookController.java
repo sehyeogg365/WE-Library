@@ -47,7 +47,6 @@ public class BookController {
 	@Autowired
 	private InteribraryBO interibraryBO;
 
-	
 	@GetMapping("/wishbook/list/view")
 	public String wishbookList(Model model
 						      , HttpSession session
@@ -125,7 +124,6 @@ public class BookController {
 		model.addAttribute("borrowBook", borrowBookCount);
 		
 		return "book/borrowstatus";
-		
 	}
 	
 	@GetMapping("/reservelist/view")
@@ -143,7 +141,6 @@ public class BookController {
 		model.addAttribute("reserveBook", reserveBookCount);
 
 		return "book/reservelist";
-
 	}
 	
 	@GetMapping("/interibrarybooklist/view")
@@ -173,7 +170,6 @@ public class BookController {
 							   ) {
 
 		return "book/bookaddpopup";
-
 	}
 
 	@GetMapping("/borrowhistory/view")

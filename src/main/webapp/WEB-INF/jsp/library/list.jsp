@@ -76,11 +76,11 @@
 		   		<label class=""><input type="checkbox" id="allCheck" class="mr-2">전체 선택</label> <br>
 		   		<hr>
 			   		<div class="d-flex align-items-center">
-				        <label class=""><input type="checkbox" name="library" value="역삼푸른솔도서관" class="mr-2">역삼푸른솔도서관</label>
-				        <label class="ml-4"><input type="checkbox" name="library" value="역삼도서관" class="mr-2">역삼도서관</label>
-				        <label class="ml-4"><input type="checkbox" name="library" value="행복한 도서관" class="mr-2">행복한 도서관</label>
-				        <label class="ml-4"><input type="checkbox" name="library" value="논현 도서관" class="mr-2">논현 도서관</label>
-				        <label class="ml-4"><input type="checkbox" name="library" value="대치 도서관" class="mr-2">대치 도서관</label>
+				        <label class=""><input type="checkbox" name="libraryList" value="역삼푸른솔도서관" class="mr-2">역삼푸른솔도서관</label>
+				        <label class="ml-4"><input type="checkbox" name="libraryList" value="역삼도서관" class="mr-2">역삼도서관</label>
+				        <label class="ml-4"><input type="checkbox" name="libraryList" value="행복한 도서관" class="mr-2">행복한 도서관</label>
+				        <label class="ml-4"><input type="checkbox" name="libraryList" value="논현 도서관" class="mr-2">논현 도서관</label>
+				        <label class="ml-4"><input type="checkbox" name="libraryList" value="대치 도서관" class="mr-2">대치 도서관</label>
 			    		<div class="ml-4"><button class="btn btn-sm btn-secondary">적용하기</button></div>
 			    	</div>
 		    	</div>
@@ -204,12 +204,12 @@
         }
 
         // URL 파라미터에서 library 값을 읽어옴
-        const libraries = urlParams.getAll('library');//좀더 가독성있게 코드문 고쳐보기
+        const libraries = urlParams.getAll('libraryList');//좀더 가독성있게 코드문 고쳐보기
         console.log("도서관 : " + libraries);
         if (libraries.length > 0) {
             for(let i = 0; i < libraries.length; i++){
                 const library = libraries[i];
-                $("input[name='library'][value='" + library + "']").prop("checked", true);
+                $("input[name='libraryList'][value='" + library + "']").prop("checked", true);
             }
 
             //console.log(libraries); // 확인용
@@ -237,14 +237,13 @@
 	 			
 	 	});
 
-
-		var chkList = $("input[name = library]");
+		var chkList = $("input[name = libraryList]");
 		 $("#allCheck").on("change", function() {
             // 내 자신이 체크 되었는지 안되었는지
             if($(this).is(":checked")) {
-                $("input[name='library']").prop("checked", true);
+                $("input[name='libraryList']").prop("checked", true);
             } else {
-                $("input[name='library']").prop("checked", false);
+                $("input[name='libraryList']").prop("checked", false);
             }
             
 		  });
@@ -281,16 +280,14 @@
         	 		 alert("예약 에러");
  
         	 	 }
-        		 
-        		 
+
         	 });
 
          });
 
          $(".borrowBtn").on("click", function(){
         	 let id = $(this).data("book-id");
-        	 
-        	 
+
         	 var result = confirm("대출 하시겠습니까?");
         	 
         	 if(result){
