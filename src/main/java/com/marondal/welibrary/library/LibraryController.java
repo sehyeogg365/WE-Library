@@ -1,7 +1,9 @@
 package com.marondal.welibrary.library;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -39,12 +41,13 @@ public class LibraryController {
 	}
 
 	@GetMapping("/list/view")
-	public String listPage(Model model, @RequestParam("title") String title) {
+	public String listPage(Model model, @RequestParam("title") String title
+			, @RequestParam(value="libraryList", required = false)ArrayList<String> libraryList) {
 
-		List<BookDetail> bookDetailList = bookBO.getBookListByTitle(title);
+		List<BookDetail> bookDetailList = bookBO.getBookListByTitle(title, libraryList);
 		model.addAttribute("bookDetailList", bookDetailList);
 
-		List<BookCount> bookCountList = bookBO.getBookNumberBytitle(title);
+		List<BookCount> bookCountList = bookBO.getBookNumberBytitle(title, libraryList);
 		model.addAttribute("bookCountList", bookCountList);
 
 		//Integer bookCount = bookDetailList.size();

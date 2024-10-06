@@ -30,9 +30,9 @@ public class BookBO {
 	// private UserBO userBO;
 
 	// 책목록 조회(dto로 바꾸기)
-	public List<BookDetail> getBookListByTitle(String title) {
+	public List<BookDetail> getBookListByTitle(String title, List<String> libraryList) {
 
-		List<Book> bookList = bookDAO.selectBookListByTitle(title);
+		List<Book> bookList = bookDAO.selectBookListByTitle(title, libraryList);
 
 		List<BookDetail> bookDetailList = new ArrayList<>();
 
@@ -124,9 +124,9 @@ public class BookBO {
 	// }
 
 	// 책 제목별로 갯수표시
-	public List<BookCount> getBookNumberBytitle(String title) {
+	public List<BookCount> getBookNumberBytitle(String title, List<String> libraryList) {
 
-		List<Book> bookList = bookDAO.selectBookListByTitle(title);
+		List<Book> bookList = bookDAO.selectBookListByTitle(title, libraryList);
 
 		List<BookCount> bookCountList = new ArrayList<>();
 
@@ -135,7 +135,7 @@ public class BookBO {
 			BookCount bookCount = new BookCount();
 
 			// 갯수불러오기
-			int numberCount = bookDAO.selectBookCount(title);
+			int numberCount = bookDAO.selectBookCount(title, libraryList);
 
 			bookCount.setNumberCount(numberCount);
 
