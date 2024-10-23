@@ -73,14 +73,14 @@
 		        </div>
 		    <hr style="border: solid 1px;">
 		   		<div class="mt-3 library-selectbox col-10">
-		   		<label class=""><input type="checkbox" id="allCheck" class="mr-2">전체 선택</label> <br>
+		   		<label class=""><input type="checkbox" id="allCheck" class="ck-all mr-2">전체 선택</label> <br>
 		   		<hr>
 			   		<div class="d-flex align-items-center">
-				        <label class=""><input type="checkbox" name="libraryList" value="역삼푸른솔도서관" class="mr-2">역삼푸른솔도서관</label>
-				        <label class="ml-4"><input type="checkbox" name="libraryList" value="역삼도서관" class="mr-2">역삼도서관</label>
-				        <label class="ml-4"><input type="checkbox" name="libraryList" value="행복한 도서관" class="mr-2">행복한 도서관</label>
-				        <label class="ml-4"><input type="checkbox" name="libraryList" value="논현 도서관" class="mr-2">논현 도서관</label>
-				        <label class="ml-4"><input type="checkbox" name="libraryList" value="대치 도서관" class="mr-2">대치 도서관</label>
+				        <label class=""><input type="checkbox" name="libraryList" value="역삼푸른솔도서관" class="ck mr-2">역삼푸른솔도서관</label>
+				        <label class="ml-4"><input type="checkbox" name="libraryList" value="역삼도서관" class="ck mr-2">역삼도서관</label>
+				        <label class="ml-4"><input type="checkbox" name="libraryList" value="행복한 도서관" class="ck mr-2">행복한 도서관</label>
+				        <label class="ml-4"><input type="checkbox" name="libraryList" value="논현 도서관" class="ck mr-2">논현 도서관</label>
+				        <label class="ml-4"><input type="checkbox" name="libraryList" value="대치 도서관" class="ck mr-2">대치 도서관</label>
 			    		<div class="ml-4"><button class="btn btn-sm btn-secondary">적용하기</button></div>
 			    	</div>
 		    	</div>
@@ -203,6 +203,9 @@
             document.getElementById('searchInput').value = title;
         }
 
+        //
+
+
         // URL 파라미터에서 library 값을 읽어옴
         const libraries = urlParams.getAll('libraryList');//좀더 가독성있게 코드문 고쳐보기
         console.log("도서관 : " + libraries);
@@ -218,6 +221,67 @@
                  $("input[id='allCheck']").prop("checked", true);
             }
         }
+
+        var chkList = $("input[name = libraryList]");
+         $("#allCheck").on("change", function() {
+            // 내 자신이 체크 되었는지 안되었는지
+            if($(this).is(":checked")) {
+                $("input[name='libraryList']").prop("checked", true);
+                 let id = $j(this).attr('id');
+                // 중복 체크: 이미 배열에 없는 경우만 추가
+                if (!selectedValues.includes(id) && id !== "allCheck") {
+                    selectedValues.push(id);
+                }
+
+            } else {
+                $("input[name='libraryList']").prop("checked", false);
+                const id = $j(this).attr('id');
+                const index = selectedValues.indexOf(id);
+                if (index > -1) {
+                    selectedValues.splice(index, 1);  // 배열에서 해당 id 제거
+                }
+            }
+
+            $j("input[name='boardTypeList']").prop("checked", $j(this).is(":checked"));
+            //alert("id: " + $j(this).attr('id'));
+            selectedValues.push($j(this).attr('id'));
+          });
+
+          //체크된 갯수가 selectedValues.length 보다 작을시 전체 선택 표시 없애기
+            const ckAll = document.querySelector(".ck-all");
+            const ckArr = document.querySelectorAll(".ck");
+            //$('input:checkbox[name="libraryList"]').length//체크박스 전체 갯수
+
+
+            ckAll.addEventListener("click", () =>{
+
+                ckArr.forEach(ck => {
+                    ck.checked = ckAll.checked;
+                })
+
+            })
+
+            ckArr.forEach(ck =>{
+                ck.addEventListener("click",() =>{
+
+                    let cnt = 0;
+
+                    ckArr.forEach(ck =>{
+                        if(ck.checked == true){
+
+                            cnt++;
+                        }
+                    })
+
+                    if(cnt == ckArr.length){
+                        //ckArr.length // ('input:checkbox[name="boardTypeList"]')
+                        ckAll.checked = true;
+                    } else {
+                        ckAll.checked = false;
+                    }
+
+                })
+            })
 
         //파라미터 값을 h5 태그에 넣기
         document.getElementById("result").innerText = title;
@@ -237,16 +301,7 @@
 	 			
 	 	});
 
-		var chkList = $("input[name = libraryList]");
-		 $("#allCheck").on("change", function() {
-            // 내 자신이 체크 되었는지 안되었는지
-            if($(this).is(":checked")) {
-                $("input[name='libraryList']").prop("checked", true);
-            } else {
-                $("input[name='libraryList']").prop("checked", false);
-            }
-            
-		  });
+
          
          $(".reserveBtn").on("click", function(){
         	 let id = $(this).data("book-id");
