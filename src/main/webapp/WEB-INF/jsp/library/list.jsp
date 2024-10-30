@@ -223,29 +223,8 @@
         }
 
         var chkList = $("input[name = libraryList]");
-         $("#allCheck").on("change", function() {
-            // 내 자신이 체크 되었는지 안되었는지
-            if($(this).is(":checked")) {
-                $("input[name='libraryList']").prop("checked", true);
-                 let id = $j(this).attr('id');
-                // 중복 체크: 이미 배열에 없는 경우만 추가
-                if (!selectedValues.includes(id) && id !== "allCheck") {
-                    selectedValues.push(id);
-                }
 
-            } else {
-                $("input[name='libraryList']").prop("checked", false);
-                const id = $j(this).attr('id');
-                const index = selectedValues.indexOf(id);
-                if (index > -1) {
-                    selectedValues.splice(index, 1);  // 배열에서 해당 id 제거
-                }
-            }
 
-            $j("input[name='boardTypeList']").prop("checked", $j(this).is(":checked"));
-            //alert("id: " + $j(this).attr('id'));
-            selectedValues.push($j(this).attr('id'));
-          });
 
           //체크된 갯수가 selectedValues.length 보다 작을시 전체 선택 표시 없애기
             const ckAll = document.querySelector(".ck-all");
