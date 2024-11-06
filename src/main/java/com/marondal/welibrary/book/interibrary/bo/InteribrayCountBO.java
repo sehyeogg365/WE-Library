@@ -16,7 +16,6 @@ public class InteribrayCountBO {
 	public int getInteribraryBookCount(int userId) {
 
 		return interibraryDAO.selectInteribraryBookCount(userId);
-
 	}
 
 	// 대출 상태
@@ -33,7 +32,6 @@ public class InteribrayCountBO {
 			return false;
 
 		}
-
 	}
 
 	// 상호대차 여부
@@ -50,7 +48,6 @@ public class InteribrayCountBO {
 			return false;
 
 		}
-
 	}
 
 }

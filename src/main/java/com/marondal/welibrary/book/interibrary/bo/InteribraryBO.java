@@ -31,14 +31,12 @@ public class InteribraryBO {
 	public int addInteribrary(int bookId, int userId, String receivelibrary) {
 
 		return interibraryDAO.insertInteribrary(bookId, userId, receivelibrary);
-
 	}
 
 	// 상호대차 1행정보
 	public InteribraryBook getInteribrary(int bookId) {
 
 		return interibraryDAO.selectInteribrary(bookId);
-
 	}
 
 	// 상호대차 조회
@@ -69,7 +67,6 @@ public class InteribraryBO {
 		}
 
 		return interibraryDetailList;
-
 	}
 
 
@@ -77,7 +74,6 @@ public class InteribraryBO {
 	public int deleteInteribrary(int id) {
 
 		return interibraryDAO.deleteInteribrary(id);
-
 	}
 
 }
