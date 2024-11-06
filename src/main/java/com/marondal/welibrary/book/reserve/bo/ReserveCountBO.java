@@ -22,21 +22,18 @@ public class ReserveCountBO {
 	public int getReserveBookCount(int userId) {
 
 		return reserveDAO.selectReserveBookCount(userId);
-
 	}
 
 	// 예약인원수
 	public int getReserveCount(int bookId) {
 
 		return reserveDAO.selectReserveCount(bookId);
-
 	}
 
 	// 대출상태
 	public boolean isBorrow(int bookId) {
 
 		int count = reserveDAO.selectBorrowByBookId(bookId);
-
 		
 		if (count == 1) { // 1일때 true else일떄 false 로 수정 해보기
 
@@ -64,7 +61,6 @@ public class ReserveCountBO {
 
 			return true;
 		}
-
 	}
 
 }

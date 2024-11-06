@@ -160,7 +160,6 @@ public class UserBO {
 			return null;
 			
 		}
-		
 	}
 	
 	// 회원정보 수정 리턴타입 생각해보기
@@ -171,7 +170,6 @@ public class UserBO {
 						   , String phoneNumber) {
 
 		return userDAO.updateUser(id, name, birth, email, phoneNumber);
-		
 	}
 	
 	
@@ -179,7 +177,6 @@ public class UserBO {
 	public User getUserInfo(int id) {
 
 		return userDAO.selectUserInfo(id);
-
 	}
 	
 	// 비밀번호 확인
@@ -188,7 +185,6 @@ public class UserBO {
 		String ecryptPassword = EncryptService.md5(password);
 
 		return userDAO.selectPassword(id, ecryptPassword);
-
 	}
 	
 	
@@ -201,7 +197,6 @@ public class UserBO {
 			String ecryptPassword = EncryptService.md5(password);
 	
 			return userDAO.updatePassword(id, ecryptPassword);
-
 	}
 	
 	
@@ -222,7 +217,6 @@ public class UserBO {
 			
 			return 0;
 		}
-		
 	}
 
 }

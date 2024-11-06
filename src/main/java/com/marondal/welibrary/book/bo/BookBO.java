@@ -69,7 +69,6 @@ public class BookBO {
 		}
 
 		return bookDetailList;
-
 	}
 
 	// 상세정보 정보 id로 불러오기
@@ -106,14 +105,12 @@ public class BookBO {
 		}
 
 		return bookDetailList;
-
 	}
 
 	// 책 1행정보 조회(상호대차 팝업창)
 	public BookDetail getBookById(int id) {
 
 		return bookDAO.selectBookById(id);
-
 	}
 
 	// 책 제목 조회
@@ -143,7 +140,6 @@ public class BookBO {
 		}
 
 		return bookCountList;
-
 	}
 
 	// 이전의 충모투어에선 딥스체크비오를 만들어서 진행했는데 그건 로징비오와 딥스비오가 서로서로 참조하는 현상이있어서 그랬던거고 이번엔 따로

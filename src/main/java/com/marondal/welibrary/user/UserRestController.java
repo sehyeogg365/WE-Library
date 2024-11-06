@@ -45,7 +45,6 @@ public class UserRestController {
 		}
 		
 		return resultMap;
-		
 	}
 	
 	// 중복 아이디 확인 api(공통, get)
@@ -67,10 +66,8 @@ public class UserRestController {
 				
 			resultMap.put("is_duplicate", false);
 		}
-		
-		
-		return resultMap;	
 
+		return resultMap;
 	}
 	
 	
@@ -99,7 +96,6 @@ public class UserRestController {
 		}
 		
 		return resultMap;
-		
 	}
 	
 	
@@ -129,7 +125,6 @@ public class UserRestController {
 		}
 		
 		return resultMap;
-		
 	}
 	
 	// id찾기
@@ -153,8 +148,6 @@ public class UserRestController {
 		}
 	
 		return resultMap;
-		
-		
 	}
 	
 	// pw 재발급	
@@ -181,8 +174,6 @@ public class UserRestController {
 		}
 		
 		return resultMap;
-		
-		
 	}
 
 	// 회원정보 수정
@@ -207,9 +198,6 @@ public class UserRestController {
 		}
 		
 		return resultMap;
-		
-		
-		
 	}
 	
 	// 비밀번호 확인
@@ -233,8 +221,6 @@ public class UserRestController {
 		}
 		
 		return resultMap;
-		
-	
 	}
 	
 	// 비밀번호 변경
@@ -262,8 +248,6 @@ public class UserRestController {
 		}
 
 		return resultMap;
-		
-		
 	}
 	
 	// 회원 탈퇴
@@ -290,10 +274,6 @@ public class UserRestController {
 		}
 		
 		return resultMap;
-		
-		
 	}
-	
-	
 
 }

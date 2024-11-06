@@ -30,7 +30,6 @@ public class WishBookBO {
 		String imagePath = FileManagerService.saveFile(userId, file);
 
 		return wishBookDAO.insertWishBook(userId, library, title, imagePath, author, publisher, price, isbn, pubyear);
-
 	}
 
 	// 희망도서 리스트
@@ -63,7 +62,6 @@ public class WishBookBO {
 		}
 
 		return wishbookDetailList;
-
 	}
 
 	// 관리자 희망도서 신청 리스트
@@ -94,7 +92,6 @@ public class WishBookBO {
 		}
 
 		return wishbookDetailList;
-
 	}
 
 	// 희망도서 북테이블에 추가
@@ -105,7 +102,6 @@ public class WishBookBO {
 
 		return wishBookDAO.insertWishbookIntoBook(library, title, imagePath, author, publisher, price, isbn, pubyear,
 				appnedix);
-
 	}
 
 }

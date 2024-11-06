@@ -34,7 +34,6 @@ public class ReserveBO {
 	public int addReserve(int bookId, int userId) {
 
 		return reserveDAO.insertReserve(bookId, userId);
-
 	}
 
 	// 예약 조회
@@ -78,14 +77,12 @@ public class ReserveBO {
 		}
 
 		return reserveDetailList;
-
 	}
 
 	// 예약 취소
 	public int deleteReserve(int id) {
 
 		return reserveDAO.deleteReserve(id);
-
 	}
 
 }

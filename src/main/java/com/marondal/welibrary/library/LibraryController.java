@@ -37,7 +37,6 @@ public class LibraryController {
 	public String mainPage() {
 
 		return "library/main";
-
 	}
 
 	@GetMapping("/list/view")
@@ -72,7 +71,6 @@ public class LibraryController {
 		// 상호대차 1행조회를쓰면서 상호대차 반납예정일도 불러와야한다. 조건문 대출중일때 대출반납예정일 상호대차중일때 상호대차 반납예정일
 
 		return "/library/bookinfo";
-
 	}
 
 	@GetMapping("/interibrarypopup/view")
@@ -82,7 +80,6 @@ public class LibraryController {
 		model.addAttribute("book", book);
 
 		return "/library/interibrarypopup";
-
 	}
 
 }

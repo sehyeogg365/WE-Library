@@ -68,7 +68,6 @@ public class BookRestController {
 		}	
 		
 		return resultMap;
-		
 	}
 	
 	// 희망도서/ 도서 북테이블에 추가
@@ -100,7 +99,6 @@ public class BookRestController {
 		}
 
 		return resultMap;
-		
 	}
 	
 	// 관심도서 추가
@@ -126,7 +124,6 @@ public class BookRestController {
 		}
 
 		return resultMap;
-
 	}
 	
 	// 관심도서 삭제 
@@ -149,7 +146,6 @@ public class BookRestController {
 		}
 		
 		return resultMap;
-
 	}
 	
 	//대여
@@ -176,7 +172,6 @@ public class BookRestController {
 		}
 
 		return resultMap;
-
 	}
 	
 	//반납
@@ -200,8 +195,8 @@ public class BookRestController {
 		}
 
 		return resultMap;
-		
-	}	
+	}
+
 	//반납 연장
 	@PostMapping("/borrow/update")
 	public Map<String, String> borrowUpdate(@RequestParam("id") int id
@@ -224,7 +219,6 @@ public class BookRestController {
 		}
 		
 		return resultMap;
-
 	}
 
 	//예약
@@ -251,9 +245,7 @@ public class BookRestController {
 		}
 		
 		return resultMap;
-
 	}
-	
 	
 	//예약 취소 
 	@GetMapping("/reservation/delete")
@@ -275,7 +267,6 @@ public class BookRestController {
 		}
 
 		return resultMap;
-
 	}
 	
 	//상호대차
@@ -301,7 +292,6 @@ public class BookRestController {
 		}
 		
 		return resultMap;
-
 	}
 
 	//상호대차 취소
@@ -323,7 +313,6 @@ public class BookRestController {
 		}
 			
 		return resultMap;
-		
 	}
 
 	//2024-03-17 대출이력 추가
@@ -348,7 +337,6 @@ public class BookRestController {
 		}
 		
 		return resultMap;
-		
 	}
 	
 }
