@@ -44,5 +44,6 @@ Gradle
 <img src="https://img.shields.io/badge/Gradle-02303A?style=flat-square&logo=Gradle&logoColor=white"/>
 
 <a href="https://www.miricanvas.com/v/12dnr9i">포트폴리오</a>
+<a href="https://docs.google.com/spreadsheets/d/1xFP0xoNL0dEIKLUXPe7yj9DetWB0BLAEIzzqgqNE1dI/edit?gid=0#gid=0">설계서</a>
 <div class=""><img src ="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2F2fF9o%2FbtsvnadOWd1%2FzI1GoKoXBGH6YdCNGFcYY0%2Fimg.jpg"/> </div>
 <div class=""><img src ="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FoPsrW%2FbtsvncW0sJc%2FHGATpt3ZoHSwrXe8eaWtX1%2Fimg.jpg"/> </div>
