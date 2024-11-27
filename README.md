@@ -61,19 +61,6 @@ Gradle
 <a href="https://docs.google.com/spreadsheets/d/1xFP0xoNL0dEIKLUXPe7yj9DetWB0BLAEIzzqgqNE1dI/edit?gid=0#gid=0">설계서</a>
 
 
-## ERD
-<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FC5Gq3%2FbtsKYzI86aE%2Fj01RadikOUJrSUJkefVpiK%2Fimg.png"/>
-
-## 만든계기
-  * [화면구성](#화면구성)<br>
-  * [핵심기능](#핵심기능)<br>
-
-## 개발환경
-<img src="https://img.shields.io/badge/Spring-6DB33F?style=flat-square&logo=Spring&logoColor=black"/>
-<img src="https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=MySQL&logoColor=white"/>
-<img src="https://img.shields.io/badge/sourcetree-0052CC?style=flat-square&logo=sourcetree&logoColor=black"/>
-<img src="https://img.shields.io/badge/intellijidea-000000?style=flat-square&logo=intellijidea&logoColor=white"/> 
-
  ## 💪 Skills
   
  <div class="text-center">
