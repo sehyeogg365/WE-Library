@@ -1,7 +1,7 @@
 # WE-Library
 두번째 프로젝트
 
-## 목차
+## 📖목차
   * [개발환경](#개발환경) <br>
   * [Skills](#Skills)<br>
   * [ERD](#ERD)<br>
@@ -58,25 +58,25 @@ Gradle
 <img src="https://img.shields.io/badge/Gradle-02303A?style=flat-square&logo=Gradle&logoColor=white"/>
 
 백엔드
-Java 11
-SpringBoot 3.4.0
+* Java 11
+* SpringBoot 3.4.0
 
 프론트엔드
-Html5/css3
-Javascript
-Bootstrap 5
+* Html5/css3
+* Javascript
+* Bootstrap 5
 
 빌드 툴
-Gradle
+* Gradle
 
 데이터베이스
-MySQL
+* MySQL
 
 인프라
-AWS EC2
+* AWS EC2
 
 라이브러리
-네이버 지도 api 
+* 네이버 지도 api 
 
 <a href="https://www.miricanvas.com/v/12dnr9i">포트폴리오</a><br>
 <a href="https://docs.google.com/spreadsheets/d/1xFP0xoNL0dEIKLUXPe7yj9DetWB0BLAEIzzqgqNE1dI/edit?gid=0#gid=0">설계서</a>
