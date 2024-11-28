@@ -18,8 +18,6 @@
 </div>
 
  ## 💪 Skills
-  
- <div class="text-center">
  JAVA
  <img src="https://img.shields.io/badge/JAVA-4479A1?style=flat-square&logo=JAVA&logoColor=white"/>
   
