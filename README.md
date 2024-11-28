@@ -91,13 +91,10 @@ Gradle
 <div class=""><img src ="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2F2fF9o%2FbtsvnadOWd1%2FzI1GoKoXBGH6YdCNGFcYY0%2Fimg.jpg"/> </div>
 <div class=""><img src ="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FoPsrW%2FbtsvncW0sJc%2FHGATpt3ZoHSwrXe8eaWtX1%2Fimg.jpg"/> </div>
 
-+--+--+--+--+
-|  |  |  |  |
-+--+--+--+--+
-|  |  |  |  |
-+--+--+--+--+
-|  |  |  |  |
-+--+--+--+--+
+|------|---|---|
+|테스트1|테스트2|테스트3|
+|테스트1|테스트2|테스트3|
+|테스트1|테스트2|테스트3|
 
 
 ## 핵심기능
