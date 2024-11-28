@@ -87,15 +87,22 @@ Gradle
 ## 만든계기
 도서관 홈페이지에 대한 실제 서비스를 알아보고 싶었고, 이 기능들을 구현할 때 어떻게 구현되는지에 대한 호기심이 생겼으며, 코딩에 대한 강력한 열정이 있었습니다.
 
-## 화면구성
-<div class=""><img src ="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2F2fF9o%2FbtsvnadOWd1%2FzI1GoKoXBGH6YdCNGFcYY0%2Fimg.jpg"/> </div>
-<div class=""><img src ="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FoPsrW%2FbtsvncW0sJc%2FHGATpt3ZoHSwrXe8eaWtX1%2Fimg.jpg"/> </div>
+## 화면구성 💻
+| 회원가입 | 로그인화면 | 메인페이지 | 희망도서추가화면 |
+| ----------------------- | ----------------------- | ----------------------- | ----------------------- |
+|<img src="" width="200px" height="200px"/>| <img src="" width="200px" height="200px"/>| <img src="" width="200px" height="200px"/>  | <img src="" width="200px" height="200px"/> |
 
-| 헤더1 | 헤더2 | 헤더3 |
-| --- | --- | --- |
-| 행1 열1 | 행1 열2 | 행1 열3 |
-| 행2 열1 | 행2 열2 | 행2 열3 |
-| 행3 열1 | 행3 열2 | 행3 열3 |
+| 카카오pai | 희망도서리스트 | 도서리스트 | 상세정보창 |
+| ----------------------- | ----------------------- | ----------------------- | ----------------------- |
+|<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fb0tmvV%2FbtsKY0npC3h%2F5KDv7MfqeiTOKpVlbzAlj1%2Fimg.png" width="200px" height="200px"/>| <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FAorjT%2FbtsK0oHm6AB%2FkfMesqGbLpMmdP5291jxeK%2Fimg.png" width="200px" height="200px"/>| <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fp5ptz%2FbtsKYXROVLy%2FwoQllN2W7f5FAdb8W2p3p0%2Fimg.png" width="200px" height="200px"/>  | <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FYKYDJ%2FbtsKZ70aWYX%2FUmirYeXtT4Nn7Ahk6f8Uhk%2Fimg.png" width="200px" heighth="200px"/> |
+
+| 아이디/비번찾기 | 비밀번호 확인 | 마이페이지 | 비밀번호 변경 |
+| ----------------------- | ----------------------- | ----------------------- | ----------------------- |
+|<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcWwOu6%2FbtsK0lw64Ug%2FONsXgKAeYXLp8jkoejVBk1%2Fimg.png" width="200px" height="200px"/>| <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FdP1bKa%2FbtsKZ5OOceu%2FoEWWoVvePQ1re9JnTC3wb1%2Fimg.png" width="200px" height="200px"/>| <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcGgcny%2FbtsKZ6fWso6%2FHUKABXtfQq4YQSfnm6MmF0%2Fimg.png" width="200px" height="200px"/>  | <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcAbGly%2FbtsKX9rVyHS%2FKhe3jcAq4TnFRXab0SP861%2Fimg.png" width="200px" heighth="200px"/> |
+
+| 대출목록 | 예약목록 | 관심도서 | 상호대차목록 |
+| ----------------------- | ----------------------- | ----------------------- | ----------------------- |
+|<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fbr8Mv4%2FbtsKZvUJO1W%2FD1EZuhB8MRjkk83SuxTWI1%2Fimg.png" width="200px" height="200px"/>| <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FnAJZq%2FbtsKZPMbJ8I%2FPqSAl9HtEHZiu4urhjpzxk%2Fimg.png" width="200px" height="200px"/>| <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FQ1rTH%2FbtsKY4i40mz%2FP8q0oIDwfhREPzmodSitK0%2Fimg.png" width="200px" height="200px"/>  | <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FEcrfq%2FbtsK0n2Mgcu%2Ff6WLYIJT4DVMJfS14hi5f1%2Fimg.png" width="200px" heighth="200px"/> |
 
 
 ## 핵심기능
