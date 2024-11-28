@@ -87,7 +87,7 @@ Gradle
 ## 만든계기
 도서관 홈페이지에 대한 실제 서비스를 알아보고 싶었고, 이 기능들을 구현할 때 어떻게 구현되는지에 대한 호기심이 생겼으며, 코딩에 대한 강력한 열정이 있었습니다.
 
-## 화면구성 💻
+## 화면구성
 | 회원가입 | 로그인화면 | 메인페이지 | 희망도서추가화면 |
 | ----------------------- | ----------------------- | ----------------------- | ----------------------- |
 |<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fb8HyDL%2FbtsKX3efQmZ%2FOqymD0c1GRuHNpwMMw6Ke0%2Fimg.png" width="200px" height="200px"/>| <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcLWbOf%2FbtsKYxMDC7F%2F2kmbaLVO7qYaG2a7VVtfkk%2Fimg.png" width="200px" height="200px"/>| <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fb8hGCT%2FbtsKZAV6OfQ%2F8wO4eDJN4Wdq52e6yImIZ0%2Fimg.png" width="200px" height="200px"/>  | <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FeAye7Q%2FbtsKX7HEHyC%2F9Zq04cOGKEfqV3LgE5Htkk%2Fimg.png" width="200px" height="200px"/> |
