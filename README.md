@@ -115,47 +115,43 @@ Gradle
 ## 핵심기능⭐
 
 ### 희망도서 신청
- * 이미지 파일, 도서관, 도서명, 제목, 작가, 출판사, 가격, isbn, 출판일을 입력해야만 한다.
 
+ * 이미지 파일, 도서관, 도서명, 제목, 작가, 출판사, 가격, isbn, 출판일을 입력해야만 한다.
 우선적으로 사용자 id는 누가 도서를 신청했는지 알 필요 있어서 컬럼에fk로 추가했다.
 
 그리고 비즈니스 로직을 관리하는 클래스에서 파일을 저장시키게 하는 파일매니저 서비스 메서드를 사용해서
 파일명이 중복이 안되게끔 아이디 값을 넣어서 저장을 시켰다.
   * <a href="https://github.com/sehyeogi365/WE-Library/blob/master/src/main/java/com/marondal/welibrary/book/BookRestController.java">희망도서 신청</a>
 
-
 ### 희망도서 추가
- * 비즈니스 로직을 관리하는 클래스에서 파일을 저장시키게 하는 파일매니저 서비스 메서드를 사용한다. 파일명이 중복이 안되게끔 가격 값을 넣어서 저장을 시켰다.
 
+ * 비즈니스 로직을 관리하는 클래스에서 파일을 저장시키게 하는 파일매니저 서비스 메서드를 사용한다. 파일명이 중복이 안되게끔 가격 값을 넣어서 저장을 시켰다.
 api 서 추가된 행의 개수 결과가 1이냐 아니냐에 따라 result라는 키로 success fail 형태 값으로 전달한다. 제이슨 문자열로 리스폰스를 통해서
   * <a href="https://github.com/sehyeogi365/WE-Library/blob/master/src/main/java/com/marondal/welibrary/book/BookRestController.java">희망도서 추가</a>
 
 ### 체크박스 검색
+
  * 도서 검색 리스트에서 체크박스를 선택하여 도서관들을 선택할 수 있습니다.
-
-전체 선택 시 모든 체크박스가 선택되며, 하나라도 체크박스가 선택 안되었을 시에 
-
-전체 체크박스가 자동으로 지워집니다.
+전체 선택 시 모든 체크박스가 선택되며, 하나라도 체크박스가 선택 안되었을 시에 전체 체크박스가 자동으로 지워집니다.
 
 체크박스로 도서관 명을 선택한 후 검색 버튼을 눌렀을 시 본인이 조회하고자 하는 도서관의 책을 볼 수 있습니다.
   * <a href="https://github.com/sehyeogi365/WE-Library/blob/master/src/main/java/com/marondal/welibrary/library/LibraryController.java">체크박스 검색</a>
 
 
 <h3 id="대출반납">대출&반납</h3>
- * 도서 리스트에서 대출 버튼을 누르거나 상세 정보 창에서 버튼을 누르면 해당 도서가 대출 목록에 추가가 된다.
 
+ * 도서 리스트에서 대출 버튼을 누르거나 상세 정보 창에서 버튼을 누르면 해당 도서가 대출 목록에 추가가 된다.
 해당 도서가 대출 중이거나 상호대차 중일 때는 대출이 불가능하다.
 
 대출은 해당 도서의 책 id를 파라미터로 받아왔다.
-
 하나의 대출 목록의 카드 한 장에 있는 반납 버튼을 누르면
 
 해당 도서가 대출 목록에서 삭제가 되는 기능이다.
-
 대출도서 id 값을 파라미터로 잡은 후 해당하는 id의 대출도서를 삭제한다.
   * <a href="https://github.com/sehyeogi365/WE-Library/blob/master/src/main/java/com/marondal/welibrary/book/BookRestController.java">대출&반납</a>
 
 ### 반납연장
+
  * 하나의 대출 목록의 카드 한 장에 있는 반납 연장 버튼을 누르면
 해당 도서의 반납 예정일이 1주일 연장되는 기능이다.
 
@@ -166,6 +162,7 @@ api 서 추가된 행의 개수 결과가 1이냐 아니냐에 따라 result라�
   * <a href="https://github.com/sehyeogi365/WE-Library/blob/master/src/main/java/com/marondal/welibrary/book/BookRestController.java">반납연장</a>
 
 <h3 id="예약취소">예약&취소</h3>
+
  * 도서 리스트에서 예약 버튼을 누르거나 상세 정보 창에서 버튼을 누르면
 해당 도서가 예약 목록에 추가가 된다.
 해당 도서가 대출 중이거나 상호대차 중일 때만 예약이 가능하다.
@@ -179,6 +176,7 @@ api 서 추가된 행의 개수 결과가 1이냐 아니냐에 따라 result라�
   * <a href="https://github.com/sehyeogi365/WE-Library/blob/master/src/main/java/com/marondal/welibrary/book/BookRestController.java">예약&취소</a>
 
 <h3 id="상호대차신청취소">상호대차신청&취소</h3>
+
  * 도서 리스트에서 상호대차 버튼을 누르면 팝업창이 뜬다.
 해당 도서가 대출 중이거나 상호대차 중일 때는 대출이 불가능하다.
 팝업창에는 해당 도서의 정보를 조회할 수 있으며 상호대차 도서관을 선택할 수 있다.
