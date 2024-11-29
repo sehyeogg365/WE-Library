@@ -152,8 +152,6 @@ api 서 추가된 행의 개수 결과가 1이냐 아니냐에 따라 result라�
 
 해당 도서가 대출 목록에서 삭제가 되는 기능이다.
 
-논현 도서관의 모두의 파이썬 도서의 반납 버튼을 누르니 해당 도서가 목록에서 삭제된다.
-
 대출도서 id 값을 파라미터로 잡은 후 해당하는 id의 대출도서를 삭제한다.
   * <a href="https://github.com/sehyeogi365/WE-Library/blob/master/src/main/java/com/marondal/welibrary/book/BookRestController.java">대출&반납</a>
 
@@ -174,12 +172,9 @@ api 서 추가된 행의 개수 결과가 1이냐 아니냐에 따라 result라�
 예약은 해당 도서의 책 id를 파라미터로 받아왔다.
 도서 리스트에서 예약 버튼을 누르거나 상세 정보 창에서 버튼을 누르면 해당 도서가 예약 목록에 추가가 된다.
 해당 도서가 대출 중이거나 상호대차 중일 때만 예약이 가능하다.
-예약 목록 조회는 예약 id 내림차순으로 최근에 예약한 순서대로 조회할 수 있게 구현을 했다.
 
 하나의 예약 목록의 카드 한 장에 있는 예약 취소 버튼을 누르면
 해당 도서가 예약 목록에서 삭제가 되는 기능이다.
-모두의 c언어 도서의 예약 취소 버튼을 눌렀다.
-해당 도서가 목록에서 삭제되는 모습이다.
 예약 도서 id 값을 파라미터로 잡은 후 해당하는 id의 예약 도서를 삭제한다.
   * <a href="https://github.com/sehyeogi365/WE-Library/blob/master/src/main/java/com/marondal/welibrary/book/BookRestController.java">예약&취소</a>
 
