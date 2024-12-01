@@ -131,6 +131,7 @@ Gradle
 , @RequestParam(value="libraryList", required = false)ArrayList<String> libraryList
   * <a href="https://github.com/sehyeogi365/WE-Library/blob/master/src/main/java/com/marondal/welibrary/library/LibraryController.java">체크박스 검색</a>
 
+<video src="https://blog.naver.com/lsh2757/223223096771"> width="750" controls></video>
 
 <h3 id="대출반납">대출&반납</h3>
 
