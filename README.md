@@ -144,6 +144,7 @@ Gradle
  * 대출도서 id 값을 파라미터로 잡은 후 해당하는 id의 대출도서의 반납일을 연장한다. 더 나아가, jstl로 대출일자와 반납 일자 차이가 21일 이상이며, 오늘날짜가 반납 일자 보다 적을 때 
 반납 연장이라는 문구가 뜨게 했다.  
   * <a href="https://github.com/sehyeogi365/WE-Library/blob/master/src/main/java/com/marondal/welibrary/book/BookRestController.java">반납연장</a>
+  <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FzGigH%2FbtsK4cmWPdx%2FaEHc2uwTlwraEMuaGOuqI1%2Fimg.png" width="400px" height="400px"/>
 
 <h3 id="예약취소">예약&취소</h3>
 
@@ -155,7 +156,6 @@ Gradle
  * 도서 리스트에서 상호대차 버튼을 누르면 팝업창이 뜨게 했다. 팝업창에는 해당 도서의 정보를 조회할 수 있으며 상호대차 도서관을 선택하고 상호대차는 해당 도서의 책 id를 파라미터로 받아왔다.
 취소는 상호대차 id를 파라미터로 잡은 후 해당하는 상호대차 도서를 삭제한다. 아직 수령받지 않은 도서만 취소가 가능하다.
   * <a href="https://github.com/sehyeogi365/WE-Library/blob/master/src/main/java/com/marondal/welibrary/library/LibraryController.java">상호대차신청취소</a>
-
 <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fc8D7DU%2FbtsKX7t5y0H%2FUq1zPBIa0YkcRwonSat660%2Fimg.png" width="400px" height="400px"/>
 
 
