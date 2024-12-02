@@ -119,6 +119,7 @@ Gradle
  * 비즈니스 로직을 관리하는 클래스에서 파일을 저장시키게 하는 파일매니저 서비스 메서드를 사용해서
 파일명이 중복이 안되게끔 아이디 값을 넣어서 저장을 시켰다.
   * <a href="https://github.com/sehyeogi365/WE-Library/blob/master/src/main/java/com/marondal/welibrary/book/BookRestController.java">희망도서 신청</a>
+<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcRwwCG%2FbtsK0mv23nz%2FFuZ2X9WFc7xOyr1sDu92G1%2Fimg.png" width="400px" height="400px"/>
 
 ### 희망도서 추가
 
@@ -156,5 +157,6 @@ Gradle
 취소는 상호대차 id를 파라미터로 잡은 후 해당하는 상호대차 도서를 삭제한다. 아직 수령받지 않은 도서만 취소가 가능하다.
   * <a href="https://github.com/sehyeogi365/WE-Library/blob/master/src/main/java/com/marondal/welibrary/library/LibraryController.java">상호대차신청취소</a>
 
-<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcRwwCG%2FbtsK0mv23nz%2FFuZ2X9WFc7xOyr1sDu92G1%2Fimg.png" width="400px" height="400px"/>
+<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fc8D7DU%2FbtsKX7t5y0H%2FUq1zPBIa0YkcRwonSat660%2Fimg.png" width="400px" height="400px"/>
+
 
