@@ -131,8 +131,7 @@ Gradle
  * 폼메서드를 활용하고, 도서관 명들을 컨트롤러에서 리스트 타입인 파라미터로 정했다. 그리고 필수로 입력하는 것이 아니기 때문에 required=false 속성을 지정했다.
 , @RequestParam(value="libraryList", required = false)ArrayList<String> libraryList
   * <a href="https://github.com/sehyeogi365/WE-Library/blob/master/src/main/java/com/marondal/welibrary/library/LibraryController.java">체크박스 검색</a>
-
-<iframe src="https://sehyeogi360.tistory.com/40" width="100%" height="100%" border="0" hspace="0" marginheight="0" marginwidth="0" frameborder="0" scrolling="no" vspace="0"></iframe>
+<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FdhSww7%2FbtsK2yxVjNt%2FhuXkKIehJGWA7ApSHJkWak%2Fimg.png" width="400px" height="400px"/>
 
 <h3 id="대출반납">대출&반납</h3>
 
