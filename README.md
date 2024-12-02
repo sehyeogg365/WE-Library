@@ -131,13 +131,13 @@ Gradle
 , @RequestParam(value="libraryList", required = false)ArrayList<String> libraryList
   * <a href="https://github.com/sehyeogi365/WE-Library/blob/master/src/main/java/com/marondal/welibrary/library/LibraryController.java">체크박스 검색</a>
 
-<video src="https://blog.naver.com/lsh2757/223223096771"> width="1000" controls autoplay>q</video>
+<iframe src="https://sehyeogi360.tistory.com/40" width="100%" height="100%" border="0" hspace="0" marginheight="0" marginwidth="0" frameborder="0" scrolling="no" vspace="0"></iframe>
 
 <h3 id="대출반납">대출&반납</h3>
 
  * 대출은 해당 도서의 책 id를 파라미터로 받아와서 처리하기로 했다. 반납은 대출도서 id 값을 파라미터로 잡은 후 해당하는 id의 대출도서를 삭제한다.
   * <a href="https://github.com/sehyeogi365/WE-Library/blob/master/src/main/java/com/marondal/welibrary/book/BookRestController.java">대출&반납</a>
-<iframe src="https://sehyeogi360.tistory.com/40" width="100%" height="100%" border="0" hspace="0" marginheight="0" marginwidth="0" frameborder="0" scrolling="no" vspace="0"></iframe>
+
 
 ### 반납연장
 
@@ -156,5 +156,5 @@ Gradle
 취소는 상호대차 id를 파라미터로 잡은 후 해당하는 상호대차 도서를 삭제한다. 아직 수령받지 않은 도서만 취소가 가능하다.
   * <a href="https://github.com/sehyeogi365/WE-Library/blob/master/src/main/java/com/marondal/welibrary/library/LibraryController.java">상호대차신청취소</a>
 
-
+<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcRwwCG%2FbtsK0mv23nz%2FFuZ2X9WFc7xOyr1sDu92G1%2Fimg.png" width="400px" height="400px"/>
 
