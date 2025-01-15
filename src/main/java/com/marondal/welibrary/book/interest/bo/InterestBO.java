@@ -29,7 +29,6 @@ public class InterestBO {
 
 	// 관심도서 추가
 	public int addInterest(int userId, int bookId) {
-
 		return interestDAO.insertInterest(userId, bookId);
 	}
 
@@ -67,7 +66,6 @@ public class InterestBO {
 
 	// 관심도서 삭제
 	public int deleteInterest(int id) {
-
 		return interestDAO.deleteInterest(id);
 	}
 

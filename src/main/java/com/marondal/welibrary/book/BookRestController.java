@@ -89,13 +89,9 @@ public class BookRestController {
 		Map<String, String> resultMap = new HashMap<>();
 		
 		if(count == 1) {
-			
 			resultMap.put("result", "success");
-			
 		} else {
-			
 			resultMap.put("result", "fail");
-
 		}
 
 		return resultMap;
@@ -114,13 +110,9 @@ public class BookRestController {
 		Map<String, String> resultMap = new HashMap<>();
 		
 		if(count == 1) {
-			
 			resultMap.put("result", "success");
-			
 		} else {
-			
 			resultMap.put("result", "fail");
-			
 		}
 
 		return resultMap;
@@ -136,13 +128,9 @@ public class BookRestController {
 		Map<String, String> resultMap = new HashMap<>();
 		
 		if(count == 0) {
-			
 			resultMap.put("result", "fail");
-			
 		} else {
-			
 			resultMap.put("result", "success");
-			
 		}
 		
 		return resultMap;
@@ -154,7 +142,6 @@ public class BookRestController {
 											, HttpSession session
 											//,@RequestParam("returnDate") Date returnDate
 											){
-		
 		int userId = (Integer) session.getAttribute("userId");
 		
 		int count = borrowBO.addBorrow(userId, bookId);
@@ -162,13 +149,9 @@ public class BookRestController {
 		Map<String, String> resultMap = new HashMap<>();
 		
 		if(count == 1) {
-			
 			resultMap.put("result", "success");
-			
 		} else {
-			
 			resultMap.put("result", "fail");
-			
 		}
 
 		return resultMap;
@@ -180,18 +163,13 @@ public class BookRestController {
 											){
 
 		int count = borrowBO.deleteBorrow(id);
-		
 
 		Map<String, String> resultMap = new HashMap<>();
 		
 		if(count == 1) {
-			
 			resultMap.put("result", "success");
-			
 		} else {
-			
 			resultMap.put("result", "fail");
-			
 		}
 
 		return resultMap;
@@ -209,13 +187,9 @@ public class BookRestController {
 		Map<String, String> resultMap = new HashMap<>();
 		
 		if(count == 1) {
-			
 			resultMap.put("result", "success");
-			
 		} else {
-			
 			resultMap.put("result", "fail");
-			
 		}
 		
 		return resultMap;
@@ -227,23 +201,16 @@ public class BookRestController {
 												, HttpSession session){
 		
 		int userId = (Integer) session.getAttribute("userId");
-		
-		
+
 		int count = reserveBO.addReserve(bookId, userId);
-		
 
 		Map<String, String> resultMap = new HashMap<>();
 		
 		if(count == 1) {
-			
 			resultMap.put("result", "success");
-			
 		} else {
-			
 			resultMap.put("result", "fail");
-			
 		}
-		
 		return resultMap;
 	}
 	
@@ -257,15 +224,10 @@ public class BookRestController {
 		Map<String, String> resultMap = new HashMap<>();
 		
 		if(count == 1) {
-			
 			resultMap.put("result", "success");
-			
 		} else {
-			
 			resultMap.put("result", "fail");
-			
 		}
-
 		return resultMap;
 	}
 	
@@ -282,15 +244,10 @@ public class BookRestController {
 		Map<String, String> resultMap = new HashMap<>();
 		
 		if(count == 1) {
-			
 			resultMap.put("result", "success");
-			
 		} else {
-			
 			resultMap.put("result", "fail");
-			
 		}
-		
 		return resultMap;
 	}
 
@@ -303,15 +260,10 @@ public class BookRestController {
 		Map<String, String> resultMap = new HashMap<>();
 		
 		if(count == 1) {
-			
 			resultMap.put("result", "success");
-			
 		} else {
-			
 			resultMap.put("result", "fail");
-			
 		}
-			
 		return resultMap;
 	}
 
@@ -327,15 +279,10 @@ public class BookRestController {
 		int count = borrowBO.addBorrowHistory(bookId, userId);
 
 		if(count == 1) {
-			
 			resultMap.put("result", "success");
-			
 		} else {
-			
 			resultMap.put("result", "fail");
-			
 		}
-		
 		return resultMap;
 	}
 	

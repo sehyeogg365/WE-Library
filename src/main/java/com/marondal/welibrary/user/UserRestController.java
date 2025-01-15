@@ -32,8 +32,7 @@ public class UserRestController {
 			, @RequestParam("phoneNumber") String phoneNumber
 			
 			){
-		
-		
+
 		int count = userBO.addUser(loginId, password, name, birth, email, phoneNumber);
 		
 		Map<String, String> resultMap = new HashMap<>();
@@ -53,24 +52,20 @@ public class UserRestController {
 			@RequestParam("loginId") String loginId
 			){
 			
-			
 		Map<String, Boolean> resultMap = new HashMap<>();
 		
 		boolean is_duplicate = userBO.isDuplicate(loginId);
 			
 			
 		if(is_duplicate) {//중복될시
-				
 			resultMap.put("is_duplicate", true);
 		} else { //아닐시
-				
 			resultMap.put("is_duplicate", false);
 		}
 
 		return resultMap;
 	}
-	
-	
+
 	// 관리자 
 	@PostMapping("/adminsignup")
 	public Map<String, String> adminsignup(
@@ -83,7 +78,6 @@ public class UserRestController {
 			, @RequestParam("isAdmin") int isAdmin
 			, @RequestParam("certificationNumber") String certificationNumber			
 			){
-		
 		
 		int count = userBO.addAdminUser(loginId, password, name, birth, email, phoneNumber, isAdmin,certificationNumber);
 		
@@ -110,17 +104,14 @@ public class UserRestController {
 		Map<String, String> resultMap = new HashMap<>();
 		
 		if(user != null) {
-			
 			resultMap.put("result", "success");
 			
 			session.setAttribute("userId", user.getId());
 			session.setAttribute("loginId", user.getLoginId());
 			session.setAttribute("password", user.getPassword()); //사실상 없어도 될것같다. 
 			session.setAttribute("userName", user.getName());
-			session.setAttribute("isAdmin", user.getIsAdmin());//사실상 이것도 있어야 할것같다. 관리자 여부에 따라 보여지는것 안보여지는것 나눠야 함 
-			
+			session.setAttribute("isAdmin", user.getIsAdmin());//사실상 이것도 있어야 할것같다. 관리자 여부에 따라 보여지는것 안보여지는것 나눠야 함
 		} else {
-			
 			resultMap.put("result", "fail");
 		}
 		
@@ -140,7 +131,6 @@ public class UserRestController {
 		User user = userBO.getUserByNameBirthPhone(loginId, name, birth, phoneNumber);
 		
 		if(user != null) {
-			
 			resultMap.put("result", "success");//
 			resultMap.put("info", user);//아이디 값 ajax로전달
 		} else {
@@ -158,8 +148,7 @@ public class UserRestController {
 									, @RequestParam("birth") String birth	
 									, @RequestParam("phoneNumber") String phoneNumber	
 									){
-											
-		
+
 		Map<String, Object> resultMap = new HashMap<>();
 		
 		String password = userBO.getPassword(loginId, name, birth, phoneNumber);
@@ -210,9 +199,7 @@ public class UserRestController {
 		
 		int id = (Integer)session.getAttribute("userId");
 		
-		
 		int count = userBO.checkPassword(id, password);
-		
 		
 		if(count == 0) {//틀릴시
 			resultMap.put("result", "fail");
@@ -231,7 +218,6 @@ public class UserRestController {
 										 , HttpSession session
 										){
 		
-		
 		Map<String, String> resultMap = new HashMap<>();
 		
 		int id = (Integer)session.getAttribute("userId");
@@ -240,11 +226,8 @@ public class UserRestController {
 		
 		if(count == 1) {
 			resultMap.put("result", "success");
-			
 		} else {
-			
 			resultMap.put("result", "fail");
-			
 		}
 
 		return resultMap;
@@ -262,15 +245,10 @@ public class UserRestController {
 		
 		int count = userBO.deleteUser(id, password);
 		
-		
 		if(count == 1) {
-			
 			resultMap.put("result", "success");
-			
 		} else {
-			
 			resultMap.put("result", "fail");
-			
 		}
 		
 		return resultMap;

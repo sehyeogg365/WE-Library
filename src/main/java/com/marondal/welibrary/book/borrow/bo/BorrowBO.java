@@ -30,15 +30,12 @@ public class BorrowBO {
 
 	// 대여
 	public int addBorrow(int userId, int bookId) {
-
 		return borrowDAO.insertBorrow(userId, bookId);
 	}
 
 	// 대출 1행정보
 	public BorrowBook getBorrow(int bookId) {
-
 		return borrowDAO.selectBorrow(bookId);
-
 	}
 
 	// 대출 목록
@@ -70,36 +67,27 @@ public class BorrowBO {
 
 			borrowDetailList.add(borrowBookDetail);
 		}
-
 		return borrowDetailList;
-
 	}
 
 	// 반납
 	public int deleteBorrow(int id) {
-
 		return borrowDAO.deleteBorrow(id);
 	}
 
 	// 반납 연장
 	public int updateBorrow(int userId, int id) {
-
 		return borrowDAO.updateBorrow(userId, id);
-
 	}
 	
 	//2024-03-17 대출 이력 추가
 	public int addBorrowHistory(int userId, int bookId) {
-		
 		return borrowDAO.insertBorrowHistory(userId, bookId);
-
 	}
 	
 	//대출 이력 권수
 	public List<Integer> borrowHistoryNumber(int userId){
-		
 		return null;
-		
 	}
 
 }

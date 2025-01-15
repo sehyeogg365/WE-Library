@@ -23,6 +23,5 @@ public class DatabaseConfig {
 		sessionFactory.setMapperLocations(res);
 
 		return sessionFactory.getObject();
-	
 	}
 }
