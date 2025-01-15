@@ -25,14 +25,10 @@ public class UserBO {
 			, String email	
 			, String phoneNumber	
 			) {
-	
 		String encryptPassword = EncryptService.md5(password);
-
 		// 인증번호가 일치하는지 여부 확인 bo 서만 수행하면 된다
 		// 일치하면 회원가입 진행
-
 		return userDAO.insertUser(loginId, encryptPassword, name, birth, email, phoneNumber);
-
 	}
 	
 	// 중복확인(boolean)
@@ -48,9 +44,7 @@ public class UserBO {
 		} else {
 			return true;
 		}
-		
 	}
-	
 	
 	// 관리자 회원가입
 	public int addAdminUser(
@@ -65,24 +59,18 @@ public class UserBO {
 			, String certificationNumber
 			
 			) {
-		
 		// 인증번호 일치 하는지 여부 
 		
 		int count = userDAO.selectcertificationNumber(certificationNumber);
 		
 		String encryptPassword = EncryptService.md5(password);
 		
-		if(count == 1) { // 일치할때 
-			
+		if(count == 1) { // 일치할때
 			return userDAO.insertAdminUser(loginId, encryptPassword, name, birth, email, phoneNumber, isAdmin);//추가하라
-			
 		} else {
-			
 			return 0;// 아무것도 하지마라
 		}
-
 	}
-	
 	
 	// 로그인
 	public User getUser(String loginId
@@ -91,7 +79,6 @@ public class UserBO {
 		String ecryptPassword = EncryptService.md5(password);
 		
 		return userDAO.selectUser(loginId, ecryptPassword);
-
 	}
 	
 	
@@ -100,9 +87,7 @@ public class UserBO {
 										, String name
 										, String birth
 										, String phoneNumber) {
-		
 		return userDAO.selectUserByNameBirthPhone(loginId, name, birth, phoneNumber);
-
 	}
 	
 	
@@ -132,17 +117,13 @@ public class UserBO {
 		// 셔플이 아닌 뽑는 반복문을 해야한다. pw 배열 길이동안, 길이수만큼 랜덤하게 뽑기
 		
 		for(int i = 0; i < pw.length; i++) {
-			
 			pw[i] = arr[rand.nextInt(24)];//임의의 원소 뽑은 후 저장. arr배열 인덱스 24개중에서 pw배열 길이 수만큼 임의로 뽑는다.
-			
 		}
 		
 		// 조합 반복문 이거를 하나의 변수에 합치기
 		for(int i = 0; i < pw.length; i++) {// 길이만큼 패스워드 붙여넣는다.
-			
 			password  +=  pw[i];
 		}
-
 		// 비밀번호 암호화되서 저장 해야함 안그러면 로그인 안됨
 		String ecryptPassword = EncryptService.md5(password);
 		
@@ -150,15 +131,10 @@ public class UserBO {
 		int count = userDAO.updatePasswordByIdNameBirthPhone(loginId, ecryptPassword, name, birth, phoneNumber);
 		
 		//카운트 변수가 1일때 셔플 조합한 비번 전달하기
-		
 		if(count == 1) {
-			
 			return password;
-			
 		} else {
-			
 			return null;
-			
 		}
 	}
 	
@@ -175,7 +151,6 @@ public class UserBO {
 	
 	// 회원정보 1행 조회 리턴타입 생각해보기
 	public User getUserInfo(int id) {
-
 		return userDAO.selectUserInfo(id);
 	}
 	
@@ -202,19 +177,14 @@ public class UserBO {
 	
 	// 회원 탈퇴
 	public int deleteUser(int id, String password) {
-		
-		
+
 		int count = userDAO.selectPassword(id, password);
 		
 		String encryptPassword = EncryptService.md5(password);
 		
-		
 		if(count == 1) {
-			
 			return userDAO.selectPassword(id, encryptPassword);
-			 
 		} else {
-			
 			return 0;
 		}
 	}

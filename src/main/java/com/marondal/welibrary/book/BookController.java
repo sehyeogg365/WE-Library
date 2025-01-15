@@ -168,7 +168,6 @@ public class BookController {
 	public String bookAddPopUp(Model model
 							   , @RequestParam("title") String title
 							   ) {
-
 		return "book/bookaddpopup";
 	}
 

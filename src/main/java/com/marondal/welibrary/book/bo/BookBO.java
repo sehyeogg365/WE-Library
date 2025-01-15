@@ -109,7 +109,6 @@ public class BookBO {
 
 	// 책 1행정보 조회(상호대차 팝업창)
 	public BookDetail getBookById(int id) {
-
 		return bookDAO.selectBookById(id);
 	}
 

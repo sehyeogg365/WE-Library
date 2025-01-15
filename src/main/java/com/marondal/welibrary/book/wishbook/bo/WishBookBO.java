@@ -65,7 +65,6 @@ public class WishBookBO {
 	}
 
 	// 관리자 희망도서 신청 리스트
-
 	public List<WishBookDetail> getWishBookListById(int id) {
 
 		List<WishBook> wishbookList = wishBookDAO.selectWishBookListById(id);

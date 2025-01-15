@@ -35,7 +35,6 @@ public class LibraryController {
 
 	@GetMapping("/main/view")
 	public String mainPage() {
-
 		return "library/main";
 	}
 
