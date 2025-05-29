@@ -42,14 +42,12 @@
 	<script>
 	
 	$(document).ready(function(){
-		
 		$("#findIdBtn").on("click", function(){
 			let id = $(this).data("user-id");
 			let name = $("#nameInput").val();
 			let birth = $("#birthInput").val();
 			let phoneNumber = $("#phoneNumberInput").val();
-			
-			
+
 			if(name == ""){
 				alert("이름을 입력하세요.");
 				return ;	
@@ -69,7 +67,7 @@
 				type:"get"
 				, url:"/user/find_id"
 				, data:{"loginId":id, "name":name, "birth":birth, "phoneNumber":phoneNumber}
-				, success:function(data){//여기도
+				, success:function(data){// 여기도
 					if(data.result == "success"){
 						alert("아이디는" +  data.info.loginId);//alert창 완성해보기
 						location.reload();
@@ -81,11 +79,8 @@
 					alert("아이디 찾기 에러");
 				}//뭐가 들어가야할까?
 			});
-
 		});
-
 	});
-
 	</script>
 	
 </body>

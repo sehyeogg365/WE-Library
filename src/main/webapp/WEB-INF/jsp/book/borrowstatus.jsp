@@ -17,14 +17,12 @@
 	<!-- 아이콘 -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
 
-	
 	<link rel="stylesheet" href="/static/css/style.css" type="text/css">
 </head>
 <body>
 	<div id="wrap" class="">
 		<c:import url="/WEB-INF/jsp/include/header.jsp"/>
 		<section class="contents d-flex justify-content-center">
-			
 			<div class="mybookinfo-page">
 				<div class="sub-profile bg-secondary">
 					<div class="img-box">
@@ -32,7 +30,6 @@
 					</div>
 					<div class="sub-text">
 						<h2 class="text-center text-white mt-3"><b>대출현황</b></h2>
-										
 					</div>
 					<div class="sub-text2">
 						<h5 class="text-center text-white mt-3"><b>내서재>도서이용정보>대출현황</b></h5>
@@ -45,9 +42,7 @@
 				
 				<div class="col-9 ">
 					<div class="">
-						
 						<div class="">
-						
 						<nav class="d-flex justify-content-center align-items-center col-12 mt-3">
 							<ul class="nav nav-fill">
 								<li class="nav-item list-nav" style="background-color: #1E90FF;"><h5><a href="/book/borrowstatus/view?id=${userId }" class="nav-link text-dark font-weight-bold">&nbsp대출현황&nbsp</a></h5></li>
@@ -56,7 +51,6 @@
 								<li class="nav-item list-nav"><h5><a href="/book/interibrarybooklist/view?id=${userId }" class="nav-link text-dark font-weight-bold">&nbsp상호대차&nbsp</a></h5></li>
 							</ul>
 						</nav>
-						
 						</div>
 
 						<div class="mt-3 d-flex text-secondary">
@@ -68,95 +62,76 @@
 						<c:forEach var="borrow" items="${borrowDetailList }">	<!-- 한번 반납연장을 했을때 반납 연장 못하게 -->
 						<hr>
 						<div class="d-flex justify-content-between align-items-center">
-						<div class="col-9">
-							<div class="" style="font-size: 18px;">
-								${borrow.title }
-							</div>
-							<div class="d-flex align-items-center text-secondary">
-								ㅇ도서관 : ${borrow.library }
-							</div>
-							<div class="d-flex text-secondary"><!-- ${borrowDate.time +(1000*60*60*24*14)} 여기서 String->Date 변환 한번 해야함(parse) -->
-							 
-							 <c:set var="borrowDate" value="${borrow.createdAt}" />
-   							 <c:set var="returnDate" value="${borrow.returnDate}" />
-   							 <!-- 2024-03-24 대출일자와 반납일자를 문자열로 변환 -->
-   							 <c:set var="borrowDateStr" value="<fmt:formatDate value='${borrowDate}' pattern='yyyy-MM-dd' />" />
-    						 <c:set var="returnDateStr" value="<fmt:formatDate value='${returnDate}' pattern='yyyy-MM-dd' />" />
-							 
-							 <c:set var="borrowDateTime" value="${borrowDate.time}" />
-    						 <c:set var="returnDateTime" value="${returnDate.time}" />
-    						 <c:set var="diffInDays" value="${(returnDateTime - borrowDateTime) / (1000 * 60 * 60 * 24)}" />
-    						 <!-- 오늘날짜를 문자열로 변환 -->
-    						 <c:set var="today" value="<%=new java.util.Date()%>" />
-    						 <c:set var="date" value="<fmt:formatDate value='${today}' pattern='yyyy-MM-dd' />" />
-							<!-- 2024-03-24 21일이상 차이나는지 여부 판단 -->
-								
-								ㅇ상태 : <c:choose>
-                                            <c:when test ="${diffInDays >= 21 && today < returnDate}">
-                                                <div class="text-secondary" id="returnExtensionBtn">반납연장 됨</div>
+                            <div class="col-9">
+                                <div class="" style="font-size: 18px;">
+                                    ${borrow.title }
+                                </div>
+                                <div class="d-flex align-items-center text-secondary">
+                                    ㅇ도서관 : ${borrow.library }
+                                </div>
+                                <div class="d-flex text-secondary"><!-- ${borrowDate.time +(1000*60*60*24*14)} 여기서 String->Date 변환 한번 해야함(parse) -->
 
-                                            </c:when>
-                                            <c:when test="${today > returnDate}">
-                                                <div class="text-danger">반납연체</div>
-                                            </c:when>
-                                            <c:when test="${diffInDays >= 21 && today > returnDate}">
-                                                <div class="text-danger">반납연체</div>
-                                            </c:when>
-                                            <c:otherwise>
-                                                <div class="text-primary">대출중</div>
-                                            </c:otherwise>
-                                       </c:choose>
-								
-								&nbsp | &nbsp 대출일 : <fmt:formatDate value="${borrow.createdAt}" pattern ="yyyy.MM.dd"/>&nbsp |&nbsp 반납예정일 : <fmt:formatDate value="${borrow.returnDate}" pattern ="yyyy.MM.dd"/>
-							</div>
+                                 <c:set var="borrowDate" value="${borrow.createdAt}" />
+                                 <c:set var="returnDate" value="${borrow.returnDate}" />
+                                 <!-- 2024-03-24 대출일자와 반납일자를 문자열로 변환 -->
+                                 <c:set var="borrowDateStr" value="<fmt:formatDate value='${borrowDate}' pattern='yyyy-MM-dd' />" />
+                                 <c:set var="returnDateStr" value="<fmt:formatDate value='${returnDate}' pattern='yyyy-MM-dd' />" />
+
+                                 <c:set var="borrowDateTime" value="${borrowDate.time}" />
+                                 <c:set var="returnDateTime" value="${returnDate.time}" />
+                                 <c:set var="diffInDays" value="${(returnDateTime - borrowDateTime) / (1000 * 60 * 60 * 24)}" />
+                                 <!-- 오늘날짜를 문자열로 변환 -->
+                                 <c:set var="today" value="<%=new java.util.Date()%>" />
+                                 <c:set var="date" value="<fmt:formatDate value='${today}' pattern='yyyy-MM-dd' />" />
+                                <!-- 2024-03-24 21일이상 차이나는지 여부 판단 -->
+
+                                    ㅇ상태 : <c:choose>
+                                                <c:when test ="${diffInDays >= 21 && today < returnDate}">
+                                                    <div class="text-secondary" id="returnExtensionBtn">반납연장 됨</div>
+
+                                                </c:when>
+                                                <c:when test="${today > returnDate}">
+                                                    <div class="text-danger">반납연체</div>
+                                                </c:when>
+                                                <c:when test="${diffInDays >= 21 && today > returnDate}">
+                                                    <div class="text-danger">반납연체</div>
+                                                </c:when>
+                                                <c:otherwise>
+                                                    <div class="text-primary">대출중</div>
+                                                </c:otherwise>
+                                           </c:choose>
+                                    &nbsp | &nbsp 대출일 : <fmt:formatDate value="${borrow.createdAt}" pattern ="yyyy.MM.dd"/>&nbsp |&nbsp 반납예정일 : <fmt:formatDate value="${borrow.returnDate}" pattern ="yyyy.MM.dd"/>
+                            </div>
 						</div>
-						
-						<div class="">
-							<button id="borrowdeleteBtn" class="btn btn-danger btn-sm deleteBtn my-3" data-book-id="${borrow.id }">반납하기</button>
-							
-							<!-- 2024-03-24  반납예정일과 대출일이 3주이상 차이날시  반납연장불가버튼 그외에 반납연장 버튼 이렇게 해보기-->
-							<!-- formatDate Date -> String -->
-							<!-- parseDate String -> Date -->
-
-							<c:choose>
-								<c:when test="${diffInDays < 21}">
-
-									<button id="rtnExtBtn" class="btn btn-primary btn-sm updateBtn my-3" data-book-id="${borrow.id }">반납연장</button>
-								
-								</c:when>
-								<c:otherwise>
-
-									<button class="btn btn-primary btn-sm">반납연장불가</button>			
-
-								</c:otherwise>
-							</c:choose>
-							
+                            <div class="">
+                                <button id="borrowdeleteBtn" class="btn btn-danger btn-sm deleteBtn my-3" data-book-id="${borrow.id }">반납하기</button>
+                                <!-- 2024-03-24  반납예정일과 대출일이 3주이상 차이날시  반납연장불가버튼 그외에 반납연장 버튼 이렇게 해보기-->
+                                <!-- formatDate Date -> String -->
+                                <!-- parseDate String -> Date -->
+                                <c:choose>
+                                    <c:when test="${diffInDays < 21}">
+                                        <button id="rtnExtBtn" class="btn btn-primary btn-sm updateBtn my-3" data-book-id="${borrow.id }">반납연장</button>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <button class="btn btn-primary btn-sm">반납연장불가</button>
+                                    </c:otherwise>
+                                </c:choose>
+                            </div>
 						</div>
-						</div>
-						
 						</c:forEach>
-						
 						<hr>
-					
 					</div><br>
-					
 				</div>
-				
-					
 					<hr>
 				</div>
-			
 			</div>
-		
 		</section>
 		<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
 	</div>
 	
 	<script>
 		$(document).ready(function(){
-			
 			$(".updateBtn").on("click", function(){
-				
 				let id = $(this).data("book-id");
 				
 				//alert(id);
@@ -168,36 +143,27 @@
 					return ;
 				}
 				$.ajax({
-					
 					type:"post"
 					, url:"/book/borrow/update"
 					, data :{"id":id}
 					, success:function(data){
 						if(data.result == "success"){
 							alert("반납 연장 성공");
-							
-							//2024-03-24 d-none로 반납연장버튼 숨기기, 반납연장 불가 문구 나타내기 그냥 한번 눌렸을때 되게 해야 함.
+							// 2024-03-24 d-none로 반납연장버튼 숨기기, 반납연장 불가 문구 나타내기 그냥 한번 눌렸을때 되게 해야 함.
 							//$("#rtnExtBtn").addClass("d-none");
 							//$("#rtnCannotBeExtd").removeClass("d-none");
-							
 							location.reload();
 						} else {
 							alert("반납 연장 실패");
 						}
-						
 					}
 					, error:function(){
-						
 						alert("반납 연장 에러");
 					}
-					
 				});
-				
 			});
-			
-			
+
 			$(".deleteBtn").on("click", function(){
-				
 				let id = $(this).data("book-id");
 				
 				var result = confirm("반납 하시겠습니까?");
@@ -209,21 +175,17 @@
 				}
 	
 				//alert(id);
-				
 				$.ajax({
-					
 					type:"get"
 					, url:"/book/borrow/delete"
 					, data :{"id":id}
 					, success:function(data){
-						if(data.result== "success"){
+						if(data.result == "success"){
 							alert("반납 성공");
 							location.reload();
-							
 							// 2024-03-17 이중아작스문으로 반납과 동시에 대출이력리스트에 추가시키기 해보기
 							/*
 							$.ajax({
-								
 								type:"post"
 								, url:"/book/borowhistory/create"
 								, data :{"bookId":id}
@@ -234,23 +196,16 @@
 									}
 								}
 							})*/
-							
 						} else {
 							alert("반납 실패");
 						}
-						
 					}
 					,error:function(){
 						alert("반납 에러");
 					}
 				});
-
 			});
-
 		});
-
-	
 	</script>
-
 </body>
 </html>

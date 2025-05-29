@@ -30,13 +30,11 @@
 	<div id="wrap" class="">
 		<c:import url="/WEB-INF/jsp/include/header.jsp"/>
 		<section class="contents d-flex justify-content-center">
-			
 			<div class="main-page ">
 				<div class="main-profile">
 					<div class="img-box">
 						<img class="profile" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FlAG5Z%2Fbtsnhr3rPGd%2FKeJ2kZ3AGgbzql1R1aDdr1%2Fimg.jpg" alt="메인로고 사진">
 					</div>
-					
 					<div class="main-text">
 						<h3 class="text-center text-white"><b>책과 함께 꿈꾸는 도서관</b></h3><br>
 						<h1 class="text-center text-white"><b>WE-Library</b></h1>
@@ -46,7 +44,6 @@
 					<div class="text-white mt-1">
 						<h5>통합검색</h5>
 					</div>
-
 					<form action="/library/list/view" method="get" class="col-8"><!-- bootstrap input group 검색 -->
 						<div class="search d-flex justify-content-center">
 			                <input type="text" value="" placeholder="도서명 또는 저자명을 입력해주세요" id ="searchInput" class="form-control" name="title">
@@ -58,55 +55,43 @@
 		         </nav>   
 				
 				<section class="main-section d-flex justify-content-center">
-					
-					
 					<article class="main-contents  col-4">
 						<div class=""></div>
 						
 						<div class="main-login-box col-12">
-
 							<div class=" main-login-box-contents">
-							<c:choose>
-
-								<c:when test = "${not empty userId }">
-									<div class="mt-3 ml-3"><h3 class="pt-3">${userName} 님 환영합니다!</h3>  </div>
-										<div class="text-center">
-											<a href="/user/signout" class="btn btn-primary my-3 col-11">로그아웃</a>
-										</div>
-									<hr>
-									<div class="d-flex justify-content-between mt-3">
-										<a href="/book/borrowstatus/view?id=${userId }" class="btn btn-light ml-2 col-5">내서재</a>
-										<a href="/user/pwcheck/view?id=${userId }" class="btn btn-light mr-2 col-5">정보수정</a>
-									</div>
-								
-								</c:when>
-								<c:otherwise>
-								
-									<div class="mt-3 ml-3"><h4 class="pt-3 text-primary">로그인</h4></div>
-									<div class="d-flex justify-content-center">
-										<div class="">
-											<input type="text" id="loginIdInput" placeholder="로그인 ID" class="form-control mt-3">
-											<input type="password" id="passwordInput" placeholder="비밀번호" class="form-control mt-3">
-										</div>
-										<div class="ml-1">
-											<button type="button" id="loginBtn" class= "loginbtn btn btn-primary mt-2" style="">로그인</button>
-										</div>	
-									
-									</div>
-									<div class="d-flex justify-content-center mt-3">
-										<div class=""><a href="/user/signup/view" class="text-dark">회원가입</a> |</div>
-										<div class="ml-2"><a href="/user/find_id/view" class="text-dark">아이디 찾기</a> |</div>
-										<div class="ml-2"><a href="/user/get_pw/view" class="text-dark">비밀번호 재발급</a></div>
-									</div>	
-								</c:otherwise>
-							</c:choose>
+                                <c:choose>
+                                    <c:when test = "${not empty userId }">
+                                        <div class="mt-3 ml-3"><h3 class="pt-3">${userName} 님 환영합니다!</h3>  </div>
+                                            <div class="text-center">
+                                                <a href="/user/signout" class="btn btn-primary my-3 col-11">로그아웃</a>
+                                            </div>
+                                        <hr>
+                                        <div class="d-flex justify-content-between mt-3">
+                                            <a href="/book/borrowstatus/view?id=${userId }" class="btn btn-light ml-2 col-5">내서재</a>
+                                            <a href="/user/pwcheck/view?id=${userId }" class="btn btn-light mr-2 col-5">정보수정</a>
+                                        </div>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <div class="mt-3 ml-3"><h4 class="pt-3 text-primary">로그인</h4></div>
+                                        <div class="d-flex justify-content-center">
+                                            <div class="">
+                                                <input type="text" id="loginIdInput" placeholder="로그인 ID" class="form-control mt-3">
+                                                <input type="password" id="passwordInput" placeholder="비밀번호" class="form-control mt-3">
+                                            </div>
+                                            <div class="ml-1">
+                                                <button type="button" id="loginBtn" class= "loginbtn btn btn-primary mt-2" style="">로그인</button>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex justify-content-center mt-3">
+                                            <div class=""><a href="/user/signup/view" class="text-dark">회원가입</a> |</div>
+                                            <div class="ml-2"><a href="/user/find_id/view" class="text-dark">아이디 찾기</a> |</div>
+                                            <div class="ml-2"><a href="/user/get_pw/view" class="text-dark">비밀번호 재발급</a></div>
+                                        </div>
+                                    </c:otherwise>
+                                </c:choose>
 							</div>
-							
-							
 						</div>
-						
-						
-						
 						<div class="mybook mt-3">
 							<div class="d-flex justify-content-between mt-2">
 								<div class="pt-3 pl-3"><h4 class="text-white">내 서재</h4></div>
@@ -115,7 +100,6 @@
 								</div>
 							</div>
 							<div class="d-flex justify-content-between flex-wrap">
-								
 								<div class="mt-3 pl-3"><a href="/book/borrowstatus/view?id=${userId }" class="text-white">대출조회/반납연기</a></div>
 								<div class="ml-5 mt-3 pr-3"><a href="/book/reservelist/view?id=${userId }" class="text-white">예약취소/조회</a></div>
 								
@@ -125,8 +109,6 @@
 								<div class="pl-3 py-3"><a href="/book/interestbooklist/view?id=${userId }" class="text-white">관심도서목록</a></div>
 							</div>
 						</div>
-						
-						
 					</article>
 					<article class="sub-contents col-4">
 						<div class=""></div>
@@ -138,11 +120,8 @@
 							<div class="">
 								<a href="#"><i class="bi bi-plus-lg" style="font-size :20px;"></i></a>
 							</div>
-							
-							
 						</div>
-						<hr>	
-			
+						<hr>
 						<div class="announce-box"><!-- 21글자가 넘으면 자르담에 뒤에 ... -->
 							<div class="d-flex">
 								<i class="bi bi-book" style="font-size :20px;"></i>
@@ -156,10 +135,7 @@
 							<div class=""><a href="#" class="text-dark">[역삼푸른솔 도서관][신착도서]dddd..</a> 2023.06.29</div>
 							<div class=""><a href="#" class="text-dark"></a></div>
 							<div class=""><a href="#" class="text-dark"></a></div>
-						
 						</div>
-						
-						
 					</article>
 					<article class="sub-contents2 col-4">
 						<div class="table_box bg-white mt-3">
@@ -167,7 +143,6 @@
 						<h1>2023 / 09</h1>
 						
    						 </div>
-						
 							<table class="table">
 							<thead>
 								<tr>
@@ -225,11 +200,8 @@
 				                    <td>28</td>
 				                    <td>29</td>
 				                    <td>30</td>
-				                  
 				                </tr>
-							
 							</tbody>
-							
 							</table>
 						
 							<div class="d-flex">
@@ -239,48 +211,31 @@
 								<div class="">
 									휴관일 <i class="bi bi-circle-fill text-info"></i>
 								</div>
-								
-							
 							</div>
-						
 						</div>
 					</article>
-					
-				
 				</section>
 				<section class="sub-section d-flex">
-					
 					<div class="tab">
 					  <button class="tablinks" onclick="openCity(event, 'London')">London</button>
 					  <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
 					  <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
 					</div>
-					
 					<div id="London" class="tabcontent">
 					  <h3>London</h3>
 					  <p>London is the capital city of England.</p>
 					</div>
-					
 					<div id="Paris" class="tabcontent">
 					  <h3>Paris</h3>
 					  <p>Paris is the capital of France.</p> 
 					</div>
-					
 					<div id="Tokyo" class="tabcontent">
 					  <h3>Tokyo</h3>
 					  <p>Tokyo is the capital of Japan.</p>
 					</div>
-					
-					
 				</section>
-				
 			</div>
-		
-		
 		</section>
-		
-		
-		
 		<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
 	</div>
 	<style>
@@ -291,8 +246,6 @@
 	</style>
 	<script>
 	$(document).ready(function(){
-		
-		
 		function openCity(evt, cityName) {
 			  var i, tabcontent, tablinks;
 			  tabcontent = document.getElementsByClassName("tabcontent");
@@ -308,27 +261,22 @@
 			}
 		
 		 $("#dateOption").datepicker({
-			 
 			 dateFormat:"yy년 mm월 dd일",
-			 
 		 });
 		
 		$("#searchBtn").on("click", function(event){
-			
 			//var keywords = search.split(" ");// // 검색어를 공백으로 분리하여 각 단어를 배열로 저장
 			 
 			//var result = []; //검색어를 저장할 배열
 		
 			//var data = [];
-			
-			
+
 			let search = $("#searchInput").val().trim();
 			
 			if(search == ""){
 				alert("검색어를 입력하세요.");
 				event.preventDefault(); // 폼 제출을 막음
 			}
-			
 		});
 		
 		$("#loginBtn").on("click", function(){
@@ -363,14 +311,9 @@
 				,error:function(){
 					alert("로그인 에러");
 				}
-			
 			});
-
 		});
-
 	});
-
 	</script>
-	
 </body>
 </html>

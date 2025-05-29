@@ -21,17 +21,13 @@
 	
 	<div class="sub-profile bg-secondary">
 		<c:import url="/WEB-INF/jsp/include/subprofile.jsp"/>
-					
 			<div class="sub-text">
 				<h2 class="text-center text-white mt-3"><b>로그인</b></h2>
 			</div>
-					
 	</div>
 
 	<section class="contents d-flex justify-content-center">
-		
 		<div class="login-box mt-3">
-
 			<input type="text" id="loginIdInput" placeholder="로그인 ID" class="form-control mt-4">
 			<input type="password" id="passwordInput" placeholder="비밀번호" class="form-control mt-4">
 			
@@ -42,9 +38,7 @@
 				<a href="/user/get_pw/view" class="text-dark">비밀번호 재발급</a> |
 				<a href="/user/signup/view" class="text-dark">회원가입</a>
 			</div>
-		
 		</div>
-	
 	</section>
 
 	<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
@@ -53,13 +47,10 @@
 	<script>
 	
 	$(document).ready(function(){
-		
 		$("#loginBtn").on("click", function(){
-			
 			let id = $("#loginIdInput").val();
 			let password = $("#passwordInput").val();
-			
-			
+
 			if(id == ""){
 				alert("아이디를 입력하세요.");
 				return ;	
@@ -81,24 +72,16 @@
 					if(data.result == "success"){
 						alert("로그인 성공");
 						location.href="/library/main/view";
-						
 					} else {
 						alert("로그인 실패");
 					}
-					
 				}
 				, error:function(){
 					alert("로그인 오류");
-					
-				}	
-				
+				}
 			});
-			
 		});
-		
 	});
-	
 	</script>
-
 </body>
 </html>

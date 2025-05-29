@@ -23,9 +23,7 @@
 	<div id="wrap" class="">
 		<c:import url="/WEB-INF/jsp/include/header.jsp"/>
 		<section class="contents d-flex justify-content-center">
-		
 		<div class="mybookinfo-page">
-		
 		<div class="sub-profile bg-secondary">
 			<c:import url="/WEB-INF/jsp/include/subprofile.jsp"/>
 			<div class="sub-text">
@@ -34,63 +32,51 @@
 		</div>
 		
 		<div class="d-flex mx-5">
-
-		<c:import url="/WEB-INF/jsp/include/sidenav2.jsp"/>
+		    <c:import url="/WEB-INF/jsp/include/sidenav2.jsp"/>
 		
-		<div class="col-9 ">
-		
-			<div class="">
-				<div class="mt-3 d-flex text-secondary">
-						희망도서 신청 :&nbsp
-						<div class="text-primary">
-						    ${wishBook}
-						</div>건
-				</div>
-					<!-- 신청여부 조사 북테이블에있을시 소장중 없을시 신청중 -->
-					<c:forEach var="wishbook" items="${wishbookList }">
-						<hr>
-						
-						<div class="">
-
-							<div class="">
-								<h5>${wishbook.title }</h5>
-							</div>
-							<div class="text-secondary">
-								저자 : ${wishbook.author } &nbsp|&nbsp 출판사 : ${wishbook.publisher } &nbsp|&nbsp ISBN : ${wishbook.isbn }
-							</div>
-							
-							<div class="text-secondary">
-								도서관 : ${wishbook.library } &nbsp|&nbsp 신청일 : <fmt:formatDate value ="${wishbook.createdAt }" pattern ="yyyy.MM.dd"/>
-							</div>
-							
-							<div class="text-secondary d-flex">
-                            상태 : <c:choose>
-                                    <c:when test = "${wishbook.add }">
-                                        <p>소장중</p>
-                                    </c:when>
-                                    <c:otherwise>
-                                        <p>신청중</p>
-                                    </c:otherwise>
-                                  </c:choose>
-							</div>
-						</div>
-						
-					</c:forEach>
-					<hr>
-			</div>
-		
-			<div class="text-center">
-				<a href="/book/wishbook/add/view?id=${userId }" class="btn btn-primary	">희망도서 신청하기</a>
-			</div>
-		</div>
-		
+            <div class="col-9 ">
+                <div class="">
+                    <div class="mt-3 d-flex text-secondary">
+                            희망도서 신청 :&nbsp
+                            <div class="text-primary">
+                                ${wishBook}
+                            </div>건
+                    </div>
+                        <!-- 신청여부 조사 북테이블에있을시 소장중 없을시 신청중 -->
+                        <c:forEach var="wishbook" items="${wishbookList }">
+                            <hr>
+                            <div class="">
+                                <div class="">
+                                    <h5>${wishbook.title }</h5>
+                                </div>
+                                <div class="text-secondary">
+                                    저자 : ${wishbook.author } &nbsp|&nbsp 출판사 : ${wishbook.publisher } &nbsp|&nbsp ISBN : ${wishbook.isbn }
+                                </div>
+                                <div class="text-secondary">
+                                    도서관 : ${wishbook.library } &nbsp|&nbsp 신청일 : <fmt:formatDate value ="${wishbook.createdAt }" pattern ="yyyy.MM.dd"/>
+                                </div>
+                                <div class="text-secondary d-flex">
+                                상태 : <c:choose>
+                                        <c:when test = "${wishbook.add }">
+                                            <p>소장중</p>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <p>신청중</p>
+                                        </c:otherwise>
+                                      </c:choose>
+                                </div>
+                            </div>
+                        </c:forEach>
+                        <hr>
+                </div>
+                <div class="text-center">
+                    <a href="/book/wishbook/add/view?id=${userId }" class="btn btn-primary	">희망도서 신청하기</a>
+                </div>
+		    </div>
 		</div>
 		</div>
-		
 		</section>
-
 		<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
-	
 	</div>
 </body>
 </html>

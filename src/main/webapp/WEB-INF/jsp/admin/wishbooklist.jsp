@@ -35,7 +35,6 @@
 		<c:import url="/WEB-INF/jsp/include/sidenav.jsp"/>
 		
 		<div class="col-9">
-		
 			<div class="">
 				<div class="mt-3 d-flex text-secondary">
 						희망도서 신청현황 :
@@ -47,17 +46,14 @@
 							
 					<hr>
 				<div class="d-flex flex-wrap">
-
 					<c:forEach var="wishbook" items= "${wishbookDetailList }" varStatus="status">
 						<hr>
 						<div class="wishbookcard d-flex justify-content-between">
 							<div class="">
-								  
 								<div class="">
 									<h5>No.${fn:length(wishbookDetailList) - status.index}</h5>
 									<!--  <h5>유저아이디${wishbook.userId }</h5>-->
 								</div>
-								
 								<div class="">
 									<h5>${wishbook.title }</h5>
 								</div>
@@ -68,27 +64,15 @@
 									도서관 : ${wishbook.library } &nbsp|&nbsp 소장여부 : ${wishbook.add }
 								</div>
 							</div>
-							
 							<div class="d-flex align-items-center pr-3">
 								<button class="wishbookaddBtn btn btn-primary" onclick="window.open('/book/bookaddpopup/view?title=${wishbook.title}','new','scrollbars=yes,resizable=no width=500 height=500, left=0,top=0');return false">희망도서 추가</button>
 							</div>
-						
 						</div>
-						
 						<hr>
 					</c:forEach>
-
 				</div>
-			
-				<!--  
-				<div class="text-center">
-					<a href="#" class="btn btn-primary" onclick="window.open('/book/bookaddpopup/view','new','scrollbars=yes,resizable=no width=500 height=500, left=0,top=0');return false">도서 검색하기</a>
-				</div>
-				-->
-
 			</div>
-		
-		
+
 			<div class="">
 				<table class="table">
 				<thead>
@@ -101,9 +85,7 @@
 							<option value="행복한 도서관">행복한 도서관</option>
 							<option value="논현 도서관">논현 도서관</option>
 							<option value="대치 도서관">대치 도서관</option>
-							
 						</select>
-					
 					</td><!-- 이것도 옵션 -->
 				</tr>
 				</thead>
@@ -122,11 +104,9 @@
 						  </form>
 						</td>
 					</tr>
-					
 					<tr>
 						<td class="item ">사진</td>
 						<td><input type="file" name="file" id="fileInput" class=""><img class="wishbookprofile" width ="40" height="40" src="${wishbook.imagePath}" ></td>
-						
 					</tr>
 					<tr>
 						<td class="item ">저자</td>
@@ -154,32 +134,19 @@
 					</tr>
 					<tr>
 						<td colspan="2"class="text-center"><button id ="addBtn" class="btn btn-primary	">추가하기</button></td>
-							
 					</tr>
-					
 				</tbody>
-				
-				
 				</table>
-			
-			
 			</div>
-		
 		</div>
-		
-		
-		
 		</div>
 		
 		</div>
-		
 		</section>
-	
 		<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
 	</div>
 	<script>
 		$(document).ready(function(){
-			
 			$("#addBtn").on("click", function(){
 				let title = $("#titleInput").val();
 				let library = $("#librarySelector").val();
@@ -194,7 +161,6 @@
 				var result = confirm("추가 하시겠습니까?");
 				
 				if(appendix == ""){
-					
 					alert("부록물을 입력하세요.");
 					return ;
 				}
@@ -227,38 +193,26 @@
 				formData.append("appendix", appendix);
 
 				$.ajax({
-					
 					type:"post"
 					, url :"/book/book/create"
 					, data:formData////파일이 포함되어있는경우 일반적인 형태:{}로는 전달안된다고 함. 위의 formData.append("file", file.files[0]);이 전달안되서.
 					, enctype :"multipart/form-data"
 					, processData:false// 파일 업로드 필수(근데 여기선 필수로 하면안됨)
 					, contentType:false
-					
 					, success:function(data){
-						
-							
 						if(data.result ==  "success"){
 							alert("추가 성공");
 							location.reload();
 						} else {
-								
 							alert("추가 실패");
-							
-						} 
-
+						}
 					}
 					,error:function(){
-						
 						alert("추가 에러");
 					}
-
 				});
-				
 			});
-
 		});
-		
 	
 	</script>
 </body>

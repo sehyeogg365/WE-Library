@@ -19,57 +19,42 @@
 	<div id="wrap" class="">
 	<c:import url="/WEB-INF/jsp/include/header.jsp"/>
 	<section class="contents d-flex justify-content-center">
-		
-	
 		<div class="userinfo-page">
-		
 			<div class="sub-profile bg-secondary">
 				<c:import url="/WEB-INF/jsp/include/subprofile.jsp"/>
-				
 				<div class="sub-text">
 					<h2 class="text-center text-white mt-3"><b>비밀번호 변경</b></h2>
 				</div>
-			</div>	
-			
+			</div>
 			<div class="d-flex mx-5">
 			<c:import url="/WEB-INF/jsp/include/sidenav.jsp"/>
-			
-			
+
 			<div class="d-flex justify-content-center col-9">
-			
 				<div class="user-box mt-3 col-8">
 					<div class="text-center py-4 px-4 ">
-					
 						<div class="d-flex">
 							<label class="mt-3 col-5 ">기존 비밀번호</label><input type="password" id="oldpasswordInput" placeholder="기존 비밀번호"  class="form-control mt-3 col-7">
 						</div>
-
 						<div class="d-flex">
 							<label class="mt-4 col-5">새 비밀번호</label><input type="password" id="passwordInput" placeholder="새 비밀번호"  class="form-control mt-4 col-7">
 						</div>
 						<div class="d-flex">
 							<label class="mt-4 col-5">새 비밀번호 확인</label><input type="password" id="passwordConfirmInput" placeholder="새 비밀번호 확인" class="form-control mt-4 col-7">
 						</div>
-
 					</div>
 					<div class="d-flex justify-content-center">
 						<button type="button" id="updateBtn" class="btn btn-primary col-6 mt-3 mb-3"  data-user-id = "${user.id }">비밀번호 변경 </button>
 					</div>
 				</div>
 			</div>
-			
 			</div>
 		</div>
 	</section>
-	
-	
 	<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
 	</div>
 	<script>
 	$(document).ready(function(){
-		
 		$("#updateBtn").on("click", function(){
-			
 			let id = $(this).data("user-id");
 			let oldpassword = $("#oldpasswordInput").val();
 			let password = $("#passwordInput").val();
@@ -128,14 +113,11 @@
 								} else {
 									alert("비밀번호 변경 실패");
 								}
-								
 							}
 							, error:function(){
 								alert("비밀번호 변경 오류");
-							}				
-							
+							}
 						});
-						
 					} else {
 						alert("비밀번호 확인 실패");
 						location.reload();
@@ -145,17 +127,9 @@
 					alert("비밀번호 확인 에러");
 					location.reload();
 				}
-				
 			});
-		
-			
 		});
-		
-		
-		
 	});
-
 	</script>
-
 </body>
 </html>

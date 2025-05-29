@@ -281,7 +281,6 @@
 			 } else {
 				return ;
 			 }
-
         	 //alert(id);
         	 
         	 $.ajax({
@@ -313,7 +312,7 @@
 			 } else {
 				return ;
 			 }
-        	 
+
         	 //alert(id);
         	 
         	 $.ajax({

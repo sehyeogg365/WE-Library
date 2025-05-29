@@ -24,15 +24,11 @@
 			<div class="sub-text">
 				<h2 class="text-center text-white mt-3"><b>관리자 회원 가입</b></h2>
 			</div>
-					
 		</div>
 		<section class="contents d-flex justify-content-center ">
-			
 			<div class="join-box  mt-3">
-					
 				<div class="d-flex">
 					<input type="text" id="loginIdInput" placeholder="로그인 ID" class="form-control mt-4 col-9">
-					
 					<button type="button" class="btn btn-primary btn-block col-3" id="duplicateBtn">중복확인</button>
 				</div>	
 					<div id = "duplicated" class="small text-danger d-none">아이디가 중복됩니다.</div>
@@ -101,7 +97,6 @@
 					
 					<div class="d-flex align-items-center">
 						<input type="text" id="emailIdInput" placeholder="이메일" class="form-control mt-4 col-5">
-						
 						 <div class="mt-4 col-1">@</div>
 						 <select class="form-control mt-4 col-6" id="emailSelctor">
 						 	<option value="@naver.com">naver.com</option>
@@ -110,7 +105,6 @@
 						 	<option value="@gmail.com">gmail.com</option>
 						 	<!-- 시간날때 해보기 <option value = "selfInput">직접입력</option>-->
 						 </select>
-
 					</div>
 
 					<div class="d-flex justify-content-between">
@@ -129,18 +123,14 @@
 					<input type="text" id="certificationInput" placeholder="인증번호" class="form-control mt-4">
 					<!-- 북마크 명 바꾸고 커밋해보기 -->
 					<button type="button" class="btn btn-primary btn-block mt-3 mb-3" id="joinBtn">회원 가입</button>
-
 			</div>
-		
 		</section>
-	
 		<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
 	</div>
 	
 	<script>
 	
 	$(document).ready(function(){
-		
 		var isChecked = false;
 		
 		var isDuplicateId = true;
@@ -156,14 +146,11 @@
 		});
 		
 		$("#duplicateBtn").on("click", function(){
-			
 			let id = $("#loginIdInput").val();
 			
 			if(id ==""){
-				
 				alert("아이디를 입력하세요.");
 				return ;
-				
 			}
 			
 			$.ajax({
@@ -186,14 +173,10 @@
 				, error:function(){
 					alert("중복확인 에러");
 				}
-				
 			});
-
 		});
 
-		
 		$("#joinBtn").on("click", function(){
-			
 			let id = $("#loginIdInput").val();
 			let password = $("#passwordInput").val();
 			let passwordConfirm= $("#passwordConfirmInput").val();
@@ -225,7 +208,6 @@
 			} else {
 				return ;
 			}
-			
 			if(id == ""){
 				alert("아이디를 입력하세요.");
 				return ;	
@@ -234,22 +216,18 @@
 				alert("비밀번호를 입력하세요.");
 				return ;	
 			}
-			
 			if(password != passwordConfirm){
 				alert("비밀번호를 입력하세요.");
 				return ;	
 			}
-			
 			if(name == ""){
 				alert("이름을 확인하세요.");
 				return ;	
 			}
-			
 			if(year == ""){
 				alert("년을 확인하세요.");
 				return ;	
 			}
-			
 			//생일이 8자리미만일시
 			if(birth.length < 8){
 				alert("년을 확인하세요.");
@@ -290,12 +268,10 @@
 				alert("관리자 여부를 비력하세요");
 				return ;
 			}
-			
 			if(certificationNumber == ""){
 				alert("인증 번호를 입력하세요.");
 				return ;
 			}
-			
 			//중복 체크가 안됐을떄
 			if(!isChecked) {
 				alert("중복체크를 진행해주세요.");
@@ -330,14 +306,9 @@
 				,error:function(){
 					alert("회원가입 오류");
 				}
-				
 			});
-
 		});
-		
 	});
-
 	</script>
-
 </body>
 </html>

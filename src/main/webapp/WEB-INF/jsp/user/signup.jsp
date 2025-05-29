@@ -21,22 +21,17 @@
 
 </head>
 <body>
-	
 	<div id="wrap" class="">
 		<c:import url="/WEB-INF/jsp/include/header.jsp"/>
 		<div class="sub-profile bg-secondary">
-		
 			<c:import url="/WEB-INF/jsp/include/subprofile.jsp"/>
 					
 			<div class="sub-text">
 				<h2 class="text-center text-white mt-3"><b>회원 가입</b></h2>
 			</div>
-					
 		</div>
-		
 		<section class="contents d-flex justify-content-center">
 			<div class="join-box mt-3">
-				
 				<div class="d-flex justify-content-center">
 					<input type="text" id="loginIdInput" placeholder="로그인 ID" class="form-control mt-4 col-9">
 					
@@ -107,7 +102,6 @@
 
 					<div class="d-flex align-items-center">
 						<input type="text" id="emailIdInput" placeholder="이메일" class="form-control mt-4 col-5">
-						
 						 <div class="mt-4 col-1">@</div>
 						 <select class="form-control mt-4 col-6" id="emailSelctor">
 						 	<option value="@naver.com">naver.com</option>
@@ -116,7 +110,6 @@
 						 	<option value="@gmail.com">gmail.com</option>
 						 	<!-- 시간날때 해보기 <option value = "selfInput">직접입력</option>-->
 						 </select>
-					 
 					</div>
 
 					<div class="d-flex justify-content-between">
@@ -133,19 +126,14 @@
 					
 					<button type="button" class="btn btn-primary btn-block mt-3 mb-3" id="joinBtn">회원 가입</button>
 					<!-- 테스트커밋해보기444 -->
-			
 			</div>
-
 		</section>
-
 		<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
-		
 	</div>
 
 	<script>
 	
 	$(document).ready(function(){
-		
 		var isChecked = false;
 		
 		var isDuplicateId = true;
@@ -161,14 +149,11 @@
 		});
 
 		$("#duplicateBtn").on("click", function(){
-			
 			let id = $("#loginIdInput").val();
 			
 			if(id ==""){
-				
 				alert("아이디를 입력하세요.");
 				return ;
-				
 			}
 			
 			$.ajax({
@@ -186,18 +171,14 @@
 						$("#nonDuplicated").removeClass("d-none");//리무브 할클래스
 						$("#duplicated").addClass("d-none");//add할 클래스
 					}
-					
 				}
 				, error:function(){
 					alert("중복확인 에러");
 				}
-				
 			});
-
 		});
 
 		$("#joinBtn").on("click", function(){
-			
 			let id = $("#loginIdInput").val();
 			let password = $("#passwordInput").val();
 			let passwordConfirm = $("#passwordConfirmInput").val();
@@ -230,34 +211,27 @@
 				alert("아이디를 입력하세요.");
 				return ;	
 			}
-			
 			if(password == ""){
 				alert("비밀번호를 입력하세요.");
 				return ;	
 			}
-			
 			if(password != passwordConfirm){
 				alert("비밀번호가 일치하지 않습니다.");
 				return ;
 			}
-			
-		
 			if(name == ""){
 				alert("이름을 확인하세요.");
 				return ;	
 			}
-			
 			if(year == ""){
 				alert("년을 확인하세요.");
 				return ;	
 			}
-			
-			//생일이 8자리미만일시
+			// 생일이 8자리미만일시
 			if(birth.length < 8){
 				alert("년을 확인하세요.");
 				return ;	
 			}
-			
 			if(month == ""){
 				alert("월을 확인하세요.");
 				return ;	
@@ -266,7 +240,6 @@
 				alert("일을 확인하세요.");
 				return ;	
 			}
-			
 			if(emailId == ""){
 				alert("이메일을 입력하세요.");
 				return ;	
@@ -314,16 +287,10 @@
 				,error:function(){
 					alert("회원가입 오류");
 				}
-				
 			});
-			
 		});
-		
-		
 	});
-	
 	</script>
-
 </body>
 
 </html>
