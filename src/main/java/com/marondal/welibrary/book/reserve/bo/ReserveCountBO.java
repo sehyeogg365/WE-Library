@@ -41,11 +41,6 @@ public class ReserveCountBO {
 	// 예약 여부 (본인이 예약한건 예약 못한다)
 	public boolean isReserve(int userId, int bookId) {
 		int count = reserveDAO.isReserve(userId, bookId);
-<<<<<<< HEAD
-
-
-=======
->>>>>>> develop
 		
 		if (count == 0) {// 0일때 false else 일때 true(commit test, merge test)
 			return false;
