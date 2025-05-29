@@ -32,19 +32,16 @@ public class ReserveBO {
 
 	// 예약
 	public int addReserve(int bookId, int userId) {
-
 		return reserveDAO.insertReserve(bookId, userId);
 	}
 
 	// 예약 조회
 	public List<ReserveBookDetail> getReserveList(int userId) {
-
 		List<ReserveBook> reserveList = reserveDAO.selectReserveList(userId);
 
 		List<ReserveBookDetail> reserveDetailList = new ArrayList<>();
 
 		for (ReserveBook reserveBook : reserveList) {
-
 			BookDetail book = bookBO.getBookById(reserveBook.getBookId());
 
 			BorrowBook borrowbook = borrowBO.getBorrow(book.getId());// 여기가 널일때 상호대차의 리턴데이트를 불러온다 이렇게 되어야 함
@@ -81,7 +78,6 @@ public class ReserveBO {
 
 	// 예약 취소
 	public int deleteReserve(int id) {
-
 		return reserveDAO.deleteReserve(id);
 	}
 

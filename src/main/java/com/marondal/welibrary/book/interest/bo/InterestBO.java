@@ -1,7 +1,6 @@
 package com.marondal.welibrary.book.interest.bo;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,10 +8,8 @@ import org.springframework.stereotype.Service;
 
 import com.marondal.welibrary.book.bo.BookBO;
 import com.marondal.welibrary.book.interest.dao.InterestDAO;
-import com.marondal.welibrary.book.model.Book;
 import com.marondal.welibrary.book.model.BookDetail;
 import com.marondal.welibrary.book.model.InterestBook;
-import com.marondal.welibrary.book.model.InterestBookCount;
 import com.marondal.welibrary.book.model.InterestBookDetail;
 
 @Service
@@ -34,13 +31,11 @@ public class InterestBO {
 
 	// 관심도서 조회 (dto)
 	public List<InterestBookDetail> getInterestList(int userId) {
-
 		List<InterestBook> interestList = interestDAO.selectInterestList(userId);
 
 		List<InterestBookDetail> interestDetailList = new ArrayList<>();
 
 		for (InterestBook interestbook : interestList) {
-
 			BookDetail book = bookBO.getBookById(interestbook.getBookId());
 
 			InterestBookDetail interestbookDetail = new InterestBookDetail();

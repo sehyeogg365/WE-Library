@@ -36,7 +36,6 @@ public interface ReserveDAO {
 	public int selectBorrowByBookId(@Param("bookId") int bookId);
 
 	// 예약 여부(본인이 예약한 책은 예약 못한다.)
-
 	public int isReserve(@Param("userId") int userId, @Param("bookId") int bookId);
 
 }

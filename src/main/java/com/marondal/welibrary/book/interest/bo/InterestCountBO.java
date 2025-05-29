@@ -13,7 +13,6 @@ public class InterestCountBO {
 	private InterestDAO interestDAO;
 
 	public int getInterestBookCount(int userId) {
-
 		return interestDAO.selectInterestBookCount(userId);
 	}
 

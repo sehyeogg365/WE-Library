@@ -41,7 +41,7 @@ public class BookRestController {
 	@Autowired
 	private InteribraryBO interibraryBO;
 	
-	//희망도서 신청
+	// 희망도서 신청
 	@PostMapping("/wishbook/create")
 	public Map<String, String> wishBook(
 								@RequestParam("library") String library
@@ -54,7 +54,6 @@ public class BookRestController {
 								, @RequestParam("pubyear") int pubyear// 날짜 형식이 아니라 년도만 추출해내서 int 가 맞을듯 
 								, HttpSession session
 								){
-		
 		int userId = (Integer) session.getAttribute("userId");
 		
 		int count = wishBookBO.addWishbook(userId, library, title, file, author, publisher, price, isbn, pubyear);
@@ -81,9 +80,7 @@ public class BookRestController {
 											, @RequestParam("isbn") String isbn
 											, @RequestParam("pubyear") int pubyear
 											, @RequestParam("appendix") String appendix
-											
 											){
-
 		int count = wishBookBO.addWishbookIntoBook(library, title, file, author, publisher, price, isbn, pubyear, appendix);
 			
 		Map<String, String> resultMap = new HashMap<>();
@@ -102,7 +99,6 @@ public class BookRestController {
 	public Map<String, String> interestCreate(@RequestParam("bookId") int bookId
 											  , HttpSession session
 												){
-		
 		int userId = (Integer) session.getAttribute("userId");
 		
 		int count = interestBO.addInterest(userId, bookId);
@@ -122,7 +118,6 @@ public class BookRestController {
 	@GetMapping("/interest/delete")
 	public Map<String, String> interestDelete(@RequestParam("id")int id
 											  ){
-
 		int count = interestBO.deleteInterest(id);
 		
 		Map<String, String> resultMap = new HashMap<>();
@@ -136,11 +131,10 @@ public class BookRestController {
 		return resultMap;
 	}
 	
-	//대여
+	// 대여
 	@PostMapping("/borrow/create")
 	public Map<String, String> borrowCreate(@RequestParam("bookId") int bookId								
 											, HttpSession session
-											//,@RequestParam("returnDate") Date returnDate
 											){
 		int userId = (Integer) session.getAttribute("userId");
 		
@@ -157,11 +151,10 @@ public class BookRestController {
 		return resultMap;
 	}
 	
-	//반납
+	// 반납
 	@GetMapping("/borrow/delete")
 	public Map<String, String> borrowDelete(@RequestParam("id") int id
 											){
-
 		int count = borrowBO.deleteBorrow(id);
 
 		Map<String, String> resultMap = new HashMap<>();
@@ -175,11 +168,10 @@ public class BookRestController {
 		return resultMap;
 	}
 
-	//반납 연장
+	// 반납 연장
 	@PostMapping("/borrow/update")
 	public Map<String, String> borrowUpdate(@RequestParam("id") int id
 											, HttpSession session){
-
 		int userId = (Integer) session.getAttribute("userId");
 		
 		int count = borrowBO.updateBorrow(userId, id);
@@ -195,11 +187,10 @@ public class BookRestController {
 		return resultMap;
 	}
 
-	//예약
+	// 예약
 	@PostMapping("/reservation/create")
 	public Map<String, String> reservationCreate(@RequestParam("bookId") int bookId
 												, HttpSession session){
-		
 		int userId = (Integer) session.getAttribute("userId");
 
 		int count = reserveBO.addReserve(bookId, userId);
@@ -214,11 +205,10 @@ public class BookRestController {
 		return resultMap;
 	}
 	
-	//예약 취소 
+	// 예약 취소
 	@GetMapping("/reservation/delete")
 	public Map<String, String> reservationDelete(@RequestParam("id") int id
 												){
-		
 		int count = reserveBO.deleteReserve(id);
 		
 		Map<String, String> resultMap = new HashMap<>();
@@ -231,12 +221,11 @@ public class BookRestController {
 		return resultMap;
 	}
 	
-	//상호대차
+	// 상호대차
 	@PostMapping("/interibrary/create")
 	public Map<String, String> interibraryAdd(@RequestParam("bookId") int bookId
 											  , @RequestParam("receivelibrary") String receivelibrary	
 											  , HttpSession session){
-		
 		int userId = (Integer) session.getAttribute("userId");
 		
 		int count = interibraryBO.addInteribrary(bookId, userId, receivelibrary);
@@ -251,10 +240,9 @@ public class BookRestController {
 		return resultMap;
 	}
 
-	//상호대차 취소
+	// 상호대차 취소
 	@GetMapping("/interibrary/delete")
 	public Map<String, String> interibraryDelete(@RequestParam("id") int id){
-
 		int count = interibraryBO.deleteInteribrary(id);
 		
 		Map<String, String> resultMap = new HashMap<>();
@@ -267,11 +255,10 @@ public class BookRestController {
 		return resultMap;
 	}
 
-	//2024-03-17 대출이력 추가
+	// 2024-03-17 대출이력 추가
 	@PostMapping("borrowhistory/create")
 	public Map<String, String>borrowhistoryAdd(@RequestParam("bookId") int bookId
 											   , HttpSession session){
-
 		Map<String, String> resultMap = new HashMap<>();
 		
 		int userId = (Integer) session.getAttribute("userId");

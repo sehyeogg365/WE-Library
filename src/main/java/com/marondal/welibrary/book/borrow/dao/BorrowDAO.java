@@ -1,13 +1,11 @@
 package com.marondal.welibrary.book.borrow.dao;
 
-import java.util.Date;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import com.marondal.welibrary.book.model.BorrowBook;
-import com.marondal.welibrary.book.model.BorrowBookCount;
 
 @Repository
 public interface BorrowDAO {
@@ -36,8 +34,6 @@ public interface BorrowDAO {
 	// 2024-03-17 대출 이력 추가
 	public int insertBorrowHistory(@Param("userId") int userId, @Param("bookId") int bookId);
 	
-	
 	// 2024-03-23 대출 이력 권수
 	public int selectBorrowHistoryCount(@Param("userId") int userId);
-	
 }

@@ -11,7 +11,7 @@ import com.marondal.welibrary.book.model.WishBook;
 @Repository
 public interface WishBookDAO {
 
-		//희망도서 신청
+		// 희망도서 신청
 		public int insertWishBook(@Param("userId") int userId
 								  , @Param("library") String libray
 								  , @Param("title") String title
@@ -22,8 +22,7 @@ public interface WishBookDAO {
 								  , @Param("isbn") String isbn
 								  , @Param("pubyear") int pubyear
 								  );
-		
-		
+
 		// 희망도서 리스트
 		public List<WishBook> selectWishBookList(@Param("userId") int userId);
 
@@ -36,12 +35,11 @@ public interface WishBookDAO {
 		// 희망도서 신청 여부 
 		public int selectBookByLibraryTitle(@Param("library") String library, @Param("title")String title);
 	
-		//관리자	
+		// 관리자
 		
 		// 전체 희망도서 권수세기
 		public int selectAllWishBookCount(@Param("id")int id);
-		
-			
+
 		// 전체 희망도서 권수 표시
 		public List<WishBook> selectAllWishBookNumberById(@Param("id")int id);
 		
@@ -59,7 +57,6 @@ public interface WishBookDAO {
 										  , @Param("isbn") String isbn
 										  , @Param("pubyear") int pubyear
 										  , @Param("appendix") String appendix
-										  
 										);
 		
 }
