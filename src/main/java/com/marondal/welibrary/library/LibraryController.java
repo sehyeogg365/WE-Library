@@ -3,7 +3,6 @@ package com.marondal.welibrary.library;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,11 +13,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.marondal.welibrary.book.bo.BookBO;
 import com.marondal.welibrary.book.borrow.bo.BorrowBO;
 import com.marondal.welibrary.book.interibrary.bo.InteribraryBO;
-import com.marondal.welibrary.book.model.Book;
 import com.marondal.welibrary.book.model.BookCount;
 import com.marondal.welibrary.book.model.BookDetail;
 import com.marondal.welibrary.book.model.BorrowBook;
-import com.marondal.welibrary.book.model.InteribraryBook;
 
 @Controller
 @RequestMapping("/library")
@@ -41,7 +38,6 @@ public class LibraryController {
 	@GetMapping("/list/view")
 	public String listPage(Model model, @RequestParam("title") String title
 			, @RequestParam(value="libraryList", required = false)ArrayList<String> libraryList) {
-
 		List<BookDetail> bookDetailList = bookBO.getBookListByTitle(title, libraryList);
 		model.addAttribute("bookDetailList", bookDetailList);
 
@@ -58,7 +54,6 @@ public class LibraryController {
 
 	@GetMapping("/bookinfo/view")
 	public String infoPage(Model model, @RequestParam("id") int id) {
-
 		List<BookDetail> bookDetailList = bookBO.getBookListById(id);
 		model.addAttribute("bookDetailList", bookDetailList);
 
@@ -74,7 +69,6 @@ public class LibraryController {
 
 	@GetMapping("/interibrarypopup/view")
 	public String interibraryPopUp(Model model, @RequestParam("id") int id) {
-
 		BookDetail book = bookBO.getBookById(id);
 		model.addAttribute("book", book);
 

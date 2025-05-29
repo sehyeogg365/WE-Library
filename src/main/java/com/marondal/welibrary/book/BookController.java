@@ -20,8 +20,6 @@ import com.marondal.welibrary.book.wishbook.bo.WishBookBO;
 import com.marondal.welibrary.user.bo.UserBO;
 import com.marondal.welibrary.user.model.User;
 
-
-
 @Controller
 @RequestMapping("/book")
 public class BookController {
@@ -51,27 +49,24 @@ public class BookController {
 	public String wishbookList(Model model
 						      , HttpSession session
 							  ) {
-
 		int userId = (Integer) session.getAttribute("userId");
 
 		List<WishBookDetail> wishbookList = wishBookBO.getWishBookList(userId);
 		model.addAttribute("wishbookList", wishbookList);
 		
-		//여기서 희망도서개수 추가
+		// 여기서 희망도서개수 추가
 		//List<WishBookCount> wishbookCountList = wishBookBO.getWishBookNumberByUserId(userId);
 		//model.addAttribute("wishbookCountList", wishbookCountList);
 		Integer wishbookCount = wishbookList.size();
 		model.addAttribute("wishBook", wishbookCount);
 		
 		return "book/wishbooklist";
-		
 	}
 	
 	@GetMapping("/wishbook/add/view")
 	public String wishbookAdd(Model model
 			, @RequestParam("id") int id) {
-		
-		User user = userBO.getUserInfo(id); //이상하게 DAO로 해도 잘불러와지더라.
+		User user = userBO.getUserInfo(id); // 이상하게 DAO로 해도 잘불러와지더라.
 		
 		model.addAttribute("user", user);
 
@@ -80,11 +75,8 @@ public class BookController {
 	
 	@GetMapping("/interestbooklist/view")
 	public String interestBookList(Model model
-								//, @RequestParam("id") int id
 								, HttpSession session
-								//, InterestBookDetail dto
 								) {
-		
 		int userId = (Integer)session.getAttribute("userId");
 
 //		PagingDTO pagingDTO = null;
@@ -92,7 +84,7 @@ public class BookController {
 //			dto.setTotalData(0);
 //		}
 
-		User user = userBO.getUserInfo(userId); //이상하게 DAO로 해도 잘불러와지더라.
+		User user = userBO.getUserInfo(userId); // 이상하게 DAO로 해도 잘불러와지더라.
 		
 		model.addAttribute("user", user);
 
@@ -104,7 +96,7 @@ public class BookController {
 
 		model.addAttribute("interestBook", interestBookCount);
 
-		//여기서 관심도서개수 추가
+		// 여기서 관심도서개수 추가
 		
 		return "book/interestbooklist";
 	}
@@ -112,7 +104,6 @@ public class BookController {
 	@GetMapping("/borrowstatus/view")
 	public String borrowStatus(Model model
 							, HttpSession session) {
-			
 		int userId = (Integer)session.getAttribute("userId");
 		
 		List<BorrowBookDetail> borrowDetailList = borrowBO.getBorrowList(userId);
@@ -129,7 +120,6 @@ public class BookController {
 	@GetMapping("/reservelist/view")
 	public String reserveList(Model model
 							, HttpSession session) {
-		
 		int userId = (Integer)session.getAttribute("userId");
 		
 		List<ReserveBookDetail> reserveDetailList = reserveBO.getReserveList(userId);
@@ -156,7 +146,7 @@ public class BookController {
 		List<InteribraryBookDetail> interibraryDetailList = interibraryBO.getInteribraryList(userId);
 		
 		model.addAttribute("interibraryDetailList", interibraryDetailList);
-		//여기서 상호대차도서개수 추가
+		// 여기서 상호대차도서개수 추가
 
 		Integer interibraryBookCount = interibraryDetailList.size();
 		model.addAttribute("interibraryBook", interibraryBookCount);
@@ -174,7 +164,6 @@ public class BookController {
 	@GetMapping("/borrowhistory/view")
 	public String borrowHistory(Model model
 								, HttpSession session) {
-
 		int userId = (Integer)session.getAttribute("userId");
 
 		return "book/borrowhistory";

@@ -29,25 +29,21 @@ public class InteribraryBO {
 
 	// 상호대차 신청
 	public int addInteribrary(int bookId, int userId, String receivelibrary) {
-
 		return interibraryDAO.insertInteribrary(bookId, userId, receivelibrary);
 	}
 
 	// 상호대차 1행정보
 	public InteribraryBook getInteribrary(int bookId) {
-
 		return interibraryDAO.selectInteribrary(bookId);
 	}
 
 	// 상호대차 조회
 	public List<InteribraryBookDetail> getInteribraryList(int userId) {
-
 		List<InteribraryBook> interibraryList = interibraryDAO.selectInteribraryList(userId);
 
 		List<InteribraryBookDetail> interibraryDetailList = new ArrayList<>();
 
 		for (InteribraryBook interibrarybook : interibraryList) {
-
 			BookDetail book = bookBO.getBookById(interibrarybook.getBookId());
 
 			boolean isBorrow = interibrayCountBO.isBorrow(interibrarybook.getBookId());
@@ -72,7 +68,6 @@ public class InteribraryBO {
 
 	// 상호대차 취소
 	public int deleteInteribrary(int id) {
-
 		return interibraryDAO.deleteInteribrary(id);
 	}
 

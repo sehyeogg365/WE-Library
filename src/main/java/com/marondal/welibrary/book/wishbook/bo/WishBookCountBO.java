@@ -15,7 +15,6 @@ public class WishBookCountBO {
 	// 우선 Book 테이블에 추가됐는지 안됐는지 여부 확인 아마 도서관명, 책이름으로 할듯
 
 	public boolean isWishAdd(String library, String title) {
-
 		int count = wishBookDAO.selectBookByLibraryTitle(library, title);
 
 		if (count == 0) {

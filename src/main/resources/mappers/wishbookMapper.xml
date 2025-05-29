@@ -3,11 +3,9 @@
  <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-  
-  
+
   <mapper namespace="com.marondal.welibrary.book.wishbook.dao.WishBookDAO">
-  
-  
+
   <!-- 희망도서 신청 -->
   <insert id="insertWishBook" parameterType="map">
   	INSERT INTO
@@ -25,7 +23,6 @@
   			, `createdAt` 
 		    , `updatedAt`
   		)
-  		
   		VALUES
   		(
   			#{userId}
@@ -40,7 +37,6 @@
   			, now()
 			, now()
   		)
-  	
   </insert>
   
   <!-- 희망도서 조회 -->
@@ -54,16 +50,13 @@
   		, `publisher`
   		, `isbn`
   		, `createdAt`
-  		
   	FROM
   		`wish_book`
   	WHERE 
   		`userId` = #{userId}
-  	
   	ORDER BY `id` DESC
   </select>
 
-  
   <!-- 유저별 희망도서 신청 갯수 세기 -->
   <select id="selectWishBookCount" resultType="int" parameterType="int" >
   	SELECT
@@ -72,7 +65,6 @@
   		`wish_book`
   	WHERE
   		`userId` = #{userId}
-  
   </select>
   
   <select id ="selectWishBookNumberByUserId" resultType="com.marondal.welibrary.book.model.WishBook" parameterType="int">
@@ -94,7 +86,6 @@
   		`library`=#{library}
   		AND
   		`title` =#{title}
-  
   </select>
   
   <!-- 관리자 -->
@@ -106,7 +97,6 @@
   		`wish_book`
 	WHERE
 		`id`=#{id}
-  
   </select>
 
   <select id="selectAllWishBookNumberById" resultType="com.marondal.welibrary.book.model.WishBook" parameterType="int" >
@@ -116,7 +106,6 @@
   		`wish_book`
 	WHERE
 		`id`=#{id}
-  
   </select>
   
   <!-- 관리자 희망도서 리스트 조회 -->
@@ -135,7 +124,6 @@
 		    , `updatedAt`
   	FROM
   		`wish_book`
-  	
   	ORDER BY
   		`id` DESC;
   </select>
@@ -171,6 +159,5 @@
 				, now()
  				, now()
 		  	)
-		  
 	</insert>
   </mapper>

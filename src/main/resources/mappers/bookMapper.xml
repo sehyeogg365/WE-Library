@@ -26,7 +26,6 @@
 	  		`book`
 	  	WHERE 	
 	  		 `title` LIKE CONCAT('%', #{title}, '%')
-
 		<if test ="libraryList != null and libraryList.size() > 0 ">
 		AND library IN
 			(
@@ -51,7 +50,6 @@
 			, `isbn`
 			, `pubyear`
 			, `appendix`
-		
   		FROM
   			`book`
   		WHERE
@@ -113,7 +111,6 @@
   		WHERE
 			`title` LIKE CONCAT('%', #{title}, '%')
 		<if test='libraryList != null and libraryList.size() > 0'>
-
 			AND library IN(
 			<foreach collection="libraryList" item="item" separator=" , ">
 				#{item}

@@ -37,7 +37,6 @@ public class BookBO {
 		List<BookDetail> bookDetailList = new ArrayList<>();
 
 		for (Book book : bookList) {
-
 			BookDetail bookDetail = new BookDetail();
 
 			// 예약정보1행 이거 만들기
@@ -121,13 +120,11 @@ public class BookBO {
 
 	// 책 제목별로 갯수표시
 	public List<BookCount> getBookNumberBytitle(String title, List<String> libraryList) {
-
 		List<Book> bookList = bookDAO.selectBookListByTitle(title, libraryList);
 
 		List<BookCount> bookCountList = new ArrayList<>();
 
 		for (Book book : bookList) {
-
 			BookCount bookCount = new BookCount();
 
 			// 갯수불러오기

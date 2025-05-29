@@ -1,19 +1,15 @@
 package com.marondal.welibrary.book.borrow.bo;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
-import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.marondal.welibrary.book.bo.BookBO;
 import com.marondal.welibrary.book.borrow.dao.BorrowDAO;
-import com.marondal.welibrary.book.model.Book;
 import com.marondal.welibrary.book.model.BookDetail;
 import com.marondal.welibrary.book.model.BorrowBook;
-import com.marondal.welibrary.book.model.BorrowBookCount;
 import com.marondal.welibrary.book.model.BorrowBookDetail;
 
 @Service
@@ -40,13 +36,11 @@ public class BorrowBO {
 
 	// 대출 목록
 	public List<BorrowBookDetail> getBorrowList(int userId) {
-
 		List<BorrowBook> borrowList = borrowDAO.selectBorrowList(userId);
 
 		List<BorrowBookDetail> borrowDetailList = new ArrayList<>();
 
 		for (BorrowBook borrowBook : borrowList) {
-
 			BookDetail book = bookBO.getBookById(borrowBook.getBookId());
 
 			BorrowBookDetail borrowBookDetail = new BorrowBookDetail();
@@ -80,12 +74,12 @@ public class BorrowBO {
 		return borrowDAO.updateBorrow(userId, id);
 	}
 	
-	//2024-03-17 대출 이력 추가
+	// 2024-03-17 대출 이력 추가
 	public int addBorrowHistory(int userId, int bookId) {
 		return borrowDAO.insertBorrowHistory(userId, bookId);
 	}
 	
-	//대출 이력 권수
+	// 대출 이력 권수
 	public List<Integer> borrowHistoryNumber(int userId){
 		return null;
 	}

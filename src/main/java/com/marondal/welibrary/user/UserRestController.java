@@ -30,9 +30,7 @@ public class UserRestController {
 			, @RequestParam("birth") String birth			
 			, @RequestParam("email") String email
 			, @RequestParam("phoneNumber") String phoneNumber
-			
 			){
-
 		int count = userBO.addUser(loginId, password, name, birth, email, phoneNumber);
 		
 		Map<String, String> resultMap = new HashMap<>();
@@ -51,12 +49,10 @@ public class UserRestController {
 	public Map<String, Boolean> duplicateCheck(//Boolean 대문자로 넣기
 			@RequestParam("loginId") String loginId
 			){
-			
 		Map<String, Boolean> resultMap = new HashMap<>();
 		
 		boolean is_duplicate = userBO.isDuplicate(loginId);
-			
-			
+
 		if(is_duplicate) {//중복될시
 			resultMap.put("is_duplicate", true);
 		} else { //아닐시
@@ -78,7 +74,6 @@ public class UserRestController {
 			, @RequestParam("isAdmin") int isAdmin
 			, @RequestParam("certificationNumber") String certificationNumber			
 			){
-		
 		int count = userBO.addAdminUser(loginId, password, name, birth, email, phoneNumber, isAdmin,certificationNumber);
 		
 		Map<String, String> resultMap = new HashMap<>();
@@ -125,7 +120,6 @@ public class UserRestController {
 									  , @RequestParam("birth") String birth
 									  , @RequestParam("phoneNumber") String phoneNumber
 									){
-		
 		Map<String, Object> resultMap = new HashMap<>();
 		// user 객체 전달해야하므로 map 밸류타입이 Object가 들어가야함
 		User user = userBO.getUserByNameBirthPhone(loginId, name, birth, phoneNumber);
@@ -148,7 +142,6 @@ public class UserRestController {
 									, @RequestParam("birth") String birth	
 									, @RequestParam("phoneNumber") String phoneNumber	
 									){
-
 		Map<String, Object> resultMap = new HashMap<>();
 		
 		String password = userBO.getPassword(loginId, name, birth, phoneNumber);
@@ -173,7 +166,6 @@ public class UserRestController {
 											, @RequestParam("phoneNumber") String phoneNumber
 											, HttpSession session//이번엔 파라미터가 아닌 세션값으로 id 불러오기
 											){
-		
 		Map<String, String> resultMap = new HashMap<>();
 		
 		int id = (Integer)session.getAttribute("userId");
@@ -194,7 +186,6 @@ public class UserRestController {
 	public Map<String, String> pwcheck(@RequestParam("password") String password
 										, HttpSession session //이번엔 세션값이 아닌 파라미터로 해보자. 세션사용을 최소화 해야 하므로
 										){
-		
 		Map<String, String> resultMap = new HashMap<>();
 		
 		int id = (Integer)session.getAttribute("userId");
@@ -217,7 +208,6 @@ public class UserRestController {
 										 @RequestParam("password") String password	  
 										 , HttpSession session
 										){
-		
 		Map<String, String> resultMap = new HashMap<>();
 		
 		int id = (Integer)session.getAttribute("userId");
@@ -238,7 +228,6 @@ public class UserRestController {
 	public Map<String, String> withdrawl(@RequestParam("password") String password
 										, HttpSession session 
 										){
-		
 		Map<String, String> resultMap = new HashMap<>();
 		
 		int id = (Integer)session.getAttribute("userId");
