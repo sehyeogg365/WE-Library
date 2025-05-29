@@ -40,9 +40,7 @@
 	</div>
 	<script>
 		$(document).ready(function(){
-			
 			$("#getPwBtn").on("click", function(){
-				
 				let id = $("#loginIdInput").val();
 				let password = $(this).data("user-password");
 				let name = $("#nameInput").val();
@@ -75,25 +73,18 @@
 					, url:"/user/get_pw"
 					, data:{"loginId":id, "name":name, "birth":birth, "phoneNumber":phoneNumber}
 					, success:function(data){
-						
 						if(data.result == "success"){
 							location.reload();
 							alert("비밀번호는" + data.info);
 						} else {
-							
 							alert("비밀번호 재발급 실패");
 						}
-						
 					}
 					, error:function(){
 						alert("비밀번호 재발급 오류");
 					}
-					
-					
 				});
-				
 			});
-			
 		});
 
 	</script>

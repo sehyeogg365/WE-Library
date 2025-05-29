@@ -23,26 +23,21 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
-	
-	
+
 </head>
 <body>
 	<div id="wrap" class="">
 	<c:import url="/WEB-INF/jsp/include/header.jsp"/>
 	<section class="contents d-flex justify-content-center">
-	
 		<div class="mybookinfo-page">
 			<div class="sub-profile bg-secondary">
-			
 					<c:import url="/WEB-INF/jsp/include/subprofile.jsp"/>
-					
 					<div class="sub-text">
 						<h2 class="text-center text-white mt-3"><b>예약현황</b></h2>
 					</div>
 					<div class="sub-text2">
 						<h5 class="text-center text-white mt-3"><b>내서재>도서이용정보>예약현황</b></h5>
 					</div>
-					
 			</div>
 				
 				<div class="d-flex mx-5">
@@ -51,9 +46,7 @@
 				
 				<div class="col-9 ">
 					<div class="">
-						
 						<div class="">
-						
 						<nav class="d-flex justify-content-center align-items-center col-12 mt-3">
 							<ul class="nav nav-fill">
 								<li class="nav-item list-nav"><h5><a href="/book/borrowstatus/view?id=${userId }" class="nav-link text-dark font-weight-bold">&nbsp대출현황&nbsp</a></h5></li>
@@ -62,14 +55,12 @@
 								<li class="nav-item list-nav"><h5><a href="/book/interibrarybooklist/view?id=${userId }" class="nav-link text-dark font-weight-bold">&nbsp상호대차&nbsp</a></h5></li>
 							</ul>
 						</nav>
-						
 						</div>
 						
 						<div class="mt-3 d-flex text-secondary">
 							 예약현황 : &nbsp
 							 <div class="text-primary">
 								 ${reserveBook}
-
 							 </div>건
 						</div>
 						<!-- 대출중일때 if문 써서 대출중  boolean 타입변수 is 빼고 소문자로-->
@@ -103,23 +94,14 @@
 						
 						<div class="">
 							<button id="reservedeleteBtn" class="btn btn-primary btn-sm deleteBtn my-3" data-reserve-id="${reserve.id }">예약취소</button>
-						
 						</div>
 						</div>
-						
 						</c:forEach>
-
 						<hr>
-						
 					</div><br>
-				
-				
 				</div>
-				
 					<hr>
-				
 				</div>
-		
 		</div>
 	</section>
 	<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
@@ -127,9 +109,7 @@
 	</div>
 	<script>
 		$(document).ready(function(){
-
 			$(".deleteBtn").on("click", function(){
-
 				let id = $(this).data("reserve-id");
 				var result = confirm("취소 하시겠습니까?");
 				
@@ -141,7 +121,6 @@
 				//alert(id);
 				
 				$.ajax({
-					
 					type:"get"
 					, url:"/book/reservation/delete"
 					, data: {"id":id}
@@ -151,20 +130,14 @@
 							location.reload();
 						} else {
 							alert("예약취소 실패");
-							
 						}
-						
 					}
 					,error:function(){
 						alert("예약취소 에러");
 					}
-					
 				});
-
 			});
-
 		});
-	
 	</script>
 
 </body>

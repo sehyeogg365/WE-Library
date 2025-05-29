@@ -23,7 +23,6 @@
 	<div id="wrap" class="">
 		<c:import url="/WEB-INF/jsp/include/header.jsp"/>
 		<section class="contents d-flex justify-content-center">
-		
 		<div class="mybookinfo-page">
             <div class="sub-profile">
                 <c:import url="/WEB-INF/jsp/include/subprofile.jsp"/>
@@ -31,17 +30,13 @@
                     <h2 class="text-center text-white mt-3"><b>희망도서 신청</b></h2>
                 </div>
             </div>
-
             <div class="d-flex mx-5">
-
             <c:import url="/WEB-INF/jsp/include/sidenav2.jsp"/>
 
             <div class="col-9">
             <!-- 신청자 정보 -->
                 <div class ="mt-4"><h4><b>신청자 정보</b></h4></div>
-		
                 <div class="">
-
                     <table class="table">
                         <thead>
                             <tr>
@@ -49,9 +44,7 @@
                                 <td></td>
                             </tr>
                         </thead>
-
                         <tbody>
-
                             <tr>
                                 <td class="item col-3">신청자명</td>
                                 <td class="col-9">${user.name }</td>
@@ -66,7 +59,6 @@
                             </tr>
                         </tbody>
                     </table>
-
                 </div>
 
             <!-- 희망도서 도서 정보 -->
@@ -83,13 +75,10 @@
                                     <option value="행복한 도서관">행복한 도서관</option>
                                     <option value="논현 도서관">논현 도서관</option>
                                     <option value="대치 도서관">대치 도서관</option>
-
                                 </select>
-
                             </td><!-- 이것도 옵션 -->
                         </tr>
                         </thead>
-
                         <tbody>
                             <tr>
                                 <td class="item">희망도서명</td>
@@ -104,7 +93,6 @@
                                   </form>
                                 </td>
                             </tr>
-
                             <tr>
                                 <td class="item ">사진</td>
                                 <td><input type="file" name="file" id="fileInput" class=""><img class="wishbookprofile" width ="40" height="40" src="${wishbook.imagePath}" ></td>
@@ -136,9 +124,7 @@
                     <button id="addBtn" class="btn btn-primary my-3" data-user-id="${wishbook.userId }">신청하기</button>
                 </div>
             </div>
-
             </div>
-		
             </section>
 
             <c:import url="/WEB-INF/jsp/include/footer.jsp"/>
@@ -163,19 +149,14 @@
         }
 
 		$("#search").on("click", function(){
-			
 			let title = $("#titleInput").val();
 
 			if(title == ""){
-
 				return;
-
 			}
-			
 		});
 
 		$("#addBtn").on("click", function(){
-			
 			let id = $(this).data("user-id");
 			let library = $("#librarySelector").val();
 			let file = $("#fileInput")[0];
@@ -251,7 +232,6 @@
 			formData.append("price", price);
 
 			$.ajax({
-				
 				type:"post"
 				, url: "/book/wishbook/create"
 				, data:formData//파일이 포함되어있는경우 일반적인 형태:{}로는 전달안된다고 함. 위의 formData.append("file", file.files[0]);이 전달안되서.
@@ -265,15 +245,11 @@
 					} else {
 						alert("추가 실패");
 					}
-					
 				}
 				, error:function(){
-					
 					alert("추가 오류");
 				}
-				
 			});
-			
 		});
 	});
 	</script>

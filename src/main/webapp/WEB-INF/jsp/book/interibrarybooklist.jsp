@@ -24,10 +24,8 @@
 	<div id="wrap" class="">
 	<c:import url="/WEB-INF/jsp/include/header.jsp"/>
 	<section class="contents d-flex justify-content-center">
-	
 		<div class="mybookinfo-page">
 			<div class="sub-profile bg-secondary">
-					
 					<c:import url="/WEB-INF/jsp/include/subprofile.jsp"/>
 					
 					<div class="sub-text">
@@ -45,9 +43,7 @@
 				
 				<div class="col-9 ">
 					<div class="">
-						
 						<div class="">
-						
 						<nav class="d-flex justify-content-center align-items-center col-12 mt-3">
 							<ul class="nav nav-fill">
 								<li class="nav-item list-nav" ><h5><a href="/book/borrowstatus/view?id=${userId }" class="nav-link text-dark font-weight-bold">&nbsp대출현황&nbsp</a></h5></li>
@@ -56,14 +52,11 @@
 								<li class="nav-item list-nav" style="background-color: #1E90FF;"><h5><a href="/book/interibrarybooklist/view?id=${userId }" class="nav-link text-dark font-weight-bold">&nbsp상호대차&nbsp</a></h5></li>
 							</ul>
 						</nav>
-						
+
 						</div>
-						
-						
 						<div class="mt-3 d-flex text-secondary">
 							 상호대차 현황 : &nbsp<div class="text-primary">
 							 ${interibraryBook}
-							 
 							 </div>건
 						</div>
 						
@@ -73,7 +66,6 @@
 							<div class="col-9">
 								<div class="" style="font-size: 18px;">
 									${interibrarybook.title }
-
 								</div>
 								<div class="text-secondary">
 									ㅇ제공도서관: ${interibrarybook.library }  &nbsp| &nbsp 수령도서관 : ${interibrarybook.receivelibrary }
@@ -91,7 +83,6 @@
 											<p class="text-primary">요청된 자료</p>
 										</c:otherwise>
 									</c:choose>
-									
 								</div>
 							</div>
 							<div class="">
@@ -105,34 +96,22 @@
 							        </c:otherwise>
 							    </c:choose>
 							</div>
-
 						</div>	
-						</c:forEach>	
-
+						</c:forEach>
 						<hr>
-					
 					</div><br>
-					
 				</div>
-				
 					<hr>
-				
 				</div>
-		
 		</div>
-	
-	
 	</section>
 	<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
 	</div>
 	<script>
 	//수령 = 대여목록 추가(대출), 대여를 의미하고 dto로는 borrow_book테이블에 있는지여부를 조사하여 있으며 있으면 대여중 이런식으로 글자 변경
 		$(document).ready(function(){
-
 			$(".addBtn").on("click", function(){
-				
 				let id = $(this).data('book-id');
-
 				var result = confirm("수령 하시겠습니까?");
 				
 				if(result){
@@ -153,9 +132,7 @@
 		        	 		location.reload();
 		        	 	} else {
 		        	 		alert("대출 실패");
-
 		        	 	}
-
 		        	 }
 		        	 , error:function(){
 		        	 	alert("대출 에러");
@@ -166,7 +143,6 @@
 
 
 			$(".deleteBtn").on("click", function(){
-				
 				let id = $(this).data('interibrary-id');
 				var result = confirm("상호대차 취소 하시겠습니까?");
 				
@@ -191,17 +167,11 @@
 						}
 					}
 					,error:function(){
-
 						 alert("상호대차 취소 에러");
-
 					}
-
 				});
-
 			});
-
 		});
-
 	</script>
 </body>
 </html>

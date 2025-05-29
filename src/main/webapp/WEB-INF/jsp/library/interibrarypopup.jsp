@@ -14,8 +14,6 @@
 	
 	<!-- 아이콘 -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
-
-	
 	<link rel="stylesheet" href="/static/css/style.css" type="text/css">
 	
 </head>
@@ -37,7 +35,6 @@
 				<option value="행복한 도서관">행복한 도서관</option>
 				<option value="논현 도서관">논현 도서관</option>
 				<option value="대치 도서관">대치 도서관</option>
-					
 			</select>
 		</c:when>
 		<c:when test ="${book.library eq '역삼도서관' }">
@@ -46,7 +43,6 @@
 				<option value="행복한 도서관">행복한 도서관</option>
 				<option value="논현 도서관">논현 도서관</option>
 				<option value="대치 도서관">대치 도서관</option>
-					
 			</select>
 		</c:when>
 		<c:when test ="${book.library eq '행복한 도서관' }">
@@ -55,7 +51,6 @@
 				<option value="역삼도서관">역삼도서관</option>
 				<option value="논현 도서관">논현 도서관</option>
 				<option value="대치 도서관">대치 도서관</option>
-					
 			</select>
 		</c:when>
 		<c:when test ="${book.library eq '논현 도서관' }">
@@ -64,7 +59,6 @@
 				<option value="역삼도서관">역삼도서관</option>
 				<option value="행복한 도서관">행복한 도서관</option>
 				<option value="대치 도서관">대치 도서관</option>
-					
 			</select>
 		</c:when>
 		<c:when test ="${book.library eq '대치 도서관' }">
@@ -73,8 +67,6 @@
 				<option value="역삼도서관">역삼도서관</option>
 				<option value="행복한 도서관">행복한 도서관</option>
 				<option value="논현 도서관">논현 도서관</option>
-		
-					
 			</select>
 		</c:when>
 		<c:otherwise>
@@ -84,10 +76,8 @@
 				<option value="행복한 도서관">행복한 도서관</option>
 				<option value="논현 도서관">논현 도서관</option>
 				<option value="대치 도서관">대치 도서관</option>
-					
 			</select>
 		</c:otherwise>
-	
 	</c:choose>
 	<div class="">
 	<p>
@@ -103,59 +93,48 @@
 		<button id= "interibraryAddBtn" class="btn btn-success btn-sm" data-book-id="${book.id }"><i class="bi bi-shuffle"></i>상호대차 신청</button> 
 		<button class="btn btn-danger btn-sm" onclick="window.close()">취소</button> 
 	</div>
-	
-	
+
 	<script>
 	$(document).ready(function(){
-		
 		$("#interibraryAddBtn").on("click", function(){
-       	 let id = $(this).data("book-id");
-       	 let library = $("#librarySelector").val();
+       	  let id = $(this).data("book-id");
+       	  let library = $("#librarySelector").val();
 
-       	 var result = confirm("신청 하시겠습니까?");
+       	  var result = confirm("신청 하시겠습니까?");
        	 
-	     if(result){
-			//alert(""); 아무것도 안쓰면 바로 추가성공이 뜬다.
-		 } else {
-			return ;
-		 }
-       	 
+          if(result){
+             //alert(""); 아무것도 안쓰면 바로 추가성공이 뜬다.
+          } else {
+             return ;
+          }
        	 //alert(id);
        	 //alert(library);
        	 
-       	function closeTabClick() {
-        	// 변수를 close해 새창을 닫음
-        	window.close();
-        }
+         function closeTabClick() {
+             // 변수를 close해 새창을 닫음
+             window.close();
+         }
        	
-       	 $.ajax({
-       		 type:"post"
-       		 , url:"/book/interibrary/create"
-       		 , data : {"bookId" :id, "receivelibrary":library}
-       	 	 , success:function(data){
-       	 		 if(data.result == "success"){
-       	 			 
-       	 			 alert("상호대차 성공");
-       	 			 window.close();
-       	 			 //location.href="/library/list/view";
-       	 			 
-       	 		 } else {
-       	 			 
-       	 			alert("상호대차 오류");
-       	 			
-       	 		 }
-       	 	 }
-       	 	 , error:function(){
-       	 		 alert("상호대차 에러");
+         $.ajax({
+             type:"post"
+             , url:"/book/interibrary/create"
+             , data : {"bookId" :id, "receivelibrary":library}
+             , success:function(data){
+                 if(data.result == "success"){
 
-       	 	 }
-       		 
-       	 });
-
+                     alert("상호대차 성공");
+                     window.close();
+                     //location.href="/library/list/view";
+                 } else {
+                    alert("상호대차 오류");
+                 }
+             }
+             , error:function(){
+                 alert("상호대차 에러");
+             }
+         });
         });
-		
 	});
-	
 	</script>
 </body>
 </html>

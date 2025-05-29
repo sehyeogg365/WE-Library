@@ -26,7 +26,6 @@
 
 </head>
 <body>
-
 	<!-- bootstrap input group 검색 -->
 	<div class="search d-flex justify-content-center">
 		<input id="titleInput" type="text" placeholder="도서명 또는 저자명을 입력해주세요" class="form-control col-9">
@@ -34,7 +33,6 @@
 			<button id="search" type="submit" class="btn btn-primary">검색</button>
 		</div>
 	</div>
-	
 	<div class="book-card d-flex">
 		<div class="">
 			<p class="thumbnail"></p>
@@ -48,29 +46,19 @@
 			<p class="price"></p>
 			<p class="button"><button class="btn interestAddBtn">희망도서 신청</button></p>
 		</div>
-		
-		
 	</div>
-
-
 </body>
 <script>
 	$(document).ready(function() {
-		
-		
 		$(".interestAddBtn").on("click", function(){
-			
 			let title = $("#titleInput").val();
-
 			let book = JSON.parse($(this).data("book"));
 
 			if (title == "") {
-
 				alert("제목을 입력해주세요.");
 				return;
 			}
 			// 부모 창의 입력 필드에 값 설정
-
             window.opener.document.getElementById("titleInput").value = book.title;
             window.opener.document.getElementById("authorInput").value = book.authors.join(", ");
             window.opener.document.getElementById("publisherInput").value = book.publisher;
@@ -78,18 +66,14 @@
             window.opener.document.getElementById("isbnInput").value = book.isbn;
             window.opener.document.getElementById("priceInput").value = book.price;
             window.opener.document.querySelector(".wishbookprofile").src = book.thumbnail;
-
             // 팝업 창 닫기
             window.close();
-			
 		});
 
 		$("#search").on("click", function() {
-
 			let title = $("#titleInput").val();
 
 			if (title == "") {
-
 				alert("제목을 입력해주세요.");
 				return;
 			}
@@ -118,13 +102,8 @@
 				$( ".author" ).append( "<strong>"+"작가:"+msg.documents[0].authors+"</strong>" );//여기에 작가 코드를 붙여 넣는다.
 				$( ".year" ).append( "<strong>"+"발행년도:"+msg.documents[0].datetime.substring(0,4)+"</strong>" );//여기에 작가 코드를 붙여 넣는다.
 				//$( ".button" ).append( "<button>" +희망도서 신청+"</button>" );//여기에 작가 코드를 붙여 넣는다.
-			
 			});
-			
-
 		});
-		
-
 	});
 </script>
 </html>

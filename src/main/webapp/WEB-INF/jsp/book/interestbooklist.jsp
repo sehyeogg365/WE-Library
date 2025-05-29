@@ -30,14 +30,10 @@
 	<div id="wrap" class="">
 		<c:import url="/WEB-INF/jsp/include/header.jsp"/>
 		<section class="contents d-flex justify-content-center">
-		
 		<div class="mybookinfo-page">
 		
 		<div class="sub-profile bg-secondary">
-			
-
 			<c:import url="/WEB-INF/jsp/include/subprofile.jsp"/>
-			
 			<div class="sub-text">
 				<h2 class="text-center text-white mt-3"><b>관심도서 조회</b></h2>
 			</div>
@@ -45,9 +41,7 @@
 		
 		<div class="d-flex mx-5">
 		<c:import url="/WEB-INF/jsp/include/sidenav2.jsp"/>
-		
 		<div class="col-9 ">
-		
 			<div class="">
 				<div class="mt-3 d-flex text-secondary">
 						관심도서 신청 :&nbsp
@@ -55,15 +49,10 @@
 							${interestBook}
 						</div>건
 				</div>
-					
-					
 					<!-- hr 부터 div 까지 반복문 -->
 					<c:forEach var="interestbook" items="${interestDetailList }">
 					<hr>
-					
 					<div class="">
-							
-						
 							<div class="">
 								<h5>${interestbook.title }</h5>
 							</div>
@@ -76,35 +65,24 @@
 									&nbsp<button class="btn btn-danger btn-sm deleteBtn" data-interest-id="${interestbook.id }"><i class="bi bi-x-circle"></i>관심도서 삭제</button>
 								</div>
 							</div>
-							
 					</div>
-					
 					</c:forEach>
 					<hr>
 			</div>
-		
-			
-		
 		</div>
 
 		<div id="pagination" class="tui-pagination"
         									style="background-color: white; margin: 0"></div>
 		
 		</div>
-		
-		
 		</div>
-		
 		</section>
 
-
 		<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
-
 	</div>
 	<script src="/resources/js/tui-grid/tui-pagination.js"></script><!-- 경로 고치기  /resources/js/tui-grid/tui-pagination.js -> /resources/static/css/tui-pagination.js -->
 	<script>
 		$(document).ready(function(){
-
 			function fnSetPagination(id, obj) {
               var _pagination = new tui.Pagination(id, {
                 totalItems: obj.totalData,
@@ -127,20 +105,14 @@
 
               return _pagination;
             }
-
 			$(function(){
-				
 				$("li").click(function(){
-					
 					$("li").removeClass()
 						$(this).addClass("on");
-					
 				});
-				
 			});
 			
 			$(".deleteBtn").on("click", function(){
-				
 				let id = $(this).data("interest-id");
 				
 				var result = confirm("삭제 하시겠습니까?");
@@ -150,11 +122,9 @@
 				} else {
 					return ;
 				}
-				
-				
+
 				//alert(id);
 				$.ajax({
-					
 					type:"get"
 					, url:"/book/interest/delete"
 					, data:{"id":id}
@@ -162,7 +132,6 @@
 						if(data.result == "success"){
 							alert("삭제 성공");
 							location.reload();
-							
 						} else {
 							alert("삭제 실패")
 						}
@@ -170,14 +139,9 @@
 					, error:function(){
 						alert("삭제 에러");
 					}
-					
-					
 				});
-				
 			});
-
 		});
-
 	</script>
 
 

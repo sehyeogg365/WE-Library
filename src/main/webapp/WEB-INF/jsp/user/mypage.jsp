@@ -18,15 +18,12 @@
 <style>
 	.clear{clear:both} 
 	li.on{background-color:blue}
-
 </style>
 
 <body>
 	<div id="wrap" class="">
 	<c:import url="/WEB-INF/jsp/include/header.jsp"/>
 	<section class="contents d-flex justify-content-center">
-		
-	
 		<div class="userinfo-page">
 		<div class="sub-profile bg-secondary">
 			
@@ -39,14 +36,9 @@
 			
 			<div class="d-flex mx-5">
 			<c:import url="/WEB-INF/jsp/include/sidenav.jsp"/>
-			
-			
 			<div class="d-flex justify-content-center col-9">
-			
 				<div class="userinfo-box mt-3 col-8 ">
-				
 					<table class="table">
-					
 					<thead>
 						<tr>
 							<td>id</td>
@@ -55,7 +47,6 @@
 							</th>
 						</tr>
 					</thead>
-					
 					<tbody>
 						<tr>
 							<td>이름</td>
@@ -92,9 +83,7 @@
 									<input type="text" id="phoneNumberInput3" value="${fn:substring(user.phoneNumber,7,11) }" class="form-control mt-4 ml-1 col-3">
 									</c:otherwise>
 								</c:choose>
-									
 								</div>
-							
 							</td>
 						</tr>
 						<tr>
@@ -102,7 +91,6 @@
 							<td>
 								<div class="d-flex align-items-center">
 									<input type="text" id="emailIdInput" value="${fn:split(user.email, '@')[0]}" class="form-control mt-1 col-5">
-									
 									 <div class="mt-1 col-1">@</div>
 									 <select class="form-control mt-1 col-6" id="emailSelctor">
 									 
@@ -113,7 +101,6 @@
 									 	<option value="@gmail.com">gmail.com</option>
 									 	<!-- 시간날때 해보기 <option value = "selfInput">직접입력</option>-->
 									 </select>
-								 
 								</div>
 							</td>
 						</tr>
@@ -199,20 +186,14 @@
 	</div>
 	<script>
 	$(document).ready(function(){
-		
 		$(function(){
-			
 			$("li").click(function(){
-				
 				$("li").removeClass()
 					$(this).addClass("on");
-				
 			});
-			
 		});
 		
 		$("#updateBtn").on("click", function(){
-			
 			let id = $(this).data("user-id");
 			let name = $("#nameInput").val();
 			
@@ -254,23 +235,14 @@
 						location.reload();
 					} else {
 						alert("회원정보 수정 실패");
-						
 					}
 				}
 				,error:function(){
-					
 					alert("회원정보 수정 오류");
 				}
-				
-				
 			});
-			
 		});
 	})
-	
-	
-	
 	</script>
-
 </body>
 </html>

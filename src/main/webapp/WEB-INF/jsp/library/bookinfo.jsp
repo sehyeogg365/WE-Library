@@ -28,7 +28,6 @@
 		<div class="librarybookinfo-page">	
 			<div class="sub-profile bg-secondary">
 				<c:import url="/WEB-INF/jsp/include/subprofile.jsp"/>
-				
 				<div class="sub-text">
 					<h2 class="text-center text-white mt-3"><b>도서 상세정보</b></h2>
 				</div>
@@ -48,7 +47,6 @@
 				<div class=""><b>부록여부</b> &nbsp${book.appendix }</div>
 				<!--  <div class=""><b>북아이디</b> ${book.id }</div>-->
 			</div>
-
 		</div>	
 		
 			<div class="info-box">
@@ -58,7 +56,6 @@
 			<div class="possessioninfo-box">
 				<h5>소장정보</h5>
 				<table class="table" border=1>
-					
 					<thead>
 						<tr class="item">
 						
@@ -70,11 +67,8 @@
 						</tr>
 					</thead>
 					<tbody>
-					
 						<tr>
-						
 							<td class="text-center">
-						
 								<c:choose>
 									<c:when test = "${book.borrow }" >
 										<button class="btn btn-info btn-sm " ><i class="bi bi-bookmark-plus"></i>대출불가[대출중]</button><br> <div class="text-secondary">예약인원 ${book.reserveCount } 명</div>
@@ -86,10 +80,8 @@
 										<button id ="borrowBtn"class="btn btn-info btn-sm borrowBtn " data-book-id="${book.id }"><i class="bi bi-bookmark-plus"></i>대출하기</button>
 									</c:otherwise>
 								</c:choose>
-								
 							</td>
 							<td class="text-center">
-							
 								<c:choose>
 									<c:when test="${book.borrow }">
 										<div class="text-secondary">
@@ -102,7 +94,6 @@
 										</div>
 									</c:when>
 								</c:choose>
-								
 							</td>
 							<td class="text-center text-secondary">${book.appendix }</td>
 							<td class="text-center">
@@ -126,32 +117,24 @@
 									<c:when test="${book.interibrary }">
 										<a href="#"class="btn btn-success btn-sm  interibraryAddBtn" ><i class="bi bi-shuffle"></i>상호대차 신청 불가</a> 
 									</c:when>
-									
 									<c:otherwise>
 										<a href="/library/interibrarypopup/view?id=${book.id }"class="btn btn-success btn-sm text-center interibraryAddBtn" onclick="window.open('/library/interibrarypopup/view?id=${book.id}','new','scrollbars=yes,resizable=no width=500 height=500, left=0,top=0');return false"><i class="bi bi-shuffle"></i>상호대차 신청</a>
 									</c:otherwise>
 								</c:choose>
-
 							</td>
 						</tr>
-						
 					</tbody>
-				
 				</table>
 				</div>
 				<div class="text-center"><button id ="interestAddBtn" class="btn btn-sm btn-primary interestAddBtn" data-book-id="${book.id }"><i class="bi bi-download"></i>관심도서 담기</button></div>
 				</c:forEach>
-				
 			</div>
-
 			</section>
 			<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
 		</div>
 
-
 	<script>
 	$(document).ready(function(){
-
 		$(".reserveBtn").on("click", function(){
 	       	 let id = $(this).data("book-id");
 			 var result = confirm("예약 하시겠습니까?");
@@ -174,32 +157,17 @@
 	        	 			location.reload();
 	        	 		 } else {
 	        	 			alert("예약 실패");
-	        	 			 
 	        	 		 }
-	       			 
 	       		 }
 	       		 , error:function(){
 	       	 		 alert("예약 에러");
-	
 	       	 	 }
-	       		 
-	       		 
 	       	 });
-	       	 
-	       	 
-	       	 
-	      });
-		
-		
-		
-		
-		
-		
+	    });
+
 		$(".borrowBtn").on("click", function(){
-			
 			let id = $(this).data("book-id");
-       	 
-       	 
+
        		 var result = confirm("대출 하시겠습니까?");
        	 
        		 if(result){
@@ -207,12 +175,8 @@
 			 } else {
 				return ;
 			 }
-	
-       	 
        		//alert(id);
-       	 
        	 	$.ajax({
-       	
        		 	type:"post"
        		 	, url:"/book/borrow/create"
        		 	, data:{"bookId":id}
@@ -221,37 +185,27 @@
        	 				alert("대출 성공");
        	 				location.reload();
        	 		 	} else {
-       	 			alert("대출 실패");
-       	 			 
+       	 			    alert("대출 실패");
        	 		 	}
-       	 		 
        	 	 	}
        	 	 	, error:function(){
        	 			 alert("대출 에러");
-
        	 	 	}
-       		 
        		});
-			
-			
 		});
 		
 		$(".interestAddBtn").on("click", function(){
        	 	let id = $(this).data("book-id");
-       	 //이것도 한번 된 책이면 두번이상 못누르게 해보기
-       	 
+       	    // 이것도 한번 된 책이면 두번이상 못누르게 해보기
 			var result = confirm("관심도서 추가 하시겠습니까?");
-       	 
 	       	 if(result){
 					//alert(""); 아무것도 안쓰면 바로 추가성공이 뜬다.
 			 } else {
 				return ;
 			 }
-       	 
        	 	//alert(id);
        	 
 	       	 $.ajax({
-	       	
 	       		 type:"post"
 	       		 , url:"/book/interest/create"
 	       		 , data :{"bookId":id}
@@ -266,19 +220,9 @@
 	       	 	 , error:function(){
 	       	 		 alert("추가 에러");
 	       	 	 }
-	       	 	 
 	       	 });
-       	 
-       	 
-       	 
-       	 
-       	 
         });
-		
-		
 	});
-	
-	
 	</script>
 </body>
 </html>

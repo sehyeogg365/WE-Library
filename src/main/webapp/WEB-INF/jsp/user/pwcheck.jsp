@@ -28,7 +28,6 @@
 			<div class="sub-text">
 				<h2 class="text-center text-white mt-3"><b>회원정보 수정</b></h2>
 			</div>
-			
 		</div>	
 			
 			<div class="d-flex mx-5">
@@ -46,9 +45,7 @@
 					<!--  <a href="#" id="pwCheckBtn" class="btn  btn-primary" data-user-id="${user.id }">비밀번호 확인</a>-->
 					<button type="button" id="pwCheckBtn" class="btn btn-primary text-center mt-3"  data-user-id = "${user.id }">비밀번호 확인 </button>
 				</div>
-				
 			</div>
-			
 			</div>
 		</div>
 	</section>
@@ -57,13 +54,11 @@
 	</div>
 	<script>
 	$(document).ready(function(){
-		
 		$("#pwCheckBtn").on("click", function(){
 			let id = $(this).data("user-id");
 			let password = $("#passwordInput").val();
 			
 			if(password==""){
-				
 				alert("비밀번호를 입력하세요.");
 			}
 			
@@ -77,7 +72,6 @@
 					if(data.result == "success"){
 						location.href="/user/mypage/view?id=${user.id}";
 						alert("비밀번호 확인 성공");
-						
 					} else {
 						alert("비밀번호 확인 실패");
 						location.reload();
@@ -87,14 +81,9 @@
 					alert("비밀번호 확인 오류");
 					location.reload();
 				}
-				
 			});
-			
 		});
-		
-	});	
-	
+	});
 	</script>
-
 </body>
 </html>

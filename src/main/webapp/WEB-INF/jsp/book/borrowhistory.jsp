@@ -24,7 +24,6 @@
 	<div id="wrap" class="">
 		<c:import url="/WEB-INF/jsp/include/header.jsp"/>
 		<section class="contents d-flex justify-content-center">
-			
 			<div class="mybookinfo-page">
 				<div class="sub-profile bg-secondary">
 					<div class="img-box">
@@ -32,43 +31,34 @@
 					</div>
 					<div class="sub-text">
 						<h2 class="text-center text-white mt-3"><b>대출이력</b></h2>
-										
 					</div>
 					<div class="sub-text2">
 						<h5 class="text-center text-white mt-3"><b>내서재>도서이용정보>대출이력</b></h5>
 					</div>
 				</div>
-				
 				<div class="d-flex mx-5">
 				
 				<c:import url="/WEB-INF/jsp/include/sidenav2.jsp"/>
 				
 				<div class="col-9 ">
 					<div class="">
-						
 						<div class="">
-						
-						<nav class="d-flex justify-content-center align-items-center col-12 mt-3">
-							<ul class="nav nav-fill">
-								<li class="nav-item list-nav" style="background-color: #1E90FF;"><h5><a href="/book/borrowstatus/view?id=${userId }" class="nav-link text-dark font-weight-bold">&nbsp대출현황&nbsp</a></h5></li>
-								<li class="nav-item list-nav"><h5><a href="/book/reservelist/view?id=${userId }" class="nav-link text-dark font-weight-bold">&nbsp예약현황&nbsp</a></h5></li>
-								<li class="nav-item list-nav"><h5><a href="#" class="nav-link text-dark font-weight-bold">&nbsp대출이력&nbsp</a></h5></li>
-								<li class="nav-item list-nav"><h5><a href="/book/interibrarybooklist/view?id=${userId }" class="nav-link text-dark font-weight-bold">&nbsp상호대차&nbsp</a></h5></li>
-							</ul>
-						</nav>
-						
+                            <nav class="d-flex justify-content-center align-items-center col-12 mt-3">
+                                <ul class="nav nav-fill">
+                                    <li class="nav-item list-nav" style="background-color: #1E90FF;"><h5><a href="/book/borrowstatus/view?id=${userId }" class="nav-link text-dark font-weight-bold">&nbsp대출현황&nbsp</a></h5></li>
+                                    <li class="nav-item list-nav"><h5><a href="/book/reservelist/view?id=${userId }" class="nav-link text-dark font-weight-bold">&nbsp예약현황&nbsp</a></h5></li>
+                                    <li class="nav-item list-nav"><h5><a href="#" class="nav-link text-dark font-weight-bold">&nbsp대출이력&nbsp</a></h5></li>
+                                    <li class="nav-item list-nav"><h5><a href="/book/interibrarybooklist/view?id=${userId }" class="nav-link text-dark font-weight-bold">&nbsp상호대차&nbsp</a></h5></li>
+                                </ul>
+                            </nav>
 						</div>
-						
-						
+
 						<div class="mt-3 d-flex text-secondary">
 							 대출이력 : &nbsp<div class="text-primary">
-							 					
-							 					<c:forEach var="borrow" begin="0" end="0" items="${borrowCountList }">
-							 					
-							 						${borrow.numberCount }
-							 					</c:forEach>
-							 
-							 				</div>건
+                            <c:forEach var="borrow" begin="0" end="0" items="${borrowCountList }">
+                                ${borrow.numberCount }
+                            </c:forEach>
+                        </div>건
 						</div><!-- 여기서도  반납연장 1회 누를시 반납연장불가로 바뀜, 상태는:반납연기 연체되면 연체로 나오게해야함-->
 						<c:forEach var="borrow" items="${borrowDetailList }">	<!-- 한번 반납연장을 했을때 반납 연장 못하게 -->
 						<hr>
@@ -81,8 +71,6 @@
 								ㅇ도서관 : ${borrow.library }
 							</div>
 							<div class="d-flex text-secondary"><!-- ${borrowDate.time +(1000*60*60*24*14)} 여기서 String->Date 변환 한번 해야함(parse) -->
-						
-								
 								ㅇ상태 : <c:choose>
 										<c:when test ="${returnDate_c - borrowDate_c >= 21}">
 											<div class="">반납연장</div>
@@ -113,20 +101,13 @@
 							</c:choose>
 						</div>
 						</div>
-						
 						</c:forEach>
-						
 						<hr>
-					
 					</div><br>
-
 				</div>
-
 					<hr>
 				</div>
-			
 			</div>
-		
 		</section>
 		<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
 	</div>
