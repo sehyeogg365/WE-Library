@@ -16,7 +16,6 @@
   			, `createdAt` 
 		    , `updatedAt`
   		)
-  		
   		VALUES
   		(
 			#{userId}  			
@@ -24,7 +23,6 @@
   			, now()
   			, now()	
   		)
-  
   </insert>
    
   <!-- 관심도서 조회 -->
@@ -59,8 +57,6 @@
   	DELETE
   	FROM `interest_book`
   	WHERE `id` = #{id}
-  
   </delete>
-  
-  
+
   </mapper>

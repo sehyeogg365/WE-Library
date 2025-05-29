@@ -29,10 +29,7 @@
 		 , #{phoneNumber}
 		 , now()
 		 , now()
-		 
-		 
   		)
-
   </insert>
   
   <!-- 중복아이디 확인(select) -->
@@ -71,8 +68,6 @@
 		 , #{isAdmin}
 		 , now()
 		 , now()
-		 
-		 
   		)
   </insert>
   
@@ -84,8 +79,6 @@
   		`certificationnumber`
   	WHERE `certificationNumber`
   			= #{certificationNumber};
-  
-  
   </select>
   
   <!-- 로그인 -->
@@ -169,7 +162,6 @@
   		`user`
   	WHERE
   		`id`=#{id};
-  
   </select>
   
   <!-- 비밀번호 확인 -->
@@ -193,7 +185,6 @@
   		, `updatedAt` = now()
   	WHERE
   		`id`= #{id}
-
   </update>
   
   <!-- 회원탈퇴 -->
@@ -203,8 +194,6 @@
    		`user`
    WHERE
 		`id`= #{id}
-
    </delete>
-  
   
   </mapper>

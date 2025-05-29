@@ -35,16 +35,13 @@
 					<h2 class="text-center text-white mt-3"><b>간략검색</b></h2>
 				</div>
 			</div>
-		
-		
-		<div class="searchbox" >
+
+		<div class="searchbox">
 			<form action="/library/list/view" method="get" class=""><!-- bootstrap input group 검색 -->
-			
                 <nav class="bg-primary booksearch-nav d-flex justify-content-center align-items-center col-10">
                     <div class="text-white col-2">
                         <h5>통합검색</h5>
                     </div>
-
                     <div class="search d-flex justify-content-center col-9">
                     <!-- 0건일때랑 아닐때로 나눠야 함 제목 입력여부가 아니라 -->
 
@@ -53,21 +50,17 @@
                      <div class="input-group-append">
                           <button type="submit" id="searchBtn" class="btn">검색</button>
                      </div>
-
                     </div>
-
                 </nav>
 		    	 <div class="d-flex align-items-center col-10 mt-3" style= "margin-left:83.338px;">
 		    	    <h5 id ="result" class="text-primary"> </h5>
 		        	<h5 class="">에 대한 검색 결과
 					<c:forEach var="book" begin="0" end="0" items="${bookCountList }">
-
                         ${book.numberCount }건이 검색되었습니다.
                         <c:if test = "${bookCountList} == null">
                             0건이 검색되었습니다.
                         </c:if>
 					</c:forEach>
-
 					</h5>
 					<!-- <div> ${book}</div>건 -->
 		        </div>
@@ -85,101 +78,85 @@
 			    	</div>
 		    	</div>
 			</form>
-		
 		</div>
 		
 		<div class="bookcard-list">
-		
-		<c:forEach var="book" items="${bookDetailList }">
-			<hr>
-			<div class="bookcard d-flex ">
-			
-				<div class="bookimg-box">
-					
-					<a href="/library/bookinfo/view?id=${book.id }" class="book-profile">
-						<img class="profile" src="${book.imagePath }">
-					</a>
-				</div>	
-				
-				<div class="book-card-body ml-2">		
-					<div class="">
-						<h5>${book.title }</h5>
-					</div>
-					<div class="text-secondary">
-						저자 : ${book.author } &nbsp|&nbsp 출판사 : ${book.publisher } &nbsp|&nbsp 발행년도 : ${book.pubyear }
-					</div>
-					<div class="text-secondary">
-					ISBN : ${book.isbn }
-					</div>
-					<div class="text-secondary">
-						도서관 : ${book.library } &nbsp|&nbsp 부록 : ${book.appendix }
-					</div>
-					<div class=" book-status text-secondary d-flex justify-content-between">
-						<div class="d-flex align-items-center"><!-- 대출중일때 대출불가 예약 -->
-						
-							<c:choose>
-									<c:when test = "${book.borrow }" >
-										<button class="btn btn-info btn-sm" ><i class="bi bi-bookmark-plus"></i>대출불가[대출중]</button> <div class="">예약인원 ${book.reserveCount } 명</div>
-									</c:when>
-									<c:when test="${book.interibrary }">
-										<button class="btn btn-info btn-sm" ><i class="bi bi-bookmark-plus"></i>대출불가[상호대차중]</button> <div class="">예약인원 ${book.reserveCount } 명</div>
-									</c:when>
-									<c:otherwise>
-										<button id ="borrowBtn"class="btn btn-info btn-sm borrowBtn" data-book-id="${book.id }"><i class="bi bi-bookmark-plus"></i>대출하기</button>
-									</c:otherwise>
-								</c:choose>
-							
-						</div>
-						<div class="mr-2">	<!-- 대출가능일때 예약불가 --><!-- 상호대차중일때 상호대차불가 -->
-						
-							<c:choose>
-								<c:when test="${book.borrow }">
-									<button class="btn btn-danger btn-sm reserveBtn" data-book-id="${book.id }"><i class="bi bi-journal-arrow-down"></i>도서 예약신청</button>
-								</c:when>
-								<c:when test="${book.interibrary }">
-									<button class="btn btn-danger btn-sm reserveBtn" data-book-id="${book.id }"><i class="bi bi-journal-arrow-down"></i>도서 예약신청</button>
-								</c:when>
-								<c:when test="${book.reserve }">
-									<button class="btn btn-danger btn-sm" ><i class="bi bi-journal-arrow-down"></i>예약불가</button>
-								</c:when>
-								<c:otherwise>
-									<button class="btn btn-danger btn-sm" ><i class="bi bi-journal-arrow-down"></i>예약불가</button>
-								</c:otherwise>
-							
-							</c:choose>
-							<c:choose>
-								<c:when test="${book.borrow }">
-									<a href="#"class="btn btn-success btn-sm interibraryAddBtn"><i class="bi bi-shuffle"></i>상호대차 신청 불가</a> 
-								</c:when>
-								<c:when test="${book.interibrary }">
-									<a href="#"class="btn btn-success btn-sm interibraryAddBtn" ><i class="bi bi-shuffle"></i>상호대차 신청 불가</a> 
-								</c:when>
-								<c:otherwise>
-									<a href="/library/interibrarypopup/view?id=${book.id }"class="btn btn-success btn-sm interibraryAddBtn" onclick="window.open('/library/interibrarypopup/view?id=${book.id}','new','scrollbars=yes,resizable=no width=500 height=500, left=0,top=0');return false"><i class="bi bi-shuffle"></i>상호대차 신청</a> 
-								</c:otherwise>
-							
-							</c:choose>
-							
-							<button class="btn btn-primary btn-sm interestAddBtn" data-book-id="${book.id }"><i class="bi bi-download"></i>관심도서 담기</button>
-						</div>
-					</div>
-				</div>
-				
-			</div>
-			
-			</c:forEach>
-			<hr>
-			
-		</div>
+            <c:forEach var="book" items="${bookDetailList }">
+                <hr>
+                <div class="bookcard d-flex ">
+                    <div class="bookimg-box">
+                        <a href="/library/bookinfo/view?id=${book.id }" class="book-profile">
+                            <img class="profile" src="${book.imagePath }">
+                        </a>
+                    </div>
 
+                    <div class="book-card-body ml-2">
+                        <div class="">
+                            <h5>${book.title }</h5>
+                        </div>
+                        <div class="text-secondary">
+                            저자 : ${book.author } &nbsp|&nbsp 출판사 : ${book.publisher } &nbsp|&nbsp 발행년도 : ${book.pubyear }
+                        </div>
+                        <div class="text-secondary">
+                        ISBN : ${book.isbn }
+                        </div>
+                        <div class="text-secondary">
+                            도서관 : ${book.library } &nbsp|&nbsp 부록 : ${book.appendix }
+                        </div>
+                        <div class=" book-status text-secondary d-flex justify-content-between">
+                            <div class="d-flex align-items-center"><!-- 대출중일때 대출불가 예약 -->
+                                <c:choose>
+                                    <c:when test = "${book.borrow }" >
+                                        <button class="btn btn-info btn-sm" ><i class="bi bi-bookmark-plus"></i>대출불가[대출중]</button> <div class="">예약인원 ${book.reserveCount } 명</div>
+                                    </c:when>
+                                    <c:when test="${book.interibrary }">
+                                        <button class="btn btn-info btn-sm" ><i class="bi bi-bookmark-plus"></i>대출불가[상호대차중]</button> <div class="">예약인원 ${book.reserveCount } 명</div>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <button id ="borrowBtn"class="btn btn-info btn-sm borrowBtn" data-book-id="${book.id }"><i class="bi bi-bookmark-plus"></i>대출하기</button>
+                                    </c:otherwise>
+                                </c:choose>
+                            </div>
+                            <div class="mr-2">	<!-- 대출가능일때 예약불가 --><!-- 상호대차중일때 상호대차불가 -->
+                                <c:choose>
+                                    <c:when test="${book.borrow }">
+                                        <button class="btn btn-danger btn-sm reserveBtn" data-book-id="${book.id }"><i class="bi bi-journal-arrow-down"></i>도서 예약신청</button>
+                                    </c:when>
+                                    <c:when test="${book.interibrary }">
+                                        <button class="btn btn-danger btn-sm reserveBtn" data-book-id="${book.id }"><i class="bi bi-journal-arrow-down"></i>도서 예약신청</button>
+                                    </c:when>
+                                    <c:when test="${book.reserve }">
+                                        <button class="btn btn-danger btn-sm" ><i class="bi bi-journal-arrow-down"></i>예약불가</button>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <button class="btn btn-danger btn-sm" ><i class="bi bi-journal-arrow-down"></i>예약불가</button>
+                                    </c:otherwise>
+                                </c:choose>
+                                <c:choose>
+                                    <c:when test="${book.borrow }">
+                                        <a href="#"class="btn btn-success btn-sm interibraryAddBtn"><i class="bi bi-shuffle"></i>상호대차 신청 불가</a>
+                                    </c:when>
+                                    <c:when test="${book.interibrary }">
+                                        <a href="#"class="btn btn-success btn-sm interibraryAddBtn" ><i class="bi bi-shuffle"></i>상호대차 신청 불가</a>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <a href="/library/interibrarypopup/view?id=${book.id }"class="btn btn-success btn-sm interibraryAddBtn" onclick="window.open('/library/interibrarypopup/view?id=${book.id}','new','scrollbars=yes,resizable=no width=500 height=500, left=0,top=0');return false"><i class="bi bi-shuffle"></i>상호대차 신청</a>
+                                    </c:otherwise>
+                                </c:choose>
+                                <button class="btn btn-primary btn-sm interestAddBtn" data-book-id="${book.id }"><i class="bi bi-download"></i>관심도서 담기</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </c:forEach>
+		    <hr>
+		</div>
 		</div>
 		
 		<!--2024-02-16 수정 내용  tui-pagination 추가 -->
 		<div id="pagination" class="tui-pagination"></div>
 
         </div>
-
-
 		</section>
 		
 		<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
@@ -190,8 +167,7 @@
 	
 	<script>
 	$(document).ready(function(){
-
-	    //URL 파라미터를 읽어오는 함수
+	    // URL 파라미터를 읽어오는 함수
         const url = new URL(window.location.href); //좀더 가독성있게 코드문 고쳐보기
         const urlParams = url.searchParams;//좀더 가독성있게 코드문 고쳐보기
 
@@ -201,9 +177,6 @@
         if (title) { //title 값있을시에 input value값에 그값을 넣는다.
             document.getElementById('searchInput').value = title;
         }
-
-        //
-
 
         // URL 파라미터에서 library 값을 읽어옴
         const libraries = urlParams.getAll('libraryList');//좀더 가독성있게 코드문 고쳐보기
@@ -223,30 +196,22 @@
 
         var chkList = $("input[name = libraryList]");
 
-
-
-          //체크된 갯수가 selectedValues.length 보다 작을시 전체 선택 표시 없애기
+            // 체크된 갯수가 selectedValues.length 보다 작을시 전체 선택 표시 없애기
             const ckAll = document.querySelector(".ck-all");
             const ckArr = document.querySelectorAll(".ck");
             //$('input:checkbox[name="libraryList"]').length//체크박스 전체 갯수
 
-
             ckAll.addEventListener("click", () =>{
-
                 ckArr.forEach(ck => {
                     ck.checked = ckAll.checked;
                 })
-
             })
 
             ckArr.forEach(ck =>{
                 ck.addEventListener("click",() =>{
-
                     let cnt = 0;
-
                     ckArr.forEach(ck =>{
                         if(ck.checked == true){
-
                             cnt++;
                         }
                     })
@@ -257,17 +222,14 @@
                     } else {
                         ckAll.checked = false;
                     }
-
                 })
             })
 
-        //파라미터 값을 h5 태그에 넣기
+        // 파라미터 값을 h5 태그에 넣기
         document.getElementById("result").innerText = title;
 		
 		 $("#searchBtn").on("click", function(event){
-	 			
 			//var keywords = keyword.split( );// // 검색어를 공백으로 분리하여 각 단어를 배열로 저장
-			 
 			//var result = []; //검색어를 저장할 배열
 	 			
 	 		let search = $("#searchInput").val().trim();
@@ -276,13 +238,10 @@
 	 			alert("검색어를 입력하세요.");
 	 			event.preventDefault(); // 폼 제출을 막음
 	 		}
-	 			
 	 	});
 
-
-         
          $(".reserveBtn").on("click", function(){
-        	 let id = $(this).data("book-id");
+        	let id = $(this).data("book-id");
         	 
 			var result = confirm("예약 하시겠습니까?");
         	 
@@ -295,7 +254,6 @@
         	 //alert(id);
         	 
         	 $.ajax({
-        		
         		 type:"post"
         		 , url:"/book/reservation/create"
         		 , data:{"bookId":id}
@@ -305,17 +263,12 @@
          	 			location.reload();
          	 		 } else {
          	 			alert("예약 실패");
-         	 			 
          	 		 }
-        			 
         		 }
         		 , error:function(){
         	 		 alert("예약 에러");
- 
         	 	 }
-
         	 });
-
          });
 
          $(".borrowBtn").on("click", function(){
@@ -341,24 +294,19 @@
         	 			location.reload();
         	 		 } else {
         	 			alert("대출 실패");
-        	 			 
         	 		 }
-        	 		 
         	 	 }
         	 	 , error:function(){
         	 		 alert("대출 에러");
- 
         	 	 }
-        		 
         	 });
-
          });
          
          $(".interestAddBtn").on("click", function(){
         	 let id = $(this).data("book-id");
-        	 //이것도 한번 된 책이면 두번이상 못누르게 해보기
+        	 // 이것도 한번 된 책이면 두번이상 못누르게 해보기
         	 
-			var result = confirm("관심도서 추가 하시겠습니까?");
+			 var result = confirm("관심도서 추가 하시겠습니까?");
         	 
         	 if(result){
 				//alert(""); 아무것도 안쓰면 바로 추가성공이 뜬다.
@@ -383,14 +331,9 @@
         	 	 , error:function(){
         	 		 alert("추가 에러");
         	 	 }
-        	 	 
         	 });
-
          });
-
 	});
-
 	</script>
-
 </body>
 </html>

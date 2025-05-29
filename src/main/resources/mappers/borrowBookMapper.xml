@@ -4,7 +4,6 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
-  
    <mapper namespace="com.marondal.welibrary.book.borrow.dao.BorrowDAO">
    
    <!-- 대여 -->
@@ -26,8 +25,6 @@
    			, now()
    			, date_add(now(),interval 14 DAY)
    		)
-   		
-   
    </insert>
    
    <!-- 대출 1행정보 -->
@@ -43,7 +40,6 @@
    		`borrow_book`
    	WHERE
    		`bookId` =#{bookId}
-   
    </select>
    
    <!-- 대출목록 -->
@@ -89,7 +85,6 @@
    		`borrow_book`
    	WHERE
    		`id`=#{id}
-
    </delete>
    
    <!-- 반납 연장 -->
@@ -102,7 +97,6 @@
    		`userId` = #{userId}
    		AND
    		`id` = #{id}
-
    </update>
    
    <!-- 2024-03-17 대출이력 추가 -->
@@ -125,7 +119,6 @@
    			, now()
    			, date_add(now(),interval 14 DAY)
    		)
-   		
    </insert>
    
    <!-- 2024-03-24 대출이력 권수 -->
