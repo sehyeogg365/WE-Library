@@ -81,14 +81,10 @@
 		</div>
 		
 		<div class="bookcard-list">
-<<<<<<< HEAD
-		
 		<c:forEach var="book" items="${bookDetailList }">
 			<hr>
 			<div class="bookcard d-flex ">
-			
 				<div class="bookimg-box">
-					
 					<a href="/library/bookinfo/view?id=${book.id }" class="book-profile">
 						<img class="profile" src="${book.imagePath }">
 					</a>
@@ -163,9 +159,7 @@
 			
 			</c:forEach>
 			<hr>
-			
 		</div>
-=======
             <c:forEach var="book" items="${bookDetailList }">
                 <hr>
                 <div class="bookcard d-flex ">
@@ -174,7 +168,6 @@
                             <img class="profile" src="${book.imagePath }">
                         </a>
                     </div>
->>>>>>> develop
 
                     <div class="book-card-body ml-2">
                         <div class="">
