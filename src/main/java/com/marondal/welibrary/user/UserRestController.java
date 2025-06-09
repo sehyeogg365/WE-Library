@@ -146,13 +146,12 @@ public class UserRestController {
 		
 		String password = userBO.getPassword(loginId, name, birth, phoneNumber);
 		
-		//패스워드 변수주는건 잘했다. 그럼 패스워드 있을때 없을떄 조건문 
-		
+		// 패스워드 변수주는건 잘했다. 그럼 패스워드 있을때 없을떄 조건문
 		if(password == null) {
 			resultMap.put("result", "fail");
 		} else {
 			resultMap.put("result", "success");
-			resultMap.put("info", password);//password전달
+			resultMap.put("info", password);// password전달
 		}
 		
 		return resultMap;
@@ -164,7 +163,7 @@ public class UserRestController {
 											, @RequestParam("birth") String birth
 											, @RequestParam("email") String email
 											, @RequestParam("phoneNumber") String phoneNumber
-											, HttpSession session//이번엔 파라미터가 아닌 세션값으로 id 불러오기
+											, HttpSession session// 이번엔 파라미터가 아닌 세션값으로 id 불러오기
 											){
 		Map<String, String> resultMap = new HashMap<>();
 		
@@ -184,7 +183,7 @@ public class UserRestController {
 	// 비밀번호 확인
 	@GetMapping("/pw_check")
 	public Map<String, String> pwcheck(@RequestParam("password") String password
-										, HttpSession session //이번엔 세션값이 아닌 파라미터로 해보자. 세션사용을 최소화 해야 하므로
+										, HttpSession session // 이번엔 세션값이 아닌 파라미터로 해보자. 세션사용을 최소화 해야 하므로
 										){
 		Map<String, String> resultMap = new HashMap<>();
 		
@@ -203,7 +202,7 @@ public class UserRestController {
 	
 	// 비밀번호 변경
 	@PostMapping("/update_pw")
-	public Map<String, String> updatePw(//이번엔 파라미터로 불러오자 왜냐면 세션 사용 최소화를 위해서
+	public Map<String, String> updatePw(// 이번엔 파라미터로 불러오자 왜냐면 세션 사용 최소화를 위해서
 										// 새로 파라미터를 추가하는게 맞을듯. 인증번호때도 admin 테이블에 없는 인증번호를 불러넣었기 떄문에
 										 @RequestParam("password") String password	  
 										 , HttpSession session
