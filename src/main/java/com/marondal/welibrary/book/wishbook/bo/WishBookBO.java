@@ -3,7 +3,7 @@ package com.marondal.welibrary.book.wishbook.bo;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -13,13 +13,11 @@ import com.marondal.welibrary.book.wishbook.dao.WishBookDAO;
 import com.marondal.welibrary.common.FileManagerService;
 
 @Service
+@RequiredArgsConstructor
 public class WishBookBO {
+	private final WishBookDAO wishBookDAO;
 
-	@Autowired
-	private WishBookDAO wishBookDAO;
-
-	@Autowired
-	private WishBookCountBO wishBookCountBO;
+	private final WishBookCountBO wishBookCountBO;
 
 	// 희망도서 신청
 

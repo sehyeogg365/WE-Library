@@ -1,16 +1,13 @@
 package com.marondal.welibrary.book.interest.bo;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
 import com.marondal.welibrary.book.interest.dao.InterestDAO;
-import com.marondal.welibrary.book.model.InterestBookCount;
 
 @Service
+@RequiredArgsConstructor
 public class InterestCountBO {
-
-	@Autowired
-	private InterestDAO interestDAO;
+	private final InterestDAO interestDAO;
 
 	public int getInterestBookCount(int userId) {
 		return interestDAO.selectInterestBookCount(userId);

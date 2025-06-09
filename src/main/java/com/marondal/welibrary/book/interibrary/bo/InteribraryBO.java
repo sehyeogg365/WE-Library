@@ -3,29 +3,23 @@ package com.marondal.welibrary.book.interibrary.bo;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import com.marondal.welibrary.book.bo.BookBO;
-import com.marondal.welibrary.book.borrow.bo.BorrowCountBO;
 import com.marondal.welibrary.book.interibrary.dao.InteribraryDAO;
-import com.marondal.welibrary.book.model.Book;
 import com.marondal.welibrary.book.model.BookDetail;
 import com.marondal.welibrary.book.model.InteribraryBook;
-import com.marondal.welibrary.book.model.InteribraryBookCount;
 import com.marondal.welibrary.book.model.InteribraryBookDetail;
 
 @Service
+@RequiredArgsConstructor
 public class InteribraryBO {
+	private final InteribraryDAO interibraryDAO;
 
-	@Autowired
-	private InteribraryDAO interibraryDAO;
+	private final BookBO bookBO;
 
-	@Autowired
-	private BookBO bookBO;
-
-	@Autowired
-	private InteribrayCountBO interibrayCountBO;
+	private final InteribrayCountBO interibrayCountBO;
 
 	// 상호대차 신청
 	public int addInteribrary(int bookId, int userId, String receivelibrary) {

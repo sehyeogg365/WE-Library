@@ -2,7 +2,7 @@ package com.marondal.welibrary.user.bo;
 
 import java.util.Random;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import com.marondal.welibrary.common.EncryptService;
@@ -10,11 +10,9 @@ import com.marondal.welibrary.user.dao.UserDAO;
 import com.marondal.welibrary.user.model.User;
 
 @Service
+@RequiredArgsConstructor
 public class UserBO {
-
-	@Autowired
-	
-	private UserDAO userDAO;
+	private final UserDAO userDAO;
 	
 	public int addUser(
 			String loginId

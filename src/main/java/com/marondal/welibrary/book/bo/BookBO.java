@@ -3,6 +3,7 @@ package com.marondal.welibrary.book.bo;
 import java.util.ArrayList;
 import java.util.List;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.marondal.welibrary.book.dao.BookDAO;
@@ -15,19 +16,13 @@ import com.marondal.welibrary.book.reserve.bo.ReserveCountBO;
 
 
 @Service
+@RequiredArgsConstructor
 public class BookBO {
+	private final BookDAO bookDAO;
 
-	@Autowired
-	private BookDAO bookDAO;
+	private final ReserveCountBO reserveCountBO;
 
-	@Autowired
-	private ReserveCountBO reserveCountBO;
-
-	@Autowired
-	private InteribrayCountBO interibrayCountBO;
-
-	// @Autowired
-	// private UserBO userBO;
+	private final InteribrayCountBO interibrayCountBO;
 
 	// 책목록 조회(dto로 바꾸기)
 	public List<BookDetail> getBookListByTitle(String title, List<String> libraryList) {

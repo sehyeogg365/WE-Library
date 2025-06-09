@@ -5,7 +5,7 @@ import java.util.List;
 
 import com.marondal.welibrary.book.interibrary.bo.InteribraryBO;
 import com.marondal.welibrary.book.model.*;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import com.marondal.welibrary.book.bo.BookBO;
@@ -13,23 +13,19 @@ import com.marondal.welibrary.book.borrow.bo.BorrowBO;
 import com.marondal.welibrary.book.reserve.dao.ReserveDAO;
 
 @Service
+@RequiredArgsConstructor
 public class ReserveBO {
+	private final ReserveDAO reserveDAO;
 
-	@Autowired
-	private ReserveDAO reserveDAO;
+	private final BookBO bookBO;
 
-	@Autowired
-	private BookBO bookBO;
+	private final BorrowBO borrowBO;
 
-	@Autowired
-	private BorrowBO borrowBO;
+	private final ReserveCountBO reserveCountBO;
 
-	@Autowired
-	private ReserveCountBO reserveCountBO;
-
-	@Autowired
-	private InteribraryBO interibraryBO;
-
+	private final InteribraryBO interibraryBO;
+	//TODO 새로운 에러 발견함 hagulu에서 예약신청한 도서가 있고, 그 도서는 lsh2757에서 상호대차 신청한 도서다. 근데 lsh2757에서상호대차 취소하자 hagulu  예약목록에서
+	// returnDate null이라며 뜨는거다.
 	// 예약
 	public int addReserve(int bookId, int userId) {
 		return reserveDAO.insertReserve(bookId, userId);

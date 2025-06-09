@@ -1,15 +1,14 @@
 package com.marondal.welibrary.book.interibrary.bo;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import com.marondal.welibrary.book.interibrary.dao.InteribraryDAO;
 
 @Service
+@RequiredArgsConstructor
 public class InteribrayCountBO {
-
-	@Autowired
-	private InteribraryDAO interibraryDAO;
+	private final InteribraryDAO interibraryDAO;
 
 	// 상호대차 권수
 	public int getInteribraryBookCount(int userId) {
