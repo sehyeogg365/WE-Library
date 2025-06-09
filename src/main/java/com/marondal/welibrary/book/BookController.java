@@ -5,7 +5,7 @@ import java.util.List;
 import javax.servlet.http.HttpSession;
 
 import com.marondal.welibrary.book.model.*;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,29 +21,20 @@ import com.marondal.welibrary.user.bo.UserBO;
 import com.marondal.welibrary.user.model.User;
 
 @Controller
+@RequiredArgsConstructor
 @RequestMapping("/book")
 public class BookController {
-	
-	@Autowired
-	private UserBO userBO;
-	
-	
-	@Autowired
-	private WishBookBO wishBookBO;
-	
-	@Autowired
-	private InterestBO interestBO;
-	
+	private final UserBO userBO;
 
-	@Autowired
-	private BorrowBO borrowBO;
-	
-	
-	@Autowired
-	private ReserveBO reserveBO;
-	
-	@Autowired
-	private InteribraryBO interibraryBO;
+	private final WishBookBO wishBookBO;
+
+	private final InterestBO interestBO;
+
+	private final  BorrowBO borrowBO;
+
+	private final ReserveBO reserveBO;
+
+	private final InteribraryBO interibraryBO;
 
 	@GetMapping("/wishbook/list/view")
 	public String wishbookList(Model model
@@ -67,9 +58,7 @@ public class BookController {
 	public String wishbookAdd(Model model
 			, @RequestParam("id") int id) {
 		User user = userBO.getUserInfo(id); // 이상하게 DAO로 해도 잘불러와지더라.
-		
 		model.addAttribute("user", user);
-
 		return "book/wishbookadd";
 	}
 	
@@ -85,15 +74,12 @@ public class BookController {
 //		}
 
 		User user = userBO.getUserInfo(userId); // 이상하게 DAO로 해도 잘불러와지더라.
-		
 		model.addAttribute("user", user);
 
 		List<InterestBookDetail> interestDetailList = interestBO.getInterestList(userId);
-		
 		model.addAttribute("interestDetailList", interestDetailList);
 
 		Integer interestBookCount = interestDetailList.size();
-
 		model.addAttribute("interestBook", interestBookCount);
 
 		// 여기서 관심도서개수 추가
@@ -107,11 +93,9 @@ public class BookController {
 		int userId = (Integer)session.getAttribute("userId");
 		
 		List<BorrowBookDetail> borrowDetailList = borrowBO.getBorrowList(userId);
-		
 		model.addAttribute("borrowDetailList", borrowDetailList);
 
 		Integer borrowBookCount = borrowDetailList.size();
-
 		model.addAttribute("borrowBook", borrowBookCount);
 		
 		return "book/borrowstatus";
@@ -123,11 +107,9 @@ public class BookController {
 		int userId = (Integer)session.getAttribute("userId");
 		
 		List<ReserveBookDetail> reserveDetailList = reserveBO.getReserveList(userId);
-		
 		model.addAttribute("reserveDetailList", reserveDetailList);
 
 		Integer reserveBookCount = reserveDetailList.size();
-
 		model.addAttribute("reserveBook", reserveBookCount);
 
 		return "book/reservelist";
@@ -144,7 +126,6 @@ public class BookController {
 		//model.addAttribute("user", user);
 		
 		List<InteribraryBookDetail> interibraryDetailList = interibraryBO.getInteribraryList(userId);
-		
 		model.addAttribute("interibraryDetailList", interibraryDetailList);
 		// 여기서 상호대차도서개수 추가
 
