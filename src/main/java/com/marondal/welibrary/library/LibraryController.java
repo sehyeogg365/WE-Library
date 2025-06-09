@@ -3,7 +3,7 @@ package com.marondal.welibrary.library;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,17 +18,14 @@ import com.marondal.welibrary.book.model.BookDetail;
 import com.marondal.welibrary.book.model.BorrowBook;
 
 @Controller
+@RequiredArgsConstructor
 @RequestMapping("/library")
 public class LibraryController {
+	private final BookBO bookBO;
 
-	@Autowired
-	private BookBO bookBO;
+	private final BorrowBO borrowBO;
 
-	@Autowired
-	private BorrowBO borrowBO;
-
-	@Autowired
-	private InteribraryBO interibraryBO;
+	private final InteribraryBO interibraryBO;
 
 	@GetMapping("/main/view")
 	public String mainPage() {

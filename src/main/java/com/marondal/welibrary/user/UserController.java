@@ -3,6 +3,7 @@ package com.marondal.welibrary.user;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,11 +15,10 @@ import com.marondal.welibrary.user.dao.UserDAO;
 import com.marondal.welibrary.user.model.User;
 
 @Controller
+@RequiredArgsConstructor
 @RequestMapping("/user")
 public class UserController {
-
-	@Autowired
-	private UserDAO userDAO;
+	private final UserDAO userDAO;
 
 	@GetMapping("/signup/view")
 	public String signupInput() {
