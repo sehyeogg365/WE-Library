@@ -2,13 +2,9 @@ package com.marondal.welibrary.book.model;
 
 public class PagingDTO {
 	private int currPage;//현재페이지
-	
 	private int totalPage;//총페이지
-	
 	private int firstPage;//첫페이지
-	
 	private int lastPage;//마지막페이지
-	
 	private int totalData;//전체 게시물 수 
 	/**
 	    * 페이징 계산
@@ -70,7 +66,4 @@ public class PagingDTO {
 	public void setTotalData(int totalData) {
 		this.totalData = totalData;
 	}
-	
-	
-	
 }

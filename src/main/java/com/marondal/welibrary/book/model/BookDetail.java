@@ -1,7 +1,12 @@
 package com.marondal.welibrary.book.model;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.Date;
 
+@Getter
+@Setter
 public class BookDetail {//책카드 한장에 들어가는 정보
 	
 	private int id;
@@ -21,141 +26,9 @@ public class BookDetail {//책카드 한장에 들어가는 정보
 	private boolean isReserve;//본인이 이책을 예약했는지
 
 	//2024-04-10페이지네이션 관련 변수들 추가
-
 	private Integer SIZE;
 	private Integer PAGE;				//현재페이지번호
 	private Integer COUNTLIST;			//한 페이지에 출력될 게시물 수 (
 	private Integer BEGIN;
 	private Integer TOTALDATA;
-
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
-	public String getLibrary() {
-		return library;
-	}
-	public void setLibrary(String library) {
-		this.library = library;
-	}
-	public String getTitle() {
-		return title;
-	}
-	public void setTitle(String title) {
-		this.title = title;
-	}
-	public String getImagePath() {
-		return imagePath;
-	}
-	public void setImagePath(String imagePath) {
-		this.imagePath = imagePath;
-	}
-	public String getAuthor() {
-		return author;
-	}
-	public void setAuthor(String author) {
-		this.author = author;
-	}
-	public String getPublisher() {
-		return publisher;
-	}
-	public void setPublisher(String publisher) {
-		this.publisher = publisher;
-	}
-	public int getPrice() {
-		return price;
-	}
-	public void setPrice(int price) {
-		this.price = price;
-	}
-	public String getIsbn() {
-		return isbn;
-	}
-	public void setIsbn(String isbn) {
-		this.isbn = isbn;
-	}
-	public int getPubyear() {
-		return pubyear;
-	}
-	public void setPubyear(int pubyear) {
-		this.pubyear = pubyear;
-	}
-	public String getAppendix() {
-		return appendix;
-	}
-	public void setAppendix(String appendix) {
-		this.appendix = appendix;
-	}
-	public boolean isBorrow() {
-		return isBorrow;
-	}
-	public void setBorrow(boolean isBorrow) {
-		this.isBorrow = isBorrow;
-	}
-	public int getReserveCount() {
-		return reserveCount;
-	}
-	public void setReserveCount(int reserveCount) {
-		this.reserveCount = reserveCount;
-	}
-	public boolean isInteribrary() {
-		return isInteribrary;
-	}
-	public void setInteribrary(boolean isInteribrary) {
-		this.isInteribrary = isInteribrary;
-	}
-	public Date getReturnDate() {
-		return returnDate;
-	}
-	public void setReturnDate(Date returnDate) {
-		this.returnDate = returnDate;
-	}
-	public boolean isReserve() {
-		return isReserve;
-	}
-	public void setReserve(boolean isReserve) {
-		this.isReserve = isReserve;
-	}
-
-	public Integer getSIZE() {
-		return SIZE;
-	}
-
-	public void setSIZE(Integer SIZE) {
-		this.SIZE = SIZE;
-	}
-
-	public Integer getPAGE() {
-		return PAGE;
-	}
-
-	public void setPAGE(Integer PAGE) {
-		this.PAGE = PAGE;
-	}
-
-	public Integer getCOUNTLIST() {
-		return COUNTLIST;
-	}
-
-	public void setCOUNTLIST(Integer COUNTLIST) {
-		this.COUNTLIST = COUNTLIST;
-	}
-
-	public Integer getBEGIN() {
-		return BEGIN;
-	}
-
-	public void setBEGIN(Integer BEGIN) {
-		this.BEGIN = BEGIN;
-	}
-
-	public Integer getTOTALDATA() {
-		return TOTALDATA;
-	}
-
-	public void setTOTALDATA(Integer TOTALDATA) {
-		this.TOTALDATA = TOTALDATA;
-	}
 }
