@@ -62,7 +62,6 @@ public class UserController {
 		// 회원정보 한행을 조회하는 기능
 		User user = userDAO.selectUserInfo(id);
 		model.addAttribute("user", user);
-
 		return "/user/mypage";
 	}
 
@@ -71,7 +70,6 @@ public class UserController {
 		// 세션값? 모델값?
 		User user = userDAO.selectUserInfo(id);
 		model.addAttribute("user", user);
-
 		return "/user/pwcheck";
 	}
 
@@ -79,7 +77,6 @@ public class UserController {
 	public String update_pw(Model model, @RequestParam("id") int id) {
 		User user = userDAO.selectUserInfo(id);
 		model.addAttribute("user", user);
-
 		return "/user/update_pw";
 	}
 
@@ -87,7 +84,6 @@ public class UserController {
 	public String withdrawl(Model model, @RequestParam("id") int id) {
 		User user = userDAO.selectUserInfo(id);
 		model.addAttribute("user", user);
-
 		return "/user/withdrawl";
 	}
 

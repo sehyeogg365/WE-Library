@@ -247,18 +247,18 @@
 	<script>
 	$(document).ready(function(){
 	    // URL 파라미터를 읽어오는 함수
-        const url = new URL(window.location.href); //좀더 가독성있게 코드문 고쳐보기
-        const urlParams = url.searchParams;//좀더 가독성있게 코드문 고쳐보기
+        const url = new URL(window.location.href); // 좀더 가독성있게 코드문 고쳐보기
+        const urlParams = url.searchParams;// 좀더 가독성있게 코드문 고쳐보기
 
         // URL 파라미터에서 title 값을 읽어옴
-        const title = urlParams.get('title');//좀더 가독성있게 코드문 고쳐보기
+        const title = urlParams.get('title');// 좀더 가독성있게 코드문 고쳐보기
         console.log("제목 : " + title);
         if (title) { //title 값있을시에 input value값에 그값을 넣는다.
             document.getElementById('searchInput').value = title;
         }
 
         // URL 파라미터에서 library 값을 읽어옴
-        const libraries = urlParams.getAll('libraryList');//좀더 가독성있게 코드문 고쳐보기
+        const libraries = urlParams.getAll('libraryList');// 좀더 가독성있게 코드문 고쳐보기
         console.log("도서관 : " + libraries);
         if (libraries.length > 0) {
             for(let i = 0; i < libraries.length; i++){
@@ -278,7 +278,7 @@
             // 체크된 갯수가 selectedValues.length 보다 작을시 전체 선택 표시 없애기
             const ckAll = document.querySelector(".ck-all");
             const ckArr = document.querySelectorAll(".ck");
-            //$('input:checkbox[name="libraryList"]').length//체크박스 전체 갯수
+            //$('input:checkbox[name="libraryList"]').length// 체크박스 전체 갯수
 
             ckAll.addEventListener("click", () =>{
                 ckArr.forEach(ck => {
