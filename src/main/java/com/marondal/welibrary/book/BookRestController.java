@@ -6,7 +6,8 @@ import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,23 +24,18 @@ import com.marondal.welibrary.book.wishbook.bo.WishBookBO;
 
 
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/book")
 public class BookRestController {
+	private final WishBookBO wishBookBO;
 
-	@Autowired
-	private WishBookBO wishBookBO;
-	
-	@Autowired
-	private InterestBO interestBO;
-	
-	@Autowired
-	private BorrowBO borrowBO;
-	
-	@Autowired
-	private ReserveBO reserveBO;
+	private final InterestBO interestBO;
 
-	@Autowired
-	private InteribraryBO interibraryBO;
+	private final BorrowBO borrowBO;
+
+	private final ReserveBO reserveBO;
+
+	private final InteribraryBO interibraryBO;
 	
 	// 희망도서 신청
 	@PostMapping("/wishbook/create")
