@@ -6,13 +6,17 @@ import java.util.List;
 import com.marondal.welibrary.book.interibrary.bo.InteribraryBO;
 import com.marondal.welibrary.book.model.*;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import com.marondal.welibrary.book.bo.BookBO;
 import com.marondal.welibrary.book.borrow.bo.BorrowBO;
 import com.marondal.welibrary.book.reserve.dao.ReserveDAO;
 
+import static java.rmi.server.LogStream.log;
+
 @Service
+@Slf4j
 @RequiredArgsConstructor
 public class ReserveBO {
 	private final ReserveDAO reserveDAO;
@@ -57,10 +61,24 @@ public class ReserveBO {
 			reserveBookDetail.setAuthor(book.getAuthor());
 			reserveBookDetail.setPublisher(book.getPublisher());
 			reserveBookDetail.setCreatedAt(reserveBook.getCreatedAt());// 반납예정일도 추가하기
+			/*
 			if(borrowbook == null){
+				log("borrowbook" + borrowbook);
 				reserveBookDetail.setReturnDate(interibraryBook.getReturnDate());
 			} else {
 				reserveBookDetail.setReturnDate(borrowbook.getReturnDate());// 반납예정일 대출중 도서는 대출테이블의 리턴데이트 상호대차중 도서는 상호대차테이블의 리턴데이트
+			}*/
+			// borrowbook과 대출 도서 반납일자 낫널일때
+			// interibrarybook과 상호대차 도서 반납일자 낫널일때
+			// 그외에는 널 셋팅
+			if(borrowbook != null && borrowbook.getReturnDate() != null){
+				log("borrowbook" + borrowbook);
+				reserveBookDetail.setReturnDate(interibraryBook.getReturnDate());
+			} else if(interibraryBook != null && interibraryBook.getReturnDate() != null){
+				log("interibraryBook" + interibraryBook);
+				reserveBookDetail.setReturnDate(interibraryBook.getReturnDate());
+			} else {
+				reserveBookDetail.setReturnDate(null);
 			}
 			// 대출상태, 예약순번/예약인원수도 필요함
 			reserveBookDetail.setStatus(isBorrow);// 대출상태
