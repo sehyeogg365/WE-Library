@@ -3,7 +3,7 @@ package com.marondal.welibrary.book.borrow.bo;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import com.marondal.welibrary.book.bo.BookBO;
@@ -13,16 +13,11 @@ import com.marondal.welibrary.book.model.BorrowBook;
 import com.marondal.welibrary.book.model.BorrowBookDetail;
 
 @Service
+@RequiredArgsConstructor
 public class BorrowBO {
+	private final BorrowDAO borrowDAO;
 
-	@Autowired
-	private BorrowDAO borrowDAO;
-
-	@Autowired
-	private BookBO bookBO;
-
-	@Autowired
-	private BorrowCountBO borrowCountBO;
+	private final BookBO bookBO;
 
 	// 대여
 	public int addBorrow(int userId, int bookId) {

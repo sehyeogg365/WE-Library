@@ -3,7 +3,7 @@ package com.marondal.welibrary.book.interest.bo;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import com.marondal.welibrary.book.bo.BookBO;
@@ -13,16 +13,13 @@ import com.marondal.welibrary.book.model.InterestBook;
 import com.marondal.welibrary.book.model.InterestBookDetail;
 
 @Service
+@RequiredArgsConstructor
 public class InterestBO {
+	private final InterestDAO interestDAO;
 
-	@Autowired
-	private InterestDAO interestDAO;
+	private final BookBO bookBO;
 
-	@Autowired
-	private BookBO bookBO;
-
-	@Autowired
-	private InterestCountBO interestCountBO;
+	private final InterestCountBO interestCountBO;
 
 	// 관심도서 추가
 	public int addInterest(int userId, int bookId) {

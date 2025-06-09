@@ -5,31 +5,31 @@ import java.util.List;
 
 import com.marondal.welibrary.book.interibrary.bo.InteribraryBO;
 import com.marondal.welibrary.book.model.*;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import com.marondal.welibrary.book.bo.BookBO;
 import com.marondal.welibrary.book.borrow.bo.BorrowBO;
 import com.marondal.welibrary.book.reserve.dao.ReserveDAO;
 
+import static java.rmi.server.LogStream.log;
+
 @Service
+@Slf4j
+@RequiredArgsConstructor
 public class ReserveBO {
+	private final ReserveDAO reserveDAO;
 
-	@Autowired
-	private ReserveDAO reserveDAO;
+	private final BookBO bookBO;
 
-	@Autowired
-	private BookBO bookBO;
+	private final BorrowBO borrowBO;
 
-	@Autowired
-	private BorrowBO borrowBO;
+	private final ReserveCountBO reserveCountBO;
 
-	@Autowired
-	private ReserveCountBO reserveCountBO;
-
-	@Autowired
-	private InteribraryBO interibraryBO;
-
+	private final InteribraryBO interibraryBO;
+	//TODO 새로운 에러 발견함 hagulu에서 예약신청한 도서가 있고, 그 도서는 lsh2757에서 상호대차 신청한 도서다. 근데 lsh2757에서상호대차 취소하자 hagulu  예약목록에서
+	// returnDate null이라며 뜨는거다.
 	// 예약
 	public int addReserve(int bookId, int userId) {
 		return reserveDAO.insertReserve(bookId, userId);
@@ -61,10 +61,24 @@ public class ReserveBO {
 			reserveBookDetail.setAuthor(book.getAuthor());
 			reserveBookDetail.setPublisher(book.getPublisher());
 			reserveBookDetail.setCreatedAt(reserveBook.getCreatedAt());// 반납예정일도 추가하기
+			/*
 			if(borrowbook == null){
+				log("borrowbook" + borrowbook);
 				reserveBookDetail.setReturnDate(interibraryBook.getReturnDate());
 			} else {
 				reserveBookDetail.setReturnDate(borrowbook.getReturnDate());// 반납예정일 대출중 도서는 대출테이블의 리턴데이트 상호대차중 도서는 상호대차테이블의 리턴데이트
+			}*/
+			// borrowbook과 대출 도서 반납일자 낫널일때
+			// interibrarybook과 상호대차 도서 반납일자 낫널일때
+			// 그외에는 널 셋팅
+			if(borrowbook != null && borrowbook.getReturnDate() != null){
+				log("borrowbook" + borrowbook);
+				reserveBookDetail.setReturnDate(interibraryBook.getReturnDate());
+			} else if(interibraryBook != null && interibraryBook.getReturnDate() != null){
+				log("interibraryBook" + interibraryBook);
+				reserveBookDetail.setReturnDate(interibraryBook.getReturnDate());
+			} else {
+				reserveBookDetail.setReturnDate(null);
 			}
 			// 대출상태, 예약순번/예약인원수도 필요함
 			reserveBookDetail.setStatus(isBorrow);// 대출상태
