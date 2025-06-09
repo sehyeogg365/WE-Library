@@ -28,9 +28,8 @@ public class ReserveBO {
 	private final ReserveCountBO reserveCountBO;
 
 	private final InteribraryBO interibraryBO;
-	//TODO 새로운 에러 발견함 hagulu에서 예약신청한 도서가 있고, 그 도서는 lsh2757에서 상호대차 신청한 도서다. 근데 lsh2757에서상호대차 취소하자 hagulu  예약목록에서
-	// returnDate null이라며 뜨는거다.
-	// 예약
+	//TODO 대출목록및 대출 기록 페이지 날짜 검색 도서명 검색 추가
+	// 롬복주입(생성자주입), JUnit, TDD추가 해보기 등등
 	public int addReserve(int bookId, int userId) {
 		return reserveDAO.insertReserve(bookId, userId);
 	}
