@@ -103,13 +103,13 @@
                             </div>
 						</div>
                             <div class="">
-                                <button id="borrowdeleteBtn" class="btn btn-danger btn-sm deleteBtn my-3" data-book-id="${borrow.id }">반납하기</button>
+                                <button id="borrowdeleteBtn" class="btn btn-danger btn-sm deleteBtn my-3" data-borrow-id="${borrow.id }">반납하기</button>
                                 <!-- 2024-03-24  반납예정일과 대출일이 3주이상 차이날시  반납연장불가버튼 그외에 반납연장 버튼 이렇게 해보기-->
                                 <!-- formatDate Date -> String -->
                                 <!-- parseDate String -> Date -->
                                 <c:choose>
                                     <c:when test="${diffInDays < 21}">
-                                        <button id="rtnExtBtn" class="btn btn-primary btn-sm updateBtn my-3" data-book-id="${borrow.id }">반납연장</button>
+                                        <button id="rtnExtBtn" class="btn btn-primary btn-sm updateBtn my-3" data-borrow-id="${borrow.id }">반납연장</button>
                                     </c:when>
                                     <c:otherwise>
                                         <button class="btn btn-primary btn-sm">반납연장불가</button>
@@ -131,7 +131,7 @@
 	<script>
 		$(document).ready(function(){
 			$(".updateBtn").on("click", function(){
-				let id = $(this).data("book-id");
+				let id = $(this).data("borrow-id");
 				
 				//alert(id);
 				var result = confirm("반납연장 하시겠습니까?");
@@ -163,7 +163,7 @@
 			});
 
 			$(".deleteBtn").on("click", function(){
-				let id = $(this).data("book-id");
+				let id = $(this).data("borrow-id");
 				
 				var result = confirm("반납 하시겠습니까?");
 				

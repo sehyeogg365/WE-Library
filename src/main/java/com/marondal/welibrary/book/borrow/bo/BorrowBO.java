@@ -6,6 +6,7 @@ import java.util.List;
 import com.marondal.welibrary.book.interibrary.dao.InteribraryDAO;
 import com.marondal.welibrary.book.model.InteribraryBook;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import com.marondal.welibrary.book.bo.BookBO;
@@ -14,7 +15,10 @@ import com.marondal.welibrary.book.model.BookDetail;
 import com.marondal.welibrary.book.model.BorrowBook;
 import com.marondal.welibrary.book.model.BorrowBookDetail;
 
+import static java.rmi.server.LogStream.log;
+
 @Service
+@Slf4j
 @RequiredArgsConstructor
 public class BorrowBO {
 	private final BorrowDAO borrowDAO;
@@ -66,11 +70,9 @@ public class BorrowBO {
 		InteribraryBook interibraryBook = interibraryDAO.selectInteribrary(borrowBookInfo.getBookId());// 상호대차 1행 조회
 
 		// 2. 이 bookId가 상호대차 테이블에 있는지 확인 + 해당 유저가 상호대차 중인지?
-		List<InteribraryBook> interibraryBookList = interibraryDAO.selectInteribraryList(interibraryBook.getUserId());
 		if(interibraryBook != null){
-			if(!interibraryBookList.isEmpty()){
-				interibraryDAO.deleteInteribrary(interibraryBook.getId());// 3. 있으면 '상호대차 완료' 상태로 업데이트 or 삭제
-			}
+			log("interibraryBook" + interibraryBook);
+			interibraryDAO.deleteInteribrary(interibraryBook.getId());// 3. 있으면 '상호대차 완료' 상태로 업데이트 or 삭제
 		}
 		return borrowDAO.deleteBorrow(id);// 정상적으로 반납 처리
 	}
