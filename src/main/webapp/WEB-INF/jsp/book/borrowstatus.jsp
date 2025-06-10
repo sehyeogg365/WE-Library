@@ -88,7 +88,6 @@
                                     ㅇ상태 : <c:choose>
                                                 <c:when test ="${diffInDays >= 21 && today < returnDate}">
                                                     <div class="text-secondary" id="returnExtensionBtn">반납연장 됨</div>
-
                                                 </c:when>
                                                 <c:when test="${today > returnDate}">
                                                     <div class="text-danger">반납연체</div>

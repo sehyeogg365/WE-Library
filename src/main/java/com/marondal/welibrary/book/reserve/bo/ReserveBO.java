@@ -60,19 +60,13 @@ public class ReserveBO {
 			reserveBookDetail.setAuthor(book.getAuthor());
 			reserveBookDetail.setPublisher(book.getPublisher());
 			reserveBookDetail.setCreatedAt(reserveBook.getCreatedAt());// 반납예정일도 추가하기
-			/*
-			if(borrowbook == null){
-				log("borrowbook" + borrowbook);
-				reserveBookDetail.setReturnDate(interibraryBook.getReturnDate());
-			} else {
-				reserveBookDetail.setReturnDate(borrowbook.getReturnDate());// 반납예정일 대출중 도서는 대출테이블의 리턴데이트 상호대차중 도서는 상호대차테이블의 리턴데이트
-			}*/
+
 			// borrowbook과 대출 도서 반납일자 낫널일때
 			// interibrarybook과 상호대차 도서 반납일자 낫널일때
 			// 그외에는 널 셋팅
-			if(borrowbook != null && borrowbook.getReturnDate() != null){
+			if(borrowbook != null && borrowbook.getReturnDate() != null){ // 이 부분 셋하는걸 잘못함 borrowbook.get으로 수정하기
 				log("borrowbook" + borrowbook);
-				reserveBookDetail.setReturnDate(interibraryBook.getReturnDate());
+				reserveBookDetail.setReturnDate(borrowbook.getReturnDate());
 			} else if(interibraryBook != null && interibraryBook.getReturnDate() != null){
 				log("interibraryBook" + interibraryBook);
 				reserveBookDetail.setReturnDate(interibraryBook.getReturnDate());

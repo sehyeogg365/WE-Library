@@ -64,5 +64,4 @@ public class InteribraryBO {
 	public int deleteInteribrary(int id) {
 		return interibraryDAO.deleteInteribrary(id);
 	}
-
 }

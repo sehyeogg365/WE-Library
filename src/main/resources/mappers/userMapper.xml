@@ -33,7 +33,7 @@
   </insert>
   
   <!-- 중복아이디 확인(select) -->
-  <select id ="selectCountloginId" parameterType="String" resultType="int">
+  <select id ="selectCountloginId" resultType="int" parameterType="String">
   	SELECT
   		count(1)
   	FROM
@@ -72,7 +72,7 @@
   </insert>
   
   <!-- 관리자 회원가입 인증번호 일치 확인(select) -->
-  <select id="selectcertificationNumber" parameterType="String" resultType="int">
+  <select id="selectcertificationNumber" resultType="int" parameterType="String">
   	SELECT
   		count(1)
   	FROM
@@ -82,7 +82,7 @@
   </select>
   
   <!-- 로그인 -->
-  <select id="selectUser" parameterType="map" resultType="com.marondal.welibrary.user.model.User">
+  <select id="selectUser" resultType="com.marondal.welibrary.user.model.User" parameterType="map">
   	SELECT
   		`id`
   		,`loginId`
@@ -102,7 +102,7 @@
   </select>
   
   <!-- id찾기 -->
-  <select id="selectUserByNameBirthPhone" parameterType="map" resultType="com.marondal.welibrary.user.model.User">
+  <select id="selectUserByNameBirthPhone" resultType="com.marondal.welibrary.user.model.User" parameterType="map">
   	SELECT
   		`loginId`
   	FROM
@@ -146,7 +146,7 @@
   </update> 
   
   <!-- 회원정보 한행 조회 -->
-  <select id="selectUserInfo" parameterType="int" resultType="com.marondal.welibrary.user.model.User">
+  <select id="selectUserInfo" resultType="com.marondal.welibrary.user.model.User" parameterType="int">
   	SELECT
   		`id`
   		,`loginId`
@@ -165,7 +165,7 @@
   </select>
   
   <!-- 비밀번호 확인 -->
-  <select id="selectPassword" parameterType="map" resultType="int">
+  <select id="selectPassword" resultType="int" parameterType="map" >
   	SELECT
   		count(1)
   	FROM
@@ -187,7 +187,7 @@
   		`id`= #{id}
   </update>
   
-  <!-- 회원탈퇴 -->
+   <!-- 회원탈퇴 -->
    <delete id ="deleteUser" parameterType="map">
    DELETE
    FROM 
