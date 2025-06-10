@@ -41,6 +41,20 @@
    	WHERE
    		`bookId` =#{bookId}
    </select>
+	<!-- 대출 1행 대출Id로 조회 -->
+   <select id = "selectById" resultType="com.marondal.welibrary.book.model.BorrowBook" parameterType="int">
+   	SELECT
+   			`id`
+   			, `userId`
+  			, `bookId`
+  			, `createdAt`
+		    , `updatedAt`
+		    , `returnDate`
+   	FROM
+   		`borrow_book`
+   	WHERE
+   		`id` =#{id}
+   </select>
    
    <!-- 대출목록 -->
    <select id ="selectBorrowList" resultType="com.marondal.welibrary.book.model.BorrowBook" parameterType="map">
