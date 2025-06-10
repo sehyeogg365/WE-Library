@@ -3,6 +3,8 @@ package com.marondal.welibrary.book.borrow.bo;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.marondal.welibrary.book.interibrary.dao.InteribraryDAO;
+import com.marondal.welibrary.book.model.InteribraryBook;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -18,6 +20,8 @@ public class BorrowBO {
 	private final BorrowDAO borrowDAO;
 
 	private final BookBO bookBO;
+
+	private final InteribraryDAO interibraryDAO;
 
 	// 대여
 	public int addBorrow(int userId, int bookId) {
@@ -56,8 +60,19 @@ public class BorrowBO {
 	}
 
 	// 반납
-	public int deleteBorrow(int id) {
-		return borrowDAO.deleteBorrow(id);
+	public int deleteBorrow(int id) {// 여기서 상호대차 도서 목록에 있을시 상호대차 목록서 제거
+		// 1. 대출 정보 가져오기 (bookId 포함)
+		BorrowBook borrowBookInfo = borrowDAO.selectById(id); // 큰 딜레마가 있다. 반납하는거는 대출ID 대출 1행 불러오는것은 bookId다. 그럼 다오메서드를 하나 더 파기
+		InteribraryBook interibraryBook = interibraryDAO.selectInteribrary(borrowBookInfo.getBookId());// 상호대차 1행 조회
+
+		// 2. 이 bookId가 상호대차 테이블에 있는지 확인 + 해당 유저가 상호대차 중인지?
+		List<InteribraryBook> interibraryBookList = interibraryDAO.selectInteribraryList(interibraryBook.getUserId());
+		if(interibraryBook != null){
+			if(!interibraryBookList.isEmpty()){
+				interibraryDAO.deleteInteribrary(interibraryBook.getId());// 3. 있으면 '상호대차 완료' 상태로 업데이트 or 삭제
+			}
+		}
+		return borrowDAO.deleteBorrow(id);// 정상적으로 반납 처리
 	}
 
 	// 반납 연장

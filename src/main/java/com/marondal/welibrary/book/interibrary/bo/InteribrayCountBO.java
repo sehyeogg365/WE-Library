@@ -11,9 +11,9 @@ public class InteribrayCountBO {
 	private final InteribraryDAO interibraryDAO;
 
 	// 상호대차 권수
-	public int getInteribraryBookCount(int userId) {
-		return interibraryDAO.selectInteribraryBookCount(userId);
-	}
+//	public int getInteribraryBookCount(int userId) {
+//		return interibraryDAO.selectInteribraryBookCount(userId);
+//	}
 
 	// 대출 상태
 	public boolean isBorrow(int bookId) {

@@ -15,6 +15,9 @@ public interface BorrowDAO {
 	// 대출 1행
 	public BorrowBook selectBorrow(@Param("bookId") int bookId);
 
+	// 대출 1행 대출Id로 조회
+	public BorrowBook selectById(@Param("id")int id);
+
 	// 대출목록
 	public List<BorrowBook> selectBorrowList(@Param("userId") int userId);
 
