@@ -86,7 +86,7 @@
   		FROM
   			`book`
   		WHERE
-			`title` LIKE CONCAT('%', #{title}, '%')
+		REPLACE(`title`, ' ', '') LIKE CONCAT('%', REPLACE(#{title}, ' ', ''), '%')
 		<if test='libraryList != null and libraryList.size() > 0'>
 			AND library IN(
 			<foreach collection="libraryList" item="item" separator=" , ">
