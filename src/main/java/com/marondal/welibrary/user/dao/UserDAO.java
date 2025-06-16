@@ -69,6 +69,6 @@ public interface UserDAO {
 	public int updatePassword(@Param("id") int id, @Param("password") String password);
 	
 	// 회원 탈퇴
-	public int deleteUser(@Param("id") int id, @Param("password") String password);
+//	public int deleteUser(@Param("id") int id, @Param("password") String password);
 	
 }

@@ -20,12 +20,6 @@ public interface InteribraryDAO {
 	// 상호대차 조회
 	public List<InteribraryBook> selectInteribraryList(@Param("userId") int userId);
 
-	// 상호대차 권수
-	public int selectInteribraryBookCount(@Param("userId") int userId);
-
-	// 상호대차 권수 표시
-	public List<InteribraryBook> selectInteribrayBookNumberByUserId(@Param("userId") int userId);
-
 	// 대출 상태
 	public int selectBorrowByBookId(@Param("bookId") int bookId);
 

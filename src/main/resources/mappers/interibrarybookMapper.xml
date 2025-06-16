@@ -57,18 +57,6 @@
    		ORDER BY `id` DESC
    	</select>
    	
-   	<!-- 상호대차 권수 -->
-   	<select id="selectInteribraryBookCount" resultType="int" parameterType="int">
-   		SELECT
-   			count(1)
-   		FROM
-   			`interibrary_book`
-   		WHERE
-   			`userId` = #{userId}
-   	</select>
-
-   	<!-- 상호대차 권수 표시 -->
-   	
    	<!--대출 상태  -->
    	<select id = "selectBorrowByBookId" resultType="int" parameterType="int">
    		SELECT

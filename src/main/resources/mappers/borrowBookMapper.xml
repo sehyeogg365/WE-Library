@@ -73,24 +73,25 @@
    </select>
    
    <!-- 대출도서 갯수 -->
-   <select id="selectBorrowBookCount" resultType="int" parameterType="int">
-   	SELECT
-   		count(1)
-   	FROM	
-   		`borrow_book`
-   	WHERE
-   		`userId` = #{userId}
-   </select>
+<!--   <select id="selectBorrowBookCount" resultType="int" parameterType="int">-->
+<!--   	SELECT-->
+<!--   	SELECT-->
+<!--   		count(1)-->
+<!--   	FROM	-->
+<!--   		`borrow_book`-->
+<!--   	WHERE-->
+<!--   		`userId` = #{userId}-->
+<!--   </select>-->
 
    <!-- 대출도서 갯수 표시 -->
-   <select id="selectBorrowBookNumberByUserId" resultType="com.marondal.welibrary.book.model.BorrowBookCount" parameterType="int">
-   	SELECT
-   		count(1)
-   	FROM	
-   		`borrow_book`
-   	WHERE
-   		`userId` = #{userId}
-   </select>
+<!--   <select id="selectBorrowBookNumberByUserId" resultType="com.marondal.welibrary.book.model.BorrowBookCount" parameterType="int">-->
+<!--   	SELECT-->
+<!--   		count(1)-->
+<!--   	FROM	-->
+<!--   		`borrow_book`-->
+<!--   	WHERE-->
+<!--   		`userId` = #{userId}-->
+<!--   </select>-->
    
    <!-- 반납 -->
    <delete id = "deleteBorrow" parameterType="map">

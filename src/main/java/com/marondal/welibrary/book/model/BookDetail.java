@@ -8,7 +8,6 @@ import java.util.Date;
 @Getter
 @Setter
 public class BookDetail {//책카드 한장에 들어가는 정보
-	
 	private int id;
 	private String library;
 	private String title;

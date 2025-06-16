@@ -164,16 +164,16 @@ public class UserBO {
 	
 	
 	// 회원 탈퇴
-	public int deleteUser(int id, String password) {
-		int count = userDAO.selectPassword(id, password);
-		
-		String encryptPassword = EncryptService.md5(password);
-		
-		if(count == 1) {
-			return userDAO.selectPassword(id, encryptPassword);
-		} else {
-			return 0;
-		}
-	}
+//	public int deleteUser(int id, String password) {
+//		int count = userDAO.selectPassword(id, password);
+//
+//		String encryptPassword = EncryptService.md5(password);
+//
+//		if(count == 1) {
+//			return userDAO.selectPassword(id, encryptPassword);
+//		} else {
+//			return 0;
+//		}
+//	}
 
 }

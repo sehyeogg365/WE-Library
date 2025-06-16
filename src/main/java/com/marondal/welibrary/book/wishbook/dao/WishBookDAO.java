@@ -26,23 +26,11 @@ public interface WishBookDAO {
 		// 희망도서 리스트
 		public List<WishBook> selectWishBookList(@Param("userId") int userId);
 
-		// 유저별 희망도서 갯수세기 return type int 타입이 맞다.
-		public int selectWishBookCount(@Param("userId") int userId);
-		
-		// 희망도서 갯수 표시(유저별)
-		public List<WishBook> selectWishBookNumberByUserId(@Param("userId") int userId);
-		
 		// 희망도서 신청 여부 
 		public int selectBookByLibraryTitle(@Param("library") String library, @Param("title")String title);
 	
 		// 관리자
-		
-		// 전체 희망도서 권수세기
-		public int selectAllWishBookCount(@Param("id")int id);
 
-		// 전체 희망도서 권수 표시
-		public List<WishBook> selectAllWishBookNumberById(@Param("id")int id);
-		
 		// 관리자 희망도서 신청 리스트 조회
 		public List<WishBook> selectWishBookListById(@Param("id") int id);
 		

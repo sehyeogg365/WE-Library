@@ -17,11 +17,6 @@ public class ReserveCountBO {
 		return reserveDAO.selectReserveBook(bookId);
 	}
 
-	// 예약권수
-	public int getReserveBookCount(int userId) {
-		return reserveDAO.selectReserveBookCount(userId);
-	}
-
 	// 예약인원수
 	public int getReserveCount(int bookId) {
 		return reserveDAO.selectReserveCount(bookId);

@@ -78,7 +78,7 @@
 								 ㅇ예약일 : <fmt:formatDate value ="${reserve.createdAt }" pattern ="yyyy.MM.dd"/> 
 							</div>
 							<div class="d-flex">
-								<div class="text-secondary">ㅇ대출상태 :</div><c:choose> 
+								<div class="text-secondary">ㅇ대출상태 :&nbsp;</div><c:choose>
 										<c:when test = "${reserve.status }" >
 											<p class="text-primary">대출중</p>
 										</c:when>
@@ -87,7 +87,7 @@
 										</c:otherwise>
 										</c:choose>
 								<div class="text-secondary">		
-								&nbsp|&nbsp 반납예정일 : <fmt:formatDate value="${reserve.returnDate }" pattern ="yyyy.MM.dd"/> &nbsp|&nbsp 예약인원 ${reserve.reserveCount }명 예약중
+								&nbsp | &nbsp반납예정일 : <fmt:formatDate value="${reserve.returnDate }" pattern ="yyyy.MM.dd"/> &nbsp|&nbsp 예약인원 ${reserve.reserveCount }명 예약중
 								</div>
 							</div>
 						</div>
