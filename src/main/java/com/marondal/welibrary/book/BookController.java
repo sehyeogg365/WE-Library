@@ -44,10 +44,7 @@ public class BookController {
 
 		List<WishBookDetail> wishbookList = wishBookBO.getWishBookList(userId);
 		model.addAttribute("wishbookList", wishbookList);
-		
-		// 여기서 희망도서개수 추가
-		//List<WishBookCount> wishbookCountList = wishBookBO.getWishBookNumberByUserId(userId);
-		//model.addAttribute("wishbookCountList", wishbookCountList);
+
 		Integer wishbookCount = wishbookList.size();
 		model.addAttribute("wishBook", wishbookCount);
 		
@@ -118,12 +115,7 @@ public class BookController {
 	@GetMapping("/interibrarybooklist/view")
 	public String interibraryBookList(Model model
 									, HttpSession session) {
-		
 		int userId = (Integer)session.getAttribute("userId");
-		
-		//User user = userBO.getUserInfo(id); //이상하게 DAO로 해도 잘불러와지더라.
-		
-		//model.addAttribute("user", user);
 		
 		List<InteribraryBookDetail> interibraryDetailList = interibraryBO.getInteribraryList(userId);
 		model.addAttribute("interibraryDetailList", interibraryDetailList);

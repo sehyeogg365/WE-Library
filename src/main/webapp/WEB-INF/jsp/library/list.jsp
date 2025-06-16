@@ -64,7 +64,7 @@
 					</h5>
 					<!-- <div> ${book}</div>건 -->
 		        </div>
-		    <hr style="border: solid 1px;">
+		        <hr style="border: solid 1px;">
 		   		<div class="mt-3 library-selectbox col-10">
 		   		<label class=""><input type="checkbox" id="allCheck" class="ck-all mr-2">전체 선택</label> <br>
 		   		<hr>
@@ -246,21 +246,24 @@
 	
 	<script>
 	$(document).ready(function(){
+	    // 페이지 로딩 시 URL 파라미터로 체크박스 상태 초기 세팅
 	    // URL 파라미터를 읽어오는 함수
         const url = new URL(window.location.href); // 좀더 가독성있게 코드문 고쳐보기
-        const urlParams = url.searchParams;// 좀더 가독성있게 코드문 고쳐보기
+        const urlParams = url.searchParams;
 
         // URL 파라미터에서 title 값을 읽어옴
         const title = urlParams.get('title');// 좀더 가독성있게 코드문 고쳐보기
         console.log("제목 : " + title);
-        if (title) { //title 값있을시에 input value값에 그값을 넣는다.
+        if (title) { // title 값있을시에 input value값에 그값을 넣는다.
             document.getElementById('searchInput').value = title;
         }
 
         // URL 파라미터에서 library 값을 읽어옴
         const libraries = urlParams.getAll('libraryList');// 좀더 가독성있게 코드문 고쳐보기
         console.log("도서관 : " + libraries);
-        if (libraries.length > 0) {
+        var chkList = $("input[name = libraryList]");
+
+        if (libraries.length > 0) {// library 파라미터가 있으면 체크박스에 선택이 유지되게 반영
             for(let i = 0; i < libraries.length; i++){
                 const library = libraries[i];
                 $("input[name='libraryList'][value='" + library + "']").prop("checked", true);
@@ -268,41 +271,40 @@
 
             //console.log(libraries); // 확인용
 
-            if(libraries.length == 5){// 5개일때 전체 선택때 체크
+            if(libraries.length == chkList.length){// 5개일때 전체 선택때 체크
                  $("input[id='allCheck']").prop("checked", true);
             }
         }
 
-        var chkList = $("input[name = libraryList]");
+        // 체크된 갯수가 selectedValues.length 보다 작을시 전체 선택 표시 없애기
+        // 로딩 이후 사용자가 전체 체크박스 상태를 실시간으로 조작하는 기능
+        const ckAll = document.querySelector(".ck-all");
+        const ckArr = document.querySelectorAll(".ck");
+        //$('input:checkbox[name="libraryList"]').length// 체크박스 전체 갯수
 
-            // 체크된 갯수가 selectedValues.length 보다 작을시 전체 선택 표시 없애기
-            const ckAll = document.querySelector(".ck-all");
-            const ckArr = document.querySelectorAll(".ck");
-            //$('input:checkbox[name="libraryList"]').length// 체크박스 전체 갯수
-
-            ckAll.addEventListener("click", () =>{
-                ckArr.forEach(ck => {
-                    ck.checked = ckAll.checked;
-                })
+        ckAll.addEventListener("click", () =>{
+            ckArr.forEach(ck => {
+                ck.checked = ckAll.checked;
             })
+        })
 
-            ckArr.forEach(ck =>{
-                ck.addEventListener("click",() =>{
-                    let cnt = 0;
-                    ckArr.forEach(ck =>{
-                        if(ck.checked == true){
-                            cnt++;
-                        }
-                    })
-
-                    if(cnt == ckArr.length){
-                        //ckArr.length // ('input:checkbox[name="boardTypeList"]')
-                        ckAll.checked = true;
-                    } else {
-                        ckAll.checked = false;
+        ckArr.forEach(ck =>{
+            ck.addEventListener("click",() =>{
+                let cnt = 0;
+                ckArr.forEach(ck =>{
+                    if(ck.checked == true){
+                        cnt++;
                     }
                 })
+
+                if(cnt == ckArr.length){// 전체 체크 여부
+                    //ckArr.length // ('input:checkbox[name="boardTypeList"]')
+                    ckAll.checked = true;
+                } else {
+                    ckAll.checked = false;
+                }
             })
+        })
 
         // 파라미터 값을 h5 태그에 넣기
         document.getElementById("result").innerText = title;

@@ -62,26 +62,6 @@
   		`id`=#{id};
   </delete>
   
-  <!-- 예약 권수 -->
-  <select id ="selectReserveBookCount" resultType="int" parameterType="int">
-  	SELECT
-  		count(1)
-  	FROM
-  		`reserve_book`
-  	WHERE
-  		`userId`= #{userId};
-  </select>
-  
-  <!-- 예약 권수 표시  근데 대출도 그랬지만 이거 없어도 출력되는모습-->
-  <select id ="selectReserveBookNumberByUserId" resultType="com.marondal.welibrary.book.model.ReserveBook" parameterType="int">
-  	SELECT
-  		count(1)
-  	FROM
-  		`reserve_book`
-  	WHERE
-  		`userId`= #{userId};
-  </select>
-  
   <!-- 예약인원수 -->
   <select id = "selectReserveCount" resultType="int" parameterType="int">
   	SELECT	

@@ -85,21 +85,22 @@
                                  <c:set var="date" value="<fmt:formatDate value='${today}' pattern='yyyy-MM-dd' />" />
                                 <!-- 2024-03-24 21일이상 차이나는지 여부 판단 -->
 
-                                    ㅇ상태 : <c:choose>
-                                                <c:when test ="${diffInDays >= 21 && today < returnDate}">
-                                                    <div class="text-secondary" id="returnExtensionBtn">반납연장 됨</div>
-                                                </c:when>
-                                                <c:when test="${today > returnDate}">
-                                                    <div class="text-danger">반납연체</div>
-                                                </c:when>
-                                                <c:when test="${diffInDays >= 21 && today > returnDate}">
-                                                    <div class="text-danger">반납연체</div>
-                                                </c:when>
-                                                <c:otherwise>
-                                                    <div class="text-primary">대출중</div>
-                                                </c:otherwise>
-                                           </c:choose>
-                                    &nbsp | &nbsp 대출일 : <fmt:formatDate value="${borrow.createdAt}" pattern ="yyyy.MM.dd"/>&nbsp |&nbsp 반납예정일 : <fmt:formatDate value="${borrow.returnDate}" pattern ="yyyy.MM.dd"/>
+                                    ㅇ상태 :&nbsp;
+                                        <c:choose>
+                                            <c:when test ="${diffInDays >= 21 && today < returnDate}">
+                                                <div class="text-secondary" id="returnExtensionBtn">반납연장 됨</div>
+                                            </c:when>
+                                            <c:when test="${today > returnDate}">
+                                                <div class="text-danger">반납연체</div>
+                                            </c:when>
+                                            <c:when test="${diffInDays >= 21 && today > returnDate}">
+                                                <div class="text-danger">반납연체</div>
+                                            </c:when>
+                                            <c:otherwise>
+                                                <div class="text-primary">대출중</div>
+                                            </c:otherwise>
+                                       </c:choose>
+                                    &nbsp | &nbsp대출일 : <fmt:formatDate value="${borrow.createdAt}" pattern ="yyyy.MM.dd"/>&nbsp |&nbsp 반납예정일 : <fmt:formatDate value="${borrow.returnDate}" pattern ="yyyy.MM.dd"/>
                             </div>
 						</div>
                             <div class="">

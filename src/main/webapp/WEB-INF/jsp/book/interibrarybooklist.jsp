@@ -68,13 +68,13 @@
 									${interibrarybook.title }
 								</div>
 								<div class="text-secondary">
-									ㅇ제공도서관: ${interibrarybook.library }  &nbsp| &nbsp 수령도서관 : ${interibrarybook.receivelibrary }
+									ㅇ제공도서관 : ${interibrarybook.library } &nbsp|&nbsp 수령도서관 : ${interibrarybook.receivelibrary }
 								</div>
 								<div class="text-secondary">
-									ㅇ신청일: <fmt:formatDate value="${interibrarybook.createdAt }" pattern = "yyyy.MM.dd"/>  &nbsp| &nbsp 반납예정일: <fmt:formatDate value="${interibrarybook.returnDate }" pattern = "yyyy.MM.dd"/>
+									ㅇ신청일 : <fmt:formatDate value="${interibrarybook.createdAt }" pattern = "yyyy.MM.dd"/>  &nbsp|&nbsp 반납예정일 : <fmt:formatDate value="${interibrarybook.returnDate }" pattern = "yyyy.MM.dd"/>
 								</div>
 								<div class="d-flex text-secondary"><!-- 여기서도 요청된자료/ 입수된 자료/ 신청취소된자료로 구분  -->
-									ㅇ상태: 
+									ㅇ상태 :&nbsp;
 									<c:choose>
 										<c:when test="${interibrarybook.status }">
 											<p class="text-primary">수령완료</p>

@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.marondal.welibrary.book.model.WishBookDetail;
 import com.marondal.welibrary.book.wishbook.bo.WishBookBO;
-import com.marondal.welibrary.book.wishbook.bo.WishBookCountBO;
 
 @Controller
 @RequiredArgsConstructor

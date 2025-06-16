@@ -223,23 +223,23 @@ public class UserRestController {
 	}
 	
 	// 회원 탈퇴
-	@GetMapping("/withdrawl")
-	public Map<String, String> withdrawl(@RequestParam("password") String password
-										, HttpSession session 
-										){
-		Map<String, String> resultMap = new HashMap<>();
-		
-		int id = (Integer)session.getAttribute("userId");
-		
-		int count = userBO.deleteUser(id, password);
-		
-		if(count == 1) {
-			resultMap.put("result", "success");
-		} else {
-			resultMap.put("result", "fail");
-		}
-		
-		return resultMap;
-	}
+//	@GetMapping("/withdrawl")
+//	public Map<String, String> withdrawl(@RequestParam("password") String password
+//										, HttpSession session
+//										){
+//		Map<String, String> resultMap = new HashMap<>();
+//
+//		int id = (Integer)session.getAttribute("userId");
+//
+//		int count = userBO.deleteUser(id, password);
+//
+//		if(count == 1) {
+//			resultMap.put("result", "success");
+//		} else {
+//			resultMap.put("result", "fail");
+//		}
+//
+//		return resultMap;
+//	}
 
 }

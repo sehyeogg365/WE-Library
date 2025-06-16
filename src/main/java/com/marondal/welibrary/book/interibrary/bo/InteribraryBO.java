@@ -34,15 +34,15 @@ public class InteribraryBO {
 
 	// 상호대차 조회
 	public List<InteribraryBookDetail> getInteribraryList(int userId) {
-		List<InteribraryBook> interibraryList = interibraryDAO.selectInteribraryList(userId);
+		List<InteribraryBook> interibraryList = interibraryDAO.selectInteribraryList(userId);// 신청내역 (InteribraryBook) 조회
 
 		List<InteribraryBookDetail> interibraryDetailList = new ArrayList<>();
 
 		for (InteribraryBook interibrarybook : interibraryList) {
-			BookDetail book = bookBO.getBookById(interibrarybook.getBookId());
+			BookDetail book = bookBO.getBookById(interibrarybook.getBookId());// 각 책마다 → 상세정보 조회 + 대출여부 확인
 
 			boolean isBorrow = interibrayCountBO.isBorrow(interibrarybook.getBookId());
-			InteribraryBookDetail interibraryBookDetail = new InteribraryBookDetail();
+			InteribraryBookDetail interibraryBookDetail = new InteribraryBookDetail();// InteribraryBookDetail 객체로 포장
 
 			interibraryBookDetail.setId(interibrarybook.getId());
 			interibraryBookDetail.setUserId(interibrarybook.getUserId());
@@ -54,10 +54,10 @@ public class InteribraryBO {
 			interibraryBookDetail.setReturnDate(interibrarybook.getReturnDate());// 반납예정일
 			interibraryBookDetail.setStatus(isBorrow);
 
-			interibraryDetailList.add(interibraryBookDetail);
+			interibraryDetailList.add(interibraryBookDetail);// 결과 리스트에 담기
 		}
 
-		return interibraryDetailList;
+		return interibraryDetailList;// 리스트 반환
 	}
 
 
