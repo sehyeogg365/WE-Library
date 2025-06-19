@@ -113,26 +113,6 @@ public class BookBO {
 
 	// }
 
-	// 책 제목별로 갯수표시
-	public List<BookCount> getBookNumberBytitle(String title, List<String> libraryList) {
-		List<Book> bookList = bookDAO.selectBookListByTitle(title, libraryList);
-
-		List<BookCount> bookCountList = new ArrayList<>();
-
-		for (Book book : bookList) {
-			BookCount bookCount = new BookCount();
-
-			// 갯수불러오기
-			int numberCount = bookDAO.selectBookCount(title, libraryList);
-
-			bookCount.setNumberCount(numberCount);
-
-			bookCountList.add(bookCount);
-		}
-
-		return bookCountList;
-	}
-
 	// 이전의 충모투어에선 딥스체크비오를 만들어서 진행했는데 그건 로징비오와 딥스비오가 서로서로 참조하는 현상이있어서 그랬던거고 이번엔 따로
 	// 북스체크비오를 안만들어도될듯.
 	// 대출 가능 여부
