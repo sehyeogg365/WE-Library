@@ -77,33 +77,5 @@
   		WHERE
   			`id` = #{id}
   	</select>
-
-  	<!-- 책 갯수 세기 -->
-  	<select id="selectBookCount" resultType="int" parameterType="String">
-		-- bookMapper.selectBookCount
-  		SELECT
-  			count(1)
-  		FROM
-  			`book`
-  		WHERE
-		REPLACE(`title`, ' ', '') LIKE CONCAT('%', REPLACE(#{title}, ' ', ''), '%')
-		<if test='libraryList != null and libraryList.size() > 0'>
-			AND library IN(
-			<foreach collection="libraryList" item="item" separator=" , ">
-				#{item}
-			</foreach>)
-		</if>
-  	</select>
-  	
-  	<!-- 책 갯수 표시 -->
-  	<select id ="selectBookNumberByTitle" resultType="com.marondal.welibrary.book.model.BookCount" parameterType="String">
-		-- bookMapper.selectBookNumberByTitle
-  		SELECT
-  			count(1)
-  		FROM
-  			`book`
-  		WHERE
-  			`title` =#{title}
-  	</select>
   </mapper>
   

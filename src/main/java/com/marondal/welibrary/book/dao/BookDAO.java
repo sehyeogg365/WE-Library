@@ -20,14 +20,5 @@ public interface BookDAO {
 	//책 1행정보 조회(상호대차 팝업창)
 	public BookDetail selectBookById(@Param("id") int id);
 
-	//책 제목 조회(검색창)
-	// public List<Book> selectBookByTitle(@Param("title") String title);
-
 	// public Page<> boardList();
-
-	//책 갯수 세기
-	public int selectBookCount(@Param("title") String title, @Param("libraryList") List<String> libraryList);
-
-	//책 갯수 표시
-//	public List<Book> selectBookNumberByTitle(@Param("title") String title, @Param("libraryList") List<String> libraryList);
 }

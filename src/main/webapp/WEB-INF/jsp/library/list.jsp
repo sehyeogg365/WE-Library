@@ -55,14 +55,8 @@
 		    	 <div class="d-flex align-items-center col-10 mt-3" style= "margin-left:83.338px;">
 		    	    <h5 id ="result" class="text-primary"> </h5>
 		        	<h5 class="">에 대한 검색 결과
-					<c:forEach var="book" begin="0" end="0" items="${bookCountList }">
-                        ${book.numberCount }건이 검색되었습니다.
-                        <c:if test = "${bookCountList} == null">
-                            0건이 검색되었습니다.
-                        </c:if>
-					</c:forEach>
+		        	${book}건이 검색되었습니다.
 					</h5>
-					<!-- <div> ${book}</div>건 -->
 		        </div>
 		        <hr style="border: solid 1px;">
 		   		<div class="mt-3 library-selectbox col-10">

@@ -38,14 +38,10 @@ public class LibraryController {
 		List<BookDetail> bookDetailList = bookBO.getBookListByTitle(title, libraryList);
 		model.addAttribute("bookDetailList", bookDetailList);
 
-		List<BookCount> bookCountList = bookBO.getBookNumberBytitle(title, libraryList);
-		model.addAttribute("bookCountList", bookCountList);
-
-		//Integer bookCount = bookDetailList.size();
-		//model.addAttribute("book", bookCount);
+		Integer bookCount = bookDetailList.size();
+		model.addAttribute("book", bookCount);
 
 		//System.out.println("도서권수 : " + bookCount);
-
 		return "library/list";
 	}
 
