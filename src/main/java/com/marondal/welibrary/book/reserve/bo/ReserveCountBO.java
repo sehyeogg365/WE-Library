@@ -13,9 +13,9 @@ public class ReserveCountBO {
 	private ReserveDAO reserveDAO;
 
 	// 예약 정보 1행 조회
-	public ReserveBook getReserveBook(int bookId) {
-		return reserveDAO.selectReserveBook(bookId);
-	}
+//	public ReserveBook getReserveBook(int bookId) {
+//		return reserveDAO.selectReserveBook(bookId);
+//	}
 
 	// 예약인원수
 	public int getReserveCount(int bookId) {
@@ -34,14 +34,13 @@ public class ReserveCountBO {
 	}
 
 	// 예약 여부 (본인이 예약한건 예약 못한다)
-	public boolean isReserve(int userId, int bookId) {
-		int count = reserveDAO.isReserve(userId, bookId);
-		
-		if (count == 0) {// 0일때 false else 일때 true(commit test, merge test)
-			return false;
-		} else {
-			return true;
-		}
-	}
-
+//	public boolean isReserve(int userId, int bookId) {
+//		int count = reserveDAO.isReserve(userId, bookId);
+//
+//		if (count == 0) {// 0일때 false else 일때 true(commit test, merge test)
+//			return false;
+//		} else {
+//			return true;
+//		}
+//	}
 }
