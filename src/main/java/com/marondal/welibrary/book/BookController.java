@@ -79,8 +79,6 @@ public class BookController {
 		Integer interestBookCount = interestDetailList.size();
 		model.addAttribute("interestBook", interestBookCount);
 
-		// 여기서 관심도서개수 추가
-		
 		return "book/interestbooklist";
 	}
 	
@@ -119,8 +117,8 @@ public class BookController {
 		
 		List<InteribraryBookDetail> interibraryDetailList = interibraryBO.getInteribraryList(userId);
 		model.addAttribute("interibraryDetailList", interibraryDetailList);
-		// 여기서 상호대차도서개수 추가
 
+		// 여기서 상호대차도서개수 추가
 		Integer interibraryBookCount = interibraryDetailList.size();
 		model.addAttribute("interibraryBook", interibraryBookCount);
 		

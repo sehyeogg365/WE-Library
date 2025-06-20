@@ -4,12 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.marondal.welibrary.book.dao.BookDAO;
 import com.marondal.welibrary.book.interibrary.bo.InteribrayCountBO;
 import com.marondal.welibrary.book.model.Book;
-import com.marondal.welibrary.book.model.BookCount;
 import com.marondal.welibrary.book.model.BookDetail;
 
 import com.marondal.welibrary.book.reserve.bo.ReserveCountBO;
@@ -34,17 +32,11 @@ public class BookBO {
 		for (Book book : bookList) {
 			BookDetail bookDetail = new BookDetail();
 
-			// 예약정보1행 이거 만들기
-			// ReserveBook reservebook = reserveCountBO.getReserveBook(book.getId());
-
 			int reserveCount = reserveCountBO.getReserveCount(book.getId());
 
 			boolean isBorrow = reserveCountBO.isBorrow(book.getId());
 
 			boolean isInteribrary = interibrayCountBO.isInteribrary(book.getId());
-
-			// boolean isReserve = reserveCountBO.isReserve(book.getId(),
-			// reservebook.getUserId());
 
 			bookDetail.setId(book.getId());
 			bookDetail.setLibrary(book.getLibrary());
@@ -73,7 +65,6 @@ public class BookBO {
 		List<BookDetail> bookDetailList = new ArrayList<>();
 
 		for (Book book : bookList) {
-
 			BookDetail bookDetail = new BookDetail();
 
 			int reserveCount = reserveCountBO.getReserveCount(book.getId());
@@ -105,13 +96,6 @@ public class BookBO {
 	public BookDetail getBookById(int id) {
 		return bookDAO.selectBookById(id);
 	}
-
-	// 책 제목 조회
-	// public List<Book> getBookByTitle(String title) {
-
-	// return bookDAO.selectBookByTitle(title);
-
-	// }
 
 	// 이전의 충모투어에선 딥스체크비오를 만들어서 진행했는데 그건 로징비오와 딥스비오가 서로서로 참조하는 현상이있어서 그랬던거고 이번엔 따로
 	// 북스체크비오를 안만들어도될듯.

@@ -14,7 +14,7 @@ public interface ReserveDAO {
 	public int insertReserve(@Param("bookId") int bookId, @Param("userId") int userId);
 
 	// 예약 정보 1행 조회
-	public ReserveBook selectReserveBook(@Param("bookId") int bookId);
+//	public ReserveBook selectReserveBook(@Param("bookId") int bookId);
 
 	// 예약 목록
 
@@ -30,6 +30,5 @@ public interface ReserveDAO {
 	public int selectBorrowByBookId(@Param("bookId") int bookId);
 
 	// 예약 여부(본인이 예약한 책은 예약 못한다.)
-	public int isReserve(@Param("userId") int userId, @Param("bookId") int bookId);
-
+//	public int isReserve(@Param("userId") int userId, @Param("bookId") int bookId);
 }
