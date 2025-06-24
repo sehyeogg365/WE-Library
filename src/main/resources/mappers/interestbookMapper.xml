@@ -8,6 +8,7 @@
   
   <!-- 관심도서 추가 -->
   <insert id ="insertInterest" parameterType="int">
+	-- interestbookMapper.insertInterest
   	INSERT INTO
   		`interest_book`
   		(
@@ -27,6 +28,7 @@
    
   <!-- 관심도서 조회 -->
   <select id ="selectInterestList" resultType="com.marondal.welibrary.book.model.InterestBook" parameterType="int" >
+	-- interestbookMapper.selectInterestList
   	SELECT
   		`id`
   		, `userId`
@@ -42,6 +44,7 @@
 
   <!-- 관심도서 개수 -->
   <select id="selectInterestBookCount" resultType="int" parameterType="int">
+	-- interestbookMapper.selectInterestBookCount
   	SELECT
   		count(1)
   	FROM
@@ -54,6 +57,7 @@
   
   <!-- 관심도서 삭제 -->
   <delete id="deleteInterest" parameterType="int">
+	-- interestbookMapper.deleteInterest
   	DELETE
   	FROM `interest_book`
   	WHERE `id` = #{id}

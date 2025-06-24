@@ -7,8 +7,9 @@
   <mapper namespace="com.marondal.welibrary.book.reserve.dao.ReserveDAO">
   	
   <!-- 예약 -->
-  <insert id ="insertReserve" parameterType="map">
-  	INSERT INTO 
+  <insert id="insertReserve" parameterType="map">
+	-- reservebookMapper.insertReserve
+  	INSERT INTO
   		`reserve_book`
   		(
   			`userId`
@@ -39,7 +40,8 @@
 <!--  </select>-->
   
   <!-- 예약 목록 -->
-  <select id ="selectReserveList" resultType="com.marondal.welibrary.book.model.ReserveBook" parameterType="int">
+  <select id="selectReserveList" resultType="com.marondal.welibrary.book.model.ReserveBook" parameterType="int">
+	-- reservebookMapper.selectReserveList
   	SELECT
   		`id`
    		, `userId`
@@ -55,6 +57,7 @@
   
   <!-- 예약 취소 -->
   <delete id="deleteReserve" parameterType="int">
+	-- reservebookMapper.deleteReserve
   	DELETE
   	FROM
   		`reserve_book`
@@ -63,7 +66,8 @@
   </delete>
   
   <!-- 예약인원수 -->
-  <select id = "selectReserveCount" resultType="int" parameterType="int">
+  <select id="selectReserveCount" resultType="int" parameterType="int">
+	-- reservebookMapper.deleteReserve
   	SELECT	
   		count(1)
   	FROM
@@ -74,6 +78,7 @@
   
   <!-- 대출상태 -->
   <select id = "selectBorrowByBookId" resultType="int" parameterType="int">
+	-- reservebookMapper.selectBorrowByBookId
   	SELECT
   		count(1)
   	FROM
