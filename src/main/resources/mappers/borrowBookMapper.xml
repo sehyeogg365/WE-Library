@@ -7,7 +7,8 @@
    <mapper namespace="com.marondal.welibrary.book.borrow.dao.BorrowDAO">
    
    <!-- 대여 -->
-   <insert id ="insertBorrow" parameterType="map" >
+   <insert id="insertBorrow" parameterType="map" >
+	-- borrowBookMapper.insertBorrow
    	INSERT INTO
    		`borrow_book`
    		(
@@ -28,12 +29,13 @@
    </insert>
    
    <!-- 대출 1행정보 -->
-   <select id = "selectBorrow" resultType="com.marondal.welibrary.book.model.BorrowBook" parameterType="int">
-   	SELECT	
+   <select id="selectBorrow" resultType="com.marondal.welibrary.book.model.BorrowBook" parameterType="int">
+	-- borrowBookMapper.selectBorrow
+   	SELECT
    			`id`
    			, `userId`
   			, `bookId`
-  			, `createdAt` 
+  			, `createdAt`
 		    , `updatedAt`
 		    , `returnDate`
    	FROM
@@ -42,7 +44,8 @@
    		`bookId` =#{bookId}
    </select>
 	<!-- 대출 1행 대출Id로 조회 -->
-   <select id = "selectById" resultType="com.marondal.welibrary.book.model.BorrowBook" parameterType="int">
+   <select id="selectById" resultType="com.marondal.welibrary.book.model.BorrowBook" parameterType="int">
+	-- borrowBookMapper.selectById
    	SELECT
    			`id`
    			, `userId`
@@ -58,7 +61,8 @@
    
    <!-- 대출목록 -->
    <select id ="selectBorrowList" resultType="com.marondal.welibrary.book.model.BorrowBook" parameterType="map">
-   	SELECT
+	-- borrowBookMapper.selectBorrowList
+	SELECT
    		`id`
    		, `userId`
    		, `bookId`
@@ -72,29 +76,9 @@
   		`id` DESC;
    </select>
    
-   <!-- 대출도서 갯수 -->
-<!--   <select id="selectBorrowBookCount" resultType="int" parameterType="int">-->
-<!--   	SELECT-->
-<!--   	SELECT-->
-<!--   		count(1)-->
-<!--   	FROM	-->
-<!--   		`borrow_book`-->
-<!--   	WHERE-->
-<!--   		`userId` = #{userId}-->
-<!--   </select>-->
-
-   <!-- 대출도서 갯수 표시 -->
-<!--   <select id="selectBorrowBookNumberByUserId" resultType="com.marondal.welibrary.book.model.BorrowBookCount" parameterType="int">-->
-<!--   	SELECT-->
-<!--   		count(1)-->
-<!--   	FROM	-->
-<!--   		`borrow_book`-->
-<!--   	WHERE-->
-<!--   		`userId` = #{userId}-->
-<!--   </select>-->
-   
    <!-- 반납 -->
-   <delete id = "deleteBorrow" parameterType="map">
+   <delete id ="deleteBorrow" parameterType="map">
+	-- borrowBookMapper.deleteBorrow
    	DELETE 
    	FROM
    		`borrow_book`
@@ -104,6 +88,7 @@
    
    <!-- 반납 연장 -->
    <update id ="updateBorrow" parameterType="map">
+	-- borrowBookMapper.updateBorrow
    	UPDATE
    		`borrow_book` 
    	SET
@@ -116,6 +101,7 @@
    
    <!-- 2024-03-17 대출이력 추가 -->
    <insert id ="insertBorrowHistory" parameterType="int">
+	-- borrowBookMapper.insertBorrowHistory
     INSERT INTO
    	`borrow_history`
    		(
@@ -134,15 +120,4 @@
    			, date_add(now(),interval 14 DAY)
    		)
    </insert>
-   
-   <!-- 2024-03-24 대출이력 권수 -->
-<!--   <select id = "selectBorrowHistoryCount" parameterType="int">-->
-<!--   	SELECT-->
-<!--   		count(1)-->
-<!--   	FROM	-->
-<!--   		`borrow_history`-->
-<!--   	WHERE-->
-<!--   		`userId` = #{userId}-->
-<!--   </select>-->
-   
    </mapper>

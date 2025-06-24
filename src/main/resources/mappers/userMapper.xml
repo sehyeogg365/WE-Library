@@ -7,6 +7,7 @@
   <mapper namespace="com.marondal.welibrary.user.dao.UserDAO">
   
   <insert id ="insertUser" parameterType="map">
+	-- userMapper.insertUser
   	INSERT INTO
   		`user`
   		(
@@ -34,6 +35,7 @@
   
   <!-- 중복아이디 확인(select) -->
   <select id ="selectCountloginId" resultType="int" parameterType="String">
+	-- userMapper.selectCountloginId
   	SELECT
   		count(1)
   	FROM
@@ -44,6 +46,7 @@
    
   <!-- 관리자 회원가입 -->
   <insert id="insertAdminUser" parameterType="map">
+	    -- userMapper.insertAdminUser
   		INSERT INTO
   		`user`
   		(
@@ -73,6 +76,7 @@
   
   <!-- 관리자 회원가입 인증번호 일치 확인(select) -->
   <select id="selectcertificationNumber" resultType="int" parameterType="String">
+	-- userMapper.selectcertificationNumber
   	SELECT
   		count(1)
   	FROM
@@ -83,6 +87,7 @@
   
   <!-- 로그인 -->
   <select id="selectUser" resultType="com.marondal.welibrary.user.model.User" parameterType="map">
+	-- userMapper.selectUser
   	SELECT
   		`id`
   		,`loginId`
@@ -103,6 +108,7 @@
   
   <!-- id찾기 -->
   <select id="selectUserByNameBirthPhone" resultType="com.marondal.welibrary.user.model.User" parameterType="map">
+	-- userMapper.selectUserByNameBirthPhone
   	SELECT
   		`loginId`
   	FROM
@@ -117,6 +123,7 @@
   
   <!-- pw재발급 -->
   <update id="updatePasswordByIdNameBirthPhone" parameterType="map">
+	-- userMapper.updatePasswordByIdNameBirthPhone
   	UPDATE
   		`user`
   	SET
@@ -132,7 +139,8 @@
   </update>  
   
   <!-- 회원정보 수정 -->
-  <update id ="updateUser" parameterType="map">
+  <update id="updateUser" parameterType="map">
+	-- userMapper.updateUser
   	UPDATE
 		`user`
   	SET
@@ -147,6 +155,7 @@
   
   <!-- 회원정보 한행 조회 -->
   <select id="selectUserInfo" resultType="com.marondal.welibrary.user.model.User" parameterType="int">
+	-- userMapper.selectUserInfo
   	SELECT
   		`id`
   		,`loginId`
@@ -165,7 +174,8 @@
   </select>
   
   <!-- 비밀번호 확인 -->
-  <select id="selectPassword" resultType="int" parameterType="map" >
+  <select id="selectPassword" resultType="int" parameterType="map">
+	-- userMapper.selectPassword
   	SELECT
   		count(1)
   	FROM
@@ -178,6 +188,7 @@
   
   <!-- 비밀번호 변경 아마 여기를 고쳐야 기존 비밀번호가 일치하면 바뀔듯 조건문 AND password=#${password}츠가해보기-->
   <update id="updatePassword" parameterType="map">
+	-- userMapper.updatePassword
   	UPDATE
   		`user`
   	SET
