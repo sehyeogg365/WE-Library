@@ -24,16 +24,12 @@ import com.marondal.welibrary.user.model.User;
 @RequiredArgsConstructor
 @RequestMapping("/book")
 public class BookController {
+
 	private final UserBO userBO;
-
 	private final WishBookBO wishBookBO;
-
 	private final InterestBO interestBO;
-
 	private final  BorrowBO borrowBO;
-
 	private final ReserveBO reserveBO;
-
 	private final InteribraryBO interibraryBO;
 
 	@GetMapping("/wishbook/list/view")
@@ -139,5 +135,4 @@ public class BookController {
 
 		return "book/borrowhistory";
 	}
-
 }

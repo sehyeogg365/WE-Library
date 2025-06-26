@@ -18,6 +18,7 @@ import com.marondal.welibrary.user.model.User;
 @RequiredArgsConstructor
 @RequestMapping("/user")
 public class UserController {
+
 	private final UserDAO userDAO;
 
 	@GetMapping("/signup/view")
@@ -86,5 +87,4 @@ public class UserController {
 		model.addAttribute("user", user);
 		return "/user/withdrawl";
 	}
-
 }

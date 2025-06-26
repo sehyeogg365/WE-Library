@@ -15,8 +15,8 @@ import com.marondal.welibrary.common.FileManagerService;
 @Service
 @RequiredArgsConstructor
 public class WishBookBO {
-	private final WishBookDAO wishBookDAO;
 
+	private final WishBookDAO wishBookDAO;
 	private final WishBookCountBO wishBookCountBO;
 
 	// 희망도서 신청
@@ -94,5 +94,4 @@ public class WishBookBO {
 		return wishBookDAO.insertWishbookIntoBook(library, title, imagePath, author, publisher, price, isbn, pubyear,
 				appnedix);
 	}
-
 }

@@ -1,16 +1,17 @@
 package com.marondal.welibrary.book.reserve.bo;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
+
 import org.springframework.stereotype.Service;
 
-import com.marondal.welibrary.book.model.ReserveBook;
+
 import com.marondal.welibrary.book.reserve.dao.ReserveDAO;
 
 @Service
+@RequiredArgsConstructor
 public class ReserveCountBO {
 
-	@Autowired
-	private ReserveDAO reserveDAO;
+	private final ReserveDAO reserveDAO;
 
 	// 예약 정보 1행 조회
 //	public ReserveBook getReserveBook(int bookId) {
