@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import com.marondal.welibrary.book.bo.BookBO;
 import com.marondal.welibrary.book.borrow.bo.BorrowBO;
 import com.marondal.welibrary.book.reserve.dao.ReserveDAO;
+import org.springframework.transaction.annotation.Transactional;
 
 import static java.rmi.server.LogStream.log;
 
@@ -19,17 +20,16 @@ import static java.rmi.server.LogStream.log;
 @Slf4j
 @RequiredArgsConstructor
 public class ReserveBO {
+
 	private final ReserveDAO reserveDAO;
-
 	private final BookBO bookBO;
-
 	private final BorrowBO borrowBO;
-
 	private final ReserveCountBO reserveCountBO;
-
 	private final InteribraryBO interibraryBO;
 	//TODO 대출목록및 대출 기록 페이지 날짜 검색 도서명 검색 추가
 	// 롬복주입(생성자주입), JUnit, TDD추가 해보기 등등
+
+	@Transactional
 	public int addReserve(int bookId, int userId) {
 		return reserveDAO.insertReserve(bookId, userId);
 	}
@@ -87,5 +87,4 @@ public class ReserveBO {
 	public int deleteReserve(int id) {
 		return reserveDAO.deleteReserve(id);
 	}
-
 }

@@ -24,10 +24,9 @@ import static java.rmi.server.LogStream.log;
 @RequiredArgsConstructor
 @RequestMapping("/library")
 public class LibraryController {
+
 	private final BookBO bookBO;
-
 	private final BorrowBO borrowBO;
-
 	private final InteribraryBO interibraryBO;
 
 	@GetMapping("/main/view")
@@ -70,5 +69,4 @@ public class LibraryController {
 
 		return "/library/interibrarypopup";
 	}
-
 }

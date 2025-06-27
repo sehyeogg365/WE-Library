@@ -12,6 +12,7 @@ import com.marondal.welibrary.user.model.User;
 @Service
 @RequiredArgsConstructor
 public class UserBO {
+
 	private final UserDAO userDAO;
 	
 	public int addUser(
@@ -158,11 +159,9 @@ public class UserBO {
 		// 비밀번호 확인 + 회원정보 수정  -> 이건 나중에.
 		// 아마 여기서 비밀번호 확인이라는걸 추가해줘야 한다. if문 써서 count == 1일때 변경한다 이런식으로
 			String ecryptPassword = EncryptService.md5(password);
-	
 			return userDAO.updatePassword(id, ecryptPassword);
 	}
-	
-	
+
 	// 회원 탈퇴
 //	public int deleteUser(int id, String password) {
 //		int count = userDAO.selectPassword(id, password);

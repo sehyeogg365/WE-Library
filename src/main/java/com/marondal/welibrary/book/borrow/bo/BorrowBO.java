@@ -14,6 +14,7 @@ import com.marondal.welibrary.book.borrow.dao.BorrowDAO;
 import com.marondal.welibrary.book.model.BookDetail;
 import com.marondal.welibrary.book.model.BorrowBook;
 import com.marondal.welibrary.book.model.BorrowBookDetail;
+import org.springframework.transaction.annotation.Transactional;
 
 import static java.rmi.server.LogStream.log;
 
@@ -21,13 +22,13 @@ import static java.rmi.server.LogStream.log;
 @Slf4j
 @RequiredArgsConstructor
 public class BorrowBO {
+
 	private final BorrowDAO borrowDAO;
-
 	private final BookBO bookBO;
-
 	private final InteribraryDAO interibraryDAO;
 
 	// 대여
+	@Transactional
 	public int addBorrow(int userId, int bookId) {
 		return borrowDAO.insertBorrow(userId, bookId);
 	}

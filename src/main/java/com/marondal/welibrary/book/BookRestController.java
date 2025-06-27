@@ -25,14 +25,11 @@ import com.marondal.welibrary.book.wishbook.bo.WishBookBO;
 @RequiredArgsConstructor
 @RequestMapping("/book")
 public class BookRestController {
+
 	private final WishBookBO wishBookBO;
-
 	private final InterestBO interestBO;
-
 	private final BorrowBO borrowBO;
-
 	private final ReserveBO reserveBO;
-
 	private final InteribraryBO interibraryBO;
 	
 	// 희망도서 신청
@@ -266,5 +263,4 @@ public class BookRestController {
 		}
 		return resultMap;
 	}
-	
 }

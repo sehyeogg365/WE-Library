@@ -16,10 +16,9 @@ import com.marondal.welibrary.book.reserve.bo.ReserveCountBO;
 @Service
 @RequiredArgsConstructor
 public class BookBO {
+
 	private final BookDAO bookDAO;
-
 	private final ReserveCountBO reserveCountBO;
-
 	private final InteribrayCountBO interibrayCountBO;
 
 	// 책목록 조회(dto로 바꾸기)
@@ -109,5 +108,4 @@ public class BookBO {
 	// }
 
 	// 상호대차 가능 여부
-
 }

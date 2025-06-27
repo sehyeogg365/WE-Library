@@ -20,6 +20,7 @@ import com.marondal.welibrary.user.model.User;
 @RequiredArgsConstructor
 @RequestMapping("/user")
 public class UserRestController {
+
 	private final UserBO userBO;
 	
 	@PostMapping("/signup")

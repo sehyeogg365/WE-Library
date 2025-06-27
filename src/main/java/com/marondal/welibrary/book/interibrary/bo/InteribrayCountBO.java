@@ -8,6 +8,7 @@ import com.marondal.welibrary.book.interibrary.dao.InteribraryDAO;
 @Service
 @RequiredArgsConstructor
 public class InteribrayCountBO {
+
 	private final InteribraryDAO interibraryDAO;
 
 	// 상호대차 권수
@@ -36,5 +37,4 @@ public class InteribrayCountBO {
 			return false;
 		}
 	}
-
 }
