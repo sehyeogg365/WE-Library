@@ -74,7 +74,7 @@
  <img src="https://img.shields.io/badge/Postman-FF6C37?style=flat-square&logo=Postman&logoColor=white"/>
  
 백엔드
-* Java 11
+* Java 17
 * SpringBoot 2.7.13
 
 프론트엔드
