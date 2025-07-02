@@ -89,11 +89,14 @@
 * MySQL
 
 인프라
-* AWS EC2
+* AWS EC2, Docker
 
 라이브러리
-* 네이버 지도 api 
+* 네이버 지도 api
 
+테스트
+* Github Action, Swagger, Postman
+  
 <a href="https://www.miricanvas.com/v/12dnr9i">포트폴리오</a><br>
 <a href="https://docs.google.com/spreadsheets/d/1xFP0xoNL0dEIKLUXPe7yj9DetWB0BLAEIzzqgqNE1dI/edit?gid=0#gid=0">설계서</a>
 
