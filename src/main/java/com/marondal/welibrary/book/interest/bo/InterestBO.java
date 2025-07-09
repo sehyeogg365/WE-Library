@@ -15,12 +15,11 @@ import com.marondal.welibrary.book.model.InterestBookDetail;
 @Service
 @RequiredArgsConstructor
 public class InterestBO {
+
 	private final InterestDAO interestDAO;
-
 	private final BookBO bookBO;
-
 	private final InterestCountBO interestCountBO;
-
+	//TODO 관심도서 중복되는 도서 관심도서 추가 못하게 하기
 	// 관심도서 추가
 	public int addInterest(int userId, int bookId) {
 		return interestDAO.insertInterest(userId, bookId);
