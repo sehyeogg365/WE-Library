@@ -132,7 +132,6 @@ public class BookController {
 	public String borrowHistory(Model model
 								, HttpSession session) {
 		int userId = (Integer)session.getAttribute("userId");
-
 		return "book/borrowhistory";
 	}
 }

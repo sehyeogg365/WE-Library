@@ -20,8 +20,7 @@ public class InteribraryBO {
 	private final InteribraryDAO interibraryDAO;
 	private final BookBO bookBO;
 	private final InteribrayCountBO interibrayCountBO;
-	//TODO 여기서 한가지 모순점도 발견했다. 상호대차 수령한 도서를 다시 반납처리하면 또다시 상호대차 수령을 할수 있고 무한 반복이 된다.
-	// 수령->대출현황으로 추가 -> 반납 처리 -> 대출현황, 상호대차 목록에서 제거 -> 대출이력으로 이동 이렇게 되어야 함, 대출이력은 나중에 하더라도.
+
 	// 상호대차 신청
 	@Transactional
 	public int addInteribrary(int bookId, int userId, String receivelibrary) {

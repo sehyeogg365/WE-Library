@@ -27,7 +27,7 @@ public class ReserveBO {
 	private final ReserveCountBO reserveCountBO;
 	private final InteribraryBO interibraryBO;
 	//TODO 대출목록및 대출 기록 페이지 날짜 검색 도서명 검색 추가
-	// 롬복주입(생성자주입), JUnit, TDD추가 해보기 등등
+	// JUnit, TDD추가 해보기 등등
 
 	@Transactional
 	public int addReserve(int bookId, int userId) {

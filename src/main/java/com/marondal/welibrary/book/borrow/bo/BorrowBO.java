@@ -26,7 +26,7 @@ public class BorrowBO {
 	private final BorrowDAO borrowDAO;
 	private final BookBO bookBO;
 	private final InteribraryDAO interibraryDAO;
-
+	//TODO 대출 이력 페이지 만들기, 반납 하면 대출 이력으로 추가
 	// 대여
 	@Transactional
 	public int addBorrow(int userId, int bookId) {
