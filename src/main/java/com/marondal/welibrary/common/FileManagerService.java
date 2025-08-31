@@ -14,7 +14,7 @@ import com.marondal.welibrary.common.FileManagerService;
 
 public class FileManagerService {
 
-	public static final String FILE_UPLOAD_PATH = "D:\\limsehyeok\\spring\\springProject\\upload\\WE-Library\\image";
+	public static final String FILE_UPLOAD_PATH = "C:\\D드라이브\\limsehyeok\\spring\\springProject\\upload\\WE-Library\\image";
 	private static Logger logger = LoggerFactory.getLogger(FileManagerService.class);
 	//member변수 웬만하면 public안쓴다.				//경로 잘 지정하고 슬래쉬 잘구분하기(메가그램거이므로 경로 수정)
 // 파일 저장 -> 경로 생성
